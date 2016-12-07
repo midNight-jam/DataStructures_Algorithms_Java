@@ -206,14 +206,14 @@ public class BitsUtil {
         int bitmask, j;
         int pos;
         for (int i = 0; i < superSetZize; i++) {
-            bitmask= i;
+            bitmask = i;
             pos = arr.length - 1;
             string.append(" [ ");
-            while (bitmask!= 0) {
-                if((bitmask & 1) ==1){
-                    string.append(arr[pos]+", ");
+            while (bitmask != 0) {
+                if ((bitmask & 1) == 1) {
+                    string.append(arr[pos] + ", ");
                 }
-                bitmask>>=1;
+                bitmask >>= 1;
                 pos--;
             }
             string.append(" ] ");

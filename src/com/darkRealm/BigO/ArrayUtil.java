@@ -74,7 +74,7 @@ public class ArrayUtil {
         }
         ArrayList<Integer> temp = new ArrayList<Integer>(record.values());
         for (Integer I :
-                temp) {
+            temp) {
             append(intersection, I.intValue());
         }
         return intersection;
@@ -126,7 +126,7 @@ public class ArrayUtil {
                 result[ri] = arr[ai];
                 ri++;
                 snecbgst
-                        = !stack.isEmpty() && arr[ai] > stack.peek();
+                    = !stack.isEmpty() && arr[ai] > stack.peek();
 
             }
             if (!snecbgst) {
@@ -176,7 +176,7 @@ public class ArrayUtil {
                 PairUtil p = stack.pop();
                 result[p.index] = arr[ai];
                 snecbgst
-                        = !stack.isEmpty() && arr[ai] > stack.peek().data;
+                    = !stack.isEmpty() && arr[ai] > stack.peek().data;
 
             }
             if (!snecbgst) {
@@ -288,26 +288,26 @@ public class ArrayUtil {
         return getKthSmallestInTwoArrays(arr, 0, arr.length, brr, 0, brr.length, k);
     }
 
-    private  static int getKthSmallestInTwoArrays(int[] arr, int startA, int endA, int[] brr, int startB, int endB, int k) {
+    private static int getKthSmallestInTwoArrays(int[] arr, int startA, int endA, int[] brr, int startB, int endB, int k) {
         int lenA = arr.length;
         int lenB = brr.length;
 
-        if(k==lenA+lenB){
+        if (k == lenA + lenB) {
             // because its the last element pick the greater one.
-           return Math.max(arr[k-lenB-1],brr[k-lenA-1]);
+            return Math.max(arr[k - lenB - 1], brr[k - lenA - 1]);
         }
 
-        if(lenA>0 && lenB>0 && k>0 && k<lenA+lenB) {
-            if(k==1){
+        if (lenA > 0 && lenB > 0 && k > 0 && k < lenA + lenB) {
+            if (k == 1) {
                 // because its the first element pick the samller one.
-                return Math.min(arr[0],brr[0]);
+                return Math.min(arr[0], brr[0]);
             }
             // as one array is completly exhausted pick what is left
-            if(k>lenB){
-                return arr[k-lenB];
+            if (k > lenB) {
+                return arr[k - lenB];
             }
-            if(k>lenA){
-                return brr[k-lenA];
+            if (k > lenA) {
+                return brr[k - lenA];
             }
 
             // invaraint i+j=k-1;

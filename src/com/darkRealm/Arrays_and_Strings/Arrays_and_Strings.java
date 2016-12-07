@@ -87,41 +87,37 @@ public class Arrays_and_Strings {
      if the given string is ODD len , then all except one elemsnts have to appear even times & ONLY ONE element has to
      appear odd times.
     * */
-    public static boolean palindromePermutation(String str){
+    public static boolean palindromePermutation(String str) {
         // first create hasmap with count of char appearnce
-        HashMap<Character,Integer> map = new HashMap<>();
+        HashMap<Character, Integer> map = new HashMap<>();
         int len = str.length();
         char c;
         // preapre map
-        for(int i = 0; i<len;i++){
+        for (int i = 0; i < len; i++) {
             c = str.charAt(i);
-            if(map.containsKey(str.charAt(i))){
-                map.put(c,map.get(c)+1);
-            }
-            else{
-                map.put(c,1);
+            if (map.containsKey(str.charAt(i))) {
+                map.put(c, map.get(c) + 1);
+            } else {
+                map.put(c, 1);
             }
         }
 
         boolean even = isEven(len);
         int charCount;
         int oneOddCount = 0;
-        for(int i = 0; i<len;i++){
-            if(even){
+        for (int i = 0; i < len; i++) {
+            if (even) {
                 charCount = map.get(str.charAt(i));
-                if(!isEven(charCount)){
+                if (!isEven(charCount)) {
                     return false;
                 }
-            }
-            else {
+            } else {
                 charCount = map.get(str.charAt(i));
-                if(!isEven(charCount)){
-                    oneOddCount ++;
-                }
-                else if(isEven(charCount)){
+                if (!isEven(charCount)) {
+                    oneOddCount++;
+                } else if (isEven(charCount)) {
                     continue;
-                }
-                else if(oneOddCount>1){
+                } else if (oneOddCount > 1) {
                     return false;
                 }
             }
@@ -129,17 +125,18 @@ public class Arrays_and_Strings {
         return true;
     }
 
-    private static boolean isEven(int i){
-        return (i & 1) == 1 ? false:true;
+    private static boolean isEven(int i) {
+        return (i & 1) == 1 ? false : true;
     }
+
     /*@Param str :  a string which will be compressed
     input: aabbcccaaa
     output : a2b2c3a3
     * */
-    public static String stringCompression(String str){
+    public static String stringCompression(String str) {
         StringBuilder compressedString = new StringBuilder();
         int len = str.length();
-        if(len>0) {
+        if (len > 0) {
             int count = 1;
             char c;
             int i = 1;
