@@ -31,6 +31,10 @@ public class MyStack<T> {
     return top.data;
   }
 
+  public boolean isEmpty() {
+    return top == null;
+  }
+
   private static class StackNode<T> {
 
     private T data;
