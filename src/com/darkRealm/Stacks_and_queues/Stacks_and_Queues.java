@@ -14,7 +14,4 @@ public class Stacks_and_Queues {
     public static void ThreeStacksInArray(){
 
     }
-
-
-
 }
