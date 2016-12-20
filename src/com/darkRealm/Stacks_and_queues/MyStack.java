@@ -8,11 +8,13 @@ import java.util.EmptyStackException;
 public class MyStack<T> {
 
   private StackNode<T> top;
+  private int size;
 
   public void push(T item) {
     StackNode<T> temp = new StackNode<T>(item);
     temp.next = top;
     top = temp;
+    size++;
   }
 
   public T pop() {
@@ -21,6 +23,7 @@ public class MyStack<T> {
     }
     T item = top.data;
     top = top.next;
+    size--;
     return item;
   }
 
@@ -35,6 +38,9 @@ public class MyStack<T> {
     return top == null;
   }
 
+  public int getSize(){
+    return size;
+  }
   private static class StackNode<T> {
 
     private T data;

@@ -21,7 +21,7 @@ public class DarkLogger {
     }
 
     logger.setLevel(Level.INFO);
-    fileTxt = new FileHandler("megaCTCI.log");
+    fileTxt = new FileHandler("megaCTCI.log",true);
     formatter = new SimpleFormatter();
     fileTxt.setFormatter(formatter);
     logger.addHandler(fileTxt);
