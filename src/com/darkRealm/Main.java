@@ -2,6 +2,8 @@ package com.darkRealm;
 
 import com.darkRealm.Arrays_and_Strings.Arrays_and_Strings;
 
+/*
+* Uncomment a function to run, each is a method for solved problem*/
 public class Main {
 
   public static void main(String[] args) {
