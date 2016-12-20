@@ -3,7 +3,8 @@ package com.darkRealm;
 import java.io.IOException;
 
 /*
-* Uncomment a function to run, each is a method for solved problem*/
+* Uncomment a function to run, each is a method for solved problem.
+* Testing ignored files settings*/
 public class Main {
 
   public static void main(String[] args) {
@@ -27,6 +28,7 @@ public class Main {
 
   private static void doStack_and_Queue() {
 //    Stack_and_Queues_Main.testMyStack();
-    Stack_and_Queues_Main.testMinStack();
+//    Stack_and_Queues_Main.testMinStack();
+    Stack_and_Queues_Main.testSortStack();
   }
 }

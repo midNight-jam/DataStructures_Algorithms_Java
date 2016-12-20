@@ -2,6 +2,7 @@ package com.darkRealm;
 
 import com.darkRealm.Stacks_and_queues.MinStack;
 import com.darkRealm.Stacks_and_queues.MyStack;
+import com.darkRealm.Stacks_and_queues.Stacks_and_Queues;
 
 /**
  * Created by Jayam on 12/9/2016.
@@ -70,5 +71,20 @@ public class Stack_and_Queues_Main {
     minStack.pop();
     System.out.println("Current min " + minStack.peekCurrentMin());
 
+  }
+
+  public static void testSortStack(){
+    MyStack<Integer> myStack = new MyStack<>();
+    myStack.push(2);
+    myStack.push(1);
+    myStack.push(4);
+    myStack.push(0);
+    myStack.push(3);
+    myStack.push(1);
+    myStack.push(5);
+
+    MyStack<Integer> sorted = Stacks_and_Queues.SortStack(myStack);
+
+    System.out.println("Will be displauypig  the stack here");
   }
 }

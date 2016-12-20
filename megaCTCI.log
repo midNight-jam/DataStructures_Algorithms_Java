@@ -1,20 +1,42 @@
-Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack <init>
-INFO: logger initialized  for com.darkRealm.Stacks_and_queues.MinStack
-Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
-INFO: 1st element in min Stack 9
-Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
-INFO: new element 5 <= peek of min Stack 5
-Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
-INFO: new element 3 <= peek of min Stack 3
-Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
-INFO: new element 2 <= peek of min Stack 2
-Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
-INFO: new element 1 <= peek of min Stack 1
-Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
-INFO: new element 0 <= peek of min Stack 0
-Dec 20, 2016 12:46:53 PM com.darkRealm.Stacks_and_queues.MinStack pop
-INFO: popped element 0 <= to peek of min Stack 0
-Dec 20, 2016 12:47:14 PM com.darkRealm.Stacks_and_queues.MinStack pop
-INFO: popped element 1 <= to peek of min Stack 1
-Dec 20, 2016 12:47:23 PM com.darkRealm.Stacks_and_queues.MinStack pop
-INFO: popped element 2 <= to peek of min Stack 2
+Dec 20, 2016 3:05:22 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: First insertion in minStack 5
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 1 < 5 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: pushing the popped element into minStack as all bigger pooped out 1
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 3 < 5 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: pushing the popped element into minStack as all bigger pooped out 3
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 0 < 5 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 0 < 3 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 0 < 1 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: pushing the popped element into minStack as all bigger pooped out 0
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 4 < 5 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: pushing the popped element into minStack as all bigger pooped out 4
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 1 < 5 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 1 < 4 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 1 < 3 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: pushing the popped element into minStack as all bigger pooped out 1
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 2 < 5 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 2 < 4 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: popoing from minStack was element 2 < 3 minPeek 
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: pushing the popped element into minStack as all bigger pooped out 2
+Dec 20, 2016 3:05:23 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
+INFO: refilling from the minStack for reverse order
