@@ -1,0 +1,20 @@
+Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack <init>
+INFO: logger initialized  for com.darkRealm.Stacks_and_queues.MinStack
+Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
+INFO: 1st element in min Stack 9
+Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
+INFO: new element 5 <= peek of min Stack 5
+Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
+INFO: new element 3 <= peek of min Stack 3
+Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
+INFO: new element 2 <= peek of min Stack 2
+Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
+INFO: new element 1 <= peek of min Stack 1
+Dec 20, 2016 12:46:39 PM com.darkRealm.Stacks_and_queues.MinStack push
+INFO: new element 0 <= peek of min Stack 0
+Dec 20, 2016 12:46:53 PM com.darkRealm.Stacks_and_queues.MinStack pop
+INFO: popped element 0 <= to peek of min Stack 0
+Dec 20, 2016 12:47:14 PM com.darkRealm.Stacks_and_queues.MinStack pop
+INFO: popped element 1 <= to peek of min Stack 1
+Dec 20, 2016 12:47:23 PM com.darkRealm.Stacks_and_queues.MinStack pop
+INFO: popped element 2 <= to peek of min Stack 2
