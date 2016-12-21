@@ -1,5 +1,7 @@
 package com.darkRealm.Recursion_and_DynamicProg;
 
+import java.util.Arrays;
+
 /**
  * Created by Jayam on 12/20/2016.
  */
@@ -46,5 +48,57 @@ public class Recursion_and_DP {
       b = c;
     }
     return (long) c;
+  }
+
+  /*  [Prob - 8.1]
+  *   Q) Triple Step: A child is running up a stair case with n steps & can hop either 1,2 or 3 stpes at a time.
+  *     Implement a method to count how many ways the child can tun up the stairs
+  *   A) will be using Top Down approach & calculate ways by recursing in the subtree.
+  *     tip - using int willbe overflowing after n = 37, thus we can use long but that will not solve the problem,
+  *     but remember to state this issue if required.
+  *   @params   n: takes the staircase steps count
+  *   @params   K: takes the no of hops kid can make, assuming incremented by 1
+  *   @returns  returns the No of ways for reaching the top
+  * */
+
+  public static long TripleSteps(int n, int k) {
+    long noOfWays = 0;
+    long [] stepsArr = new long[n + 1];
+    Arrays.fill(stepsArr,-1);
+//    noOfWays = getNoOfWaysSteps(n);
+    noOfWays = getNoOfWaysStepsMemoized(n, stepsArr);
+    return noOfWays;
+  }
+
+  /*Memoized version*/
+  private static long getNoOfWaysStepsMemoized(int n, long[] stepsArr) {
+    long w1, w2, w3;
+    if (n == 0) {
+      return 1;
+    }
+    if (n < 0) {
+      return 0;
+    }
+    if (stepsArr[n] == -1) {
+      w1 = getNoOfWaysStepsMemoized(n - 1, stepsArr);
+      w2 = getNoOfWaysStepsMemoized(n - 2, stepsArr);
+      w3 = getNoOfWaysStepsMemoized(n - 3, stepsArr);
+      stepsArr[n] = w1 + w2 + w3;
+    }
+    return stepsArr[n];
+  }
+
+  private static int getNoOfWaysSteps(int n) {
+    int w1, w2, w3;
+    if (n == 0) {
+      return 1;
+    }
+    if (n < 0) {
+      return 0;
+    }
+    w1 = getNoOfWaysSteps(n - 1);
+    w2 = getNoOfWaysSteps(n - 2);
+    w3 = getNoOfWaysSteps(n - 3);
+    return w1 + w2 + w3;
   }
 }

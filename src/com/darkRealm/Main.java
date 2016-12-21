@@ -37,6 +37,7 @@ public class Main {
 
   private static void doRecursion_DP(){
 //    Recursion_DP_Main.testNthFibonacciMemoized();
-    Recursion_DP_Main.testNthFiboIterative();
+//    Recursion_DP_Main.testNthFiboIterative();
+    Recursion_DP_Main.testTripleSteps();
   }
 }
