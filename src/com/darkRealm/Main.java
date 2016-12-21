@@ -1,5 +1,7 @@
 package com.darkRealm;
 
+import com.darkRealm.Recursion_and_DynamicProg.Recursion_and_DP;
+
 import java.io.IOException;
 
 /*
@@ -34,6 +36,7 @@ public class Main {
   }
 
   private static void doRecursion_DP(){
-    Recursion_DP_Main.testNthFibonacci();
+//    Recursion_DP_Main.testNthFibonacciMemoized();
+    Recursion_DP_Main.testNthFiboIterative();
   }
 }
