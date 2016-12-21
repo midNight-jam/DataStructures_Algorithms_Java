@@ -16,7 +16,8 @@ public class Main {
     }
     // write your code here, testing after new git
 //    doArray_and_Strings_Main();
-    doStack_and_Queue();
+//    doStack_and_Queue();
+    doRecursion_DP();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -30,5 +31,9 @@ public class Main {
 //    Stack_and_Queues_Main.testMyStack();
 //    Stack_and_Queues_Main.testMinStack();
     Stack_and_Queues_Main.testSortStack();
+  }
+
+  private static void doRecursion_DP(){
+    Recursion_DP_Main.testNthFibonacci();
   }
 }

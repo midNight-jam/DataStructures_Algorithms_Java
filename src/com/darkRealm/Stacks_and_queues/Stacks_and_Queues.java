@@ -21,9 +21,7 @@ public class Stacks_and_Queues {
   * A) Use 2 stack, use push & oping between 2 stacks sch that the 2nd stack is sorted in reverse order,
   *   & at the end empty the sorted temp stack in to the original stack, this will fill it in the reverse order
   *   thus making smallest element appear on the top
-  *   */
-  //////////////////////////////////
-  /*Returns  a MyStack object which is sorted in ascending order
+  *
   * @param    a MyStack object that has to be sorted, of type Integer
   * @return   same MyStack object but now sorted in ascending order
   * */
@@ -72,13 +70,22 @@ public class Stacks_and_Queues {
     return stack;
   }
 
-  /*
+
+  /*  [Prob 3.1]
   * Q) Describe how you could use a single array to implement 3 Stacks
   * A) will have to keep track of capacity of each stack & shift them when required,
   * when shifting a stack reduce its capacity with 1.
-  * TODO this problem
+  *
+  * @return  void
+  * @param  void
   * */
   public static void ThreeStacksInArray() {
+    int size = 10;
+    int noOfStacks = 3;
+    int s1, s2, s3; //sizes of each stack
+    s1 = s2 = (int) (size / noOfStacks);
+    s3 = size - (s1 + s2);  //3rd is slightly bigger
+    int[] arr = new int[size];
 
   }
 }
