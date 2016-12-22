@@ -1,6 +1,7 @@
 package com.darkRealm.Recursion_and_DynamicProg;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Created by Jayam on 12/20/2016.
@@ -113,7 +114,9 @@ public class Recursion_and_DP {
   public static String RobotGridPath(int[][] matrix) {
     int rows = matrix.length - 1;
     int cols = matrix[0].length - 1;
-    String path = getRobotgridPath(matrix, rows, cols);
+    HashMap<String, Integer> cache = new HashMap<>();
+//    String path = getRobotgridPath(matrix, rows, cols);
+    String path = getRobotgridPathMemoized(matrix, rows, cols, cache);
     return path;
   }
 
@@ -134,6 +137,47 @@ public class Recursion_and_DP {
     if (col >= 1) {
       path2 = " --> [" + row + "] [" + col + "]" + getRobotgridPath(matrix, row, col - 1);
 
+    }
+    if (path1.contains("Home")) {
+      finalResult += "\n" + path1;
+    }
+    if (path2.contains("Home")) {
+      finalResult += "\n" + path2;
+    }
+    return finalResult;
+  }
+
+  private static String getRobotgridPathMemoized(int[][] matrix, int row, int col, HashMap<String, Integer> cache) {
+    String path1, path2, finalResult, key;
+    path1 = path2 = finalResult = "";
+    key = "" + row + "," + col;
+    cache.put(key, matrix[row][col]);
+
+    if (matrix[row][col] == 1) {
+      return " invalid ";
+    }
+
+    if (row == 0 && col == 0) {
+      return " --> [0][0] - Home";
+    }
+
+    if (row > 0) {
+      path1 = " --> [" + row + "] [" + col + "]";
+      key = "" + (row - 1) + "," + col;
+      if (cache.containsKey(key)) {
+        path1 += cache.get(key);
+      } else {
+        path1 += getRobotgridPathMemoized(matrix, row - 1, col, cache);
+      }
+    }
+    if (col > 0) {
+      path2 = " --> [" + row + "] [" + col + "]";
+      key = "" + row + "," + (col - 1);
+      if (cache.containsKey(key)) {
+        path2 += cache.get(key);
+      } else {
+        path2 += getRobotgridPathMemoized(matrix, row, col - 1, cache);
+      }
     }
     if (path1.contains("Home")) {
       finalResult += "\n" + path1;
