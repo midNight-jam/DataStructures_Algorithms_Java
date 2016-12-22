@@ -1,7 +1,6 @@
 package com.darkRealm.Recursion_and_DynamicProg;
 
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * Created by Jayam on 12/20/2016.
@@ -188,26 +187,25 @@ public class Recursion_and_DP {
     return finalResult;
   }
 
-   /*  [Prob 8.4]
-  *   Q) Write a method to print power set.
-  *   A) this is the optimal logic present, which is to print the ith number when the ith bit is true.
-  *      lets say set is [1,2,3] so the size of power set would be 2^3 (size of given set)
-  *     for i =0 to power set size,  for each ith bit of i which is 1, add the ith number to the set
-  *   Set  = [a,b,c]
-  *   power_set_size = pow(2, 3) = 8
-  *   Run for binary counter = 000 to 111
-  *   Value of Counter            Subset
-  *   000                    -> Empty set
-  *   001                    -> a
-  *   011                    -> ab
-  *  100                     -> c
-  *  101                     -> ac
-  *  110                     -> bc
-  *  111                     -> abc
-  *   @params : matrix, a matrix with 0/1 0 for valid cell, 1 for invalid cell
-  *   @return : String, a path for robot form start to begining
-  * */
-
+  /*  [Prob 8.4]
+ *   Q) Write a method to print power set.
+ *   A) this is the optimal logic present, which is to print the ith number when the ith bit is true.
+ *      lets say set is [1,2,3] so the size of power set would be 2^3 (size of given set)
+ *     for i =0 to power set size,  for each ith bit of i which is 1, add the ith number to the set
+ *   Set  = [a,b,c]
+ *   power_set_size = pow(2, 3) = 8
+ *   Run for binary counter = 000 to 111
+ *   Value of Counter            Subset
+ *   000                    -> Empty set
+ *   001                    -> a
+ *   011                    -> ab
+ *  100                     -> c
+ *  101                     -> ac
+ *  110                     -> bc
+ *  111                     -> abc
+ *   @params : matrix, a matrix with 0/1 0 for valid cell, 1 for invalid cell
+ *   @return : String, a path for robot form start to begining
+ * */
   public static String printPowerSet(char[] set) {
     String result = "";
     int powerSetSize = (1 << set.length); // 2^ set.len  as shifting 1 right by set length will result in getting multiplied by 2
@@ -217,7 +215,7 @@ public class Recursion_and_DP {
     String powerSet = "";
     String tempSet = "";
     powerSet += "[";
-    for (int i = 0; i <powerSetSize; i++) {
+    for (int i = 0; i < powerSetSize; i++) {
       temp = i;
       // the idea is to print the ith no from set, if the ith bit is set to 1, why because of above logic
       tempSet = "";
@@ -231,10 +229,87 @@ public class Recursion_and_DP {
         }
         temp = temp >> 1;
       }
-      tempSet+="} ";
+      tempSet += "} ";
       powerSet += " " + tempSet + " ,";
     }
     powerSet += " ]";
     return powerSet;
+  }
+
+  /*
+  * Prob [8.7]
+  * Q) Permutaiton wohtout Duplicates, to compute all permutations of string of unique characters
+  * A)  use the permutation algo, take a char out as prefix and the rest as remainder & recursively loop
+  * @params   str: string whose permutation has to be calculated
+  * @returns  void
+  * */
+
+  public static void printtAllPermuationsWithOutDups(String str) {
+    calculatePermuation(str, "");
+  }
+
+  private static void calculatePermuation(String str, String prefix) {
+    if (str.length() == 0) {
+      System.out.println(prefix);
+    } else {
+      for (int i = 0; i < str.length(); i++) {
+        String rem = str.substring(0, i) + str.substring(i + 1);
+        calculatePermuation(rem, prefix + str.charAt(i));
+      }
+    }
+  }
+
+  /*
+ * Prob [8.8]
+ * Q) Permutaiton with Duplicates, to compute all permutations of string of unique characters
+ * A)  use the permutation algo, take a char out as prefix and the rest as remainder & recursively loop
+ * @params   str: string whose permutation has to be calculated
+ * @returns  set of all unique permutations of the string
+ * */
+  public static Set printtAllPermuationsWithDups(String str) {
+    HashSet<String> set = new HashSet<>();
+    calculatePermuationwithDups(str, "", set);
+    return set;
+  }
+
+  private static void calculatePermuationwithDups(String str, String prefix, HashSet<String> set) {
+    if (str.length() == 0 && !set.contains(prefix)) {
+      set.add(prefix);
+    } else {
+      for (int i = 0; i < str.length(); i++) {
+        String rem = str.substring(0, i) + str.substring(i + 1);
+        calculatePermuationwithDups(rem, prefix + str.charAt(i), set);
+      }
+    }
+  }
+
+  /*
+  * [Prob 8.9]
+  * Q) Parens, print all vlaid proper combinations of pairs of parenthesis
+  * A) use left & right paren count to see if its a valid expresssion to add left or right paren
+  * */
+  public static ArrayList<String> printAllParensCombo(int n) {
+    int leftRem, rightRem, index = 0;
+    leftRem = rightRem = n;
+    char[] output = new char[n * 2];
+    ArrayList<String> permutations = new ArrayList<>();
+    getAllParensPermute(leftRem, rightRem, output, index, permutations);
+    return permutations;
+  }
+
+  private static void getAllParensPermute(int leftRem, int rightRem, char[] output, int index, ArrayList<String> permutations) {
+    if ((leftRem == 0) && (rightRem == 0)) {
+      String paran = String.copyValueOf(output);
+      permutations.add(paran);
+    } else {
+      if (leftRem > 0) {
+        output[index] = '(';
+        getAllParensPermute(leftRem - 1, rightRem, output, index + 1, permutations);
+      }
+      if (rightRem > leftRem) {
+        output[index] = ')';
+        getAllParensPermute(leftRem, rightRem - 1, output, index + 1, permutations);
+      }
+    }
   }
 }

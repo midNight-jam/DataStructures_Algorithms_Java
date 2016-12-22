@@ -40,6 +40,8 @@ public class Main {
 //    Recursion_DP_Main.testNthFiboIterative();
 //    Recursion_DP_Main.testTripleSteps();
 //    Recursion_DP_Main.testRobotGrid();
-    Recursion_DP_Main.testPowerSet();
+//    Recursion_DP_Main.testPowerSet();
+//    Recursion_DP_Main.testAllPermutationsWithDups();
+    Recursion_DP_Main.testParensCombination();
   }
 }
