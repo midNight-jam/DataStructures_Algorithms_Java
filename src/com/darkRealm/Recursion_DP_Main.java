@@ -23,6 +23,21 @@ public class Recursion_DP_Main {
     long stopTime = System.currentTimeMillis();
     long elapsedTime = stopTime - startTime;
     System.out.println("no of ways " + nofways);
-    System.out.println("time - " + elapsedTime +" ms");
+    System.out.println("time - " + elapsedTime + " ms");
+  }
+
+  public static void testRobotGrid() {
+    int[][] matrix = new int[][]{
+        {1, 0, 0, 1},
+        {1, 0, 1, 0},
+        {0, 0, 0, 0},
+        {0, 1, 0, 0},
+    };
+    long startTime = System.currentTimeMillis();
+    String result = Recursion_and_DP.RobotGridPath(matrix);
+    long stopTime = System.currentTimeMillis();
+    System.out.println("Path results   - " + result);
+    long elapsedTime = stopTime - startTime;
+    System.out.println("time - " + elapsedTime + " ms");
   }
 }

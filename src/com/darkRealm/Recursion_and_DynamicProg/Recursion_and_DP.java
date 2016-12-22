@@ -63,8 +63,8 @@ public class Recursion_and_DP {
 
   public static long TripleSteps(int n, int k) {
     long noOfWays = 0;
-    long [] stepsArr = new long[n + 1];
-    Arrays.fill(stepsArr,-1);
+    long[] stepsArr = new long[n + 1];
+    Arrays.fill(stepsArr, -1);
 //    noOfWays = getNoOfWaysSteps(n);
     noOfWays = getNoOfWaysStepsMemoized(n, stepsArr);
     return noOfWays;
@@ -100,5 +100,47 @@ public class Recursion_and_DP {
     w2 = getNoOfWaysSteps(n - 2);
     w3 = getNoOfWaysSteps(n - 3);
     return w1 + w2 + w3;
+  }
+
+  /*  [Prob 8.2]
+  *   Q) Robot in a grid : starting from top left, can only move in two directions down & right.
+  *   But certain cells are marked as invalid so robot cannot step on them. find a path for robot top left to bottom right.
+  *   A) will use top DOwn apporoach & invalidate a path if it encounters a invalid cell or doesnt ends on begining
+  *   @params : matrix, a matrix with 0/1 0 for valid cell, 1 for invalid cell
+  *   @return : String, a path for robot form start to begining
+  * */
+
+  public static String RobotGridPath(int[][] matrix) {
+    int rows = matrix.length - 1;
+    int cols = matrix[0].length - 1;
+    String path = getRobotgridPath(matrix, rows, cols);
+    return path;
+  }
+
+  private static String getRobotgridPath(int[][] matrix, int row, int col) {
+    String path1, path2, finalResult;
+    path1 = path2 = finalResult = "";
+    if (matrix[row][col] == 1) {
+      return " invalid ";
+    }
+
+    if (row == 0 && col == 0) {
+      return " --> [0][0] - Home";
+    }
+
+    if (row >= 1) {
+      path1 = " --> [" + row + "] [" + col + "]" + getRobotgridPath(matrix, row - 1, col);
+    }
+    if (col >= 1) {
+      path2 = " --> [" + row + "] [" + col + "]" + getRobotgridPath(matrix, row, col - 1);
+
+    }
+    if (path1.contains("Home")) {
+      finalResult += "\n" + path1;
+    }
+    if (path2.contains("Home")) {
+      finalResult += "\n" + path2;
+    }
+    return finalResult;
   }
 }
