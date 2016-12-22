@@ -40,4 +40,10 @@ public class Recursion_DP_Main {
     long elapsedTime = stopTime - startTime;
     System.out.println("time - " + elapsedTime + " ms");
   }
+
+  public static void testPowerSet() {
+    char[] set = new char[]{'a', 'b', 'c'};
+    String power = Recursion_and_DP.printPowerSet(set);
+    System.out.println(" power set " + power);
+  }
 }

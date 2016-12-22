@@ -187,4 +187,54 @@ public class Recursion_and_DP {
     }
     return finalResult;
   }
+
+   /*  [Prob 8.4]
+  *   Q) Write a method to print power set.
+  *   A) this is the optimal logic present, which is to print the ith number when the ith bit is true.
+  *      lets say set is [1,2,3] so the size of power set would be 2^3 (size of given set)
+  *     for i =0 to power set size,  for each ith bit of i which is 1, add the ith number to the set
+  *   Set  = [a,b,c]
+  *   power_set_size = pow(2, 3) = 8
+  *   Run for binary counter = 000 to 111
+  *   Value of Counter            Subset
+  *   000                    -> Empty set
+  *   001                    -> a
+  *   011                    -> ab
+  *  100                     -> c
+  *  101                     -> ac
+  *  110                     -> bc
+  *  111                     -> abc
+  *   @params : matrix, a matrix with 0/1 0 for valid cell, 1 for invalid cell
+  *   @return : String, a path for robot form start to begining
+  * */
+
+  public static String printPowerSet(char[] set) {
+    String result = "";
+    int powerSetSize = (1 << set.length); // 2^ set.len  as shifting 1 right by set length will result in getting multiplied by 2
+    int temp; // temp var to hold current value from power set size
+    int bi;  // to and & with the ith bit with 1 in order to see if its 1 or 0
+    int count = -1;
+    String powerSet = "";
+    String tempSet = "";
+    powerSet += "[";
+    for (int i = 0; i <powerSetSize; i++) {
+      temp = i;
+      // the idea is to print the ith no from set, if the ith bit is set to 1, why because of above logic
+      tempSet = "";
+      tempSet += "{";
+      count = -1;
+      while (temp > 0) {
+        bi = 1 & temp;
+        count++;
+        if (bi == 1) {
+          tempSet += set[count] + ", ";
+        }
+        temp = temp >> 1;
+      }
+      tempSet+="} ";
+      powerSet += " " + tempSet + " ,";
+    }
+    powerSet += " ]";
+    return powerSet;
+  }
 }

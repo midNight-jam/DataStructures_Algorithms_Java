@@ -39,6 +39,7 @@ public class Main {
 //    Recursion_DP_Main.testNthFibonacciMemoized();
 //    Recursion_DP_Main.testNthFiboIterative();
 //    Recursion_DP_Main.testTripleSteps();
-    Recursion_DP_Main.testRobotGrid();
+//    Recursion_DP_Main.testRobotGrid();
+    Recursion_DP_Main.testPowerSet();
   }
 }
