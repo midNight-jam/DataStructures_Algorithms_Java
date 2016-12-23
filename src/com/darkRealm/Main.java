@@ -42,6 +42,7 @@ public class Main {
 //    Recursion_DP_Main.testRobotGrid();
 //    Recursion_DP_Main.testPowerSet();
 //    Recursion_DP_Main.testAllPermutationsWithDups();
-    Recursion_DP_Main.testParensCombination();
+//    Recursion_DP_Main.testParensCombination();
+    Recursion_DP_Main.testMagicIndex();
   }
 }

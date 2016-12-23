@@ -312,4 +312,36 @@ public class Recursion_and_DP {
       }
     }
   }
+
+  /*  [Prob 8.3]
+  *   Q) Magic Index in an Array A[0 1 ... n-1 ]is defined to be an index such that A[i] == i. Givne a sorted array of
+  *   distinct integers find if there exists a magic index
+  *   A)  Fisrt - Brute force check sequntially - O(n)
+  *       Second - used Binary search by index, if arr[mid] < mid then search in lower half, else in upper half,
+  *                 but this fails when there are duplicates in an array
+  *       Third - we use the second approach but a bit modified, instead of creating range by low to mid-1 OR mid+1 to high
+  *               we will take the min among arr[mid] & mid-1 for lower half & for higher half we will take max of arr[mid] & mid+1
+  *       Complexity - O(logn)
+  *   @params : arr, an arrray of integers
+  *   @return : a magic index if present else -1
+  * */
+
+  public static int magicIndex(int[] arr, int low, int high) {
+    if (high < low) {
+      return -1;
+    }
+    int mid = (low + high) / 2;
+    if (mid == arr[mid]) {  // if index == mid magic index found
+      return mid;
+    }
+
+    int smallHigh = Math.min(mid - 1, arr[mid]);  // we will be looking in the lower half recursively, but by the min of mid -1 & arr[mid]
+    int found = magicIndex(arr, low, smallHigh);
+    if (found >= 0) {
+      return found;
+    }
+
+    int bigLow = Math.max(mid + 1, arr[mid]); // we will be looking in the upper half recursively, but by the max of mid +1 & arr[mid]
+    return magicIndex(arr, bigLow, high);
+  }
 }

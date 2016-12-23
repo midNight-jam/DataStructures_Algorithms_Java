@@ -66,13 +66,20 @@ public class Recursion_DP_Main {
   }
 
   public static void testParensCombination() {
-    long b4= System.currentTimeMillis();
+    long b4 = System.currentTimeMillis();
     ArrayList<String> perm = Recursion_and_DP.printAllParensCombo(3);
     long aftr = System.currentTimeMillis();
     for (String s :
         perm) {
       System.out.println("paran  " + s);
     }
-    System.out.println("time ms " + (aftr-b4));
+    System.out.println("time ms " + (aftr - b4));
+  }
+
+  public static void testMagicIndex() {
+    int[] arr = new int[]{-10, -5, 2, 2, 2, 3, 7, 9, 12, 13};
+//    int[] arr = new int[]{1,2,2};
+    int mi = Recursion_and_DP.magicIndex(arr,0,arr.length);
+    System.out.println("magic index -- " + mi);
   }
 }
