@@ -44,7 +44,8 @@ public class Main {
 //    Recursion_DP_Main.testAllPermutationsWithDups();
 //    Recursion_DP_Main.testParensCombination();
 //    Recursion_DP_Main.testMagicIndex();
-    Recursion_DP_Main.testMultiply();
+//    Recursion_DP_Main.testMultiply();
 //    System.out.println(Math.log(256)/Math.log(2));
+    Recursion_DP_Main.testTowerOfHanoi();
   }
 }

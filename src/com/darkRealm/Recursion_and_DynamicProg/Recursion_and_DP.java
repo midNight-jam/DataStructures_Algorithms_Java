@@ -1,6 +1,7 @@
 package com.darkRealm.Recursion_and_DynamicProg;
 
 import com.darkRealm.BigO.MathUtil;
+import com.darkRealm.Stacks_and_queues.MyStack;
 
 import java.math.BigInteger;
 import java.util.*;
@@ -399,7 +400,7 @@ public class Recursion_and_DP {
 
     if ((x & 1) == 1) {
       if (!map.containsKey(x)) {
-        result = doMulitply((x - 1) / 2, y, map);
+        result = doMulitply((x - 1) >> 1, y, map);
       } else {
         result = map.get(x);
       }
@@ -409,7 +410,7 @@ public class Recursion_and_DP {
     } else {
 
       if (!map.containsKey(x)) {
-        result = doMulitply(x / 2, y, map);
+        result = doMulitply(x >> 1, y, map);
       } else {
         result = map.get(x);
       }
@@ -417,5 +418,47 @@ public class Recursion_and_DP {
       map.put(Long.valueOf(x), result);
     }
     return map.get(Long.valueOf(x));
+  }
+
+  /*  [Prob 8.6]
+  *   Q) Towers of hanoi
+  *   A) use recursion,
+  *     First : move (plateNo -1) from source tower to buffer, using buffer as place holder
+  *     Second : move (plateNo-1) from source to destination
+  *     Third : move from buffer to destination, using source as placeholder
+  *     Base Case : if Plate is last (plateNo == 1) move from
+  * @params : takes in integer giving the size of tower
+  * @returns : nothing
+  * */
+  public static void towerOfHanoi(int n) {
+
+    MyStack<Integer> tower1 = new MyStack<>();
+    int maxplate = n;
+    // prepare stack with plates
+    while (n > 0) {
+      tower1.push(n);
+      n--;
+    }
+    MyStack<Integer> tower2 = new MyStack<>();
+    MyStack<Integer> tower3 = new MyStack<>();
+    movePlateToTower(maxplate, tower1, tower3, tower2);
+    System.out.println("See the towers now "+tower3.toString());
+  }
+
+  private static void movePlateToTower(int plateNo, MyStack<Integer> towerSource,
+                                       MyStack<Integer> towerDestination, MyStack<Integer> towerBuffer) {
+    if (plateNo == 1) {
+      int plate = towerSource.pop();
+      towerDestination.push(plate);
+      return;
+    } else {
+      // move from source to buffer, use destination as place holder
+      movePlateToTower(plateNo - 1, towerSource, towerBuffer, towerDestination);
+      // now, move from source to destination
+      int plate = towerSource.pop();
+      towerDestination.push(plate);
+      // move from buffer to dest, use source as place holder
+      movePlateToTower(plateNo - 1, towerBuffer, towerDestination, towerSource);
+    }
   }
 }

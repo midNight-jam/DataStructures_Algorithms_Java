@@ -38,9 +38,23 @@ public class MyStack<T> {
     return top == null;
   }
 
-  public int getSize(){
+  public int getSize() {
     return size;
   }
+
+  @Override
+  public String toString() {
+    StringBuilder stringBuilder = new StringBuilder();
+    StackNode<T> trav = top;
+    stringBuilder.append("top"+ "\n"+"___\n");
+    while (trav != null) {
+      stringBuilder.append("|"+trav.data + "|\n");
+      trav = trav.next;
+    }
+    stringBuilder.append("===");
+    return stringBuilder.toString();
+  }
+
   private static class StackNode<T> {
 
     private T data;

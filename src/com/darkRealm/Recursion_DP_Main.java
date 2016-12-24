@@ -86,4 +86,8 @@ public class Recursion_DP_Main {
     long res = Recursion_and_DP.mulitply(2, 6);
     System.out.println(" mulipty res - " + res);
   }
+
+  public static void testTowerOfHanoi(){
+    Recursion_and_DP.towerOfHanoi(3);
+  }
 }
