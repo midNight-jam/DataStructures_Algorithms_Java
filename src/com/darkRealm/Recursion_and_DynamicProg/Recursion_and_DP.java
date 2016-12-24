@@ -441,8 +441,17 @@ public class Recursion_and_DP {
     }
     MyStack<Integer> tower2 = new MyStack<>();
     MyStack<Integer> tower3 = new MyStack<>();
+    System.out.println("Before ");
+    System.out.println("Tower 1 "+tower1.toString());
+    System.out.println("Tower 2 "+tower2.toString());
+    System.out.println("Tower 3 "+tower3.toString());
+    long before = System.currentTimeMillis();
     movePlateToTower(maxplate, tower1, tower3, tower2);
-    System.out.println("See the towers now "+tower3.toString());
+    long after = System.currentTimeMillis();
+    System.out.println("See the towers now time ms - "+(after-before));
+    System.out.println("Tower 1 "+tower1.toString());
+    System.out.println("Tower 2 "+tower2.toString());
+    System.out.println("Tower 3 "+tower3.toString());
   }
 
   private static void movePlateToTower(int plateNo, MyStack<Integer> towerSource,

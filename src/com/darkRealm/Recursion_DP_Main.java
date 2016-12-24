@@ -88,6 +88,6 @@ public class Recursion_DP_Main {
   }
 
   public static void testTowerOfHanoi(){
-    Recursion_and_DP.towerOfHanoi(3);
+    Recursion_and_DP.towerOfHanoi(5);
   }
 }
