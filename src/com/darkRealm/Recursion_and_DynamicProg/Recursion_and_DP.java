@@ -387,40 +387,4 @@ public class Recursion_and_DP {
     long result = (long) ((first * Math.pow(10, len)) + (mid * Math.pow(10, len / 2)) + last);
     return result;
   }
-
-  /*This method is not useful, will remove it*/
-//  private static BigInteger doKaratsubaMuliplication(BigInteger x, BigInteger y) {
-//
-//    int N = Math.max(x.bitLength(), y.bitLength());  // getting the longer number's bits
-//    if (N <= 2) {
-//      return x.multiply(y);
-//    }
-//    // Number of bits divided by 2 & rounded
-//    N = (N / 2) + (N % 2);
-////    BigInteger b = x.shiftRight(N);
-////    BigInteger a = x.subtract(b.shiftLeft(N));
-////
-////    BigInteger d = y.shiftRight(N);
-////    BigInteger c = y.subtract(d.shiftLeft(N));
-//
-//    BigInteger a = x.shiftRight(N);
-//    BigInteger b = x.subtract(a.shiftLeft(N));
-//
-//    BigInteger c = y.shiftRight(N);
-//    BigInteger d = y.subtract(c.shiftLeft(N));
-//
-//
-//
-//    BigInteger ac, bd, abcd, ad_plus_bc;
-//
-//    ac = doKaratsubaMuliplication(a, c);
-//    bd = doKaratsubaMuliplication(b, d);
-//    abcd = doKaratsubaMuliplication(a.add(b), c.add(d));
-//    // Gauss trick = (a+b)(c+d) - ad - bc = ad + bc
-//    ad_plus_bc = abcd.subtract(ac).subtract(bd);
-//    // Main formula
-//    // 10^N * ac + 10^(N/2) *( ad+bc) + bd
-//    BigInteger X_into_Y = ac.add(ad_plus_bc).add(bd.shiftRight(2 * N));
-//    return X_into_Y;
-//  }
 }
