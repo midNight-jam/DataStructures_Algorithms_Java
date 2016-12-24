@@ -83,7 +83,7 @@ public class Recursion_DP_Main {
   }
 
   public static void testMultiply() {
-    long res = Recursion_and_DP.mulitply(1234, 5678);
+    long res = Recursion_and_DP.mulitply(2, 6);
     System.out.println(" mulipty res - " + res);
   }
 }

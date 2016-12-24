@@ -358,8 +358,10 @@ public class Recursion_and_DP {
   * */
 
   public static long mulitply(int x, int y) {
-    long result = doKaratsubaMuliplication(x, y);
-    return result;
+//    long result = doKaratsubaMuliplication(x, y);
+    int len = (int) (Math.log(x) / Math.log(2));
+    HashMap<Long, Long> map = new HashMap<>();
+    return doMulitply(x, y, map);
   }
 
   private static long doKaratsubaMuliplication(long x, long y) {
@@ -386,5 +388,34 @@ public class Recursion_and_DP {
     long last = bd;
     long result = (long) ((first * Math.pow(10, len)) + (mid * Math.pow(10, len / 2)) + last);
     return result;
+  }
+
+  private static long doMulitply(long x, long y, HashMap<Long, Long> map) {
+    if (x == 1) {
+      return y;
+    }
+    long result = -1;
+    int index = (int) Math.log10(x) + 1;
+
+    if ((x & 1) == 1) {
+      if (!map.containsKey(x)) {
+        result = doMulitply((x - 1) / 2, y, map);
+      } else {
+        result = map.get(x);
+      }
+      result += result;
+      result += y;
+      map.put(Long.valueOf(x), result);
+    } else {
+
+      if (!map.containsKey(x)) {
+        result = doMulitply(x / 2, y, map);
+      } else {
+        result = map.get(x);
+      }
+      result += result;
+      map.put(Long.valueOf(x), result);
+    }
+    return map.get(Long.valueOf(x));
   }
 }

@@ -45,6 +45,6 @@ public class Main {
 //    Recursion_DP_Main.testParensCombination();
 //    Recursion_DP_Main.testMagicIndex();
     Recursion_DP_Main.testMultiply();
-    System.out.println((int)Math.log10(1000));
+//    System.out.println(Math.log(256)/Math.log(2));
   }
 }
