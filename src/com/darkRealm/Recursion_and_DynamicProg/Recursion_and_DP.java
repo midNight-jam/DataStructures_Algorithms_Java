@@ -1,5 +1,8 @@
 package com.darkRealm.Recursion_and_DynamicProg;
 
+import com.darkRealm.BigO.MathUtil;
+
+import java.math.BigInteger;
 import java.util.*;
 
 /**
@@ -344,4 +347,80 @@ public class Recursion_and_DP {
     int bigLow = Math.max(mid + 1, arr[mid]); // we will be looking in the upper half recursively, but by the max of mid +1 & arr[mid]
     return magicIndex(arr, bigLow, high);
   }
+
+  /*  [Prob 8.5]
+  *   Q) write a recursive function to multply two nos without using * opertor, should be most optimal
+  *   A)  use Karatsuba Multiplication algorithm, assuming both nos are of same length
+  *   Complexity :
+  *  @params : x-  first number
+  *  @params : y - second number
+  *  @returns : the product of two nos
+  * */
+
+  public static long mulitply(int x, int y) {
+    long result = doKaratsubaMuliplication(x, y);
+    return result;
+  }
+
+  private static long doKaratsubaMuliplication(long x, long y) {
+    if (x < 10 || y < 10) {
+      return x * y;
+    }
+
+    long len = (long) Math.log10(x) + 1;
+
+
+    long powerOfTen = (long) Math.pow(10, len / 2);
+
+    long a = (long) (x / powerOfTen);
+    long b = (long) (x % powerOfTen);
+
+    long c = (long) (y / powerOfTen);
+    long d = (long) (y % powerOfTen);
+
+    long ac = doKaratsubaMuliplication(a, c);
+    long bd = doKaratsubaMuliplication(b, d);
+    long abcd = doKaratsubaMuliplication(a + b, c + d);
+    long first = ac;
+    long mid = abcd - ac - bd;
+    long last = bd;
+    long result = (long) ((first * Math.pow(10, len)) + (mid * Math.pow(10, len / 2)) + last);
+    return result;
+  }
+
+  /*This method is not useful, will remove it*/
+//  private static BigInteger doKaratsubaMuliplication(BigInteger x, BigInteger y) {
+//
+//    int N = Math.max(x.bitLength(), y.bitLength());  // getting the longer number's bits
+//    if (N <= 2) {
+//      return x.multiply(y);
+//    }
+//    // Number of bits divided by 2 & rounded
+//    N = (N / 2) + (N % 2);
+////    BigInteger b = x.shiftRight(N);
+////    BigInteger a = x.subtract(b.shiftLeft(N));
+////
+////    BigInteger d = y.shiftRight(N);
+////    BigInteger c = y.subtract(d.shiftLeft(N));
+//
+//    BigInteger a = x.shiftRight(N);
+//    BigInteger b = x.subtract(a.shiftLeft(N));
+//
+//    BigInteger c = y.shiftRight(N);
+//    BigInteger d = y.subtract(c.shiftLeft(N));
+//
+//
+//
+//    BigInteger ac, bd, abcd, ad_plus_bc;
+//
+//    ac = doKaratsubaMuliplication(a, c);
+//    bd = doKaratsubaMuliplication(b, d);
+//    abcd = doKaratsubaMuliplication(a.add(b), c.add(d));
+//    // Gauss trick = (a+b)(c+d) - ad - bc = ad + bc
+//    ad_plus_bc = abcd.subtract(ac).subtract(bd);
+//    // Main formula
+//    // 10^N * ac + 10^(N/2) *( ad+bc) + bd
+//    BigInteger X_into_Y = ac.add(ad_plus_bc).add(bd.shiftRight(2 * N));
+//    return X_into_Y;
+//  }
 }

@@ -43,6 +43,8 @@ public class Main {
 //    Recursion_DP_Main.testPowerSet();
 //    Recursion_DP_Main.testAllPermutationsWithDups();
 //    Recursion_DP_Main.testParensCombination();
-    Recursion_DP_Main.testMagicIndex();
+//    Recursion_DP_Main.testMagicIndex();
+    Recursion_DP_Main.testMultiply();
+    System.out.println((int)Math.log10(1000));
   }
 }

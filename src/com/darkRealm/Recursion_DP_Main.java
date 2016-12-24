@@ -2,7 +2,6 @@ package com.darkRealm;
 
 import com.darkRealm.Recursion_and_DynamicProg.Recursion_and_DP;
 
-import javax.sound.midi.SysexMessage;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -67,7 +66,7 @@ public class Recursion_DP_Main {
 
   public static void testParensCombination() {
     long b4 = System.currentTimeMillis();
-    ArrayList<String> perm = Recursion_and_DP.printAllParensCombo(3);
+    ArrayList<String> perm = Recursion_and_DP.printAllParensCombo(4);
     long aftr = System.currentTimeMillis();
     for (String s :
         perm) {
@@ -79,7 +78,12 @@ public class Recursion_DP_Main {
   public static void testMagicIndex() {
     int[] arr = new int[]{-10, -5, 2, 2, 2, 3, 7, 9, 12, 13};
 //    int[] arr = new int[]{1,2,2};
-    int mi = Recursion_and_DP.magicIndex(arr,0,arr.length);
+    int mi = Recursion_and_DP.magicIndex(arr, 0, arr.length);
     System.out.println("magic index -- " + mi);
+  }
+
+  public static void testMultiply() {
+    long res = Recursion_and_DP.mulitply(1234, 5678);
+    System.out.println(" mulipty res - " + res);
   }
 }
