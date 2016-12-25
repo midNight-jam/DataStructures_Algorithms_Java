@@ -77,7 +77,6 @@ public class Recursion_DP_Main {
 
   public static void testMagicIndex() {
     int[] arr = new int[]{-10, -5, 2, 2, 2, 3, 7, 9, 12, 13};
-//    int[] arr = new int[]{1,2,2};
     int mi = Recursion_and_DP.magicIndex(arr, 0, arr.length);
     System.out.println("magic index -- " + mi);
   }
@@ -87,7 +86,11 @@ public class Recursion_DP_Main {
     System.out.println(" mulipty res - " + res);
   }
 
-  public static void testTowerOfHanoi(){
-    Recursion_and_DP.towerOfHanoi(5);
+  public static void testTowerOfHanoi() {
+    Recursion_and_DP.towerOfHanoi(9);
+  }
+
+  public static void testBalancedParanthesis() {
+    System.out.println("balanced - " + Recursion_and_DP.balancedParanthesis("123456"));
   }
 }

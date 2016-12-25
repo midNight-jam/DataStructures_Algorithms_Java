@@ -442,16 +442,16 @@ public class Recursion_and_DP {
     MyStack<Integer> tower2 = new MyStack<>();
     MyStack<Integer> tower3 = new MyStack<>();
     System.out.println("Before ");
-    System.out.println("Tower 1 "+tower1.toString());
-    System.out.println("Tower 2 "+tower2.toString());
-    System.out.println("Tower 3 "+tower3.toString());
+    System.out.println("Tower 1 " + tower1.toString());
+    System.out.println("Tower 2 " + tower2.toString());
+    System.out.println("Tower 3 " + tower3.toString());
     long before = System.currentTimeMillis();
     movePlateToTower(maxplate, tower1, tower3, tower2);
     long after = System.currentTimeMillis();
-    System.out.println("See the towers now time ms - "+(after-before));
-    System.out.println("Tower 1 "+tower1.toString());
-    System.out.println("Tower 2 "+tower2.toString());
-    System.out.println("Tower 3 "+tower3.toString());
+    System.out.println("See the towers now time ms - " + (after - before));
+    System.out.println("Tower 1 " + tower1.toString());
+    System.out.println("Tower 2 " + tower2.toString());
+    System.out.println("Tower 3 " + tower3.toString());
   }
 
   private static void movePlateToTower(int plateNo, MyStack<Integer> towerSource,
@@ -469,5 +469,43 @@ public class Recursion_and_DP {
       // move from buffer to dest, use source as place holder
       movePlateToTower(plateNo - 1, towerBuffer, towerDestination, towerSource);
     }
+  }
+
+  /*  [Prob 8.10]
+  *   Q) Paint Fill : Implement a paint fill funcitonality, if image is represented by a 2 array of colors,
+  *     select a color & fill untill all the colors are replaced.
+  *   A) First have to treat the matrix as a Graph and then paint only those that have the same color
+  *   @params : a 2d array to fill by paint
+  *   @return : nothing
+  * */
+
+  public void painFill(int[][] picture) {
+
+  }
+
+  public static boolean balancedParanthesis(String pattern) {
+    if (pattern.length() == 0 || ((pattern.length() & 1) == 1)) {
+      return false;
+    }
+    MyStack<Character> stack = new MyStack<>();
+    String allowedChars = "(){}[]";
+    for (int i = 0; i < pattern.length(); i++) {
+      char c = pattern.charAt(i);
+      if (allowedChars.indexOf(c) == -1) {
+        return false;
+      }
+      if (c == '{' || c == '(' || c == '[') {
+        stack.push(c);
+      } else if (!stack.isEmpty()) {
+        char c2 = stack.peek();
+        if (c2 == '{' && c == '}')
+          stack.pop();
+        else if (c2 == '[' && c == ']')
+          stack.pop();
+        else if (c2 == '(' && c == ')')
+          stack.pop();
+      }
+    }
+    return stack.getSize() == 0 ? true : false;
   }
 }
