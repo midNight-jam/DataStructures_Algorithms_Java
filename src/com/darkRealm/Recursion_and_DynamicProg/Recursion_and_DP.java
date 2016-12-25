@@ -474,13 +474,35 @@ public class Recursion_and_DP {
   /*  [Prob 8.10]
   *   Q) Paint Fill : Implement a paint fill funcitonality, if image is represented by a 2 array of colors,
   *     select a color & fill untill all the colors are replaced.
-  *   A) First have to treat the matrix as a Graph and then paint only those that have the same color
+  *   A) paint the given pixel with the new color, then burst in every direction to fill all the matching pixel with same color
+  *   to replace with new color
   *   @params : a 2d array to fill by paint
   *   @return : nothing
   * */
+  public static void painFill(COLOR[][] picture, int row, int col, COLOR newColor) {
+    COLOR oldColor = picture[row][col];
+    fillRepeatedly(picture, row, col, newColor, oldColor);
+  }
 
-  public void painFill(int[][] picture) {
+  private static void fillRepeatedly(COLOR[][] picture, int row, int col, COLOR newColor, COLOR oldColor) {
+    if ((row >= 0 && row < picture.length) && (col >= 0 && col < picture[0].length)) {
+      if (picture[row][col] == oldColor) {
+        //burst out in all directions for filling
+        picture[row][col] = newColor;
+        fillRepeatedly(picture, row - 1, col, newColor, oldColor);  //up
+        fillRepeatedly(picture, row + 1, col, newColor, oldColor);  // down
+        fillRepeatedly(picture, row, col - 1, newColor, oldColor);   // left
+        fillRepeatedly(picture, row, col + 1, newColor, oldColor);    // right
+      }
+    }
 
+  }
+
+  public enum COLOR {
+    BLACK,
+    RED,
+    GREEN,
+    BLUE
   }
 
   public static boolean balancedParanthesis(String pattern) {

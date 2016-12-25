@@ -90,6 +90,23 @@ public class Recursion_DP_Main {
     Recursion_and_DP.towerOfHanoi(9);
   }
 
+  public static void testPaintFill() {
+    Recursion_and_DP.COLOR[][] picture = new Recursion_and_DP.COLOR[][]{
+        {Recursion_and_DP.COLOR.GREEN, Recursion_and_DP.COLOR.GREEN, Recursion_and_DP.COLOR.GREEN, Recursion_and_DP.COLOR.BLACK},
+        {Recursion_and_DP.COLOR.BLACK, Recursion_and_DP.COLOR.GREEN, Recursion_and_DP.COLOR.GREEN, Recursion_and_DP.COLOR.BLACK},
+        {Recursion_and_DP.COLOR.BLACK, Recursion_and_DP.COLOR.BLUE, Recursion_and_DP.COLOR.GREEN, Recursion_and_DP.COLOR.BLACK},
+        {Recursion_and_DP.COLOR.BLACK, Recursion_and_DP.COLOR.GREEN, Recursion_and_DP.COLOR.GREEN, Recursion_and_DP.COLOR.BLACK}
+    };
+    Recursion_and_DP.painFill(picture, 2, 2, Recursion_and_DP.COLOR.RED);
+
+    for (int i = 0; i < picture.length; i++) {
+      for (int j = 0; j < picture[i].length; j++) {
+        System.out.print(picture[i][j]+" ");
+      }
+      System.out.println();
+    }
+  }
+
   public static void testBalancedParanthesis() {
     System.out.println("balanced - " + Recursion_and_DP.balancedParanthesis("123456"));
   }
