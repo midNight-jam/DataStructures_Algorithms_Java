@@ -571,4 +571,54 @@ public class Recursion_and_DP {
     }
     return quarters + dimes + nickles + pennies;
   }
+
+  /*  [Prob - 8.12]
+  *   Q) Placing Eight queens, write an algo to get all the ways to place eight queens on a 8*8 chess board.
+  *       So that no two queens are on same row, col, or diagonal
+  *   A) loop through cloumns & try place a queen on each row, but before placing check if the queen that is going to be
+  *   place on the position is it safe on that postion, ie. the safety is calculated on 3 points
+  *   a: On SAME ROW [ we check this with positions of previous queen from the position array]
+  *   b: On DIAGONALLY UP [we check this using a formula : rowForQueen == prevRow +- (QueenNo - i) , where i is loop variant]
+  *   c: On DIAGONALLY DOWN [same formula as above]
+  *   if above 3 criterias are false for the queen on the new postion, then it is safe to be placed.
+  * */
+  public static void placeNQueens(int totalQueens) {
+    int[] positions = new int[totalQueens];
+    solve(0, totalQueens, positions);
+  }
+
+  private static long QueenSolutionsCount = 0;
+  private static void solve(int queenNo, int N, int[] positions) {
+    if (queenNo == N) {
+      QueenSolutionsCount++;
+      for (int i :
+          positions) {
+        System.out.print(" " + i);
+      }
+      System.out.println("\n----------Soln----------"+QueenSolutionsCount );
+    } else {
+      // have to try place a queen on each row
+      for (int i = 0; i < N; i++) {
+        // check if this position is safe
+        if (isSafe(i, queenNo, positions)) {
+          positions[queenNo] = i; // if safe then place the queen on this position
+          solve(queenNo + 1, N, positions); // solve for next queen
+        }
+      }
+    }
+  }
+
+  private static boolean isSafe(int rowToPutQueen, int queenNo, int[] positions) {
+    // have to check safety with previous queens
+    for (int i = 0; i < queenNo; i++) {
+      int prevRow = positions[i];
+      boolean sameRow = (rowToPutQueen == prevRow); //check safety on same row
+      boolean diagoanllyUp = rowToPutQueen == prevRow - (queenNo - i); // check safety daigonally
+      boolean diagoanllyDown = rowToPutQueen == prevRow + (queenNo - i); // check safety daigonally
+      if (sameRow || diagoanllyUp || diagoanllyDown) {
+        return false;
+      }
+    }
+    return true;
+  }
 }

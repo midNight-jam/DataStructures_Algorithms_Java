@@ -116,6 +116,13 @@ public class Recursion_DP_Main {
     long res = Recursion_and_DP.waysToReachN(1.1);
     long after = System.currentTimeMillis();
     System.out.println("No of ways - " + res);
-    System.out.println("time ms - " + ((after-b4)/1000));
+    System.out.println("time ms - " + ((after - b4) / 1000));
+  }
+
+  public static void testNQueenPlacingProblem() {
+    long b4 = System.currentTimeMillis();
+    Recursion_and_DP.placeNQueens(15);
+    long after = System.currentTimeMillis();
+    System.out.println("time seconds - " + ((after - b4)));
   }
 }

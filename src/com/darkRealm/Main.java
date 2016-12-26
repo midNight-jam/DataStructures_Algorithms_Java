@@ -57,6 +57,7 @@ public class Main {
 //    Recursion_DP_Main.testTowerOfHanoi();
 //    Recursion_DP_Main.testBalancedParanthesis();
 //    Recursion_DP_Main.testPaintFill();
-    Recursion_DP_Main.testWaysToReachN();
+//    Recursion_DP_Main.testWaysToReachN();
+    Recursion_DP_Main.testNQueenPlacingProblem();
   }
 }
