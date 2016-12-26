@@ -530,4 +530,45 @@ public class Recursion_and_DP {
     }
     return stack.getSize() == 0 ? true : false;
   }
+
+  /*
+  * Prob [8.11]
+  * Q)  Given an infinite nos of quarters(25 cents), dimes (10 cents), nickels (5 cents) & pennies(1 cent)
+  *     Calculate the no of ways to represent n cents
+  * A) Will use recursion again, as I used for steps problem
+  * @params :  a double, the target amount to reach
+  * @returns  : the total no of ways to reach the amount using the cents
+  * */
+
+  public static long waysToReachN(double n) {
+    n = n * 100;
+    return calculateWaysToReachN((int) n);
+  }
+
+  public static long calculateWaysToReachN(int n) {
+    if (n == 0) {
+      return 1;
+    }
+    if (n < 0) {
+      return 0;
+    }
+    int quarters = 0;
+    while (n > 25) {
+      n -= 25;
+      quarters++;
+    }
+    int dimes = 0;
+    while (n > 10) {
+      n -= 10;
+      dimes++;
+    }
+    n -= 5;
+    int nickles = 1;
+    int pennies = 0;
+    while (n > 0) {
+      n -= 1;
+      pennies++;
+    }
+    return quarters + dimes + nickles + pennies;
+  }
 }

@@ -101,7 +101,7 @@ public class Recursion_DP_Main {
 
     for (int i = 0; i < picture.length; i++) {
       for (int j = 0; j < picture[i].length; j++) {
-        System.out.print(picture[i][j]+" ");
+        System.out.print(picture[i][j] + " ");
       }
       System.out.println();
     }
@@ -109,5 +109,13 @@ public class Recursion_DP_Main {
 
   public static void testBalancedParanthesis() {
     System.out.println("balanced - " + Recursion_and_DP.balancedParanthesis("123456"));
+  }
+
+  public static void testWaysToReachN() {
+    long b4 = System.currentTimeMillis();
+    long res = Recursion_and_DP.waysToReachN(1.1);
+    long after = System.currentTimeMillis();
+    System.out.println("No of ways - " + res);
+    System.out.println("time ms - " + ((after-b4)/1000));
   }
 }

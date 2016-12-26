@@ -56,6 +56,7 @@ public class Main {
 //    System.out.println(Math.log(256)/Math.log(2));
 //    Recursion_DP_Main.testTowerOfHanoi();
 //    Recursion_DP_Main.testBalancedParanthesis();
-    Recursion_DP_Main.testPaintFill();
+//    Recursion_DP_Main.testPaintFill();
+    Recursion_DP_Main.testWaysToReachN();
   }
 }
