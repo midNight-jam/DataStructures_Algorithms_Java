@@ -82,3 +82,21 @@ Dec 20, 2016 6:40:17 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortSt
 INFO: pushing the popped element into minStack as all bigger pooped out 2
 Dec 20, 2016 6:40:17 PM com.darkRealm.Stacks_and_queues.Stacks_and_Queues SortStack
 INFO: refilling from the minStack for reverse order
+Dec 27, 2016 12:20:42 AM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues
+Dec 27, 2016 12:25:21 AM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues
+Dec 27, 2016 12:27:07 AM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues
+Dec 27, 2016 12:28:19 AM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues
+Dec 27, 2016 12:59:57 AM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues
+Dec 27, 2016 1:04:42 AM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues
+Dec 27, 2016 1:05:09 AM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues
+Dec 27, 2016 1:05:36 AM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues
+Dec 27, 2016 1:05:51 AM com.darkRealm.Stacks_and_queues.Stacks_and_Queues <clinit>
+INFO: logger initialized  for class com.darkRealm.Stacks_and_queues.Stacks_and_Queues

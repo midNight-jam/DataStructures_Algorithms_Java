@@ -87,4 +87,8 @@ public class Stack_and_Queues_Main {
 
     System.out.println("Will be displauypig  the stack here");
   }
+
+  public static void testSetStacks(){
+    Stacks_and_Queues.setOfStacks();
+  }
 }

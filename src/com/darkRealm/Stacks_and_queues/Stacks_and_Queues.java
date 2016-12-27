@@ -1,5 +1,6 @@
 package com.darkRealm.Stacks_and_queues;
 
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -87,5 +88,29 @@ public class Stacks_and_Queues {
     s3 = size - (s1 + s2);  //3rd is slightly bigger
     int[] arr = new int[size];
 
+  }
+
+  /*  [Prob 3.3]
+  *   Q) Implement a set of stacks, Create a new Stack when previous one had exceeded some threshold. Set of Stacks should
+  *   be composed of several stacks and should create a new stack once the previous one exceeds capacity. Pop & Push
+  *   should behave identically to a single stack. implement a function popAt(index), which performs a pop on a specific
+  *   sub stack.
+  *   A) Have created a new class SetStacks for this purpose, for popAt, have not implemented using roll over, instead
+  *   have decide the tradeoff to be with stacks of unequal size
+  * */
+
+  public static void setOfStacks() {
+    SetStacks setStacks = new SetStacks(3);
+    setStacks.push(11);
+    setStacks.push(12);
+    setStacks.push(13);
+    setStacks.push(21);
+    int res = setStacks.popAt(1);
+    System.out.print(res);
+
+//    int temp = setStacks.pop();
+//    temp = setStacks.pop();
+//    temp = setStacks.pop();
+//    temp = setStacks.pop();
   }
 }

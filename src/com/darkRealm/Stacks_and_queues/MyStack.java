@@ -42,6 +42,27 @@ public class MyStack<T> {
     return size;
   }
 
+  public T popAt(int i) {
+    T res = null;
+    if (i >= 0 && i <= getSize()) {
+      int size = getSize();
+      int elementsToPop = size - i -1;
+      MyStack<T> tempStack = new MyStack<T>();
+      T temp;
+      while (elementsToPop != 0) {
+        temp = pop();
+        tempStack.push(temp);
+        elementsToPop--;
+      }
+      res = pop();
+      while (!tempStack.isEmpty()) {
+        temp = tempStack.pop();
+        push(temp);
+      }
+    }
+    return res;
+  }
+
   @Override
   public String toString() {
     StringBuilder stringBuilder = new StringBuilder();

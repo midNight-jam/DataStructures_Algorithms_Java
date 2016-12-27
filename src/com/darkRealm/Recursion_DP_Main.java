@@ -125,4 +125,9 @@ public class Recursion_DP_Main {
     long after = System.currentTimeMillis();
     System.out.println("time seconds - " + ((after - b4)));
   }
+
+  public static void testPermuteExpression(){
+    String exp = "1^0|0|1";
+//    Recursion_and_DP.booleanEvaluation(exp,false);
+  }
 }

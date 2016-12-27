@@ -588,6 +588,7 @@ public class Recursion_and_DP {
   }
 
   private static long QueenSolutionsCount = 0;
+
   private static void solve(int queenNo, int N, int[] positions) {
     if (queenNo == N) {
       QueenSolutionsCount++;
@@ -595,7 +596,7 @@ public class Recursion_and_DP {
           positions) {
         System.out.print(" " + i);
       }
-      System.out.println("\n----------Soln----------"+QueenSolutionsCount );
+      System.out.println("\n----------Soln----------" + QueenSolutionsCount);
     } else {
       // have to try place a queen on each row
       for (int i = 0; i < N; i++) {
@@ -621,4 +622,10 @@ public class Recursion_and_DP {
     }
     return true;
   }
+
+  /*  [Prob -8.14]
+  * Q) Given a boolean expression of 0(false), 1 (true), & (and), | (OR) and ^ (XOR) and a desired a boolean result,
+  * give a function to count no of ways of acheiving this result
+  * A) TODO
+  * */
 }
