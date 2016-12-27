@@ -76,4 +76,42 @@ public class Graph {
       }
     }
   }
+
+  /*  [Prob 4.1]
+  *   Q) Route Between NOdes : Given a directed Graph, design an alogrithm to findout whether there is a route between
+  *   two nodes.
+  *   A) Will use BFS for finding if we can reach the node 2 from node 1 (as the given is directed)
+  * */
+  public boolean isRouteBetween(Node p, Node q) {
+    return modifiedBFS(p, q);
+  }
+
+  private boolean modifiedBFS(Node p, Node q) {
+    MyQueue<Node> queue = new MyQueue<>();
+    queue.enqueue(p);
+    p.status = Node.Status.UnderProcessing;
+    Node trav;
+    boolean oneVisited;
+    oneVisited = false;
+    while (!queue.isEmpty()) {
+      trav = queue.deque();
+      if( !oneVisited && (trav.name.equals(p.name))) {
+        System.out.println(p.name + " - visisted ");
+        oneVisited = true;
+      } else if (oneVisited && (trav.name.equals(q.name))){
+        System.out.println(q.name + " - visisted ");
+        System.out.println("Route present between "+p.name+"  & "+q.name);
+        return true;
+      }
+      trav.status = Node.Status.Processed;
+      for (int i = 0; i < trav.childs.length; i++) {
+        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
+          queue.enqueue(trav.childs[i]);
+          trav.childs[i].status = Node.Status.UnderProcessing;
+        }
+      }
+    }
+    resetNodesStatus();
+    return false;
+  }
 }

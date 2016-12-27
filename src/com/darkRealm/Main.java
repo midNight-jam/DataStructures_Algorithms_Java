@@ -1,14 +1,8 @@
 package com.darkRealm;
 
-import com.darkRealm.BigO.BitsUtil;
-import com.darkRealm.Recursion_and_DynamicProg.Recursion_and_DP;
-import com.darkRealm.Trees_and_Graphs.Graph;
-import com.darkRealm.Trees_and_Graphs.Trees_and_Graphs_Main;
+import com.darkRealm.Trees_and_Graphs.Trees_and_Graphs;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.PriorityQueue;
 
 /*
 * Uncomment a function to run, each is a method for solved problem.
@@ -68,6 +62,7 @@ public class Main {
   }
 
   private static void doTrees_Graph(){
-    Trees_and_Graphs_Main.doBFSAndDFS();
+    Trees_and_Graphs_Main.testBFSAndDFS();
+    Trees_and_Graphs_Main.testIsRoutePresentBetweenNodes();
   }
 }
