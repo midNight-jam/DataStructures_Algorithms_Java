@@ -8,7 +8,7 @@ public class TNode {
   public TNode left;
   public TNode right;
 
-  TNode(int data) {
+  public TNode(int data) {
     this.data = data;
   }
 }

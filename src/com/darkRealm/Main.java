@@ -66,6 +66,7 @@ public class Main {
 //    Trees_and_Graphs_Main.testIsRoutePresentBetweenNodes();
 //    Trees_and_Graphs_Main.testMinimalHeightTree();
 //    Trees_and_Graphs_Main.testListOfDepths();
-    Trees_and_Graphs_Main.testIsBalanced();
+//    Trees_and_Graphs_Main.testIsBalanced();
+    Trees_and_Graphs_Main.testIsBST();
   }
 }

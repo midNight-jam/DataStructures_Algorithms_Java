@@ -48,8 +48,8 @@ public class Trees_and_Graphs {
     return graph;
   }
 
-  private static Tree getSampleTree() {
-    Tree tree = createMinimalHeightTree(new int[]{2, 5, 7, 10, 19, 20, 25});
+  public static Tree getSampleTree() {
+    Tree tree = createMinimalHeightTree(new int[]{6, 5, 7, 10, 20, 20, 21});
     return tree;
   }
 
@@ -135,15 +135,14 @@ public class Trees_and_Graphs {
   *   A) Would get height of left & right subtree, and diff them to see if the diff is cmoing to a balanced value
   *   if not then the tree is noBalanced, if yes would continue, percolate up check same on the parent
   *   But this above method is not very efficient & takes O(NlogN) complexity
-  *   Thus for optimazation, we try to use the return result of getHeight, now if the node that we are processing
+  *   Thus for "optimazation", we try to use the return result of getHeight, now if the node that we are processing
   *   turns out to be imbalanced we will return an error. But our methods return type is int so we cant return a code.
   *   Thus, instead we return an error code Integer.MIN_VALUE, and we have to aslo check if the subtree hieght returned
   *   the error code, if yes we have to percolate up the error.
   *   @params : Tree -  the tree to check the balance
   *   @returns : Boolean  - result if the tree is balanced or not
   * */
-  public static boolean isBalanced() {
-    Tree tree = getSampleTree();
+  public static boolean isBalanced(Tree tree) {
     tree.root.left.left.left = new TNode(1);
     tree.root.left.left.left.left = new TNode(0);
     tree.root.left.left.left.left.left = new TNode(-1);
@@ -173,5 +172,39 @@ public class Trees_and_Graphs {
       return 1 + Math.max(leftHeight, rightHeight);
     }
     return Integer.MIN_VALUE; // else the height diff is invalid so return Error
+  }
+
+  /*  [Prob 4.5]
+  *   Q) Validate a BST implement a function to check if a binary tree is a BST
+  *   A) woudl get the inorder done & check if it is sorted.
+  *   If Sorted the tree is a valid BST else not
+  *   FLAWED : But this above method is inefficient because even if the tree became invalid we will only know it after the
+  *   inorder completes, instead we can break with an error code & percolate up the error to notify tree is not BST
+  *   Opitmal Method : To chealck if any node is falling between a range or not, why because in the above methd a left
+  *   subtree can easily hold a bigger values thus we are taking the ranges.
+  *   if we go in the left subtree then we update hte max vlaue with that of the parent, If we move in the left subtree
+  *   we update the min value with that of the parent. And, If  at any instant the value is not in range we return false
+  * */
+  public static boolean isBST(Tree tree) {
+    boolean res = checkBST(tree.root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    System.out.println("IsBST - " + res);
+    return res;
+  }
+
+  private static boolean checkBST(TNode node, int min, int max) {
+
+    if (node == null) { // is a leaf node or no node base case
+      return true;
+    }
+    if ((node.data > min) && (node.data < max)) { // data is within the range
+      boolean leftBST = checkBST(node.left, min, node.data);
+      if (leftBST) {  // if leftSubtree is Valid lets check right
+        boolean rightBST = checkBST(node.right, node.data, max);
+        return rightBST;  //  this shall be the result, if right was also valid BST
+      } else {
+        return false; // left itself is not a BST, no point in processing thus terminating
+      }
+    }
+    return false;
   }
 }
