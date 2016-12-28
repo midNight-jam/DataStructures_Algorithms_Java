@@ -70,6 +70,8 @@ public class Trees_and_Graphs {
   *   Q) Minimal tree, given a sorted increasing order array with unique integers, write a method to create a BST with
   *   minimal height.
   *   A) would take the mid of array as root & recursively divide the other two halfs to get left & right subRoot
+  *   @params : arr - array of integers  to construct a minimal height BInary Search Tree with
+  *   @return : TRee - the tree obj that is created after reading from the array
   * */
   public static Tree createMinimalHeightTree(int[] arr) {
     Tree tree = new Tree();
@@ -125,5 +127,51 @@ public class Trees_and_Graphs {
     // call for left & right sub tree with incrementing a level
     collateByLevel(node.left, levelNo + 1, levels);
     collateByLevel(node.right, levelNo + 1, levels);
+  }
+
+  /*  [Prob 4.4]
+  *   Q) Check Balanced : check if the given binary tree is balanced or not. Balance is such that the hieghts of two
+  *   subtrees of any node never differ by more than one ie, balance can be -1, 0, +1
+  *   A) Would get height of left & right subtree, and diff them to see if the diff is cmoing to a balanced value
+  *   if not then the tree is noBalanced, if yes would continue, percolate up check same on the parent
+  *   But this above method is not very efficient & takes O(NlogN) complexity
+  *   Thus for optimazation, we try to use the return result of getHeight, now if the node that we are processing
+  *   turns out to be imbalanced we will return an error. But our methods return type is int so we cant return a code.
+  *   Thus, instead we return an error code Integer.MIN_VALUE, and we have to aslo check if the subtree hieght returned
+  *   the error code, if yes we have to percolate up the error.
+  *   @params : Tree -  the tree to check the balance
+  *   @returns : Boolean  - result if the tree is balanced or not
+  * */
+  public static boolean isBalanced() {
+    Tree tree = getSampleTree();
+    tree.root.left.left.left = new TNode(1);
+    tree.root.left.left.left.left = new TNode(0);
+    tree.root.left.left.left.left.left = new TNode(-1);
+    int res = getHeight(tree.root);
+    boolean isBalanced = res == Integer.MIN_VALUE ? false : true;
+    System.out.println("Is tree balanced - " + isBalanced);
+    return isBalanced;
+  }
+
+  private static int getHeight(TNode node) {
+    if (node == null) {
+      return 0;
+    }
+
+    int leftHeight = getHeight(node.left);
+    if (leftHeight == Integer.MIN_VALUE) {  // percolate up the error
+      return Integer.MIN_VALUE;
+    }
+
+    int rightHeight = getHeight(node.right);
+    if (rightHeight == Integer.MIN_VALUE) { // percolate up the error
+      return Integer.MIN_VALUE;
+    }
+
+    int diff = leftHeight - rightHeight;
+    if (diff >= -1 && diff <= 1) {  // if the height diff is valid/balanced then return the bigger among them
+      return 1 + Math.max(leftHeight, rightHeight);
+    }
+    return Integer.MIN_VALUE; // else the height diff is invalid so return Error
   }
 }

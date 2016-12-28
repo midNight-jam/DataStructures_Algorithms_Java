@@ -23,4 +23,8 @@ public class Trees_and_Graphs_Main {
   public static void testListOfDepths(){
     Trees_and_Graphs.listOfDepths();
   }
+
+  public static void testIsBalanced(){
+    Trees_and_Graphs.isBalanced();
+  }
 }
