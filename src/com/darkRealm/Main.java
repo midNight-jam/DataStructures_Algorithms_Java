@@ -2,8 +2,11 @@ package com.darkRealm;
 
 import com.darkRealm.BigO.BitsUtil;
 import com.darkRealm.Recursion_and_DynamicProg.Recursion_and_DP;
+import com.darkRealm.Trees_and_Graphs.Graph;
+import com.darkRealm.Trees_and_Graphs.Trees_and_Graphs_Main;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -21,10 +24,10 @@ public class Main {
     }
     // write your code here, testing after new git
 //    doArray_and_Strings_Main();
-    doStack_and_Queue();
+//    doStack_and_Queue();
 //    doRecursion_DP();
+    doTrees_Graph();
   }
-
 
   private static void doArray_and_Strings_Main() {
 //        Arrays_and_Strings_Main.doIsUnique();
@@ -41,7 +44,8 @@ public class Main {
 //    Stack_and_Queues_Main.testMyStack();
 //    Stack_and_Queues_Main.testMinStack();
 //    Stack_and_Queues_Main.testSortStack();
-    Stack_and_Queues_Main.testSetStacks();
+//    Stack_and_Queues_Main.testSetStacks();
+    Stack_and_Queues_Main.testThreeStacks();
   }
 
   private static void doRecursion_DP() {
@@ -61,5 +65,9 @@ public class Main {
 //    Recursion_DP_Main.testWaysToReachN();
     Recursion_DP_Main.testNQueenPlacingProblem();
 //    Recursion_DP_Main.testPermuteExpression();
+  }
+
+  private static void doTrees_Graph(){
+    Trees_and_Graphs_Main.doBFSAndDFS();
   }
 }

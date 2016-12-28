@@ -91,4 +91,8 @@ public class Stack_and_Queues_Main {
   public static void testSetStacks(){
     Stacks_and_Queues.setOfStacks();
   }
+
+  public static void testThreeStacks(){
+    Stacks_and_Queues.threeStackInArray();
+  }
 }

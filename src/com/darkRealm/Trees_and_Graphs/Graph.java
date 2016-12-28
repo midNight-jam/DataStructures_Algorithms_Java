@@ -1,0 +1,79 @@
+package com.darkRealm.Trees_and_Graphs;
+
+import com.darkRealm.Stacks_and_queues.MyQueue;
+import com.darkRealm.Stacks_and_queues.MyStack;
+
+/**
+ * Created by Jayam on 12/28/2016.
+ */
+
+public class Graph {
+  public int vertices;
+  public Node start;
+  public Node[] allVertices;
+
+  public Graph(int v) {
+    vertices = v;
+    start = new Node(vertices);
+    allVertices = new Node[vertices];
+  }
+
+  public void BreadthFirstTraversal() {
+    MyQueue<Node> queue = new MyQueue<>();
+    queue.enqueue(start);
+    start.status = Node.Status.UnderProcessing;
+    Node trav;
+    System.out.println("Breadth First traversal");
+    while (!queue.isEmpty()) {
+      trav = queue.deque();
+      visitNode(trav);
+      trav.status = Node.Status.Processed;
+      // add the next adjacent vertices in queue for processing
+      for (int i = 0; i < trav.childs.length; i++) {
+        // if the next vertex has not been processed put it in for processing in the queue
+        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
+          queue.enqueue(trav.childs[i]);
+          trav.childs[i].status = Node.Status.UnderProcessing;
+        }
+      }
+    }
+    resetNodesStatus();
+  }
+
+  public void DepthFirstTraversal() {
+    Node trav;
+    MyStack<Node> stack = new MyStack<>();
+    stack.push(start);
+    start.status = Node.Status.UnderProcessing;
+    System.out.println("Depth First traversal");
+
+    while (!stack.isEmpty()) {
+      trav = stack.pop();
+      visitNode(trav);
+      trav.status = Node.Status.Processed;
+      // add the next adjacent vertices in stack for processing
+      for (int i = 0; i < trav.childs.length; i++) {
+        // if the next vertex has not been processed put it in for processing in the stack
+        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
+          stack.push(trav.childs[i]);
+          trav.childs[i].status = Node.Status.UnderProcessing;
+        }
+      }
+    }
+    resetNodesStatus();
+  }
+
+  private void visitNode(Node n) {
+    System.out.println("Visiting - " + n.name);
+  }
+
+  public void resetNodesStatus() {
+    for (int i = 0; i < vertices; i++) {
+      for (int j = 0; j < vertices; j++) {
+        if (allVertices[i] != null && allVertices[i].childs[j] != null) {
+          allVertices[i].childs[j].status = Node.Status.NotProcessed;
+        }
+      }
+    }
+  }
+}

@@ -72,23 +72,7 @@ public class Stacks_and_Queues {
   }
 
 
-  /*  [Prob 3.1]
-  * Q) Describe how you could use a single array to implement 3 Stacks
-  * A) will have to keep track of capacity of each stack & shift them when required,
-  * when shifting a stack reduce its capacity with 1.
-  *
-  * @return  void
-  * @param  void
-  * */
-  public static void ThreeStacksInArray() {
-    int size = 10;
-    int noOfStacks = 3;
-    int s1, s2, s3; //sizes of each stack
-    s1 = s2 = (int) (size / noOfStacks);
-    s3 = size - (s1 + s2);  //3rd is slightly bigger
-    int[] arr = new int[size];
 
-  }
 
   /*  [Prob 3.3]
   *   Q) Implement a set of stacks, Create a new Stack when previous one had exceeded some threshold. Set of Stacks should
@@ -113,4 +97,22 @@ public class Stacks_and_Queues {
 //    temp = setStacks.pop();
 //    temp = setStacks.pop();
   }
+
+  /*  [Prob 3.1]
+  * Q) Describe how you could use a single array to implement 3 Stacks
+  * A) will have to keep track of capacity of each stack & shift them when required,
+  * when shifting a stack reduce its capacity with 1.
+  * TODO
+  * @return  void
+  * @param  void
+  * */
+  public static void threeStackInArray(){
+    ThreeStacksArray threeStacks = new ThreeStacksArray(10);
+    threeStacks.pushStack(1,11);
+    threeStacks.pushStack(1,12);
+    threeStacks.pushStack(1,13);
+    threeStacks.pushStack(2,21);
+    threeStacks.pushStack(1,14);
+  }
+
 }

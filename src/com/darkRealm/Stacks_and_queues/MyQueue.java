@@ -9,7 +9,7 @@ public class MyQueue<T> {
 
   private MyQueueNode head, tail;
 
-  MyQueue() {
+  public MyQueue() {
     head = tail = null;
   }
 
@@ -24,6 +24,18 @@ public class MyQueue<T> {
     tail = temp;
   }
 
+  public boolean isEmpty() {
+    return head == null;
+  }
+
+  public T deque() {
+    if (!isEmpty()) {
+      T trav = (T) head.getData();
+      head = head.next;
+      return trav;
+    }
+    return null;
+  }
 
   private static class MyQueueNode<T> {
     private T data;
@@ -31,6 +43,10 @@ public class MyQueue<T> {
 
     public MyQueueNode(T item) {
       this.data = item;
+    }
+
+    public T getData(){
+      return data;
     }
   }
 }
