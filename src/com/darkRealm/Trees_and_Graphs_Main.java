@@ -19,4 +19,8 @@ public class Trees_and_Graphs_Main {
     int [] arr= new int[]{2,5,7,10,19,20,25};
     Trees_and_Graphs.createMinimalHeightTree(arr);
   }
+
+  public static void testListOfDepths(){
+    Trees_and_Graphs.listOfDepths();
+  }
 }
