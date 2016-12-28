@@ -62,7 +62,8 @@ public class Main {
   }
 
   private static void doTrees_Graph(){
-    Trees_and_Graphs_Main.testBFSAndDFS();
-    Trees_and_Graphs_Main.testIsRoutePresentBetweenNodes();
+//    Trees_and_Graphs_Main.testBFSAndDFS();
+//    Trees_and_Graphs_Main.testIsRoutePresentBetweenNodes();
+    Trees_and_Graphs_Main.testMinimalHeightTree();
   }
 }

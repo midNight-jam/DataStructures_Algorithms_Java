@@ -4,7 +4,6 @@ package com.darkRealm.Trees_and_Graphs;
  */
 public class Trees_and_Graphs {
 
-
   private static Graph getSampleGraph() {
     int vertices = 6;
     Graph graph = new Graph(vertices);
@@ -50,11 +49,32 @@ public class Trees_and_Graphs {
     graph.DepthFirstTraversal();
   }
 
-  public static void isRoutePresentBetweenNodes(){
+  public static void isRoutePresentBetweenNodes() {
     Graph graph = getSampleGraph();
     Node p = graph.allVertices[0];
     Node q = graph.allVertices[0];
-    System.out.println("Route Present - "+graph.isRouteBetween(p,q));
+    System.out.println("Route Present - " + graph.isRouteBetween(p, q));
   }
 
+  /*  [Prob 4.2 ]
+  *   Q) Minimal tree, given a sorted increasing order array with unique integers, write a method to create a BST with
+  *   minimal height.
+  *   A) would take the mid of array as root & recursively divide the other two halfs to get left & right subRoot
+  * */
+  public static void createMinimalHeightTree(int[] arr) {
+    Tree tree = new Tree();
+    tree.root = getRoot(arr, 0, arr.length - 1);
+    tree.printInorderTraversal();
+  }
+
+  private static TNode getRoot(int[] arr, int left, int right) {
+    if (right < left) {
+      return null;
+    }
+    int mid = (left + right) / 2;
+    TNode root = new TNode(arr[mid]);
+    root.left = getRoot(arr, left, mid - 1);
+    root.right = getRoot(arr, mid + 1, right);
+    return root;
+  }
 }
