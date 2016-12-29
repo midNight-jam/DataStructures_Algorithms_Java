@@ -43,4 +43,23 @@ public class Trees_and_Graphs_Main {
     tree.root.left.left.right = new TNode(7);
     Trees_and_Graphs.isBST(tree);
   }
+
+  public static void testPredecessorAndSuccessor() {
+    Tree tree = new Tree();
+    tree.root = new TNode(20);
+    tree.root.left = new TNode(10);
+    tree.root.left.parent = tree.root;
+    tree.root.right = new TNode(30);
+    tree.root.right.parent = tree.root;
+    tree.root.left.left = new TNode(5);
+    tree.root.left.left.parent = tree.root.left;
+    tree.root.left.right = new TNode(15);
+    tree.root.left.right.parent = tree.root.left;
+
+    tree.root.left.right.right = new TNode(17);
+    tree.root.left.right.right.parent = tree.root.left.right;
+//    tree.root.left.left.left = new TNode(3);
+//    tree.root.left.left.right = new TNode(7);
+    Trees_and_Graphs.printPredecessorAndSucessor(tree,17);
+  }
 }

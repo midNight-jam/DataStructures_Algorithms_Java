@@ -2,6 +2,7 @@ package com.darkRealm.Trees_and_Graphs;
 
 import com.darkRealm.Stacks_and_queues.MyQueue;
 
+import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 
 /**
@@ -49,7 +50,7 @@ public class Trees_and_Graphs {
   }
 
   public static Tree getSampleTree() {
-    Tree tree = createMinimalHeightTree(new int[]{6, 5, 7, 10, 20, 20, 21});
+    Tree tree = createMinimalHeightTree(new int[]{6, 5, 7, 10, 19, 20, 21});
     return tree;
   }
 
@@ -180,7 +181,7 @@ public class Trees_and_Graphs {
   *   If Sorted the tree is a valid BST else not
   *   FLAWED : But this above method is inefficient because even if the tree became invalid we will only know it after the
   *   inorder completes, instead we can break with an error code & percolate up the error to notify tree is not BST
-  *   Opitmal Method : To chealck if any node is falling between a range or not, why because in the above methd a left
+  *   Opitmal Method : To check if any node is falling between a range or not, why because in the above methd a left
   *   subtree can easily hold a bigger values thus we are taking the ranges.
   *   if we go in the left subtree then we update hte max vlaue with that of the parent, If we move in the left subtree
   *   we update the min value with that of the parent. And, If  at any instant the value is not in range we return false
@@ -192,7 +193,6 @@ public class Trees_and_Graphs {
   }
 
   private static boolean checkBST(TNode node, int min, int max) {
-
     if (node == null) { // is a leaf node or no node base case
       return true;
     }
@@ -206,5 +206,121 @@ public class Trees_and_Graphs {
       }
     }
     return false;
+  }
+
+  /*
+  *   Q) JUST PRINT NOT OPTIMAL, write a method to find the "NEXT" node i.e sucessor of a given node in a BST, Similarly predecessor
+  *   A) would go with InOrderTRaversal while updating the two var's pre & suc to keep track of which was my pre.
+  *     when the data is found, would enable a flag so that we exit by just after acessing the next node in Inorder (sucessor)
+  * */
+  public static void printPredecessorAndSucessorOLD(Tree tree, int data) {
+    findPredAndSucd(tree.root, data);
+    System.out.println("Pre " + predecessor + "  Suc " + successor);
+  }
+
+  private static void findPredAndSucd(TNode node, int data) {
+    if (node == null) {
+      return;
+    }
+    if (node.data == data) {
+      updatePrec(node.left);
+      updateSucc(node.right);
+      return;
+    }
+    findPredAndSucd(node.left, data);
+    findPredAndSucd(node.right, data);
+  }
+
+  private static int predecessor;
+
+  private static void updatePrec(TNode node) {
+    if (node == null) {
+      return;
+    }
+    updatePrec(node.left);
+//    System.out.println("Prec "+node.data);
+    predecessor = node.data;
+    updatePrec(node.right);
+  }
+
+  private static int successor = Integer.MIN_VALUE;
+
+  private static void updateSucc(TNode node) {
+    if (node == null) {
+      return;
+    }
+    updateSucc(node.left);
+//    System.out.println("Succc "+node.data);
+    if (successor == Integer.MIN_VALUE)
+      successor = node.data;
+    updateSucc(node.right);
+  }
+
+  /*  [Prob 4.6]
+    *   Q) Sucessor, write a method to find the "NEXT" node i.e sucessor of a given node in a BST, Similarly predecessor
+    *   A) would go with InOrderTRaversal while updating the two var's pre & suc to keep track of which was my pre.
+    *     when the data is found, would enable a flag so that we exit by just after acessing the next node in Inorder (sucessor)
+    * */
+  public static void printPredecessorAndSucessor(Tree tree, int data) {
+    TNode node = tree.root;
+    while (node != null && (node.data != data)) {
+      if (data > node.data) {
+        node = node.right;
+      } else {
+        node = node.left;
+      }
+    }
+    TNode pred = findPredecessor(node);
+    TNode succ = findSuccessor(node);
+    System.out.println("stop debug to see the above values");
+  }
+
+  private static TNode findPredecessor(TNode node) {
+    TNode trav = node;
+    // if node has the left subtree, then return the rightmost in the left subtree
+    if (trav.left != null) {
+      trav = trav.left;
+      while (trav.right != null) {
+        trav = trav.right;
+      }
+      return trav;
+    } else {
+      // if node doesnt have the left subtree, then we have to check two things with parent, first is the node left child
+      // of the prent, if yes, then we have reached the left most & it cannot have a predecessor. BUt, if the node is
+      // the right child of parent then its predeccosr will be the \parent it self
+      TNode par = trav.parent;
+      if (par.right.data == trav.data) {
+        return par;
+      }
+      // left most case
+      if (par.left.data == trav.data) {
+        return null;
+      }
+    }
+    return null;
+  }
+
+  private static TNode findSuccessor(TNode node) {
+    TNode trav = node;
+    if (trav.right != null) { // node has right subtree so return left most in the right subtree
+      trav = trav.right;
+      while (trav.left != null) {
+        trav = trav.left;
+      }
+      return trav;
+    } else {
+      TNode par = trav.parent;
+      // if node doesnt has a right sbutree, then we have to travel upwards to find the node
+      // where we are on left side instead of right, finding this end is required because as soon as we gon in the right
+      // side, that element will be the succesor of this node.
+      while ((par != null)) {
+        if ((par.left != null) && (trav.data == par.left.data)) {
+          break;
+        }
+        trav = par;
+        par = trav.parent;
+      }
+      return par;
+    }
   }
 }

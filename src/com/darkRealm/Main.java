@@ -13,7 +13,7 @@ public class Main {
     try {
       DarkLogger.setup();
     } catch (IOException e) {
-      e.printStackTrace();
+//      e.printStackTrace();
       System.out.println("Some thing went wrong while settting up logs");
     }
     // write your code here, testing after new git
@@ -67,6 +67,7 @@ public class Main {
 //    Trees_and_Graphs_Main.testMinimalHeightTree();
 //    Trees_and_Graphs_Main.testListOfDepths();
 //    Trees_and_Graphs_Main.testIsBalanced();
-    Trees_and_Graphs_Main.testIsBST();
+//    Trees_and_Graphs_Main.testIsBST();
+      Trees_and_Graphs_Main.testPredecessorAndSuccessor();
   }
 }
