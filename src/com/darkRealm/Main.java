@@ -1,5 +1,6 @@
 package com.darkRealm;
 
+import com.darkRealm.BigO.MathUtil;
 import com.darkRealm.Trees_and_Graphs.Trees_and_Graphs;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class Main {
 //    doStack_and_Queue();
 //    doRecursion_DP();
     doTrees_Graph();
+//    doMathUtils();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -61,13 +63,20 @@ public class Main {
 //    Recursion_DP_Main.testPermuteExpression();
   }
 
-  private static void doTrees_Graph(){
+  private static void doTrees_Graph() {
 //    Trees_and_Graphs_Main.testBFSAndDFS();
 //    Trees_and_Graphs_Main.testIsRoutePresentBetweenNodes();
 //    Trees_and_Graphs_Main.testMinimalHeightTree();
 //    Trees_and_Graphs_Main.testListOfDepths();
 //    Trees_and_Graphs_Main.testIsBalanced();
 //    Trees_and_Graphs_Main.testIsBST();
-      Trees_and_Graphs_Main.testPredecessorAndSuccessor();
+//    Trees_and_Graphs_Main.testPredecessorAndSuccessor();
+//    Trees_and_Graphs_Main.testCommonAncestor();
+    Trees_and_Graphs_Main.testCheckSubtree();
+  }
+
+  private static void doMathUtils() {
+    int gcd = MathUtil.geatestCommonDivisor(48, 180);
+    System.out.println(" gcd - " + gcd);
   }
 }

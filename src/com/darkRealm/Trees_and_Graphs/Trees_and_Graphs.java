@@ -2,7 +2,6 @@ package com.darkRealm.Trees_and_Graphs;
 
 import com.darkRealm.Stacks_and_queues.MyQueue;
 
-import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 
 /**
@@ -258,8 +257,16 @@ public class Trees_and_Graphs {
 
   /*  [Prob 4.6]
     *   Q) Sucessor, write a method to find the "NEXT" node i.e sucessor of a given node in a BST, Similarly predecessor
-    *   A) would go with InOrderTRaversal while updating the two var's pre & suc to keep track of which was my pre.
-    *     when the data is found, would enable a flag so that we exit by just after acessing the next node in Inorder (sucessor)
+    *   A) brute force, take inorder traversal and print the adjacent nodes of the data.
+    *     Optimal : traverse through the tree
+    *     Predecessor : if the node is the left most then it cannot have predecessor, else predecessor is the rightmost
+    *     element in the left subtree. And if the node is not the right most and also ot deosnt have left subtree then
+    *     we have to check if its the left or right child of its parent. if its the right child of its parent then its parent
+    *     is the predecessor
+    *     Successor: if the node is the right most then it cannot have Successor, else Successor is the leftmost
+    *     element in the right subtree. And if the node is not the right most and also it doesnt have right subtree then
+    *     we have to travel upwards to ge its sucecssor, in this case we have to keep going upwards untill the point wherre
+    *     we have to take a right turn, at this point the parent & parents left data will be equal. This will be our sucecssor
     * */
   public static void printPredecessorAndSucessor(Tree tree, int data) {
     TNode node = tree.root;
@@ -321,6 +328,142 @@ public class Trees_and_Graphs {
         par = trav.parent;
       }
       return par;
+    }
+  }
+
+  /*  [Prob 4.8]
+  *   Q) FIrstCommonAncestor : find the first common ancestor 0f two nodes in a binary tree (NOT A BST)
+  *   A)
+  *
+  *   [approcehd worked but filaed when data had parent child realtins ship]
+  *   Will return boolean from recursive functions for each data, & will AND them both (left result * right result),
+  *   the first node at which both ANDING gives true result then this is the common ancestor
+  *   [Approach no 2] - works but inefficient
+  *   look in each sub tree if the node is covered by sub tree or not. If both the nodes are covered by left subtree the
+  *   go deep in left subtree, if both the nodes are covered bt right subtree then go in right subtree. Continue, till
+  *   you find the nodes in diff subtree and not in common subtree. This node at which you find the node in diff subtree
+  *   is the common ancestor
+  * */
+  public static void findCommonAncestor(Tree tree, int d1, int d2) {
+//    TNode commonAncestor = findCommonAncestorAp2(tree.root, d1, d2);
+    TNode commonAncestor = commonAncestor(tree.root, d1, d2);
+    if (commonAncestor == null)
+      System.out.println(" check debug no ancestor");
+    else
+      System.out.println(" check debug " + commonAncestor.data);
+  }
+
+  private static TNode commonAncestor(TNode node, int p, int q) {
+    if (node == null) {
+      return null;
+    }
+    if ((node.data == p) && (node.data != q)) {
+      return node;
+    }
+    if ((node.data != p) && (node.data == q)) {
+      return node;
+    }
+
+    TNode pSubTree = commonAncestor(node.left, p, q);
+    TNode qSubTree = commonAncestor(node.right, p, q);
+
+    if ((pSubTree != null) && (pSubTree.data != p) && (pSubTree.data != q)) {
+      return pSubTree; // common ancestor found, percolating up
+    }
+
+    if ((qSubTree != null) && (qSubTree.data != p) && (qSubTree.data != q)) {
+      return qSubTree; // common ancestor found, percolating up
+    }
+
+    if ((pSubTree != null) && (qSubTree != null)) {
+      return node; // this is the common ancestor
+    }
+    // this line returns the nonNull subtree
+    return pSubTree == null ? qSubTree : pSubTree;
+  }
+
+  private static TNode findCommonAncestorAp2(TNode node, int d1, int d2) {
+    boolean isPresentInTree = coversAp2(node, d1) && coversAp2(node, d2);
+    if (!isPresentInTree) {
+      return null;
+    }
+    return checkAncestorAp2(node, d1, d2);
+  }
+
+  private static boolean coversAp2(TNode node, int d) {
+    if (node == null) {
+      return false;
+    }
+    if (node.data == d) {
+      return true;
+    }
+    return (coversAp2(node.left, d) || coversAp2(node.right, d));
+  }
+
+  private static TNode checkAncestorAp2(TNode node, int d1, int d2) {
+    if (node == null || node.data == d1 || node.data == d2) {
+      return node;
+    }
+
+    boolean d1InLeft = coversAp2(node.left, d1);
+    boolean d2InLeft = coversAp2(node.left, d2);
+
+    if (d1InLeft != d2InLeft) {
+      return node; // the node found where both d1 & d2 are in diff subtrees
+    }
+
+    TNode subTreeTOLookIn = d1InLeft ? node.left : node.right;
+    return checkAncestorAp2(subTreeTOLookIn, d1, d2);
+  }
+
+  public static boolean checkSubtree(Tree t1, Tree t2) {
+    boolean res = checkSubtree(t1.root, t2.root, t2.root);
+    System.out.print("res - " + res);
+    return res;
+  }
+
+  /*[Pro 4.10]
+  *  Q) Check Subtree, t1, t2 are 2 vey large binary trees, with T1 bigger than t2. Create an algorithm to determine if
+  *  T2 is a subtree of T1
+  * A) I created below algo
+  * input : T1 & T2 (both are binary trees, given T1 is bigger than T2)
+  * output : boolean (True means T2 is a subtree of T1)
+  * checkSubtree(T1,T2,T2Root)
+  *   if T2 = null then
+  *   return true
+  *   if T1 = null then
+  *   return false
+  *   if T1 = T2 then
+  *     inLeft = checkSubtree(T1.left,T2.left,T2Root)
+  *     inRight = checkSubtree(T1.right,T2.right,T2Root)
+  *     if inleft = true & inright = true & T1 = T2Root then
+  *       // this is the subtree match root
+  *     return inleft & inright
+  *   else
+  *     belowLeft = checkSubtree(T1.left,T2Root,T2Root)
+  *     belowRight = checkSubtree(T1.right,T2Root,T2Root)
+  *     return belowLeft || belowRight
+  * */
+  private static boolean checkSubtree(TNode t1, TNode t2, TNode t2Root) {
+    if (t2 == null) {
+      return true;
+    }
+    if (t1 == null) {
+      return false;
+    }
+    // t2 data matches
+    if (t1.data == t2.data) {
+      boolean leftSubtree = checkSubtree(t1.left, t2.left, t2Root);
+      boolean rightSubtree = checkSubtree(t1.right, t2.right, t2Root);
+      // if this is the root & the result true has came percolating up
+      if ((leftSubtree && rightSubtree) && (t1.data == t2Root.data)) {
+        System.out.println("this is the root of subtree match " + t1.data);
+      }
+      return leftSubtree && rightSubtree;
+    } else {
+      boolean belowLeft = checkSubtree(t1.left, t2Root, t2Root);
+      boolean belowRight = checkSubtree(t1.right, t2Root, t2Root);
+      return belowLeft || belowRight;
     }
   }
 }
