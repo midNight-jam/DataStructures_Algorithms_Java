@@ -444,26 +444,42 @@ public class Trees_and_Graphs {
   *     belowRight = checkSubtree(T1.right,T2Root,T2Root)
   *     return belowLeft || belowRight
   * */
+
   private static boolean checkSubtree(TNode t1, TNode t2, TNode t2Root) {
+
+    if (t1 == null) {
+      return false;
+    }
+
+    boolean matchesHere = matchTreeTwo(t1, t2, t2Root);
+    if (matchesHere) {
+      return true;
+    } else {
+      boolean matchesInLeft = checkSubtree(t1.left, t2, t2Root);
+      if (matchesInLeft) {
+        return true;
+      }
+      boolean matchesInRight = checkSubtree(t1.right, t2, t2Root);
+      return matchesInRight;
+    }
+  }
+
+  private static boolean matchTreeTwo(TNode t1, TNode t2, TNode t2Root) {
     if (t2 == null) {
       return true;
     }
     if (t1 == null) {
       return false;
     }
-    // t2 data matches
     if (t1.data == t2.data) {
-      boolean leftSubtree = checkSubtree(t1.left, t2.left, t2Root);
-      boolean rightSubtree = checkSubtree(t1.right, t2.right, t2Root);
+      boolean leftSubtree = matchTreeTwo(t1.left, t2.left, t2Root);
+      boolean rightSubtree = matchTreeTwo(t1.right, t2.right, t2Root);
       // if this is the root & the result true has came percolating up
       if ((leftSubtree && rightSubtree) && (t1.data == t2Root.data)) {
         System.out.println("this is the root of subtree match " + t1.data);
       }
       return leftSubtree && rightSubtree;
-    } else {
-      boolean belowLeft = checkSubtree(t1.left, t2Root, t2Root);
-      boolean belowRight = checkSubtree(t1.right, t2Root, t2Root);
-      return belowLeft || belowRight;
     }
+    return false;
   }
 }

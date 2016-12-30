@@ -72,7 +72,9 @@ public class Main {
 //    Trees_and_Graphs_Main.testIsBST();
 //    Trees_and_Graphs_Main.testPredecessorAndSuccessor();
 //    Trees_and_Graphs_Main.testCommonAncestor();
-    Trees_and_Graphs_Main.testCheckSubtree();
+//    Trees_and_Graphs_Main.testCheckSubtree();
+//    Trees_and_Graphs_Main.testPathsWithSums();
+    Trees_and_Graphs_Main.testInsertNode();
   }
 
   private static void doMathUtils() {
