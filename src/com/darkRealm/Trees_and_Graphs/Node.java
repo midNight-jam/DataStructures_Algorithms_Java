@@ -7,10 +7,18 @@ public class Node {
   public String name;
   public Node[] childs;
   public Status status;
+  private int childsCount;
+  public int incomingEdges;
 
   public Node(int childs) {
     this.childs = new Node[childs];
     status = Status.NotProcessed;
+  }
+
+  public void addChild(Node child) {
+    childs[childsCount] = child;
+    childsCount++;
+    child.incomingEdges++;
   }
 
   public enum Status {

@@ -74,7 +74,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testCommonAncestor();
 //    Trees_and_Graphs_Main.testCheckSubtree();
 //    Trees_and_Graphs_Main.testPathsWithSums();
-    Trees_and_Graphs_Main.testInsertNode();
+//    Trees_and_Graphs_Main.testInsertNode();
+    Trees_and_Graphs_Main.testBuildOrder();
   }
 
   private static void doMathUtils() {

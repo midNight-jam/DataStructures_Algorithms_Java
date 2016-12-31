@@ -11,11 +11,13 @@ public class Graph {
   public int vertices;
   public Node start;
   public Node[] allVertices;
-
+  int processed;
+  String buildOrder;
   public Graph(int v) {
     vertices = v;
     start = new Node(vertices);
     allVertices = new Node[vertices];
+    buildOrder="";
   }
 
   public void BreadthFirstTraversal() {
@@ -67,6 +69,14 @@ public class Graph {
     System.out.println("Visiting - " + n.name);
   }
 
+  private void reduceIncoming(Node n) {
+    for (int i = 0; i < n.childs.length; i++) {
+      if (n.childs[i] != null && n.childs[i].incomingEdges > 0) {
+        n.childs[i].incomingEdges--;
+      }
+    }
+  }
+
   public void resetNodesStatus() {
     for (int i = 0; i < vertices; i++) {
       for (int j = 0; j < vertices; j++) {
@@ -114,4 +124,31 @@ public class Graph {
     resetNodesStatus();
     return false;
   }
+
+
+  public void modifiedBreadthFirstTraversal() {
+    MyQueue<Node> queue = new MyQueue<>();
+    queue.enqueue(start);
+    start.status = Node.Status.UnderProcessing;
+    Node trav;
+    System.out.println("Breadth First traversal");
+    while (!queue.isEmpty()) {
+      trav = queue.deque();
+      reduceIncoming(trav);
+      if(trav.incomingEdges==0){
+        trav.status = Node.Status.Processed;
+        processed--;
+        buildOrder+=" "+trav.name;
+      }
+      // add the next adjacent vertices in queue for processing
+      for (int i = 0; i < trav.childs.length; i++) {
+        // if the next vertex has not been processed put it in for processing in the queue
+        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
+          queue.enqueue(trav.childs[i]);
+          trav.childs[i].status = Node.Status.UnderProcessing;
+        }
+      }
+    }
+  }
+
 }

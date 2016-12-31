@@ -127,4 +127,11 @@ public class Trees_and_Graphs_Main {
     TNode node = tree.getRandomNode();
     System.out.println("res - " + node.data);
   }
+
+  public static void testBuildOrder(){
+    String projs = "a,b,c,d,e,f";
+    String dependencies = "(a,d), (f,b), (b,d), (f,a), (d,c), (e,f)";
+    String res = Trees_and_Graphs.buildOrder(projs,dependencies);
+    System.out.println("build order res - "+res);
+  }
 }

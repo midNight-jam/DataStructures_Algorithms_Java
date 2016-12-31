@@ -3,6 +3,7 @@ package com.darkRealm.Trees_and_Graphs;
 import com.darkRealm.Stacks_and_queues.MyQueue;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Jayam on 12/28/2016.
@@ -329,6 +330,61 @@ public class Trees_and_Graphs {
       }
       return par;
     }
+  }
+
+  /*  [Prob 4.7]
+  *   Q) build Order :  You are given a list of projects & a list of dependencies (which is a list of pairs ,
+  *   where the second project is dependent on the first proj). All of the proj dependencies must be built before the proj.
+   *   Find a valid build order, if none return error
+   *   @params : projects - a,b,c,d,e,f
+   *   @paramsn : dependencies - (a,d), (f,b), (b,d), (f,a), (d,c)
+    *  @return : Output - f,e,a,b,d,c - build order
+  * */
+  public static String buildOrder(String projects, String dependencies) {
+    String buildOrder = "";
+    String[] projs = projects.split(",");
+    HashMap<String, Node> nodes = new HashMap<>();
+    for (int i = 0; i < projs.length; i++) {
+      Node temp = new Node(projs.length);
+      temp.name = projs[i];
+      nodes.put(projs[i], temp);
+    }
+    String[] depends = dependencies.split(" ");
+
+    for (int i = 0; i < depends.length; i++) {
+      String parent = Character.toString(depends[i].charAt(1));
+      String child = Character.toString(depends[i].charAt(3));
+
+      Node parentNode = nodes.get(parent);
+      parentNode.addChild(nodes.get(child));
+    }
+
+    Node start = getNodeWhichDoesntHaveParent(projs, nodes);
+    Graph graph =new Graph(projs.length);
+    graph.start = start;
+    graph.processed = projs.length;
+
+    while(graph.processed!=0){
+      graph.modifiedBreadthFirstTraversal();
+      graph.start = getNodeWhichDoesntHaveParent(projs, nodes);;
+    }
+
+
+    buildOrder = graph.buildOrder;
+    // get any noed whose incoming edge is zero & process it , if that node is isolated then get another node whose i
+    // incoming node is 0
+    return buildOrder;
+  }
+
+  private static Node getNodeWhichDoesntHaveParent(String [] projs , HashMap<String,Node> nodes){
+    Node node = null;
+    for(int i=0; i<projs.length;i++){
+      Node temp = nodes.get(projs[i]);
+      if((temp.status!= Node.Status.Processed) && temp.incomingEdges==0){
+        return temp;
+      }
+    }
+    return node;
   }
 
   /*  [Prob 4.8]
