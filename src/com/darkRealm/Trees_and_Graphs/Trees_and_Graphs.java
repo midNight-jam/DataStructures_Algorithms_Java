@@ -360,17 +360,22 @@ public class Trees_and_Graphs {
     }
 
     Node start = getNodeWhichDoesntHaveParent(projs, nodes);
-    Graph graph =new Graph(projs.length);
+    Graph graph = new Graph(projs.length);
     graph.start = start;
     graph.processed = projs.length;
 
-    while(graph.processed!=0){
+//    while(graph.processed!=0){
+    while (graph.start != null) {
       graph.modifiedBreadthFirstTraversal();
-      graph.start = getNodeWhichDoesntHaveParent(projs, nodes);;
+      graph.start = getNodeWhichDoesntHaveParent(projs, nodes);
+      ;
     }
 
-
-    buildOrder = graph.buildOrder;
+    if (graph.processed == 0) {
+      buildOrder = graph.buildOrder;
+    } else {
+      buildOrder = "Error";
+    }
     // get any noed whose incoming edge is zero & process it , if that node is isolated then get another node whose i
     // incoming node is 0
     return buildOrder;
