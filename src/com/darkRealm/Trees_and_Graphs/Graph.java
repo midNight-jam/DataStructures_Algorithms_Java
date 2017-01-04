@@ -13,11 +13,12 @@ public class Graph {
   public Node[] allVertices;
   int processed;
   String buildOrder;
+
   public Graph(int v) {
     vertices = v;
     start = new Node(vertices);
     allVertices = new Node[vertices];
-    buildOrder="";
+    buildOrder = "";
   }
 
   public void BreadthFirstTraversal() {
@@ -105,12 +106,12 @@ public class Graph {
     oneVisited = false;
     while (!queue.isEmpty()) {
       trav = queue.deque();
-      if( !oneVisited && (trav.name.equals(p.name))) {
+      if (!oneVisited && (trav.name.equals(p.name))) {
         System.out.println(p.name + " - visisted ");
         oneVisited = true;
-      } else if (oneVisited && (trav.name.equals(q.name))){
+      } else if (oneVisited && (trav.name.equals(q.name))) {
         System.out.println(q.name + " - visisted ");
-        System.out.println("Route present between "+p.name+"  & "+q.name);
+        System.out.println("Route present between " + p.name + "  & " + q.name);
         return true;
       }
       trav.status = Node.Status.Processed;
@@ -125,7 +126,6 @@ public class Graph {
     return false;
   }
 
-
   public void modifiedBreadthFirstTraversal() {
     MyQueue<Node> queue = new MyQueue<>();
     queue.enqueue(start);
@@ -135,10 +135,10 @@ public class Graph {
     while (!queue.isEmpty()) {
       trav = queue.deque();
       reduceIncoming(trav);
-      if(trav.incomingEdges==0){
+      if (trav.incomingEdges == 0) {
         trav.status = Node.Status.Processed;
         processed--;
-        buildOrder+=" "+trav.name;
+        buildOrder += " " + trav.name;
       }
       // add the next adjacent vertices in queue for processing
       for (int i = 0; i < trav.childs.length; i++) {
@@ -150,5 +150,33 @@ public class Graph {
       }
     }
   }
+
+//  TODO
+//  public String modifiedDepthFirstTraversal() {
+//    String intermediateBuildOrder = "";
+//    Node trav;
+//    MyStack<Node> stack = new MyStack<>();
+//    stack.push(start);
+//    start.status = Node.Status.UnderProcessing;
+//    System.out.println("Depth First traversal");
+//
+//    while (!stack.isEmpty()) {
+//      trav = stack.pop();
+//      trav.status = Node.Status.Processed;
+////      if (trav.status == Node.Status.UnderProcessing) {
+////        return "Error"; // we have reached a cycle
+////      }
+//      intermediateBuildOrder += " " + trav.name;
+//      // add the next adjacent vertices in stack for processing
+//      for (int i = 0; i < trav.childs.length; i++) {
+//        // if the next vertex has not been processed put it in for processing in the stack
+//        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
+//          stack.push(trav.childs[i]);
+//          trav.childs[i].status = Node.Status.UnderProcessing;
+//        }
+//      }
+//    }
+//    return intermediateBuildOrder;
+//  }
 
 }

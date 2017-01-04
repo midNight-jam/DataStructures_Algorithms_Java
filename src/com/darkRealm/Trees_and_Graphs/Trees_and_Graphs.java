@@ -597,6 +597,11 @@ public class Trees_and_Graphs {
     return false;
   }
 
+  /*  Prob[4.9]
+  *   Q) BST Sequence : A sorted sequence is given in an array. Find the no of BST that can be created from this array
+  *  A) The no of tress that can be created for a root is total = NoOfWaysOfLeftSubtree *  NoOfWaysOfRightSubtree
+  *  Have used recursion with base cases to get then total ways possible
+  * */
   public static int NumberOfBSTSequences(int[] arr) {
     for(int i=1;i<arr.length;i++){
       if(arr[i-1]>arr[i]){
