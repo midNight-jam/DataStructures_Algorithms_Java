@@ -603,27 +603,27 @@ public class Trees_and_Graphs {
   *  Have used recursion with base cases to get then total ways possible
   * */
   public static int NumberOfBSTSequences(int[] arr) {
-    for(int i=1;i<arr.length;i++){
-      if(arr[i-1]>arr[i]){
+    for (int i = 1; i < arr.length; i++) {
+      if (arr[i - 1] > arr[i]) {
         System.out.println("not a valid BST array sequence");
         return 0;
       }
     }
 
-    if(arr.length==0){
+    if (arr.length == 0) {
       return 0;
     }
 
-    if(arr.length==1){
+    if (arr.length == 1) {
       return 1;
     }
 
-    if(arr.length==2){
+    if (arr.length == 2) {
       return 2;
     }
 
 
-    if(arr.length==3){
+    if (arr.length == 3) {
       return 5;
     }
 
@@ -645,15 +645,15 @@ public class Trees_and_Graphs {
       leftSubtree[i] = arr[i];
     }
     int leftSubtreeWays = NumberOfBSTSequences(leftSubtree);
-    leftSubtreeWays = leftSubtreeWays==0?1:leftSubtreeWays;
+    leftSubtreeWays = leftSubtreeWays == 0 ? 1 : leftSubtreeWays;
 
     int[] rightSubtree = new int[rightSize];
     for (int i = 0; i < rightSize; i++) {
-      rightSubtree[i] = arr[rootIndex + 1+ i];
+      rightSubtree[i] = arr[rootIndex + 1 + i];
     }
 
     int rightSubtreeWays = NumberOfBSTSequences(rightSubtree);
-    rightSubtreeWays = rightSubtreeWays==0?1:rightSubtreeWays;
+    rightSubtreeWays = rightSubtreeWays == 0 ? 1 : rightSubtreeWays;
 
     int totalWays = leftSubtreeWays * rightSubtreeWays;
     // the total no of ways would be leftSubtreeways * rightSubtreeways
