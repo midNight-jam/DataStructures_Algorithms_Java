@@ -23,7 +23,7 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-//    doTrees_Graph();
+    doTrees_Graph();
 //    doMathUtils();
 
 //    String res  = getTime(9,9,9,9);
@@ -32,7 +32,7 @@ public class Main {
 
 
 //    minLenUnSorted(new int[]{0, 1, 15, 25, 6, 7, 30, 40, 50});
-    minLenUnSorted(new int[]{10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60});
+//    minLenUnSorted(new int[]{10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60});
   }
 
   private static void doArray_and_Strings_Main() {
@@ -85,7 +85,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testCheckSubtree();
 //    Trees_and_Graphs_Main.testPathsWithSums();
 //    Trees_and_Graphs_Main.testInsertNode();
-    Trees_and_Graphs_Main.testBuildOrder();
+//    Trees_and_Graphs_Main.testBuildOrder();
+    Trees_and_Graphs_Main.testNumberOfBSTSequences();
   }
 
   private static void doMathUtils() {
@@ -167,6 +168,7 @@ public class Main {
   public static void minLenUnSorted(int[] arr) {
     int start, end;
     start = end = -1;
+
     for (int i = 0; i < arr.length - 1; i++) {
       if (arr[i] > arr[i + 1]) {
         start = i + 1;

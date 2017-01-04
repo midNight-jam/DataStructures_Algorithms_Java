@@ -132,6 +132,23 @@ public class Trees_and_Graphs_Main {
     String projs = "a,b,c,d,e,f";
     String dependencies = "(a,d), (f,b), (b,d), (f,a), (d,c), (e,f)";
     String res = Trees_and_Graphs.buildOrder(projs,dependencies);
+//    String res = Trees_and_Graphs.buildOrderNew(projs,dependencies);
     System.out.println("build order res - "+res);
+  }
+
+  public static void testNumberOfBSTSequences(){
+//    int [] arr = new int[]{}; //0
+//    int [] arr = new int[]{1}; //1
+//    int [] arr = new int[]{1,2}; //2
+//    int [] arr = new int[]{1,2,3}; //5
+//    int [] arr = new int[]{1,2,3,4}; // 14
+//    int [] arr = new int[]{1,2,3,4,5}; //42
+//    int [] arr = new int[]{1,2,3,4,5,6}; // 132
+//    int [] arr = new int[]{1,2,3,4,5,6,7}; // 429
+//    int [] arr = new int[]{1,2,3,4,5,6,7,8}; // 1430
+//    int [] arr = new int[]{1,2,3,4,5,6,7,8,9}; // 4862
+    int [] arr = new int[]{1,2,3,4,6,5,7,8,9}; // should fail not sorted
+    int res = Trees_and_Graphs.NumberOfBSTSequences(arr);
+    System.out.println("the ways of BST seq - "+res);
   }
 }

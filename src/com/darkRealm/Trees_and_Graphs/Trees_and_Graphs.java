@@ -4,6 +4,7 @@ import com.darkRealm.Stacks_and_queues.MyQueue;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Jayam on 12/28/2016.
@@ -381,16 +382,68 @@ public class Trees_and_Graphs {
     return buildOrder;
   }
 
-  private static Node getNodeWhichDoesntHaveParent(String [] projs , HashMap<String,Node> nodes){
+  private static Node getNodeWhichDoesntHaveParent(String[] projs, HashMap<String, Node> nodes) {
     Node node = null;
-    for(int i=0; i<projs.length;i++){
+    for (int i = 0; i < projs.length; i++) {
       Node temp = nodes.get(projs[i]);
-      if((temp.status!= Node.Status.Processed) && temp.incomingEdges==0){
+      if ((temp.status != Node.Status.Processed) && temp.incomingEdges == 0) {
         return temp;
       }
     }
     return node;
   }
+
+  //TODO
+//  public static String buildOrderNew(String projects, String dependencies) {
+//    String buildOrder = "";
+//    // first prepare the graph
+//    String[] projs = projects.split(",");
+//    HashMap<String, Node> nodes = new HashMap<>();
+//    for (int i = 0; i < projs.length; i++) {
+//      Node temp = new Node(projs.length);
+//      temp.name = projs[i];
+//      nodes.put(projs[i], temp);
+//    }
+//    String[] depends = dependencies.split(" ");
+//
+//    for (int i = 0; i < depends.length; i++) {
+//      String parent = Character.toString(depends[i].charAt(1));
+//      String child = Character.toString(depends[i].charAt(3));
+//
+//      Node parentNode = nodes.get(parent);
+//      parentNode.addChild(nodes.get(child));
+//    }
+//
+//    //next we fire a DFS from any given node & continue to build the DFS traverse as the build order,
+//    // untill we have either exhausted all the nodes from the grpah or we have encountered a Cycle
+//    Node start = nodes.get(projs[0]);
+//    // peerfrom the DFS from this node
+//    while (!allProcessed(nodes)) {
+//      // get the first node of the graph & use it to initialize the graph
+//
+//      Node tempNode = nodes.get(nodes.keySet().toArray()[0]);
+//      Graph graph = new Graph(projs.length);
+//      graph.start = tempNode;
+//      String res = graph.modifiedDepthFirstTraversal();
+//      if (res.equals("Error")) {
+//        System.out.println("cannot produce a vlid build order");
+//        return "Error";
+//      }
+//      buildOrder += res;
+//      // removing the  processed  node
+//      nodes.remove(tempNode);
+//    }
+//    return buildOrder;
+//  }
+//
+//  private static boolean allProcessed(HashMap<String, Node> map) {
+//    for (Map.Entry<String, Node> entry : map.entrySet()) {
+//      if (entry.getValue().status == Node.Status.NotProcessed) {
+//        return false;
+//      }
+//    }
+//    return true;
+//  }
 
   /*  [Prob 4.8]
   *   Q) FIrstCommonAncestor : find the first common ancestor 0f two nodes in a binary tree (NOT A BST)
@@ -542,5 +595,63 @@ public class Trees_and_Graphs {
       return leftSubtree && rightSubtree;
     }
     return false;
+  }
+
+  public static int NumberOfBSTSequences(int[] arr) {
+    for(int i=1;i<arr.length;i++){
+      if(arr[i-1]>arr[i]){
+        System.out.println("not a valid BST array sequence");
+        return 0;
+      }
+    }
+
+    if(arr.length==0){
+      return 0;
+    }
+
+    if(arr.length==1){
+      return 1;
+    }
+
+    if(arr.length==2){
+      return 2;
+    }
+
+
+    if(arr.length==3){
+      return 5;
+    }
+
+    int total = 0;
+    for (int i = 0; i < arr.length; i++) {
+      total += calculateWaysBSTSequence(i, arr);
+    }
+    return total;
+  }
+
+  private static int calculateWaysBSTSequence(int rootIndex, int[] arr) {
+
+
+    int rightSize = arr.length - rootIndex - 1; //accounting for root so -1
+    int leftSize = arr.length - rightSize - 1; //accounting for root so -1
+
+    int[] leftSubtree = new int[leftSize];
+    for (int i = 0; i < leftSize; i++) {
+      leftSubtree[i] = arr[i];
+    }
+    int leftSubtreeWays = NumberOfBSTSequences(leftSubtree);
+    leftSubtreeWays = leftSubtreeWays==0?1:leftSubtreeWays;
+
+    int[] rightSubtree = new int[rightSize];
+    for (int i = 0; i < rightSize; i++) {
+      rightSubtree[i] = arr[rootIndex + 1+ i];
+    }
+
+    int rightSubtreeWays = NumberOfBSTSequences(rightSubtree);
+    rightSubtreeWays = rightSubtreeWays==0?1:rightSubtreeWays;
+
+    int totalWays = leftSubtreeWays * rightSubtreeWays;
+    // the total no of ways would be leftSubtreeways * rightSubtreeways
+    return totalWays;
   }
 }
