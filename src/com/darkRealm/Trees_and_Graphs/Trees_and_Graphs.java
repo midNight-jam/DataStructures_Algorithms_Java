@@ -723,4 +723,47 @@ public class Trees_and_Graphs {
     right.appendToHead(headSecond);
 
   }
+
+
+  /* [Prob 4.12]
+  *   Q) paths with sum, given a binary tree in which nodes are conatins an integer value (which mught be positive or
+  *   negative). Desingn an algorithm to count the number of paths that sum to a given value. The path does not need to
+  *   start or end at the root or a leaf, but it must go downwards (travelling only from parent to child nodes).
+  *   A) Approach 1 : Would pass the value at both the left subtree after adding the current nodes value to the sum.
+  *     and would call recusively untill the leaf is encountered or the sum is reached. After that will print the path
+  *     if the sum matches. And would recursively call the same method with left and right subtree.
+  *     [COMPLEXITY - O(N^2)]
+  * */
+
+  public static int PathsWithSum(Tree tree, int value) {
+    pathSumWays = 0;
+    fireCalculatePathSums(tree.root, value);
+    return pathSumWays;
+  }
+
+  private static void fireCalculatePathSums(TNode node, int value) {
+    if (node == null) {
+      return;
+    }
+    calculatePathsWithSum(node, 0, value); // firing for current node
+    fireCalculatePathSums(node.left, value);  // firing for left subtree
+    fireCalculatePathSums(node.right, value); // firing for right subtree
+  }
+
+  static int pathSumWays = 0;
+
+  private static void calculatePathsWithSum(TNode node, int pathSum, int value) {
+    if (node == null) {
+      return;
+    }
+
+    pathSum += node.data;   // adding the current nodes data to the pathSum
+
+    if (pathSum == value) {
+      pathSumWays++;
+      System.out.println("Reached path sum " + pathSumWays);
+    }
+    calculatePathsWithSum(node.left, pathSum, value);
+    calculatePathsWithSum(node.right, pathSum, value);
+  }
 }

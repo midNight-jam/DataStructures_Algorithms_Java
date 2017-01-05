@@ -170,4 +170,16 @@ public class Trees_and_Graphs_Main {
       System.out.println(r);
     }
   }
+
+  public static void testPathsWithSum(){
+    Tree tree = new Tree();
+    tree.insert(0);
+    tree.insert(1);
+    tree.root.right.left = new TNode(-1);
+    tree.root.right.right= new TNode(-2);
+    tree.root.right.right.left = new TNode(1);
+    int res = Trees_and_Graphs.PathsWithSum(tree,0);
+    System.out.println("res - "+res);
+//
+  }
 }

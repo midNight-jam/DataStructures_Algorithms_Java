@@ -20,11 +20,11 @@ public class Main {
 
 
     // write your code here, testing after new git
-    doArray_and_Strings_Main();
+//    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 
-//    doTrees_Graph();
+    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 
@@ -91,7 +91,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testBuildOrder();
 //    Trees_and_Graphs_Main.testNumberOfBSTSequences();
 
-    Trees_and_Graphs_Main.testPossibleBSTArrays();
+//    Trees_and_Graphs_Main.testPossibleBSTArrays();
+    Trees_and_Graphs_Main.testPathsWithSum();
 
   }
 
