@@ -732,7 +732,7 @@ public class Trees_and_Graphs {
   *   A) Approach 1 : Would pass the value at both the left subtree after adding the current nodes value to the sum.
   *     and would call recusively untill the leaf is encountered or the sum is reached. After that will print the path
   *     if the sum matches. And would recursively call the same method with left and right subtree.
-  *     [COMPLEXITY - O(N^2)]
+  *     [COMPLEXITY - O(N*LogN)] (not N*N beacuse the problem space gets halved)
   * */
 
   public static int PathsWithSum(Tree tree, int value) {
