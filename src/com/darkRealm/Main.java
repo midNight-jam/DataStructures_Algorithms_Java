@@ -1,6 +1,8 @@
 package com.darkRealm;
 
 import com.darkRealm.BigO.MathUtil;
+import com.darkRealm.LinkedLists.LinkedList;
+import com.darkRealm.LinkedLists.LinkedList_Main;
 import com.darkRealm.Trees_and_Graphs.Trees_and_Graphs;
 
 import java.io.IOException;
@@ -23,7 +25,9 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
+
     doTrees_Graph();
+//    doLinkedLsit();
 //    doMathUtils();
 
 //    String res  = getTime(9,9,9,9);
@@ -86,7 +90,10 @@ public class Main {
 //    Trees_and_Graphs_Main.testPathsWithSums();
 //    Trees_and_Graphs_Main.testInsertNode();
 //    Trees_and_Graphs_Main.testBuildOrder();
-    Trees_and_Graphs_Main.testNumberOfBSTSequences();
+//    Trees_and_Graphs_Main.testNumberOfBSTSequences();
+
+    Trees_and_Graphs_Main.testPossibleBSTArrays();
+
   }
 
   private static void doMathUtils() {
@@ -218,5 +225,9 @@ public class Main {
       }
     }
     System.out.println("is it working Rs - " + RStart + "  Re- " + REnd);
+  }
+
+  private static void doLinkedLsit(){
+    LinkedList_Main.testLinkedListOperations();
   }
 }

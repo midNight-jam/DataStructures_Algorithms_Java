@@ -1,6 +1,8 @@
 package com.darkRealm.Trees_and_Graphs;
 
+import com.darkRealm.LinkedLists.LinkedList;
 import com.darkRealm.Stacks_and_queues.MyQueue;
+import org.restlet.ext.rdf.Link;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -597,7 +599,7 @@ public class Trees_and_Graphs {
     return false;
   }
 
-  /*  Prob[4.9]
+  /*  [Prob 4.9 substitute]
   *   Q) BST Sequence : A sorted sequence is given in an array. Find the no of BST that can be created from this array
   *  A) The no of tress that can be created for a root is total = NoOfWaysOfLeftSubtree *  NoOfWaysOfRightSubtree
   *  Have used recursion with base cases to get then total ways possible
@@ -621,7 +623,6 @@ public class Trees_and_Graphs {
     if (arr.length == 2) {
       return 2;
     }
-
 
     if (arr.length == 3) {
       return 5;
@@ -658,5 +659,67 @@ public class Trees_and_Graphs {
     int totalWays = leftSubtreeWays * rightSubtreeWays;
     // the total no of ways would be leftSubtreeways * rightSubtreeways
     return totalWays;
+  }
+
+  /*  [Prob 4.9]
+  *   Q) BST Sequence A BST was created using an array from left to right and inserting elements from left to right. Now
+  *   given a BST with distinct elements, print all possible arrays that can generate this BST
+  *   A) I couldnt solve this question completly after several attempts, thus applying the solution as given by the
+  *   CTCI. The magic salt here was to weave the two seperate linked lists (I failed to imagine use of linked list for
+  *   holding elements) and then weaving these separate linked lists to get the combination. This weaving is then
+  *   recurcisively called to get all the possible array representation of the given BST. Read below the weaving algo
+  *   used from CTCI.
+  * */
+  public static ArrayList<LinkedList> possibleBSTArrays(TNode node) {
+    ArrayList<LinkedList> result = new ArrayList<>();
+    if (node == null) {
+      result.add(new LinkedList());
+      return result;
+    }
+
+    LinkedList prefix = new LinkedList();
+    prefix.appendToTail(new com.darkRealm.LinkedLists.Node(node.data));
+
+    ArrayList<LinkedList> leftSubTree = possibleBSTArrays(node.left);
+    ArrayList<LinkedList> rightSubTree = possibleBSTArrays(node.right);
+
+    // weave together the list to get all the combinations
+    for (LinkedList left :
+        leftSubTree) {
+      for (LinkedList right :
+          rightSubTree) {
+        ArrayList<LinkedList> weaved = new ArrayList<>();
+        weaveLists(left, right, weaved, prefix);
+        result.addAll(weaved);
+      }
+    }
+    return result;
+  }
+
+  private static void weaveLists(LinkedList left,
+                                 LinkedList right,
+                                 ArrayList<LinkedList> weaved,
+                                 LinkedList prefix) {
+    if (left.size() == 0 || right.size() == 0) {
+      LinkedList result = new LinkedList();
+      result.addAll(left);
+      result.addAll(right);
+      result.addAll(prefix);
+      return;
+    }
+    // taking one from head and adding it to prefix & sending for recursion where it will again get short
+    // after the recursion has came back we have to add back the removed node
+    com.darkRealm.LinkedLists.Node headFirst = left.removeFirst();
+    prefix.appendToTail(headFirst);
+    weaveLists(left, right, weaved, prefix);
+    prefix.removeLast();
+    left.appendToHead(headFirst);
+
+    com.darkRealm.LinkedLists.Node headSecond = right.removeFirst();
+    prefix.appendToTail(headSecond);
+    weaveLists(left, right, weaved, prefix);
+    prefix.removeLast();
+    right.appendToHead(headSecond);
+
   }
 }

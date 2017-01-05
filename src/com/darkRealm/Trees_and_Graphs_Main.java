@@ -1,8 +1,11 @@
 package com.darkRealm;
 
+import com.darkRealm.LinkedLists.LinkedList;
 import com.darkRealm.Trees_and_Graphs.TNode;
 import com.darkRealm.Trees_and_Graphs.Tree;
 import com.darkRealm.Trees_and_Graphs.Trees_and_Graphs;
+
+import java.util.ArrayList;
 
 /**
  * Created by Jayam on 12/27/2016.
@@ -128,15 +131,15 @@ public class Trees_and_Graphs_Main {
     System.out.println("res - " + node.data);
   }
 
-  public static void testBuildOrder(){
+  public static void testBuildOrder() {
     String projs = "a,b,c,d,e,f";
     String dependencies = "(a,d), (f,b), (b,d), (f,a), (d,c), (e,f)";
-    String res = Trees_and_Graphs.buildOrder(projs,dependencies);
+    String res = Trees_and_Graphs.buildOrder(projs, dependencies);
 //    String res = Trees_and_Graphs.buildOrderNew(projs,dependencies);
-    System.out.println("build order res - "+res);
+    System.out.println("build order res - " + res);
   }
 
-  public static void testNumberOfBSTSequences(){
+  public static void testNumberOfBSTSequences() {
 //    int [] arr = new int[]{}; //0
 //    int [] arr = new int[]{1}; //1
 //    int [] arr = new int[]{1,2}; //2
@@ -147,8 +150,24 @@ public class Trees_and_Graphs_Main {
 //    int [] arr = new int[]{1,2,3,4,5,6,7}; // 429
 //    int [] arr = new int[]{1,2,3,4,5,6,7,8}; // 1430
 //    int [] arr = new int[]{1,2,3,4,5,6,7,8,9}; // 4862
-    int [] arr = new int[]{1,2,3,4,6,5,7,8,9}; // should fail not sorted
+    int[] arr = new int[]{1, 2, 3, 4, 6, 5, 7, 8, 9}; // should fail not sorted
     int res = Trees_and_Graphs.NumberOfBSTSequences(arr);
-    System.out.println("the ways of BST seq - "+res);
+    System.out.println("the ways of BST seq - " + res);
+  }
+
+  public static void testPossibleBSTArrays() {
+    Tree tree = new Tree();
+    tree.insert(2);
+    tree.insert(1);
+    tree.insert(3);
+    tree.insert(4);
+//    tree.insert(5);
+//    tree.insert(6);
+//    tree.insert(7);
+    ArrayList<LinkedList> res = Trees_and_Graphs.possibleBSTArrays(tree.root);
+    for (LinkedList r : res
+        ) {
+      System.out.println(r);
+    }
   }
 }
