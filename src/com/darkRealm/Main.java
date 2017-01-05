@@ -1,11 +1,7 @@
 package com.darkRealm;
 
 import com.darkRealm.BigO.MathUtil;
-import com.darkRealm.LinkedLists.LinkedList;
-import com.darkRealm.LinkedLists.LinkedList_Main;
-import com.darkRealm.Trees_and_Graphs.Trees_and_Graphs;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -21,12 +17,14 @@ public class Main {
 ////      e.printStackTrace();
 //      System.out.println("Some thing went wrong while settting up logs");
 //    }
+
+
     // write your code here, testing after new git
-//    doArray_and_Strings_Main();
+    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 
-    doTrees_Graph();
+//    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 
@@ -46,8 +44,9 @@ public class Main {
 //    Arrays_and_Strings_Main.doCompresssion();
 //    Arrays_and_Strings_Main.getMaxOfMinsFromSlidingWindow(3, new int[]{2, 5, 4, 6, 8});
 //    Arrays_and_Strings_Main.getMaxOfMinsFromSlidingWindow(2, new int[]{1, 1, 1});
-    int res = Arrays_and_Strings_Main.getMaxOfMinsFromSlidingWindow(1, new int[]{1, 2, 3, 1, 2});
-    System.out.println("Res - " + res);
+//    int res = Arrays_and_Strings_Main.getMaxOfMinsFromSlidingWindow(1, new int[]{1, 2, 3, 1, 2});
+//    System.out.println("Res - " + res);
+    Arrays_and_Strings_Main.testGetSubArrayCombinations();
   }
 
   private static void doStack_and_Queue() {

@@ -1,8 +1,11 @@
 package com.darkRealm.Arrays_and_Strings;
 
 import com.darkRealm.BigO.QuickSort;
+import com.darkRealm.LinkedLists.LinkedList;
 import com.sun.deploy.util.ArrayUtil;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -10,148 +13,193 @@ import java.util.HashMap;
  */
 public class Arrays_and_Strings {
 
-    /* the question mentioned not to use extra ds thats why we are not using HashMap,
-       with using hash map it would be simpler, just keep pushing curent char in to hashmap, if not alreaday ther,
-       if its present retun false. In below appraoch we have sorted string & then traversed it for finding duplicate
-       hence excluing conversion :  S = string len,  total is O(SlogS) + O(S) === O(SlogS) */
-    public static boolean IsUnique(String str) {
-        int[] asciiArr = new int[str.length()];
-        for (int i = 0; i < asciiArr.length; i++) {
-            asciiArr[i] = (int) str.charAt(i);
-        }
-        QuickSort.doQuickSort(asciiArr);
+  /* the question mentioned not to use extra ds thats why we are not using HashMap,
+     with using hash map it would be simpler, just keep pushing curent char in to hashmap, if not alreaday ther,
+     if its present retun false. In below appraoch we have sorted string & then traversed it for finding duplicate
+     hence excluing conversion :  S = string len,  total is O(SlogS) + O(S) === O(SlogS) */
+  public static boolean IsUnique(String str) {
+    int[] asciiArr = new int[str.length()];
+    for (int i = 0; i < asciiArr.length; i++) {
+      asciiArr[i] = (int) str.charAt(i);
+    }
+    QuickSort.doQuickSort(asciiArr);
 
-        char[] charArr = new char[str.length()];
-        for (int i = 0; i < asciiArr.length; i++) {
-            charArr[i] = (char) asciiArr[i];
+    char[] charArr = new char[str.length()];
+    for (int i = 0; i < asciiArr.length; i++) {
+      charArr[i] = (char) asciiArr[i];
+    }
+    int i = 0;
+    for (i = 0; i < charArr.length - 1; i++) {
+      if (charArr[i] == charArr[i + 1]) {
+        break;
+      }
+    }
+    return i == str.length() - 1 ? true : false;
+  }
+
+  public static boolean CheckPermutation(String str, String perm) {
+    HashMap<Character, Integer> originalStrMap = new HashMap<>();
+    for (int i = 0; i < str.length(); i++) {
+      if (originalStrMap.containsKey(str.charAt(i))) {
+        int count = originalStrMap.get(str.charAt(i));
+        originalStrMap.put(str.charAt(i), count + 1);
+      } else {
+        originalStrMap.put(str.charAt(i), 1);
+      }
+    }
+    HashMap<Character, Integer> permStrMap = new HashMap<>();
+
+    for (int i = 0; i < perm.length(); i++) {
+      // present in original map
+      if (originalStrMap.containsKey(perm.charAt(i))) {
+        // present in perm Map
+        if (permStrMap.containsKey(perm.charAt(i))) {
+          // increment value
+          int permCount = permStrMap.get(perm.charAt(i));
+          permStrMap.put(perm.charAt(i), permCount + 1);
+          // if after increasing its more
+          if (permStrMap.get(perm.charAt(i)) > originalStrMap.get(perm.charAt(i))) {
+            return false;
+          }
         }
-        int i = 0;
-        for (i = 0; i < charArr.length - 1; i++) {
-            if (charArr[i] == charArr[i + 1]) {
-                break;
-            }
+        // have to add to perm map
+        else {
+          permStrMap.put(perm.charAt(i), 1);
         }
-        return i == str.length() - 1 ? true : false;
+      } else {
+        return false;
+      }
     }
 
-    public static boolean CheckPermutation(String str, String perm) {
-        HashMap<Character, Integer> originalStrMap = new HashMap<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (originalStrMap.containsKey(str.charAt(i))) {
-                int count = originalStrMap.get(str.charAt(i));
-                originalStrMap.put(str.charAt(i), count + 1);
-            } else {
-                originalStrMap.put(str.charAt(i), 1);
-            }
-        }
-        HashMap<Character, Integer> permStrMap = new HashMap<>();
+    // final traversal to se if any char appeared less
 
-        for (int i = 0; i < perm.length(); i++) {
-            // present in original map
-            if (originalStrMap.containsKey(perm.charAt(i))) {
-                // present in perm Map
-                if (permStrMap.containsKey(perm.charAt(i))) {
-                    // increment value
-                    int permCount = permStrMap.get(perm.charAt(i));
-                    permStrMap.put(perm.charAt(i), permCount + 1);
-                    // if after increasing its more
-                    if (permStrMap.get(perm.charAt(i)) > originalStrMap.get(perm.charAt(i))) {
-                        return false;
-                    }
-                }
-                // have to add to perm map
-                else {
-                    permStrMap.put(perm.charAt(i), 1);
-                }
-            } else {
-                return false;
-            }
-        }
-
-        // final traversal to se if any char appeared less
-
-        for (int i = 0; i < str.length(); i++) {
-            if (originalStrMap.get(str.charAt(i)) != permStrMap.get(str.charAt(i))) {
-                return false;
-            }
-        }
-
-        return true;
+    for (int i = 0; i < str.length(); i++) {
+      if (originalStrMap.get(str.charAt(i)) != permStrMap.get(str.charAt(i))) {
+        return false;
+      }
     }
 
-    /* @Param str : a string which we have to prove if its a permutation  of a palindrome
-    input : tactcoa
-    output : True bcoz [ "tac o cat", "act o tca"]
-     if the given string is EVEN len then all the elemets  ahve to appear only even times inorder to able to form
-     a posiible palindrome,
-     if the given string is ODD len , then all except one elemsnts have to appear even times & ONLY ONE element has to
-     appear odd times.
-    * */
-    public static boolean palindromePermutation(String str) {
-        // first create hasmap with count of char appearnce
-        HashMap<Character, Integer> map = new HashMap<>();
-        int len = str.length();
-        char c;
-        // preapre map
-        for (int i = 0; i < len; i++) {
-            c = str.charAt(i);
-            if (map.containsKey(str.charAt(i))) {
-                map.put(c, map.get(c) + 1);
-            } else {
-                map.put(c, 1);
-            }
-        }
+    return true;
+  }
 
-        boolean even = isEven(len);
-        int charCount;
-        int oneOddCount = 0;
-        for (int i = 0; i < len; i++) {
-            if (even) {
-                charCount = map.get(str.charAt(i));
-                if (!isEven(charCount)) {
-                    return false;
-                }
-            } else {
-                charCount = map.get(str.charAt(i));
-                if (!isEven(charCount)) {
-                    oneOddCount++;
-                } else if (isEven(charCount)) {
-                    continue;
-                } else if (oneOddCount > 1) {
-                    return false;
-                }
-            }
-        }
-        return true;
+  /* @Param str : a string which we have to prove if its a permutation  of a palindrome
+  input : tactcoa
+  output : True bcoz [ "tac o cat", "act o tca"]
+   if the given string is EVEN len then all the elemets  ahve to appear only even times inorder to able to form
+   a posiible palindrome,
+   if the given string is ODD len , then all except one elemsnts have to appear even times & ONLY ONE element has to
+   appear odd times.
+  * */
+  public static boolean palindromePermutation(String str) {
+    // first create hasmap with count of char appearnce
+    HashMap<Character, Integer> map = new HashMap<>();
+    int len = str.length();
+    char c;
+    // preapre map
+    for (int i = 0; i < len; i++) {
+      c = str.charAt(i);
+      if (map.containsKey(str.charAt(i))) {
+        map.put(c, map.get(c) + 1);
+      } else {
+        map.put(c, 1);
+      }
     }
 
-    private static boolean isEven(int i) {
-        return (i & 1) == 1 ? false : true;
-    }
-
-    /*@Param str :  a string which will be compressed
-    input: aabbcccaaa
-    output : a2b2c3a3
-    * */
-    public static String stringCompression(String str) {
-        StringBuilder compressedString = new StringBuilder();
-        int len = str.length();
-        if (len > 0) {
-            int count = 1;
-            char c;
-            int i = 1;
-            for (; i < len; i++) {
-                if (str.charAt(i) == str.charAt(i - 1)) {
-                    count++;
-                } else {
-                    compressedString.append(str.charAt(i - 1) + "" + count);
-                    count = 1;
-                }
-            }
-            compressedString.append(str.charAt(i - 1) + "" + count);
-            System.out.println(compressedString);
+    boolean even = isEven(len);
+    int charCount;
+    int oneOddCount = 0;
+    for (int i = 0; i < len; i++) {
+      if (even) {
+        charCount = map.get(str.charAt(i));
+        if (!isEven(charCount)) {
+          return false;
         }
-        return compressedString.toString();
+      } else {
+        charCount = map.get(str.charAt(i));
+        if (!isEven(charCount)) {
+          oneOddCount++;
+        } else if (isEven(charCount)) {
+          continue;
+        } else if (oneOddCount > 1) {
+          return false;
+        }
+      }
     }
+    return true;
+  }
+
+  private static boolean isEven(int i) {
+    return (i & 1) == 1 ? false : true;
+  }
+
+  /*@Param str :  a string which will be compressed
+  input: aabbcccaaa
+  output : a2b2c3a3
+  * */
+  public static String stringCompression(String str) {
+    StringBuilder compressedString = new StringBuilder();
+    int len = str.length();
+    if (len > 0) {
+      int count = 1;
+      char c;
+      int i = 1;
+      for (; i < len; i++) {
+        if (str.charAt(i) == str.charAt(i - 1)) {
+          count++;
+        } else {
+          compressedString.append(str.charAt(i - 1) + "" + count);
+          count = 1;
+        }
+      }
+      compressedString.append(str.charAt(i - 1) + "" + count);
+      System.out.println(compressedString);
+    }
+    return compressedString.toString();
+  }
+
+  /* [Problem]
+  *   Q) given an array and a size K, print all the combinations of size K that can be created using that array
+  *   A) We will recursiely call the method to remove the element from the ith index of list and append it to the partial
+  *   result and recurse again, untill the partial result is of the length K. One important point to note in the below
+  *   algo is that after removing an element from the index, we have to add it back so that we can generate more
+  *   combinations, but because of Java's ArrayList inherent behaviour when we are adding the element back to the list.
+  *   The element is added by default at the end. this creates some mess as the collection has lost its original sequence
+   *   we will not be able to generate all the combinations. This we have to make a clone of the original list so that
+   *   we can just reset the list to its previous sequence instead of manually inserting the removed element to its
+   *   original postion. Thus, pay attention when you see clone in the below method
+  * */
+
+  public static void getSubArrayCombinations(Integer[] arr, int k) {
+    if (k > arr.length) {
+      return;
+    }
+    combinationNumber = 0;
+    ArrayList<Integer> nos = new ArrayList<Integer>(Arrays.asList(arr));
+    ArrayList<Integer> res = new ArrayList<Integer>();
+    combine(nos, res, k);
+  }
+
+  static int combinationNumber = 0;
+
+  private static void combine(ArrayList<Integer> nos, ArrayList<Integer> res, int k) {
+    if (res.size() == k) {
+      combinationNumber++;
+      System.out.println(Arrays.toString(res.toArray()) + "  - " + combinationNumber);
+      return;
+    }
+    ArrayList<Integer> numbers = (ArrayList<Integer>) nos.clone();
+    for (int i = 0; i < numbers.size(); i++) {
+      int trav = numbers.get(i);
+      // making a clone else will have to simarly remove the elements from the results combinations, its easier to have
+      // a discardable clone. Thus below Clone
+      ArrayList<Integer> results = (ArrayList<Integer>) res.clone();
+      results.add(trav);
+      numbers.remove(i);  // removing at the index
+      combine(numbers, results, k);
+      numbers = (ArrayList<Integer>) nos.clone(); // resetting to original SEQUENCE for more combinaitons,
+      // THIS PART IS REALLY ESSENTIAL, beacuse if we simply add the element back to the list, it is not maintaining the
+      // ORIGINAL sequence of numbers, due to this our combinations are repeating inspite of runing for correct no
+      // of times
+    }
+  }
 }
-

@@ -669,6 +669,7 @@ public class Trees_and_Graphs {
   *   holding elements) and then weaving these separate linked lists to get the combination. This weaving is then
   *   recurcisively called to get all the possible array representation of the given BST. Read below the weaving algo
   *   used from CTCI.
+  *   ////////TODO THE CODE BELOW DOESNT WORKS AS EXPECTED HAS BUGS//////////
   * */
   public static ArrayList<LinkedList> possibleBSTArrays(TNode node) {
     ArrayList<LinkedList> result = new ArrayList<>();

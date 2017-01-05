@@ -40,6 +40,7 @@ public class Arrays_and_Strings_Main {
       return y - x;
     }
   }
+
   public static int getMaxOfMinsFromSlidingWindow(int k, int[] arr) {
     int size = arr.length;
     PriorityQueue<Integer> minHeap = new PriorityQueue<>(arr.length);
@@ -59,5 +60,11 @@ public class Arrays_and_Strings_Main {
     }
     int res = maxHeap.remove();
     return res;
+  }
+
+  public static void testGetSubArrayCombinations(){
+//    Integer [] arr = new Integer[]{1,2,3};
+    Integer [] arr = new Integer[]{1,2,3,4};
+    Arrays_and_Strings.getSubArrayCombinations(arr,4);
   }
 }
