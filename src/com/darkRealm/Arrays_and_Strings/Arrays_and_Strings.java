@@ -202,4 +202,43 @@ public class Arrays_and_Strings {
       // of times
     }
   }
+
+  /* [Prob 4.12] Faster O(N)
+ *   Q) find out the ways in which we can get the target sum from using any consequent sequence from the array
+ *   A) This approach uses a technique described in CTCI. It is expalined via an array concept, have implemented that
+ *   also in  the array & strings class. The logic is to have an array that keeps the running Sum till this point say RSx
+ *   for xth element. And we are also given the target sum lets say Ts. According to the formula RSx = RSy -Ts (how is
+ *   this derived not sure/ out of scope for now), we get RSy = RSx -Ts, we will require this RSy for the nest step.
+ *   Now we have to create a hashmap MAP_RS that will store all the runninsums as keys and the number of times they appeared
+ *   in the running sum array. Now comes the actual possible ways part
+    *   For each y: get the RSy
+    *   Look up the RSy in the MAP_RS
+    *   if found then add the value of RSy from MAP_RS to the totalWays
+ *     [COMPLEXITY - O(N)]
+ * */
+  public static int possibleSubArraysWithSumFaster(int[] arr, int targetSum) {
+    int[] runningSum = new int[arr.length];
+    int possibleSubArraysWithSum = 0;
+    HashMap<Integer, Integer> mapRS = new HashMap<>();
+    runningSum[0] = arr[0]; // initializing the runningSum first element with firt element of array
+    mapRS.put(runningSum[0], 1); // initializing the mapRs with the running sum first element
+
+    for (int i = 1; i < arr.length; i++) {
+      runningSum[i] = arr[i] + runningSum[i - 1]; // the next running sum will be sum of last running sum & the element
+      if (mapRS.containsKey(runningSum[i])) {
+        mapRS.put(runningSum[i], mapRS.get(runningSum[i]) + 1); // if this runningSum is already present increment
+      } else {
+        mapRS.put(runningSum[i], 1);  // else just record its first occurence
+      }
+    }
+
+    for (int i = 0; i < runningSum.length; i++) {
+      int rsX = runningSum[i];
+      int rsY = rsX - targetSum;
+      if (mapRS.containsKey(rsY)) {
+        possibleSubArraysWithSum += mapRS.get(rsY);
+      }
+    }
+    return possibleSubArraysWithSum;
+  }
 }

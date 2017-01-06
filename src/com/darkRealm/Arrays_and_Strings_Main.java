@@ -62,9 +62,16 @@ public class Arrays_and_Strings_Main {
     return res;
   }
 
-  public static void testGetSubArrayCombinations(){
+  public static void testGetSubArrayCombinations() {
 //    Integer [] arr = new Integer[]{1,2,3};
-    Integer [] arr = new Integer[]{1,2,3,4};
-    Arrays_and_Strings.getSubArrayCombinations(arr,4);
+    Integer[] arr = new Integer[]{1, 2, 3, 4};
+    Arrays_and_Strings.getSubArrayCombinations(arr, 4);
+  }
+
+  public static void testPossibleSubArraysWithSumFaster() {
+    int[] arr = new int[]{10, 5, 1, 2, -1, -1, 7, 1, 2};
+    int targetSum = 8;
+    int res = Arrays_and_Strings.possibleSubArraysWithSumFaster(arr, targetSum);
+    System.out.println("Res - " + res);
   }
 }

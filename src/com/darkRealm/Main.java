@@ -20,11 +20,11 @@ public class Main {
 
 
     // write your code here, testing after new git
-//    doArray_and_Strings_Main();
+    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 
-    doTrees_Graph();
+//    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 
@@ -46,7 +46,8 @@ public class Main {
 //    Arrays_and_Strings_Main.getMaxOfMinsFromSlidingWindow(2, new int[]{1, 1, 1});
 //    int res = Arrays_and_Strings_Main.getMaxOfMinsFromSlidingWindow(1, new int[]{1, 2, 3, 1, 2});
 //    System.out.println("Res - " + res);
-    Arrays_and_Strings_Main.testGetSubArrayCombinations();
+//    Arrays_and_Strings_Main.testGetSubArrayCombinations();
+    Arrays_and_Strings_Main.testPossibleSubArraysWithSumFaster();
   }
 
   private static void doStack_and_Queue() {
