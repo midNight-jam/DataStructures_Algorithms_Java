@@ -183,4 +183,26 @@ public class Trees_and_Graphs_Main {
     System.out.println("res - "+res);
 //
   }
+  public static void testInorderTraversalIterative(){
+    Tree tree = new Tree();
+//    tree.insert(2);
+//    tree.insert(1);
+//    tree.insert(1);
+//    tree.insert(4);
+
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(15);
+    tree.insert(3);
+    tree.insert(6);
+    tree.insert(13);
+    tree.insert(25);
+    tree.insert(1);
+    tree.insert(4);
+    tree.insert(8);
+    tree.insert(14);
+    tree.insert(18);
+
+    Trees_and_Graphs.inorderTraversalIterative(tree);
+  }
 }

@@ -103,8 +103,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testNumberOfBSTSequences();
 
 //    Trees_and_Graphs_Main.testPossibleBSTArrays();
-    Trees_and_Graphs_Main.testPathsWithSum();
-
+//    Trees_and_Graphs_Main.testPathsWithSum();
+    Trees_and_Graphs_Main.testInorderTraversalIterative();
   }
 
   private static void doMathUtils() {

@@ -2,6 +2,7 @@ package com.darkRealm.Trees_and_Graphs;
 
 import com.darkRealm.LinkedLists.LinkedList;
 import com.darkRealm.Stacks_and_queues.MyQueue;
+import com.darkRealm.Stacks_and_queues.MyStack;
 import org.restlet.ext.rdf.Link;
 
 import java.util.ArrayList;
@@ -794,7 +795,6 @@ public class Trees_and_Graphs {
 
   private static void calulatePathsWithSumFaster(TNode node, int runningSum,
                                                  int targetSum, HashMap<Integer, Integer> mapRS) {
-
     if (node == null) {
       return;
     }
@@ -811,5 +811,52 @@ public class Trees_and_Graphs {
     }
     calulatePathsWithSumFaster(node.left, runningSum, targetSum, mapRS);
     calulatePathsWithSumFaster(node.right, runningSum, targetSum, mapRS);
+  }
+
+  /* [Prob]
+  *   Q) print the inorder traversal with iterative method, not recursive.
+  *   Constraint O(N) complexity, O(H) space, H - height of tree
+  *   A)
+  *   0: push root in stack
+  *   1 : while Stack not empty
+  *   1.1 Peek from stack to the top element
+  *   1.2 if element has left child push left child on stack & continue to loop
+  *   1.3 else if eleement doesnt have left child, pop from stack & print ,
+  *   also check if from this pop stack is empty or not.
+  *   1.4	If emty return
+  *   1.5 while element.right ==null  keep poping from stack & print
+  *   1.6 if eleement.right not equal to null push in stack
+  *   time Complexity  - [O(N)]
+  *   space Complexity  - [O(H)] h is the height of the tree
+  * */
+  public static void inorderTraversalIterative(Tree tree) {
+    MyStack<TNode> stack = new MyStack<>();
+    TNode trav = tree.root;
+    stack.push(trav);
+    while (!stack.isEmpty()) {
+      trav = stack.peek();
+      // if has left child then push left child in stack
+      if (trav.left != null) {
+        stack.push(trav.left);
+        trav = trav.left;
+        continue;
+      }
+      // if doesnt has a left child then print this nodes, as its inorder correct place has arrived & pop from stack
+      else if (trav.left == null) {
+        trav = stack.pop();
+        System.out.print(" " + trav.data);
+        if (stack.isEmpty()) {
+          return; //  if stack has became empty its time to return
+        }
+        while (trav.right == null && !stack.isEmpty()) {  //  Traverse upwards till we have reached a node that has its right child, there we will make a turn
+          trav = stack.pop();
+          System.out.print(" " + trav.data);
+        }
+
+        if (trav.right != null) {
+          stack.push(trav.right);
+        }
+      }
+    }
   }
 }
