@@ -1,8 +1,10 @@
 package com.darkRealm;
 
+import com.darkRealm.BigO.ArrayUtil;
 import com.darkRealm.BigO.MathUtil;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 
 /*
@@ -20,11 +22,11 @@ public class Main {
 
 
     // write your code here, testing after new git
-    doArray_and_Strings_Main();
+//    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 
-//    doTrees_Graph();
+    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 
@@ -47,7 +49,15 @@ public class Main {
 //    int res = Arrays_and_Strings_Main.getMaxOfMinsFromSlidingWindow(1, new int[]{1, 2, 3, 1, 2});
 //    System.out.println("Res - " + res);
 //    Arrays_and_Strings_Main.testGetSubArrayCombinations();
-    Arrays_and_Strings_Main.testPossibleSubArraysWithSumFaster();
+//    Arrays_and_Strings_Main.testPossibleSubArraysWithSumFaster();
+//    int [] arr = ArrayUtil.getSmallBigArray(new int[]{5,6,3,10,9});
+//    int [] arr = ArrayUtil.getSmallBigArray(new int[]{1,2,3,4,5});
+//    int [] arr = ArrayUtil.getSmallBigArray(new int[]{9,8,7,6,5});
+//    int [] arr = ArrayUtil.getSmallBigArray(new int[]{5,6,7,4,3,2,1});
+//    int [] arr = ArrayUtil.getSmallBigArray(new int[]{7,2,9,10,12,3});
+//    int [] arr = ArrayUtil.getSmallBigArray(new int[]{2,8,6,5,3,1}); //2 8 4 6 5 7 1
+    int [] arr = ArrayUtil.getSmallBigArray(new int[]{2,8,4,6,5,7,1}); //2 8 4 6 5 7 1
+    System.out.println(Arrays.toString(arr));
   }
 
   private static void doStack_and_Queue() {

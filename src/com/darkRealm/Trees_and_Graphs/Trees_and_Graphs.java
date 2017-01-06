@@ -768,22 +768,48 @@ public class Trees_and_Graphs {
   }
 
 
-   /* [Prob 4.12] Faster O(N)
-  *   Q) paths with sum, given a binary tree in which nodes are conatins an integer value (which mught be positive or
-  *   negative). Desingn an algorithm to count the number of paths that sum to a given value. The path does not need to
-  *   start or end at the root or a leaf, but it must go downwards (travelling only from parent to child nodes).
-  *   A) This approach uses a technique described in CTCI. It is expalined via an array concept, have implemented that
-  *   also in  the array & strings class. The logic is to have an array that keeps the running Sum till this point say RSx
-  *   for xth element. And we are also given the target sum lets say Ts. According to the formula RSx = RSy -Ts (how is
-  *   this derived not sure/ out of scope for now), we get RSy = RSx -Ts, we will require this RSy for the nest step.
-  *   Now we have to create a hashmap MAP_RS that will store all the runninsums as keys and the number of times they appeared
-  *   in the running sum array. Now comes the actual possible ways part
-     *   For each y: get the RSy
-     *   Look up the RSy in the MAP_RS
-     *   if found then add the value of RSy from MAP_RS to the totalWays
-  *     [COMPLEXITY - O(N)]
-  * */
-   public static void PathsWithSumFaster(Tree tree, int targetSum){
+  /* [Prob 4.12] Faster O(N)
+ *   Q) paths with sum, given a binary tree in which nodes are conatins an integer value (which mught be positive or
+ *   negative). Desingn an algorithm to count the number of paths that sum to a given value. The path does not need to
+ *   start or end at the root or a leaf, but it must go downwards (travelling only from parent to child nodes).
+ *   A) This approach uses a technique described in CTCI. It is expalined via an array concept, have implemented that
+ *   also in  the array & strings class. The logic is to have an array that keeps the running Sum till this point say RSx
+ *   for xth element. And we are also given the target sum lets say Ts. According to the formula RSx = RSy -Ts (how is
+ *   this derived not sure/ out of scope for now), we get RSy = RSx -Ts, we will require this RSy for the nest step.
+ *   Now we have to create a hashmap MAP_RS that will store all the runninsums as keys and the number of times they appeared
+ *   in the running sum array. Now comes the actual possible ways part
+    *   For each y: get the RSy
+    *   Look up the RSy in the MAP_RS
+    *   if found then add the value of RSy from MAP_RS to the totalWays
+ *     [COMPLEXITY - O(N)]
+ * */
+  public static int PathsWithSumFaster(Tree tree, int targetSum) {
+    pathsSumCount = 0;
+    HashMap<Integer, Integer> mapRS = new HashMap<>();
+    calulatePathsWithSumFaster(tree.root, 0, targetSum, mapRS);
+    return pathsSumCount;
+  }
 
-   }
+  static int pathsSumCount;
+
+  private static void calulatePathsWithSumFaster(TNode node, int runningSum,
+                                                 int targetSum, HashMap<Integer, Integer> mapRS) {
+
+    if (node == null) {
+      return;
+    }
+
+    runningSum += node.data;
+    if (mapRS.containsKey(runningSum)) {
+      mapRS.put(runningSum, mapRS.get(runningSum));
+    } else {
+      mapRS.put(runningSum, 1);
+    }
+    int rsY = runningSum - targetSum;
+    if (mapRS.containsKey(rsY)) {
+      pathsSumCount += mapRS.get(rsY);
+    }
+    calulatePathsWithSumFaster(node.left, runningSum, targetSum, mapRS);
+    calulatePathsWithSumFaster(node.right, runningSum, targetSum, mapRS);
+  }
 }

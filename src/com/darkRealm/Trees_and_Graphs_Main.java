@@ -178,7 +178,8 @@ public class Trees_and_Graphs_Main {
     tree.root.right.left = new TNode(-1);
     tree.root.right.right= new TNode(-2);
     tree.root.right.right.left = new TNode(1);
-    int res = Trees_and_Graphs.PathsWithSum(tree,0);
+//    int res = Trees_and_Graphs.PathsWithSum(tree,0);
+    int res = Trees_and_Graphs.PathsWithSumFaster(tree,0);
     System.out.println("res - "+res);
 //
   }
