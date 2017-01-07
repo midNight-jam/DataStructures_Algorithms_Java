@@ -1,116 +1,69 @@
 package com.darkRealm.Stacks_and_queues;
 
 
+import java.util.Arrays;
+
 /**
  * Created by Jayam on 12/27/2016.
- * INCOMPLETE
+ *
  */
 public class ThreeStacksArray {
-  private int[] array;
-  private int totalSize;
-  private int[] stackLens;
-  private int[] stackBottoms;
-  private int[] stackSizes;
+  private int noOFStacks = 3;
+  private int stackCapacity;
+  private int[] values;
+  private int[] sizes;
 
-  ThreeStacksArray(int size) {
-    totalSize = size;
-//    array = (T[]) new Object[totalSize];
-    array = new int[totalSize];
-    stackLens = new int[3];
-    stackBottoms = new int[3];
-    stackLens[0] = totalSize / 3;
-    stackLens[1] = totalSize / 3;
-    stackLens[2] = totalSize - (2 * stackLens[0]);
-    stackBottoms[0] = 0;
-    stackBottoms[1] = stackBottoms[0] + stackLens[0];
-    stackBottoms[2] = stackBottoms[1] + stackLens[1];
-    stackSizes = new int[3];
+
+  ThreeStacksArray(int capacity) {
+    stackCapacity = capacity;
+    values = new int[stackCapacity * noOFStacks];
+    sizes = new int[noOFStacks];
   }
 
-  public void pushStack(int stackNo, int elem) {
-    if (!isFull()) {
-      stackNo = stackNo - 1;
-      int nextStack = getNextStack(stackNo);
-//      int currnetStackTop = stackSizes[stackNo];
-      int currnetStackTop = getStackTop(stackNo);
-      int nextStackBottom = stackBottoms[nextStack];
-//      int next = currnetStackTop + 1; // default
-      // if current stack itself has capacity
-      if(isEmpty(stackNo)) {
-        array[stackBottoms[stackNo]] = elem;
-        ++stackSizes[stackNo];
-        return;
-      }
-      if (currnetStackTop < nextStackBottom) {
-//        int next = nextIndex(currnetStackTop);
-        int next = currnetStackTop;
-        ++stackSizes[stackNo];
-        array[next] = elem;
-        return;
-      }
+  public boolean isEmpty(int stackNo) {
+    return sizes[stackNo-1] == 0 ? true : false;
+  }
 
-      //if next stack has space shift it
-      int nextToNextStack = getNextStack(nextStack);
-//      int nextStackTop = (stackBottoms[nextStack] + stackSizes[nextStack])%totalSize;
-      int nextStackTop = getStackTop(nextStack);
-      int nextToNextStackBottom = stackBottoms[nextToNextStack];
-      if (nextStackTop < nextToNextStackBottom) {
-        shiftStack(nextStack);
-        int next = nextIndex(stackSizes[stackNo]);
-        ++stackSizes[stackNo];
-        array[currnetStackTop] = elem;
-        return;
-      }
-      // else shift stack 3 & stack 2
-      else {
-        shiftStack(2);
-        shiftStack(1);
-      }
+  public boolean isFull(int stackNum) {
+    return sizes[stackNum-1] == stackCapacity ? true : false;
+  }
+
+  public int getTopIndex(int stackNo) {
+    int offSet = (stackNo - 1) * stackCapacity;
+    int size = sizes[stackNo - 1];
+    return offSet + size;
+  }
+
+  public void push(int stackNo, int element) {
+    if (!isFull(stackNo)) {
+      insertInStack(stackNo, element);
+    } else {
+      System.out.println("Stack " + stackNo + " is full ");
     }
   }
 
-
-  private int getStackTop(int stackNo) {
-    return (stackBottoms[stackNo] + stackSizes[stackNo]) % totalSize;
+  private void insertInStack(int stackNo, int element) {
+    int top = getTopIndex(stackNo);
+    values[top] = element;
+    sizes[stackNo-1]++;
   }
 
-  private int nextIndex(int i) {
-    return (i + 1) % totalSize;
-  }
-
-  private boolean isEmpty(int stackNo) {
-    return stackBottoms[stackNo] == getStackTop(stackNo);
-  }
-
-  private void shiftStack(int stackNo) {
-    int stackTop = (stackBottoms[stackNo] + stackSizes[stackNo])%totalSize;;
-    int stackBottom = stackBottoms[stackNo];
-    while (stackTop >= stackBottom) {
-      int nextIndex = (stackTop + 1) % totalSize;
-      array[nextIndex] = array[stackTop];
-      stackTop--;
+  public int pop(int stackNo) {
+    if (!isEmpty(stackNo)) {
+      return popElementFromStack(stackNo);
     }
-    stackBottoms[stackNo] = nextIndex(stackBottom);
+    return Integer.MIN_VALUE;
   }
 
-  public boolean isFull() {
-    int sum = stackSizes[0] + stackSizes[1] + stackSizes[2];
-    return sum == totalSize ? true : false;
+  private int popElementFromStack(int stackNo) {
+    int top = getTopIndex(stackNo);
+    int res = values[top-1];
+    sizes[stackNo-1]--;
+    return res;
   }
 
-  private int getNextStack(int stackNo) {
-    int nextStack = -1;
-    switch (stackNo) {
-      case 2:
-        nextStack = 0;
-        break;
-      case 1:
-        nextStack = 2;
-        break;
-      case 0:
-        nextStack = 1;
-        break;
-    }
-    return nextStack;
+  @Override
+  public String toString() {
+    return Arrays.toString(values);
   }
 }

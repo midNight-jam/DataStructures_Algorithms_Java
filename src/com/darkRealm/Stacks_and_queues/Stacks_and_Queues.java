@@ -71,9 +71,6 @@ public class Stacks_and_Queues {
     return stack;
   }
 
-
-
-
   /*  [Prob 3.3]
   *   Q) Implement a set of stacks, Create a new Stack when previous one had exceeded some threshold. Set of Stacks should
   *   be composed of several stacks and should create a new stack once the previous one exceeds capacity. Pop & Push
@@ -106,13 +103,29 @@ public class Stacks_and_Queues {
   * @return  void
   * @param  void
   * */
-  public static void threeStackInArray(){
-    ThreeStacksArray threeStacks = new ThreeStacksArray(10);
-    threeStacks.pushStack(1,11);
-    threeStacks.pushStack(1,12);
-    threeStacks.pushStack(1,13);
-    threeStacks.pushStack(2,21);
-    threeStacks.pushStack(1,14);
+  public static void threeStackInArray() {
+    ThreeStacksArray threeStacks = new ThreeStacksArray(3);
+    threeStacks.push(1, 11);
+    threeStacks.push(1, 12);
+    threeStacks.push(1, 13);
+    threeStacks.push(3, 31);
+    System.out.println("Stack " + threeStacks);
+    int top = threeStacks.pop(1);
+    System.out.println("res " + top);
+    top = threeStacks.pop(1);
+    System.out.println("res " + top);
+    top = threeStacks.pop(1);
+    System.out.println("res " + top);
+    top = threeStacks.pop(3);
+    System.out.println("res " + top);
+    System.out.println("Stack " + threeStacks);
   }
 
+  public static void roundedArray(int[] arr) {
+    int last = arr[arr.length - 1];
+    for (int i = arr.length - 1; i > 0; i--) {
+      arr[i] = arr[i - 1];
+    }
+    arr[0] = last;
+  }
 }

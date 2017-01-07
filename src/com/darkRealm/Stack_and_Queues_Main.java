@@ -73,7 +73,7 @@ public class Stack_and_Queues_Main {
 
   }
 
-  public static void testSortStack(){
+  public static void testSortStack() {
     MyStack<Integer> myStack = new MyStack<>();
     myStack.push(2);
     myStack.push(1);
@@ -88,11 +88,17 @@ public class Stack_and_Queues_Main {
     System.out.println("Will be displauypig  the stack here");
   }
 
-  public static void testSetStacks(){
+  public static void testSetStacks() {
     Stacks_and_Queues.setOfStacks();
   }
 
-  public static void testThreeStacks(){
+  public static void testThreeStacks() {
     Stacks_and_Queues.threeStackInArray();
+  }
+
+  public static void testRoundArray() {
+    int[] arr = new int[]{1, 2, 3, 4, 5};
+    Stacks_and_Queues.roundedArray(arr);
+    System.out.println(" " + arr[0]);
   }
 }
