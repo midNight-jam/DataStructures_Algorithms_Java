@@ -56,8 +56,6 @@ public class Main {
 //    int [] arr = ArrayUtil.getSmallBigArray(new int[]{5,6,7,4,3,2,1});
 //    int [] arr = ArrayUtil.getSmallBigArray(new int[]{7,2,9,10,12,3});
 //    int [] arr = ArrayUtil.getSmallBigArray(new int[]{2,8,6,5,3,1}); //2 8 4 6 5 7 1
-    int [] arr = ArrayUtil.getSmallBigArray(new int[]{2,8,4,6,5,7,1}); //2 8 4 6 5 7 1
-    System.out.println(Arrays.toString(arr));
   }
 
   private static void doStack_and_Queue() {
