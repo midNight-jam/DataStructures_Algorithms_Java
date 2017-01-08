@@ -241,12 +241,18 @@ public class Main {
     System.out.println("is it working Rs - " + RStart + "  Re- " + REnd);
   }
 
-  private static void doLinkedLsit(){
+  private static void doLinkedLsit() {
     LinkedList_Main.testLinkedListOperations();
   }
 
-  private static void doBitsMain(){
+  private static void doBitsMain() {
 //    BitsUtil.insertionBits(1024,19,2,6);
-    BitsUtil.insertionBits(1701,101,2,8);
+//    BitsUtil.insertionBits(1701,101,2,8);
+//    String res = BitsUtil.FractionToBinaryString(0.125);
+//    String res = BitsUtil.FractionToBinaryString(0.375);
+//    String res = BitsUtil.FractionToBinaryString(0.875);
+    String res = BitsUtil.FractionToBinaryString(0.5625);
+//    String res = BitsUtil.FractionToBinaryString(0.6);
+    System.out.println("Binary of fraction : " + res);
   }
 }

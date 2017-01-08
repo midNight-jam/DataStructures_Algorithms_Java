@@ -272,7 +272,7 @@ public class BitsUtil {
     System.out.println("N - " + Integer.toBinaryString(N));
     System.out.println("M - " + Integer.toBinaryString(M));
 
-    int a = (1 << (j+1)) - 1; // clearing all the bits ahead of j
+    int a = (1 << (j + 1)) - 1; // clearing all the bits ahead of j
     System.out.println("a - " + Integer.toBinaryString(a));
 
     int b = -1 << i;  // clearing all the bits behind of i
@@ -286,5 +286,52 @@ public class BitsUtil {
 
     int output = clearedN | (M << i);
     System.out.println("SandwichedBits - " + Integer.toBinaryString(output));
+  }
+
+  /* [Prob 5.2]
+  *   Q) Binary To String : Given a real number between 0 and 1 ( eg 0.72) that is passed in as a double, print the
+  *   binary representation. If the number cannot be represented accurately in binary with at most 32 characters,
+   *   print "ERROR"
+   *  A) There are two ways I found of doing this
+   *  1 : the divide approach where we keep reducing our divisor by 2 & subtract it from fraction only if fraction is
+   *      greater or equal to the divisor.
+   *  2 : the multiply approach where we keep multiplying the fraction with 2 & diregard the part which is greater than 1
+   *      and continuing this till we have exhausted the number
+  * */
+  public static String FractionToBinaryString(double fraction) {
+    if (fraction > 1 || fraction < 0) {
+      return "ERROR";
+    }
+    StringBuilder bitString = new StringBuilder();
+    bitString.append("0.");
+    // Iterative method by subtracting
+//    double divisor = 1;
+//    while (fraction != 0) {
+//      divisor = divisor / 2;
+//      if (fraction >= divisor) {
+//        fraction = fraction - divisor;
+//        bitString.append("1");
+//      } else {
+//        bitString.append("0");
+//      }
+//      if (bitString.length() > 34) {
+//        System.out.println(bitString);
+//        return "ERROR";
+//      }
+//    }
+    while (fraction != 0) {
+      fraction = fraction * 2;
+      if (fraction >= 1) {
+        fraction = fraction - 1;
+        bitString.append("1");
+      } else {
+        bitString.append("0");
+      }
+      if (bitString.length() > 34) {
+        System.out.println(bitString);
+        return "ERROR";
+      }
+    }
+    return new String(bitString);
   }
 }
