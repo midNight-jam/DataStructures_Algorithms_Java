@@ -55,7 +55,6 @@ public class AnimalShelter {
     return null;
   }
 
-
   public void enequeue(String animal) {
     ANode aNode = new ANode(animal);
     if (animal.contains("Cat")) {

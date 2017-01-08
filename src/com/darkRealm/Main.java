@@ -1,6 +1,7 @@
 package com.darkRealm;
 
 import com.darkRealm.BigO.ArrayUtil;
+import com.darkRealm.BigO.BitsUtil;
 import com.darkRealm.BigO.MathUtil;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class Main {
 
     // write your code here, testing after new git
 //    doArray_and_Strings_Main();
-    doStack_and_Queue();
+//    doStack_and_Queue();
 //    doRecursion_DP();
 
 //    doTrees_Graph();
@@ -37,6 +38,7 @@ public class Main {
 
 //    minLenUnSorted(new int[]{0, 1, 15, 25, 6, 7, 30, 40, 50});
 //    minLenUnSorted(new int[]{10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60});
+    doBitsMain();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -241,5 +243,10 @@ public class Main {
 
   private static void doLinkedLsit(){
     LinkedList_Main.testLinkedListOperations();
+  }
+
+  private static void doBitsMain(){
+//    BitsUtil.insertionBits(1024,19,2,6);
+    BitsUtil.insertionBits(1701,101,2,8);
   }
 }

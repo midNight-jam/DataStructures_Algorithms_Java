@@ -10,6 +10,7 @@ import java.util.HashMap;
 
 /**
  * Created by Jayam on 10/2/2016.
+ * Some solutions of Arrays Can be found in "ArraUtil Class"
  */
 public class Arrays_and_Strings {
 

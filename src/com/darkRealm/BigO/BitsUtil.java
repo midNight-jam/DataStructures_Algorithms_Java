@@ -227,20 +227,61 @@ public class BitsUtil {
   * Input 100 - 27
   * @params : i the integer to convert ot 1's compliment
   * @return : 1's compliment of the provided no
+  *
   * */
   public int onesCompliment(int i) {
     int bitslen = (int) (Math.log(i) / Math.log(2)) + 1;
-    System.out.println("bits - " +Integer.toBinaryString(i));
-    System.out.println("negatebits - " +Integer.toBinaryString(~i));
+    System.out.println("bits - " + Integer.toBinaryString(i));
+    System.out.println("negatebits - " + Integer.toBinaryString(~i));
     String bitString = Integer.toBinaryString(~i);
 
     int index = bitString.length() - bitslen;
     bitString = bitString.substring(index);
 
-    System.out.println("chopped bitString  - " +bitString);
-    System.out.println("bitslen - " +bitslen);
+    System.out.println("chopped bitString  - " + bitString);
+    System.out.println("bitslen - " + bitslen);
 
     int result = Integer.parseInt(bitString, 2);
     return result;
+  }
+
+  /* [Prob 5.1]
+  *   Q) Insertion -  Given two 32 Bit nos, N & M, and two bit positions i, j. write a method to insert M into N such
+  *   that M starts at bit j and ends at bit i. You can assume that bits j through i have enough space to fit all of M.
+  *   Example - N  = 10000000000, M = 10011, i = 2, j = 6
+  *   Output : 10001001100
+  *   A) I will have to first clear the bits of range j to i. For that I will create a mask that has all 0's in that range
+  *     and rest all 1's . Then I will AND N with that mask, this will clear the bits within range j to i. Then I will
+  *     push M's bits in N. Below is the algo
+  *     1 : To create mask will use two parts a & b. a has zeros in front, b has seros in rear, Anding them both will give
+  *     a no which will have 1's in only that range.SO,
+  *     a = -1 >>> (32 -j) //have to shift sign bit too via arithmetice shift
+  *     OR
+  *     a = (1 << (j+1)) - 1  // dont have to use arithmetic shift subtracting 1 will give same result
+  *     b = -1 << i
+  *     mask = a & b
+  *     mask = ~ mask // turining 1's to 0's
+  *     cleredN = mask & N
+  *     output = clearedN | (m<<i)
+  * */
+
+  public static void insertionBits(int N, int M, int i, int j) {
+    System.out.println("N - " + Integer.toBinaryString(N));
+    System.out.println("M - " + Integer.toBinaryString(M));
+
+    int a = (1 << (j+1)) - 1; // clearing all the bits ahead of j
+    System.out.println("a - " + Integer.toBinaryString(a));
+
+    int b = -1 << i;  // clearing all the bits behind of i
+    System.out.println("b - " + Integer.toBinaryString(b));
+
+    int mask = ~(a & b); // anding gives no whose only those bits are set between j to i, we will negate it to create a mask
+    System.out.println("Mask - " + Integer.toBinaryString(mask));
+
+    int clearedN = mask & N;
+    System.out.println("clearedN - " + Integer.toBinaryString(clearedN));
+
+    int output = clearedN | (M << i);
+    System.out.println("SandwichedBits - " + Integer.toBinaryString(output));
   }
 }
