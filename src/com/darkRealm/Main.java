@@ -257,7 +257,8 @@ public class Main {
 
 //    BitsUtil.updateIthBit(7,0,0);
 //    int res = BitsUtil.oneShort(8);
-    int res = BitsUtil.oneShort(15);
+//    int res = BitsUtil.oneShort(15);
+    int res = BitsUtil.oneBig(15);
     System.out.println("One Short : " + res);
 
   }

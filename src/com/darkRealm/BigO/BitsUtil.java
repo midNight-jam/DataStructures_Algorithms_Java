@@ -336,11 +336,9 @@ public class BitsUtil {
   }
 
   /* [Prob]
-  *  Q) Increase and Decrease a number by 1 without using any mathematical operation
+  *  Q) Decrease a number by 1 without using any mathematical operation
   *  A) For subtraction we have the logic like
    *      Flip all the bits from left till first 1 is encountered & flip 1 also, inclusive
-   *    For Addition
-   *      Flip all the bits till first 0 is encountered & flip that 0 also, inclusive
   * */
   public static int oneShort(int n) {
     // subtract
@@ -354,6 +352,25 @@ public class BitsUtil {
       i++;
     }
     n = updateIthBit(n, i, 0); // flipping the first encountered 1 to zero
+    return n;
+  }
+
+  /*Q) Increase a number by 1 without using any mathematical operation
+  *  A) For Addition
+   *      Flip all the bits till first 0 is encountered & flip that 0 also, inclusive
+  */
+  public static int oneBig(int n) {
+    // add
+    int i = 1;
+    int ithBitValue = (n & (1 << i - 1));
+    int flipValue = 0;
+    while (ithBitValue != 0) {
+      flipValue = ithBitValue == 0 ? 1 : 0;
+      n = updateIthBit(n, i, flipValue);  // flipping all the values till first 1 is encountered
+      i++;
+      ithBitValue = n & (1 << i - 1);
+    }
+    n = updateIthBit(n, i, 1); // flipping the first encountered 1 to zero
     return n;
   }
 
