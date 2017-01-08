@@ -334,4 +334,66 @@ public class BitsUtil {
     }
     return new String(bitString);
   }
+
+  /* [Prob]
+  *  Q) Increase and Decrease a number by 1 without using any mathematical operation
+  *  A) For subtraction we have the logic like
+   *      Flip all the bits from left till first 1 is encountered & flip 1 also, inclusive
+   *    For Addition
+   *      Flip all the bits till first 0 is encountered & flip that 0 also, inclusive
+  * */
+  public static int oneShort(int n) {
+    // subtract
+    int i = 1;
+    int ithBitValue = 0;
+    int flipValue = 0;
+    while ((n & (1 << i-1)) == 0) {
+      ithBitValue = n & (1 << i-1);
+      flipValue = ithBitValue == 0 ? 1 : 0;
+      n = updateIthBit(n, i, flipValue);  // flipping all the values till first 1 is encountered
+      i++;
+    }
+    n = updateIthBit(n, i, 0); // flipping the first encountered 1 to zero
+    return n;
+  }
+
+  /* A utility method to update the ith Bit of a number to a given value (0 or 1)
+  * @params : n the no to update bits of
+  * @params : bitNo , the bit to be updated
+  * @params : value , the new vlaue of the bit to be updated, 0 or 1
+  * */
+  public static int updateIthBit(int n, int bitNo, int value) {
+    // error checking
+    if (bitNo < 1 || value < 0 || value > 1) {
+      return Integer.MIN_VALUE;
+    }
+    System.out.println("Before Updating : " + Integer.toBinaryString(n));
+    // first we create a mask & clear the ith bit
+    int mask = ~(1 << (bitNo - 1));
+    int clearedN = n & mask;
+    int updatedN = clearedN | (value << bitNo - 1);
+    System.out.println("After Updating  : " + Integer.toBinaryString(updatedN));
+    return updatedN;
+  }
+
+  /*  [Prob 5.3]
+  *   Q) Flip Bit to Win : You have an integer anf you can flip exactly one bit from 0 to 1. Write a method to find the
+  *   longesy sequence of 1's you could create
+  *   A) have one algo TODO
+  * */
+//  public static int FlipBitToWin(int n){
+//    int max = -1;
+//    int trav =1;
+//    int len =0;
+//    while((n & trav) !=0){
+//      if((trav & n)==1){
+//        len++;
+//      }
+//      else {
+//        if(len>max){
+//          max = len;
+//        }
+//      }
+//    }
+//  }
 }

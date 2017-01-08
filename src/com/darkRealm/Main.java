@@ -251,8 +251,14 @@ public class Main {
 //    String res = BitsUtil.FractionToBinaryString(0.125);
 //    String res = BitsUtil.FractionToBinaryString(0.375);
 //    String res = BitsUtil.FractionToBinaryString(0.875);
-    String res = BitsUtil.FractionToBinaryString(0.5625);
+//    String res = BitsUtil.FractionToBinaryString(0.5625);
 //    String res = BitsUtil.FractionToBinaryString(0.6);
-    System.out.println("Binary of fraction : " + res);
+//    System.out.println("Binary of fraction : " + res);
+
+//    BitsUtil.updateIthBit(7,0,0);
+//    int res = BitsUtil.oneShort(8);
+    int res = BitsUtil.oneShort(15);
+    System.out.println("One Short : " + res);
+
   }
 }
