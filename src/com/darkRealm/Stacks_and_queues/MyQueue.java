@@ -13,6 +13,10 @@ public class MyQueue<T> {
     head = tail = null;
   }
 
+  public T peekHead() {
+    return (T) head.data;
+  }
+
   public void enqueue(T item) {
     if (head == null) {
       head = new MyQueueNode(item);

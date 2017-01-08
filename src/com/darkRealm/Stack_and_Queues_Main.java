@@ -1,5 +1,6 @@
 package com.darkRealm;
 
+import com.darkRealm.Stacks_and_queues.AnimalShelter;
 import com.darkRealm.Stacks_and_queues.MinStack;
 import com.darkRealm.Stacks_and_queues.MyStack;
 import com.darkRealm.Stacks_and_queues.Stacks_and_Queues;
@@ -100,5 +101,21 @@ public class Stack_and_Queues_Main {
     int[] arr = new int[]{1, 2, 3, 4, 5};
     Stacks_and_Queues.roundedArray(arr);
     System.out.println(" " + arr[0]);
+  }
+
+  public static void testAnimalShelter() {
+    AnimalShelter animalShelter = new AnimalShelter();
+    animalShelter.enequeue("Cat1");
+    animalShelter.enequeue("Dog1");
+    animalShelter.enequeue("Dog2");
+    animalShelter.enequeue("Cat2");
+    animalShelter.enequeue("Cat3");
+    animalShelter.enequeue("Dog3");
+    animalShelter.enequeue("Cat4");
+    System.out.println(" " + animalShelter);
+    AnimalShelter.ANode res = animalShelter.dequeueAny();
+    System.out.print(res);
+    res = animalShelter.dequeCat();
+    System.out.print(res);
   }
 }

@@ -65,7 +65,8 @@ public class Main {
 //    Stack_and_Queues_Main.testSetStacks();
 //    Stack_and_Queues_Main.testThreeStacks();
 //    Stack_and_Queues_Main.testRoundArray();
-    Stack_and_Queues_Main.testThreeStacks();
+//    Stack_and_Queues_Main.testThreeStacks();
+    Stack_and_Queues_Main.testAnimalShelter();
   }
 
   private static void doRecursion_DP() {
