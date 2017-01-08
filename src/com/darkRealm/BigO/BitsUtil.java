@@ -256,6 +256,9 @@ public class BitsUtil {
   *     1 : To create mask will use two parts a & b. a has zeros in front, b has seros in rear, Anding them both will give
   *     a no which will have 1's in only that range.SO,
   *     a = -1 >>> (32 -j) //have to shift sign bit too via arithmetice shift
+  *     OR we can also use negate of 0  to get all the bits 1
+  *     [a = ~0] just remember
+  *     a = -1 >>> (32 -j) //have to shift sign bit too via arithmetice shift
   *     OR
   *     a = (1 << (j+1)) - 1  // dont have to use arithmetic shift subtracting 1 will give same result
   *     b = -1 << i
