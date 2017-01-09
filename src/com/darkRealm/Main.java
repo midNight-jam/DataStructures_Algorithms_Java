@@ -10,7 +10,7 @@ import java.util.Comparator;
 
 /*
 * Uncomment a function to run, each is a method for solved problem.
-* Testing ignored files settings*/
+* */
 public class Main {
 
   public static void main(String[] args) {
@@ -272,7 +272,9 @@ public class Main {
 //    System.out.println("next bigger : " + nextBigger);
 
 //    int nextSmaller = BitsUtil.nextSmallerWithSame_1_Bits(10115);
-    int nextSmaller = BitsUtil.nextSmallerWithSame_1_Bits(6);
-    System.out.println("next bigger : " + nextSmaller);
-  }
+//    int nextSmaller = BitsUtil.nextSmallerWithSame_1_Bits(6);
+//    System.out.println("next bigger : " + nextSmaller);
+
+    BitsUtil.swapPairOfBits(218);
+    }
 }

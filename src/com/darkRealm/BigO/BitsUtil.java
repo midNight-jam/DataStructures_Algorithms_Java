@@ -589,7 +589,7 @@ public class BitsUtil {
     int zeroCount = 0;
     int oneCount = 0;
 
-   while ((n & 1) == 1) {
+    while ((n & 1) == 1) {
       n = n >>> 1;
       oneCount++;
     }
@@ -621,11 +621,29 @@ public class BitsUtil {
     int addOnesBack = 1 << oneCount + 1;
     addOnesBack = (addOnesBack - 1);
     String addStr = Integer.toBinaryString(addOnesBack);
-    addOnesBack = addOnesBack << zeroCount -1;
+    addOnesBack = addOnesBack << zeroCount - 1;
     addStr = Integer.toBinaryString(addOnesBack);
 
     number = number | addOnesBack;
     bitStr = Integer.toBinaryString(number);
     return number;
+  }
+
+  /*  [Prob 5.7]
+  *   Q) PairWise Swap: Write a program ti swap odd and even bits in an integer with as few instructions as possible
+  *     EG:  bit 0 & bit 1 are swapped , bit 2 & bit 3 are swapped
+  * A) will shift odd bits right and Even bits left and OR them both to have a bits swapped number
+  *     To get the odd & even Bits will a mask
+  *     0xaaaaaaaa  - mask will give all the odd bits
+  *     0x55555555  - mask will give all the even bits
+  */
+  public static void swapPairOfBits(int number) {
+    System.out.println(Integer.toBinaryString(number));
+    int oddBits = number & 0xaaaaaaaa;
+    int evenBits = number & 0x55555555;
+    int oddBitsShiftedRight = oddBits >>> 1;
+    int evenBitsShiftedLeft = evenBits << 1;
+    int res = oddBitsShiftedRight | evenBitsShiftedLeft;
+    System.out.println(Integer.toBinaryString(res));
   }
 }
