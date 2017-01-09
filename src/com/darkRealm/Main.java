@@ -264,7 +264,11 @@ public class Main {
 //    int winCOunt = BitsUtil.FlipBitToWin(1743);
 //    System.out.println("bitToWin: " + winCOunt);
 //    int diff = BitsUtil.coversionEstimate(29,15);
-    int diff = BitsUtil.coversionEstimate(7,8);
-    System.out.println("diff bits : " + diff);
+//    int diff = BitsUtil.coversionEstimate(7, 8);
+//    System.out.println("diff bits : " + diff);
+
+//    int nextBigger = BitsUtil.nextBiggerWithSame_1_Bits(13948);
+    int nextBigger = BitsUtil.nextBiggerWithSame_1_Bits(8);
+    System.out.println("next bigger : " + nextBigger);
   }
 }
