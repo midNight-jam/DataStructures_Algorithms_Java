@@ -500,7 +500,7 @@ public class BitsUtil {
     return diffCount;
   }
 
-  /*  [Prob 5.4]
+  /*  [Prob 5.4] NextBiggerPart
   *   Q) Next Number : GIven a positive number, print the next smalest and the next largest number that have the same
   *   number of 1 bits in their binary represemtation.
   *   A) Awesome algo by Legendary GAYLE
@@ -562,6 +562,70 @@ public class BitsUtil {
     bitStr = Integer.toBinaryString(number);
 
     // ready to return our nearest increased number with equal no of 1 bits
+    return number;
+  }
+
+  /*  [Prob 5.4] NextSmallerPart
+  *   Q) Next Number : GIven a positive number, print the next smalest and the next largest number that have the same
+  *   number of 1 bits in their binary represemtation.
+  *   A) The approach very similar to nextBiggerPart method above, with a slight change, here we will look for right most
+  *   non trailing 1 instead of 0.
+  *
+  *     We have to first find a right most non trailing 1, we will call it P
+  *     For ex 10115 : 10011110000011, the right most non trailing 1 is at 8th bit (7 if begins from 0) P = 7
+  *     First we will flip the Pth bit from 1 to 0. in this way we have added an extra 0 to bit sequence , remember this!!
+  *     Now we have to count the number of 0's (zeroCount) and number of 1's (oneCount) that are to right of the P and
+  *     while doing so we will clear all the bits to the right of P.
+  *     Now, after the right of P is completley cleared we are going to push back (oneCount+1) 1's to the right of P.
+  *     Why (oneCount+1) beacuse we have removed a 1 while flipping the Pth bit, thus we have to compensate
+  *     to maintain the equal no if 1's in bit sequence. thats why we will push one extra 1.
+  *     After pushing those 1's, and we are ready to return.
+  * */
+  public static int nextSmallerWithSame_1_Bits(int n) {
+    int number = n;
+    String bitStr = Integer.toBinaryString(number);
+    String zitStr = Integer.toBinaryString(number);
+
+    int zeroCount = 0;
+    int oneCount = 0;
+
+   while ((n & 1) == 1) {
+      n = n >>> 1;
+      oneCount++;
+    }
+    zitStr = Integer.toBinaryString(n);
+
+    while ((n & 1) == 0) {
+      n = n >>> 1;
+      zeroCount++;
+    }
+    zitStr = Integer.toBinaryString(n);
+
+    int p = zeroCount + oneCount;
+    // flipping the pth bit from 1 to 0
+    int tempMAsk = 1 << p;
+    tempMAsk = ~tempMAsk;
+    String tempStr = Integer.toBinaryString(tempMAsk);
+
+    number = number & tempMAsk;
+    bitStr = Integer.toBinaryString(number);
+
+    // now we will clear all the bits to the right of the P th bit.
+    int mask = ~((1 << p) - 1);
+    String maskStr = Integer.toBinaryString(mask);
+
+    number = number & mask;
+    bitStr = Integer.toBinaryString(number);
+
+    // now we will push back the
+    int addOnesBack = 1 << oneCount + 1;
+    addOnesBack = (addOnesBack - 1);
+    String addStr = Integer.toBinaryString(addOnesBack);
+    addOnesBack = addOnesBack << zeroCount -1;
+    addStr = Integer.toBinaryString(addOnesBack);
+
+    number = number | addOnesBack;
+    bitStr = Integer.toBinaryString(number);
     return number;
   }
 }

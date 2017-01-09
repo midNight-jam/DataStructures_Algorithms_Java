@@ -268,7 +268,11 @@ public class Main {
 //    System.out.println("diff bits : " + diff);
 
 //    int nextBigger = BitsUtil.nextBiggerWithSame_1_Bits(13948);
-    int nextBigger = BitsUtil.nextBiggerWithSame_1_Bits(8);
-    System.out.println("next bigger : " + nextBigger);
+//    int nextBigger = BitsUtil.nextBiggerWithSame_1_Bits(8);
+//    System.out.println("next bigger : " + nextBigger);
+
+//    int nextSmaller = BitsUtil.nextSmallerWithSame_1_Bits(10115);
+    int nextSmaller = BitsUtil.nextSmallerWithSame_1_Bits(6);
+    System.out.println("next bigger : " + nextSmaller);
   }
 }
