@@ -1,5 +1,7 @@
 package com.darkRealm.BigO;
 
+import java.util.ArrayList;
+
 /**
  * Created by Jayam on 9/17/2016.
  */
@@ -345,8 +347,8 @@ public class BitsUtil {
     int i = 1;
     int ithBitValue = 0;
     int flipValue = 0;
-    while ((n & (1 << i-1)) == 0) {
-      ithBitValue = n & (1 << i-1);
+    while ((n & (1 << i - 1)) == 0) {
+      ithBitValue = n & (1 << i - 1);
       flipValue = ithBitValue == 0 ? 1 : 0;
       n = updateIthBit(n, i, flipValue);  // flipping all the values till first 1 is encountered
       i++;
@@ -396,21 +398,73 @@ public class BitsUtil {
   /*  [Prob 5.3]
   *   Q) Flip Bit to Win : You have an integer anf you can flip exactly one bit from 0 to 1. Write a method to find the
   *   longesy sequence of 1's you could create
-  *   A) have one algo TODO
+  *   A)  First we have to get the alternating sequence of the bits with their count for example
+   *   N = 1743 : 11011001111 (bits) we will get the alternating bit count sequence as
+   *            end[  2-1-2-2-4 ] start , from end we will always have count of 1 bits, becuase beyond that the no would
+   *            have turned 0 in magnitude, tahts why those bits are not recorded, So after getting this alternating
+   *            sequence of bit counts we will now try to merge the 0's that are surrounded by 1's
+   *
+   *   The algo for merging part is we read from end & read zeros which are sandwhiched
+   *   if the zero count is == 1 means only one 0 was surrounde on both sides by 1's. thus we can form a contigiuos
+   *   sequence by adding left & right & 1
+   *
+   *   if the zero count is > 1 means there were more than 1 o's lets say 2 0's at taht part, so we can form a bit
+   *   sequnce by adding one to any left or right side as its not gong to be contiguous and take the max.
+   *
+  *   if the zero count is == 0 that means we have reached the end and we can take any part which is big  left or right
+  *   without adding.
   * */
-//  public static int FlipBitToWin(int n){
-//    int max = -1;
-//    int trav =1;
-//    int len =0;
-//    while((n & trav) !=0){
-//      if((trav & n)==1){
-//        len++;
-//      }
-//      else {
-//        if(len>max){
-//          max = len;
-//        }
-//      }
-//    }
-//  }
+  public static int FlipBitToWin(int n) {
+    String bitStr = Integer.toBinaryString(n);
+    ArrayList<Integer> altSequence = getAlternatingSequence(n);
+    int max = findLongestSequence(altSequence);
+    return max;
+  }
+
+  // returns a sequence of no of continuos 1 or 0, will always have the last element as count of 1, beause after that the
+  // no has turned 0 in magnitude. And the first element will always be the count of 0.
+  private static ArrayList<Integer> getAlternatingSequence(int n) {
+    int searchingFor = 0;
+    int count = 0;
+    ArrayList<Integer> sequences = new ArrayList<>();
+
+    while (n != 0) {
+      if ((n & 1) != searchingFor) {
+        sequences.add(count);
+        searchingFor = n & 1;
+        count = 0;
+      }
+      count++;
+      n = n >>> 1;  // arihtmetic shift , inclusive of sign Bit
+    }
+    sequences.add(count);
+    return sequences;
+  }
+
+  private static int findLongestSequence(ArrayList<Integer> altSequence) {
+    int max = 0;
+    int zeroCount = 0;
+    int leftCount = 0;
+    int rightCount = 0;
+    int sequenceLen = 0;
+    for (int i = altSequence.size() - 2; i >= 0; i = i - 2) {
+      leftCount = (i + 1) > altSequence.size() ? 0 : altSequence.get(i + 1); // getting the left part
+      rightCount = (i - 1) >= 0 ? altSequence.get(i - 1) : 0; // getting the right part
+      zeroCount = altSequence.get(i);
+      // was only one 0, thus can connect both left & right parts to create a long consecutive 1 string
+      if (zeroCount == 1) {
+        sequenceLen = leftCount + 1 + rightCount;
+        max = Math.max(max, sequenceLen);
+      }
+      if (zeroCount == 0) { // No Zeroes, take any side that is longer
+        sequenceLen = Math.max(leftCount, rightCount);
+        max = Math.max(max, sequenceLen);
+      }
+      if (zeroCount > 1) {
+        sequenceLen = Math.max(leftCount + 1, rightCount + 1); // more than one zeros, add 1 to nay side & take longer one
+        max = Math.max(max, sequenceLen);
+      }
+    }
+    return max;
+  }
 }
