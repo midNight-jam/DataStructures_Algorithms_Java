@@ -467,4 +467,36 @@ public class BitsUtil {
     }
     return max;
   }
+
+  /* [Prob  5.6]
+   *  Q) calculate the no of bits required to flip for a number A to become number B
+   *  A) Either,we can compare both no bit by bit from left & record when the bots were diff.
+   *  OR
+   *    We can XOR them both, XORing will give us 1 bit where both the bits in the number differ
+   *    & then coun how many bits in the XOR were 1
+   *  */
+  public static int coversionEstimate(int m, int n) {
+    int travA, travB;
+    int diffCount = 0;
+//    below aaporcah works but its not very intelligent
+//    while (m != 0) {
+//      travA = m & 1;
+//      travB = n & 1;
+//      if (travA != travB) {
+//        diffCount++;
+//      }
+//      m = m >>> 1;
+//      n = n >>> 1;
+//    }
+
+    // here we can take XOR of botht the nos, this will give us all the bits as 1 where the bits dont match
+    int xor = m ^ n;
+    while (xor != 0) {
+      if ((xor & 1) == 1) {
+        diffCount++;
+      }
+      xor = xor >>> 1;
+    }
+    return diffCount;
+  }
 }

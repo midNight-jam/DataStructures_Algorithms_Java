@@ -260,8 +260,11 @@ public class Main {
 //    int res = BitsUtil.oneShort(15);
 //    int res = BitsUtil.oneBig(15);
 //    System.out.println("One Short : " + res);
-    int winCOunt = BitsUtil.FlipBitToWin(1775);
+//    int winCOunt = BitsUtil.FlipBitToWin(1775);
 //    int winCOunt = BitsUtil.FlipBitToWin(1743);
-    System.out.println("bitToWin: " + winCOunt);
+//    System.out.println("bitToWin: " + winCOunt);
+//    int diff = BitsUtil.coversionEstimate(29,15);
+    int diff = BitsUtil.coversionEstimate(7,8);
+    System.out.println("diff bits : " + diff);
   }
 }
