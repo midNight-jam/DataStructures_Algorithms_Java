@@ -646,4 +646,20 @@ public class BitsUtil {
     int res = oddBitsShiftedRight | evenBitsShiftedLeft;
     System.out.println(Integer.toBinaryString(res));
   }
+
+  /*THIS IS A TODO INCOMPLETE*/
+  public static void drawLine(byte[] screen, int width, int x1, int x2, int y) {
+    int startOffset = x1 % 8;
+    int firstFullByte = x1 / 8;
+
+    int endOffset = x2 % 8;
+    int lastFullBytes = x2 / 8;
+    if (endOffset == 7) {
+      lastFullBytes--;
+    }
+
+    for(int b = firstFullByte; b <=lastFullBytes;b++){
+      screen[(width/8) * y +b] = (byte)0xFF; // all 1's
+    }
+  }
 }

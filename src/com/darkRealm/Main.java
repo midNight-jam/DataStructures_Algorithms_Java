@@ -1,11 +1,10 @@
 package com.darkRealm;
 
-import com.darkRealm.BigO.ArrayUtil;
 import com.darkRealm.BigO.BitsUtil;
 import com.darkRealm.BigO.MathUtil;
+import com.darkRealm.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 
 /*
@@ -38,7 +37,8 @@ public class Main {
 
 //    minLenUnSorted(new int[]{0, 1, 15, 25, 6, 7, 30, 40, 50});
 //    minLenUnSorted(new int[]{10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60});
-    doBitsMain();
+//    doBitsMain();
+    doMathsLogicPuzzels();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -275,6 +275,12 @@ public class Main {
 //    int nextSmaller = BitsUtil.nextSmallerWithSame_1_Bits(6);
 //    System.out.println("next bigger : " + nextSmaller);
 
-    BitsUtil.swapPairOfBits(218);
-    }
+//    BitsUtil.swapPairOfBits(218);
+    byte[] screen = new byte[4];
+    BitsUtil.drawLine(screen, 8, 6, 18, 18);
+  }
+
+  private static void doMathsLogicPuzzels() {
+    Maths_Logic_Puzzels.EggDropProblem();
+  }
 }
