@@ -24,7 +24,7 @@ public class Main {
     // write your code here, testing after new git
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
-//    doRecursion_DP();
+    doRecursion_DP();
 
 //    doTrees_Graph();
 //    doLinkedLsit();
@@ -38,7 +38,7 @@ public class Main {
 //    minLenUnSorted(new int[]{0, 1, 15, 25, 6, 7, 30, 40, 50});
 //    minLenUnSorted(new int[]{10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60});
 //    doBitsMain();
-    doMathsLogicPuzzels();
+//    doMathsLogicPuzzels();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -86,8 +86,9 @@ public class Main {
 //    Recursion_DP_Main.testBalancedParanthesis();
 //    Recursion_DP_Main.testPaintFill();
 //    Recursion_DP_Main.testWaysToReachN();
-    Recursion_DP_Main.testNQueenPlacingProblem();
+//    Recursion_DP_Main.testNQueenPlacingProblem();
 //    Recursion_DP_Main.testPermuteExpression();
+    Recursion_DP_Main.testBooleanEvaluation();
   }
 
   private static void doTrees_Graph() {

@@ -626,6 +626,60 @@ public class Recursion_and_DP {
   /*  [Prob -8.14]
   * Q) Given a boolean expression of 0(false), 1 (true), & (and), | (OR) and ^ (XOR) and a desired a boolean result,
   * give a function to count no of ways of acheiving this result
-  * A) TODO
+  * A) The algo is given in as per the CTCI, i couldnt get close so learning from their solution
+  * First we ahve to get the total number of possible evaluations for the expression. To break down down this problem
+  * we first need to calculate the no of ways in which left can evalaute true & false (leftFalse & leftTrue). Similarly
+  * we have to calculate the no of ways in which right can evaluate true & false (rightFalse & rightTrue).
+  * With these breakdowns calculated we can get the total no of evaluation possible. Now if the desired result from this
+  * expression was false, then we can subtract the evaluations that resulted in true from the total to get the no of false
+  * evaluations. and, if the dexsired result was true then we can return the total true evaluations depeneding on the o
+  * opretaor.
+  * The reason we re multying the result is beacuse each result from the 2 sides can be paired up with each oter to
+  * True Evaluations based on operator
+  * ^ -- leftFalse*rightTrue + leftTrue*rightFalse (one true other false)
+  * | -- leftFalse*rightTrue + leftTrue*rightFalse + leftTrue* RightTrue (one true other false, one fasle other true , both true )
+  * & -- leftTrue * roghtTrue (both true)
+  * Base case is the anding of 0 or 1 with the expected result
+  * exp 0 , result false then return 1 & so on
   * */
+  public static int countEval(String exp, boolean result) {
+    char c;
+    String left, right;
+    int totalEval = 0;
+    if (exp.length() == 1) {
+      if (exp.equals("0") && result == false) {
+        return 1;
+      } else if (exp.equals("0") && result == true) {
+        return 0;
+      } else if (exp.equals("1") && result == true) {
+        return 1;
+      } else if (exp.equals("1") && result == false) {
+        return 0;
+      }
+    }
+    for (int i = 1; i < exp.length(); i = i + 2) {
+      c = exp.charAt(i);
+      left = exp.substring(0, i);
+      right = exp.substring(i + 1, exp.length());
+      int leftTrue = countEval(left, true);
+      int leftFalse = countEval(left, false);
+      int rightTrue = countEval(right, true);
+      int rightFalse = countEval(right, false);
+      int total = (leftTrue + leftFalse) * (rightTrue + rightFalse);
+      int totalTrue = 0;
+      if (c == '^') {
+        // one false & one true
+        totalTrue = (leftTrue * rightFalse) + (leftFalse * rightTrue);
+      } else if (c == '&') {
+        // both true
+        totalTrue = leftTrue * rightTrue;
+      } else if (c == '|') {
+        // both true or any one true
+        totalTrue = leftTrue * rightTrue + leftTrue * rightFalse + leftFalse * rightTrue;
+      }
+
+      totalEval += result == true ? totalTrue : total - totalTrue;
+    }
+    return totalEval;
+  }
 }

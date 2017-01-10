@@ -126,8 +126,19 @@ public class Recursion_DP_Main {
     System.out.println("time seconds - " + ((after - b4)));
   }
 
-  public static void testPermuteExpression(){
+  public static void testPermuteExpression() {
     String exp = "1^0|0|1";
 //    Recursion_and_DP.booleanEvaluation(exp,false);
+  }
+
+  public static void testBooleanEvaluation() {
+    String expression = "0&0&1^1|0";
+    long b4 = System.currentTimeMillis();
+//    expression = "0^1|0";
+//    Recursion_and_DP.countEval("0|1|1",true);
+    int res = Recursion_and_DP.countEval(expression,false);
+    long after = System.currentTimeMillis();
+    System.out.println("ways - " + res);
+    System.out.println("time miliseconds - " + ((after - b4)));
   }
 }
