@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7ad46dd-fe3d-4dce-8f09-eab7873dbcb8" name="Default" comment="Updating comment to dd">
+    <list default="true" id="e7ad46dd-fe3d-4dce-8f09-eab7873dbcb8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java" afterPath="$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/darkRealm/Maths_and_Logic_Puzzels/Maths_Logic_Puzzels.java" afterPath="$PROJECT_DIR$/src/com/darkRealm/Maths_and_Logic_Puzzels/Maths_Logic_Puzzels.java" />
     </list>
     <list id="95629eee-3038-4014-9303-355540637645" name="Rejected commit: Default" comment="adding the minStack Data Structure" />
     <ignored path="megaCTCI.iws" />
@@ -29,84 +29,38 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="249" column="31" lean-forward="false" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="31" />
+            <state relative-caret-position="204">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
-                <element signature="e#387#398#0" expanded="false" />
+                <element signature="e#361#372#0" expanded="false" />
                 <element signature="method#doArray_and_Strings_Main#0;class#Main#0" expanded="false" />
-                <element signature="e#1118#1165#0" expanded="false" />
+                <element signature="e#1121#1168#0" expanded="false" />
                 <element signature="method#doStack_and_Queue#0;class#Main#0" expanded="false" />
-                <element signature="e#2257#2299#0" expanded="false" />
+                <element signature="e#2260#2302#0" expanded="false" />
                 <element signature="method#doRecursion_DP#0;class#Main#0" expanded="false" />
-                <element signature="e#2667#2718#0" expanded="false" />
+                <element signature="e#2670#2721#0" expanded="false" />
                 <element signature="method#doTrees_Graph#0;class#Main#0" expanded="false" />
-                <element signature="e#3454#3498#0" expanded="false" />
+                <element signature="e#3457#3501#0" expanded="false" />
                 <element signature="method#doMathUtils#0;class#Main#0" expanded="false" />
                 <element signature="method#getTime#0;class#Main#0" expanded="false" />
-                <element signature="class#4598:4726" expanded="false" />
-                <element signature="e#5739#5795#0" expanded="false" />
+                <element signature="class#4601:4729" expanded="false" />
+                <element signature="e#5742#5798#0" expanded="false" />
                 <element signature="method#minLenUnSorted#0;class#Main#0" expanded="false" />
+                <element signature="method#doBitsMain#0;class#Main#0" expanded="false" />
+                <element signature="e#7249#7291#0" expanded="false" />
+                <element signature="e#8730#8731#0" expanded="true" />
+                <element signature="e#8776#8777#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Big_O_Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Big_O_Main.java">
+      <file leaf-file-name="Maths_Logic_Puzzels.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Maths_and_Logic_Puzzels/Maths_Logic_Puzzels.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-              <folding>
-                <element signature="docComment;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#arrayList#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#doBitwise#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="e#339#377#0" expanded="false" />
-                <element signature="method#arrayWindowMax#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#math#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#array#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#arrayNextBigger#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#arrayIntersection#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="e#3519#3582#0" expanded="false" />
-                <element signature="method#stringUtil#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#mergeSort#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="e#4598#4647#0" expanded="false" />
-                <element signature="method#quickSort#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#printArray#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#maxDistinctSubString#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="e#5481#5543#0" expanded="false" />
-                <element signature="method#allPermutations#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#primeNTH#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#pairsWithSumK#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="method#useMatrix#0;class#Big_O_Main#0" expanded="false" />
-                <element signature="e#6723#6774#0" expanded="false" />
-                <element signature="method#arrayUtil#0;class#Big_O_Main#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BitsUtil.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="259" column="30" lean-forward="false" selection-start-line="259" selection-start-column="30" selection-end-line="259" selection-end-column="30" />
-              <folding>
-                <element signature="docComment;class#BitsUtil#0" expanded="false" />
-                <element signature="method#isEven_withShift#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#parityCheck#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#getBitsCount#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#getBitsString#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#getLeftMost_1_Bit#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#getRightMost_1_Bit#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#isPowerOfTwo#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#isKthBitSet#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#binaryRepresentation#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#hexaDecimalRepresentation#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#changeBase#0;class#BitsUtil#0" expanded="false" />
-                <element signature="docComment;method#printPowerSet#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#printPowerSet#0;class#BitsUtil#0" expanded="false" />
-                <element signature="method#printSuperSet#0;class#BitsUtil#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="-198">
+              <caret line="61" column="90" lean-forward="false" selection-start-line="61" selection-start-column="90" selection-end-line="61" selection-end-column="90" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,6 +83,7 @@
       <find>mat</find>
       <find>4.10</find>
       <find>big</find>
+      <find>heap</find>
     </findStrings>
     <replaceStrings>
       <replace>DARKLOGGER</replace>
@@ -162,7 +117,6 @@
         <option value="$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/SetStacks.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/MyStack.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/Trees_and_Graphs_Main.java" />
-        <option value="$PROJECT_DIR$/src/com/darkRealm/BigO/MathUtil.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/TNodeWeight.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/WTree.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/WTNode.java" />
@@ -184,8 +138,10 @@
         <option value="$PROJECT_DIR$/src/com/darkRealm/Stack_and_Queues_Main.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/AnimalShelter.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java" />
-        <option value="$PROJECT_DIR$/src/com/darkRealm/Main.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/darkRealm/BigO/MathUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/darkRealm/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/darkRealm/Maths_and_Logic_Puzzels/Maths_Logic_Puzzels.java" />
       </list>
     </option>
   </component>
@@ -299,59 +255,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Stacks_and_queues" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="megaCTCI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="megaCTCI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="darkRealm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BigO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="megaCTCI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="megaCTCI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="darkRealm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arrays_and_Strings" />
+              <option name="myItemId" value="Maths_and_Logic_Puzzels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -552,6 +464,8 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
       <envs />
       <method />
     </configuration>
@@ -567,6 +481,8 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
       <envs />
       <method />
     </configuration>
@@ -610,6 +526,8 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
       <envs />
       <method />
     </configuration>
@@ -664,76 +582,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1475453800513</updated>
-    </task>
-    <task id="LOCAL-00008" summary="adding the logging mechanism">
-      <created>1482267221590</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1482267221590</updated>
-    </task>
-    <task id="LOCAL-00009" summary="[Prob 3.5] -- Sort  a stack with using only another stack.">
-      <created>1482275282765</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1482275282765</updated>
-    </task>
-    <task id="LOCAL-00010" summary="adding size functionality to Mystack + append mode for logger.">
-      <created>1482275522302</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1482275522302</updated>
-    </task>
-    <task id="LOCAL-00011" summary="adding the Recursion_DP  fibonacci memoized DP method.">
-      <created>1482351078361</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1482351078361</updated>
-    </task>
-    <task id="LOCAL-00012" summary="adding the bottomup approach fibonacci">
-      <created>1482353368624</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1482353368624</updated>
-    </task>
-    <task id="LOCAL-00013" summary="solved 8.1 prob, with/without memoized, optimized.">
-      <created>1482358397963</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1482358397963</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Prob 8.2 - solution, memoization pending.">
-      <created>1482366500746</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1482366500746</updated>
-    </task>
-    <task id="LOCAL-00015" summary="adding the logging mechanism">
-      <created>1482369119213</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1482369119213</updated>
-    </task>
-    <task id="LOCAL-00016" summary="adding the logging mechanism">
-      <created>1482371287078</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1482371287078</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Problem [8.4] solved">
-      <created>1482371377893</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1482371377893</updated>
     </task>
     <task id="LOCAL-00018" summary="Problem 8.9 solved">
       <created>1482382242643</created>
@@ -1008,7 +856,77 @@
       <option name="project" value="LOCAL" />
       <updated>1483866336842</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Updating comment to add one more method to get all the 1 bits.">
+      <created>1483866520396</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1483866520396</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Problem 5.2 - Decimal fraction to binary String. Iterative">
+      <created>1483873127479</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1483873127479</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Problem : decrement a number by 1, without using arithmetic  &#10;Added utility method to update the ith Bit of a nuber to a given value">
+      <created>1483913340990</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1483913341011</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Prob : inccrement a number by 1 without using arithmetic">
+      <created>1483913901390</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1483913901390</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Prob 5.3 -  Flip the bit to win. had two parts first to get the alternating bit sequence &amp; second to merge that seuqnecn in order to calculate a max contignuos sequnce of 1.">
+      <created>1483921453833</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1483921453833</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Prob 5.6 Conversion : count the bit flips for a number A to become number B">
+      <created>1483928828164</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1483928828164</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Prob 5.4 - nextBiggerPart">
+      <created>1483939190300</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1483939190300</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Prob 5.4 - nextSmallerMethod with same number of 1 bits">
+      <created>1483941215375</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1483941215380</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Prob 5.7 - Pairwise Swap of bits">
+      <created>1483954994900</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1483954994900</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Prob 6.8 - Egg drop Problem">
+      <created>1484026470996</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1484026470996</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1031,9 +949,9 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30387598" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30387598" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19534884" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1044,7 +962,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3379845" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3782946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1096,16 +1014,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Starting Chapter 4 &#10;Graph - Basic Structure + BFS + DFS Traversal" />
-    <MESSAGE value="Problem 4.1 -  detecting a route between two nodes" />
-    <MESSAGE value="Problem 4.3 - List of depths (collate by Level Order for tree)" />
-    <MESSAGE value="Problem 4.4 - Check Balanced, recursion" />
-    <MESSAGE value="Problem 4.5 - CheckBST, recursion + range" />
-    <MESSAGE value="Problem 4.6 - Successor, recursion" />
-    <MESSAGE value="Problem 4.10 - CheckSubtree, created own recursive algo" />
-    <MESSAGE value="Problem 4.10 -check Subtree + 4.11 Random node, but have to verify this once again" />
-    <MESSAGE value="Problem 4.27 - Build Order, have used BFS but with extra code for creating graph from input &amp; keeping the progress of processed nodes" />
-    <MESSAGE value="Get Max Tim from 4 numbers + Get the shortest unsorted sequence to completly sort the array" />
     <MESSAGE value="Problem 4.9 - Poosible BST sequences for a given array - recursion" />
     <MESSAGE value="Problem 4.9 -  adding the prob statement comment" />
     <MESSAGE value="Problem 4.9" />
@@ -1121,7 +1029,17 @@
     <MESSAGE value="removing unused method" />
     <MESSAGE value="Problem 3.6 - ANimal shelter have maintained two diff queues for each type of animal, will peek from lists head to check which head is the oldest &amp; remove it." />
     <MESSAGE value="Chapter 5 begins : Problem 5.1 Sandwiching the bits of a number in another number from given positions bits." />
-    <option name="LAST_COMMIT_MESSAGE" value="Chapter 5 begins : Problem 5.1 Sandwiching the bits of a number in another number from given positions bits." />
+    <MESSAGE value="Updating comment to add one more method to get all the 1 bits." />
+    <MESSAGE value="Problem 5.2 - Decimal fraction to binary String. Iterative" />
+    <MESSAGE value="Problem : decrement a number by 1, without using arithmetic  &#10;Added utility method to update the ith Bit of a nuber to a given value" />
+    <MESSAGE value="Prob : inccrement a number by 1 without using arithmetic" />
+    <MESSAGE value="Prob 5.3 -  Flip the bit to win. had two parts first to get the alternating bit sequence &amp; second to merge that seuqnecn in order to calculate a max contignuos sequnce of 1." />
+    <MESSAGE value="Prob 5.6 Conversion : count the bit flips for a number A to become number B" />
+    <MESSAGE value="Prob 5.4 - nextBiggerPart" />
+    <MESSAGE value="Prob 5.4 - nextSmallerMethod with same number of 1 bits" />
+    <MESSAGE value="Prob 5.7 - Pairwise Swap of bits" />
+    <MESSAGE value="Prob 6.8 - Egg drop Problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prob 6.8 - Egg drop Problem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1164,7 +1082,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
-          <line>232</line>
+          <line>234</line>
           <properties />
           <option name="timeStamp" value="263" />
         </line-breakpoint>
@@ -1176,15 +1094,81 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
-          <line>274</line>
+          <line>276</line>
           <properties />
           <option name="timeStamp" value="265" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>320</line>
+          <properties />
+          <option name="timeStamp" value="267" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>318</line>
+          <properties />
+          <option name="timeStamp" value="268" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>349</line>
+          <properties />
+          <option name="timeStamp" value="270" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>368</line>
+          <properties />
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>420</line>
+          <properties />
+          <option name="timeStamp" value="276" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>449</line>
+          <properties />
+          <option name="timeStamp" value="278" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>478</line>
+          <properties />
+          <option name="timeStamp" value="279" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>481</line>
+          <properties />
+          <option name="timeStamp" value="280" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>628</line>
+          <properties />
+          <option name="timeStamp" value="290" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java</url>
+          <line>622</line>
+          <properties />
+          <option name="timeStamp" value="291" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/darkRealm/Maths_and_Logic_Puzzels/Maths_Logic_Puzzels.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="298" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="266" />
+      <option name="time" value="299" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1193,28 +1177,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/logging/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="286" column="31" lean-forward="false" selection-start-line="286" selection-start-column="31" selection-end-line="286" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/megaCTCI.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/megaCTCI/com/darkRealm/DarkLogger.class" />
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/MinStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="35" column="3" lean-forward="false" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/logging/FileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-340">
@@ -1263,13 +1225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="45" column="44" lean-forward="false" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/MathUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1336,7 +1291,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1344,15 +1298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="method#BreadthFirstTraversal#0;class#Graph#0" expanded="false" />
-            <element signature="method#reduceIncoming#0;class#Graph#0" expanded="false" />
-            <element signature="method#resetNodesStatus#0;class#Graph#0" expanded="false" />
-            <element signature="method#modifiedBFS#0;class#Graph#0" expanded="false" />
-            <element signature="method#modifiedBreadthFirstTraversal#0;class#Graph#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1360,7 +1305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="553" column="13" lean-forward="false" selection-start-line="553" selection-start-column="13" selection-end-line="553" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1385,23 +1329,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/LinkedLists/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#144#145#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/LinkedLists/LinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/darkRealm/LinkedList_Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1420,98 +1347,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
           <caret line="142" column="23" lean-forward="false" selection-start-line="142" selection-start-column="23" selection-end-line="142" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#227755#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3370#3371#0" expanded="false" />
-            <element signature="e#3446#3447#0" expanded="false" />
-            <element signature="e#5027#5028#0" expanded="false" />
-            <element signature="e#5098#5099#0" expanded="false" />
-            <element signature="e#6903#6904#0" expanded="false" />
-            <element signature="e#6974#6975#0" expanded="false" />
-            <element signature="e#8781#8782#0" expanded="false" />
-            <element signature="e#8852#8853#0" expanded="false" />
-            <element signature="e#10659#10660#0" expanded="false" />
-            <element signature="e#10730#10731#0" expanded="false" />
-            <element signature="e#12536#12537#0" expanded="false" />
-            <element signature="e#12595#12596#0" expanded="false" />
-            <element signature="e#14928#14929#0" expanded="false" />
-            <element signature="e#14999#15000#0" expanded="false" />
-            <element signature="e#17889#17890#0" expanded="false" />
-            <element signature="e#17960#17961#0" expanded="false" />
-            <element signature="e#84738#84739#0" expanded="false" />
-            <element signature="e#84795#84796#0" expanded="false" />
-            <element signature="e#88329#88330#0" expanded="false" />
-            <element signature="e#88386#88387#0" expanded="false" />
-            <element signature="e#91921#91922#0" expanded="false" />
-            <element signature="e#91978#91979#0" expanded="false" />
-            <element signature="e#95523#95524#0" expanded="false" />
-            <element signature="e#95580#95581#0" expanded="false" />
-            <element signature="e#99118#99119#0" expanded="false" />
-            <element signature="e#99175#99176#0" expanded="false" />
-            <element signature="e#102793#102794#0" expanded="false" />
-            <element signature="e#102850#102851#0" expanded="false" />
-            <element signature="e#107069#107070#0" expanded="false" />
-            <element signature="e#107126#107127#0" expanded="false" />
-            <element signature="e#111724#111725#0" expanded="false" />
-            <element signature="e#111781#111782#0" expanded="false" />
-            <element signature="e#177013#177014#0" expanded="false" />
-            <element signature="e#177054#177055#0" expanded="false" />
-            <element signature="e#177353#177354#0" expanded="false" />
-            <element signature="e#177410#177411#0" expanded="false" />
-            <element signature="e#177457#177458#0" expanded="false" />
-            <element signature="e#177496#177497#0" expanded="false" />
-            <element signature="e#177551#177552#0" expanded="false" />
-            <element signature="e#177591#177592#0" expanded="false" />
-            <element signature="e#178082#178083#0" expanded="false" />
-            <element signature="e#178121#178122#0" expanded="false" />
-            <element signature="e#178785#178786#0" expanded="false" />
-            <element signature="e#178832#178833#0" expanded="false" />
-            <element signature="e#178897#178898#0" expanded="false" />
-            <element signature="e#178976#178977#0" expanded="false" />
-            <element signature="e#179525#179526#0" expanded="false" />
-            <element signature="e#179566#179567#0" expanded="false" />
-            <element signature="e#223144#223145#0" expanded="false" />
-            <element signature="e#223197#223198#0" expanded="false" />
-            <element signature="e#224394#224395#0" expanded="false" />
-            <element signature="e#224447#224448#0" expanded="false" />
-            <element signature="e#225606#225607#0" expanded="false" />
-            <element signature="e#225659#225660#0" expanded="false" />
-            <element signature="e#226830#226831#0" expanded="false" />
-            <element signature="e#226883#226884#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/ArrayUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="346" column="0" lean-forward="false" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#printUnorderedPairs#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#reverseArray#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#rotateBySome#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#intersection#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#append#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#record#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#moveZeroes#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#nextBiggerSomehowClose#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#nextBigger#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#nextBigger_usingPair#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#maxInWindow_failed_first_attempt#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#maxInWindow#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#findNoWhichIsOddTimesInRepeatingNos#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#checkArraySumOddEven#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="e#6861#6862#0" expanded="false" />
-            <element signature="e#6905#6906#0" expanded="false" />
-            <element signature="method#printPairsWithSumK#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="e#7107#7191#0" expanded="false" />
-            <element signature="method#giveMedianForRandomlyExpandingArray#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="e#7829#7920#0" expanded="false" />
-            <element signature="method#getKthSmallestInUnionOfTwoArrays#0;class#ArrayUtil#0" expanded="false" />
-            <element signature="method#getKthSmallestInTwoArrays#0;class#ArrayUtil#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1519,64 +1354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#635#636#0" expanded="false" />
-            <element signature="e#663#664#0" expanded="false" />
-            <element signature="e#689#690#0" expanded="false" />
-            <element signature="e#710#711#0" expanded="false" />
-            <element signature="e#1660#1661#0" expanded="false" />
-            <element signature="e#1690#1691#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/Trees_and_Graphs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="893" column="16" lean-forward="false" selection-start-line="893" selection-start-column="16" selection-end-line="893" selection-end-column="16" />
-          <folding>
-            <element signature="docComment;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#getSampleGraph#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#getSampleTree#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#doBFSAndDFS#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#isRoutePresentBetweenNodes#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#createMinimalHeightTree#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#getRoot#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#listOfDepths#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#collateByLevel#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#isBalanced#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#getHeight#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#isBST#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#checkBST#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#printPredecessorAndSucessorOLD#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#findPredAndSucd#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#updatePrec#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#updateSucc#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#printPredecessorAndSucessor#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#findPredecessor#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="e#11596#11711#0" expanded="false" />
-            <element signature="method#findSuccessor#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="e#12467#12553#0" expanded="false" />
-            <element signature="method#buildOrder#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="e#14561#14674#0" expanded="false" />
-            <element signature="method#getNodeWhichDoesntHaveParent#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="e#15071#15077#0" expanded="false" />
-            <element signature="method#findCommonAncestor#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#commonAncestor#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#findCommonAncestorAp2#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#coversAp2#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#checkAncestorAp2#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#checkSubtree#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#checkSubtree#1;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#matchTreeTwo#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#NumberOfBSTSequences#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#calculateWaysBSTSequence#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#possibleBSTArrays#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#weaveLists#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="e#26050#26151#0" expanded="false" />
-            <element signature="method#fireCalculatePathSums#0;class#Trees_and_Graphs#0" expanded="false" />
-            <element signature="method#calculatePathsWithSum#0;class#Trees_and_Graphs#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1584,31 +1361,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Trees_and_Graphs_Main#0" expanded="false" />
-            <element signature="method#testMinimalHeightTree#0;class#Trees_and_Graphs_Main#0" expanded="false" />
-            <element signature="method#testIsBalanced#0;class#Trees_and_Graphs_Main#0" expanded="false" />
-            <element signature="method#testIsBST#0;class#Trees_and_Graphs_Main#0" expanded="false" />
-            <element signature="method#testPredecessorAndSuccessor#0;class#Trees_and_Graphs_Main#0" expanded="false" />
-            <element signature="e#1873#1919#0" expanded="false" />
-            <element signature="method#testCommonAncestor#0;class#Trees_and_Graphs_Main#0" expanded="false" />
-            <element signature="method#testCheckSubtree#0;class#Trees_and_Graphs_Main#0" expanded="false" />
-            <element signature="method#testInsertNode#0;class#Trees_and_Graphs_Main#0" expanded="false" />
-            <marker date="1483742180682" expanded="false" signature="3791:3997" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings_Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="76" column="1" lean-forward="false" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
-          <folding>
-            <element signature="docComment;class#Arrays_and_Strings_Main#0" expanded="false" />
-            <element signature="method#doCheckPerm#0;class#Arrays_and_Strings_Main#0" expanded="false" />
-            <element signature="class#MComparator#0;class#Arrays_and_Strings_Main#0" expanded="false" />
-            <element signature="method#getMaxOfMinsFromSlidingWindow#0;class#Arrays_and_Strings_Main#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1617,7 +1369,7 @@
         <state relative-caret-position="285">
           <caret line="116" column="29" lean-forward="true" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="docComment;class#Stacks_and_Queues#0" expanded="false" />
             <element signature="initializer##0;class#Stacks_and_Queues#0" expanded="false" />
             <element signature="method#SortStack#0;class#Stacks_and_Queues#0" expanded="false" />
@@ -1631,7 +1383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="352" column="30" lean-forward="false" selection-start-line="352" selection-start-column="30" selection-end-line="352" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1640,11 +1391,11 @@
         <state relative-caret-position="1105">
           <caret line="65" column="28" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
           <folding>
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#1493#1494#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="false" />
+            <element signature="e#499#500#0" expanded="false" />
+            <element signature="e#540#541#0" expanded="false" />
+            <element signature="e#606#607#0" expanded="false" />
+            <element signature="e#1493#1494#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1653,12 +1404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding>
-            <element signature="e#214#215#0" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1684,83 +1429,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="method#IsUnique#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#CheckPermutation#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#palindromePermutation#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#stringCompression#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#getSubArrayCombinations#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#combine#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="e#6707#6820#0" expanded="false" />
-            <element signature="e#7162#7276#0" expanded="false" />
-            <element signature="method#possibleSubArraysWithSumFaster#0;class#Arrays_and_Strings#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="249" column="31" lean-forward="false" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="31" />
-          <folding>
-            <element signature="e#387#398#0" expanded="false" />
-            <element signature="method#doArray_and_Strings_Main#0;class#Main#0" expanded="false" />
-            <element signature="e#1118#1165#0" expanded="false" />
-            <element signature="method#doStack_and_Queue#0;class#Main#0" expanded="false" />
-            <element signature="e#2257#2299#0" expanded="false" />
-            <element signature="method#doRecursion_DP#0;class#Main#0" expanded="false" />
-            <element signature="e#2667#2718#0" expanded="false" />
-            <element signature="method#doTrees_Graph#0;class#Main#0" expanded="false" />
-            <element signature="e#3454#3498#0" expanded="false" />
-            <element signature="method#doMathUtils#0;class#Main#0" expanded="false" />
-            <element signature="method#getTime#0;class#Main#0" expanded="false" />
-            <element signature="class#4598:4726" expanded="false" />
-            <element signature="e#5739#5795#0" expanded="false" />
-            <element signature="method#minLenUnSorted#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Big_O_Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-          <folding>
-            <element signature="docComment;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#arrayList#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#doBitwise#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="e#339#377#0" expanded="false" />
-            <element signature="method#arrayWindowMax#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#math#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#array#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#arrayNextBigger#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#arrayIntersection#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="e#3519#3582#0" expanded="false" />
-            <element signature="method#stringUtil#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#mergeSort#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="e#4598#4647#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#printArray#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#maxDistinctSubString#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="e#5481#5543#0" expanded="false" />
-            <element signature="method#allPermutations#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#primeNTH#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#pairsWithSumK#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="method#useMatrix#0;class#Big_O_Main#0" expanded="false" />
-            <element signature="e#6723#6774#0" expanded="false" />
-            <element signature="method#arrayUtil#0;class#Big_O_Main#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/Trees_and_Graphs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4624">
+          <caret line="878" column="59" lean-forward="false" selection-start-line="878" selection-start-column="59" selection-end-line="878" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings_Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="60" column="17" lean-forward="false" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1163">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/LinkedLists/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/LinkedLists/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/ArrayUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="279" column="71" lean-forward="false" selection-start-line="279" selection-start-column="71" selection-end-line="279" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/BinarySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/Byte.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="297" column="11" lean-forward="false" selection-start-line="297" selection-start-column="11" selection-end-line="297" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="259" column="30" lean-forward="false" selection-start-line="259" selection-start-column="30" selection-end-line="259" selection-end-column="30" />
+        <state relative-caret-position="35">
+          <caret line="656" column="0" lean-forward="false" selection-start-line="656" selection-start-column="0" selection-end-line="656" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#BitsUtil#0" expanded="false" />
             <element signature="method#isEven_withShift#0;class#BitsUtil#0" expanded="false" />
@@ -1777,7 +1512,70 @@
             <element signature="docComment;method#printPowerSet#0;class#BitsUtil#0" expanded="false" />
             <element signature="method#printPowerSet#0;class#BitsUtil#0" expanded="false" />
             <element signature="method#printSuperSet#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#onesCompliment#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#insertionBits#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#FractionToBinaryString#0;class#BitsUtil#0" expanded="false" />
+            <element signature="e#9905#9939#0" expanded="false" />
+            <element signature="method#oneShort#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#oneBig#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#updateIthBit#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#FlipBitToWin#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#getAlternatingSequence#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#findLongestSequence#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#coversionEstimate#0;class#BitsUtil#0" expanded="false" />
+            <element signature="e#16538#16593#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#361#372#0" expanded="false" />
+            <element signature="method#doArray_and_Strings_Main#0;class#Main#0" expanded="false" />
+            <element signature="e#1121#1168#0" expanded="false" />
+            <element signature="method#doStack_and_Queue#0;class#Main#0" expanded="false" />
+            <element signature="e#2260#2302#0" expanded="false" />
+            <element signature="method#doRecursion_DP#0;class#Main#0" expanded="false" />
+            <element signature="e#2670#2721#0" expanded="false" />
+            <element signature="method#doTrees_Graph#0;class#Main#0" expanded="false" />
+            <element signature="e#3457#3501#0" expanded="false" />
+            <element signature="method#doMathUtils#0;class#Main#0" expanded="false" />
+            <element signature="method#getTime#0;class#Main#0" expanded="false" />
+            <element signature="class#4601:4729" expanded="false" />
+            <element signature="e#5742#5798#0" expanded="false" />
+            <element signature="method#minLenUnSorted#0;class#Main#0" expanded="false" />
+            <element signature="method#doBitsMain#0;class#Main#0" expanded="false" />
+            <element signature="e#7249#7291#0" expanded="false" />
+            <element signature="e#8730#8731#0" expanded="true" />
+            <element signature="e#8776#8777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/MathUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="84" column="1" lean-forward="false" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="385" column="15" lean-forward="false" selection-start-line="385" selection-start-column="15" selection-end-line="385" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Maths_and_Logic_Puzzels/Maths_Logic_Puzzels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="61" column="90" lean-forward="false" selection-start-line="61" selection-start-column="90" selection-end-line="61" selection-end-column="90" />
+          <folding />
         </state>
       </provider>
     </entry>
