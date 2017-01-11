@@ -1,6 +1,7 @@
 package com.darkRealm;
 
 import com.darkRealm.Sorting_and_Searching.MergeSortUtil;
+import com.darkRealm.Sorting_and_Searching.QuickSortUtil;
 
 import java.util.Arrays;
 
@@ -9,10 +10,11 @@ import java.util.Arrays;
  */
 public class Sorting_and_Searching_Main {
 
-  public static void testMergeSort(){
-//    int [] arr =new int[]{12,1,11,2,4,3,8,9,10};
-    int [] arr =new int[]{122,164,121,412,314,396,468,996,210};
-    arr = MergeSortUtil.mergeSort(arr);
-    System.out.println("After Sorting : "+ Arrays.toString(arr));
+  public static void testMergeSort() {
+    int[] arr = new int[]{2, 4, 3, 10, 9, 8};
+//    int [] arr =new int[]{122,164,121,412,314,396,468,996,210};
+//    arr = MergeSortUtil.mergeSort(arr);
+    arr = QuickSortUtil.quicksort(arr, 0, arr.length - 1);
+    System.out.println("After Sorting : " + Arrays.toString(arr));
   }
 }
