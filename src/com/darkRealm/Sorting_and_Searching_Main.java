@@ -1,5 +1,6 @@
 package com.darkRealm;
 
+import com.darkRealm.Sorting_and_Searching.BinarySearchUtil;
 import com.darkRealm.Sorting_and_Searching.MergeSortUtil;
 import com.darkRealm.Sorting_and_Searching.QuickSortUtil;
 
@@ -16,5 +17,11 @@ public class Sorting_and_Searching_Main {
 //    arr = MergeSortUtil.mergeSort(arr);
     arr = QuickSortUtil.quicksort(arr, 0, arr.length - 1);
     System.out.println("After Sorting : " + Arrays.toString(arr));
+  }
+
+  public static void testBinarySearch() {
+    int[] arr = new int[]{0,1,2,4,6,9,71};
+    int res = BinarySearchUtil.binarySearchRecursive(arr, 90, 0, arr.length - 1);
+    System.out.println("Was in Array : " + res);
   }
 }
