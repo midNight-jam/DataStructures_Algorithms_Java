@@ -3,6 +3,7 @@ package com.darkRealm;
 import com.darkRealm.Recursion_and_DynamicProg.Recursion_and_DP;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Set;
 
 /**
@@ -137,7 +138,8 @@ public class Recursion_DP_Main {
 //    expression = "0^1|0";
 //    Recursion_and_DP.countEval("0|1|1",true);
 //    int res = Recursion_and_DP.countEval(expression,false);
-    int res = Recursion_and_DP.combinedParathesieCombinaiton("0|1|0|1^0&1&1|0",false);
+//    int res = Recursion_and_DP.combinedParathesieCombinaiton("0|1|0|1^0&1&1|0",false);
+    int res = Recursion_and_DP.countEvalOptimized("0|1|0", false, new HashMap<String, Integer>());
     long after = System.currentTimeMillis();
     System.out.println("ways - " + res);
     System.out.println("time miliseconds - " + ((after - b4)));

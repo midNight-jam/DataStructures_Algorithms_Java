@@ -24,8 +24,8 @@ public class Main {
     // write your code here, testing after new git
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
-    doRecursion_DP();
-
+//    doRecursion_DP();
+    doSortingAndSearching();
 //    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
@@ -283,5 +283,9 @@ public class Main {
 
   private static void doMathsLogicPuzzels() {
     Maths_Logic_Puzzels.EggDropProblem();
+  }
+
+  private static void doSortingAndSearching() {
+    Sorting_and_Searching_Main.testMergeSort();
   }
 }

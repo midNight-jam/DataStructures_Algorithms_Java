@@ -683,6 +683,63 @@ public class Recursion_and_DP {
     return totalEval;
   }
 
+  /* [Prob 8.14]
+  * Q) Given a boolean expression of 0(false), 1 (true), & (and), | (OR) and ^ (XOR) and a desired a boolean result,
+  * give a function to count no of ways of acheiving this result
+  *  A)
+   *  */
+  public static int countEvalOptimized(String exp, boolean result, HashMap<String, Integer> cache) {
+    if (exp.length() == 1) {
+      if (exp.equals("0") && result == false) {
+        return 1;
+      } else if (exp.equals("0") && result == true) {
+        return 0;
+      } else if (exp.equals("1") && result == false) {
+        return 0;
+      } else if (exp.equals("1") && result == true) {
+        return 1;
+      }
+    }
+    if (cache.containsKey(exp)) {
+      return cache.get(exp);
+    }
+
+    char c;
+    String left, right;
+    int leftTrue, leftFalse, rightTrue, rightFalse, total, totalTrue;
+    leftTrue = leftFalse = rightTrue = rightFalse = total = totalTrue = 0;
+
+    for (int i = 1; i < exp.length(); i = i + 2) {
+      c = exp.charAt(i);
+      if (c == '|' || c == '^' || c == '&') {
+        left = exp.substring(0, i);
+        right = exp.substring(i + 1, exp.length());
+        leftTrue = countEvalOptimized(left, true, cache);
+        leftFalse = countEvalOptimized(left, false, cache);
+        rightTrue = countEvalOptimized(right, true, cache);
+        rightFalse = countEvalOptimized(right, false, cache);
+        total = (leftTrue + leftFalse) * (rightFalse + rightFalse);
+
+        if (c == '|') {
+          totalTrue = leftTrue * rightFalse + leftFalse * rightTrue + leftTrue * rightTrue;
+        }
+        if (c == '&') {
+          totalTrue = leftTrue * rightTrue;
+        }
+        if (c == '^') {
+          totalTrue = leftTrue * rightFalse + leftFalse * rightTrue;
+        }
+      }
+      if (result) {
+        cache.put(exp, totalTrue);
+      } else {
+        cache.put(exp, total - totalTrue);
+      }
+    }
+    return cache.get(exp);
+  }
+
+
   /* [Prob Printing all combinaions of combined parathesis]
   * */
   public static int combinedParathesieCombinaiton(String exp, boolean result) {
