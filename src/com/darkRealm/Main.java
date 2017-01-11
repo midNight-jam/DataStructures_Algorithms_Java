@@ -287,6 +287,7 @@ public class Main {
 
   private static void doSortingAndSearching() {
 //    Sorting_and_Searching_Main.testMergeSort();
-    Sorting_and_Searching_Main.testBinarySearch();
+//    Sorting_and_Searching_Main.testBinarySearch();
+    Sorting_and_Searching_Main.testSortedMerge();
   }
 }
