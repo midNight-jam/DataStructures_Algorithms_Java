@@ -4,6 +4,8 @@ package com.darkRealm.Sorting_and_Searching;
  * Created by Jayam on 1/10/2017.
  */
 public class MergeSortUtil {
+  /* Complexity : O(NlogN), Space : O(N)
+  * */
   public static int[] mergeSort(int[] arr) {
     int[] helper = new int[arr.length]; // a temp array for holding the intermediate results
     mergeSort(arr, helper, 0, arr.length - 1);  // fire mergesort with bounds
