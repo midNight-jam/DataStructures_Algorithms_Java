@@ -623,7 +623,7 @@ public class Recursion_and_DP {
     return true;
   }
 
-  /*  [Prob -8.14]
+  /*  [Prob 8.14]
   * Q) Given a boolean expression of 0(false), 1 (true), & (and), | (OR) and ^ (XOR) and a desired a boolean result,
   * give a function to count no of ways of acheiving this result
   * A) The algo is given in as per the CTCI, i couldnt get close so learning from their solution
@@ -681,5 +681,61 @@ public class Recursion_and_DP {
       totalEval += result == true ? totalTrue : total - totalTrue;
     }
     return totalEval;
+  }
+
+  /* [Prob Printing all combinaions of combined parathesis]
+  * */
+  public static int combinedParathesieCombinaiton(String exp, boolean result) {
+    char c;
+    int count=1;
+    String left, right, total;
+    ArrayList<String> leftList, rightList;
+    for (int i = 1; i < exp.length(); i = i + 2) {
+      c = exp.charAt(i);
+      left = exp.substring(0, i);
+      right = exp.substring(i + 1, exp.length());
+      leftList = evalCombination(left);
+      rightList = evalCombination(right);
+      for (int p = 0; p < leftList.size(); p++) {
+        for (int q = 0; q < rightList.size(); q++) {
+          total = "(" + leftList.get(p) + ")" + c + "(" + rightList.get(q) + ")";
+          System.out.println("#"+count+" Expression : " + total);
+          count++;
+        }
+      }
+    }
+
+    return 0;
+  }
+
+  private static ArrayList<String> evalCombination(String exp) {
+    if (exp.length() == 1) {
+      ArrayList<String> last = new ArrayList<>();
+      last.add(exp);
+      return last;
+    }
+    char c;
+    String left, right, total;
+    left = right = total = "";
+    ArrayList<String> leftList, rightList, all;
+    all = new ArrayList<>();
+    for (int i = 1; i < exp.length(); i = i + 2) {
+      c = exp.charAt(i);
+      if (c == '|' || c == '^' || c == '&') {
+        left = exp.substring(0, i);
+        leftList = evalCombination(left);
+
+        right = exp.substring(i + 1, exp.length());
+        rightList = evalCombination(right);
+
+        for (int p = 0; p < leftList.size(); p++) {
+          for (int q = 0; q < rightList.size(); q++) {
+            total = "(" + leftList.get(p) + ")" + c + "(" + rightList.get(q) + ")";
+            all.add(total);
+          }
+        }
+      }
+    }
+    return all;
   }
 }

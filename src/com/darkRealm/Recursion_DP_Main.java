@@ -136,7 +136,8 @@ public class Recursion_DP_Main {
     long b4 = System.currentTimeMillis();
 //    expression = "0^1|0";
 //    Recursion_and_DP.countEval("0|1|1",true);
-    int res = Recursion_and_DP.countEval(expression,false);
+//    int res = Recursion_and_DP.countEval(expression,false);
+    int res = Recursion_and_DP.combinedParathesieCombinaiton("0|1|0|1^0&1&1|0",false);
     long after = System.currentTimeMillis();
     System.out.println("ways - " + res);
     System.out.println("time miliseconds - " + ((after - b4)));
