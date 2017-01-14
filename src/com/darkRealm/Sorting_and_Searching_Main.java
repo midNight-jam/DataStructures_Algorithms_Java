@@ -1,7 +1,6 @@
 package com.darkRealm;
 
 import com.darkRealm.Sorting_and_Searching.BinarySearchUtil;
-import com.darkRealm.Sorting_and_Searching.MergeSortUtil;
 import com.darkRealm.Sorting_and_Searching.QuickSortUtil;
 import com.darkRealm.Sorting_and_Searching.Searching_Sorting;
 
@@ -13,7 +12,9 @@ import java.util.Arrays;
 public class Sorting_and_Searching_Main {
 
   public static void testMergeSort() {
-    int[] arr = new int[]{2, 4, 3, 10, 9, 8};
+//    int[] arr = new int[]{2, 4, 3, 10, 9, 8};
+    int[] arr = new int[]{11,31,42,4,53,50,9,2};
+
 //    int [] arr =new int[]{122,164,121,412,314,396,468,996,210};
 //    arr = MergeSortUtil.mergeSort(arr);
     arr = QuickSortUtil.quicksort(arr, 0, arr.length - 1);
@@ -43,5 +44,13 @@ public class Sorting_and_Searching_Main {
 
     arr = Searching_Sorting.sortedMerge(arr, brr);
     System.out.println("Sorted Merge : " + Arrays.toString(arr));
+  }
+
+  public static void testKthSmallestElement(){
+    int[] arr = new int[]{11,31,42,4,53,50,9,2};
+    int kth = QuickSortUtil.kthSmallestElement(arr,0,arr.length -1,7);
+    System.out.println("Array : "+ Arrays.toString(arr));
+    System.out.println("Kth smalles : "+ kth);
+
   }
 }
