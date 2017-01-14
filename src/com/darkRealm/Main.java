@@ -25,8 +25,8 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-    doSortingAndSearching();
-//    doTrees_Graph();
+//    doSortingAndSearching();
+    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 
@@ -108,7 +108,8 @@ public class Main {
 
 //    Trees_and_Graphs_Main.testPossibleBSTArrays();
 //    Trees_and_Graphs_Main.testPathsWithSum();
-    Trees_and_Graphs_Main.testInorderTraversalIterative();
+//    Trees_and_Graphs_Main.testInorderTraversalIterative();
+    Trees_and_Graphs_Main.testAdjacencyGraph();
   }
 
   private static void doMathUtils() {

@@ -1,11 +1,14 @@
 package com.darkRealm;
 
 import com.darkRealm.LinkedLists.LinkedList;
+import com.darkRealm.Trees_and_Graphs.KevinBaconsGame;
 import com.darkRealm.Trees_and_Graphs.TNode;
 import com.darkRealm.Trees_and_Graphs.Tree;
 import com.darkRealm.Trees_and_Graphs.Trees_and_Graphs;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Jayam on 12/27/2016.
@@ -171,19 +174,20 @@ public class Trees_and_Graphs_Main {
     }
   }
 
-  public static void testPathsWithSum(){
+  public static void testPathsWithSum() {
     Tree tree = new Tree();
     tree.insert(0);
     tree.insert(1);
     tree.root.right.left = new TNode(-1);
-    tree.root.right.right= new TNode(-2);
+    tree.root.right.right = new TNode(-2);
     tree.root.right.right.left = new TNode(1);
 //    int res = Trees_and_Graphs.PathsWithSum(tree,0);
-    int res = Trees_and_Graphs.PathsWithSumFaster(tree,0);
-    System.out.println("res - "+res);
+    int res = Trees_and_Graphs.PathsWithSumFaster(tree, 0);
+    System.out.println("res - " + res);
 //
   }
-  public static void testInorderTraversalIterative(){
+
+  public static void testInorderTraversalIterative() {
     Tree tree = new Tree();
 //    tree.insert(2);
 //    tree.insert(1);
@@ -204,5 +208,48 @@ public class Trees_and_Graphs_Main {
     tree.insert(18);
 
     Trees_and_Graphs.inorderTraversalIterative(tree);
+  }
+
+  public static void testAdjacencyGraph() {
+    KevinBaconsGame adjMap = new KevinBaconsGame();
+    adjMap.addActor("Kevin Bacon");
+    adjMap.addActor("Kevin Costner");
+    adjMap.addEdge("Kevin Bacon", "Kevin Costner", "JFK", 1991);
+
+    adjMap.addActor("Keanu Reeves");
+    adjMap.addActor("Al Pacino");
+    adjMap.addEdge("Keanu Reeves", "Al Pacino", "The Devil's Advocate", 1997);
+    //Christopher Walken
+    adjMap.addActor("Christopher Walken");
+    adjMap.addEdge("Christopher Walken", "Al Pacino", "Gigli", 2003);
+
+    //Courtney Love
+    adjMap.addActor("Courtney Love");
+    adjMap.addEdge("Christopher Walken", "Courtney Love", "Basquiat", 1996);
+
+    adjMap.addActor("Courtney Love");
+    adjMap.addEdge("Kevin Bacon", "Courtney Love", "Trapped", 2002);
+
+    adjMap.addActor("Clint Howard");
+    adjMap.addEdge("Clint Howard", "Keanu Reeves", "Parenthood", 1989);
+    adjMap.addEdge("Clint Howard", "Kevin Bacon", "My Dog Skip", 2000);
+
+    HashMap<Integer, ArrayList<String>> res = adjMap.discoverKevinBaconUniverse("Keanu Reeves");
+
+    System.out.println(" BNo | Actors ");
+    for (Integer key :
+        res.keySet()) {
+//      System.out.println(" " + key + " actors : " + res.get(key).size());
+      System.out.print(" "+key);
+      ArrayList<String> actors = res.get(key);
+      for(int i =0; i<actors.size();i++){
+        System.out.print("     "+actors.get(i));
+      }
+      System.out.println("");
+    }
+
+    int actorBaconNo = adjMap.getBaconNumber("Keanu Reeves");
+    System.out.println("Christopher Walken has bacon No "+ actorBaconNo + " Kevin Bacon");
+
   }
 }
