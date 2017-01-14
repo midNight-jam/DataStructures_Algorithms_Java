@@ -242,8 +242,9 @@ public class Trees_and_Graphs_Main {
 //      System.out.println(" " + key + " actors : " + res.get(key).size());
       System.out.print(" "+key);
       ArrayList<String> actors = res.get(key);
+      System.out.print("     ("+actors.size()+") ");
       for(int i =0; i<actors.size();i++){
-        System.out.print("     "+actors.get(i));
+        System.out.print("  "+actors.get(i));
       }
       System.out.println("");
     }

@@ -7,6 +7,7 @@ import com.sun.deploy.util.ArrayUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Created by Jayam on 10/2/2016
@@ -246,5 +247,60 @@ public class Arrays_and_Strings {
       }
     }
     return possibleSubArraysWithSum;
+  }
+
+
+  /* [Prob] Problem: you are given 2 words with equal number of characters. Find an algorithm to go from first word to
+      second word, changing one character at each step, in such a way that each intermediate word exist in a given dictionary.
+      Example:
+      Words are pit, map. A possible solution:
+      pit, pot, pet, met, mat, map
+    A) will fire recusrion for every character on a postion from a-z & check if the new word is a valid word if yes will
+      add it to the path & fire recursion for next character from a-z & so on. will store the result only if the tareget
+      word is reached. Later will compare all the results that reached the target word & return the smallest path
+      Complexiyt - 27^n where n is the longest path to the target word STAGERRING COMPLEXITY WILL KILL COMPUTER
+  */
+  public static String shortestPathBetweenWords(String source, String target) {
+    HashSet<String> dictionary = new HashSet<>();
+    dictionary.add("mit");
+    dictionary.add("kit");
+    dictionary.add("jet");
+    dictionary.add("pet");
+    dictionary.add("lot");
+    dictionary.add("pot");
+    dictionary.add("pet");
+    dictionary.add("hot");
+    dictionary.add("met");
+    dictionary.add("map");
+    dictionary.add("pat");
+    dictionary.add("mat");
+    dictionary.add("cat");
+
+    findPathOfWords("pit", "map", dictionary, "pit", 0);
+    return path;
+  }
+
+  static String path = "";
+
+  private static void findPathOfWords(String source, String target, HashSet<String> dictionary, String Path, int charIndex) {
+    if (source.equals(target)) {
+      path = Path;
+      return;
+    } else if (charIndex == target.length()) {
+      return;
+    }
+
+    for (int ci = 0; ci < target.length(); ci++) {
+      String left = source.substring(0, ci);
+      String right = source.substring(ci + 1);
+      String newWord = "";
+      for (int i = 97; i < 123; i++) {
+        newWord = left + (char) i + right;
+        if (dictionary.contains(newWord) && !Path.contains(newWord)) {
+          Path += " - " + newWord;
+          findPathOfWords(newWord, target, dictionary, Path, charIndex + 1);
+        }
+      }
+    }
   }
 }
