@@ -2,6 +2,7 @@ package com.darkRealm.Arrays_and_Strings;
 
 import com.darkRealm.BigO.QuickSort;
 import com.darkRealm.LinkedLists.LinkedList;
+import com.darkRealm.Stacks_and_queues.MyQueue;
 import com.sun.deploy.util.ArrayUtil;
 
 import java.util.ArrayList;
@@ -261,7 +262,7 @@ public class Arrays_and_Strings {
       Complexiyt - 27^n where n is the longest path to the target word STAGERRING COMPLEXITY WILL KILL COMPUTER
   */
   public static String shortestPathBetweenWords(String source, String target) {
-    HashSet<String> dictionary = new HashSet<>();
+    HashMap<String,Boolean> dictionary = new HashMap<>();
 //    dictionary.add("mit");
 //    dictionary.add("kit");
 //    dictionary.add("jet");
@@ -276,17 +277,16 @@ public class Arrays_and_Strings {
 //    dictionary.add("mat");
 //    dictionary.add("cat");
 //    findPathOfWords("pit", "map", dictionary, "pit", 0);
-    dictionary.add("poon");
-    dictionary.add("plee");
-    dictionary.add("same");
-    dictionary.add("poie");
-    dictionary.add("plea");
-    dictionary.add("plie");
-    dictionary.add("poin");
+    dictionary.put("poon",false);
+    dictionary.put("plee",false);
+    dictionary.put("same",false);
+    dictionary.put("poie",false);
+    dictionary.put("plea",false);
+    dictionary.put("plie",false);
+    dictionary.put("poin",false);
 
-    findPathOfWords("toon", "plea", dictionary, "toon", 0);
-
-    return path;
+//    findPathOfWords("toon", "plea", dictionary, "toon", 0);
+    return shortestPathBetweenWordsBFS("toon", "plea", dictionary);
   }
 
   static String path = "";
@@ -303,7 +303,7 @@ public class Arrays_and_Strings {
       String left = source.substring(0, ci);
       String right = source.substring(ci + 1);
       String newWord = "";
-        for (int i = 97; i < 123; i++) {
+      for (int i = 97; i < 123; i++) {
         newWord = left + (char) i + right;
         if (dictionary.contains(newWord) && !Path.contains(newWord)) {
           Path += " - " + newWord;
@@ -311,5 +311,39 @@ public class Arrays_and_Strings {
         }
       }
     }
+  }
+
+  public static String shortestPathBetweenWordsBFS(String source, String target, HashMap<String,Boolean> dictionary) {
+    String path = "";
+    MyQueue<String> queue = new MyQueue<>();
+    queue.enqueue(source);
+    while (!queue.isEmpty()) {
+      String word = queue.deque();
+      for (String dict :
+          dictionary.keySet()) {
+        if (isAdjacent(word, dict) && !dictionary.get(dict)) {
+          queue.enqueue(dict);
+          dictionary.put(dict, true);
+          path += " " + dict;
+          if (dict.equals(target)) {
+            return path;
+          }
+        }
+      }
+    }
+    return "";
+  }
+
+  private static boolean isAdjacent(String first, String second) {
+    int count = 0;
+    for (int i = 0; i < first.length(); i++) {
+      if (first.charAt(i) != second.charAt(i)) {
+        count++;
+      }
+      if (count > 1) {
+        return false;
+      }
+    }
+    return true;
   }
 }
