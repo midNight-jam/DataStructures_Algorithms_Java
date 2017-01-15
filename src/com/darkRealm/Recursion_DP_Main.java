@@ -144,4 +144,11 @@ public class Recursion_DP_Main {
     System.out.println("ways - " + res);
     System.out.println("time miliseconds - " + ((after - b4)));
   }
+
+  public static void testLongestSubSequence(){
+    String a = "GVCEKST";
+    String b = "GDVEGTA";
+    int res = Recursion_and_DP.LongestCommonSubsequence(a,b);
+    System.out.println("Longest Subsequence : "+res);
+  }
 }

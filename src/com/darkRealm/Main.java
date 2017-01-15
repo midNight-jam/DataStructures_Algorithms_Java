@@ -4,6 +4,7 @@ import com.darkRealm.Arrays_and_Strings.Arrays_and_Strings;
 import com.darkRealm.BigO.BitsUtil;
 import com.darkRealm.BigO.MathUtil;
 import com.darkRealm.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
+import com.darkRealm.Recursion_and_DynamicProg.Recursion_and_DP;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -23,9 +24,9 @@ public class Main {
 
 
     // write your code here, testing after new git
-    doArray_and_Strings_Main();
+//    doArray_and_Strings_Main();
 //    doStack_and_Queue();
-//    doRecursion_DP();
+    doRecursion_DP();
 //    doSortingAndSearching();
 //    doTrees_Graph();
 //    doLinkedLsit();
@@ -93,7 +94,8 @@ public class Main {
 //    Recursion_DP_Main.testWaysToReachN();
 //    Recursion_DP_Main.testNQueenPlacingProblem();
 //    Recursion_DP_Main.testPermuteExpression();
-    Recursion_DP_Main.testBooleanEvaluation();
+//    Recursion_DP_Main.testBooleanEvaluation();
+    Recursion_DP_Main.testLongestSubSequence();
   }
 
   private static void doTrees_Graph() {

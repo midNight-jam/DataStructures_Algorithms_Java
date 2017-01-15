@@ -744,7 +744,7 @@ public class Recursion_and_DP {
   * */
   public static int combinedParathesieCombinaiton(String exp, boolean result) {
     char c;
-    int count=1;
+    int count = 1;
     String left, right, total;
     ArrayList<String> leftList, rightList;
     for (int i = 1; i < exp.length(); i = i + 2) {
@@ -756,7 +756,7 @@ public class Recursion_and_DP {
       for (int p = 0; p < leftList.size(); p++) {
         for (int q = 0; q < rightList.size(); q++) {
           total = "(" + leftList.get(p) + ")" + c + "(" + rightList.get(q) + ")";
-          System.out.println("#"+count+" Expression : " + total);
+          System.out.println("#" + count + " Expression : " + total);
           count++;
         }
       }
@@ -794,5 +794,38 @@ public class Recursion_and_DP {
       }
     }
     return all;
+  }
+
+  /*  [Prob] : Finally the haunting LongestCommonSubSequence (length)
+  *
+  * */
+  public static int LongestCommonSubsequence(String a, String b) {
+    a = " " + a;
+    b = " " + b;
+    // create a matrix of row * col as a.lenght * b.length :: a is rows, b is columns
+    int[][] matrix = new int[a.length()][b.length()];
+
+    char ac, bc;
+    for (int i = 0; i < a.length(); i++) {
+      for (int j = 0; j < b.length(); j++) {
+
+        if (i == 0 || j == 0) {
+          matrix[i][j] = 0;
+          continue;
+        }
+
+        ac = a.charAt(i);
+        bc = b.charAt(j);
+
+        if (ac == bc) {
+          matrix[i][j] = matrix[i - 1][j - 1] + 1;
+        } else if (ac != bc) {
+          matrix[i][j] = Math.max(matrix[i - 1][j], matrix[i][j - 1]);
+        }
+      }
+    }
+
+    System.out.print("Longest SubSequence Length : " + matrix[a.length()-1][b.length()-1]);
+    return matrix[a.length()-1][b.length()-1];
   }
 }
