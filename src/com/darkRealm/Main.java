@@ -23,10 +23,10 @@ public class Main {
 
 
     // write your code here, testing after new git
-//    doArray_and_Strings_Main();
+    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-    doSortingAndSearching();
+//    doSortingAndSearching();
 //    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
@@ -59,7 +59,7 @@ public class Main {
 //    int [] arr = ArrayUtil.getSmallBigArray(new int[]{5,6,7,4,3,2,1});
 //    int [] arr = ArrayUtil.getSmallBigArray(new int[]{7,2,9,10,12,3});
 //    int [] arr = ArrayUtil.getSmallBigArray(new int[]{2,8,6,5,3,1}); //2 8 4 6 5 7 1
-    String res = Arrays_and_Strings.shortestPathBetweenWords("pit", "map");
+    String res = Arrays_and_Strings.shortestPathBetweenWords("TOON", "PLEA");
     System.out.println("Result - " + res);
   }
 

@@ -262,21 +262,30 @@ public class Arrays_and_Strings {
   */
   public static String shortestPathBetweenWords(String source, String target) {
     HashSet<String> dictionary = new HashSet<>();
-    dictionary.add("mit");
-    dictionary.add("kit");
-    dictionary.add("jet");
-    dictionary.add("pet");
-    dictionary.add("lot");
-    dictionary.add("pot");
-    dictionary.add("pet");
-    dictionary.add("hot");
-    dictionary.add("met");
-    dictionary.add("map");
-    dictionary.add("pat");
-    dictionary.add("mat");
-    dictionary.add("cat");
+//    dictionary.add("mit");
+//    dictionary.add("kit");
+//    dictionary.add("jet");
+//    dictionary.add("pet");
+//    dictionary.add("lot");
+//    dictionary.add("pot");
+//    dictionary.add("pet");
+//    dictionary.add("hot");
+//    dictionary.add("met");
+//    dictionary.add("map");
+//    dictionary.add("pat");
+//    dictionary.add("mat");
+//    dictionary.add("cat");
+//    findPathOfWords("pit", "map", dictionary, "pit", 0);
+    dictionary.add("poon");
+    dictionary.add("plee");
+    dictionary.add("same");
+    dictionary.add("poie");
+    dictionary.add("plea");
+    dictionary.add("plie");
+    dictionary.add("poin");
 
-    findPathOfWords("pit", "map", dictionary, "pit", 0);
+    findPathOfWords("toon", "plea", dictionary, "toon", 0);
+
     return path;
   }
 
@@ -284,9 +293,9 @@ public class Arrays_and_Strings {
 
   private static void findPathOfWords(String source, String target, HashSet<String> dictionary, String Path, int charIndex) {
     if (source.equals(target)) {
-      path = Path;
-      return;
-    } else if (charIndex == target.length()) {
+      if (Path.length() > path.length()) {
+        path = Path;
+      }
       return;
     }
 
@@ -294,7 +303,7 @@ public class Arrays_and_Strings {
       String left = source.substring(0, ci);
       String right = source.substring(ci + 1);
       String newWord = "";
-      for (int i = 97; i < 123; i++) {
+        for (int i = 97; i < 123; i++) {
         newWord = left + (char) i + right;
         if (dictionary.contains(newWord) && !Path.contains(newWord)) {
           Path += " - " + newWord;
