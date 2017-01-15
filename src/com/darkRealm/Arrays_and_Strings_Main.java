@@ -74,4 +74,14 @@ public class Arrays_and_Strings_Main {
     int res = Arrays_and_Strings.possibleSubArraysWithSumFaster(arr, targetSum);
     System.out.println("Res - " + res);
   }
+
+  public static void testSumPair() {
+    int[] arr = new int[]{1, 2, 3, 4, 3, 5};
+    Arrays_and_Strings.pairEqualToSum(arr, 6);
+  }
+
+  public static void testElemntsSum() {
+    int[] arr = new int[]{1, 2, 3, 4, 5};
+    Arrays_and_Strings.ElementsSum(arr, 10);
+  }
 }

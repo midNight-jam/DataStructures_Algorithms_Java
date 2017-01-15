@@ -16,7 +16,7 @@ public class BinarySearchUtil {
       } else if (arr[mid] < k) {
         low = mid + 1;
       } else {
-        System.out.println("Found : " + arr[mid]);
+//        System.out.println("Found : " + arr[mid]);
         return arr[mid];
       }
     }

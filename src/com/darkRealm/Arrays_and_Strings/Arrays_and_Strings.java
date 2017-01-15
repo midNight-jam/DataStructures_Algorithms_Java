@@ -2,6 +2,7 @@ package com.darkRealm.Arrays_and_Strings;
 
 import com.darkRealm.BigO.QuickSort;
 import com.darkRealm.LinkedLists.LinkedList;
+import com.darkRealm.Sorting_and_Searching.BinarySearchUtil;
 import com.darkRealm.Stacks_and_queues.MyQueue;
 import com.sun.deploy.util.ArrayUtil;
 
@@ -262,7 +263,7 @@ public class Arrays_and_Strings {
       Complexiyt - 27^n where n is the longest path to the target word STAGERRING COMPLEXITY WILL KILL COMPUTER
   */
   public static String shortestPathBetweenWords(String source, String target) {
-    HashMap<String,Boolean> dictionary = new HashMap<>();
+    HashMap<String, Boolean> dictionary = new HashMap<>();
 //    dictionary.add("mit");
 //    dictionary.add("kit");
 //    dictionary.add("jet");
@@ -277,13 +278,13 @@ public class Arrays_and_Strings {
 //    dictionary.add("mat");
 //    dictionary.add("cat");
 //    findPathOfWords("pit", "map", dictionary, "pit", 0);
-    dictionary.put("poon",false);
-    dictionary.put("plee",false);
-    dictionary.put("same",false);
-    dictionary.put("poie",false);
-    dictionary.put("plea",false);
-    dictionary.put("plie",false);
-    dictionary.put("poin",false);
+    dictionary.put("poon", false);
+    dictionary.put("plee", false);
+    dictionary.put("same", false);
+    dictionary.put("poie", false);
+    dictionary.put("plea", false);
+    dictionary.put("plie", false);
+    dictionary.put("poin", false);
 
 //    findPathOfWords("toon", "plea", dictionary, "toon", 0);
     return shortestPathBetweenWordsBFS("toon", "plea", dictionary);
@@ -313,7 +314,7 @@ public class Arrays_and_Strings {
     }
   }
 
-  public static String shortestPathBetweenWordsBFS(String source, String target, HashMap<String,Boolean> dictionary) {
+  public static String shortestPathBetweenWordsBFS(String source, String target, HashMap<String, Boolean> dictionary) {
     String path = "";
     MyQueue<String> queue = new MyQueue<>();
     queue.enqueue(source);
@@ -345,5 +346,51 @@ public class Arrays_and_Strings {
       }
     }
     return true;
+  }
+
+  /* [Prob]
+  *   Q) given a sorted array find if a given sum can be achieved using two nos from the array
+  *   A) First will reduce the given by subtracting the current element from it and then will search for the remainder
+  *   as the array is sorted, this serach can be made Binary .
+   *   Complexity : [O(NlogN)]
+  * */
+  public static void pairEqualToSum(int[] arr, int sum) {
+    int remainder = 0;
+    for (int i = 0; i < arr.length && arr[i] <= sum; i++) {
+      remainder = sum - arr[i];
+      int res = BinarySearchUtil.binarySearch(arr, remainder);
+      if (res != Integer.MIN_VALUE) {
+        System.out.println(" pair " + arr[i] + " " + remainder);
+      }
+    }
+  }
+
+  public static void ElementsSum(int[] arr, int sum) {
+    maskSumFind(arr, sum, new ArrayList<>());
+  }
+
+  private static void maskSumFind(int[] arr, int sum, ArrayList<Integer> usedIndexs) {
+    if (sum < 0) {  // if sum has gone -ve return
+      return;
+    }
+    if (sum == 0) { // if sum has came down to 0, we have reached the desired sum lets print the nos & their indices
+      System.out.println("Indexes : " + Arrays.toString(usedIndexs.toArray()));
+      System.out.println("Sum : " + sum);
+      for (Integer i :
+          usedIndexs) {
+        System.out.print(" " + arr[i]);
+      }
+      System.out.println("");
+      return;
+    }
+
+    // loop & recur for other elements and pass the used index also in list so that we dont use it again
+    for (int i = 0; i < arr.length; i++) {
+      if (!usedIndexs.contains(i)) {
+        usedIndexs.add(i);
+        maskSumFind(arr, sum - arr[i], usedIndexs);
+        usedIndexs.remove(new Integer(i));  // removal is necessry else other combination will not be possible
+      }
+    }
   }
 }
