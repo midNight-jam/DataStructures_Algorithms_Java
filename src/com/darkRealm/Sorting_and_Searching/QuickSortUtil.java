@@ -44,7 +44,6 @@ public class QuickSortUtil {
       return kthSmallestElement(arr, low, pos - 1, k);
     }
     // if postion is less we will find the kt samllest on further right , thus recur in right
-    // but as we move right we have skipped the elements to the left thus recude the count of k
     else {
       return kthSmallestElement(arr, pos, high, k);
     }
