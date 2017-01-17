@@ -7,6 +7,7 @@ import com.darkRealm.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
 import com.darkRealm.Recursion_and_DynamicProg.Recursion_and_DP;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 
 /*
@@ -24,7 +25,7 @@ public class Main {
 
 
     // write your code here, testing after new git
-    doArray_and_Strings_Main();
+//    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 //    doSortingAndSearching();
@@ -38,9 +39,13 @@ public class Main {
 
 
 //    minLenUnSorted(new int[]{0, 1, 15, 25, 6, 7, 30, 40, 50});
+//    minLenUnSorted(new int[]{1, 2, 4, 7, 10, 11, 5, 12, 6, 8, 16, 18, 19});
 //    minLenUnSorted(new int[]{10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60});
 //    doBitsMain();
 //    doMathsLogicPuzzels();
+
+//    int res = maxTweet(new int[]{1, 2, 3}, 3);
+//    int res = maxTweet(new int[]{3, 1, 2, 1}, 4);
   }
 
   private static void doArray_and_Strings_Main() {
@@ -64,6 +69,8 @@ public class Main {
 //    System.out.println("Result - " + res);
 //    Arrays_and_Strings_Main.testSumPair();
     Arrays_and_Strings_Main.testElemntsSum();
+    int res = Arrays_and_Strings.maxLengthOfSubArrayForGivenSum(new int[]{1, 2, 3}, 4);
+    System.out.println(" res " + res);
   }
 
   private static void doStack_and_Queue() {
@@ -99,7 +106,7 @@ public class Main {
   }
 
   private static void doTrees_Graph() {
-//    Trees_and_Graphs_Main.testBFSAndDFS();
+    Trees_and_Graphs_Main.testBFSAndDFS();
 //    Trees_and_Graphs_Main.testIsRoutePresentBetweenNodes();
 //    Trees_and_Graphs_Main.testMinimalHeightTree();
 //    Trees_and_Graphs_Main.testListOfDepths();
@@ -116,7 +123,7 @@ public class Main {
 //    Trees_and_Graphs_Main.testPossibleBSTArrays();
 //    Trees_and_Graphs_Main.testPathsWithSum();
 //    Trees_and_Graphs_Main.testInorderTraversalIterative();
-    Trees_and_Graphs_Main.testAdjacencyGraph();
+//    Trees_and_Graphs_Main.testAdjacencyGraph();
   }
 
   private static void doMathUtils() {
@@ -299,5 +306,37 @@ public class Main {
 //    Sorting_and_Searching_Main.testSortedMerge();
     Sorting_and_Searching_Main.testKthSmallestElement();
 
+  }
+
+  public static int maxTweet(int[] arr, int k) {
+    int currentSum = arr[0], start = 0, i =0;
+    int lastI = i;
+    System.out.println("K " + k + " Array " + Arrays.toString(arr));
+    int maxLen = 0;
+    for (i = 1; i < arr.length; i++) {
+      lastI = i;
+      if (i < arr.length) {
+        currentSum += arr[i];
+      }
+
+      while (currentSum > k && start < lastI - 1) {
+        currentSum -= arr[start];
+        start++;
+      }
+
+      if (currentSum <= k) {
+        if (lastI - start +1 > maxLen) {
+          maxLen = lastI- start + 1;
+        }
+      }
+    }
+
+    if (currentSum <= k) {
+      if (lastI - start > maxLen) {
+        maxLen = lastI- start + 1;
+      }
+    }
+
+    return maxLen;
   }
 }

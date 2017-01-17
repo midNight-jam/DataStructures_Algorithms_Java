@@ -61,7 +61,7 @@ public class Trees_and_Graphs {
   public static void doBFSAndDFS() {
     Graph graph = getSampleGraph();
     graph.BreadthFirstTraversal();
-    graph.DepthFirstTraversal();
+//    graph.DepthFirstTraversal();
   }
 
   public static void isRoutePresentBetweenNodes() {

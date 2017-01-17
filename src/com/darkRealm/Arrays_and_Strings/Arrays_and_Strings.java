@@ -376,14 +376,14 @@ public class Arrays_and_Strings {
       return;
     }
     if (sum == 0) { // if sum has came down to 0, we have reached the desired sum lets print the nos & their indices
-      System.out.println("Indexes : " + Arrays.toString(usedIndexs.toArray()));
-      System.out.println("Sum : " + sum);
-      for (Integer i :
-          usedIndexs) {
-        System.out.print(" " + arr[i]);
-      }
-      System.out.println("");
-      return;
+//      System.out.println("Indexes : " + Arrays.toString(usedIndexs.toArray()));
+//      System.out.println("Sum : " + sum);
+//      for (Integer i :
+//          usedIndexs) {
+//        System.out.print(" " + arr[i]);
+//      }
+//      System.out.println("");
+//      return;
     }
 
     // loop & recur for other elements and pass the used index also in list so that we dont use it again
@@ -416,5 +416,37 @@ public class Arrays_and_Strings {
         }
       }
     }
+  }
+
+  public static int maxLengthOfSubArrayForGivenSum(int[] arr, int k) {
+    int currentSum = arr[0], start = 0, i =0;
+    int lastI = i;
+    System.out.println("K " + k + " Array " + Arrays.toString(arr));
+    int maxLen = 0;
+    for (i = 1; i < arr.length; i++) {
+      lastI = i;
+      if (i < arr.length) {
+        currentSum += arr[i];
+      }
+
+      while (currentSum > k && start < lastI - 1) {
+        currentSum -= arr[start];
+        start++;
+      }
+
+      if (currentSum <= k) {
+        if (lastI - start +1 > maxLen) {
+          maxLen = lastI- start + 1;
+        }
+      }
+    }
+
+    if (currentSum <= k) {
+      if (lastI - start > maxLen) {
+        maxLen = lastI- start + 1;
+      }
+    }
+
+    return maxLen;
   }
 }
