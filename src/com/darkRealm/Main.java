@@ -24,9 +24,9 @@ public class Main {
 
 
     // write your code here, testing after new git
-//    doArray_and_Strings_Main();
+    doArray_and_Strings_Main();
 //    doStack_and_Queue();
-    doRecursion_DP();
+//    doRecursion_DP();
 //    doSortingAndSearching();
 //    doTrees_Graph();
 //    doLinkedLsit();
@@ -81,7 +81,7 @@ public class Main {
 //    Recursion_DP_Main.testNthFibonacciMemoized();
 //    Recursion_DP_Main.testNthFiboIterative();
 //    Recursion_DP_Main.testTripleSteps();
-//    Recursion_DP_Main.testRobotGrid();
+    Recursion_DP_Main.testRobotGrid();
 //    Recursion_DP_Main.testPowerSet();
 //    Recursion_DP_Main.testAllPermutationsWithDups();
 //    Recursion_DP_Main.testParensCombination();
@@ -95,7 +95,7 @@ public class Main {
 //    Recursion_DP_Main.testNQueenPlacingProblem();
 //    Recursion_DP_Main.testPermuteExpression();
 //    Recursion_DP_Main.testBooleanEvaluation();
-    Recursion_DP_Main.testLongestSubSequence();
+//    Recursion_DP_Main.testLongestSubSequence();
   }
 
   private static void doTrees_Graph() {

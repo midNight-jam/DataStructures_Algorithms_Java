@@ -3,6 +3,8 @@ package com.darkRealm.Arrays_and_Strings;
 import com.darkRealm.BigO.QuickSort;
 import com.darkRealm.LinkedLists.LinkedList;
 import com.darkRealm.Sorting_and_Searching.BinarySearchUtil;
+import com.darkRealm.Sorting_and_Searching.MergeSortUtil;
+import com.darkRealm.Sorting_and_Searching.QuickSortUtil;
 import com.darkRealm.Stacks_and_queues.MyQueue;
 import com.sun.deploy.util.ArrayUtil;
 
@@ -390,6 +392,28 @@ public class Arrays_and_Strings {
         usedIndexs.add(i);
         maskSumFind(arr, sum - arr[i], usedIndexs);
         usedIndexs.remove(new Integer(i));  // removal is necessry else other combination will not be possible
+      }
+    }
+  }
+
+  public static void threeElementsSum(int[] arr, int sum) {
+    arr = MergeSortUtil.mergeSort(arr);
+    int left, right;
+    System.out.println(Arrays.toString(arr));
+    for (int i = 1; i < arr.length - 1; i++) {
+      left = 0;
+      right = arr.length - 1;
+
+      while (left < right && left < i && i< right) {
+        if (arr[left] + arr[i] + arr[right] == sum) {
+          System.out.println("Sum == " + sum + " : " + arr[left] + " + " + arr[i] + " + " + arr[right]);
+          left++;
+          right--;
+        } else if (arr[left] + arr[i] + arr[right] < sum) {
+          left++;
+        } else if (arr[left] + arr[i] + arr[right] > sum) {
+          right--;
+        }
       }
     }
   }

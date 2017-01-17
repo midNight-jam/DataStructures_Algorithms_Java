@@ -82,6 +82,6 @@ public class Arrays_and_Strings_Main {
 
   public static void testElemntsSum() {
     int[] arr = new int[]{1, 2, 3, 4, 5};
-    Arrays_and_Strings.ElementsSum(arr, 10);
+    Arrays_and_Strings.threeElementsSum(arr, 10);
   }
 }

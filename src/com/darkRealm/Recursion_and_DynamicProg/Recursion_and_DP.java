@@ -825,7 +825,7 @@ public class Recursion_and_DP {
       }
     }
 
-    System.out.print("Longest SubSequence Length : " + matrix[a.length()-1][b.length()-1]);
-    return matrix[a.length()-1][b.length()-1];
+    System.out.print("Longest SubSequence Length : " + matrix[a.length() - 1][b.length() - 1]);
+    return matrix[a.length() - 1][b.length() - 1];
   }
 }
