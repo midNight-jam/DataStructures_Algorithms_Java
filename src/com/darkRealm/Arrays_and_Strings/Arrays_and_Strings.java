@@ -1,6 +1,7 @@
 package com.darkRealm.Arrays_and_Strings;
 
 import com.darkRealm.BigO.QuickSort;
+import com.darkRealm.Heap.MinHeap;
 import com.darkRealm.LinkedLists.LinkedList;
 import com.darkRealm.Sorting_and_Searching.BinarySearchUtil;
 import com.darkRealm.Sorting_and_Searching.MergeSortUtil;
@@ -404,7 +405,7 @@ public class Arrays_and_Strings {
       left = 0;
       right = arr.length - 1;
 
-      while (left < right && left < i && i< right) {
+      while (left < right && left < i && i < right) {
         if (arr[left] + arr[i] + arr[right] == sum) {
           System.out.println("Sum == " + sum + " : " + arr[left] + " + " + arr[i] + " + " + arr[right]);
           left++;
@@ -419,7 +420,7 @@ public class Arrays_and_Strings {
   }
 
   public static int maxLengthOfSubArrayForGivenSum(int[] arr, int k) {
-    int currentSum = arr[0], start = 0, i =0;
+    int currentSum = arr[0], start = 0, i = 0;
     int lastI = i;
     System.out.println("K " + k + " Array " + Arrays.toString(arr));
     int maxLen = 0;
@@ -435,18 +436,52 @@ public class Arrays_and_Strings {
       }
 
       if (currentSum <= k) {
-        if (lastI - start +1 > maxLen) {
-          maxLen = lastI- start + 1;
+        if (lastI - start + 1 > maxLen) {
+          maxLen = lastI - start + 1;
         }
       }
     }
 
     if (currentSum <= k) {
       if (lastI - start > maxLen) {
-        maxLen = lastI- start + 1;
+        maxLen = lastI - start + 1;
       }
     }
 
     return maxLen;
+  }
+
+  /*  [Prob]
+  *   Q) Given 2 arrays one for arrival date * another for departure date. And the number of rooms. YOu have to determine
+  *   if we can accomodate all the requests on those dates. Return true if we can, else return false
+  *   A) Will use a minHeap to keep track of which room is going get free at the earlies.
+  *   First initialize the min heap with 1st departure time dep[0].
+  *   Iterate from 1 to arr.length -1 . Check if the arrival is less than the top of min Heap (earliest)
+  *   If less then push this iteration's ith depature in the min heap & move on.
+  *   If the ith arrival is greater than or equal to the top of min heap earliest then pop the top of min heap & push
+  *   the ith departure in the heap. If at any point the heap grows more than the given rooms return false.
+  *   Else if the iteration completes, return true.
+  * */
+  public static boolean bookingHotel(int[] arr, int[] dep, int rooms) {
+    MinHeap minHeap = new MinHeap(rooms);
+    minHeap.insert(dep[0]);
+    for (int i = 1; i < arr.length; i++) {
+      int earliest = minHeap.fetchTop();
+      if (arr[i] < earliest) {
+        minHeap.insert(dep[i]);
+        minHeap.insert(earliest);
+
+        if (minHeap.getSize() > rooms) {
+          System.out.println("falied to accomodate room from arr : "+arr[i]+"  dep : "+dep[i]);
+          return false;
+        }
+      } else if (arr[i] >= earliest) {
+        minHeap.insert(dep[i]);
+      }
+    }
+    System.out.println(" All acoomodated, given rooms "+rooms);
+    System.out.println(" Arrivals   "+Arrays.toString(arr));
+    System.out.println(" Departures "+Arrays.toString(dep));
+    return true;
   }
 }

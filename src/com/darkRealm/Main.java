@@ -25,7 +25,7 @@ public class Main {
 
 
     // write your code here, testing after new git
-//    doArray_and_Strings_Main();
+    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 //    doSortingAndSearching();
@@ -68,9 +68,11 @@ public class Main {
 //    String res = Arrays_and_Strings.shortestPathBetweenWords("TOON", "PLEA");
 //    System.out.println("Result - " + res);
 //    Arrays_and_Strings_Main.testSumPair();
-    Arrays_and_Strings_Main.testElemntsSum();
-    int res = Arrays_and_Strings.maxLengthOfSubArrayForGivenSum(new int[]{1, 2, 3}, 4);
-    System.out.println(" res " + res);
+//    Arrays_and_Strings_Main.testElemntsSum();
+//    int res = Arrays_and_Strings.maxLengthOfSubArrayForGivenSum(new int[]{1, 2, 3}, 4);
+//    System.out.println(" res " + res);
+
+    Arrays_and_Strings_Main.testHotelBook();
   }
 
   private static void doStack_and_Queue() {
@@ -306,37 +308,5 @@ public class Main {
 //    Sorting_and_Searching_Main.testSortedMerge();
     Sorting_and_Searching_Main.testKthSmallestElement();
 
-  }
-
-  public static int maxTweet(int[] arr, int k) {
-    int currentSum = arr[0], start = 0, i =0;
-    int lastI = i;
-    System.out.println("K " + k + " Array " + Arrays.toString(arr));
-    int maxLen = 0;
-    for (i = 1; i < arr.length; i++) {
-      lastI = i;
-      if (i < arr.length) {
-        currentSum += arr[i];
-      }
-
-      while (currentSum > k && start < lastI - 1) {
-        currentSum -= arr[start];
-        start++;
-      }
-
-      if (currentSum <= k) {
-        if (lastI - start +1 > maxLen) {
-          maxLen = lastI- start + 1;
-        }
-      }
-    }
-
-    if (currentSum <= k) {
-      if (lastI - start > maxLen) {
-        maxLen = lastI- start + 1;
-      }
-    }
-
-    return maxLen;
   }
 }
