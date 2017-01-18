@@ -86,7 +86,6 @@ public class Arrays_and_Strings_Main {
     Arrays_and_Strings.threeElementsSum(arr, 10);
   }
 
-
   public static void testHotelBook() {
 
 //    int[] arr = new int[]{1, 5, 2, 6, 7, 8};
@@ -102,9 +101,12 @@ public class Arrays_and_Strings_Main {
 //    int rooms = 2;
 
 
-    int[] arr = new int[]{1, 3, 5};
-    int[] dep = new int[]{3, 6, 8};
-    int rooms = 1;
+//    int[] arr = new int[]{1, 3, 5};
+//    int[] dep = new int[]{3, 6, 8};
+//    int rooms = 1;
+    int[] arr = new int[]{1, 4, 4, 2};
+    int[] dep = new int[]{4, 5, 6, 4};
+    int rooms = 2;
     boolean res = Arrays_and_Strings.bookingHotel(arr, dep, rooms);
     System.out.println(" res - " + res);
   }

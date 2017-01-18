@@ -16,7 +16,7 @@ public class MaxHeap {
   }
 
   public void insert(int data) {
-    if (heapCount == heap.length-1) {
+    if (heapCount == heap.length - 1) {
       doubleSize();
     }
     //insert the new item to the last of heap (end of the array) and SIFT UP

@@ -6,9 +6,7 @@ import com.darkRealm.BigO.MathUtil;
 import com.darkRealm.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
 import com.darkRealm.Recursion_and_DynamicProg.Recursion_and_DP;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.*;
 
 /*
 * Uncomment a function to run, each is a method for solved problem.
@@ -65,14 +63,45 @@ public class Main {
 //    int [] arr = ArrayUtil.getSmallBigArray(new int[]{5,6,7,4,3,2,1});
 //    int [] arr = ArrayUtil.getSmallBigArray(new int[]{7,2,9,10,12,3});
 //    int [] arr = ArrayUtil.getSmallBigArray(new int[]{2,8,6,5,3,1}); //2 8 4 6 5 7 1
+//    int res = Arrays_and_Strings.shortestPathBetweenWords("","",new HashMap<>());
+//    System.out.println("res path - "+res);
+////
+//    Scanner sc = new Scanner(System.in);
+//    String start, end;
+//    start = sc.nextLine();
+//    end = sc.nextLine();
+//    int no;
+//    no = Integer.parseInt(sc.nextLine());
+////    HashMap<String, Boolean> dictionary = new HashMap<>();
+////    TreeMap<String, Boolean> dictionary = new TreeMap<>();
+//    for (int i = 0; i < no; i++) {
+//      dictionary.add(sc.nextLine());
+//    }
+
 //    String res = Arrays_and_Strings.shortestPathBetweenWords("TOON", "PLEA");
-//    System.out.println("Result - " + res);
+//    int resc = Arrays_and_Strings.shortestPathBetweenWords(start, end, dictionary);
+    ArrayList<String> dictionary = new ArrayList<>();
+    String start, end;
+    dictionary.add("AAAAAAAA");
+    dictionary.add("AAAAAAAT");
+    dictionary.add("AAAAAATT");
+    dictionary.add("AAAAATTT");
+    start = "AAAAAAAA";
+    end = "AAAAAATT";
+
+    String [] arr = new String[dictionary.size()];
+    dictionary.toArray(arr);
+    int resc = Arrays_and_Strings.minMutation(start, end, arr);
+
+    System.out.println("Result - " + resc);
+
+
 //    Arrays_and_Strings_Main.testSumPair();
 //    Arrays_and_Strings_Main.testElemntsSum();
 //    int res = Arrays_and_Strings.maxLengthOfSubArrayForGivenSum(new int[]{1, 2, 3}, 4);
 //    System.out.println(" res " + res);
 
-    Arrays_and_Strings_Main.testHotelBook();
+//    Arrays_and_Strings_Main.testHotelBook();
   }
 
   private static void doStack_and_Queue() {

@@ -9,10 +9,7 @@ import com.darkRealm.Sorting_and_Searching.QuickSortUtil;
 import com.darkRealm.Stacks_and_queues.MyQueue;
 import com.sun.deploy.util.ArrayUtil;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 /**
  * Created by Jayam on 10/2/2016
@@ -265,35 +262,91 @@ public class Arrays_and_Strings {
       word is reached. Later will compare all the results that reached the target word & return the smallest path
       Complexiyt - 27^n where n is the longest path to the target word STAGERRING COMPLEXITY WILL KILL COMPUTER
   */
-  public static String shortestPathBetweenWords(String source, String target) {
-    HashMap<String, Boolean> dictionary = new HashMap<>();
-//    dictionary.add("mit");
-//    dictionary.add("kit");
-//    dictionary.add("jet");
-//    dictionary.add("pet");
-//    dictionary.add("lot");
-//    dictionary.add("pot");
-//    dictionary.add("pet");
-//    dictionary.add("hot");
-//    dictionary.add("met");
-//    dictionary.add("map");
-//    dictionary.add("pat");
-//    dictionary.add("mat");
-//    dictionary.add("cat");
-//    findPathOfWords("pit", "map", dictionary, "pit", 0);
-    dictionary.put("poon", false);
-    dictionary.put("plee", false);
-    dictionary.put("same", false);
-    dictionary.put("poie", false);
-    dictionary.put("plea", false);
-    dictionary.put("plie", false);
-    dictionary.put("poin", false);
+  public static int shortestPathBetweenWords(String start, String end, HashMap<String, Boolean> dictionary) {
+    
+    return shortestPathBetweenWordsBFS(start, end, dictionary);
+  }
 
-//    findPathOfWords("toon", "plea", dictionary, "toon", 0);
-    return shortestPathBetweenWordsBFS("toon", "plea", dictionary);
+
+  public static int shortestPathBetweenWordsBFS(String source, String target, HashMap<String, Boolean> dictionary) {
+    String path = source+" ";
+    int pathCount =0;
+    MyQueue<String> queue = new MyQueue<>();
+    queue.enqueue(source);
+    while (!queue.isEmpty()) {
+      String word = queue.deque();
+      for (String dict :
+          dictionary.keySet()) {
+        if (!dictionary.get(dict) && isAdjacent(word, dict) ) {
+          queue.enqueue(dict);
+          dictionary.put(dict, true);
+          path += " " + dict;
+          pathCount++;
+          if (dict.equals(target)) {
+            System.out.println(" pathCount : "+pathCount);
+            return pathCount;
+          }
+        }
+      }
+    }
+    return -1;
+  }
+
+  /* Tweeter Min Mutation problem */
+  public static int minMutation(String start, String end, String[] bank) {
+    if(start.equals(end)) return 0;
+
+    Set<String> bankSet = new HashSet<>();
+    for(String b: bank) bankSet.add(b);
+
+    char[] charSet = new char[]{'A', 'C', 'G', 'T'};
+
+    int level = 0;
+    Set<String> visited = new HashSet<>();
+    Queue<String> queue = new java.util.LinkedList<>();
+    queue.offer(start);
+    visited.add(start);
+
+    while(!queue.isEmpty()) {
+      int size = queue.size();
+      while(size-- > 0) {
+        String curr = queue.poll();
+        if(curr.equals(end)) return level;
+
+        char[] currArray = curr.toCharArray();
+        for(int i = 0; i < currArray.length; i++) {
+          char old = currArray[i];
+          for(char c: charSet) {
+            currArray[i] = c;
+            String next = new String(currArray);
+            if(!visited.contains(next) && bankSet.contains(next)) {
+              visited.add(next);
+              queue.offer(next);
+            }
+          }
+          currArray[i] = old;
+        }
+      }
+      level++;
+    }
+    return -1;
+  }
+
+  private static boolean isAdjacent(String first, String second) {
+    int count = 0;
+    for (int i = 0; i < first.length(); i++) {
+      if (first.charAt(i) != second.charAt(i)) {
+        count++;
+      }
+      if (count > 1) {
+        return false;
+      }
+    }
+    return true;
   }
 
   static String path = "";
+
 
   private static void findPathOfWords(String source, String target, HashSet<String> dictionary, String Path, int charIndex) {
     if (source.equals(target)) {
@@ -315,40 +368,6 @@ public class Arrays_and_Strings {
         }
       }
     }
-  }
-
-  public static String shortestPathBetweenWordsBFS(String source, String target, HashMap<String, Boolean> dictionary) {
-    String path = "";
-    MyQueue<String> queue = new MyQueue<>();
-    queue.enqueue(source);
-    while (!queue.isEmpty()) {
-      String word = queue.deque();
-      for (String dict :
-          dictionary.keySet()) {
-        if (isAdjacent(word, dict) && !dictionary.get(dict)) {
-          queue.enqueue(dict);
-          dictionary.put(dict, true);
-          path += " " + dict;
-          if (dict.equals(target)) {
-            return path;
-          }
-        }
-      }
-    }
-    return "";
-  }
-
-  private static boolean isAdjacent(String first, String second) {
-    int count = 0;
-    for (int i = 0; i < first.length(); i++) {
-      if (first.charAt(i) != second.charAt(i)) {
-        count++;
-      }
-      if (count > 1) {
-        return false;
-      }
-    }
-    return true;
   }
 
   /* [Prob]
@@ -472,16 +491,16 @@ public class Arrays_and_Strings {
         minHeap.insert(earliest);
 
         if (minHeap.getSize() > rooms) {
-          System.out.println("falied to accomodate room from arr : "+arr[i]+"  dep : "+dep[i]);
+          System.out.println("falied to accomodate room from arr : " + arr[i] + "  dep : " + dep[i]);
           return false;
         }
       } else if (arr[i] >= earliest) {
         minHeap.insert(dep[i]);
       }
     }
-    System.out.println(" All acoomodated, given rooms "+rooms);
-    System.out.println(" Arrivals   "+Arrays.toString(arr));
-    System.out.println(" Departures "+Arrays.toString(dep));
+    System.out.println(" All acoomodated, given rooms " + rooms);
+    System.out.println(" Arrivals   " + Arrays.toString(arr));
+    System.out.println(" Departures " + Arrays.toString(dep));
     return true;
   }
 }
