@@ -42,12 +42,12 @@ public class MaxHeap {
     while (right <= heapCount) {
       // take the max among two childs & then SiftDown the parent
       // SiftDown left subtree
-      if (heap[left] < heap[right]) {
+      if (heap[left] <= heap[right]) {
         heap[ptr] = heap[right];
         ptr = right;
       }
       // SiftDown right subtree
-      if (heap[right] < heap[left]) {
+      if (heap[right] <= heap[left]) {
         heap[ptr] = heap[left];
         ptr = left;
       }
