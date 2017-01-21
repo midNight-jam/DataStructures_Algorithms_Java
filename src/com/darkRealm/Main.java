@@ -80,20 +80,20 @@ public class Main {
 
 //    String res = Arrays_and_Strings.shortestPathBetweenWords("TOON", "PLEA");
 //    int resc = Arrays_and_Strings.shortestPathBetweenWords(start, end, dictionary);
-    ArrayList<String> dictionary = new ArrayList<>();
-    String start, end;
-    dictionary.add("AAAAAAAA");
-    dictionary.add("AAAAAAAT");
-    dictionary.add("AAAAAATT");
-    dictionary.add("AAAAATTT");
-    start = "AAAAAAAA";
-    end = "AAAAAATT";
+   // ArrayList<String> dictionary = new ArrayList<>();
+   // String start, end;
+   // dictionary.add("AAAAAAAA");
+   // dictionary.add("AAAAAAAT");
+   // dictionary.add("AAAAAATT");
+   // dictionary.add("AAAAATTT");
+   // start = "AAAAAAAA";
+   // end = "AAAAAATT";
 
-    String [] arr = new String[dictionary.size()];
-    dictionary.toArray(arr);
-    int resc = Arrays_and_Strings.minMutation(start, end, arr);
+    //String [] arr = new String[dictionary.size()];
+    //dictionary.toArray(arr);
+    //int resc = Arrays_and_Strings.minMutation(start, end, arr);
 
-    System.out.println("Result - " + resc);
+    //System.out.println("Result - " + resc);
 
 
 //    Arrays_and_Strings_Main.testSumPair();
