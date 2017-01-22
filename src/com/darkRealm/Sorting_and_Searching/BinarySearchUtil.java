@@ -31,8 +31,9 @@ public class BinarySearchUtil {
       } else if (arr[mid] < k) {
         return binarySearchRecursive(arr, k, mid + 1, high);
       } else {
-        System.out.println("Found  : " + arr[mid]);
-        return arr[mid];
+        System.out.println("Found  : " + arr[mid] + "  at " + mid);
+
+        return mid;
       }
     }
     return Integer.MIN_VALUE;

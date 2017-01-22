@@ -13,7 +13,7 @@ public class Sorting_and_Searching_Main {
 
   public static void testMergeSort() {
 //    int[] arr = new int[]{2, 4, 3, 10, 9, 8};
-    int[] arr = new int[]{11,31,42,4,53,50,9,2};
+    int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
 
 //    int [] arr =new int[]{122,164,121,412,314,396,468,996,210};
 //    arr = MergeSortUtil.mergeSort(arr);
@@ -46,11 +46,17 @@ public class Sorting_and_Searching_Main {
     System.out.println("Sorted Merge : " + Arrays.toString(arr));
   }
 
-  public static void testKthSmallestElement(){
-    int[] arr = new int[]{11,31,42,4,53,50,9,2};
-    int kth = QuickSortUtil.kthSmallestElement(arr,0,arr.length -1,7);
-    System.out.println("Array : "+ Arrays.toString(arr));
-    System.out.println("Kth smalles : "+ kth);
+  public static void testKthSmallestElement() {
+    int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
+    int kth = QuickSortUtil.kthSmallestElement(arr, 0, arr.length - 1, 7);
+    System.out.println("Array : " + Arrays.toString(arr));
+    System.out.println("Kth smalles : " + kth);
 
+  }
+  public static void testSearchRotatedArray(){
+    int [] arr = new int[] {15,16,19,20,25,1,3,4,5,7,10,12,13,15};
+//    int [] arr = new int[] {12,13,14,15,16,19,20,25,1,3,4,5,7};
+//    int [] arr = new int[] {12,13,14,15,16,19,20,25};
+    Searching_Sorting.searchRotatedArray(arr,5);
   }
 }

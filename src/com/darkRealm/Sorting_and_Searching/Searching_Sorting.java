@@ -1,5 +1,7 @@
 package com.darkRealm.Sorting_and_Searching;
 
+import java.util.Arrays;
+
 /**
  * Created by Jayam on 1/11/2017.
  */
@@ -28,5 +30,45 @@ public class Searching_Sorting {
       wA--;
     }
     return arr;
+  }
+
+  /* [Prob 10.3]
+   Q) Search in a rotated array - Given a sorted array of n integers that has been rotated an unknown munber of times
+    write a code to find the element in the array. Array was originally sorted in increasing order
+    A) Woudl utilize binary search first to find the index from awhich the array is rotaterd & then fire binary search from there
+ */
+  public static int searchRotatedArray(int[] arr, int k) {
+    int rotated = findRotatedIndex(arr, 0, arr.length);
+    System.out.println("Rotated at : " + rotated);
+    System.out.println(" " + Arrays.toString(arr));
+
+    int res = BinarySearchUtil.binarySearchRecursive(arr, k, 0, rotated - 1);
+    if (res == Integer.MIN_VALUE) {
+      res = BinarySearchUtil.binarySearchRecursive(arr, k, rotated, arr.length);
+    }
+    System.out.println("res  : " + arr[res]);
+    System.out.println("index: " + res);
+    System.out.println(" " + Arrays.toString(arr));
+    return res;
+  }
+
+  private static int findRotatedIndex(int[] arr, int low, int high) {
+    int rotated = 0;
+    if (low <= high) {
+      int mid = (low + high) / 2;
+      if (low == high) {
+        return 0;
+      }
+      if (mid != 0 && arr[mid] < arr[mid - 1]) {
+        return mid;
+      }
+
+      rotated = findRotatedIndex(arr, low, mid - 1);
+      if (rotated != 0) {
+        return rotated;
+      }
+      rotated = findRotatedIndex(arr, mid + 1, high);
+    }
+    return rotated;
   }
 }
