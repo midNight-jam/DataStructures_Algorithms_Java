@@ -298,4 +298,52 @@ public class Searching_Sorting {
     }
     return resY == Integer.MIN_VALUE ? Integer.MIN_VALUE : mat[resX][resY];
   }
+
+  /*  [Prob 10.5]
+  *   Q) Sparse Search : Given a sorted array of strings that is interparsed with empty strings, write a method to find the
+  *   location of a given string
+  *   A) will use binary search as usual, but if we find an empty string at the middle then we fire iteration in both
+  *   directions left & right in order to get the closest non emtty string and assign this index as mid to carry on binary search
+  * */
+  public static String sparseSearch(String[] arr, String k) {
+    int low = 0;
+    int high = arr.length - 1;
+    int mid;
+    while (low <= high) {
+
+      mid = (low + high) / 2;
+
+      if (arr[mid].isEmpty()) {
+        int left = mid - 1;
+        int right = mid + 1;
+        while (left >= low && right <= high) {
+
+          if (!arr[left].isEmpty()) {
+            mid = left;
+            break;
+          }
+          if (!arr[right].isEmpty()) {
+            mid = right;
+            break;
+          }
+
+          left--;
+          right++;
+        }
+      }
+
+      if (arr[mid].equals(k)) {
+        System.out.println("found at " + mid);
+        return arr[mid];
+      }
+      if (arr[mid].compareToIgnoreCase(k) < 0) {
+        low = mid + 1;
+      }
+      if (arr[mid].compareToIgnoreCase(k) > 0) {
+        high = mid - 1;
+      }
+
+    }
+    return "";
+  }
 }

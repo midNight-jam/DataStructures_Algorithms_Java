@@ -98,4 +98,14 @@ public class Sorting_and_Searching_Main {
     int res = Searching_Sorting.sortedMatrixSearch(mat, k);
     System.out.println("Found some " + res);
   }
+
+  public static void testSparseSearch() {
+//    String[] arr = new String[]{"", "bbb", "", "ddd", "", "", "ggg", "", "","jjj"};
+//    String[] arr = new String[]{"", "bbb", "", "","","", "", "", "", "", "","jjj"};
+//    String[] arr = new String[]{"", "bbb", "", "","","", "", "", "", "hhh", "","","","","",""};
+    String[] arr = new String[]{"", "", "", "","","", "", "", "", "", "","","","","","hhh"};
+    String res = Searching_Sorting.sparseSearch(arr,"hhh");
+    System.out.println("Res : "+res);
+    System.out.println(Arrays.toString(arr));
+  }
 }
