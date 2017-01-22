@@ -66,4 +66,14 @@ public class Sorting_and_Searching_Main {
     System.out.println("Arr "+Arrays.toString(arr));
   }
 
+  public static void testPeaksValleys(){
+//    int [] arr = new int[] {5,1,3,2,3};
+//    int [] arr = new int[] {1,1,1,2,1};
+//    int [] arr = new int[] {0,1,2};
+//    int [] arr = new int[] {0,1,4,7,8,9};
+//    int [] arr = new int[] {5,8,6,2,3,4,6};
+//    int [] arr = new int[] {5,1,3,2};
+    int [] arr = new int[] {11,31,42,4,53,50,9,2};
+    Searching_Sorting.peaksValleys(arr);
+  }
 }

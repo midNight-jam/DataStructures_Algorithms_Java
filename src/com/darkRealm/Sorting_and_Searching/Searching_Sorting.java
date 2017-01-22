@@ -190,4 +190,47 @@ public class Searching_Sorting {
     listy.arr = new int[]{11, 22, 33, 44, 55, 66};
     sortedSearchNoSize(listy, 55);
   }
+
+  /*  [Prob 10.11]
+  * Q) Peaks And Valleys : In an arraoy of integers , a peak is ana element which is greater than or equal to the adjacent
+  * integers & a valley is an element which is less than or equal to the adjacent intgers. Now, sort the array into
+  * alternating sequence of peaks & valleys
+  * Input : [ 5,3,1,2,3]
+  * Output : [ 5,1,3,2,3]
+  *
+  * A) Will take a group of 3 elements to fit a valley in between
+  * thus the portion of 3 elements will be arranged as Max, Min, Other. in this way we ensure that valley is in between &
+  * the peak is at left always making it possible to maintain the valley in between as the other would get swapped & handled
+  * in next iteration.
+  * */
+
+  public static void peaksValleys(int[] arr) {
+    int i = 1;
+    for (; i < arr.length - 1; i += 2) {
+      swapToMaxMinOther(arr,i-1,i+1);
+    }
+    if(i==arr.length-1 && arr[i]>arr[i-1]){
+      int temp = arr[i-1];
+      arr[i-1] = arr[i];
+      arr[i] = temp;
+    }
+    System.out.println("Peaks & valleys : " + Arrays.toString(arr));
+  }
+
+  private static void swapToMaxMinOther(int[] arr, int low, int high) {
+    int min = Math.min(arr[low], arr[low + 1]);
+    min = Math.min(min, arr[high]);
+    int max = Math.max(arr[low], arr[low + 1]);
+    max = Math.max(max, arr[high]);
+    ArrayList<Integer> three = new ArrayList<>();
+    three.add(arr[low]);
+    three.add(arr[low+1]);
+    three.add(arr[high]);
+    three.remove(new Integer(min));
+    three.remove(new Integer(max));
+    int other = three.get(0);
+    arr[low] = max;
+    arr[low + 1] = min;
+    arr[high] = other;
+  }
 }
