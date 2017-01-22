@@ -53,10 +53,16 @@ public class Sorting_and_Searching_Main {
     System.out.println("Kth smalles : " + kth);
 
   }
-  public static void testSearchRotatedArray(){
-    int [] arr = new int[] {15,16,19,20,25,1,3,4,5,7,10,12,13,15};
+
+  public static void testSearchRotatedArray() {
+//    int[] arr = new int[]{15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 12, 13, 15};
 //    int [] arr = new int[] {12,13,14,15,16,19,20,25,1,3,4,5,7};
+    int [] arr = new int[] {20,25,1,3,4,5,7};
+//    int [] arr = new int[] {1,3,4,5};
+//    int [] arr = new int[] {2,5,6,7,8,9,1};
 //    int [] arr = new int[] {12,13,14,15,16,19,20,25};
-    Searching_Sorting.searchRotatedArray(arr,5);
+    int res = Searching_Sorting.searchRotatedArray(arr, 5);
+    System.out.println("index "+res);
+    System.out.println("Arr "+Arrays.toString(arr));
   }
 }

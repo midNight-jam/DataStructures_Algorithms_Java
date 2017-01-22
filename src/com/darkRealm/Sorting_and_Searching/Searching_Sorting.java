@@ -32,13 +32,10 @@ public class Searching_Sorting {
     return arr;
   }
 
-  /* [Prob 10.3]
-   Q) Search in a rotated array - Given a sorted array of n integers that has been rotated an unknown munber of times
-    write a code to find the element in the array. Array was originally sorted in increasing order
-    A) Woudl utilize binary search first to find the index from awhich the array is rotaterd & then fire binary search from there
- */
-  public static int searchRotatedArray(int[] arr, int k) {
-    int rotated = findRotatedIndex(arr, 0, arr.length);
+
+  //not very effective still goes to O(N)
+  public static int searchRotatedArrayOLD(int[] arr, int k) {
+    int rotated = findRotatedIndexOLD(arr, 0, arr.length);
     System.out.println("Rotated at : " + rotated);
     System.out.println(" " + Arrays.toString(arr));
 
@@ -52,7 +49,7 @@ public class Searching_Sorting {
     return res;
   }
 
-  private static int findRotatedIndex(int[] arr, int low, int high) {
+  private static int findRotatedIndexOLD(int[] arr, int low, int high) {
     int rotated = 0;
     if (low <= high) {
       int mid = (low + high) / 2;
@@ -63,12 +60,53 @@ public class Searching_Sorting {
         return mid;
       }
 
-      rotated = findRotatedIndex(arr, low, mid - 1);
+      rotated = findRotatedIndexOLD(arr, low, mid - 1);
       if (rotated != 0) {
         return rotated;
       }
-      rotated = findRotatedIndex(arr, mid + 1, high);
+      rotated = findRotatedIndexOLD(arr, mid + 1, high);
     }
     return rotated;
+  }
+
+
+  public static int searchRotatedArray(int[] arr, int k) {
+    return findRotatedIndex(arr, 0, arr.length - 1, k);
+  }
+
+  /* [Prob 10.3]
+  Q) Search in a rotated array - Given a sorted array of n integers that has been rotated an unknown munber of times
+   write a code to find the element in the array. Array was originally sorted in increasing order
+   A) Woudl utilize binary search. First will calculate the mid & check if the mid is bigger tahn low, if yes that means
+   left half is sorted. Now does the element exists in this sorted half, check it by comparing to low & mid does it falls
+   in the range. Similarly check if the right half is sroted & check in that range. IF
+*/
+  public static int findRotatedIndex(int[] arr, int low, int high, int k) {
+    int mid = (low + high) / 2;
+
+    if (arr[mid] == k) {
+      return mid;
+    }
+
+    if (high < low) {
+      return -1;
+    }
+    if (arr[low] < arr[mid]) {  // left half is sorted
+      if (arr[low] < k && k < arr[mid]) { // and element is within the range
+        return findRotatedIndex(arr, low, mid - 1, k);
+      }
+
+    }
+
+    if (arr[mid] < arr[high]) { // right half is sorted
+      if (arr[mid] < k && k < arr[high]) {  // and element is within the range
+        return findRotatedIndex(arr, mid + 1, high, k);
+      }
+    }
+    int res = findRotatedIndex(arr, low, mid - 1, k);
+    if (res == -1) {
+      res = findRotatedIndex(arr, mid + 1, high, k);
+    }
+    return res;
   }
 }
