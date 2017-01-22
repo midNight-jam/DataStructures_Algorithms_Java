@@ -1,5 +1,6 @@
 package com.darkRealm.Sorting_and_Searching;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -108,5 +109,85 @@ public class Searching_Sorting {
       res = findRotatedIndex(arr, mid + 1, high, k);
     }
     return res;
+  }
+
+  /*[Prob 10.2] TODO
+   Q) Group Anagrmas : a method to sort an array of strings so that all the anagrams are next to each other
+   A)
+  * */
+
+  /* [Prob 10.4]
+  *   Q) Sorted Search,No Size : given a DS Listy that lacks the size Method , but has a elementAt(i) meth which return -1
+  *   if index is out of range. Now, given a Listy which contains sorted +ve integers find the index at which a given x occurs
+  *   A) will take a trav index i & will ask to get the elementAt(i), if the returned element is smaller than than the x vlaue
+  *   then we will binary serach in the found range else will 2le i and fetch again at i. If -ve means we have corseed bounds
+  *   then we fire again binary serach in this range to get the element. This technique is called as Exponential Backoff
+  * */
+
+  public static int sortedSearchNoSize(Listy listy, int k) {
+    int i = 1;
+    int low, high, mid, end;
+    low = 0;
+    high = 1;
+    int element = 0;
+    while (listy.elementAt(high) > 0) {
+      mid = (low + high) / 2;
+      if (listy.elementAt(mid) == k) {  // if we have found the element itself
+        return mid;
+      }
+
+      if (k < listy.elementAt(high)) {  // if we have found the upperbound on the range
+        break;
+      }
+      low = high;
+      high = 2 * high; // move ahead by 2le size
+    }
+
+    if (k < listy.elementAt(high)) {
+      // binary search for element in low-high range
+      return BinarySearchUtil.binarySearchRecursive(listy.arr, k, low, high);
+    }
+    int beg = low;
+    if (listy.elementAt(high) < 0) {
+      // we have to serach for the end
+      while (true) {
+        mid = (low + high) / 2;
+        if (listy.elementAt(mid) > 0) {
+          low = mid;
+        }
+        if (listy.elementAt(mid) < 0) {
+          high = mid;
+        }
+        if (listy.elementAt(mid + 1) < 0) {
+          end = mid;
+          break;
+        }
+      }
+      return BinarySearchUtil.binarySearchRecursive(listy.arr, k, beg, end);
+    }
+    return -1;
+  }
+
+  static class Listy {
+    int[] arr;
+    int size;
+
+    public Listy(int s) {
+      arr = new int[s];
+      size = s;
+    }
+
+    public int elementAt(int i) {
+      if (i < size) {
+        return arr[i];
+      }
+      return -1;
+    }
+  }
+
+  public static void testSortedSearchNoSize() {
+    Listy listy = new Listy(6);
+    listy.arr = new int[]{11, 22, 33, 44, 55, 66};
+    sortedSearchNoSize(listy, 55);
   }
 }

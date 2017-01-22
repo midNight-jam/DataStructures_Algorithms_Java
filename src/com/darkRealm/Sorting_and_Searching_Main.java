@@ -65,4 +65,5 @@ public class Sorting_and_Searching_Main {
     System.out.println("index "+res);
     System.out.println("Arr "+Arrays.toString(arr));
   }
+
 }

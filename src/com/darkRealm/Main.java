@@ -5,6 +5,7 @@ import com.darkRealm.BigO.BitsUtil;
 import com.darkRealm.BigO.MathUtil;
 import com.darkRealm.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
 import com.darkRealm.Recursion_and_DynamicProg.Recursion_and_DP;
+import com.darkRealm.Sorting_and_Searching.Searching_Sorting;
 
 import java.util.*;
 
@@ -336,7 +337,8 @@ public class Main {
 //    Sorting_and_Searching_Main.testBinarySearch();
 //    Sorting_and_Searching_Main.testSortedMerge();
 //    Sorting_and_Searching_Main.testKthSmallestElement();
-    Sorting_and_Searching_Main.testSearchRotatedArray();
+//    Sorting_and_Searching_Main.testSearchRotatedArray();
+    Searching_Sorting.testSortedSearchNoSize();
 
   }
 }
