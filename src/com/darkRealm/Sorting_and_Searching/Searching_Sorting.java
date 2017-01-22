@@ -5,6 +5,7 @@ import com.darkRealm.Heap.MinHeap;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Created by Jayam on 1/11/2017.
@@ -114,11 +115,36 @@ public class Searching_Sorting {
     return res;
   }
 
-  /*[Prob 10.2] TODO
+  /*[Prob 10.2]
    Q) Group Anagrmas : a method to sort an array of strings so that all the anagrams are next to each other
-   A)
+   A) we create a hashmap of sorted string as key and arraylist of string as value. we sort each word & see if it can be
+   placed agains an existing key else we create that key & initailize with that word in array list against tht key.
   * */
 
+  public static void groupAnagrams(String[] arr) {
+    HashMap<String, ArrayList<String>> result = new HashMap<>();
+    for (int i = 0; i < arr.length; i++) {
+      char[] w = arr[i].toCharArray();
+      Arrays.sort(w);
+      String word = new String(w);
+      if (result.containsKey(word)) {
+        result.get(word).add(arr[i]);
+      } else {
+        ArrayList<String> list = new ArrayList<>();
+        list.add(arr[i]);
+        result.put(word, list);
+      }
+    }
+
+    for (String w :
+        result.keySet()) {
+      ArrayList<String> list = result.get(w);
+      for (int i = 0; i < list.size(); i++) {
+        System.out.print(" " + list.get(i));
+      }
+    }
+  }
+  
   /* [Prob 10.4]
   *   Q) Sorted Search,No Size : given a DS Listy that lacks the size Method , but has a elementAt(i) meth which return -1
   *   if index is out of range. Now, given a Listy which contains sorted +ve integers find the index at which a given x occurs

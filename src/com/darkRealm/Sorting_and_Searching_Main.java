@@ -103,9 +103,17 @@ public class Sorting_and_Searching_Main {
 //    String[] arr = new String[]{"", "bbb", "", "ddd", "", "", "ggg", "", "","jjj"};
 //    String[] arr = new String[]{"", "bbb", "", "","","", "", "", "", "", "","jjj"};
 //    String[] arr = new String[]{"", "bbb", "", "","","", "", "", "", "hhh", "","","","","",""};
-    String[] arr = new String[]{"", "", "", "","","", "", "", "", "", "","","","","","hhh"};
-    String res = Searching_Sorting.sparseSearch(arr,"hhh");
-    System.out.println("Res : "+res);
+    String[] arr = new String[]{"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "hhh"};
+    String res = Searching_Sorting.sparseSearch(arr, "hhh");
+    System.out.println("Res : " + res);
     System.out.println(Arrays.toString(arr));
+  }
+
+  public static void testGroupAnagrams() {
+    String [] arr = new String[]{"caa","baa","aac","aba"};
+//    String [] arr = new String[]{"caa","baa","aba","aaa","aab","aac"};
+//    String [] arr = new String[]{"aca","aab","aaa","aba","aaa","baa","aac"};
+//    String [] arr = new String[]{"cat","tac","sad","das","asd","act"};
+    Searching_Sorting.groupAnagrams(arr);
   }
 }
