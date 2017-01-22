@@ -339,7 +339,9 @@ public class Main {
 //    Sorting_and_Searching_Main.testKthSmallestElement();
 //    Sorting_and_Searching_Main.testSearchRotatedArray();
 //    Searching_Sorting.testSortedSearchNoSize();
-    Sorting_and_Searching_Main.testPeaksValleys();
+//    Sorting_and_Searching_Main.testPeaksValleys();
+//    Sorting_and_Searching_Main.testRankStream();
+    Sorting_and_Searching_Main.testSortedMatrixSearch();
 
   }
 }

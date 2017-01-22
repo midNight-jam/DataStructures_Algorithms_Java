@@ -57,23 +57,45 @@ public class Sorting_and_Searching_Main {
   public static void testSearchRotatedArray() {
 //    int[] arr = new int[]{15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 12, 13, 15};
 //    int [] arr = new int[] {12,13,14,15,16,19,20,25,1,3,4,5,7};
-    int [] arr = new int[] {20,25,1,3,4,5,7};
+    int[] arr = new int[]{20, 25, 1, 3, 4, 5, 7};
 //    int [] arr = new int[] {1,3,4,5};
 //    int [] arr = new int[] {2,5,6,7,8,9,1};
 //    int [] arr = new int[] {12,13,14,15,16,19,20,25};
     int res = Searching_Sorting.searchRotatedArray(arr, 5);
-    System.out.println("index "+res);
-    System.out.println("Arr "+Arrays.toString(arr));
+    System.out.println("index " + res);
+    System.out.println("Arr " + Arrays.toString(arr));
   }
 
-  public static void testPeaksValleys(){
+  public static void testPeaksValleys() {
 //    int [] arr = new int[] {5,1,3,2,3};
 //    int [] arr = new int[] {1,1,1,2,1};
 //    int [] arr = new int[] {0,1,2};
 //    int [] arr = new int[] {0,1,4,7,8,9};
 //    int [] arr = new int[] {5,8,6,2,3,4,6};
 //    int [] arr = new int[] {5,1,3,2};
-    int [] arr = new int[] {11,31,42,4,53,50,9,2};
+    int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
     Searching_Sorting.peaksValleys(arr);
+  }
+
+  public static void testRankStream() {
+    int[] arr = new int[]{5, 1, 4, 4, 5, 9, 7, 13, 3};
+    int k = 4;
+    int rank = Searching_Sorting.rankFromStream(arr, k);
+    System.out.println("Rank of " + k + " is " + rank);
+    System.out.println(Arrays.toString(arr));
+  }
+
+  public static void testSortedMatrixSearch() {
+    int[][] mat = new int[][]{
+        {1, 2, 5, 7, 9},
+        {10, 11, 14, 16, 17},
+        {20, 21, 23, 27, 29},
+        {30, 34, 39, 45, 48},
+        {31, 35, 40, 46, 49},
+        {32, 36, 41, 47, 50}
+    };
+    int k = 33;
+    int res = Searching_Sorting.sortedMatrixSearch(mat, k);
+    System.out.println("Found some " + res);
   }
 }
