@@ -6,6 +6,7 @@ import com.darkRealm.Trees_and_Graphs.RankTree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.BitSet;
 import java.util.HashMap;
 
 /**
@@ -375,5 +376,34 @@ public class Searching_Sorting {
       rtree.insert(arr[i]);
     }
     return rtree.getRank(k);
+  }
+
+
+  /*  [Prob 10.8]
+  *   Q) Find duplicates : we have an array with all the numbers from 1 to N, where N is atmost 32000. The array may have
+  *   duplicate enteries & you do not what N is. With only 4 KB of memory avaialable, print all the duplicates in the array.
+  *   A) as we have the memeory of 4KB that is equal to 32000 thus we can have a bit array of same size and mark the ith bit
+  *   as 1  & if the ith numbers comes again we will know & thus prtin it
+  * */
+  public static void findDuplicates(int[] arr, int memorySize) {
+    BitSet memSizeBits = new BitSet(memorySize);
+    for (int i = 0; i < arr.length; i++) {
+      if (memSizeBits.get(arr[i])) {
+        System.out.println("Dup " + arr[i]);
+      } else {
+        memSizeBits.set(arr[i]);
+      }
+    }
+  }
+
+  public static void findDuplicatesMyBitsArray(int[] arr, int memorySize) {
+    MyBitArray myBitArray = new MyBitArray(memorySize);
+    for (int i = 0; i < arr.length; i++) {
+      if (myBitArray.get(arr[i])) {
+        System.out.println("Dup " + arr[i]);
+      } else {
+        myBitArray.set(arr[i]);
+      }
+    }
   }
 }

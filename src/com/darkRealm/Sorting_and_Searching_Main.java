@@ -117,4 +117,13 @@ public class Sorting_and_Searching_Main {
     Searching_Sorting.groupAnagrams(arr);
   }
 
+  public static void testFindDuplicates(){
+    int arr[] = new int[]{1,4,1,2,3,4,5,6,7,8,7,2,3,6};
+    int memorySize = 8;
+    Searching_Sorting.findDuplicates(arr,memorySize);
+    System.out.println("================");
+    Searching_Sorting.findDuplicatesMyBitsArray(arr,memorySize);
+
+  }
+
 }
