@@ -11,4 +11,10 @@ public class Moderate_Main {
     Moderate.numberSwapper(7,3);
   }
 
+  public static void testWordFrequency(){
+    String[] book =  new String[]{"this", "is","some","book", "this"};
+    int count = Moderate.wordFrequency(book,"this");
+    System.out.println("book count : "+count);
+  }
+
 }
