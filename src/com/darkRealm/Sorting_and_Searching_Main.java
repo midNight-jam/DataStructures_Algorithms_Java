@@ -79,7 +79,7 @@ public class Sorting_and_Searching_Main {
 
   public static void testRankStream() {
     int[] arr = new int[]{5, 1, 4, 4, 5, 9, 7, 13, 3};
-    int k = 4;
+    int k = 9;
     int rank = Searching_Sorting.rankFromStream(arr, k);
     System.out.println("Rank of " + k + " is " + rank);
     System.out.println(Arrays.toString(arr));
@@ -116,4 +116,5 @@ public class Sorting_and_Searching_Main {
 //    String [] arr = new String[]{"cat","tac","sad","das","asd","act"};
     Searching_Sorting.groupAnagrams(arr);
   }
+
 }

@@ -2,6 +2,7 @@ package com.darkRealm.Sorting_and_Searching;
 
 import com.darkRealm.BigO.BinarySearch;
 import com.darkRealm.Heap.MinHeap;
+import com.darkRealm.Trees_and_Graphs.RankTree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -144,7 +145,7 @@ public class Searching_Sorting {
       }
     }
   }
-  
+
   /* [Prob 10.4]
   *   Q) Sorted Search,No Size : given a DS Listy that lacks the size Method , but has a elementAt(i) meth which return -1
   *   if index is out of range. Now, given a Listy which contains sorted +ve integers find the index at which a given x occurs
@@ -263,21 +264,6 @@ public class Searching_Sorting {
     arr[high] = other;
   }
 
-  public static int rankFromStream(int[] arr, int k) {
-    MinHeap minHeap = new MinHeap(arr.length);
-    for (int i = 0; i < arr.length; i++) {
-      minHeap.insert(arr[i]);
-    }
-
-    int count = -1;
-    int top = -1;
-    while (top <= k) {
-      top = minHeap.fetchTop();
-      count++;
-    }
-    return count - 1;
-  }
-
   /*[Prob 10.9]
   *   Q) Sorted Matrix Search : Given a M*N matrix in which each row & each column is sorted in ascending order, write
   *   a method to find an element
@@ -371,5 +357,23 @@ public class Searching_Sorting {
 
     }
     return "";
+  }
+
+  /*  [Prob 10.10]
+  *   Q) Rank Form Stream :  We are reading a stream of integers. We want to able to get the rank of a number X.
+   *   Rank == Number of values
+   *   A) We will use BST but with some additional info at each node. this additional info is the no of left childs & the
+   *   no of right childs from that node. So we we search for an element from root, if we go right then we have skipped all
+   *   the left childs of that node & that node itself, thus we will increase the rank by leftChilds + 1. If we go left
+   *   we dont need to add anythign to rank and if we find the data then we add the no of left childs of that node to the rank.
+   *   I implemented a DS RantTree for this purpose, hwever if we just have to rank a number from its smaller elements
+   *   then we dont need to store rightchilds on each node. just by storing lefthcilds we would be able to get the rank.
+  * */
+  public static int rankFromStream(int[] arr, int k) {
+    RankTree rtree = new RankTree();
+    for (int i = 0; i < arr.length; i++) {
+      rtree.insert(arr[i]);
+    }
+    return rtree.getRank(k);
   }
 }
