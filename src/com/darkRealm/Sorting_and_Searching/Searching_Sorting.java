@@ -382,7 +382,8 @@ public class Searching_Sorting {
   /*  [Prob 10.8]
   *   Q) Find duplicates : we have an array with all the numbers from 1 to N, where N is atmost 32000. The array may have
   *   duplicate enteries & you do not what N is. With only 4 KB of memory avaialable, print all the duplicates in the array.
-  *   A) as we have the memeory of 4KB that is equal to 32000 thus we can have a bit array of same size and mark the ith bit
+  *   A) CHECK BELOW 2 SOLUTIONS
+  *   as we have the memeory of 4KB that is equal to 32000 thus we can have a bit array of same size and mark the ith bit
   *   as 1  & if the ith numbers comes again we will know & thus prtin it
   * */
   public static void findDuplicates(int[] arr, int memorySize) {
@@ -395,7 +396,7 @@ public class Searching_Sorting {
       }
     }
   }
-
+  /*[Prob 10.8]*/
   public static void findDuplicatesMyBitsArray(int[] arr, int memorySize) {
     MyBitArray myBitArray = new MyBitArray(memorySize);
     for (int i = 0; i < arr.length; i++) {
