@@ -27,7 +27,7 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-    doSortingAndSearching();
+//    doSortingAndSearching();
 //    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
@@ -45,6 +45,8 @@ public class Main {
 
 //    int res = maxTweet(new int[]{1, 2, 3}, 3);
 //    int res = maxTweet(new int[]{3, 1, 2, 1}, 4);
+
+    doModerate();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -346,5 +348,9 @@ public class Main {
 //    Sorting_and_Searching_Main.testGroupAnagrams();
 
     Sorting_and_Searching_Main.testFindDuplicates();
+  }
+
+  private static void doModerate(){
+    Moderate_Main.testNumberSwapper();
   }
 }
