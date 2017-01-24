@@ -7,26 +7,31 @@ import com.darkRealm.Moderate.Moderate;
  */
 public class Moderate_Main {
 
-  public static void testNumberSwapper(){
-    Moderate.numberSwapper(7,3);
+  public static void testNumberSwapper() {
+    Moderate.numberSwapper(7, 3);
   }
 
-  public static void testWordFrequency(){
-    String[] book =  new String[]{"this", "is","some","book", "this"};
-    int count = Moderate.wordFrequency(book,"this");
-    System.out.println("book count : "+count);
+  public static void testWordFrequency() {
+    String[] book = new String[]{"this", "is", "some", "book", "this"};
+    int count = Moderate.wordFrequency(book, "this");
+    System.out.println("book count : " + count);
   }
 
-  public static void testTicTacWin(){
-    char game [] [] = new char[][]{
-        {'X','O','O','X'},
-        {'O','X','O','X'},
-        {'X','O','O','X'},
-        {'X','O','X','X'}
+  public static void testTicTacWin() {
+    char game[][] = new char[][]{
+        {'X', 'O', 'O', 'X'},
+        {'O', 'X', 'O', 'X'},
+        {'X', 'O', 'O', 'X'},
+        {'X', 'O', 'X', 'X'}
     };
 
-    boolean res = Moderate.ticTacWin(game,4);
-    System.out.println(" Win "+res);
+    boolean res = Moderate.ticTacWin(game, 4);
+    System.out.println(" Win " + res);
+  }
 
+  public static void testFactorialZeroes() {
+    int n = 100;
+    int noZeros = Moderate.factorialZeros(n);
+    System.out.println(" n : " + n + "   trailing zeroes : " + noZeros);
   }
 }

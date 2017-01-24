@@ -105,4 +105,27 @@ public class Moderate {
     }
     return false;
   }
+
+  /* [Prob 16.5]
+  *   Q) Write an lgo that calculates the no of trailing zeros in a factorial
+  *   A) there are 2 , the first one is my algo
+  *     The no of zeros is equal to the power of 5 as a prime factor of that number
+  *     for each n decremetn it till 0, & check if the no is divisible by 5, if yes get the powers of 5 in that number
+  * */
+  public static int factorialZeros(int n) {
+    int total5 = 0;
+    int[] primes = new int[]{2, 3, 5};
+    while (n != 0) {
+      if (n % 5 == 0) {
+        //check if a power of 5
+        int temp = n;
+        while (temp % 5 == 0 && temp >= 5) {
+          total5++;
+          temp = temp / 5;
+        }
+      }
+      n--;
+    }
+    return total5;
+  }
 }
