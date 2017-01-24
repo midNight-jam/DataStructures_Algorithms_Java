@@ -30,8 +30,11 @@ public class Moderate_Main {
   }
 
   public static void testFactorialZeroes() {
-    int n = 100;
+    int n = 25;
     int noZeros = Moderate.factorialZeros(n);
+    System.out.println(" n : " + n + "   trailing zeroes : " + noZeros);
+
+    noZeros = Moderate.factorialZerosLeaner(n);
     System.out.println(" n : " + n + "   trailing zeroes : " + noZeros);
   }
 }

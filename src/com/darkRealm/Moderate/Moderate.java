@@ -114,7 +114,6 @@ public class Moderate {
   * */
   public static int factorialZeros(int n) {
     int total5 = 0;
-    int[] primes = new int[]{2, 3, 5};
     while (n != 0) {
       if (n % 5 == 0) {
         //check if a power of 5
@@ -125,6 +124,16 @@ public class Moderate {
         }
       }
       n--;
+    }
+    return total5;
+  }
+
+  public static int factorialZerosLeaner(int n) {
+    int total5 = 0;
+    for (int i = 5; n / i > 0; i = i * 5) {
+      if (n % i == 0) {
+        total5 += n / i;
+      }
     }
     return total5;
   }
