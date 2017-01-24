@@ -57,4 +57,11 @@ public class Moderate_Main {
     int xor = 0 ^ 1;
     System.out.println(" Max : " + res);
   }
+
+  public static void testEnglishInt(){
+    int n = -123456789;
+//    String res = Moderate.englishInt(12);
+    String res = Moderate.englishInt(n);
+    System.out.println("NO : "+n+"   english : "+res);
+  }
 }

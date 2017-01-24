@@ -356,6 +356,7 @@ public class Main {
 //    Moderate_Main.testTicTacWin();
 //    Moderate_Main.testFactorialZeroes();
 //    Moderate_Main.testSmallestDifference();
-    Moderate_Main.testNumberMax();
+//    Moderate_Main.testNumberMax();
+    Moderate_Main.testEnglishInt();
   }
 }

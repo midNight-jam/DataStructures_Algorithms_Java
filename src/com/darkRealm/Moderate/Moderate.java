@@ -184,4 +184,54 @@ public class Moderate {
     int max = a * flipSignBit + b * signBit;
     return max;
   }
+
+  /*  [Prob 16.8]
+  *   Q) Eglish Int : Given any integer, print an English phase that describes the integer.
+  *     1234  = One Thousand Two Hundred Thirty Four
+  *   A) Will read the numbers in a group of three, convert this group to english & now add thosand, million, billion to it.
+  * */
+  public static String englishInt(int n) {
+    if (n == 0) {
+      return "Zero";
+    }
+    String[] oneSeries = {"", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    String[][] dict = new String[][]{
+        {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"},
+        {"", "Ten", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"},
+        {"", "One Hundred", "Two Hundred", "Three Hundred", "Four Hundred", "Five Hundred", "Six Hundred", "Seven Hundred",
+            "Eight Hundred", "Nine Hundred"}
+    };
+
+    String[] more3 = new String[]{"Thousand", "Million", "Billion"};
+
+    String res = "";
+
+    int number = Math.abs(n);
+    int last3Digits;
+    int i = -1;
+    int colIndex;
+    int rowIndex;
+    while (number > 0) {
+      last3Digits = number % 1000;
+      colIndex = 0;
+      rowIndex = -1;
+      if (last3Digits % 100 <= 19 && last3Digits % 100 >= 11) {
+        res = oneSeries[last3Digits % 10] + res;
+        rowIndex = 1;
+        last3Digits = last3Digits / 100;
+      }
+      while (last3Digits > 0) {
+        colIndex = last3Digits % 10;
+        rowIndex++;
+        res = dict[rowIndex][colIndex] + " " + res;
+        last3Digits = last3Digits / 10;
+      }
+      i++;
+      number = number / 1000;
+      if (number > 0) {
+        res = more3[i] + " " + res;
+      }
+    }
+    return n < 0 ? "Minus " + res : res;
+  }
 }
