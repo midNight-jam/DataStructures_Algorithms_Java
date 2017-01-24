@@ -36,6 +36,8 @@ public class Moderate {
   }
 
   /* [Prob 16.4]
+  Q) An algo to check for a given game of N8N size, has any one won it
+  A) Would first check if any one column is completely filled, then for row. and finally for two diagonals
   * */
 
   public static boolean ticTacWin(char[][] game, int n) {
