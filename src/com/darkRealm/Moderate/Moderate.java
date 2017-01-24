@@ -1,6 +1,5 @@
 package com.darkRealm.Moderate;
 
-import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -233,5 +232,55 @@ public class Moderate {
       }
     }
     return n < 0 ? "Minus " + res : res;
+  }
+
+
+    /*[Prob 16.9]
+   * Q) write methods to implement multiply, substract & divide operations for integers. Using only add operator
+   */
+
+  /*  [prob 16.9] Substract
+  * */
+  public static int substractNumbers(int a, int b) {
+    int diff = 0;
+    int big = Math.max(a, b);
+    int small = Math.min(a, b);
+
+    for (int i = small; i < big; i++) {
+      diff++;
+    }
+    return getSignedResult(a, b, diff);
+  }
+
+  /*  [prob 16.9] Multiply
+  * */
+  public static int multiplyNumbers(int a, int b) {
+    int no = Math.abs(a);
+    int iterations = Math.abs(b);
+    int product = 0;
+    for (int i = 0; i < iterations; i++) {
+      product += no;
+    }
+    return getSignedResult(a, b, product);
+  }
+
+  private static int getSignedResult(int a, int b, int result) {
+    int signA = ((a >>> 31) & 1);
+    int signB = ((b >>> 31) & 1);
+    int resultSign = (signA ^ signB);
+    return resultSign == 0 ? result : result * -1;
+  }
+
+  /*[Prob 16.9] Divide*/
+  public static int divideNumbers(int a, int b) {
+    int divRes = 0;
+    int dividend = 0;
+    int ta = Math.abs(a);
+    int tb = Math.abs(b);
+    while (dividend < ta) {
+      dividend += tb;
+      divRes++;
+    }
+    return getSignedResult(a, b, divRes - 1);
   }
 }

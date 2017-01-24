@@ -357,6 +357,9 @@ public class Main {
 //    Moderate_Main.testFactorialZeroes();
 //    Moderate_Main.testSmallestDifference();
 //    Moderate_Main.testNumberMax();
-    Moderate_Main.testEnglishInt();
+//    Moderate_Main.testEnglishInt();
+//    Moderate_Main.testSubstract();
+//    Moderate_Main.testMulitply();
+    Moderate_Main.testDivide();
   }
 }

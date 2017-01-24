@@ -58,10 +58,31 @@ public class Moderate_Main {
     System.out.println(" Max : " + res);
   }
 
-  public static void testEnglishInt(){
+  public static void testEnglishInt() {
     int n = -123456789;
 //    String res = Moderate.englishInt(12);
     String res = Moderate.englishInt(n);
-    System.out.println("NO : "+n+"   english : "+res);
+    System.out.println("NO : " + n + "   english : " + res);
+  }
+
+  public static void testSubstract() {
+    int a = -2;
+    int b = -2;
+    int res = Moderate.substractNumbers(a, b);
+    System.out.println("a : " + a + " b " + b + " Substract  a-b = " + res);
+  }
+
+  public static void testMulitply() {
+    int a = -9;
+    int b = 10;
+    int res = Moderate.multiplyNumbers(a, b);
+    System.out.println("a : " + a + " b " + b + " Product a*b = " + res);
+  }
+
+  public static void testDivide() {
+    int a = -7;
+    int b = -3;
+    int res = Moderate.divideNumbers(a, b);
+    System.out.println("a : " + a + " b " + b + " Divide a/b = " + res);
   }
 }
