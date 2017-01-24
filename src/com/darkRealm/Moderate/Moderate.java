@@ -170,4 +170,18 @@ public class Moderate {
     }
     return res;
   }
+
+  /* [Prob 16.7]
+  *   Q) Given two nos find the maximum among them, constraint is you cannot use ANY comparision operator
+  *   A) Sign Bit will be useful in this case. We take diff = a - b, if the sign bit of diff is 0 means a is bigger (beacuse)
+  *   the result was +ve),  if sign bit if diff is 1 means b is bigger (beause the result was negative)
+  *   TODO : have to handle "overflow case"
+  * */
+  public static int numberMax(int a, int b) {
+    int diff = a - b;
+    int signBit = (diff >>> 31) & 1;
+    int flipSignBit = ~(signBit) & 1;
+    int max = a * flipSignBit + b * signBit;
+    return max;
+  }
 }

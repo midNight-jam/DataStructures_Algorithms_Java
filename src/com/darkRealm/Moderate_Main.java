@@ -40,12 +40,21 @@ public class Moderate_Main {
     System.out.println(" n : " + n + "   trailing zeroes : " + noZeros);
   }
 
-  public static void testSmallestDifference(){
+  public static void testSmallestDifference() {
 //    int [] arr = new int[]{3,1,15,11,4,8};
 //    int [] brr = new int[]{23,127,235,19,2};
-    int [] arr = new int[]{3,1,15,11,2};
-    int [] brr = new int[]{23,127,235,19,8};
-    int [] res = Moderate.smallestDifference(arr,brr);
-    System.out.println("MinDIff : "+Arrays.toString(res));
+    int[] arr = new int[]{3, 1, 15, 11, 2};
+    int[] brr = new int[]{23, 127, 235, 19, 8};
+    int[] res = Moderate.smallestDifference(arr, brr);
+    System.out.println("MinDIff : " + Arrays.toString(res));
+  }
+
+  public static void testNumberMax() {
+//    int res = Moderate.numberMax(2, 4);
+//    int res = Moderate.numberMax(3, 1);
+//    int res = Moderate.numberMax(0, 0);
+    int res = Moderate.numberMax(Integer.MIN_VALUE, -2);
+    int xor = 0 ^ 1;
+    System.out.println(" Max : " + res);
   }
 }

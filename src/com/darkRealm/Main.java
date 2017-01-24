@@ -350,11 +350,12 @@ public class Main {
     Sorting_and_Searching_Main.testFindDuplicates();
   }
 
-  private static void doModerate(){
+  private static void doModerate() {
 //    Moderate_Main.testNumberSwapper();
 //    Moderate_Main.testWordFrequency();
 //    Moderate_Main.testTicTacWin();
 //    Moderate_Main.testFactorialZeroes();
-    Moderate_Main.testSmallestDifference();
+//    Moderate_Main.testSmallestDifference();
+    Moderate_Main.testNumberMax();
   }
 }
