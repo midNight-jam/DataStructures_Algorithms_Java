@@ -17,4 +17,16 @@ public class Moderate_Main {
     System.out.println("book count : "+count);
   }
 
+  public static void testTicTacWin(){
+    char game [] [] = new char[][]{
+        {'X','O','O','X'},
+        {'O','X','O','X'},
+        {'X','O','O','X'},
+        {'X','O','X','X'}
+    };
+
+    boolean res = Moderate.ticTacWin(game,4);
+    System.out.println(" Win "+res);
+
+  }
 }

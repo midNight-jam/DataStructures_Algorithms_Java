@@ -352,6 +352,7 @@ public class Main {
 
   private static void doModerate(){
 //    Moderate_Main.testNumberSwapper();
-    Moderate_Main.testWordFrequency();
+//    Moderate_Main.testWordFrequency();
+    Moderate_Main.testTicTacWin();
   }
 }
