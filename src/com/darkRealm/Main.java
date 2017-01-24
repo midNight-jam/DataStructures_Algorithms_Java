@@ -354,6 +354,7 @@ public class Main {
 //    Moderate_Main.testNumberSwapper();
 //    Moderate_Main.testWordFrequency();
 //    Moderate_Main.testTicTacWin();
-    Moderate_Main.testFactorialZeroes();
+//    Moderate_Main.testFactorialZeroes();
+    Moderate_Main.testSmallestDifference();
   }
 }

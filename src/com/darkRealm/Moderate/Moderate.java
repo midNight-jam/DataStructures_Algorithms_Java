@@ -1,5 +1,7 @@
 package com.darkRealm.Moderate;
 
+import java.util.AbstractMap;
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -128,6 +130,7 @@ public class Moderate {
     return total5;
   }
 
+  /* [Prob 16.5]*/
   public static int factorialZerosLeaner(int n) {
     int total5 = 0;
     for (int i = 5; n / i > 0; i = i * 5) {
@@ -136,5 +139,35 @@ public class Moderate {
       }
     }
     return total5;
+  }
+
+  /*  [Prob 16.6]
+  * Q) Given 2 arrays, compute the pair of values (one from each array) with the smallest nonnegative difference.
+  *   EG: [1,3,15,11,2] & [23,127,235,19,8] . Output should be (11,8)
+  * A) My approach : will sort both the arrays & will do a merge traverse and while merging would do a diff & keep track of
+   * min diff in this way. when found min diff will update the elements from both arrays in result.
+  * */
+  public static int[] smallestDifference(int[] arr, int[] brr) {
+    Arrays.sort(arr);
+    Arrays.sort(brr);
+    int ai, bi;
+    ai = bi = 0;
+    int minDiff = Integer.MAX_VALUE;
+    int diff = 0;
+    int[] res = new int[2];
+    while (ai < arr.length && bi < brr.length) {
+      diff = Math.abs(brr[bi] - arr[ai]);
+      if (diff < minDiff) {
+        minDiff = diff;
+        res[0] = arr[ai];
+        res[1] = brr[bi];
+      }
+      if (arr[ai] <= brr[bi]) {
+        ai++;
+      } else {
+        bi++;
+      }
+    }
+    return res;
   }
 }

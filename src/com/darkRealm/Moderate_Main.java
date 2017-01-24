@@ -2,6 +2,8 @@ package com.darkRealm;
 
 import com.darkRealm.Moderate.Moderate;
 
+import java.util.Arrays;
+
 /**
  * Created by Jayam on 1/23/2017.
  */
@@ -36,5 +38,14 @@ public class Moderate_Main {
 
     noZeros = Moderate.factorialZerosLeaner(n);
     System.out.println(" n : " + n + "   trailing zeroes : " + noZeros);
+  }
+
+  public static void testSmallestDifference(){
+//    int [] arr = new int[]{3,1,15,11,4,8};
+//    int [] brr = new int[]{23,127,235,19,2};
+    int [] arr = new int[]{3,1,15,11,2};
+    int [] brr = new int[]{23,127,235,19,8};
+    int [] res = Moderate.smallestDifference(arr,brr);
+    System.out.println("MinDIff : "+Arrays.toString(res));
   }
 }
