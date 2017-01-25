@@ -383,18 +383,23 @@ public class Moderate {
   }
 
   /*  [Prob 16.18]
-  *   Q) pattern Matching
+  *   Q) pattern Matching : given 2 strings a pattern and a value, you have to find out if the value is following the pattern
+  *   EG : catgocatgocat == [ababa] pattern
+   *  A) as the pattern contains  only 2 variables a & b, if we can figure out any one we will automatically figure the other one
+   *  So we first begin from value string one by one char to see if we split with the acummalted part(partA) will we be left with only
+    *  other type of string (partB). If this happens we have found the strings that constitute the 2 parts. Now we just create
+    *  another string using this parts in the sequence as given by the pattern and see if we arrive at the same string as the
+    *  oroginal value, if yes then the given value follows the given pattern.
   * */
   public static boolean patternMatch(String value, String pattern) {
     int len = 0;
     StringBuilder trav;
     String partB = "";
     boolean onematch = false;
+    trav = new StringBuilder();
     while (len < value.length()) {
-      trav = new StringBuilder();
       trav.append(value.charAt(len));
       String[] splitResult = value.split(trav.toString());
-
       //check if all are same
       for (int i = splitResult.length - 1; i >= 1; i--) {
         onematch = splitResult[splitResult.length - 1].equalsIgnoreCase(splitResult[i]);
@@ -404,7 +409,7 @@ public class Moderate {
       if (onematch) {
         partB = splitResult[splitResult.length - 1];
         String partA = trav.toString();
-        //checl to see if pattern begins from b , if yes then swap part A & B
+        //check to see if pattern begins from b , if yes then swap part A & B
         if (pattern.charAt(0) == 'b') {
           String temp = partA;
           partA = partB;
