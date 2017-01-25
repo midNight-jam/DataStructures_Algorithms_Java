@@ -361,7 +361,11 @@ public class Moderate {
   }
 
   /*[Prob 16.17]
-  * Q) Contiguos sequence
+  * Q) Largest Sum Subarray Contiguos
+  * A) To calculate sum till index i, we can use sum we have already calculated till i-1 index.
+      If adding element at i makes the sum negative, we would drop the element, as having this element in the sub array will
+      only decrease the already existing sum as well as sum all the elements subsequent of this element. Hence we would start
+      afresh from i+1 element
   * */
   public static int largestSumContiguousSubArray(int[] arr) {
     int sum = 0;
