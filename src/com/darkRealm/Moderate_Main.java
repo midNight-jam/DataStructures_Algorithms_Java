@@ -136,4 +136,18 @@ public class Moderate_Main {
     int maxPopYear = Moderate.getMaxPopulationYearLeaner(births, deaths);
     System.out.println(" max Pop year " + maxPopYear);
   }
+
+  public static void testSumSwap() {
+//    int[] arr = new int[]{4, 1, 2, 1, 1, 2};
+//    int[] brr = new int[]{3, 6, 3, 3};
+
+//    int[] arr = new int[]{6, 3, 2, 2, 1};
+//    int[] brr = new int[]{3, 1, 8, 2, 4};
+
+    int[] brr = new int[]{1, 2, 3, 4, 5};
+    int[] arr = new int[]{1, 3, 4, 10, 11};
+
+    int[] res = Moderate.getSumSwapPair(arr, brr);
+    System.out.println(Arrays.toString(res));
+  }
 }

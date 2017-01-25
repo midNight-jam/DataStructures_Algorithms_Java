@@ -1,5 +1,6 @@
 package com.darkRealm.Moderate;
 
+import com.darkRealm.Sorting_and_Searching.BinarySearchUtil;
 import com.darkRealm.Stacks_and_queues.MyQueue;
 import com.darkRealm.Stacks_and_queues.MyStack;
 import com.darkRealm.Trie.Trie;
@@ -540,7 +541,6 @@ public class Moderate {
         people++;
         year = birthYears[bi];
         bi++;
-
       } else if (birthYears[bi] == deathYears[di]) {
         bi++;
         di++;
@@ -555,5 +555,53 @@ public class Moderate {
       }
     }
     return maxPopulationYear;
+  }
+
+  /*  [Prob 16.21]
+  *   Q) Sum Swap : Given 2 arrays of integers fins a pair of values (one from each array), that you can swap to give
+ *   both arrays the same sum.
+ *  A) First we will get sum for both the arrays SumA, SumB. Now in order to get both arrays to same sum both arrays sum
+ *  should reach the avg of SumA+SumB lets say Sum A  = 12 SumB = 14 in order to reach equal sum their sum should be (12+14)/2 == 13
+ *  Now as we have calculated how much the sum should be, we now have to exchange some vlaues. AS said we have to swap, which
+  *  means a value will go out and another will come in. So in order to make arrays sum equal we search for a value in the
+   *  other array that is equal to (diff+outgoingValue), if nay such value exisits in other array. then this exchange will
+   *  bring both arrays to equal sum.
+  * */
+  public static int[] getSumSwapPair(int[] arr, int[] brr) {
+    Arrays.sort(arr);
+    Arrays.sort(brr);
+    int sumA, sumB;
+    sumA = sumB = 0;
+    for (int i = 0; i < arr.length; i++) {
+      sumA += arr[i];
+    }
+
+    for (int i = 0; i < brr.length; i++) {
+      sumB += brr[i];
+    }
+    int sameLevel = ((sumA + sumB) / 2);
+    int diff = Math.abs(sameLevel - sumA); // would be same for both
+    //now find any such x,y so that x - y == diff
+    // we begin with smaller array giving out a small portion & taking in a big chunk
+    if (sumA < sumB) {
+      return getSumPair(arr, brr, diff);
+    } else {
+      return getSumPair(brr, arr, diff);
+    }
+  }
+
+  private static int[] getSumPair(int[] arr, int[] brr, int diff) {
+    int require = 0;
+    int outgoing = 0;
+    for (int i = 0; i < arr.length; i++) {
+      outgoing = arr[i];
+      require = Math.abs(diff + outgoing);
+      // binary search for required in the other array
+      int res = BinarySearchUtil.binarySearch(brr, require);
+      if (res == require) {
+        return new int[]{outgoing, require};
+      }
+    }
+    return new int[]{0, 0};
   }
 }
