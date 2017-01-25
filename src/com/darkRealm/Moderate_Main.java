@@ -115,7 +115,15 @@ public class Moderate_Main {
 //    String pattern = "abab";
     String val = "catgocatgocat";
     String pattern = "ababa";
-    boolean res = Moderate.patternMatch(val,pattern);
-    System.out.println("Val {"+val+"} is pattern of type ["+pattern +"] res - "+res);
+    boolean res = Moderate.patternMatch(val, pattern);
+    System.out.println("Val {" + val + "} is pattern of type [" + pattern + "] res - " + res);
+  }
+
+  public static void testOldKeyboard() {
+//    int n = 8733;
+//    int n = 228;
+    int n = 364;
+    String[] res = Moderate.OldCellPhoneKeyBoardT9(n);
+    System.out.println("N : " + n + "   Sugg : " + Arrays.toString(res));
   }
 }

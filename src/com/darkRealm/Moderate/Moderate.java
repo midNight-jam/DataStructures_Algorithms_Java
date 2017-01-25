@@ -1,6 +1,9 @@
 package com.darkRealm.Moderate;
 
 import com.darkRealm.Stacks_and_queues.MyQueue;
+import com.darkRealm.Stacks_and_queues.MyStack;
+import com.darkRealm.Trie.Trie;
+import com.darkRealm.Trie.TrieNode;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -433,5 +436,59 @@ public class Moderate {
       onematch = false;
     }
     return false;
+  }
+
+  /*  [prob 16.20]
+  *   Q) Create a key board of old cellphones, the method will be given an integer, we have to return the list of valid words
+  *   that can be formed with that integer
+  *   A) will use Trie, but would read it ina different way using the integer. By that I mean, we will only traverse the
+  *   portion among the triechilds inidices that are available by the no.
+  * */
+  public static String[] OldCellPhoneKeyBoardT9(int n) {
+    // assuming that we have a prepopulated Trie with valid english words
+    MyStack<Integer> travNos = new MyStack<>();
+    while (n > 0) {
+      travNos.push(n % 10);
+      n = n / 10;
+    }
+    ArrayList<String> words = new ArrayList<>();
+    HashMap<Integer, String> keypadMappedWords = new HashMap<>();
+
+    keypadMappedWords.put(1, "");
+    keypadMappedWords.put(2, "abc");
+    keypadMappedWords.put(3, "def");
+    keypadMappedWords.put(4, "ghi");
+    keypadMappedWords.put(5, "jkl");
+    keypadMappedWords.put(6, "mno");
+    keypadMappedWords.put(7, "pqrs");
+    keypadMappedWords.put(8, "tuv");
+    keypadMappedWords.put(9, "wxyz");
+
+    Trie trie = new Trie();
+    trie.insert("tree");
+    trie.insert("cat");
+    trie.insert("dog");
+    trie.insert("used");
+    traverseTrie(trie._root, keypadMappedWords, travNos, words);
+    String[] allValidWords = new String[words.size()];
+    return words.toArray(allValidWords);
+  }
+
+  private static void traverseTrie(TrieNode trie, HashMap<Integer, String> keypad,
+                                   MyStack<Integer> travNos, ArrayList<String> words) {
+    if (!travNos.isEmpty()) {
+      int travIndex = travNos.pop();
+      String travChars = keypad.get(travIndex);
+      char trav;
+      for (int i = 0; i < travChars.length(); i++) {
+        trav = travChars.charAt(i);
+        int index = trav - 'a';
+        if (trie._childs[index] != null) {
+          traverseTrie(trie._childs[index], keypad, travNos, words);
+        }
+      }
+      travNos.push(travIndex);  // add back the no to the stack, required to be used by other running recursion
+    }
+    words.add(trie.getValue());
   }
 }

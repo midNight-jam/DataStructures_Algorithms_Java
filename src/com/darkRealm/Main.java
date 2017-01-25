@@ -346,7 +346,6 @@ public class Main {
 //    Sorting_and_Searching_Main.testSortedMatrixSearch();
 //    Sorting_and_Searching_Main.testSparseSearch();
 //    Sorting_and_Searching_Main.testGroupAnagrams();
-
     Sorting_and_Searching_Main.testFindDuplicates();
   }
 
@@ -363,6 +362,7 @@ public class Main {
 //    Moderate_Main.testDivide();
 //    Moderate_Main.testPondSizes();
 //    Moderate_Main.testLSCS();
-    Moderate_Main.testPatternMatching();
+//    Moderate_Main.testPatternMatching();
+    Moderate_Main.testOldKeyboard();
   }
 }
