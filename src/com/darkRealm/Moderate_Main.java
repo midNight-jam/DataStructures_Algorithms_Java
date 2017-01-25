@@ -109,4 +109,13 @@ public class Moderate_Main {
     int maxSum = Moderate.largestSumContiguousSubArray(arr);
     System.out.println("Max Sum : " + maxSum + "   Array : " + Arrays.toString(arr));
   }
+
+  public static void testPatternMatching() {
+//    String val = "catgocatgo";
+//    String pattern = "abab";
+    String val = "catgoZZZZcatgoZZZZ";
+    String pattern = "abab";
+    boolean res = Moderate.patternMatch(val,pattern);
+    System.out.println("Val {"+val+"} is pattern of type ["+pattern +"] res - "+res);
+  }
 }

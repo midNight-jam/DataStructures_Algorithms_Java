@@ -381,4 +381,52 @@ public class Moderate {
     }
     return maxSum;
   }
+
+  /*  [Prob 16.18]
+  *   Q) pattern Matching
+  * */
+  public static boolean patternMatch(String value, String pattern) {
+    int len = 0;
+    StringBuilder trav;
+    String partB = "";
+    boolean onematch = false;
+    while (len < value.length()) {
+      trav = new StringBuilder();
+      trav.append(value.charAt(len));
+      String[] splitResult = value.split(trav.toString());
+
+      //check if all are same
+      for (int i = splitResult.length - 1; i >= 1; i--) {
+        onematch = splitResult[splitResult.length - 1].equalsIgnoreCase(splitResult[i]);
+        if (!onematch) break;
+      }
+      // try creating the value using current calculated parts
+      if (onematch) {
+        partB = splitResult[splitResult.length - 1];
+        String partA = trav.toString();
+        //checl to see if pattern begins from b , if yes then swap part A & B
+        if (pattern.charAt(0) == 'b') {
+          String temp = partA;
+          partA = partB;
+          partB = temp;
+        }
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < pattern.length(); i++) {
+          if (pattern.charAt(i) == 'a') {
+            res.append(partA);
+          } else {
+            res.append(partB);
+          }
+        }
+        if (res.toString().equalsIgnoreCase(value)) {
+          System.out.println("part : " + partA + "   part: " + partB);
+          System.out.println("Pattern : " + pattern + "  Val : " + res);
+          return true;
+        }
+      }
+      len++;
+      onematch = false;
+    }
+    return false;
+  }
 }
