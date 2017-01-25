@@ -289,9 +289,13 @@ public class Moderate {
   }
 
   /*  [prob 16.19]
-  *   Q) Pond Sizes :
+  *   Q) Pond Sizes : An integer matrix representing the a plot of land(world). where each value represents the height
+  *   above sea level. A value of 0 denotes water. A pond is a region of water connected vertically, horizontally or
+  *   diagonally. The size of the pond is the total number of connected water cells. write a method to compute the sizes
+  *   of all the pond in the matrix.
+  *   A) will do a BFS from first encountered pond & keep track of pond size. will constinue same till all ponds are not
+  *   visited.
   * */
-
   public static Integer[] pondSizes(int[][] world, int water) {
     boolean[][] visited = new boolean[world.length][world[0].length];
     MyQueue<AbstractMap.SimpleEntry<Integer, Integer>> que = new MyQueue<>();
@@ -354,5 +358,23 @@ public class Moderate {
     Integer[] allPonds = new Integer[pondSizes.size()];
     pondSizes.toArray(allPonds);
     return allPonds;
+  }
+
+  /*[Prob 16.17]
+  * Q) Contiguos sequence
+  * */
+  public static int largestSumContiguousSubArray(int[] arr) {
+    int sum = 0;
+    int maxSum = Integer.MIN_VALUE;
+    for (int i = 0; i < arr.length; i++) {
+      sum += arr[i];
+      if (sum > maxSum) {
+        maxSum = sum;
+      }
+      if (sum < 0) {
+        sum = 0;
+      }
+    }
+    return maxSum;
   }
 }

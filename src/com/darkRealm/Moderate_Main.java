@@ -94,7 +94,19 @@ public class Moderate_Main {
         {0, 1, 0, 1}
     };
     int waterValue = 0;
-    Integer[] res = Moderate.pondSizes(world,waterValue);
+    Integer[] res = Moderate.pondSizes(world, waterValue);
     System.out.println("Pond Sizes : " + Arrays.toString(res));
+  }
+
+  public static void testLSCS() {
+    int[] arr = new int[]{2, -8, 3, -2, 4, -10};
+//    int[] arr = new int[]{2, -3, 4, -1, -2, 1, 5, -3};
+//    int[] arr = new int[]{1, 3, -5, 4, 6, -1, 2, -7, 13, -3};
+//    int[] arr = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
+//    int[] arr = new int[]{1, 2, -3, -4, 2, 7, -2, 3};
+//    int[] arr = new int[]{ -2, -3, -4, -2, -7, -2, -3,-11 };
+
+    int maxSum = Moderate.largestSumContiguousSubArray(arr);
+    System.out.println("Max Sum : " + maxSum + "   Array : " + Arrays.toString(arr));
   }
 }
