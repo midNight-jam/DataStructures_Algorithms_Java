@@ -491,4 +491,69 @@ public class Moderate {
     }
     words.add(trie.getValue());
   }
+
+  /*[Prob 16.10]
+  * Q) Living People : Given a list of peoples birth and deaths we have to find a  year with the most numbe of people alive.
+  * All peoples are born between 1900 - 2000 (inclusive)101 year span. We have to find which year had the most population.
+  * A) [Approach 1 : not effective] will create a 101 year sapn int array, for each birth to death will increment those  year's  count by 1. And while
+  * increasing count will keep track of max population & its year
+  * */
+  public static int getMaxPopulationYear(int[] birthYears, int[] deathYears) {
+    int[] hundredYearSpan = new int[101]; // inclusive as asked from 1900-2000
+    int start, end;
+    int maxPopulationYear = -1;
+    int maxPopulation = Integer.MIN_VALUE;
+    for (int i = 0; i < birthYears.length; i++) {
+      start = birthYears[i] - 1900;
+      end = deathYears[i] - 1900;
+      while (start <= end) {
+        hundredYearSpan[start]++;
+        if (hundredYearSpan[start] > maxPopulation) {
+          maxPopulationYear = start;
+          maxPopulation = hundredYearSpan[start];
+        }
+        start++;
+      }
+    }
+    return 1900 + maxPopulationYear;
+  }
+
+  /*[Prob 16.10]
+  * Q) Living People : Given a list of peoples birth and deaths we have to find a  year with the most numbe of people alive.
+  * All peoples are born between 1900 - 2000 (inclusive)101 year span. We have to find which year had the most population.
+  * A) [Approach 2 : less Space but sorting] we will first sort the birth  & death year , while fetching min among both
+  * if from birtyear we increment population count & compare to update max population. Nad decrement populationCount when
+  * getting a death year, when both birth & death  year are same then we dont count that person in population.
+  * */
+  public static int getMaxPopulationYearLeaner(int[] birthYears, int[] deathYears) {
+    Arrays.sort(birthYears);
+    Arrays.sort(deathYears);
+    int maxPopulation, maxPopulationYear;
+    int bi, di;
+    bi = di = 0;
+    int people = 0;
+    maxPopulation = 0;
+    maxPopulationYear = 0;
+    int year = 0;
+    while (bi < birthYears.length && di < deathYears.length) {
+      if (birthYears[bi] < deathYears[di]) {
+        people++;
+        year = birthYears[bi];
+        bi++;
+
+      } else if (birthYears[bi] == deathYears[di]) {
+        bi++;
+        di++;
+      } else {
+        people--;
+        di++;
+      }
+      if (people > maxPopulation) {
+        System.out.println("Max people " + people);
+        maxPopulation = people;
+        maxPopulationYear = year;
+      }
+    }
+    return maxPopulationYear;
+  }
 }

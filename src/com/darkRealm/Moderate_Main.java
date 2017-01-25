@@ -126,4 +126,14 @@ public class Moderate_Main {
     String[] res = Moderate.OldCellPhoneKeyBoardT9(n);
     System.out.println("N : " + n + "   Sugg : " + Arrays.toString(res));
   }
+
+  public static void testMaxPopulationYear() {
+    int[] births = new int[]{1908, 1919, 1912, 1930, 1905, 1903};
+    int[] deaths = new int[]{1909, 1922, 1920, 1945, 1910, 1912};
+//    int[] births = new int[]{2000, 2000};
+//    int[] deaths = new int[]{2000, 2000};
+//    int maxPopYear = Moderate.getMaxPopulationYear(births, deaths);
+    int maxPopYear = Moderate.getMaxPopulationYearLeaner(births, deaths);
+    System.out.println(" max Pop year " + maxPopYear);
+  }
 }
