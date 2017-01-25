@@ -85,4 +85,16 @@ public class Moderate_Main {
     int res = Moderate.divideNumbers(a, b);
     System.out.println("a : " + a + " b " + b + " Divide a/b = " + res);
   }
+
+  public static void testPondSizes() {
+    int[][] world = new int[][]{
+        {0, 2, 1, 0},
+        {0, 1, 0, 1},
+        {1, 1, 0, 1},
+        {0, 1, 0, 1}
+    };
+    int waterValue = 0;
+    Integer[] res = Moderate.pondSizes(world,waterValue);
+    System.out.println("Pond Sizes : " + Arrays.toString(res));
+  }
 }

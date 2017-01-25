@@ -1,5 +1,9 @@
 package com.darkRealm.Moderate;
 
+import com.darkRealm.Stacks_and_queues.MyQueue;
+
+import java.util.AbstractMap;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -282,5 +286,73 @@ public class Moderate {
       divRes++;
     }
     return getSignedResult(a, b, divRes - 1);
+  }
+
+  /*  [prob 16.19]
+  *   Q) Pond Sizes :
+  * */
+
+  public static Integer[] pondSizes(int[][] world, int water) {
+    boolean[][] visited = new boolean[world.length][world[0].length];
+    MyQueue<AbstractMap.SimpleEntry<Integer, Integer>> que = new MyQueue<>();
+    int rows = world.length - 1;
+    int cols = world[0].length - 1;
+    ArrayList<Integer> pondSizes = new ArrayList<>();
+    for (int r = 0; r <= rows; r++) {
+      for (int c = 0; c <= cols; c++) {
+        if (world[r][c] == 0 && visited[r][c] == false) {
+          AbstractMap.SimpleEntry cords = new AbstractMap.SimpleEntry(r, c);
+          que.enqueue(cords);
+          int pondSize = 0;
+          int i, j;
+          while (!que.isEmpty()) {
+            AbstractMap.SimpleEntry pop = que.deque();
+            if (!visited[(int) pop.getKey()][(int) pop.getValue()]) {
+              pondSize++;
+              i = (int) pop.getKey();
+              j = (int) pop.getValue();
+              visited[i][j] = true;
+
+              //top
+              if (i - 1 >= 0 && world[i - 1][j] == water && visited[i - 1][j] == false) {
+                que.enqueue(new AbstractMap.SimpleEntry<Integer, Integer>(i, j));
+              }
+              //top right
+              if (i - 1 >= 0 && j + 1 <= cols && world[i - 1][j + 1] == water && visited[i - 1][j + 1] == false) {
+                que.enqueue(new AbstractMap.SimpleEntry<Integer, Integer>(i - 1, j + 1));
+              }
+              //right
+              if (j + 1 <= cols && world[i][j + 1] == water && visited[i][j + 1] == false) {
+                que.enqueue(new AbstractMap.SimpleEntry<Integer, Integer>(i, j + 1));
+              }
+              //bottom right
+              if (i + 1 <= rows && j + 1 <= cols && world[i + 1][j + 1] == water && visited[i + 1][j + 1] == false) {
+                que.enqueue(new AbstractMap.SimpleEntry<Integer, Integer>(i, j));
+              }
+              //bottom
+              if (i + 1 <= rows && world[i + 1][j] == water && visited[i + 1][j] == false) {
+                que.enqueue(new AbstractMap.SimpleEntry<Integer, Integer>(i + 1, j));
+              }
+              //bottom left
+              if (i + 1 <= rows && j - 1 >= 0 && world[i + 1][j - 1] == water && visited[i + 1][j - 1] == false) {
+                que.enqueue(new AbstractMap.SimpleEntry<Integer, Integer>(i + 1, j - 1));
+              }
+              //left
+              if (j - 1 >= 0 && world[i][j - 1] == water && visited[i][j - 1] == false) {
+                que.enqueue(new AbstractMap.SimpleEntry<Integer, Integer>(i, j - 1));
+              }
+              //top left
+              if (i - 1 >= 0 && j - 1 >= 0 && world[i - 1][j - 1] == water && visited[i - 1][j - 1] == false) {
+                que.enqueue(new AbstractMap.SimpleEntry<Integer, Integer>(i - 1, j - 1));
+              }
+            }
+          }
+          pondSizes.add(pondSize);
+        }
+      }
+    }
+    Integer[] allPonds = new Integer[pondSizes.size()];
+    pondSizes.toArray(allPonds);
+    return allPonds;
   }
 }
