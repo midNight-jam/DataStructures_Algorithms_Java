@@ -4,8 +4,8 @@ package darkRealm.CTCI.LinkedLists;
  * Created by Jayam on 1/4/2017.
  */
 public class LinkedList {
-  Node head;
-  Node tail;
+  public Node head;
+  public Node tail;
   int size;
 
   public void appendToTail(Node d) {

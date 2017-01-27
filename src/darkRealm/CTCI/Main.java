@@ -3,6 +3,7 @@ package darkRealm.CTCI;
 import darkRealm.CTCI.BigO.BitsUtil;
 import darkRealm.CTCI.BigO.MathUtil;
 import darkRealm.CTCI.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
+import darkRealm.LeetCode.LeetCodeMain;
 
 import java.util.*;
 
@@ -43,7 +44,8 @@ public class Main {
 //    int res = maxTweet(new int[]{1, 2, 3}, 3);
 //    int res = maxTweet(new int[]{3, 1, 2, 1}, 4);
 
-    doModerate();
+//    doModerate();
+    doLeetCode();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -364,5 +366,9 @@ public class Main {
 //    Moderate_Main.testMaxPopulationYear();
 //    Moderate_Main.testSumSwap();
     Moderate_Main.testMasterMind();
+  }
+
+  public static void doLeetCode() {
+    LeetCodeMain.run();
   }
 }
