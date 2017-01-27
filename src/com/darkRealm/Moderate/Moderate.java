@@ -626,4 +626,65 @@ public class Moderate {
     hits[1] = pseudohit;
     return hits;
   }
+
+  /*  [Prob 16.3]
+  *   Q) Intersection : Given
+  * */
+
+  public static Point lineSegmentIntersection(Point startA, Point endA, Point startB, Point endB) {
+    // assumption if intersection point is betweet start1 & start2 then two segments intersect
+    // so we have to bring our cordinates in increasing order
+
+    if (startA.x > endA.x) {
+      Point temp = startA;
+      startA = endA;
+      endA = temp;
+    }
+    if (startB.x > endB.x) {
+      Point temp = startB;
+      startB = endB;
+      endB = temp;
+    }
+
+    if (startA.x > startB.x) {
+      Point temp = startA;
+      startA = startB;
+      startB = temp;
+      temp = endA;
+      endA = endB;
+      endB = temp;
+    }
+
+    Line a = new Line(startA, endA);
+    Line b = new Line(startB, endB);
+
+    // if lines are parallel
+    if (a.slope == b.slope) {
+      return null;
+    }
+
+    double x = (b.yintercept - a.yintercept) / (a.slope - b.slope);
+    double y = x * a.slope + a.yintercept;
+    return new Point((int) x, (int) y);
+  }
+
+  public static class Line {
+    double yintercept;
+    double slope;
+
+    public Line(Point start, Point end) {
+      slope = (end.y - start.y) / (end.x - start.y);
+      yintercept = end.y - slope * start.x;
+    }
+  }
+
+  public static class Point {
+    int x;
+    int y;
+
+    Point(int xx, int yy) {
+      x = xx;
+      y = yy;
+    }
+  }
 }
