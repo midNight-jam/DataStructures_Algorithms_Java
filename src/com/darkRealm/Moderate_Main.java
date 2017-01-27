@@ -150,4 +150,13 @@ public class Moderate_Main {
     int[] res = Moderate.getSumSwapPair(arr, brr);
     System.out.println(Arrays.toString(res));
   }
+
+  public static void testMasterMind() {
+//    String sol = "RGBY";
+    String sol = "YRGB";
+    String guess = "GGYY";
+    int[] res = Moderate.masterMind(sol, guess);
+    System.out.println(sol + "  " + guess);
+    System.out.println(Arrays.toString(res));
+  }
 }

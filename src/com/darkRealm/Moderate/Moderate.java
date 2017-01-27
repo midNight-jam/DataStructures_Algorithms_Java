@@ -6,10 +6,7 @@ import com.darkRealm.Stacks_and_queues.MyStack;
 import com.darkRealm.Trie.Trie;
 import com.darkRealm.Trie.TrieNode;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * Created by Jayam on 1/23/2017.
@@ -603,5 +600,30 @@ public class Moderate {
       }
     }
     return new int[]{0, 0};
+  }
+
+
+  /*  [Prob 16.15]
+  *   Q) MasterMind : The gam of master mind have to match a pattern to a given value, for each char matching in pattern
+  *   at same position in value we consider hit, but if the char is not present at the same position in value, but is
+  *   present in value somewhere else then we consider pseudohit, else we dont consider anything.
+  * */
+  public static int[] masterMind(String solution, String guess) {
+    int hit = 0;
+    int pseudohit = 0;
+    char s, g;
+    for (int i = 0; i < solution.length(); i++) {
+      s = solution.charAt(i);
+      g = guess.charAt(i);
+      if (s == g) {
+        hit++;
+      } else if (guess.indexOf(s) > -1) {
+        pseudohit++;
+      }
+    }
+    int[] hits = new int[2];
+    hits[0] = hit;
+    hits[1] = pseudohit;
+    return hits;
   }
 }

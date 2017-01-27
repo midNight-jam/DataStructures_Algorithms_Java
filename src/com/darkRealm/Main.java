@@ -365,6 +365,7 @@ public class Main {
 //    Moderate_Main.testPatternMatching();
 //    Moderate_Main.testOldKeyboard();
 //    Moderate_Main.testMaxPopulationYear();
-    Moderate_Main.testSumSwap();
+//    Moderate_Main.testSumSwap();
+    Moderate_Main.testMasterMind();
   }
 }
