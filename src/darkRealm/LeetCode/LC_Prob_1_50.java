@@ -70,8 +70,8 @@ public class LC_Prob_1_50 {
     len = maxLen = 0;
     StringBuilder part = new StringBuilder();
     for (int i = 0; i < s.length(); i++) {
-      String ch = new String(new char[]{s.charAt(i)});
-      int lastFound = part.lastIndexOf(ch);
+      String ch = s.charAt(i) + "";
+      int lastFound = part.lastIndexOf(s.charAt(i) + "");
       if (lastFound > -1) {
         String newPart = part.substring(lastFound + 1);
         part = new StringBuilder(newPart);
@@ -166,7 +166,7 @@ public class LC_Prob_1_50 {
     return maxPalindromeString;
   }
 
-  /*  [Prob 6 ] ZigZag Conversion
+  /*  [Prob 6] ZigZag Conversion
   * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
   * (you may want to display this pattern in a fixed font for better legibility)
   * P   A   H   N
@@ -179,7 +179,7 @@ public class LC_Prob_1_50 {
   * */
   public static String zigZagConversion(String str, int numRows) {
     StringBuilder[] zigZag = new StringBuilder[numRows];
-    for(int i = 0; i<zigZag.length;i++){
+    for (int i = 0; i < zigZag.length; i++) {
       zigZag[i] = new StringBuilder();
     }
     char c;
@@ -214,5 +214,28 @@ public class LC_Prob_1_50 {
     }
 
     return res.toString();
+  }
+
+  /*  [Prob 7]
+  * Reverse digits of an integer.
+  * Example1: x = 123, return 321
+  * Example2: x = -123, return -321
+  * */
+  public static int reverseInteger(int x) {
+    int result = 0;
+    int t = Math.abs(x);
+    while (t != 0) {
+      if ((result * 10) / 10 != result) {
+        return 0;
+      }
+      result *= 10;
+      if ((result + t % 10) < 0) {
+        return 0;
+      }
+      result += t % 10;
+      t /= 10;
+    }
+
+    return x < 0 ? result * -1 : result;
   }
 }

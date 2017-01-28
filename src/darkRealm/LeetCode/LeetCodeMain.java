@@ -11,7 +11,8 @@ public class LeetCodeMain {
 //    testAddTwoNumbers();
 //    testlongestSubstring();
 //    testLongestPalindrome();
-    testZigZag();
+//    testZigZag();
+    testReverseInteger();
   }
 
   public static void testAddTwoNumbers() {
@@ -73,5 +74,14 @@ public class LeetCodeMain {
     String res = LC_Prob_1_50.zigZagConversion(str, k);
     System.out.print("str : " + str + " Level : " + k);
     System.out.print("  res : " + res);
+  }
+
+  public static void testReverseInteger() {
+    int x = -123;
+//    int x = Integer.MAX_VALUE;
+//    int x = 10;
+//    int x = 1534236469;
+    int res = LC_Prob_1_50.reverseInteger(x);
+    System.out.println(" x : " + x + "   res : " + res);
   }
 }
