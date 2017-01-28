@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7ad46dd-fe3d-4dce-8f09-eab7873dbcb8" name="Default" comment="prob 16.21: Sum Swap between 2 arrays to bring their sum equal to each other">
+    <list default="true" id="e7ad46dd-fe3d-4dce-8f09-eab7873dbcb8" name="Default" comment="Prob 2 : Longest unique Substring &#10;Prob 1 : addition of 2 nos as linked list">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/darkRealm/Main.java" afterPath="$PROJECT_DIR$/src/com/darkRealm/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java" afterPath="$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/darkRealm/Moderate_Main.java" afterPath="$PROJECT_DIR$/src/com/darkRealm/Moderate_Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_1_50.java" afterPath="$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_1_50.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/LeetCodeMain.java" afterPath="$PROJECT_DIR$/src/darkRealm/LeetCode/LeetCodeMain.java" />
     </list>
     <list id="95629eee-3038-4014-9303-355540637645" name="Rejected commit: Default" comment="adding the minStack Data Structure" />
     <ignored path="megaCTCI.iws" />
@@ -29,68 +28,95 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="367" column="32" lean-forward="true" selection-start-line="367" selection-start-column="32" selection-end-line="367" selection-end-column="32" />
+            <state relative-caret-position="307">
+              <caret line="371" column="19" lean-forward="true" selection-start-line="371" selection-start-column="19" selection-end-line="371" selection-end-column="19" />
               <folding>
-                <element signature="e#511#522#0" expanded="false" />
                 <element signature="method#doArray_and_Strings_Main#0;class#Main#0" expanded="false" />
-                <element signature="e#1502#1549#0" expanded="false" />
+                <element signature="e#1379#1426#0" expanded="false" />
                 <element signature="method#doStack_and_Queue#0;class#Main#0" expanded="false" />
-                <element signature="e#4077#4119#0" expanded="false" />
+                <element signature="e#3954#3996#0" expanded="false" />
                 <element signature="method#doRecursion_DP#0;class#Main#0" expanded="false" />
-                <element signature="e#4487#4538#0" expanded="false" />
-                <element signature="e#4669#4708#0" expanded="false" />
+                <element signature="e#4364#4415#0" expanded="false" />
+                <element signature="e#4546#4585#0" expanded="false" />
                 <element signature="method#doTrees_Graph#0;class#Main#0" expanded="false" />
-                <element signature="e#5416#5477#0" expanded="false" />
+                <element signature="e#5293#5354#0" expanded="false" />
                 <element signature="method#doMathUtils#0;class#Main#0" expanded="false" />
                 <element signature="method#getTime#0;class#Main#0" expanded="false" />
-                <element signature="e#7708#7764#0" expanded="false" />
+                <element signature="e#7585#7641#0" expanded="false" />
                 <element signature="method#minLenUnSorted#0;class#Main#0" expanded="false" />
-                <element signature="e#10696#10697#0" expanded="true" />
-                <element signature="e#10742#10743#0" expanded="true" />
+                <element signature="method#doBitsMain#0;class#Main#0" expanded="false" />
+                <element signature="e#9092#9134#0" expanded="false" />
+                <element signature="method#doSortingAndSearching#0;class#Main#0" expanded="false" />
+                <element signature="e#10670#10719#0" expanded="false" />
+                <element signature="method#doModerate#0;class#Main#0" expanded="false" />
+                <element signature="e#11358#11398#0" expanded="false" />
+                <element signature="e#12054#12055#0" expanded="true" />
+                <element signature="e#12082#12083#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Moderate_Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Moderate_Main.java">
+      <file leaf-file-name="LeetCodeMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/darkRealm/LeetCode/LeetCodeMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="149" column="38" lean-forward="true" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+            <state relative-caret-position="378">
+              <caret line="56" column="40" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
               <folding>
-                <element signature="docComment;class#Moderate_Main#0" expanded="false" />
-                <element signature="method#testWordFrequency#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="method#testTicTacWin#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="method#testFactorialZeroes#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="method#testSmallestDifference#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="e#1114#1158#0" expanded="false" />
-                <element signature="method#testNumberMax#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="e#1458#1499#0" expanded="false" />
-                <element signature="method#testEnglishInt#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="method#testSubstract#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="method#testMulitply#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="method#testDivide#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="method#testPondSizes#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="method#testLSCS#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="e#2909#2965#0" expanded="false" />
-                <element signature="method#testPatternMatching#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="e#3407#3439#0" expanded="false" />
-                <element signature="method#testOldKeyboard#0;class#Moderate_Main#0" expanded="false" />
-                <element signature="e#3731#3750#0" expanded="false" />
+                <element signature="docComment;class#LeetCodeMain#0" expanded="false" />
+                <element signature="method#testAddTwoNumbers#0;class#LeetCodeMain#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Moderate.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java">
+      <file leaf-file-name="LC_Prob_1_50.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_1_50.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="591" column="0" lean-forward="true" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+            <state relative-caret-position="1854">
+              <caret line="163" column="5" lean-forward="true" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
               <folding>
+                <element signature="docComment;class#LC_Prob_1_50#0" expanded="false" />
+                <element signature="method#AddTwoNumbers#0;class#LC_Prob_1_50#0" expanded="false" />
+                <element signature="e#774#798#0" expanded="false" />
+                <element signature="method#addTwoNodes#0;class#LC_Prob_1_50#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/LinkedLists/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/LinkedLists/LinkedList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding>
+                <element signature="e#1082#1083#0" expanded="false" />
+                <element signature="e#1103#1104#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Moderate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5338">
+              <caret line="644" column="5" lean-forward="false" selection-start-line="644" selection-start-column="5" selection-end-line="644" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="false" />
                 <element signature="docComment;class#Moderate#0" expanded="false" />
                 <element signature="method#numberSwapper#0;class#Moderate#0" expanded="false" />
                 <element signature="method#wordFrequency#0;class#Moderate#0" expanded="false" />
@@ -107,42 +133,6 @@
                 <element signature="method#pondSizes#0;class#Moderate#0" expanded="false" />
                 <element signature="method#largestSumContiguousSubArray#0;class#Moderate#0" expanded="false" />
                 <element signature="method#patternMatch#0;class#Moderate#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trie.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trie/Trie.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-              <folding>
-                <element signature="e#177#178#0" expanded="true" />
-                <element signature="e#215#216#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrieNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trie/TrieNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="String.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/String.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="1237" column="15" lean-forward="false" selection-start-line="1237" selection-start-column="15" selection-end-line="1237" selection-end-column="15" />
-              <folding>
-                <element signature="e#47538#47539#0" expanded="true" />
-                <element signature="e#47602#47603#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,6 +164,8 @@
       <find>shortestPathBetweenWordsBFS</find>
       <find>shortestPathBetweenWords</find>
       <find>3</find>
+      <find>working in LC</find>
+      <find>soo</find>
     </findStrings>
     <replaceStrings>
       <replace>DARKLOGGER</replace>
@@ -192,12 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/darkRealm/JLogger.java" />
-        <option value="$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/MinStack.java" />
-        <option value="$PROJECT_DIR$/src/com/darkRealm/DarkLogger.java" />
-        <option value="$PROJECT_DIR$/megaCTCI.log" />
-        <option value="$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/SetStacks.java" />
-        <option value="$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/MyStack.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/Trees_and_Graphs_Main.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/TNodeWeight.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/WTree.java" />
@@ -243,6 +229,12 @@
         <option value="$PROJECT_DIR$/src/com/darkRealm/Main.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Moderate_Main.java" />
         <option value="$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/CTCI/Main.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/CTCI/LinkedLists/Node.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/CTCI/LinkedLists/LinkedList.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/LeetCode/LeetCodeMain.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_1_50.java" />
       </list>
     </option>
   </component>
@@ -308,8 +300,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -339,6 +332,10 @@
               <option name="myItemId" value="darkRealm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LeetCode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -358,13 +355,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Trie" />
+              <option name="myItemId" value="CTCI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="megaCTCI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="megaCTCI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="darkRealm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CTCI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkedLists" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,7 +402,7 @@
       <recent name="D:\_Darkspace\JavaProjs\megaCTCI\src\com\darkRealm\BigO" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="com.darkRealm.Main" />
@@ -396,6 +418,26 @@
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="darkRealm.CTCI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="darkRealm.CTCI.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="megaCTCI" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -633,12 +675,14 @@
       <envs />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -684,41 +728,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1475453800513</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Prob 6.10 -1000 bottles, find the poisoned one">
-      <created>1484035774255</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1484035774255</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Prob 8.14 : Boolean Expresssion Evalution">
-      <created>1484090795447</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1484090795448</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Prob - All possible combinations of valid parenthesis on boolean expression">
-      <created>1484096669452</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1484096669452</updated>
-    </task>
-    <task id="LOCAL-00070" summary="Prob 8.14 - optimized with hashmap">
-      <created>1484110935358</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1484110935358</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Leaner MergeSort">
-      <created>1484111151463</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1484111151463</updated>
     </task>
     <task id="LOCAL-00072" summary="Leaner MergeSort">
       <created>1484111396500</created>
@@ -1028,7 +1037,42 @@
       <option name="project" value="LOCAL" />
       <updated>1485345862150</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="prob 16.21: Sum Swap between 2 arrays to bring their sum equal to each other">
+      <created>1485351275793</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1485351275794</updated>
+    </task>
+    <task id="LOCAL-00117" summary="prob 16.15 : Mastermind guess count">
+      <created>1485497616660</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1485497616661</updated>
+    </task>
+    <task id="LOCAL-00118" summary="prob 16.3 Lines intersection">
+      <created>1485510376285</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1485510376285</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Readjusting the dir structure to make room for LeetCode porblems, didnt wanted to create a new repo for it. Thus incorporating in megaCTCI">
+      <created>1485516657586</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1485516657586</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Prob 2 : Longest unique Substring &#10;Prob 1 : addition of 2 nos as linked list">
+      <created>1485554671247</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1485554671248</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1053,19 +1097,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1891473" sideWeight="0.51098096" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22945736" sideWeight="0.48901904" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32093024" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25736433" sideWeight="0.48901904" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21888727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21961933" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3534884" sideWeight="0.49267936" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56434107" sideWeight="0.49267936" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1134,11 +1178,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Prob 10.3 search in a rotated array" />
-    <MESSAGE value="Prob - Minimum mutation problem&#10;" />
-    <MESSAGE value="Prob - 10.3 Improved&#10;" />
-    <MESSAGE value=" Problem 10.4 -  Sorted Search No Size, exponential Back off (didnt knew by this name)" />
-    <MESSAGE value=" Problem 10.9 - sorted Matrix Search" />
     <MESSAGE value=" Problem 10.5  - Sparse Search" />
     <MESSAGE value=" Problem 10.2 - Group Anagrams" />
     <MESSAGE value=" Problem 10.10 - Rank From Stream" />
@@ -1159,232 +1198,267 @@
     <MESSAGE value="prob 16.18: Pattern matching" />
     <MESSAGE value="prob 16.17: Old Mobile T9 Keyboard&#10;+ adding trie class" />
     <MESSAGE value="prob 16.10: Living People, find the year which had maximum population. &#10;Approach 1 : No sorting , but space&#10;Approach 2 : Sorting, but no space." />
-    <option name="LAST_COMMIT_MESSAGE" value="prob 16.10: Living People, find the year which had maximum population. &#10;Approach 1 : No sorting , but space&#10;Approach 2 : Sorting, but no space." />
+    <MESSAGE value="prob 16.21: Sum Swap between 2 arrays to bring their sum equal to each other" />
+    <MESSAGE value="prob 16.15 : Mastermind guess count" />
+    <MESSAGE value="prob 16.3 Lines intersection" />
+    <MESSAGE value="Readjusting the dir structure to make room for LeetCode porblems, didnt wanted to create a new repo for it. Thus incorporating in megaCTCI" />
+    <MESSAGE value="Prob 2 : Longest unique Substring &#10;Prob 1 : addition of 2 nos as linked list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prob 2 : Longest unique Substring &#10;Prob 1 : addition of 2 nos as linked list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/KevinBaconsGame.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Trees_and_Graphs/KevinBaconsGame.java</url>
           <line>118</line>
           <properties />
           <option name="timeStamp" value="356" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Main.java</url>
-          <line>52</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Main.java</url>
+          <line>51</line>
           <properties />
           <option name="timeStamp" value="361" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java</url>
-          <line>379</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Arrays_and_Strings/Arrays_and_Strings.java</url>
+          <line>376</line>
           <properties />
           <option name="timeStamp" value="387" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java</url>
-          <line>390</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Arrays_and_Strings/Arrays_and_Strings.java</url>
+          <line>387</line>
           <properties />
           <option name="timeStamp" value="388" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Recursion_and_DynamicProg/Recursion_and_DP.java</url>
-          <line>805</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Recursion_and_DynamicProg/Recursion_and_DP.java</url>
+          <line>803</line>
           <properties />
           <option name="timeStamp" value="392" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Recursion_and_DynamicProg/Recursion_and_DP.java</url>
-          <line>828</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Recursion_and_DynamicProg/Recursion_and_DP.java</url>
+          <line>826</line>
           <properties />
           <option name="timeStamp" value="396" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java</url>
-          <line>486</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Arrays_and_Strings/Arrays_and_Strings.java</url>
+          <line>483</line>
           <properties />
           <option name="timeStamp" value="407" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Main.java</url>
-          <line>71</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Main.java</url>
+          <line>70</line>
           <properties />
           <option name="timeStamp" value="413" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Main.java</url>
-          <line>84</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Main.java</url>
+          <line>83</line>
           <properties />
           <option name="timeStamp" value="414" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java</url>
-          <line>296</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Arrays_and_Strings/Arrays_and_Strings.java</url>
+          <line>293</line>
           <properties />
           <option name="timeStamp" value="424" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java</url>
-          <line>322</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Arrays_and_Strings/Arrays_and_Strings.java</url>
+          <line>319</line>
           <properties />
           <option name="timeStamp" value="426" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java</url>
-          <line>309</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Arrays_and_Strings/Arrays_and_Strings.java</url>
+          <line>306</line>
           <properties />
           <option name="timeStamp" value="427" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Main.java</url>
-          <line>17</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Main.java</url>
+          <line>15</line>
           <properties />
           <option name="timeStamp" value="428" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/BinarySearchUtil.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/BinarySearchUtil.java</url>
           <line>35</line>
           <properties />
           <option name="timeStamp" value="431" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java</url>
-          <line>158</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java</url>
+          <line>156</line>
           <properties />
           <option name="timeStamp" value="433" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java</url>
-          <line>219</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java</url>
+          <line>217</line>
           <properties />
           <option name="timeStamp" value="434" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java</url>
-          <line>251</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java</url>
+          <line>249</line>
           <properties />
           <option name="timeStamp" value="442" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java</url>
-          <line>283</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java</url>
+          <line>281</line>
           <properties />
           <option name="timeStamp" value="446" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java</url>
-          <line>305</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java</url>
+          <line>303</line>
           <properties />
           <option name="timeStamp" value="447" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/BinarySearchUtil.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/BinarySearchUtil.java</url>
           <line>26</line>
           <properties />
           <option name="timeStamp" value="448" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java</url>
-          <line>324</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java</url>
+          <line>322</line>
           <properties />
           <option name="timeStamp" value="449" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java</url>
-          <line>338</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java</url>
+          <line>336</line>
           <properties />
           <option name="timeStamp" value="451" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java</url>
-          <line>334</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java</url>
+          <line>332</line>
           <properties />
           <option name="timeStamp" value="452" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java</url>
-          <line>377</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java</url>
+          <line>375</line>
           <properties />
           <option name="timeStamp" value="464" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/RankTree.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Trees_and_Graphs/RankTree.java</url>
           <line>40</line>
           <properties />
           <option name="timeStamp" value="465" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/MyBitArray.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/MyBitArray.java</url>
           <line>11</line>
           <properties />
           <option name="timeStamp" value="469" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/MyBitArray.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/MyBitArray.java</url>
           <line>15</line>
           <properties />
           <option name="timeStamp" value="472" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/MyBitArray.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/MyBitArray.java</url>
           <line>23</line>
           <properties />
           <option name="timeStamp" value="473" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Moderate_Main.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate_Main.java</url>
           <line>57</line>
           <properties />
           <option name="timeStamp" value="484" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java</url>
-          <line>254</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java</url>
+          <line>251</line>
           <properties />
           <option name="timeStamp" value="488" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java</url>
-          <line>268</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java</url>
+          <line>265</line>
           <properties />
           <option name="timeStamp" value="489" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java</url>
-          <line>311</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java</url>
+          <line>308</line>
           <properties />
           <option name="timeStamp" value="492" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java</url>
-          <line>430</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java</url>
+          <line>427</line>
           <properties />
           <option name="timeStamp" value="497" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java</url>
-          <line>412</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java</url>
+          <line>409</line>
           <properties />
           <option name="timeStamp" value="503" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Main.java</url>
-          <line>298</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Main.java</url>
+          <line>297</line>
           <properties />
           <option name="timeStamp" value="507" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java</url>
-          <line>585</line>
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java</url>
+          <line>582</line>
           <properties />
           <option name="timeStamp" value="519" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java</url>
+          <line>614</line>
+          <properties />
+          <option name="timeStamp" value="522" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_1_50.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="524" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_1_50.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="526" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_1_50.java</url>
+          <line>113</line>
+          <properties />
+          <option name="timeStamp" value="539" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_1_50.java</url>
+          <line>131</line>
+          <properties />
+          <option name="timeStamp" value="541" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="520" />
+      <option name="time" value="542" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1393,42 +1467,21 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/megaCTCI.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="83" lean-forward="true" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/TNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/LinkedList_Main.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/LinkedList_Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/MyStack.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Stacks_and_queues/MyStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/Stacks_and_Queues.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Stacks_and_queues/Stacks_and_Queues.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="116" column="29" lean-forward="true" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
@@ -1442,84 +1495,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/ThreeStacksArray.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Stacks_and_queues/ThreeStacksArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1105">
           <caret line="65" column="28" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Stack_and_Queues_Main.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Stack_and_Queues_Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="117" column="26" lean-forward="true" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/AnimalShelter.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Stacks_and_queues/AnimalShelter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="83" column="1" lean-forward="true" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/LinkedLists/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/LinkedLists/LinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/BinarySearch.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/BinarySearch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/MathUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/MathUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
           <caret line="84" column="1" lean-forward="false" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/Random.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="385" column="15" lean-forward="false" selection-start-line="385" selection-start-column="15" selection-end-line="385" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Maths_and_Logic_Puzzels/Maths_Logic_Puzzels.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Maths_and_Logic_Puzzels/Maths_Logic_Puzzels.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="94" column="1" lean-forward="true" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/MergeSort.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/MergeSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/QuickSort.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/QuickSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/ArrayUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/ArrayUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="273" column="65" lean-forward="false" selection-start-line="273" selection-start-column="65" selection-end-line="273" selection-end-column="65" />
@@ -1533,7 +1565,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/KevinBaconsGame.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Trees_and_Graphs/KevinBaconsGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-205">
           <caret line="119" column="44" lean-forward="false" selection-start-line="119" selection-start-column="44" selection-end-line="119" selection-end-column="44" />
@@ -1542,32 +1574,32 @@
             <element signature="docComment;class#KevinBaconsGame#0" expanded="false" />
             <element signature="method#KevinBaconsGame#0;class#KevinBaconsGame#0" expanded="false" />
             <element signature="method#addEdge#0;class#KevinBaconsGame#0" expanded="false" />
-            <element signature="e#1175#1176#0" expanded="false" />
-            <element signature="e#1236#1237#0" expanded="false" />
+            <element signature="e#1177#1178#0" expanded="false" />
+            <element signature="e#1238#1239#0" expanded="false" />
             <element signature="class#Movie#0;class#KevinBaconsGame#0" expanded="false" />
-            <element signature="e#5012#5013#0" expanded="false" />
-            <element signature="e#5054#5055#0" expanded="false" />
-            <element signature="e#5100#5101#0" expanded="false" />
-            <element signature="e#5142#5143#0" expanded="false" />
+            <element signature="e#5014#5015#0" expanded="false" />
+            <element signature="e#5056#5057#0" expanded="false" />
+            <element signature="e#5102#5103#0" expanded="false" />
+            <element signature="e#5144#5145#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Big_O_Main.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Big_O_Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
           <caret line="140" column="23" lean-forward="false" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Recursion_DP_Main.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Recursion_DP_Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2108">
           <caret line="132" column="3" lean-forward="false" selection-start-line="132" selection-start-column="3" selection-end-line="132" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Recursion_and_DynamicProg/Recursion_and_DP.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Recursion_and_DynamicProg/Recursion_and_DP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4437">
           <caret line="824" column="7" lean-forward="false" selection-start-line="824" selection-start-column="7" selection-end-line="824" selection-end-column="7" />
@@ -1611,49 +1643,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs_Main.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Trees_and_Graphs_Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2401">
           <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/Trees_and_Graphs.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Trees_and_Graphs/Trees_and_Graphs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Stacks_and_queues/MyQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Stacks_and_queues/MyQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Heap/MaxHeap.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Heap/MaxHeap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="68" column="1" lean-forward="true" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/Graph.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Trees_and_Graphs/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings_Main.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Arrays_and_Strings_Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="90" column="46" lean-forward="false" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Arrays_and_Strings/Arrays_and_Strings.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Arrays_and_Strings/Arrays_and_Strings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
           <caret line="505" column="1" lean-forward="true" selection-start-line="505" selection-start-column="1" selection-end-line="505" selection-end-column="1" />
@@ -1664,17 +1696,17 @@
             <element signature="method#palindromePermutation#0;class#Arrays_and_Strings#0" expanded="false" />
             <element signature="method#stringCompression#0;class#Arrays_and_Strings#0" expanded="false" />
             <element signature="method#getSubArrayCombinations#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="e#6418#6427#0" expanded="false" />
-            <element signature="e#6491#6500#0" expanded="false" />
+            <element signature="e#6283#6292#0" expanded="false" />
+            <element signature="e#6356#6365#0" expanded="false" />
             <element signature="method#combine#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="e#6973#7086#0" expanded="false" />
-            <element signature="e#7428#7542#0" expanded="false" />
+            <element signature="e#6838#6951#0" expanded="false" />
+            <element signature="e#7293#7407#0" expanded="false" />
             <element signature="method#possibleSubArraysWithSumFaster#0;class#Arrays_and_Strings#0" expanded="false" />
             <element signature="method#isAdjacent#0;class#Arrays_and_Strings#0" expanded="false" />
             <element signature="method#findPathOfWords#0;class#Arrays_and_Strings#0" expanded="false" />
             <element signature="method#pairEqualToSum#0;class#Arrays_and_Strings#0" expanded="false" />
             <element signature="method#maskSumFind#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="e#14623#14719#0" expanded="false" />
+            <element signature="e#14488#14584#0" expanded="false" />
             <element signature="method#threeElementsSum#0;class#Arrays_and_Strings#0" expanded="false" />
             <element signature="method#maxLengthOfSubArrayForGivenSum#0;class#Arrays_and_Strings#0" expanded="false" />
           </folding>
@@ -1688,14 +1720,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Heap/MinHeap.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Heap/MinHeap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/BinarySearchUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/BinarySearchUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
@@ -1703,7 +1735,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/MergeSortUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/MergeSortUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="47" column="3" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="47" selection-end-column="3" />
@@ -1717,14 +1749,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/RTNode.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Trees_and_Graphs/RTNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trees_and_Graphs/RankTree.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Trees_and_Graphs/RankTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
@@ -1732,7 +1764,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/QuickSortUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/QuickSortUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
@@ -1753,14 +1785,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/BigO/BitsUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/BitsUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11050">
           <caret line="656" column="0" lean-forward="false" selection-start-line="656" selection-start-column="0" selection-end-line="656" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/MyBitArray.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/MyBitArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
@@ -1768,14 +1800,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching_Main.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching_Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="123" column="40" lean-forward="false" selection-start-line="123" selection-start-column="40" selection-end-line="123" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Sorting_and_Searching/Searching_Sorting.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Sorting_and_Searching/Searching_Sorting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2057">
           <caret line="397" column="3" lean-forward="false" selection-start-line="397" selection-start-column="3" selection-end-line="397" selection-end-column="3" />
@@ -1785,8 +1817,8 @@
             <element signature="method#sortedMerge#0;class#Searching_Sorting#0" expanded="false" />
             <element signature="method#searchRotatedArrayOLD#0;class#Searching_Sorting#0" expanded="false" />
             <element signature="method#findRotatedIndexOLD#0;class#Searching_Sorting#0" expanded="false" />
-            <element signature="e#2434#2435#0" expanded="false" />
-            <element signature="e#2494#2495#0" expanded="false" />
+            <element signature="e#2361#2362#0" expanded="false" />
+            <element signature="e#2421#2422#0" expanded="false" />
             <element signature="method#findRotatedIndex#0;class#Searching_Sorting#0" expanded="false" />
             <element signature="method#groupAnagrams#0;class#Searching_Sorting#0" expanded="false" />
             <element signature="method#sortedSearchNoSize#0;class#Searching_Sorting#0" expanded="false" />
@@ -1805,92 +1837,140 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
+        <state relative-caret-position="20060">
           <caret line="1237" column="15" lean-forward="false" selection-start-line="1237" selection-start-column="15" selection-end-line="1237" selection-end-column="15" />
           <folding>
-            <element signature="e#47538#47539#0" expanded="true" />
-            <element signature="e#47602#47603#0" expanded="true" />
+            <element signature="e#0#124311#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#4677#4678#0" expanded="false" />
+            <element signature="e#4714#4715#0" expanded="false" />
+            <element signature="e#5687#5688#0" expanded="false" />
+            <element signature="e#5750#5751#0" expanded="false" />
+            <element signature="e#13098#13099#0" expanded="false" />
+            <element signature="e#13150#13151#0" expanded="false" />
+            <element signature="e#18781#18782#0" expanded="false" />
+            <element signature="e#18834#18835#0" expanded="false" />
+            <element signature="e#20727#20728#0" expanded="false" />
+            <element signature="e#20771#20772#0" expanded="false" />
+            <element signature="e#21961#21962#0" expanded="false" />
+            <element signature="e#22041#22042#0" expanded="false" />
+            <element signature="e#22786#22787#0" expanded="false" />
+            <element signature="e#22821#22822#0" expanded="false" />
+            <element signature="e#23072#23073#0" expanded="false" />
+            <element signature="e#23112#23113#0" expanded="false" />
+            <element signature="e#29462#29463#0" expanded="false" />
+            <element signature="e#29533#29534#0" expanded="false" />
+            <element signature="e#36393#36394#0" expanded="false" />
+            <element signature="e#36459#36460#0" expanded="false" />
+            <element signature="e#38369#38370#0" expanded="false" />
+            <element signature="e#38423#38424#0" expanded="false" />
+            <element signature="e#47538#47539#0" expanded="false" />
+            <element signature="e#47602#47603#0" expanded="false" />
+            <element signature="e#55800#55801#0" expanded="false" />
+            <element signature="e#55844#55845#0" expanded="false" />
+            <element signature="e#56437#56438#0" expanded="false" />
+            <element signature="e#56514#56515#0" expanded="false" />
+            <element signature="e#58481#58482#0" expanded="false" />
+            <element signature="e#58518#58519#0" expanded="false" />
+            <element signature="e#62860#62861#0" expanded="false" />
+            <element signature="e#62916#62917#0" expanded="false" />
+            <element signature="e#66457#66458#0" expanded="false" />
+            <element signature="e#66495#66496#0" expanded="false" />
+            <element signature="e#70749#70750#0" expanded="false" />
+            <element signature="e#70802#70803#0" expanded="false" />
+            <element signature="e#78240#78241#0" expanded="false" />
+            <element signature="e#78299#78300#0" expanded="false" />
+            <element signature="e#82616#82617#0" expanded="false" />
+            <element signature="e#82667#82668#0" expanded="false" />
+            <element signature="e#82971#82972#0" expanded="false" />
+            <element signature="e#83020#83021#0" expanded="false" />
+            <element signature="e#94598#94599#0" expanded="false" />
+            <element signature="e#94636#94637#0" expanded="false" />
+            <element signature="e#104675#104676#0" expanded="false" />
+            <element signature="e#104730#104731#0" expanded="false" />
+            <element signature="e#111196#111197#0" expanded="false" />
+            <element signature="e#111251#111252#0" expanded="false" />
+            <element signature="e#113343#113344#0" expanded="false" />
+            <element signature="e#113370#113371#0" expanded="false" />
+            <element signature="e#117893#117894#0" expanded="false" />
+            <element signature="e#117955#117956#0" expanded="false" />
+            <element signature="e#118405#118406#0" expanded="false" />
+            <element signature="e#118444#118445#0" expanded="false" />
+            <element signature="e#119456#119457#0" expanded="false" />
+            <element signature="e#119510#119511#0" expanded="false" />
+            <element signature="e#120159#120160#0" expanded="false" />
+            <element signature="e#120213#120214#0" expanded="false" />
+            <element signature="e#120482#120483#0" expanded="false" />
+            <element signature="e#120521#120522#0" expanded="false" />
+            <element signature="e#120889#120890#0" expanded="false" />
+            <element signature="e#120932#120933#0" expanded="false" />
+            <element signature="e#121727#121728#0" expanded="false" />
+            <element signature="e#121769#121770#0" expanded="false" />
+            <element signature="e#122184#122185#0" expanded="false" />
+            <element signature="e#122223#122224#0" expanded="false" />
+            <element signature="e#122645#122646#0" expanded="false" />
+            <element signature="e#122685#122686#0" expanded="false" />
+            <element signature="e#123115#123116#0" expanded="false" />
+            <element signature="e#123156#123157#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trie/Trie.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Trie/Trie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
+        <state relative-caret-position="119">
           <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="e#177#178#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Trie/TrieNode.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Trie/TrieNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Main.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="367" column="32" lean-forward="true" selection-start-line="367" selection-start-column="32" selection-end-line="367" selection-end-column="32" />
-          <folding>
-            <element signature="e#511#522#0" expanded="false" />
-            <element signature="method#doArray_and_Strings_Main#0;class#Main#0" expanded="false" />
-            <element signature="e#1502#1549#0" expanded="false" />
-            <element signature="method#doStack_and_Queue#0;class#Main#0" expanded="false" />
-            <element signature="e#4077#4119#0" expanded="false" />
-            <element signature="method#doRecursion_DP#0;class#Main#0" expanded="false" />
-            <element signature="e#4487#4538#0" expanded="false" />
-            <element signature="e#4669#4708#0" expanded="false" />
-            <element signature="method#doTrees_Graph#0;class#Main#0" expanded="false" />
-            <element signature="e#5416#5477#0" expanded="false" />
-            <element signature="method#doMathUtils#0;class#Main#0" expanded="false" />
-            <element signature="method#getTime#0;class#Main#0" expanded="false" />
-            <element signature="e#7708#7764#0" expanded="false" />
-            <element signature="method#minLenUnSorted#0;class#Main#0" expanded="false" />
-            <element signature="e#10696#10697#0" expanded="true" />
-            <element signature="e#10742#10743#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="4930">
+          <caret line="327" column="15" lean-forward="false" selection-start-line="327" selection-start-column="15" selection-end-line="327" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Moderate_Main.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate_Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="149" column="38" lean-forward="true" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+        <state relative-caret-position="304">
+          <caret line="161" column="1" lean-forward="false" selection-start-line="161" selection-start-column="1" selection-end-line="161" selection-end-column="1" />
           <folding>
             <element signature="docComment;class#Moderate_Main#0" expanded="false" />
             <element signature="method#testWordFrequency#0;class#Moderate_Main#0" expanded="false" />
             <element signature="method#testTicTacWin#0;class#Moderate_Main#0" expanded="false" />
             <element signature="method#testFactorialZeroes#0;class#Moderate_Main#0" expanded="false" />
             <element signature="method#testSmallestDifference#0;class#Moderate_Main#0" expanded="false" />
-            <element signature="e#1114#1158#0" expanded="false" />
+            <element signature="e#1116#1160#0" expanded="false" />
             <element signature="method#testNumberMax#0;class#Moderate_Main#0" expanded="false" />
-            <element signature="e#1458#1499#0" expanded="false" />
+            <element signature="e#1460#1501#0" expanded="false" />
             <element signature="method#testEnglishInt#0;class#Moderate_Main#0" expanded="false" />
             <element signature="method#testSubstract#0;class#Moderate_Main#0" expanded="false" />
             <element signature="method#testMulitply#0;class#Moderate_Main#0" expanded="false" />
             <element signature="method#testDivide#0;class#Moderate_Main#0" expanded="false" />
             <element signature="method#testPondSizes#0;class#Moderate_Main#0" expanded="false" />
             <element signature="method#testLSCS#0;class#Moderate_Main#0" expanded="false" />
-            <element signature="e#2909#2965#0" expanded="false" />
+            <element signature="e#2911#2967#0" expanded="false" />
             <element signature="method#testPatternMatching#0;class#Moderate_Main#0" expanded="false" />
-            <element signature="e#3407#3439#0" expanded="false" />
+            <element signature="e#3409#3441#0" expanded="false" />
             <element signature="method#testOldKeyboard#0;class#Moderate_Main#0" expanded="false" />
-            <element signature="e#3731#3750#0" expanded="false" />
+            <element signature="e#3733#3752#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/darkRealm/Moderate/Moderate.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="591" column="0" lean-forward="true" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+        <state relative-caret-position="5338">
+          <caret line="644" column="5" lean-forward="false" selection-start-line="644" selection-start-column="5" selection-end-line="644" selection-end-column="5" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="docComment;class#Moderate#0" expanded="false" />
             <element signature="method#numberSwapper#0;class#Moderate#0" expanded="false" />
             <element signature="method#wordFrequency#0;class#Moderate#0" expanded="false" />
@@ -1907,6 +1987,90 @@
             <element signature="method#pondSizes#0;class#Moderate#0" expanded="false" />
             <element signature="method#largestSumContiguousSubArray#0;class#Moderate#0" expanded="false" />
             <element signature="method#patternMatch#0;class#Moderate#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/LinkedLists/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3553">
+          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+          <folding>
+            <element signature="e#10065#10066#0" expanded="false" />
+            <element signature="e#10148#10149#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/LinkedLists/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#1082#1083#0" expanded="false" />
+            <element signature="e#1103#1104#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="371" column="19" lean-forward="true" selection-start-line="371" selection-start-column="19" selection-end-line="371" selection-end-column="19" />
+          <folding>
+            <element signature="method#doArray_and_Strings_Main#0;class#Main#0" expanded="false" />
+            <element signature="e#1379#1426#0" expanded="false" />
+            <element signature="method#doStack_and_Queue#0;class#Main#0" expanded="false" />
+            <element signature="e#3954#3996#0" expanded="false" />
+            <element signature="method#doRecursion_DP#0;class#Main#0" expanded="false" />
+            <element signature="e#4364#4415#0" expanded="false" />
+            <element signature="e#4546#4585#0" expanded="false" />
+            <element signature="method#doTrees_Graph#0;class#Main#0" expanded="false" />
+            <element signature="e#5293#5354#0" expanded="false" />
+            <element signature="method#doMathUtils#0;class#Main#0" expanded="false" />
+            <element signature="method#getTime#0;class#Main#0" expanded="false" />
+            <element signature="e#7585#7641#0" expanded="false" />
+            <element signature="method#minLenUnSorted#0;class#Main#0" expanded="false" />
+            <element signature="method#doBitsMain#0;class#Main#0" expanded="false" />
+            <element signature="e#9092#9134#0" expanded="false" />
+            <element signature="method#doSortingAndSearching#0;class#Main#0" expanded="false" />
+            <element signature="e#10670#10719#0" expanded="false" />
+            <element signature="method#doModerate#0;class#Main#0" expanded="false" />
+            <element signature="e#11358#11398#0" expanded="false" />
+            <element signature="e#12054#12055#0" expanded="true" />
+            <element signature="e#12082#12083#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/LeetCode/LeetCodeMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="56" column="40" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
+          <folding>
+            <element signature="docComment;class#LeetCodeMain#0" expanded="false" />
+            <element signature="method#testAddTwoNumbers#0;class#LeetCodeMain#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_1_50.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1854">
+          <caret line="163" column="5" lean-forward="true" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#LC_Prob_1_50#0" expanded="false" />
+            <element signature="method#AddTwoNumbers#0;class#LC_Prob_1_50#0" expanded="false" />
+            <element signature="e#774#798#0" expanded="false" />
+            <element signature="method#addTwoNodes#0;class#LC_Prob_1_50#0" expanded="false" />
           </folding>
         </state>
       </provider>

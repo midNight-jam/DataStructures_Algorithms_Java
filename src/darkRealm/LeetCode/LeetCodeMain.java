@@ -9,7 +9,8 @@ import darkRealm.CTCI.LinkedLists.Node;
 public class LeetCodeMain {
   public static void run() {
 //    testAddTwoNumbers();
-    testlongestSubstring();
+//    testlongestSubstring();
+    testLongestPalindrome();
   }
 
   public static void testAddTwoNumbers() {
@@ -35,9 +36,26 @@ public class LeetCodeMain {
   public static void testlongestSubstring() {
 //    String str = "abcabcbb";
 //    String str = "bbbbb";
-    String str = "pwwkew";
-
+//    String str = "pwwkew";
+    String str = "dvdf";
     int res = LC_Prob_1_50.lengthOfLongestSubstring(str);
     System.out.println(" Str : " + str + "  Longest substring : " + res);
+  }
+
+  public static void testLongestPalindrome() {
+//    String str = "edbabcdcbaba";
+//    String str = "ccc";
+//    String str = "abb";
+//    String str = "aaaa";
+//    String str = "bb";
+//    String str = "asdasdabceecbaasdasdasd";
+//    String str = "asdasdasdbbaabbasdasdasdasdasdasdasdasdsafiwenrfblw ebrfbwjhrfb";
+//    String str = "azwdzwmwcqzgcobeeiphemqbjtxzwkhiqpbrprocbppbxrnsxnwgikiaqutwpftbiinlnpyqstkiqzbggcsdzzjbrkfmhgtnbujzszxsycmvipjtktpebaafycngqasbbhxaeawwmkjcziybxowkaibqnndcjbsoehtamhspnidjylyisiaewmypfyiqtwlmejkpzlieolfdjnxntonnzfgcqlcfpoxcwqctalwrgwhvqvtrpwemxhirpgizjffqgntsmvzldpjfijdncexbwtxnmbnoykxshkqbounzrewkpqjxocvaufnhunsmsazgibxedtopnccriwcfzeomsrrangufkjfzipkmwfbmkarnyyrgdsooosgqlkzvorrrsaveuoxjeajvbdpgxlcrtqomliphnlehgrzgwujogxteyulphhuhwyoyvcxqatfkboahfqhjgujcaapoyqtsdqfwnijlkknuralezqmcryvkankszmzpgqutojoyzsnyfwsyeqqzrlhzbc";
+    String str ="aaaaaaaaaaaaaaaaaabbbbbbbbbbbb";
+//   String str = "bppbasooos";
+    String plain = LC_Prob_1_50.longestPalindrome(str);
+    System.out.println(" Str : " + str);
+    System.out.println( "  Longest substring : " + plain);
+    System.out.println(" len "+plain.length());
   }
 }
