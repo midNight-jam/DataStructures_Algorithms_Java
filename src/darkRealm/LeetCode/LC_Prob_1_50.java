@@ -95,7 +95,7 @@ public class LC_Prob_1_50 {
   *   Example:
   *   Input: "cbbd"
   *   Output: "bb"
-  * *********NOT A GOOD SOLUTION DONOT PAY ATTENTION ITS A WORK IN PROGRESS*********
+  * *********NOT A GOOD SOLUTION, DONOT PAY ATTENTION, ITS A WORK IN PROGRESS*********
   * */
   public static String longestPalindrome(String s) {
     int beg = 0;
@@ -121,7 +121,7 @@ public class LC_Prob_1_50 {
     for (int i = 0; i < s.length(); i++) {
       // considering for odd length palindrome
       int left = i == 0 ? i : i - 1;
-      int right = arr[i ] == arr[left] ? i  : Integer.MAX_VALUE;
+      int right = arr[i] == arr[left] ? i : Integer.MAX_VALUE;
       len = 0;
       while (left >= 0 && right < s.length()) {
         leftChar = arr[left];
@@ -142,7 +142,7 @@ public class LC_Prob_1_50 {
       }
 
       left = i == 0 ? i : i - 1;
-      right = i<arr.length-1?arr[i +1] == arr[left] ? i+1  : Integer.MAX_VALUE:i;
+      right = i < arr.length - 1 ? arr[i + 1] == arr[left] ? i + 1 : Integer.MAX_VALUE : i;
       len = 0;
       while (left >= 0 && right < s.length()) {
         leftChar = arr[left];
@@ -164,5 +164,55 @@ public class LC_Prob_1_50 {
     }
     maxPalindromeString = s.substring(palinStart, palinEnd + 1);
     return maxPalindromeString;
+  }
+
+  /*  [Prob 6 ] ZigZag Conversion
+  * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
+  * (you may want to display this pattern in a fixed font for better legibility)
+  * P   A   H   N
+  * A P L S I I G
+  * Y   I   R
+  * And then read line by line: "PAHNAPLSIIGYIR"
+  * Write the code that will take a string and make this conversion given a number of rows:
+  * string convert(string text, int nRows);
+  * convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
+  * */
+  public static String zigZagConversion(String str, int numRows) {
+    StringBuilder[] zigZag = new StringBuilder[numRows];
+    for(int i = 0; i<zigZag.length;i++){
+      zigZag[i] = new StringBuilder();
+    }
+    char c;
+    int up = 0;
+    int down = -1;
+    boolean upwards = true;
+    for (int i = 0; i < str.length(); i++) {
+      c = str.charAt(i);
+      if (upwards && up < zigZag.length) {
+        zigZag[up].append(c);
+        up++;
+      } else if (down > 0 && !upwards) {
+        zigZag[down].append(c);
+        down--;
+      }
+      if (up == numRows && upwards) {
+        upwards = !upwards;
+        down = zigZag.length - 2;
+        if (down <= 0) {
+          down = 0;
+          upwards = !upwards;
+          up = 0;
+        }
+      } else if (down == 0 && !upwards) {
+        upwards = !upwards;
+        up = 0;
+      }
+    }
+    StringBuilder res = new StringBuilder();
+    for (int i = 0; i < zigZag.length; i++) {
+      res.append(zigZag[i]);
+    }
+
+    return res.toString();
   }
 }

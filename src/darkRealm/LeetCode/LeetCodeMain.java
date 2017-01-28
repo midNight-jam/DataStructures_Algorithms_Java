@@ -10,7 +10,8 @@ public class LeetCodeMain {
   public static void run() {
 //    testAddTwoNumbers();
 //    testlongestSubstring();
-    testLongestPalindrome();
+//    testLongestPalindrome();
+    testZigZag();
   }
 
   public static void testAddTwoNumbers() {
@@ -51,11 +52,26 @@ public class LeetCodeMain {
 //    String str = "asdasdabceecbaasdasdasd";
 //    String str = "asdasdasdbbaabbasdasdasdasdasdasdasdasdsafiwenrfblw ebrfbwjhrfb";
 //    String str = "azwdzwmwcqzgcobeeiphemqbjtxzwkhiqpbrprocbppbxrnsxnwgikiaqutwpftbiinlnpyqstkiqzbggcsdzzjbrkfmhgtnbujzszxsycmvipjtktpebaafycngqasbbhxaeawwmkjcziybxowkaibqnndcjbsoehtamhspnidjylyisiaewmypfyiqtwlmejkpzlieolfdjnxntonnzfgcqlcfpoxcwqctalwrgwhvqvtrpwemxhirpgizjffqgntsmvzldpjfijdncexbwtxnmbnoykxshkqbounzrewkpqjxocvaufnhunsmsazgibxedtopnccriwcfzeomsrrangufkjfzipkmwfbmkarnyyrgdsooosgqlkzvorrrsaveuoxjeajvbdpgxlcrtqomliphnlehgrzgwujogxteyulphhuhwyoyvcxqatfkboahfqhjgujcaapoyqtsdqfwnijlkknuralezqmcryvkankszmzpgqutojoyzsnyfwsyeqqzrlhzbc";
-    String str ="aaaaaaaaaaaaaaaaaabbbbbbbbbbbb";
+    String str = "aaaaaaaaaaaaaaaaaabbbbbbbbbbbb";
 //   String str = "bppbasooos";
     String plain = LC_Prob_1_50.longestPalindrome(str);
     System.out.println(" Str : " + str);
-    System.out.println( "  Longest substring : " + plain);
-    System.out.println(" len "+plain.length());
+    System.out.println("  Longest substring : " + plain);
+    System.out.println(" len " + plain.length());
+  }
+
+  public static void testZigZag() {
+    String str = "paypalishiring";
+    int k = 4;
+//
+//    String str = "ab";
+//    int k = 1;
+
+//    String str = "ABC";
+//    int k = 2;
+
+    String res = LC_Prob_1_50.zigZagConversion(str, k);
+    System.out.print("str : " + str + " Level : " + k);
+    System.out.print("  res : " + res);
   }
 }
