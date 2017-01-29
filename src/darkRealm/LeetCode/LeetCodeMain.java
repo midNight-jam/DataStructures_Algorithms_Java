@@ -12,7 +12,9 @@ public class LeetCodeMain {
 //    testlongestSubstring();
 //    testLongestPalindrome();
 //    testZigZag();
-    testReverseInteger();
+//    testReverseInteger();
+//    testStringToInteger();
+    testReverseWords();
   }
 
   public static void testAddTwoNumbers() {
@@ -83,5 +85,28 @@ public class LeetCodeMain {
 //    int x = 1534236469;
     int res = LC_Prob_1_50.reverseInteger(x);
     System.out.println(" x : " + x + "   res : " + res);
+  }
+
+  public static void testStringToInteger(){
+//    String str = "+123";
+//    String str = "+1";
+//    String str = "  -0012a42";
+//    String str = Integer.MAX_VALUE+"";
+//    String str = "1534236469";
+//    String str = "-2147483648";
+    String str ="2147483648";
+
+
+    int res = LC_Prob_1_50.stringToInteger(str);
+    System.out.println(" Str : " + str + "   res : " + (res));
+  }
+
+  public static void testReverseWords(){
+    String str = "The sky  is blue";
+//    String str = "";
+//    String str = "   lag     bat ";
+    String res = LC_Prob_1_50.reverseWords(str);
+    System.out.println(" Str : " + str + "   res : " + res);
+    System.out.println(" Str : " + str.length() + "   res : " + res.length());
   }
 }

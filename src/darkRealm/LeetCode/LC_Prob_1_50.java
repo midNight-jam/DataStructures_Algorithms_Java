@@ -238,4 +238,103 @@ public class LC_Prob_1_50 {
 
     return x < 0 ? result * -1 : result;
   }
+
+  /*  [Prob 8]   String to Integer
+  * Implement atoi to convert a string to an integer.
+  * */
+  public static int stringToInteger(String str) {
+    str = str.trim();
+    if (str.length() == 0) {
+      return 0;
+    }
+    int minus = 1;
+    int endIndex = 0;
+    if (str.charAt(0) == '-') {
+      minus = -1;
+      endIndex = 1;
+    } else if (str.charAt(0) == '+') {
+      minus = 1;
+      endIndex = 1;
+    }
+    int number = 0;
+    int last;
+    int powTen = 1;
+    for (int i = str.length() - 1; i >= endIndex; i--) {
+      last = getInt(str.charAt(i));
+      if (last == Integer.MIN_VALUE) {
+        number = 0;
+        powTen = 1;
+        continue;
+      }
+      if ((last * 10) / 10 != last) {
+        return 0;
+      }
+      last = last * powTen;
+      if (number + last < 0) {
+        int res = number + last;
+        return res == Integer.MIN_VALUE ? Integer.MIN_VALUE : 0;
+      }
+      number += last;
+      powTen = powTen * 10;
+    }
+    return number * minus;
+  }
+
+  private static int getInt(char c) {
+    switch (c) {
+      case '0':
+        return 0;
+      case '1':
+        return 1;
+      case '2':
+        return 2;
+      case '3':
+        return 3;
+      case '4':
+        return 4;
+      case '5':
+        return 5;
+      case '6':
+        return 6;
+      case '7':
+        return 7;
+      case '8':
+        return 8;
+      case '9':
+        return 9;
+    }
+    return Integer.MIN_VALUE;
+  }
+
+  /*  [Prob 151]   Reverse Words in a String
+  * Given an input string, reverse the string word by word.
+  * For example,
+  * Given s = "the sky is blue",
+  * return "blue is sky the".
+  * */
+  public static String reverseWords(String sentence) {
+    sentence = sentence.trim();
+    StringBuilder reverse = new StringBuilder();
+    int wordBeg, wordEnd;
+    wordBeg = wordEnd = 0;
+    for (int i = sentence.length() - 1; i > -1; i--) {
+      while (sentence.charAt(i) == ' ') {
+        i--;
+      }
+      if (sentence.charAt(i) != ' ') {
+        wordBeg = i;
+      }
+        while (i >=0 && sentence.charAt(i) != ' ') {
+        i--;
+        wordEnd = i;
+      }
+      if (wordEnd < wordBeg) {
+        reverse.append(sentence.substring(wordEnd+1, wordBeg + 1));
+        if(i!=-1){
+          reverse.append(" ");
+        }
+      }
+    }
+    return reverse.toString();
+  }
 }
