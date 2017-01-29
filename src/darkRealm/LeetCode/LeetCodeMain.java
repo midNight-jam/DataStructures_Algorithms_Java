@@ -14,7 +14,9 @@ public class LeetCodeMain {
 //    testZigZag();
 //    testReverseInteger();
 //    testStringToInteger();
-    testReverseWords();
+//    testReverseWords();
+//    testCompareVersion();
+    testSurroundRegion();
   }
 
   public static void testAddTwoNumbers() {
@@ -87,26 +89,60 @@ public class LeetCodeMain {
     System.out.println(" x : " + x + "   res : " + res);
   }
 
-  public static void testStringToInteger(){
+  public static void testStringToInteger() {
 //    String str = "+123";
 //    String str = "+1";
 //    String str = "  -0012a42";
 //    String str = Integer.MAX_VALUE+"";
 //    String str = "1534236469";
 //    String str = "-2147483648";
-    String str ="2147483648";
+    String str = "2147483648";
 
 
     int res = LC_Prob_1_50.stringToInteger(str);
     System.out.println(" Str : " + str + "   res : " + (res));
   }
 
-  public static void testReverseWords(){
+  public static void testReverseWords() {
     String str = "The sky  is blue";
 //    String str = "";
 //    String str = "   lag     bat ";
     String res = LC_Prob_1_50.reverseWords(str);
     System.out.println(" Str : " + str + "   res : " + res);
     System.out.println(" Str : " + str.length() + "   res : " + res.length());
+  }
+
+  public static void testCompareVersion() {
+//    String v1 = "  1.1.3  ";
+//    String v2 = "  1.12   ";
+
+    String v1 = "1.2.2...1";
+    String v2 = "1.2.3...1";
+
+    int res = LC_Prob_1_50.compareVersion(v1, v2);
+    System.out.println(" V1: " + v1 + "   V2 : " + v2);
+    System.out.println("   res : " + res);
+  }
+
+  public static void testSurroundRegion() {
+//    char[][] board = new char[][]{
+//        {'X', 'X', 'X', 'X'},
+//        {'X', 'O', 'O', 'X'},
+//        {'X', 'X', 'O', 'X'},
+//        {'X', 'O', 'X', 'X'},
+//    };
+
+//    char[][] board = new char[][]{
+//        {'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+//        {'X', 'O', 'O', 'O', 'X', 'O', 'X'},
+//        {'X', 'O', 'X', 'O', 'X', 'O', 'X'},
+//        {'X', 'O', 'X', 'X', 'O', 'O', 'X'},
+//        {'X', 'O', 'X', 'O', 'O', 'X', 'X'},
+//        {'X', 'O', 'O', 'O', 'X', 'O', 'X'},
+//        {'X', 'X', 'X', 'O', 'X', 'X', 'X'},
+//    };
+    char[][] board = new char[0][0];
+
+    LC_Prob_1_50.surroundedRegions(board);
   }
 }

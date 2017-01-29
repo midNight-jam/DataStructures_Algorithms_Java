@@ -2,6 +2,10 @@ package darkRealm.LeetCode;
 
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
+import darkRealm.CTCI.Stacks_and_queues.MyQueue;
+
+import java.util.AbstractMap;
+import java.util.Arrays;
 
 /**
  * Created by Jayam on 1/27/2017.
@@ -324,17 +328,171 @@ public class LC_Prob_1_50 {
       if (sentence.charAt(i) != ' ') {
         wordBeg = i;
       }
-        while (i >=0 && sentence.charAt(i) != ' ') {
+      while (i >= 0 && sentence.charAt(i) != ' ') {
         i--;
         wordEnd = i;
       }
       if (wordEnd < wordBeg) {
-        reverse.append(sentence.substring(wordEnd+1, wordBeg + 1));
-        if(i!=-1){
+        reverse.append(sentence.substring(wordEnd + 1, wordBeg + 1));
+        if (i != -1) {
           reverse.append(" ");
         }
       }
     }
     return reverse.toString();
+  }
+
+  /*  [Prob 165]  Compare Version Numbers
+  * Compare two version numbers version1 and version2.
+  * If version1 > version2 return 1, if version1 < version2 return -1, otherwise return 0.
+  * You may assume that the version strings are non-empty and contain only digits and the . character.
+  * The . character does not represent a decimal point and is used to separate number sequences.
+  * For instance, 2.5 is not "two and a half" or "half way to version three", it is the fifth second-level
+  * revision of the second first-level revision.
+  * Here is an example of version numbers ordering:
+  * 0.1 < 1.1 < 1.2 < 13.37
+  *  * *********NOT A GOOD SOLUTION, DONOT PAY ATTENTION, ITS A WORK IN PROGRESS*********
+  * */
+  public static int compareVersion(String version1, String version2) {
+    version1 = version1.trim();
+    version2 = version2.trim();
+
+    int maxLen = Math.max(version1.length(), version2.length());
+    char v1, v2;
+    v1 = v2 = '\u0000';
+    int diff = 0;
+    for (int i = 0; i < maxLen; i++) {
+      if (i < version1.length()) {
+        v1 = version1.charAt(i);
+        if (v1 == ' ') {
+          return diff;
+        }
+      }
+      if (i >= version1.length()) {
+        return -1;
+      }
+      if (i < version2.length()) {
+        v2 = version2.charAt(i);
+        if (v2 == ' ') {
+          return diff;
+        }
+      }
+      if (i >= version2.length()) {
+        return 1;
+      }
+      if (v1 > v2) {
+        return 1;
+      } else if (v1 < v2) {
+        return -1;
+      } else {
+        diff = 0;
+      }
+      if ((v1 == '.' || v2 == '.') & v1 != v2) {
+        return diff;
+      }
+    }
+    return diff;
+  }
+
+  /*  130. Surrounded Regions
+  * Given a 2D board containing 'X' and 'O' (the letter O), capture all regions surrounded by 'X'.
+  * A region is captured by flipping all 'O's into 'X's in that surrounded region.
+  * For example,
+  * X X X X
+  * X O O X
+  * X X O X
+  * X O X X
+  * After running your function, the board should be:
+  * X X X X
+  * X X X X
+  * X X X X
+  * X O X X
+  * */
+  public static void surroundedRegions(char[][] board) {
+    if(board.length > 0 ) {
+      Status[][] statuses = new Status[board.length][board[0].length];
+      for (int i = 0; i < statuses.length; i++) {
+        for (int j = 0; j < statuses[0].length; j++) {
+          statuses[i][j] = Status.NotProcessed;
+        }
+      }
+      java.util.LinkedList<Pair> queue = new java.util.LinkedList();
+      java.util.LinkedList<Pair> processed = new java.util.LinkedList();
+      // we will begin from 1,1 cell because the ones which are on the boundary even of they are O, but they cannot be
+      // completely surrounded by X thats why.
+
+      boolean discard = false;
+      for (int row = 1; row < board.length; row++) {
+        for (int col = 1; col < board[0].length; col++) {
+          if (board[row][col] == 'O' && statuses[row][col] == Status.NotProcessed) {
+            queue.push(new Pair(row, col));
+            statuses[row][col] = Status.UnderProcessing;
+            discard = false;
+          }
+          while (!queue.isEmpty()) {
+            Pair poped = queue.poll();
+            int popR = poped.a;
+            int popC = poped.b;
+            //Top
+            if (popR - 1 > -1 && board[popR - 1][popC] == 'O' && statuses[popR - 1][popC] == Status.NotProcessed) {
+              queue.push(new Pair(popR - 1, popC));
+              statuses[popR - 1][popC] = Status.UnderProcessing;
+            }
+            //Left
+            if (popC - 1 > -1 && board[popR][popC - 1] == 'O' && statuses[popR][popC - 1] == Status.NotProcessed) {
+              queue.push(new Pair(popR, popC - 1));
+              statuses[popR][popC - 1] = Status.UnderProcessing;
+            }
+            //Bottom
+            if (popR + 1 < board.length && board[popR + 1][popC] == 'O' && statuses[popR + 1][popC] == Status.NotProcessed) {
+              queue.push(new Pair(popR + 1, popC));
+              statuses[popR + 1][popC] = Status.UnderProcessing;
+            }
+            //Right
+            if (popC + 1 < board[0].length && board[popR][popC + 1] == 'O' && statuses[popR][popC + 1] == Status.NotProcessed) {
+              queue.push(new Pair(popR, popC + 1));
+              statuses[popR][popC + 1] = Status.UnderProcessing;
+            }
+
+            processed.push(poped);
+            if ((poped.a == 0 || poped.a == board.length - 1) ||
+                (poped.b == 0 || poped.b == board[0].length - 1)) {
+              discard = true;
+            }
+          }
+          // mark all processed by X as they are not ending on boundary & can be captured as a region
+          while (!processed.isEmpty() && !discard) {
+            Pair poped = processed.poll();
+            board[poped.a][poped.b] = 'X';
+            statuses[poped.a][poped.b] = Status.Processed;
+          }
+          while (!processed.isEmpty() && discard) {
+            Pair prevOnes = processed.poll();
+            statuses[prevOnes.a][prevOnes.b] = Status.DontProcessAgain;
+          }
+        }
+      }
+
+      for (int i = 0; i < board.length; i++) {
+        System.out.println(Arrays.toString(board[i]));
+      }
+    }
+  }
+
+  enum Status {
+    NotProcessed,
+    UnderProcessing,
+    Processed,
+    DontProcessAgain
+  }
+
+  static class Pair {
+    int a;
+    int b;
+
+    Pair(int x, int y) {
+      a = x;
+      b = y;
+    }
   }
 }
