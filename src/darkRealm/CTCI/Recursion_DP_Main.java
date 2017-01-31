@@ -151,4 +151,10 @@ public class Recursion_DP_Main {
     int res = Recursion_and_DP.LongestCommonSubsequence(a,b);
     System.out.println("Longest Subsequence : "+res);
   }
+
+  public static void testRobotWays(){
+    int n=5;
+    int res = Recursion_and_DP.robotNoOfWays(n);
+    System.out.println("step : "+n+" ways : "+res);
+  }
 }

@@ -826,4 +826,30 @@ public class Recursion_and_DP {
     System.out.print("Longest SubSequence Length : " + matrix[a.length() - 1][b.length() - 1]);
     return matrix[a.length() - 1][b.length() - 1];
   }
+
+  /*  [Prob]
+  *   Q) A robot can take steps of 1 meter 2 meter or 3 meter, Calculate the no of ways the robot can walk n meters
+  *   with taking orders in to account.
+  * */
+  public static int robotNoOfWays(int n) {
+    int w1 = 1;
+    int w2 = 2;
+    int w3 = 4;
+    int w = 0;
+    if (n == 1) {
+      return w1;
+    } else if (n == 2) {
+      return w2;
+    } else if (n == 3) {
+      return w3;
+    } else if (n > 3) {
+      for (int i = 4; i <= n; i++) {
+        w = w3 + w2 + w1;
+        w1 = w2;
+        w2 = w3;
+        w3 = w;
+      }
+    }
+    return w;
+  }
 }
