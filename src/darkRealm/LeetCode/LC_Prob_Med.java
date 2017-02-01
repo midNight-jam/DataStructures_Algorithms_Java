@@ -2,15 +2,14 @@ package darkRealm.LeetCode;
 
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
-import darkRealm.CTCI.Stacks_and_queues.MyQueue;
+import darkRealm.CTCI.Sorting_and_Searching.BinarySearchUtil;
 
-import java.util.AbstractMap;
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Created by Jayam on 1/27/2017.
  */
-public class LC_Prob_1_50 {
+public class LC_Prob_Med {
 
   /*  [Prob 2] : Add Two Numbers
   * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse
@@ -409,7 +408,7 @@ public class LC_Prob_1_50 {
   * X O X X
   * */
   public static void surroundedRegions(char[][] board) {
-    if(board.length > 0 ) {
+    if (board.length > 0) {
       Status[][] statuses = new Status[board.length][board[0].length];
       for (int i = 0; i < statuses.length; i++) {
         for (int j = 0; j < statuses[0].length; j++) {
@@ -494,5 +493,183 @@ public class LC_Prob_1_50 {
       a = x;
       b = y;
     }
+  }
+
+
+  /*  [Prob 15] 3Sum
+   *  Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets
+   *  in the array which gives the sum of zero.
+   *  Note: The solution set must not contain duplicate triplets.
+   *  For example, given array S = [-1, 0, 1, 2, -1, -4],
+   *  A solution set is:
+   *  [
+   *  [-1, 0, 1],
+   *  [-1, -1, 2]
+   *  ]
+   *  */
+  public static List<List<Integer>> threeSum(int[] arr) {
+    Arrays.sort(arr);
+    List<List<Integer>> results = new ArrayList<>();
+    if (arr.length > 2) {
+      int idx = 0;
+      for (; idx < arr.length; idx++) {
+        if (arr[idx] != 0) {
+          break;
+        }
+      }
+      if (idx == arr.length) {
+        List<Integer> l = new ArrayList<>();
+        l.add(0);
+        l.add(0);
+        l.add(0);
+        results.add(l);
+        return results;
+      }
+      for (int i = 0; i < arr.length; i++) {
+        int a = arr[i];
+        int start = i + 1;
+        int end = arr.length - 1;
+        while (start < end) {
+          int b = arr[start];
+          int c = arr[end];
+          if (a + b + c == 0) {
+            List<Integer> l = new ArrayList<>();
+            l.add(a);
+            l.add(b);
+            l.add(c);
+            results.add(l);
+          }
+          if (a + b + c > 0) {  // ie if a + b + c > 0
+            start++;
+          } else { //if (b + c > a)
+            end--;
+          }
+        }
+      }
+    }
+    return results;
+  }
+
+  public static List<List<Integer>> threeSumHM(int[] arr) {
+//    Arrays.sort(arr);
+    List<List<Integer>> results = new ArrayList<>();
+    HashSet<Integer> nos = new HashSet<>();
+    if (arr.length > 2) {
+
+      for (int idx = 0; idx < arr.length; idx++) {
+        nos.add(arr[idx]);
+      }
+
+      for (int i = 0; i < arr.length; i++) {
+        for (int j = i + 1; j < arr.length - 1; j++) {
+          int sum = arr[i] + arr[j];
+          if (nos.contains(-sum)) {
+            List<Integer> l = new ArrayList<>();
+            l.add(arr[i]);
+            l.add(arr[j]);
+            l.add(-sum);
+            results.add(l);
+          }
+        }
+      }
+    }
+    return results;
+  }
+
+  /*  [Prob 338] Counting Bits
+  * Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's
+  * in their binary representation and return them as an array.
+  * Example:For num = 5 you should return [0,1,1,2,1,2].
+  * Sol : There is a recurence relation of adding the previously counted 1 bits
+  * res[i] = res[i / 2] + i % 2;
+  * */
+  public static int[] countingBits(int n) {
+    if (n >= 0) {
+      int[] res = new int[n + 1];
+      for (int i = 1; i <= n; i++) {
+        res[i] = res[i / 2] + i % 2;
+      }
+      return res;
+    }
+    return new int[]{0};
+  }
+
+  /*  [Prob 457] Circular Array Loop
+  * */
+  public static boolean isCircularArrayLoopZZ(int[] arr) {
+    int i = 0;
+    boolean[] visited = new boolean[arr.length];
+    int size = arr.length;
+    List<Integer> nos = new ArrayList<>();
+    for (int j = 0; j < arr.length; j++) {
+      nos.add(j);
+    }
+    while (nos.size() > 0) {
+      if (visited[i] == true) {
+        return true;
+      }
+      visited[i] = true;
+      nos.remove(new Integer(i));
+      if (arr[i] > 0) {
+        i = (i + arr[i]) % size;
+      } else {
+        i = i + arr[i];
+        if (i < 0) {
+          i = arr.length + i;
+        }
+      }
+    }
+    return false;
+  }
+
+  public static boolean isCircularArrayLoop(int[] arr) {
+    if (arr.length > 1) {
+      int val = 0;
+      int i = 0;
+      int size = arr.length;
+      while (true) {
+        if (i >= size) {
+          break;
+        }
+        if (arr[i] == 0) {
+          return true;
+        }
+        val = arr[i];
+        arr[i] = 0;
+        if (arr[i] > 0) {
+          i = (i + val) % size;
+        } else {
+          i = i + val;
+          if (i < 0) {
+            i = arr.length + i;
+          }
+        }
+      }
+    }
+    for (int j = 0; j < arr.length; j++) {
+      if (arr[j] != 0) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /* [442] Find All Duplicates in an Array
+  * Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+  * Find all the elements that appear twice in this array.
+  * Could you do it without extra space and in O(n) runtime?
+  * Reuse the same array to mark that a number has appeared once by mulitplying it with -1. And when we encounter a -ve
+  * no we know that its index is duplicate.
+  * */
+  public static List<Integer> findDuplicates(int[] arr) {
+    List<Integer> dups = new ArrayList<>();
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[Math.abs(arr[i]) - 1] < 0) {
+        dups.add(Math.abs(arr[i]));
+        continue;
+      }
+      arr[Math.abs(arr[i]) - 1] = -1 * arr[Math.abs(arr[i]) - 1];
+    }
+    return dups;
   }
 }

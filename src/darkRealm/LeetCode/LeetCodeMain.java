@@ -3,6 +3,10 @@ package darkRealm.LeetCode;
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by Jayam on 1/27/2017.
  */
@@ -16,7 +20,11 @@ public class LeetCodeMain {
 //    testStringToInteger();
 //    testReverseWords();
 //    testCompareVersion();
-    testSurroundRegion();
+//    testSurroundRegion();
+//    testThreeSum();
+//    testCountingBits();
+//    testCircularLoop();
+    testDuplicates();
   }
 
   public static void testAddTwoNumbers() {
@@ -30,8 +38,8 @@ public class LeetCodeMain {
     l2.add(6);
     l2.add(4);
 
-//    LinkedList res = LC_Prob_1_50.AddTwoNumbers(l1, l2);
-    Node trav = LC_Prob_1_50.AddTwoNumbers(l1, l2);
+//    LinkedList res = LC_Prob_Med.AddTwoNumbers(l1, l2);
+    Node trav = LC_Prob_Med.AddTwoNumbers(l1, l2);
 //    Node trav = res.head;
     while (trav != null) {
       System.out.println(" d : " + trav.data);
@@ -44,7 +52,7 @@ public class LeetCodeMain {
 //    String str = "bbbbb";
 //    String str = "pwwkew";
     String str = "dvdf";
-    int res = LC_Prob_1_50.lengthOfLongestSubstring(str);
+    int res = LC_Prob_Med.lengthOfLongestSubstring(str);
     System.out.println(" Str : " + str + "  Longest substring : " + res);
   }
 
@@ -59,7 +67,7 @@ public class LeetCodeMain {
 //    String str = "azwdzwmwcqzgcobeeiphemqbjtxzwkhiqpbrprocbppbxrnsxnwgikiaqutwpftbiinlnpyqstkiqzbggcsdzzjbrkfmhgtnbujzszxsycmvipjtktpebaafycngqasbbhxaeawwmkjcziybxowkaibqnndcjbsoehtamhspnidjylyisiaewmypfyiqtwlmejkpzlieolfdjnxntonnzfgcqlcfpoxcwqctalwrgwhvqvtrpwemxhirpgizjffqgntsmvzldpjfijdncexbwtxnmbnoykxshkqbounzrewkpqjxocvaufnhunsmsazgibxedtopnccriwcfzeomsrrangufkjfzipkmwfbmkarnyyrgdsooosgqlkzvorrrsaveuoxjeajvbdpgxlcrtqomliphnlehgrzgwujogxteyulphhuhwyoyvcxqatfkboahfqhjgujcaapoyqtsdqfwnijlkknuralezqmcryvkankszmzpgqutojoyzsnyfwsyeqqzrlhzbc";
     String str = "aaaaaaaaaaaaaaaaaabbbbbbbbbbbb";
 //   String str = "bppbasooos";
-    String plain = LC_Prob_1_50.longestPalindrome(str);
+    String plain = LC_Prob_Med.longestPalindrome(str);
     System.out.println(" Str : " + str);
     System.out.println("  Longest substring : " + plain);
     System.out.println(" len " + plain.length());
@@ -75,7 +83,7 @@ public class LeetCodeMain {
 //    String str = "ABC";
 //    int k = 2;
 
-    String res = LC_Prob_1_50.zigZagConversion(str, k);
+    String res = LC_Prob_Med.zigZagConversion(str, k);
     System.out.print("str : " + str + " Level : " + k);
     System.out.print("  res : " + res);
   }
@@ -85,7 +93,7 @@ public class LeetCodeMain {
 //    int x = Integer.MAX_VALUE;
 //    int x = 10;
 //    int x = 1534236469;
-    int res = LC_Prob_1_50.reverseInteger(x);
+    int res = LC_Prob_Med.reverseInteger(x);
     System.out.println(" x : " + x + "   res : " + res);
   }
 
@@ -99,7 +107,7 @@ public class LeetCodeMain {
     String str = "2147483648";
 
 
-    int res = LC_Prob_1_50.stringToInteger(str);
+    int res = LC_Prob_Med.stringToInteger(str);
     System.out.println(" Str : " + str + "   res : " + (res));
   }
 
@@ -107,7 +115,7 @@ public class LeetCodeMain {
     String str = "The sky  is blue";
 //    String str = "";
 //    String str = "   lag     bat ";
-    String res = LC_Prob_1_50.reverseWords(str);
+    String res = LC_Prob_Med.reverseWords(str);
     System.out.println(" Str : " + str + "   res : " + res);
     System.out.println(" Str : " + str.length() + "   res : " + res.length());
   }
@@ -119,7 +127,7 @@ public class LeetCodeMain {
     String v1 = "1.2.2...1";
     String v2 = "1.2.3...1";
 
-    int res = LC_Prob_1_50.compareVersion(v1, v2);
+    int res = LC_Prob_Med.compareVersion(v1, v2);
     System.out.println(" V1: " + v1 + "   V2 : " + v2);
     System.out.println("   res : " + res);
   }
@@ -132,17 +140,58 @@ public class LeetCodeMain {
 //        {'X', 'O', 'X', 'X'},
 //    };
 
-//    char[][] board = new char[][]{
-//        {'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-//        {'X', 'O', 'O', 'O', 'X', 'O', 'X'},
-//        {'X', 'O', 'X', 'O', 'X', 'O', 'X'},
-//        {'X', 'O', 'X', 'X', 'O', 'O', 'X'},
-//        {'X', 'O', 'X', 'O', 'O', 'X', 'X'},
-//        {'X', 'O', 'O', 'O', 'X', 'O', 'X'},
-//        {'X', 'X', 'X', 'O', 'X', 'X', 'X'},
-//    };
-    char[][] board = new char[0][0];
+    char[][] board = new char[][]{
+        {'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+        {'X', 'O', 'O', 'O', 'X', 'O', 'X'},
+        {'X', 'O', 'X', 'O', 'X', 'O', 'X'},
+        {'X', 'O', 'X', 'X', 'O', 'O', 'X'},
+        {'X', 'O', 'X', 'O', 'O', 'X', 'X'},
+        {'X', 'O', 'O', 'O', 'X', 'O', 'X'},
+        {'X', 'X', 'X', 'O', 'X', 'X', 'X'},
+    };
+//    char[][] board = new char[0][0];
 
-    LC_Prob_1_50.surroundedRegions(board);
+    LC_Prob_Med.surroundedRegions(board);
+  }
+
+  public static void testThreeSum() {
+    int[] arr = new int[]{-1, 0, 1, 2, -1, 4};
+//    int[] arr = new int[]{-2, 0, 1, 2, -1, 4};
+//    int[] arr = new int[]{-1, 3, 1, 2, -1, -2};
+//    int[] arr = new int[]{-1,0,1,2,-1,-4};
+//    int[] arr = new int[]{0, 0, 0, 0};
+//    int[] arr = new int[]{-12, 3, 4, 1, 6, 9};
+//    int[] arr = new int[]{-2,0,1,1,2};
+
+//    List<List<Integer>> res = LC_Prob_Med.threeSum(arr);
+    List<List<Integer>> res = LC_Prob_Med.threeSumHM(arr);
+    for (int i = 0; i < res.size(); i++) {
+      System.out.println("   res : " + Arrays.toString(res.get(i).toArray()));
+    }
+  }
+
+  public static void testCountingBits() {
+//    int n =-3;
+//    int n =0;
+    int n = 5;
+    int[] arr = LC_Prob_Med.countingBits(n);
+    System.out.println("n : " + n + "  " + Arrays.toString(arr));
+  }
+
+  public static void testCircularLoop() {
+//    int[] arr = new int[]{2, -1, 1, 2, 2};
+//    int[] arr = new int[]{1, -2, 1};
+//    int[] arr = new int[]{1, 1, 1};
+    int[] arr = new int[]{-2, 1, -1 - 2, -2};
+//    int[] arr = new int[]{-1,2};
+    boolean res = LC_Prob_Med.isCircularArrayLoop(arr);
+    System.out.println("res  : " + res + "  " + Arrays.toString(arr));
+  }
+
+  public static void testDuplicates() {
+//    int[] arr = new int[]{4, 3, 2, 7, 8, 2, 3, 1};
+    int[] arr = new int[]{4, 3, 2, 5, 6, 1, 3, 4,5};
+    List<Integer> res = LC_Prob_Med.findDuplicates(arr);
+    System.out.println("res  : " + Arrays.toString(res.toArray()) + "  " + Arrays.toString(arr));
   }
 }
