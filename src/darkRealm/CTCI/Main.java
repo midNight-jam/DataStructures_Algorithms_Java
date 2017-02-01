@@ -24,8 +24,8 @@ public class Main {
     // write your code here, testing after new git
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
-    doRecursion_DP();
-//    doSortingAndSearching();
+//    doRecursion_DP();
+    doSortingAndSearching();
 //    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
@@ -346,7 +346,8 @@ public class Main {
 //    Sorting_and_Searching_Main.testSortedMatrixSearch();
 //    Sorting_and_Searching_Main.testSparseSearch();
 //    Sorting_and_Searching_Main.testGroupAnagrams();
-    Sorting_and_Searching_Main.testFindDuplicates();
+//    Sorting_and_Searching_Main.testFindDuplicates();
+    Sorting_and_Searching_Main.testInsertionSort();
   }
 
   private static void doModerate() {

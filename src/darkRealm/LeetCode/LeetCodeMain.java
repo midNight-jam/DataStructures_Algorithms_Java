@@ -27,7 +27,8 @@ public class LeetCodeMain {
 //    testDuplicates();
 //    testMissing();
 //    testMissingFirstPositive();
-    testDuplicateNumber();
+//    testDuplicateNumber();
+    testSingleNumber();
   }
 
   public static void testAddTwoNumbers() {
@@ -226,6 +227,16 @@ public class LeetCodeMain {
 //    int[] arr = new int[]{4,1,2,3,2};
 //    int[] arr = new int[]{1,2,3,2};
     int res = LC_Prob_Med.duplicateNumber(arr);
+    System.out.println("res  : " + res + "  " + Arrays.toString(arr));
+  }
+
+  public static void testSingleNumber(){
+//    int [] arr  = new int[]{3,2,3,4,1,2,1};
+//    int [] arr  = new int[0];
+//    int [] arr  = new int[]{1};
+    int [] arr  = new int[]{1,1};
+//    int [] arr  = new int[]{1,1,-1};
+    int res = LC_Prob_Med.singleNumber(arr);
     System.out.println("res  : " + res + "  " + Arrays.toString(arr));
   }
 }

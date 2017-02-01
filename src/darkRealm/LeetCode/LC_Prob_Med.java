@@ -764,4 +764,17 @@ public class LC_Prob_Med {
     }
     return behindPtr;
   }
+
+  /*
+  * */
+  public static int singleNumber(int[] arr) {
+    int xorResult = 0;
+    if (arr.length > 0) {
+      xorResult = arr[0];
+      for (int i = 1; i < arr.length; i++) {
+        xorResult ^= arr[i];
+      }
+    }
+    return xorResult;
+  }
 }

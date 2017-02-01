@@ -1,6 +1,7 @@
 package darkRealm.CTCI;
 
 import darkRealm.CTCI.Sorting_and_Searching.BinarySearchUtil;
+import darkRealm.CTCI.Sorting_and_Searching.InsertionSortUtil;
 import darkRealm.CTCI.Sorting_and_Searching.QuickSortUtil;
 import darkRealm.CTCI.Sorting_and_Searching.Searching_Sorting;
 
@@ -110,20 +111,31 @@ public class Sorting_and_Searching_Main {
   }
 
   public static void testGroupAnagrams() {
-    String [] arr = new String[]{"caa","baa","aac","aba"};
+    String[] arr = new String[]{"caa", "baa", "aac", "aba"};
 //    String [] arr = new String[]{"caa","baa","aba","aaa","aab","aac"};
 //    String [] arr = new String[]{"aca","aab","aaa","aba","aaa","baa","aac"};
 //    String [] arr = new String[]{"cat","tac","sad","das","asd","act"};
     Searching_Sorting.groupAnagrams(arr);
   }
 
-  public static void testFindDuplicates(){
-    int arr[] = new int[]{1,4,1,2,3,4,5,6,7,8,7,2,3,6};
+  public static void testFindDuplicates() {
+    int arr[] = new int[]{1, 4, 1, 2, 3, 4, 5, 6, 7, 8, 7, 2, 3, 6};
     int memorySize = 8;
-    Searching_Sorting.findDuplicates(arr,memorySize);
+    Searching_Sorting.findDuplicates(arr, memorySize);
     System.out.println("================");
-    Searching_Sorting.findDuplicatesMyBitsArray(arr,memorySize);
+    Searching_Sorting.findDuplicatesMyBitsArray(arr, memorySize);
 
   }
 
+  public static void testInsertionSort() {
+//    int[] arr = new int[]{36, 14, 27, 40, 31};
+//    int[] arr = new int[]{1};
+//    int[] arr = new int[]{1,2};
+//    int[] arr = new int[]{1,1};
+//    int[] arr = new int[]{2,2,2};
+//    int[] arr = new int[]{3,1,0};
+    int[] arr = new int[]{3,1,0};
+    InsertionSortUtil.insertionSort(arr);
+    System.out.println("Arr : " + Arrays.toString(arr));
+  }
 }

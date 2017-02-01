@@ -10,7 +10,7 @@ public class BinarySearchUtil {
     int high = arr.length - 1;
     int mid;
     while (low <= high) {
-      mid = (low + high) / 2;
+      mid = (low + (high-low)) / 2;
       if (k < arr[mid]) {
         high = mid - 1;
       } else if (arr[mid] < k) {
@@ -24,16 +24,16 @@ public class BinarySearchUtil {
   }
 
   public static int binarySearchRecursive(int arr[], int k, int low, int high) {
-    if (low <= high) {
+    if (low < high) {
       int mid = (low + high) / 2;
-      if (k < arr[mid]) {
+      if(arr[mid]==k){
+        System.out.println("Found  : " + arr[mid] + "  at " + mid);
+        return mid;
+      }
+      else if (k < arr[mid]) {
         return binarySearchRecursive(arr, k, low, mid - 1);
       } else if (arr[mid] < k) {
         return binarySearchRecursive(arr, k, mid + 1, high);
-      } else {
-        System.out.println("Found  : " + arr[mid] + "  at " + mid);
-
-        return mid;
       }
     }
     return Integer.MIN_VALUE;
