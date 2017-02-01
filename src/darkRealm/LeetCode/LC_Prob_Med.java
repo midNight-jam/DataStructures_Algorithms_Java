@@ -708,18 +708,60 @@ public class LC_Prob_Med {
     while (i < arr.length) {
       if (arr[i] == i + 1 || arr[i] <= 0 || arr[i] > arr.length) {
         i++;
-      } else if (arr[arr[i]-1] != arr[i]) {
+      } else if (arr[arr[i] - 1] != arr[i]) {
         int temp = arr[i];
         arr[i] = arr[arr[i] - 1];
         arr[temp - 1] = temp;
-      }
-      else i++;
+      } else i++;
     }
     for (i = 1; i <= arr.length; i++) {
-      if (arr[i - 1] != i ) {
+      if (arr[i - 1] != i) {
         return i;
       }
     }
     return i;
+  }
+
+  /*  [287] Find the Duplicate Number
+  * Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive),
+  * prove that at least one duplicate number must exist. Assume that there is only one duplicate number,
+  * find the duplicate one.
+  * Note:
+  * You must not modify the array (assume the array is read only).
+  * You must use only constant, O(1) extra space.
+  * Your runtime complexity should be less than O(n2).
+  * There is only one duplicate number in the array, but it could be repeated more than once.
+  * */
+  public static int duplicateNumber(int[] arr) {
+    int slowPtr = 0;
+    int fastPtr = 0;
+    while (true) {
+      if (fastPtr >= arr.length || slowPtr >= arr.length) {
+        return 0;
+      }
+      slowPtr = arr[slowPtr];
+      fastPtr = arr[arr[fastPtr]];
+      if (slowPtr == fastPtr) {
+        break;
+      }
+    }
+    // calculate the length of the loop
+    int trav = arr[slowPtr];
+    int loopSize = 1;
+    while (arr[trav] != arr[fastPtr]) {
+      trav = arr[trav];
+      loopSize++;
+    }
+
+    int aheadPtr = arr[0];
+    for (int i = 1; i < loopSize; i++) {
+      aheadPtr = arr[aheadPtr];
+    }
+    int behindPtr = 0;
+    while (aheadPtr != behindPtr) {
+      aheadPtr = arr[aheadPtr];
+      behindPtr = arr[behindPtr];
+    }
+    return behindPtr;
   }
 }
