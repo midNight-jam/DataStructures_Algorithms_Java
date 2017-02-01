@@ -24,7 +24,9 @@ public class LeetCodeMain {
 //    testThreeSum();
 //    testCountingBits();
 //    testCircularLoop();
-    testDuplicates();
+//    testDuplicates();
+//    testMissing();
+    testMissingFirstPositive();
   }
 
   public static void testAddTwoNumbers() {
@@ -190,8 +192,29 @@ public class LeetCodeMain {
 
   public static void testDuplicates() {
 //    int[] arr = new int[]{4, 3, 2, 7, 8, 2, 3, 1};
-    int[] arr = new int[]{4, 3, 2, 5, 6, 1, 3, 4,5};
+    int[] arr = new int[]{4, 3, 2, 5, 6, 1, 3, 4, 5};
     List<Integer> res = LC_Prob_Med.findDuplicates(arr);
     System.out.println("res  : " + Arrays.toString(res.toArray()) + "  " + Arrays.toString(arr));
+  }
+
+  public static void testMissing() {
+//    int[] arr = new int[]{4, 3, 2, 7, 8, 2, 3, 1};
+    int[] arr = new int[]{4, 3, 2, 7, 8, 2, 3, 1};
+    List<Integer> res = LC_Prob_Med.disappearedNumbers(arr);
+    System.out.println("res  : " + Arrays.toString(res.toArray()) + "  " + Arrays.toString(arr));
+  }
+
+  public static void testMissingFirstPositive() {
+//    int[] arr = new int[0];
+//    int[] arr = new int[]{-2,2,3};
+//    int[] arr = new int[]{3,4,2,1};
+//    int[] arr = new int[]{3,4,-1,1};
+//    int[] arr = new int[]{1, 2, 0};
+//    int[] arr = new int[]{1};
+//    int[] arr = new int[]{2};
+//    int[] arr = new int[]{0};
+    int[] arr = new int[]{1,1};
+    int res = LC_Prob_Med.firstMissingPositive(arr);
+    System.out.println("res  : " + res + "  " + Arrays.toString(arr));
   }
 }

@@ -672,4 +672,54 @@ public class LC_Prob_Med {
     }
     return dups;
   }
+
+  /* [448] Find All Numbers Disappeared in an Array
+  * Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+  * Find all the elements of [1, n] inclusive that do not appear in this array.
+  * */
+  public static List<Integer> disappearedNumbers(int[] arr) {
+    int index = 0;
+    for (int i = 0; i < arr.length; i++) {
+      index = Math.abs(arr[i]) - 1;
+      if (arr[index] > 0) {
+        arr[index] = -1 * arr[index];
+      }
+    }
+    List<Integer> missingNos = new ArrayList<>();
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] > 0) {
+        missingNos.add(i + 1);
+      }
+    }
+    return missingNos;
+  }
+
+  /* [41] First Missing Positive
+  * Given an unsorted integer array, find the first missing positive integer.
+  * For example,
+  * Given [1,2,0] return 3,
+  * and [3,4,-1,1] return 2.
+  * Your algorithm should run in O(n) time and uses constant space*/
+  public static int firstMissingPositive(int[] arr) {
+    if (arr.length == 0) {
+      return 1;
+    }
+    int i = 0;
+    while (i < arr.length) {
+      if (arr[i] == i + 1 || arr[i] <= 0 || arr[i] > arr.length) {
+        i++;
+      } else if (arr[arr[i]-1] != arr[i]) {
+        int temp = arr[i];
+        arr[i] = arr[arr[i] - 1];
+        arr[temp - 1] = temp;
+      }
+      else i++;
+    }
+    for (i = 1; i <= arr.length; i++) {
+      if (arr[i - 1] != i ) {
+        return i;
+      }
+    }
+    return i;
+  }
 }
