@@ -2,7 +2,6 @@ package darkRealm.LeetCode;
 
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
-import darkRealm.CTCI.Sorting_and_Searching.BinarySearchUtil;
 
 import java.util.*;
 
@@ -815,7 +814,7 @@ public class LC_Prob_Med {
       }
       if (tail - head == window) {
         outGoing = str.charAt(head);
-        if(hash[outGoing]>=0){
+        if (hash[outGoing] >= 0) {
           windowCount++;
         }
         hash[outGoing]++;
@@ -825,5 +824,44 @@ public class LC_Prob_Med {
     return matchIndexes;
   }
 
-  /**/
+  /*  [20] Valid Parentheses
+  * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+  * The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+  * */
+  public static boolean isValid(String str) {
+    Stack<Character> stack = new Stack<>();
+    char c;
+    char top;
+    for (int i = 0; i < str.length(); i++) {
+      c = str.charAt(i);
+      if (c == '{' || c == '[' || c == '(') {
+        stack.push(c);
+      } else {
+        if (stack.isEmpty()) {
+          return false;
+        }
+        top = stack.peek();
+        if (c == getClosing(top)) {
+          stack.pop();
+        } else break;
+      }
+    }
+    return stack.isEmpty();
+  }
+
+  private static char getClosing(char c) {
+    char closing = 'X';
+    switch (c) {
+      case '{':
+        closing = '}';
+        break;
+      case '[':
+        closing = ']';
+        break;
+      case '(':
+        closing = ')';
+        break;
+    }
+    return closing;
+  }
 }

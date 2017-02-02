@@ -3,7 +3,6 @@ package darkRealm.LeetCode;
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,7 +28,8 @@ public class LeetCodeMain {
 //    testMissingFirstPositive();
 //    testDuplicateNumber();
 //    testSingleNumber();
-    testFindAnagram();
+//    testFindAnagram();
+    testValidString();
   }
 
   public static void testAddTwoNumbers() {
@@ -224,34 +224,40 @@ public class LeetCodeMain {
   public static void testDuplicateNumber() {
 //    int[] arr = new int[]{2, 5, 1, 1, 4, 3};
 //    int[] arr = new int[]{1, 1};
-    int[] arr = new int[]{3,1,3,4,2};
+    int[] arr = new int[]{3, 1, 3, 4, 2};
 //    int[] arr = new int[]{4,1,2,3,2};
 //    int[] arr = new int[]{1,2,3,2};
     int res = LC_Prob_Med.duplicateNumber(arr);
     System.out.println("res  : " + res + "  " + Arrays.toString(arr));
   }
 
-  public static void testSingleNumber(){
+  public static void testSingleNumber() {
 //    int [] arr  = new int[]{3,2,3,4,1,2,1};
 //    int [] arr  = new int[0];
 //    int [] arr  = new int[]{1};
-    int [] arr  = new int[]{1,1};
+    int[] arr = new int[]{1, 1};
 //    int [] arr  = new int[]{1,1,-1};
     int res = LC_Prob_Med.singleNumber(arr);
     System.out.println("res  : " + res + "  " + Arrays.toString(arr));
   }
 
-  public static void testFindAnagram(){
+  public static void testFindAnagram() {
     String str = "cbaebabacd";
 //    String str = "aaa";
 //    String str = "cba";
 //    String str = "abab";
-    String anagram ="ab";
+    String anagram = "ab";
 //    String str = "ccacc";
 //    String anagram ="cc";
 //    String anagram ="aa";
-    List<Integer> res = LC_Prob_Med.findAnagrams(str,anagram);
-    System.out.println(" Str : "+str+"  anagram : "+anagram);
-    System.out.println(" Str : "+Arrays.toString(res.toArray()));
+    List<Integer> res = LC_Prob_Med.findAnagrams(str, anagram);
+    System.out.println(" Str : " + str + "  anagram : " + anagram);
+    System.out.println(" Str : " + Arrays.toString(res.toArray()));
+  }
+
+  public static void testValidString() {
+    String str = "[]]";
+    boolean res = LC_Prob_Med.isValid(str);
+    System.out.println(" Str : " + str + "  valid : " + res);
   }
 }
