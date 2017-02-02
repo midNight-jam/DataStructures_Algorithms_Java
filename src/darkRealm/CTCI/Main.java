@@ -347,7 +347,9 @@ public class Main {
 //    Sorting_and_Searching_Main.testSparseSearch();
 //    Sorting_and_Searching_Main.testGroupAnagrams();
 //    Sorting_and_Searching_Main.testFindDuplicates();
-    Sorting_and_Searching_Main.testInsertionSort();
+//    Sorting_and_Searching_Main.testInsertionSort();
+//    Sorting_and_Searching_Main.testQuickSort();
+    Sorting_and_Searching_Main.testCountSort();
   }
 
   private static void doModerate() {

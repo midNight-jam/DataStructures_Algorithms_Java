@@ -1,9 +1,6 @@
 package darkRealm.CTCI;
 
-import darkRealm.CTCI.Sorting_and_Searching.BinarySearchUtil;
-import darkRealm.CTCI.Sorting_and_Searching.InsertionSortUtil;
-import darkRealm.CTCI.Sorting_and_Searching.QuickSortUtil;
-import darkRealm.CTCI.Sorting_and_Searching.Searching_Sorting;
+import darkRealm.CTCI.Sorting_and_Searching.*;
 
 import java.util.Arrays;
 
@@ -134,8 +131,22 @@ public class Sorting_and_Searching_Main {
 //    int[] arr = new int[]{1,1};
 //    int[] arr = new int[]{2,2,2};
 //    int[] arr = new int[]{3,1,0};
-    int[] arr = new int[]{3,1,0};
+    int[] arr = new int[]{3, 1, 0};
     InsertionSortUtil.insertionSort(arr);
+    System.out.println("Arr : " + Arrays.toString(arr));
+  }
+
+  public static void testQuickSort() {
+    int[] arr = new int[]{36, 14, 27, 40, 31};
+//    QuickSortUtil.quicksort(arr, 0, arr.length-1);
+    QuickSortUtil.quicksort(arr, 0, arr.length - 1);
+    System.out.println("Arr : " + Arrays.toString(arr));
+  }
+
+  public static void testCountSort() {
+    int[] arr = new int[]{5,1,2,2,3};
+//    QuickSortUtil.quicksort(arr, 0, arr.length-1);
+    arr = CountingSortUtil.countingSort(arr, arr.length);
     System.out.println("Arr : " + Arrays.toString(arr));
   }
 }

@@ -1,5 +1,7 @@
 package darkRealm.CTCI.Sorting_and_Searching;
 
+import java.util.Random;
+
 /**
  * Created by Jayam on 1/10/2017.
  */
@@ -67,5 +69,25 @@ public class QuickSortUtil {
       }
     }
     return low;
+  }
+
+  public static int[] randomizedQuickSort(int[] arr, int low, int high) {
+    int pivot = randomPartition(arr, low, high);
+    if (low < pivot - 1) {
+      randomizedQuickSort(arr, low, pivot - 1);
+    }
+    if (pivot < high) {
+      randomPartition(arr, pivot, high);
+    }
+    return arr;
+  }
+
+  private static int randomPartition(int[] arr, int low, int high) {
+    Random rand = new Random();
+    int randIndex = low + rand.nextInt(high - low);
+    int temp = arr[randIndex];
+    arr[randIndex] = arr[low];
+    arr[low] = temp;
+    return findPivot(arr, low, high);
   }
 }
