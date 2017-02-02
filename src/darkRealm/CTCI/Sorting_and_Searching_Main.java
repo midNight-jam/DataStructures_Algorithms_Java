@@ -144,9 +144,16 @@ public class Sorting_and_Searching_Main {
   }
 
   public static void testCountSort() {
-    int[] arr = new int[]{5,1,2,2,3};
+    int[] arr = new int[]{5, 1, 2, 2, 3};
 //    QuickSortUtil.quicksort(arr, 0, arr.length-1);
     arr = CountingSortUtil.countingSort(arr, arr.length);
+    System.out.println("Arr : " + Arrays.toString(arr));
+  }
+
+  public static void testRadix() {
+//    int[] arr = new int[]{33101, 26440, 16341, 20101, 801};
+    int[] arr = new int[]{16341, 20101, 801,33101, 26440};
+    arr = RadixSortUtil.radixSort(arr, 5);
     System.out.println("Arr : " + Arrays.toString(arr));
   }
 }

@@ -349,7 +349,8 @@ public class Main {
 //    Sorting_and_Searching_Main.testFindDuplicates();
 //    Sorting_and_Searching_Main.testInsertionSort();
 //    Sorting_and_Searching_Main.testQuickSort();
-    Sorting_and_Searching_Main.testCountSort();
+//    Sorting_and_Searching_Main.testCountSort();
+    Sorting_and_Searching_Main.testRadix();
   }
 
   private static void doModerate() {
