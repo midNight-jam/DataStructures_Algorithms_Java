@@ -26,8 +26,8 @@ public class Main {
 //    doStack_and_Queue();
 //    doRecursion_DP();
 //    doSortingAndSearching();
-    doTrees_Graph();
-//    doLinkedLsit();
+//    doTrees_Graph();
+    doLinkedLsit();
 //    doMathUtils();
 
 //    String res  = getTime(9,9,9,9);
@@ -292,7 +292,8 @@ public class Main {
   }
 
   private static void doLinkedLsit() {
-    LinkedList_Main.testLinkedListOperations();
+//    LinkedList_Main.testLinkedListOperations();
+    LinkedList_Main.testDeepCopyRandomList();
   }
 
   private static void doBitsMain() {
