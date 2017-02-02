@@ -80,7 +80,12 @@ public class Trees_and_Graphs_Main {
     tree.root.left.right.right = new TNode(17);
     tree.root.left.left.left = new TNode(3);
     tree.root.left.left.right = new TNode(7);
-    Trees_and_Graphs.findCommonAncestor(tree, 3, 17);
+//    Trees_and_Graphs.findCommonAncestor(tree, 3, 17);
+//    TNode res = Trees_and_Graphs.findCommonAncestor(tree.root, 3, 40);
+//    TNode res = Trees_and_Graphs.findCommonAncestor(tree.root, 10, 17);
+//    TNode res = Trees_and_Graphs.findCommonAncestor(tree.root, 10, 18);
+    TNode res = Trees_and_Graphs.findCommonAncestor(tree.root, 19, 18);
+    System.out.println("RES : " + res.data);
   }
 
   public static void testCheckSubtree() {

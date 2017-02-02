@@ -449,52 +449,27 @@ public class Trees_and_Graphs {
   /*  [Prob 4.8]
   *   Q) FIrstCommonAncestor : find the first common ancestor 0f two nodes in a binary tree (NOT A BST)
   *   A)
-  *
-  *   [approcehd worked but filaed when data had parent child realtins ship]
-  *   Will return boolean from recursive functions for each data, & will AND them both (left result * right result),
-  *   the first node at which both ANDING gives true result then this is the common ancestor
-  *   [Approach no 2] - works but inefficient
-  *   look in each sub tree if the node is covered by sub tree or not. If both the nodes are covered by left subtree the
-  *   go deep in left subtree, if both the nodes are covered bt right subtree then go in right subtree. Continue, till
-  *   you find the nodes in diff subtree and not in common subtree. This node at which you find the node in diff subtree
-  *   is the common ancestor
+  *   [Approach no 3] - percolate up the result, as the question said 2 nodes in the tree means both are present
+  *   if we have reached the end or have found the data return that node
+  *   at any nde we check if we are getting data(not null) from both the left & right then that node is the common ancestor
+  *   In case of two node being par & child, parent node will be returned which is a always the common ancestor amon 2 nodes
   * */
-  public static void findCommonAncestor(Tree tree, int d1, int d2) {
-//    TNode commonAncestor = findCommonAncestorAp2(tree.root, d1, d2);
-    TNode commonAncestor = commonAncestor(tree.root, d1, d2);
-    if (commonAncestor == null)
-      System.out.println(" check debug no ancestor");
-    else
-      System.out.println(" check debug " + commonAncestor.data);
-  }
-
-  private static TNode commonAncestor(TNode node, int p, int q) {
-    if (node == null) {
-      return null;
-    }
-    if ((node.data == p) && (node.data != q)) {
+  public static TNode findCommonAncestor(TNode node, int p, int q) {
+    if (node == null || node.data == p || node.data == q) {
       return node;
     }
-    if ((node.data != p) && (node.data == q)) {
+    TNode left = findCommonAncestor(node.left, p, q);
+    TNode right = findCommonAncestor(node.right, p, q);
+    if (left == null && right != null) {
+      return right;
+    }
+    if (left != null && right == null) {
+      return left;
+    }
+    if (left != null && right != null) {
       return node;
     }
-
-    TNode pSubTree = commonAncestor(node.left, p, q);
-    TNode qSubTree = commonAncestor(node.right, p, q);
-
-    if ((pSubTree != null) && (pSubTree.data != p) && (pSubTree.data != q)) {
-      return pSubTree; // common ancestor found, percolating up
-    }
-
-    if ((qSubTree != null) && (qSubTree.data != p) && (qSubTree.data != q)) {
-      return qSubTree; // common ancestor found, percolating up
-    }
-
-    if ((pSubTree != null) && (qSubTree != null)) {
-      return node; // this is the common ancestor
-    }
-    // this line returns the nonNull subtree
-    return pSubTree == null ? qSubTree : pSubTree;
+    return null;
   }
 
   private static TNode findCommonAncestorAp2(TNode node, int d1, int d2) {

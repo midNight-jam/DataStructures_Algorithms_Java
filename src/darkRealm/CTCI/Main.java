@@ -25,8 +25,8 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-    doSortingAndSearching();
-//    doTrees_Graph();
+//    doSortingAndSearching();
+    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 
@@ -140,14 +140,14 @@ public class Main {
   }
 
   private static void doTrees_Graph() {
-    Trees_and_Graphs_Main.testBFSAndDFS();
+//    Trees_and_Graphs_Main.testBFSAndDFS();
 //    Trees_and_Graphs_Main.testIsRoutePresentBetweenNodes();
 //    Trees_and_Graphs_Main.testMinimalHeightTree();
 //    Trees_and_Graphs_Main.testListOfDepths();
 //    Trees_and_Graphs_Main.testIsBalanced();
 //    Trees_and_Graphs_Main.testIsBST();
 //    Trees_and_Graphs_Main.testPredecessorAndSuccessor();
-//    Trees_and_Graphs_Main.testCommonAncestor();
+    Trees_and_Graphs_Main.testCommonAncestor();
 //    Trees_and_Graphs_Main.testCheckSubtree();
 //    Trees_and_Graphs_Main.testPathsWithSums();
 //    Trees_and_Graphs_Main.testInsertNode();
