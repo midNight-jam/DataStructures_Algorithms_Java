@@ -5,6 +5,7 @@ package darkRealm.CTCI.Sorting_and_Searching;
  */
 public class RadixSortUtil {
 
+  /* k is the most nuumber of digits in the array*/
   public static int[] radixSort(int[] arr, int k) {
     int powerTen = 10;
     int belowPower = 1;
