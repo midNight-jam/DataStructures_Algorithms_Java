@@ -777,4 +777,53 @@ public class LC_Prob_Med {
     }
     return xorResult;
   }
+
+  /* [438] Find All Anagrams in a String
+  * Q) Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
+  * Strings consists of lowercase English letters only and the length of both strings s and p will not be larger
+  * than 20,100.
+  * */
+  public static List<Integer> findAnagrams(String str, String anagram) {
+    List<Integer> matchIndexes = new ArrayList<>();
+    if (str == null || str.length() == 0 || anagram == null || anagram.length() == 0) {
+      return matchIndexes;
+    }
+    // create a hashmap from anagram to keep the count of chars
+    int[] hash = new int[256];
+    int window = anagram.length();
+    for (int i = 0; i < window; i++) {
+      hash[anagram.charAt(i)]++;
+    }
+    // now we will slide the window & decrement the frequency of the chars in hash. The point is when we slide the window
+    // we just to increase the frequency of the character going out of the window, hence we will increase its frequency
+    // when sliding. and only increase the windowCount by 1 if the outgoing char was in hash.
+    int head = 0;
+    int tail = 0;
+    int len = str.length();
+    int windowCount = window;
+    char c;
+    char outGoing;
+    while (tail < len) {
+      c = str.charAt(tail);
+      if (hash[c] >= 1) {
+        windowCount--;
+      }
+      hash[c]--;
+      tail++;
+      if (windowCount == 0) {
+        matchIndexes.add(head);
+      }
+      if (tail - head == window) {
+        outGoing = str.charAt(head);
+        if(hash[outGoing]>=0){
+          windowCount++;
+        }
+        hash[outGoing]++;
+        head++;
+      }
+    }
+    return matchIndexes;
+  }
+
+  /**/
 }

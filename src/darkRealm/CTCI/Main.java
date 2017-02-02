@@ -27,7 +27,7 @@ public class Main {
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doTrees_Graph();
-    doLinkedLsit();
+//    doLinkedLsit();
 //    doMathUtils();
 
 //    String res  = getTime(9,9,9,9);
@@ -45,7 +45,7 @@ public class Main {
 //    int res = maxTweet(new int[]{3, 1, 2, 1}, 4);
 
 //    doModerate();
-//    doLeetCode();
+    doLeetCode();
   }
 
   private static void doArray_and_Strings_Main() {

@@ -28,7 +28,8 @@ public class LeetCodeMain {
 //    testMissing();
 //    testMissingFirstPositive();
 //    testDuplicateNumber();
-    testSingleNumber();
+//    testSingleNumber();
+    testFindAnagram();
   }
 
   public static void testAddTwoNumbers() {
@@ -238,5 +239,19 @@ public class LeetCodeMain {
 //    int [] arr  = new int[]{1,1,-1};
     int res = LC_Prob_Med.singleNumber(arr);
     System.out.println("res  : " + res + "  " + Arrays.toString(arr));
+  }
+
+  public static void testFindAnagram(){
+    String str = "cbaebabacd";
+//    String str = "aaa";
+//    String str = "cba";
+//    String str = "abab";
+    String anagram ="ab";
+//    String str = "ccacc";
+//    String anagram ="cc";
+//    String anagram ="aa";
+    List<Integer> res = LC_Prob_Med.findAnagrams(str,anagram);
+    System.out.println(" Str : "+str+"  anagram : "+anagram);
+    System.out.println(" Str : "+Arrays.toString(res.toArray()));
   }
 }

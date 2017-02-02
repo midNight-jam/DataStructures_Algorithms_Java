@@ -472,39 +472,6 @@ public class Trees_and_Graphs {
     return null;
   }
 
-  private static TNode findCommonAncestorAp2(TNode node, int d1, int d2) {
-    boolean isPresentInTree = coversAp2(node, d1) && coversAp2(node, d2);
-    if (!isPresentInTree) {
-      return null;
-    }
-    return checkAncestorAp2(node, d1, d2);
-  }
-
-  private static boolean coversAp2(TNode node, int d) {
-    if (node == null) {
-      return false;
-    }
-    if (node.data == d) {
-      return true;
-    }
-    return (coversAp2(node.left, d) || coversAp2(node.right, d));
-  }
-
-  private static TNode checkAncestorAp2(TNode node, int d1, int d2) {
-    if (node == null || node.data == d1 || node.data == d2) {
-      return node;
-    }
-
-    boolean d1InLeft = coversAp2(node.left, d1);
-    boolean d2InLeft = coversAp2(node.left, d2);
-
-    if (d1InLeft != d2InLeft) {
-      return node; // the node found where both d1 & d2 are in diff subtrees
-    }
-
-    TNode subTreeTOLookIn = d1InLeft ? node.left : node.right;
-    return checkAncestorAp2(subTreeTOLookIn, d1, d2);
-  }
 
   public static boolean checkSubtree(Tree t1, Tree t2) {
     boolean res = checkSubtree(t1.root, t2.root, t2.root);
