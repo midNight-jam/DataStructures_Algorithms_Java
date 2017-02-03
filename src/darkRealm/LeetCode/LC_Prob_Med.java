@@ -864,4 +864,63 @@ public class LC_Prob_Med {
     }
     return closing;
   }
+
+  /*  [48] Rotate Image
+  *
+  * */
+  public static void rotate(int[][] matrix) {
+    int levels = matrix.length;
+    int i = 0;
+    int temp;
+    while (i < levels / 2) {
+      int swapLevel = i;
+      for (int j = swapLevel; j < levels - swapLevel - 1; j++) {
+        temp = matrix[swapLevel][j];
+
+        // bring left col to top row
+        matrix[swapLevel][j] = matrix[levels - j - 1][swapLevel];
+
+        //bring bottom row to left col
+        matrix[levels - j - 1][swapLevel] = matrix[levels - swapLevel - 1][levels - j - 1];
+
+        //bring right col to bottom row
+        matrix[levels - swapLevel - 1][levels - j - 1] = matrix[j][levels - swapLevel - 1];
+
+        // put temp to right col
+        matrix[j][levels - swapLevel - 1] = temp;
+      }
+      i++;
+    }
+
+    for (int row = 0; row < matrix.length; row++) {
+      for (int col = 0; col < matrix.length; col++) {
+        System.out.print(" " + matrix[row][col]);
+      }
+      System.out.println("");
+    }
+  }
+
+  /*  [238] Product of Array Except Self
+  *Given an array of n integers where n > 1, nums, return an array output such that output[i] is equal to the product
+  * of all the elements of nums except nums[i].
+  * Solve it without division and in O(n).
+  * For example, given [1,2,3,4], return [24,12,8,6].
+  * */
+  public static int[] productExceptSelf(int[] arr) {
+    int[] res = new int[arr.length];
+    int temp = 1;
+    // we have to create a shifted aray of products thats why we initialize with 1 and not arr[0], this will give us all
+    // the nos product except the last number, now we traverse this product the array but from right, and multiply with
+    // the number ar same pos in res array.
+    for (int i = 0; i < arr.length; i++) {
+      res[i] = temp;
+      temp *= arr[i];
+    }
+    int right = 1;
+    for (int j = arr.length - 1; j >= 0; j--) {
+      res[j] = res[j] * right;
+      right = right * arr[j];
+    }
+    return res;
+  }
 }

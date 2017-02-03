@@ -29,7 +29,9 @@ public class LeetCodeMain {
 //    testDuplicateNumber();
 //    testSingleNumber();
 //    testFindAnagram();
-    testValidString();
+//    testValidString();
+//    testRotateClockwise();
+    testexceptSelf();
   }
 
   public static void testAddTwoNumbers() {
@@ -259,5 +261,23 @@ public class LeetCodeMain {
     String str = "[]]";
     boolean res = LC_Prob_Med.isValid(str);
     System.out.println(" Str : " + str + "  valid : " + res);
+  }
+
+  public static void testRotateClockwise() {
+    int[][] matrix = new int[][]{
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
+
+    LC_Prob_Med.rotate(matrix);
+//    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
+  }
+
+  public static void testexceptSelf() {
+    int[] arr = new int[]{1, 2, 3, 4};
+    arr = LC_Prob_Med.productExceptSelf(arr);
+    System.out.println(" Arr : " + Arrays.toString(arr));
   }
 }

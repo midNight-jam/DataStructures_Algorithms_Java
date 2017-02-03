@@ -111,7 +111,7 @@ public class MatrixUtil {
     }
 
 
-    private static String getPrintableMatrix(int[][] m) {
+    public static String getPrintableMatrix(int[][] m) {
         int rows = m.length;
         int columns = m[0].length;
         StringBuffer string = new StringBuffer();
