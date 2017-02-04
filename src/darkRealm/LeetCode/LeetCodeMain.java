@@ -35,7 +35,9 @@ public class LeetCodeMain {
 //    testexceptSelf();
 //    testRandomizeSet();
 //    testSlidingMaximum();
-    testFirstUniqueChar();
+//    testFirstUniqueChar();
+//    testMaxProfit();
+    testLetterCombinations();
   }
 
   public static void testAddTwoNumbers() {
@@ -324,5 +326,22 @@ public class LeetCodeMain {
     String str = null;
     int res = LC_Prob_Med.firstUniqueCharacter(str);
     System.out.println("res : " + res + "  Str : " + str);
+  }
+
+  public static void testMaxProfit() {
+//    int[] arr = new int[]{7, 1, 5, 3, 6, 4};
+//    int[] arr = new int[]{7, 6, 4, 3, 1};
+//    int[] arr = new int[]{7, 6, 4, 3, 1, 5, 7};
+//    int[] arr = new int[]{2, 4, 1};
+    int[] arr = new int[]{-2, 2, 4, 1, 2, 3, 5, 6};
+    int res = LC_Prob_Med.maxProfit(arr);
+    System.out.println("res : " + res + "  prices : " + Arrays.toString(arr));
+  }
+
+  public static void testLetterCombinations() {
+//    int num = 23;
+    int num = 21;
+    List<String> res = LC_Prob_Med2.letterCombinations(num);
+    System.out.println("Arr : " + Arrays.toString(res.toArray()));
   }
 }
