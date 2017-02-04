@@ -33,7 +33,8 @@ public class LeetCodeMain {
 //    testValidString();
 //    testRotateClockwise();
 //    testexceptSelf();
-    testRandomizeSet();
+//    testRandomizeSet();
+    testSlidingMaximum();
   }
 
   public static void testAddTwoNumbers() {
@@ -303,5 +304,16 @@ public class LeetCodeMain {
 
     res = rset.remove(1);
     res = rset.remove(13);
+  }
+
+  public static void testSlidingMaximum() {
+    int[] arr = new int[]{1, 3, -1, -3, 5, 3, 6, 7};
+    int k = 3;
+//    int[] arr = new int[]{9,10,9,-7,-4,-8,2,-6};
+//    int k = 5;
+
+    int [] nos = LC_Prob_Med.slidingWindowMaximum(arr, k);
+    System.out.println("Arr : "+Arrays.toString(arr));
+    System.out.println("List : "+Arrays.toString(nos));
   }
 }

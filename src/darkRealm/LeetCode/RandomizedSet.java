@@ -8,10 +8,8 @@ import java.util.Random;
  * Created by Jayam on 2/3/2017.
  */
 public class RandomizedSet {
-
   ArrayList<Integer> numbers;
   HashMap<Integer, Integer> map;
-
 
   public RandomizedSet() {
     numbers = new ArrayList<>();
