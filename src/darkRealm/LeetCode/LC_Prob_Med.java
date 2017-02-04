@@ -3,7 +3,10 @@ package darkRealm.LeetCode;
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by Jayam on 1/27/2017.
@@ -507,67 +510,37 @@ public class LC_Prob_Med {
    *  ]
    *  */
   public static List<List<Integer>> threeSum(int[] arr) {
-    Arrays.sort(arr);
     List<List<Integer>> results = new ArrayList<>();
-    if (arr.length > 2) {
-      int idx = 0;
-      for (; idx < arr.length; idx++) {
-        if (arr[idx] != 0) {
-          break;
-        }
-      }
-      if (idx == arr.length) {
-        List<Integer> l = new ArrayList<>();
-        l.add(0);
-        l.add(0);
-        l.add(0);
-        results.add(l);
-        return results;
-      }
-      for (int i = 0; i < arr.length; i++) {
-        int a = arr[i];
-        int start = i + 1;
-        int end = arr.length - 1;
-        while (start < end) {
-          int b = arr[start];
-          int c = arr[end];
-          if (a + b + c == 0) {
-            List<Integer> l = new ArrayList<>();
-            l.add(a);
-            l.add(b);
-            l.add(c);
-            results.add(l);
+    Arrays.sort(arr); // we go till -2 beacuse those triplets will be counted in inside loop
+
+    // we also dont want to run loop for duplicate elements as duplicates are not allowed in result
+    // as we have to atleast begin from array we have to pass for index =0 thats why first part of condition
+    for (int i = 0; i < arr.length - 2; i++) {
+      if (i == 0 || (i > 0 && arr[i] != arr[i - 1])) {
+        int low = i + 1;
+        int high = arr.length - 1;
+        while (low < high) {
+          int a = arr[low];
+          int b = arr[high];
+          int sum = 0 - (arr[i]);
+          if (a + b < sum) {
+            low++;
           }
-          if (a + b + c > 0) {  // ie if a + b + c > 0
-            start++;
-          } else { //if (b + c > a)
-            end--;
+          if (a + b > sum) {
+            high--;
           }
-        }
-      }
-    }
-    return results;
-  }
-
-  public static List<List<Integer>> threeSumHM(int[] arr) {
-//    Arrays.sort(arr);
-    List<List<Integer>> results = new ArrayList<>();
-    HashSet<Integer> nos = new HashSet<>();
-    if (arr.length > 2) {
-
-      for (int idx = 0; idx < arr.length; idx++) {
-        nos.add(arr[idx]);
-      }
-
-      for (int i = 0; i < arr.length; i++) {
-        for (int j = i + 1; j < arr.length - 1; j++) {
-          int sum = arr[i] + arr[j];
-          if (nos.contains(-sum)) {
-            List<Integer> l = new ArrayList<>();
-            l.add(arr[i]);
-            l.add(arr[j]);
-            l.add(-sum);
-            results.add(l);
+          if (a + b == sum) {
+            //  a + b + c == 0
+            List<Integer> list = new ArrayList<>();
+            list.add(a);
+            list.add(b);
+            list.add(arr[i]);
+            results.add(list);
+            // skipping all the equal numbers in order to get rid of duplicate results
+            while (low < high && arr[low] == arr[low + 1]) low++;
+            while (low < high && arr[high - 1] == arr[high]) high--;
+            low++;
+            high--;
           }
         }
       }
@@ -923,4 +896,38 @@ public class LC_Prob_Med {
     }
     return res;
   }
+
+  /*  [16] 3SumClosest
+  * */
+  public static int threeSumClosest(int[] arr, int target) {
+    Arrays.sort(arr);
+    int minDiff = Integer.MAX_VALUE;
+    for (int i = 0; i < arr.length-2; i++) {
+      int low = i + 1;
+      int high = arr.length - 1;
+      int a = arr[i];
+
+      while (low < high) {
+        int b = arr[low];
+        int c = arr[high];
+        int sum = a + b + c;
+        int diff = target - (sum);
+        if (diff >-1 && diff < minDiff ) {
+          minDiff = diff;
+          System.out.println("~DL~ a: "+a+" b: "+b+" c: "+c +" mindiff : "+minDiff);
+          if (minDiff == 0) {
+            return minDiff;
+          }
+        }
+        if (sum < target) {
+          low++;
+        }
+        if (sum > target) {
+          high--;
+        }
+      }
+    }
+    return minDiff;
+  }
+
 }

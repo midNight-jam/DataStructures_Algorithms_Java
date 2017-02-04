@@ -21,6 +21,7 @@ public class LeetCodeMain {
 //    testCompareVersion();
 //    testSurroundRegion();
 //    testThreeSum();
+//    testThreeSumClosest();
 //    testCountingBits();
 //    testCircularLoop();
 //    testDuplicates();
@@ -31,7 +32,8 @@ public class LeetCodeMain {
 //    testFindAnagram();
 //    testValidString();
 //    testRotateClockwise();
-    testexceptSelf();
+//    testexceptSelf();
+    testRandomizeSet();
   }
 
   public static void testAddTwoNumbers() {
@@ -162,7 +164,7 @@ public class LeetCodeMain {
   }
 
   public static void testThreeSum() {
-    int[] arr = new int[]{-1, 0, 1, 2, -1, 4};
+    int[] arr = new int[]{-1, 0, 1, 2, -1, -4};
 //    int[] arr = new int[]{-2, 0, 1, 2, -1, 4};
 //    int[] arr = new int[]{-1, 3, 1, 2, -1, -2};
 //    int[] arr = new int[]{-1,0,1,2,-1,-4};
@@ -170,8 +172,7 @@ public class LeetCodeMain {
 //    int[] arr = new int[]{-12, 3, 4, 1, 6, 9};
 //    int[] arr = new int[]{-2,0,1,1,2};
 
-//    List<List<Integer>> res = LC_Prob_Med.threeSum(arr);
-    List<List<Integer>> res = LC_Prob_Med.threeSumHM(arr);
+    List<List<Integer>> res = LC_Prob_Med.threeSum(arr);
     for (int i = 0; i < res.size(); i++) {
       System.out.println("   res : " + Arrays.toString(res.get(i).toArray()));
     }
@@ -279,5 +280,28 @@ public class LeetCodeMain {
     int[] arr = new int[]{1, 2, 3, 4};
     arr = LC_Prob_Med.productExceptSelf(arr);
     System.out.println(" Arr : " + Arrays.toString(arr));
+  }
+
+  public static void testThreeSumClosest() {
+//    int[] arr = new int[]{-1, 2, 1, -4};
+    int[] arr = new int[]{0, 0, 0, 0};
+//    int[] arr = new int[]{ 1, -4};
+    int target = 1;
+    int res = LC_Prob_Med.threeSumClosest(arr, target);
+    System.out.println("res : " + res + " Arr : " + Arrays.toString(arr));
+  }
+
+  public static void testRandomizeSet() {
+    RandomizedSet rset = new RandomizedSet();
+    boolean res = rset.insert(13);
+    res = rset.insert(13);
+    rset.insert(5);
+    int rand = rset.getRandom();
+    rand = rset.getRandom();
+    rand = rset.getRandom();
+    rand = rset.getRandom();
+
+    res = rset.remove(1);
+    res = rset.remove(13);
   }
 }
