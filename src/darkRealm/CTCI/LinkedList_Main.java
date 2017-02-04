@@ -2,7 +2,6 @@ package darkRealm.CTCI;
 
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
-import jdk.internal.dynalink.beans.StaticClass;
 
 /**
  * Created by Jayam on 1/4/2017.
@@ -99,5 +98,17 @@ public class LinkedList_Main {
     public RandomNode(int d) {
       data = d;
     }
+  }
+
+  public static void testReverseBetween() {
+    LinkedList list = new LinkedList();
+//    list.add(1);
+//    list.add(2);
+    list.add(3);
+    list.add(4);
+    list.add(5);
+//    list.add(6);
+    Node temp = list.reverseBetween(0,3);
+    System.out.println(" List : ");
   }
 }

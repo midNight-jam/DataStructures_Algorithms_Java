@@ -39,38 +39,38 @@ public class Stack_and_Queues_Main {
     MinStack minStack = new MinStack();
     minStack.push(9);
     minStack.push(5);
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
     minStack.push(3);
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
     minStack.push(7);
     minStack.push(2);
     minStack.push(6);
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
     minStack.push(1);
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
     minStack.push(4);
     minStack.push(0);
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
     minStack.push(11);
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
 
     minStack.pop();
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
 
     minStack.pop();
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
 
     minStack.pop();
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
 
     minStack.pop();
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
 
     minStack.pop();
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
 
     minStack.pop();
-    System.out.println("Current min " + minStack.peekCurrentMin());
+    System.out.println("Current min " + minStack.getMin());
 
   }
 

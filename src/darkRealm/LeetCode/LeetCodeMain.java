@@ -340,7 +340,12 @@ public class LeetCodeMain {
 
   public static void testLetterCombinations() {
 //    int num = 23;
-    int num = 21;
+//    int num = 21;
+//    List<String> res = LC_Prob_Med2.letterCombinations(num);
+//    System.out.println("Arr : " + Arrays.toString(res.toArray()));
+
+    String num = "3";
+
     List<String> res = LC_Prob_Med2.letterCombinations(num);
     System.out.println("Arr : " + Arrays.toString(res.toArray()));
   }

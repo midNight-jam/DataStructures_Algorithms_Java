@@ -1,5 +1,5 @@
 package darkRealm.CTCI.Stacks_and_queues;
-import java.util.logging.Level;
+
 import java.util.logging.Logger;
 
 /**
@@ -13,39 +13,31 @@ public class MinStack {
   private final static Logger dLogger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
   private MyStack<Integer> stack;
   private MyStack<Integer> minStack;
+  private int min = Integer.MAX_VALUE;
 
   public MinStack() {
     stack = new MyStack<>();
-    minStack = new MyStack<>();
-    dLogger.setLevel(Level.INFO);
-    dLogger.info("logger initialized  for " + this.getClass().getName());
   }
 
   public void push(int i) {
-    stack.push(i);
-    if (minStack.isEmpty()) {
-      minStack.push(i);
-      dLogger.info("1st element in min Stack " + i);
-    } else {
-      int currentMin = minStack.peek();
-      if (i <= currentMin) {
-        minStack.push(i);
-        dLogger.info("new element " + i + " <= peek of min Stack " + peekCurrentMin());
-      }
+    if (i <= min) { // push the old value of min when a new min has arrived
+      stack.push(min);
+      min = i;
     }
+    stack.push(i);
   }
 
   public int pop() {
     int popped = stack.pop();
-    if (popped == minStack.peek()) {
-      dLogger.info("popped element " + popped + " <= to peek of min Stack " + peekCurrentMin());
-      minStack.pop();
+    if (popped == min) {  // if pop operation could result in the changing of the current minimum value,
+      if (stack.getSize() > 0) { // pop twice and change the current minimum value to the last minimum value.
+        min = stack.pop();
+      }
     }
     return popped;
   }
 
-  public int peekCurrentMin() {
-    int currentMin = minStack.peek();
-    return currentMin;
+  public int getMin() {
+    return min;
   }
 }

@@ -5,7 +5,8 @@ import darkRealm.CTCI.BigO.MathUtil;
 import darkRealm.CTCI.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
 import darkRealm.LeetCode.LeetCodeMain;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 /*
 * Uncomment a function to run, each is a method for solved problem.
@@ -23,7 +24,7 @@ public class Main {
 
     // write your code here, testing after new git
 //    doArray_and_Strings_Main();
-//    doStack_and_Queue();
+    doStack_and_Queue();
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doTrees_Graph();
@@ -45,7 +46,7 @@ public class Main {
 //    int res = maxTweet(new int[]{3, 1, 2, 1}, 4);
 
 //    doModerate();
-    doLeetCode();
+//    doLeetCode();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -108,13 +109,13 @@ public class Main {
 
   private static void doStack_and_Queue() {
 //    Stack_and_Queues_Main.testMyStack();
-//    Stack_and_Queues_Main.testMinStack();
+    Stack_and_Queues_Main.testMinStack();
 //    Stack_and_Queues_Main.testSortStack();
 //    Stack_and_Queues_Main.testSetStacks();
 //    Stack_and_Queues_Main.testThreeStacks();
 //    Stack_and_Queues_Main.testRoundArray();
 //    Stack_and_Queues_Main.testThreeStacks();
-    Stack_and_Queues_Main.testAnimalShelter();
+//    Stack_and_Queues_Main.testAnimalShelter();
   }
 
   private static void doRecursion_DP() {
@@ -147,7 +148,7 @@ public class Main {
 //    Trees_and_Graphs_Main.testIsBalanced();
 //    Trees_and_Graphs_Main.testIsBST();
 //    Trees_and_Graphs_Main.testPredecessorAndSuccessor();
-    Trees_and_Graphs_Main.testCommonAncestor();
+//    Trees_and_Graphs_Main.testCommonAncestor();
 //    Trees_and_Graphs_Main.testCheckSubtree();
 //    Trees_and_Graphs_Main.testPathsWithSums();
 //    Trees_and_Graphs_Main.testInsertNode();
@@ -293,7 +294,8 @@ public class Main {
 
   private static void doLinkedLsit() {
 //    LinkedList_Main.testLinkedListOperations();
-    LinkedList_Main.testDeepCopyRandomList();
+//    LinkedList_Main.testDeepCopyRandomList();
+    LinkedList_Main.testReverseBetween();
   }
 
   private static void doBitsMain() {
