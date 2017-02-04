@@ -927,17 +927,17 @@ public class LC_Prob_Med {
     return minDiff;
   }
 
- /*  [239] Sliding Window Maximum
-  *   Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the
-  *   very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
-  *   For example,
-  *   Given nums = [1,3,-1,-3,5,3,6,7], and k = 3.
-  * */
+  /*  [239] Sliding Window Maximum
+   *   Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the
+   *   very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+   *   For example,
+   *   Given nums = [1,3,-1,-3,5,3,6,7], and k = 3.
+   * */
   public static int[] slidingWindowMaximum(int[] arr, int k) {
     PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
       @Override
       public int compare(Integer o1, Integer o2) {
-        return o2-o1;
+        return o2 - o1;
       }
     });
     int head = 0;
@@ -957,12 +957,37 @@ public class LC_Prob_Med {
       tail++;
     }
 
-    int [] res = new int[nos.size()];
-    for(int i=0;i<nos.size();i++){
+    int[] res = new int[nos.size()];
+    for (int i = 0; i < nos.size(); i++) {
       res[i] = nos.get(i);
     }
     return res;
   }
 
+  /*  [Prob 387] First Unique Character in a String
+  *   Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+  *   Examples:
+  *   s = "leetcode"
+  *   return 0.
+  *   s = "loveleetcode",
+  *   return 2.
+  * */
+  public static int firstUniqueCharacter(String str) {
+    int firstCharIndex = -1;
+    if (str == null || str.length() == 0) {
+      return firstCharIndex;
+    }
+    int[] allChars = new int[256];
 
+    for (int i = 0; i < str.length(); i++) {
+      allChars[str.charAt(i)]++;
+    }
+    for (int i = 0; i < str.length(); i++) {
+      if (allChars[str.charAt(i)] == 1) {
+        firstCharIndex = i;
+        break;
+      }
+    }
+    return firstCharIndex;
+  }
 }

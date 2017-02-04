@@ -34,7 +34,8 @@ public class LeetCodeMain {
 //    testRotateClockwise();
 //    testexceptSelf();
 //    testRandomizeSet();
-    testSlidingMaximum();
+//    testSlidingMaximum();
+    testFirstUniqueChar();
   }
 
   public static void testAddTwoNumbers() {
@@ -312,8 +313,16 @@ public class LeetCodeMain {
 //    int[] arr = new int[]{9,10,9,-7,-4,-8,2,-6};
 //    int k = 5;
 
-    int [] nos = LC_Prob_Med.slidingWindowMaximum(arr, k);
-    System.out.println("Arr : "+Arrays.toString(arr));
-    System.out.println("List : "+Arrays.toString(nos));
+    int[] nos = LC_Prob_Med.slidingWindowMaximum(arr, k);
+    System.out.println("Arr : " + Arrays.toString(arr));
+    System.out.println("List : " + Arrays.toString(nos));
+  }
+
+  public static void testFirstUniqueChar() {
+//    String str = "leetcode";
+//    String str = "loveleetcode";
+    String str = null;
+    int res = LC_Prob_Med.firstUniqueCharacter(str);
+    System.out.println("res : " + res + "  Str : " + str);
   }
 }
