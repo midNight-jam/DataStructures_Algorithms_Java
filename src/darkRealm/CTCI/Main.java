@@ -26,9 +26,9 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-//    doSortingAndSearching();
+    doSortingAndSearching();
 //    doTrees_Graph();
-    doLinkedLsit();
+//    doLinkedLsit();
 //    doMathUtils();
 
 //    String res  = getTime(9,9,9,9);
@@ -351,7 +351,7 @@ public class Main {
 //    Sorting_and_Searching_Main.testSparseSearch();
 //    Sorting_and_Searching_Main.testGroupAnagrams();
 //    Sorting_and_Searching_Main.testFindDuplicates();
-//    Sorting_and_Searching_Main.testInsertionSort();
+    Sorting_and_Searching_Main.testInsertionSort();
 //    Sorting_and_Searching_Main.testQuickSort();
 //    Sorting_and_Searching_Main.testCountSort();
 //    Sorting_and_Searching_Main.testRadix();

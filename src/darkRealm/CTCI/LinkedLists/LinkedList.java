@@ -120,8 +120,6 @@ public class LinkedList {
   }
 
   public Node getMid(Node head) {
-    // will go till mid & reverse the link from mid to end , now will read from haed & mid & keep matching if all matched true
-
     Node slow = head;
     Node fast = head;
     while (fast != null && fast.next != null) {
@@ -137,8 +135,9 @@ public class LinkedList {
     return mid;
   }
 
+  // will go till mid & reverse the link from mid to end , now will read from haed & mid & keep matching if all matched true
   public boolean isPalindrome(Node head) {
-    if(head==null){
+    if (head == null) {
       return true;
     }
     Node trav = head;
@@ -164,7 +163,7 @@ public class LinkedList {
       trav2 = temp;
     }
     otherHalf = prev;
-    while (otherHalf != null & trav!=slow) {
+    while (otherHalf != null & trav != slow) {
       if (otherHalf.data != trav.data) {
         break;
       }

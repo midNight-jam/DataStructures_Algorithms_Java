@@ -5,6 +5,9 @@ package darkRealm.CTCI.Sorting_and_Searching;
  */
 public class InsertionSortUtil {
   public static void insertionSort(int[] arr) {
+    if (arr == null || arr.length < 2) {
+      return;
+    }
     int val;
     for (int i = 1; i < arr.length; i++) {
       val = arr[i];

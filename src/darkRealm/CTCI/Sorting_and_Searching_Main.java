@@ -132,7 +132,7 @@ public class Sorting_and_Searching_Main {
 //    int[] arr = new int[]{2,2,2};
 //    int[] arr = new int[]{3,1,0};
     int[] arr = new int[]{3, 1, 0};
-//    InsertionSortUtil.insertionSort(arr);
+    InsertionSortUtil.insertionSort(arr);
     System.out.println("Arr : " + Arrays.toString(arr));
   }
 
