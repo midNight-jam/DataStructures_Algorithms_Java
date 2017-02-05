@@ -137,9 +137,12 @@ public class Sorting_and_Searching_Main {
   }
 
   public static void testQuickSort() {
-    int[] arr = new int[]{36, 14, 27, 40, 31};
-//    QuickSortUtil.quicksort(arr, 0, arr.length-1);
-    QuickSortUtil.quicksort(arr, 0, arr.length - 1);
+//    int[] arr = new int[]{36, 14, 27, 40, 31};
+    int[] arr = new int[]{3, 1, 0};
+
+    //    QuickSortUtil.quicksort(arr, 0, arr.length-1);
+//    QuickSortUtil.quicksort(arr, 0, arr.length - 1);
+    QuickSortUtil.quickSortZZ(arr, 0, arr.length - 1);
     System.out.println("Arr : " + Arrays.toString(arr));
   }
 
