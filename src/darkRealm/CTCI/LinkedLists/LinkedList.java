@@ -118,4 +118,73 @@ public class LinkedList {
     last.next = temp;
     return head;
   }
+
+  public Node getMid(Node head) {
+    // will go till mid & reverse the link from mid to end , now will read from haed & mid & keep matching if all matched true
+
+    Node slow = head;
+    Node fast = head;
+    while (fast != null && fast.next != null) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    Node mid = slow;
+    if (fast == null) {//even
+      mid = slow;
+    } else {
+      mid = slow.next;
+    }
+    return mid;
+  }
+
+  public boolean isPalindrome(Node head) {
+    if(head==null){
+      return true;
+    }
+    Node trav = head;
+    Node slow = head;
+    Node fast = head;
+    while (fast != null && fast.next != null) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    Node otherHalf;
+    if (fast == null) { // even
+      otherHalf = slow;
+    } else {  // odd
+      otherHalf = slow.next;
+    }
+    Node prev = null;
+    Node trav2 = otherHalf;
+    Node temp;
+    while (trav2 != null) {
+      temp = trav2.next;
+      trav2.next = prev;
+      prev = trav2;
+      trav2 = temp;
+    }
+    otherHalf = prev;
+    while (otherHalf != null & trav!=slow) {
+      if (otherHalf.data != trav.data) {
+        break;
+      }
+      trav = trav.next;
+      otherHalf = otherHalf.next;
+    }
+    if (otherHalf != null) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder stringBuilder = new StringBuilder();
+    Node trav = head;
+    while (trav != null) {
+      stringBuilder.append(" " + trav.data);
+      trav = trav.next;
+    }
+    return stringBuilder.toString();
+  }
 }

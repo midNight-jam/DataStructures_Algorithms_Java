@@ -24,11 +24,11 @@ public class Main {
 
     // write your code here, testing after new git
 //    doArray_and_Strings_Main();
-    doStack_and_Queue();
+//    doStack_and_Queue();
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doTrees_Graph();
-//    doLinkedLsit();
+    doLinkedLsit();
 //    doMathUtils();
 
 //    String res  = getTime(9,9,9,9);
@@ -109,7 +109,7 @@ public class Main {
 
   private static void doStack_and_Queue() {
 //    Stack_and_Queues_Main.testMyStack();
-    Stack_and_Queues_Main.testMinStack();
+//    Stack_and_Queues_Main.testMinStack();
 //    Stack_and_Queues_Main.testSortStack();
 //    Stack_and_Queues_Main.testSetStacks();
 //    Stack_and_Queues_Main.testThreeStacks();
@@ -295,7 +295,8 @@ public class Main {
   private static void doLinkedLsit() {
 //    LinkedList_Main.testLinkedListOperations();
 //    LinkedList_Main.testDeepCopyRandomList();
-    LinkedList_Main.testReverseBetween();
+//    LinkedList_Main.testReverseBetween();
+    LinkedList_Main.testPalindrome();
   }
 
   private static void doBitsMain() {
@@ -353,7 +354,8 @@ public class Main {
 //    Sorting_and_Searching_Main.testInsertionSort();
 //    Sorting_and_Searching_Main.testQuickSort();
 //    Sorting_and_Searching_Main.testCountSort();
-    Sorting_and_Searching_Main.testRadix();
+//    Sorting_and_Searching_Main.testRadix();
+//    Sorting_and_Searching_Main.testQuickSort();
   }
 
   private static void doModerate() {

@@ -14,8 +14,8 @@ public class Sorting_and_Searching_Main {
     int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
 
 //    int [] arr =new int[]{122,164,121,412,314,396,468,996,210};
-//    arr = MergeSortUtil.mergeSort(arr);
-    arr = QuickSortUtil.quicksort(arr, 0, arr.length - 1);
+    MergeSortUtil.mergeSort(arr);
+//    QuickSortUtil.quicksort(arr, 0, arr.length - 1);
     System.out.println("After Sorting : " + Arrays.toString(arr));
   }
 
@@ -132,7 +132,7 @@ public class Sorting_and_Searching_Main {
 //    int[] arr = new int[]{2,2,2};
 //    int[] arr = new int[]{3,1,0};
     int[] arr = new int[]{3, 1, 0};
-    InsertionSortUtil.insertionSort(arr);
+//    InsertionSortUtil.insertionSort(arr);
     System.out.println("Arr : " + Arrays.toString(arr));
   }
 
@@ -152,7 +152,7 @@ public class Sorting_and_Searching_Main {
 
   public static void testRadix() {
 //    int[] arr = new int[]{33101, 26440, 16341, 20101, 801};
-    int[] arr = new int[]{16341, 20101, 801,33101, 26440};
+    int[] arr = new int[]{16341, 20101, 801, 33101, 26440};
     arr = RadixSortUtil.radixSort(arr, 5);
     System.out.println("Arr : " + Arrays.toString(arr));
   }

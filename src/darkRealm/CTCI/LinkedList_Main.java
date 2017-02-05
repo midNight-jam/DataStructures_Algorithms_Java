@@ -48,6 +48,17 @@ public class LinkedList_Main {
     }
   }
 
+  public static void testPalindrome() {
+    LinkedList list = new LinkedList();
+    list.add(11);
+    list.add(22);
+    list.add(33);
+    list.add(22);
+    list.add(11);
+    boolean res = list.isPalindrome(list.head);
+    System.out.println("res : "+res+" List : " + list);
+  }
+
 
   /*  [138] Copy List with Random Pointer
   * A linked list is given such that each node contains an additional random pointer which could point to any node in
