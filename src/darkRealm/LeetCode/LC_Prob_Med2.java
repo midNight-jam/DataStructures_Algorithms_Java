@@ -1,6 +1,7 @@
 package darkRealm.LeetCode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -82,5 +83,73 @@ public class LC_Prob_Med2 {
         keyBoardString(keyboard, digits, index + 1, str + chars[i]);
       }
     }
+  }
+
+  /*  [Prob 49]  Group Anagrams
+  * Given an array of strings, group anagrams together.
+  * For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
+  * Return:
+  * [ ["ate", "eat","tea"],  ["nat","tan"],  ["bat"] ]
+  * Note: All inputs will be in lower-case.
+  * */
+  public static List<List<String>> groupAnagrams(String[] strs) {
+    if (strs == null || strs.length == 0) {
+      return new ArrayList<>();
+    }
+    HashMap<String, List<String>> map = new HashMap<>();
+    for (int i = 0; i < strs.length; i++) {
+      String s = strs[i];
+      char[] sar = s.toCharArray();
+      Arrays.sort(sar);
+      String s2 = new String(sar);
+      if (map.containsKey(s2)) {
+        map.get(s2).add(s);
+      } else {
+        List<String> list = new ArrayList<>();
+        list.add(s);
+        map.put(s2, list);
+      }
+    }
+    List<List<String>> results = new ArrayList<>();
+    for (String k :
+        map.keySet()) {
+      results.add(map.get(k));
+    }
+    return results;
+  }
+
+  /*  [Prob 242] Valid Anagram
+  *Given two strings s and t, write a function to determine if t is an anagram of s.
+  * For example,
+  * s = "anagram", t = "nagaram", return true.
+  * s = "rat", t = "car", return false.
+  * Note: You may assume the string contains only lowercase alphabets.
+  * Follow up:  What if the inputs contain unicode characters? How would you adapt your solution to such case?
+  * */
+  public static boolean validAnagram(String s, String t) {
+    if (s == null || t == null || s.length() != t.length()) {
+      return false;
+    }
+    int[] charCount = new int[256];
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      charCount[c]++;
+    }
+
+    for (int i = 0; i < t.length(); i++) {
+      char c = t.charAt(i);
+      if (charCount[c] >= 1) {
+        charCount[c]--;
+      } else {
+        return false;
+      }
+    }
+
+    for (int i = 0; i < charCount.length; i++) {
+      if (charCount[i] != 0) {
+        return false;
+      }
+    }
+    return true;
   }
 }
