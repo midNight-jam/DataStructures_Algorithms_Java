@@ -64,4 +64,50 @@ public class PrintProbs {
       star = star + 2;
     }
   }
+
+  /*
+           1
+          121
+         12321
+        1234321
+       123454321
+        1234321
+         12321
+          121
+           1
+  */
+
+  public static void triangle4() {
+    int i, j, k, l, space = 10;
+    for (i = 1; i <= 5; i++) {
+      //First print the upper half triangle.
+      for (j = 1; j <= space; j++) {
+        System.out.print(" ");
+      }
+      for (k = 1; k <= i; k++) {
+        System.out.print(k);
+      }
+      for (l = i - 1; l >= 1; l--) {
+        System.out.print(l);
+      }
+      space--;
+      System.out.println();
+    }
+//    //Now Print the lower half triangle.
+
+    space = 10;
+    for (i = 4; i >= 1; i--) {
+      for (j = space-3; j >= 1; j--) {
+        System.out.print(" ");
+      }
+      for (k = 1; k <= i; k++) {
+        System.out.print(k);
+      }
+      for (l = i - 1; l >= 1; l--) {
+        System.out.print(l);
+      }
+      space++;
+      System.out.println();
+    }
+  }
 }

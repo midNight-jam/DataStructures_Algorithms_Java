@@ -386,6 +386,7 @@ public class Main {
   public static void doprint() {
 //    PrintProbs.trangle1();
 //    PrintProbs.trangle2();
-    PrintProbs.trangle3();
+//    PrintProbs.trangle3();
+    PrintProbs.triangle4();
   }
 }
