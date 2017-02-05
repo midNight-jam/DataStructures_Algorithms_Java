@@ -4,7 +4,7 @@ package darkRealm.CTCI;
  * Created by Jayam on 2/5/2017.
  */
 public class PrintProbs {
-  /*
+  /* left aligned Triangle
    a
    a b
    a b c
@@ -22,7 +22,7 @@ public class PrintProbs {
     }
   }
 
-  /*
+  /* Right aligned Triangle
         *
        **
       ***
@@ -43,7 +43,7 @@ public class PrintProbs {
     }
   }
 
-  /*
+  /* Centered Triangle
    *
   ***
  *****
