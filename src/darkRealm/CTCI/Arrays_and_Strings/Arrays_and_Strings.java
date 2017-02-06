@@ -584,7 +584,45 @@ public class Arrays_and_Strings {
   *   so we add rotation to itself & fire a substring on the summed string with original string as param.
   * */
   public static boolean isStringRotation(String str, String rot) {
+    if (str == null || rot == null || (str.length() != rot.length())) {
+      return false;
+    }
     String sumOfRot = rot + rot;
     return sumOfRot.contains(str);
+  }
+
+  /*  [Prob 1.7] Rotate Matrix
+  *   Using constant space of single variable we swap one element by elemnt:
+  *   For Clock wise save top inn temp variable
+  *   bring left to top,
+  *   then bottom to left,
+  *   then right to bottom
+  *   then finally put temp to right
+  * */
+  public static void rotateMatrix(int[][] matrix) {
+    if (matrix == null || matrix.length == 0) {
+      return;
+    }
+    int i = 0;
+    int levels = matrix.length;
+    while (i <= (matrix.length) / 2) {
+      int swapLevel = i;
+
+      for (int j = swapLevel; j < levels - swapLevel - 1; j++) {
+        int temp = matrix[i][j]; // top
+
+        //left to top
+        //matrix[swapLevel][j]; // top left
+        matrix[swapLevel][j] = matrix[levels - j - 1][swapLevel];
+        //bottom to left
+        matrix[levels - j - 1][swapLevel] = matrix[levels - swapLevel - 1][levels - j - 1];
+        // right to bottom
+//        matrix[levels - swapLevel-1][levels - j -1] // bottom right
+        matrix[levels - swapLevel - 1][levels - j - 1] = matrix[j][levels - swapLevel - 1];
+        // temp to right
+        matrix[j][levels - swapLevel - 1] = temp;
+      }
+      i++;
+    }
   }
 }
