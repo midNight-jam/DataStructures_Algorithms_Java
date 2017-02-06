@@ -122,4 +122,15 @@ public class Arrays_and_Strings_Main {
     Arrays_and_Strings.matrixZeroes(matrix);
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
+
+  public static void testStringRotation(){
+//    String s = "waterbotlle";
+//    String t = "otllewaterb";
+
+    String s = "papaya";
+    String t = "yapapa";
+
+    boolean isRotation = Arrays_and_Strings.isStringRotation(s,t);
+    System.out.println(" s : "+s+"  t: "+t+"  isrotaion : "+isRotation);
+  }
 }

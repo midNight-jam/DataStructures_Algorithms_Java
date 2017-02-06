@@ -574,4 +574,17 @@ public class Arrays_and_Strings {
       }
     }
   }
+
+  /*  [Prob 1.9]
+  *   Q) String Rotation : We have isSubString meth which checks if a word is a sub string of another. use only a single
+  *   call of this method to check if a word is rotation of another
+  *   Eg : waterbottle  ::: erbotllewat
+  *   A) If its a valid rotation then if we add rotationString to itself the original string must be a substring of it
+  *   erbotllewat + erbotllewat == erbotllewaterbotllewat
+  *   so we add rotation to itself & fire a substring on the summed string with original string as param.
+  * */
+  public static boolean isStringRotation(String str, String rot) {
+    String sumOfRot = rot + rot;
+    return sumOfRot.contains(str);
+  }
 }

@@ -106,7 +106,8 @@ public class Main {
 //    System.out.println(" res " + res);
 
 //    Arrays_and_Strings_Main.testHotelBook();
-    Arrays_and_Strings_Main.testMatrixZeroes();
+//    Arrays_and_Strings_Main.testMatrixZeroes();
+    Arrays_and_Strings_Main.testStringRotation();
   }
 
   private static void doStack_and_Queue() {
