@@ -87,15 +87,24 @@ public class Moderate_Main {
   }
 
   public static void testPondSizes() {
+//    int[][] world = new int[][]{
+//        {0, 0, 0, 0, 1, 0, 0, 0,},
+//        {0, 0, 1, 0, 0, 0, 0, 1},
+//        {0, 1, 1, 1, 0, 0, 0, 0}
+//    };
+
     int[][] world = new int[][]{
-        {0, 2, 1, 0},
-        {0, 1, 0, 1},
-        {1, 1, 0, 1},
-        {0, 1, 0, 1}
+        {0, 0, 0, 0, 0, 0, 1, 1, 1, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {1, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+        {1, 0, 0, 0, 0, 0, 0, 1, 1, 0},
+        {1, 0, 0, 0, 0, 0, 0, 1, 1, 0},
+        {1, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+        {0, 0, 0, 1, 0, 0, 0, 0, 0, 1}
     };
-    int waterValue = 0;
-    Integer[] res = Moderate.pondSizes(world, waterValue);
-    System.out.println("Pond Sizes : " + Arrays.toString(res));
+
+    int res = Moderate.countIslands(world);
+    System.out.println("Groups : " + res);
   }
 
   public static void testLSCS() {

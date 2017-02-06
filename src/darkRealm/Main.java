@@ -24,7 +24,7 @@ public class Main {
 
 
     // write your code here, testing after new git
-    doArray_and_Strings_Main();
+//    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 //    doSortingAndSearching();
@@ -291,7 +291,8 @@ public class Main {
 //    LinkedList_Main.testDeepCopyRandomList();
 //    LinkedList_Main.testReverseBetween();
 //    LinkedList_Main.testPalindrome();
-    LinkedList_Main.testIntersection();
+//    LinkedList_Main.testIntersection();
+    LinkedList_Main.testSumList();
   }
 
   private static void doBitsMain() {
@@ -370,7 +371,7 @@ public class Main {
 //    Moderate_Main.testOldKeyboard();
 //    Moderate_Main.testMaxPopulationYear();
 //    Moderate_Main.testSumSwap();
-    Moderate_Main.testMasterMind();
+//    Moderate_Main.testMasterMind();
   }
 
   public static void doLeetCode() {
@@ -382,5 +383,10 @@ public class Main {
 //    PrintProbs.trangle2();
 //    PrintProbs.trangle3();
     PrintProbs.triangle4();
+  }
+
+  public static void tes2(){
+    int [] arr = new int[0];
+
   }
 }

@@ -6,7 +6,10 @@ import darkRealm.CTCI.Stacks_and_queues.MyStack;
 import darkRealm.CTCI.Trie.Trie;
 import darkRealm.CTCI.Trie.TrieNode;
 
-import java.util.*;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Created by Jayam on 1/23/2017.
@@ -300,9 +303,11 @@ public class Moderate {
   public static Integer[] pondSizes(int[][] world, int water) {
     boolean[][] visited = new boolean[world.length][world[0].length];
     MyQueue<AbstractMap.SimpleEntry<Integer, Integer>> que = new MyQueue<>();
+
     int rows = world.length - 1;
     int cols = world[0].length - 1;
     ArrayList<Integer> pondSizes = new ArrayList<>();
+
     for (int r = 0; r <= rows; r++) {
       for (int c = 0; c <= cols; c++) {
         if (world[r][c] == 0 && visited[r][c] == false) {
@@ -360,6 +365,74 @@ public class Moderate {
     pondSizes.toArray(allPonds);
     return allPonds;
   }
+
+
+
+  static int ROW;
+  static int COL;
+
+  public static int countIslands(int M[][])
+  {
+    int ROW = M.length;
+    int COL = M[0].length;
+
+    // Make a bool array to mark visited cells.
+    // Initially all cells are unvisited
+    boolean visited[][] = new boolean[ROW][COL];
+
+
+    // Initialize count as 0 and travese through the all cells
+    // of given matrix
+    int count = 0;
+    for (int i = 0; i < ROW; ++i)
+      for (int j = 0; j < COL; ++j)
+        if (M[i][j]==1 && !visited[i][j]) // If a cell with
+        {                                 // value 1 is not
+          // visited yet, then new island found, Visit all
+          // cells in this island and increment island count
+          DFS(M, i, j, visited);
+          ++count;
+        }
+
+    return count;
+  }
+
+  static void DFS(int M[][], int row, int col, boolean visited[][])
+  {
+    // These arrays are used to get row and column numbers
+    // of 8 neighbors of a given cell
+    int rowNbr[] = new int[] {-1, -1, -1,  0, 0,  1, 1, 1};
+    int colNbr[] = new int[] {-1,  0,  1, -1, 1, -1, 0, 1};
+
+    // Mark this cell as visited
+    visited[row][col] = true;
+
+    // Recur for all connected neighbours
+    for (int k = 0; k < 8; ++k)
+      if (isSafe(M, row + rowNbr[k], col + colNbr[k], visited) )
+        DFS(M, row + rowNbr[k], col + colNbr[k], visited);
+  }
+
+  static boolean isSafe(int M[][], int row, int col,
+                 boolean visited[][])
+  {
+    // row number is in range, column number is in range
+    // and value is 1 and not yet visited
+    return (row >= 0) && (row < ROW) &&
+        (col >= 0) && (col < COL) &&
+        (M[row][col]==1 && !visited[row][col]);
+  }
+
+
+
+
+
+
+
+
+
+
+
 
   /*[Prob 16.17]
   * Q) Largest Sum Subarray Contiguos

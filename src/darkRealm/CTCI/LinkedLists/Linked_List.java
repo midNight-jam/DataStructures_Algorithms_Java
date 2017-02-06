@@ -104,4 +104,59 @@ public class Linked_List {
     }
     return null;
   }
+
+  /*  [Prob 2.5]  Sum List
+  *   Q) we have two numbers represented by link list
+  *   ( 7 -> 1 -> 6 )+ ( 5 -> + 9 -> 2) i.e 617+295 = 912
+  *   (2 -> 1 -> 9)
+  * */
+  public static LinkedList sumList(LinkedList a, LinkedList b) {
+    if (a == null || b == null) {
+      return null;
+    }
+    int carry = 0;
+    Node sumList = null;
+    Node sumTrav = null;
+    Node atrav, btrav;
+    atrav = a.head;
+    btrav = b.head;
+    int sum;
+    while (atrav != null && btrav != null) {
+      int aNo = atrav != null ? atrav.data : 0;
+      int bNo = btrav != null ? btrav.data : 0;
+      sum = aNo + bNo + carry;
+      carry = sum < 10 ? 0 : 1;
+      sum = sum % 10;
+      if (sumList == null) {
+        sumList = new Node(sum);
+        sumTrav = sumList;
+      } else {
+        sumTrav.next = new Node(sum);
+        sumTrav = sumTrav.next;
+      }
+      atrav = atrav.next;
+      btrav = btrav.next;
+    }
+
+    Node nextPart = null;
+    if (atrav == null && btrav != null) {
+      nextPart = btrav;
+    } else if (btrav == null && atrav != null) {
+      nextPart = atrav;
+    }
+    while (nextPart != null) {
+      sum = nextPart.data + carry;
+      carry = sum < 10 ? 0 : 1;
+      sum = sum % 10;
+      sumTrav.next = new Node(sum);
+      sumTrav = sumTrav.next;
+      nextPart = nextPart.next;
+    }
+    if (carry == 1) {
+      sumTrav.next = new Node(carry);
+    }
+    LinkedList sumRes = new LinkedList();
+    sumRes.head = sumList;
+    return sumRes;
+  }
 }
