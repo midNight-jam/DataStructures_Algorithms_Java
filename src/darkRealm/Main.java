@@ -1,5 +1,6 @@
-package darkRealm.CTCI;
+package darkRealm;
 
+import darkRealm.CTCI.*;
 import darkRealm.CTCI.BigO.BitsUtil;
 import darkRealm.CTCI.BigO.MathUtil;
 import darkRealm.CTCI.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
@@ -108,7 +109,8 @@ public class Main {
 //    Arrays_and_Strings_Main.testHotelBook();
 //    Arrays_and_Strings_Main.testMatrixZeroes();
 //    Arrays_and_Strings_Main.testStringRotation();
-    Arrays_and_Strings_Main.testRotateMatrix();
+//    Arrays_and_Strings_Main.testRotateMatrix();
+    Arrays_and_Strings_Main.testStringCompression();
   }
 
   private static void doStack_and_Queue() {

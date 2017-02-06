@@ -111,7 +111,7 @@ public class Arrays_and_Strings_Main {
     System.out.println(" res - " + res);
   }
 
-  public static void testMatrixZeroes(){
+  public static void testMatrixZeroes() {
     int[][] matrix = new int[][]{
         {9, 1, 1, 4, 51},
         {2, 0, 2, 4, 52},
@@ -123,18 +123,18 @@ public class Arrays_and_Strings_Main {
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 
-  public static void testStringRotation(){
+  public static void testStringRotation() {
 //    String s = "waterbotlle";
 //    String t = "otllewaterb";
 
     String s = "papaya";
     String t = "yapapa";
 
-    boolean isRotation = Arrays_and_Strings.isStringRotation(s,t);
-    System.out.println(" s : "+s+"  t: "+t+"  isrotaion : "+isRotation);
+    boolean isRotation = Arrays_and_Strings.isStringRotation(s, t);
+    System.out.println(" s : " + s + "  t: " + t + "  isrotaion : " + isRotation);
   }
 
-  public static void testRotateMatrix(){
+  public static void testRotateMatrix() {
     int[][] matrix = new int[][]{
         {9, 1, 1, 4, 5},
         {2, 0, 2, 4, 5},
@@ -144,5 +144,13 @@ public class Arrays_and_Strings_Main {
     };
     Arrays_and_Strings.rotateMatrix(matrix);
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
+  }
+
+  public static void testStringCompression() {
+//    String str = "AAaassaaaS";
+    String str = "AAaasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssaaa" +
+        "aaassssssssssssssqqqqqqqqqqqqqqqqqqSSSSSSSSSSSssssS";
+    String res = Arrays_and_Strings.compress(str);
+    System.out.println(" str : " + str + "  res : " + res);
   }
 }

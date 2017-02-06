@@ -625,4 +625,31 @@ public class Arrays_and_Strings {
       i++;
     }
   }
+
+  /*  [Prob 1.6] String compression
+  * */
+  public static String compress(String str) {
+    if (str == null || str.length() == 0) {
+      return "";
+    }
+//    if (str.length() == 1) {
+//      return "" + str.charAt(0) + 1;
+//    }
+    StringBuilder strBuild = new StringBuilder(str.length());
+    char lastChar = str.charAt(0);
+    int charCount = 1;
+    for (int i = 1; i < str.length(); i++) {
+      if (str.charAt(i) != lastChar) {
+        strBuild.append(lastChar);
+        strBuild.append(charCount);
+        charCount = 0;
+        lastChar = str.charAt(i);
+      }
+      charCount++;
+    }
+    strBuild.append(lastChar);
+    strBuild.append(charCount);
+    // return whichever is smaller
+    return str.length() < strBuild.length() ? str : strBuild.toString();
+  }
 }
