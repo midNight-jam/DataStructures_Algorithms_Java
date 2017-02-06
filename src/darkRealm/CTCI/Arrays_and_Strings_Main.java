@@ -25,7 +25,7 @@ public class Arrays_and_Strings_Main {
   }
 
   public static void doCompresssion() {
-    Arrays_and_Strings.stringCompression("abcdeeeeeeeee");
+    Arrays_and_Strings.compress("abcdeeeeeeeee");
   }
 
   /* Q) To get the max of all the mins from the sliding window of size K
@@ -152,5 +152,22 @@ public class Arrays_and_Strings_Main {
         "aaassssssssssssssqqqqqqqqqqqqqqqqqqSSSSSSSSSSSssssS";
     String res = Arrays_and_Strings.compress(str);
     System.out.println(" str : " + str + "  res : " + res);
+  }
+
+  public static void testOneEditAway(){
+//    String p = "pale";
+//    String q = "ple";
+
+//    String p = "pale";
+//    String q = "pales";
+
+//    String p = "pale";
+//    String q = "bale";
+//
+    String p = "pale";
+    String q = "bake";
+
+    boolean res= Arrays_and_Strings.oneEditAway(p,q);
+    System.out.println(" str : " + p + " str : " + q + "  res : " + res);
   }
 }

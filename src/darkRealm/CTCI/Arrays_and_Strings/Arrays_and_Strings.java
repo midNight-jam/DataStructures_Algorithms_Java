@@ -137,31 +137,6 @@ public class Arrays_and_Strings {
     return (i & 1) == 1 ? false : true;
   }
 
-  /* []Prob 1.6]
-  @Param str :  a string which will be compressed
-  input: aabbcccaaa
-  output : a2b2c3a3
-  * */
-  public static String stringCompression(String str) {
-    StringBuilder compressedString = new StringBuilder();
-    int len = str.length();
-    if (len > 0) {
-      int count = 1;
-      char c;
-      int i = 1;
-      for (; i < len; i++) {
-        if (str.charAt(i) == str.charAt(i - 1)) {
-          count++;
-        } else {
-          compressedString.append(str.charAt(i - 1) + "" + count);
-          count = 1;
-        }
-      }
-      compressedString.append(str.charAt(i - 1) + "" + count);
-      System.out.println(compressedString);
-    }
-    return compressedString.toString();
-  }
 
   /* [Problem]
   *   Q) given an array and a size K, print all the combinations of size K that can be created using that array
@@ -627,14 +602,15 @@ public class Arrays_and_Strings {
   }
 
   /*  [Prob 1.6] String compression
+  *   Q) implement a meth to perform basic string compression using char count
+   *   aabcccccaa : a2b1c5a3
+   *   if compressed string is not shorter than original string return the oroginal string
+   *   String contains lower & uppercase letters from a-z
   * */
   public static String compress(String str) {
     if (str == null || str.length() == 0) {
       return "";
     }
-//    if (str.length() == 1) {
-//      return "" + str.charAt(0) + 1;
-//    }
     StringBuilder strBuild = new StringBuilder(str.length());
     char lastChar = str.charAt(0);
     int charCount = 1;
@@ -651,5 +627,50 @@ public class Arrays_and_Strings {
     strBuild.append(charCount);
     // return whichever is smaller
     return str.length() < strBuild.length() ? str : strBuild.toString();
+  }
+
+  /*  [Prob 1.5]
+  *   Q) One Away : there are 3 types of edits insert, remove  or edit a character
+  *   give a meth to tell if 2 strings are one / zero edits away
+  *   Examples :
+  *   pale , ple :: true
+  *   pales , pale :: true
+  *   pale , bale :: true
+  *   pale , bake :: false
+  *
+  *   A) First in the base we check if length diff is bigger than 1.
+  *   We will read the shorter string, thus comapre the string & swap the one with smalles
+  *   The idea is to scan string from let to right Make a not of a diff if it has arrived & return false
+  *   if another  diff arrives. But if a new char is added then we have to move the pointer in the longer string by 1
+  *   to keep checking for same chars
+  * */
+  public static boolean oneEditAway(String p, String q) {
+    if (p == null || q == null || Math.abs(p.length() - q.length()) > 1) {
+      return false;
+    }
+    if (p.length() > q.length()) {
+      String temp = p;
+      p = q;
+      q = temp;
+    }
+    int qi, pi;
+    qi = pi = 0;
+    boolean diff = false;
+    while (pi < p.length() && qi < q.length()) {
+      char pc = p.charAt(pi);
+      char qc = q.charAt(qi);
+      if (pc != qc) {
+        if (diff) {
+          return false;
+        }
+        diff = true;
+        if (p.length() != q.length()) {
+          qi++;
+        }
+      }
+      pi++;
+      qi++;
+    }
+    return true;
   }
 }

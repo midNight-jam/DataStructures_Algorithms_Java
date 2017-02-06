@@ -110,7 +110,8 @@ public class Main {
 //    Arrays_and_Strings_Main.testMatrixZeroes();
 //    Arrays_and_Strings_Main.testStringRotation();
 //    Arrays_and_Strings_Main.testRotateMatrix();
-    Arrays_and_Strings_Main.testStringCompression();
+//    Arrays_and_Strings_Main.testStringCompression();
+    Arrays_and_Strings_Main.testOneEditAway();
   }
 
   private static void doStack_and_Queue() {
