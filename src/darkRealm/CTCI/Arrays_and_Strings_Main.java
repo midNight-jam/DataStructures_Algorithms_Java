@@ -1,5 +1,6 @@
 package darkRealm.CTCI;
 import darkRealm.CTCI.Arrays_and_Strings.Arrays_and_Strings;
+import darkRealm.CTCI.BigO.MatrixUtil;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -108,5 +109,17 @@ public class Arrays_and_Strings_Main {
     int rooms = 2;
     boolean res = Arrays_and_Strings.bookingHotel(arr, dep, rooms);
     System.out.println(" res - " + res);
+  }
+
+  public static void testMatrixZeroes(){
+    int[][] matrix = new int[][]{
+        {9, 1, 1, 4, 51},
+        {2, 0, 2, 4, 52},
+        {3, 2, 3, 4, 53},
+        {4, 3, 0, 4, 54},
+        {5, 4, 4, 4, 0}
+    };
+    Arrays_and_Strings.matrixZeroes(matrix);
+    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 }

@@ -23,11 +23,11 @@ public class Main {
 
 
     // write your code here, testing after new git
-//    doArray_and_Strings_Main();
+    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 //    doSortingAndSearching();
-    doprint();
+//    doprint();
 //    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
@@ -106,6 +106,7 @@ public class Main {
 //    System.out.println(" res " + res);
 
 //    Arrays_and_Strings_Main.testHotelBook();
+    Arrays_and_Strings_Main.testMatrixZeroes();
   }
 
   private static void doStack_and_Queue() {

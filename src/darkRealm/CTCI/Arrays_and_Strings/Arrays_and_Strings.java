@@ -266,21 +266,21 @@ public class Arrays_and_Strings {
 
 
   public static int shortestPathBetweenWordsBFS(String source, String target, HashMap<String, Boolean> dictionary) {
-    String path = source+" ";
-    int pathCount =0;
+    String path = source + " ";
+    int pathCount = 0;
     MyQueue<String> queue = new MyQueue<>();
     queue.enqueue(source);
     while (!queue.isEmpty()) {
       String word = queue.deque();
       for (String dict :
           dictionary.keySet()) {
-        if (!dictionary.get(dict) && isAdjacent(word, dict) ) {
+        if (!dictionary.get(dict) && isAdjacent(word, dict)) {
           queue.enqueue(dict);
           dictionary.put(dict, true);
           path += " " + dict;
           pathCount++;
           if (dict.equals(target)) {
-            System.out.println(" pathCount : "+pathCount);
+            System.out.println(" pathCount : " + pathCount);
             return pathCount;
           }
         }
@@ -291,10 +291,10 @@ public class Arrays_and_Strings {
 
   /* Tweeter Min Mutation problem */
   public static int minMutation(String start, String end, String[] bank) {
-    if(start.equals(end)) return 0;
+    if (start.equals(end)) return 0;
 
     Set<String> bankSet = new HashSet<>();
-    for(String b: bank) bankSet.add(b);
+    for (String b : bank) bankSet.add(b);
 
     char[] charSet = new char[]{'A', 'C', 'G', 'T'};
 
@@ -304,19 +304,19 @@ public class Arrays_and_Strings {
     queue.offer(start);
     visited.add(start);
 
-    while(!queue.isEmpty()) {
+    while (!queue.isEmpty()) {
       int size = queue.size();
-      while(size-- > 0) {
+      while (size-- > 0) {
         String curr = queue.poll();
-        if(curr.equals(end)) return level;
+        if (curr.equals(end)) return level;
 
         char[] currArray = curr.toCharArray();
-        for(int i = 0; i < currArray.length; i++) {
+        for (int i = 0; i < currArray.length; i++) {
           char old = currArray[i];
-          for(char c: charSet) {
+          for (char c : charSet) {
             currArray[i] = c;
             String next = new String(currArray);
-            if(!visited.contains(next) && bankSet.contains(next)) {
+            if (!visited.contains(next) && bankSet.contains(next)) {
               visited.add(next);
               queue.offer(next);
             }
@@ -499,5 +499,79 @@ public class Arrays_and_Strings {
     System.out.println(" Arrivals   " + Arrays.toString(arr));
     System.out.println(" Departures " + Arrays.toString(dep));
     return true;
+  }
+
+  /*  [Prob 1.8]
+  *   Q) Zero Matix
+  *   A) We have to use constant space, thus we will use matrix itself.
+  *   For this , we store this adidtional info in first row & col,
+  *   Thus, first we sacn the first row & col to check if it contains a sero, if yes we make a note of that, so that in
+  *   end we will make first row/col also zero. now we scan the matrix and any time when we encounter a 0, we store that
+  *   row index in that rows first cell, & store that cols index in that cols first index.
+  *   Later we read first rows & cols & nullify the rrespective rows & cols
+  *   Finally if the first row or col had 0 in it nullify them also.
+  * */
+  public static void matrixZeroes(int[][] matrix) {
+    boolean firstRowZero, firstColZero;
+    firstColZero = firstRowZero = false;
+    // first we check if the first row or col has zero, if yes we will zero first row & col also at end. because till then
+    // we would utlise the first cells to store which row & column repectively wwill be going total 0.
+    for (int i = 0; i < matrix.length; i++) {
+      if (matrix[0][i] == 0) {
+        firstRowZero = true;
+        break;
+      }
+    }
+
+    for (int i = 0; i < matrix[0].length; i++) {
+      if (matrix[0][i] == 0) {
+        firstColZero = true;
+        break;
+      }
+    }
+
+    for (int i = 1; i < matrix.length; i++) {
+      for (int j = 1; j < matrix[0].length; j++) {
+        if (matrix[i][j] == 0) {
+          matrix[i][0] = 0; // marking in row
+          matrix[0][j] = 0; // marking in col
+        }
+      }
+    }
+
+    // making all the zero containing rows to zero
+    for (int i = 0; i < matrix.length; i++) {
+      if (matrix[i][0] == 0) {
+        int j = 0;
+        while (j < matrix[0].length) {
+          matrix[i][j] = 0;
+          j++;
+        }
+      }
+    }
+
+    // making all the zero containing cols to zero
+    for (int i = 0; i < matrix[0].length; i++) {
+      if (matrix[0][i] == 0) {
+        int j = 0;
+        while (j < matrix.length) {
+          matrix[j][i] = 0;
+          j++;
+        }
+      }
+    }
+    // if first row had zero, its safe to make it zero as all info is used up
+    if (firstRowZero) {
+      for (int i = 0; i < matrix[0].length; i++) {
+        matrix[0][i] = 0;
+      }
+    }
+
+    // if first col had zero, its safe to make it zero as all info is used up
+    if (firstColZero) {
+      for (int i = 0; i < matrix.length; i++) {
+        matrix[i][0] = 0;
+      }
+    }
   }
 }
