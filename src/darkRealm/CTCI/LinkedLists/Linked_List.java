@@ -161,9 +161,10 @@ public class Linked_List {
     sumRes.head = sumList;
     return sumRes;
   }
-/*
-  /*  [Prob 2.5]  Sum List Natural, numbers are not in reverse order
-* */
+
+  /*
+   [Prob 2.5]  Sum List Natural, numbers are not in reverse order
+  * */
   public static LinkedList sumListNatural(LinkedList a, LinkedList b) {
     Stack<Integer> list1 = new Stack<>();
     Stack<Integer> list2 = new Stack<>();

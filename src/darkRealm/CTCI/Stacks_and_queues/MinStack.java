@@ -1,6 +1,6 @@
 package darkRealm.CTCI.Stacks_and_queues;
 
-import java.util.logging.Logger;
+import java.util.Stack;
 
 /**
  * Created by Jayam on 12/20/2016.
@@ -10,17 +10,15 @@ import java.util.logging.Logger;
 * [Prob 3.2]
 * A dataStructure to maintain Min element in stack, while supporting all Push()/Pop()/Min() operation in O(1)*/
 public class MinStack {
-  private final static Logger dLogger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-  private MyStack<Integer> stack;
-  private MyStack<Integer> minStack;
+  private Stack<Integer> stack;
   private int min = Integer.MAX_VALUE;
 
   public MinStack() {
-    stack = new MyStack<>();
+    stack = new Stack<>();
   }
 
   public void push(int i) {
-    if (i <= min) { // push the old value of min when a new min has arrived
+    if (i < min) {
       stack.push(min);
       min = i;
     }
@@ -28,13 +26,15 @@ public class MinStack {
   }
 
   public int pop() {
-    int popped = stack.pop();
-    if (popped == min) {  // if pop operation could result in the changing of the current minimum value,
-      if (stack.getSize() > 0) { // pop twice and change the current minimum value to the last minimum value.
-        min = stack.pop();
-      }
+    if (stack.isEmpty()) {
+      return -1;
     }
-    return popped;
+    if (stack.peek() == min) {
+      int pop = stack.pop();
+      min = stack.pop();
+      return pop;
+    }
+    return stack.pop();
   }
 
   public int getMin() {

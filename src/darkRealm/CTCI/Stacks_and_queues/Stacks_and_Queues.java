@@ -1,19 +1,10 @@
 package darkRealm.CTCI.Stacks_and_queues;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Created by Jayam on 12/7/2016.
  */
 public class Stacks_and_Queues {
-  private final static Logger dLogger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
-  static {
-    dLogger.setLevel(Level.INFO);
-    dLogger.info("logger initialized  for " + Stacks_and_Queues.class);
-  }
-
 
   /*  [Prob 3.5]
   * Q) To sort a stack such that samllest items are on top.
@@ -33,23 +24,19 @@ public class Stacks_and_Queues {
       int element = (int) stack.pop();
       if (minStack.isEmpty()) {
         minStack.push(element);
-        dLogger.info("First insertion in minStack " + element);
       } else {
         if (element >= minStack.peek()) {
           minStack.push(element);
-          dLogger.info("pushing in minStack as element " + element + " >= " + minStack.peek() + " minPeek ");
         } else { // shall empty min stack in the original stack, insert the smaller element and then push all the elements.
           while (!minStack.isEmpty() && element < minStack.peek()) { // pull all elements out of stack that will be greater than the upcoming element
             minPeek = minStack.peek();
             temp = minStack.pop();
             stack.push(temp);
             minStackWindow++;
-            dLogger.info("popoing from minStack was element " + element + " < " + minPeek + " minPeek ");
           }
 
           // now we are ready to push the poped out element in the minStack
           minStack.push(element);
-          dLogger.info("pushing the popped element into minStack as all bigger pooped out " + element);
 
           // now lets pull out all the minStack Elements that we pushed on to the main Stack
           while (minStackWindow > 0) {
@@ -62,7 +49,6 @@ public class Stacks_and_Queues {
     }
 
     // as the main Stack isEmptied we can pull out the elements from the minStack and push on to the main Stack (reverse)
-    dLogger.info("refilling from the minStack for reverse order");
     while (!minStack.isEmpty()) {
       temp = minStack.pop();
       stack.push(temp);

@@ -54,23 +54,16 @@ public class Stack_and_Queues_Main {
     minStack.push(11);
     System.out.println("Current min " + minStack.getMin());
 
-    minStack.pop();
-    System.out.println("Current min " + minStack.getMin());
-
-    minStack.pop();
-    System.out.println("Current min " + minStack.getMin());
-
-    minStack.pop();
-    System.out.println("Current min " + minStack.getMin());
-
-    minStack.pop();
-    System.out.println("Current min " + minStack.getMin());
-
-    minStack.pop();
-    System.out.println("Current min " + minStack.getMin());
-
-    minStack.pop();
-    System.out.println("Current min " + minStack.getMin());
+//    minStack.pop();
+    System.out.println("pop : "+minStack.pop()+" Current min " + minStack.getMin());
+    System.out.println("pop : "+minStack.pop()+" Current min " + minStack.getMin());
+    System.out.println("pop : "+minStack.pop()+" Current min " + minStack.getMin());
+    System.out.println("pop : "+minStack.pop()+" Current min " + minStack.getMin());
+    System.out.println("pop : "+minStack.pop()+" Current min " + minStack.getMin());
+    System.out.println("pop : "+minStack.pop()+" Current min " + minStack.getMin());
+    System.out.println("pop : "+minStack.pop()+" Current min " + minStack.getMin());
+    System.out.println("pop : "+minStack.pop()+" Current min " + minStack.getMin());
+    System.out.println("pop : "+minStack.pop()+" Current min " + minStack.getMin());
 
   }
 
