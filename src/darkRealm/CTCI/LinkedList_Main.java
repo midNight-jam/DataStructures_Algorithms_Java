@@ -118,9 +118,33 @@ public class LinkedList_Main {
     n5.next = n6;
     LinkedList L2 = new LinkedList();
     L2.head = n3;
-    LinkedList res = Linked_List.sumList(L1,L2);
-    System.out.println(" a : "+L1);
-    System.out.println(" b : "+L2);
-    System.out.println(" r : "+res);
+    LinkedList res = Linked_List.sumList(L1, L2);
+    System.out.println(" a : " + L1);
+    System.out.println(" b : " + L2);
+    System.out.println(" r : " + res);
+  }
+
+  public static void testSumListNatural() {
+    Node n0 = new Node(1);
+    Node n1 = new Node(1);
+    Node n2 = new Node(9);
+    n0.next = n1;
+    n1.next = n2;
+    LinkedList L1 = new LinkedList();
+    L1.head = n0;
+
+    Node n3 = new Node(9);
+    Node n4 = new Node(9);
+    Node n5 = new Node(9);
+    Node n6 = new Node(9);
+    n3.next = n4;
+    n4.next = n5;
+    n5.next = n6;
+    LinkedList L2 = new LinkedList();
+    L2.head = n3;
+    LinkedList res = Linked_List.sumListNatural(L1, L2);
+    System.out.println(" a : " + L1);
+    System.out.println(" b : " + L2);
+    System.out.println(" r : " + res);
   }
 }

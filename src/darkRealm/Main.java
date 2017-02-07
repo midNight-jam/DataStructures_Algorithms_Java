@@ -292,7 +292,9 @@ public class Main {
 //    LinkedList_Main.testReverseBetween();
 //    LinkedList_Main.testPalindrome();
 //    LinkedList_Main.testIntersection();
-    LinkedList_Main.testSumList();
+    LinkedList_Main.testSumListNatural();
+//    LinkedList_Main.testSumList();
+//    LinkedList_Main.testPartition();
   }
 
   private static void doBitsMain() {

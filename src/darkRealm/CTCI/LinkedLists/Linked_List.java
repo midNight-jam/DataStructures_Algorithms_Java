@@ -1,5 +1,7 @@
 package darkRealm.CTCI.LinkedLists;
 
+import java.util.Stack;
+
 /**
  * Created by Jayam on 2/6/2017.
  */
@@ -154,6 +156,55 @@ public class Linked_List {
     }
     if (carry == 1) {
       sumTrav.next = new Node(carry);
+    }
+    LinkedList sumRes = new LinkedList();
+    sumRes.head = sumList;
+    return sumRes;
+  }
+/*
+  /*  [Prob 2.5]  Sum List Natural, numbers are not in reverse order
+* */
+  public static LinkedList sumListNatural(LinkedList a, LinkedList b) {
+    Stack<Integer> list1 = new Stack<>();
+    Stack<Integer> list2 = new Stack<>();
+
+    Node trav = a.head;
+    while (trav != null) {
+      list1.push(trav.data);
+      trav = trav.next;
+    }
+    trav = b.head;
+    while (trav != null) {
+      list2.push(trav.data);
+      trav = trav.next;
+    }
+    int x, y, sum, carry;
+    carry = sum = 0;
+    Node sumList = null;
+    while (list1.size() != 0 && list2.size() != 0) {
+      x = list1.pop();
+      y = list2.pop();
+      sum = x + y + carry;
+      carry = sum > 9 ? 1 : 0;
+      sum = sum % 10;
+      Node temp = new Node(sum);
+      temp.next = sumList;
+      sumList = temp;
+    }
+    Stack<Integer> stack = list1.size() == 0 ? list2 : list1;
+    while (stack.size() > 0) {
+      x = stack.pop();
+      sum = x + carry;
+      carry = sum > 9 ? 1 : 0;
+      sum = sum % 10;
+      Node temp = new Node(sum);
+      temp.next = sumList;
+      sumList = temp;
+    }
+    if (carry == 1) {
+      Node temp = new Node(carry);
+      temp.next = sumList;
+      sumList = temp;
     }
     LinkedList sumRes = new LinkedList();
     sumRes.head = sumList;
