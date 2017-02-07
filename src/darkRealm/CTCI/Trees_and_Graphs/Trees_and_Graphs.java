@@ -1,11 +1,11 @@
 package darkRealm.CTCI.Trees_and_Graphs;
 
 import darkRealm.CTCI.LinkedLists.LinkedList;
-import darkRealm.CTCI.Stacks_and_queues.MyQueue;
 import darkRealm.CTCI.Stacks_and_queues.MyStack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Jayam on 12/28/2016.
@@ -94,42 +94,29 @@ public class Trees_and_Graphs {
   }
 
   /*  [Prob 4.3]
-  *   Q) List of Depths : given a binary tree, design an algo which creates a linkedlist of all the nodes at each depth
-  *   So you will have D no of lists if D is the depth of the tree
-  *   A) Will traverse the tree recursively and for each time when sending the call for subtree will increment the level
-  *   counter & send, this levelCounter will be used to fetch the list for that level & insert the node in the list
-  * */
-  public static void listOfDepths() {
-    ArrayList<MyQueue<TNode>> levels = new ArrayList<>();
-    Tree tree = getSampleTree();
-    collateByLevel(tree.root, 0, levels);
-    // print all the lists (per level wise) to see the output
-    for (int i = 0; i < levels.size(); i++) {
-      MyQueue<TNode> level = levels.get(i);
-      System.out.println("Level no - " + i);
-      while (!level.isEmpty()) {
-        System.out.print(level.deque().data + " ");
-      }
-      System.out.println();
-    }
+    *   Q) List of Depths : given a binary tree, design an algo which creates a linkedlist of all the nodes at each depth
+    *   So you will have D no of lists if D is the depth of the tree
+    *   A) Will traverse the tree recursively and for each time when sending the call for subtree will increment the level
+    *   counter & send, this levelCounter will be used to fetch the list for that level & insert the node in the list
+    * */
+  public static List<List<Integer>> listOfDepths(Tree tree){
+    TNode root = tree.root;
+    List<List<Integer>> levels = new ArrayList<>();
+    collateByLevel(root,0,levels);
+    return levels;
   }
 
-  private static void collateByLevel(TNode node, int levelNo, ArrayList<MyQueue<TNode>> levels) {
-    // base condition
+  private static void collateByLevel(TNode node, int level, List<List<Integer>> levels) {
     if (node == null) {
       return;
     }
-    // if this level's Queue is not already present then create and add
-    if (levels.size() < levelNo + 1) {
-      levels.add(new MyQueue<>());
+    if (levels.size() < level + 1) {
+      levels.add(new ArrayList<>());
     }
-    // Enqueue this node in its level queue
-    MyQueue<TNode> levelList = levels.get(levelNo);
-    levelList.enqueue(node);
-
-    // call for left & right sub tree with incrementing a level
-    collateByLevel(node.left, levelNo + 1, levels);
-    collateByLevel(node.right, levelNo + 1, levels);
+    List<Integer> thisLevel = levels.get(level);
+    thisLevel.add(node.data);
+    collateByLevel(node.left, level + 1, levels);
+    collateByLevel(node.right, level + 1, levels);
   }
 
   /*  [Prob 4.4]

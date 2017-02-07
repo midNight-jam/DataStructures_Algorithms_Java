@@ -29,8 +29,8 @@ public class Main {
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-//    doTrees_Graph();
-    doLinkedLsit();
+    doTrees_Graph();
+//    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
@@ -103,7 +103,7 @@ public class Main {
 
   private static void doStack_and_Queue() {
 //    Stack_and_Queues_Main.testMyStack();
-//    Stack_and_Queues_Main.testMinStack();
+    Stack_and_Queues_Main.testMinStack();
 //    Stack_and_Queues_Main.testSortStack();
 //    Stack_and_Queues_Main.testSetStacks();
 //    Stack_and_Queues_Main.testThreeStacks();
@@ -138,7 +138,7 @@ public class Main {
 //    Trees_and_Graphs_Main.testBFSAndDFS();
 //    Trees_and_Graphs_Main.testIsRoutePresentBetweenNodes();
 //    Trees_and_Graphs_Main.testMinimalHeightTree();
-//    Trees_and_Graphs_Main.testListOfDepths();
+    Trees_and_Graphs_Main.testListOfDepths();
 //    Trees_and_Graphs_Main.testIsBalanced();
 //    Trees_and_Graphs_Main.testIsBST();
 //    Trees_and_Graphs_Main.testPredecessorAndSuccessor();
@@ -389,6 +389,5 @@ public class Main {
 
   public static void tes2(){
     int [] arr = new int[0];
-
   }
 }

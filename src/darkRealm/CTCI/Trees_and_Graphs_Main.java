@@ -8,6 +8,7 @@ import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Jayam on 12/27/2016.
@@ -23,12 +24,30 @@ public class Trees_and_Graphs_Main {
   }
 
   public static void testMinimalHeightTree() {
-    int[] arr = new int[]{2, 5, 7, 10, 19, 20, 25};
+//    int[] arr = new int[]{2, 5, 7, 10, 19, 20, 25};
+    int[] arr = new int[]{2,3,4};
+//    int[] arr = new int[]{};
     Trees_and_Graphs.createMinimalHeightTree(arr);
   }
 
   public static void testListOfDepths() {
-    Trees_and_Graphs.listOfDepths();
+//    Trees_and_Graphs.listOfDepths();
+    Tree tree = new Tree();
+    tree.root = new TNode(20);
+    tree.root.left = new TNode(10);
+    tree.root.right = new TNode(30);
+    tree.root.right.left = new TNode(25);
+    tree.root.right.left.left = new TNode(22);
+    tree.root.right.left.left.left = new TNode(21);
+    tree.root.right.left.right= new TNode(27);
+    tree.root.right.right= new TNode(35);
+    tree.root.left.right = new TNode(15);
+    tree.root.left.right.right = new TNode(17);
+    tree.root.left.left = new TNode(5);
+    tree.root.left.left.left = new TNode(3);
+    tree.root.left.left.right = new TNode(7);
+    List<List<Integer>> res = Trees_and_Graphs.listOfDepths(tree);
+    System.out.print(res);
   }
 
   public static void testIsBalanced() {
