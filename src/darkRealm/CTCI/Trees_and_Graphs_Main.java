@@ -50,6 +50,32 @@ public class Trees_and_Graphs_Main {
     System.out.print(res);
   }
 
+  public static void testMinPathSum() {
+//    Tree tree = new Tree();
+//    tree.root = new TNode(17);
+//    tree.root.left = new TNode(30);
+//    tree.root.right = new TNode(25);
+//    tree.root.right.left = new TNode(23);
+//    tree.root.right.right= new TNode(27);
+//    tree.root.right.left.left = new TNode(20);
+//    tree.root.right.right.left = new TNode(10);
+//    tree.root.left.right = new TNode(3);
+//    tree.root.left.left = new TNode(7);
+//    tree.root.left.right.left = new TNode(5);
+//    tree.root.left.right.left.right = new TNode(25);
+//    tree.root.left.left.left = new TNode(1);
+//
+    Tree tree = new Tree();
+    tree.root = new TNode(1);
+    tree.root.left = new TNode(1);
+    tree.root.left.left = new TNode(1);
+    tree.root.left.left.left = new TNode(1);
+//    tree.root.left = new TNode(3);
+    tree.root.right = new TNode(3);
+
+    Trees_and_Graphs.printMinPathSum(tree);
+  }
+
   public static void testIsBalanced() {
     Tree tree = Trees_and_Graphs.getSampleTree();
     Trees_and_Graphs.isBalanced(tree);

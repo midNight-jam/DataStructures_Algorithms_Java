@@ -24,12 +24,12 @@ public class Main {
 
 
     // write your code here, testing after new git
-    doArray_and_Strings_Main();
+//    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-//    doTrees_Graph();
+    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
@@ -153,6 +153,7 @@ public class Main {
 //    Trees_and_Graphs_Main.testPathsWithSum();
 //    Trees_and_Graphs_Main.testInorderTraversalIterative();
 //    Trees_and_Graphs_Main.testAdjacencyGraph();
+    Trees_and_Graphs_Main.testMinPathSum();
   }
 
   private static void doMathUtils() {

@@ -377,8 +377,8 @@ public class LeetCodeMain {
   public static void testTrappingRainWater() {
 //    int[] world = new int[]{2, 1, 0, 1, 3, 2, 1};
 //    int[] world = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-    int[] world = new int[]{5,4,1,2};
+    int[] world = new int[]{5, 4, 1, 2};
     int res = LC_Prob_Med2.trappingRainWater(world);
-    System.out.println("Res : " + res );
+    System.out.println("Res : " + res);
   }
 }

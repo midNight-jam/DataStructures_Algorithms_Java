@@ -99,10 +99,10 @@ public class Trees_and_Graphs {
     *   A) Will traverse the tree recursively and for each time when sending the call for subtree will increment the level
     *   counter & send, this levelCounter will be used to fetch the list for that level & insert the node in the list
     * */
-  public static List<List<Integer>> listOfDepths(Tree tree){
+  public static List<List<Integer>> listOfDepths(Tree tree) {
     TNode root = tree.root;
     List<List<Integer>> levels = new ArrayList<>();
-    collateByLevel(root,0,levels);
+    collateByLevel(root, 0, levels);
     return levels;
   }
 
@@ -833,5 +833,41 @@ public class Trees_and_Graphs {
         }
       }
     }
+  }
+
+  /*  [Prob] : Print Minimum path sum from root to leaf in binary tree
+  *   Q) find the min path sum from root to leaf & print, if two paths are minimum print the shorter one.
+  * */
+  public static void printMinPathSum(Tree tree) {
+    if(tree==null){
+      return;
+    }
+    List<Integer> levels = new ArrayList<>();
+    findMinPath(tree.root, 0, levels, 0);
+    System.out.println("Sum : " + min + "  " + minPath);
+  }
+
+  static int min = Integer.MAX_VALUE;
+  static int minPathLength = Integer.MAX_VALUE;
+  static List<Integer> minPath;
+
+  private static void findMinPath(TNode node, int sum, List<Integer> levels, int level) {
+    if (node == null) {
+      return;
+    }
+    if (node.left == null && node.right == null) {
+      if (sum + node.data <= min) {
+        min = sum + node.data;
+        levels.add(level, node.data);
+        levels.subList(level + 1, levels.size()).clear();
+        if (levels.size() < minPathLength) {
+          minPath = new ArrayList<>(levels);
+        }
+        return;
+      }
+    }
+    levels.add(level, node.data);
+    findMinPath(node.left, sum + node.data, levels, level + 1);
+    findMinPath(node.right, sum + node.data, levels, level + 1);
   }
 }
