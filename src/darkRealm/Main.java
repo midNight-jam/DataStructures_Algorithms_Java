@@ -30,23 +30,10 @@ public class Main {
 //    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
-//    doLinkedLsit();
+    doLinkedLsit();
 //    doMathUtils();
-
-//    String res  = getTime(9,9,9,9);
-//    String res = getTime(0, 0, 0, 9);
-//    System.out.println("Res - " + res);
-
-
-//    minLenUnSorted(new int[]{0, 1, 15, 25, 6, 7, 30, 40, 50});
-//    minLenUnSorted(new int[]{1, 2, 4, 7, 10, 11, 5, 12, 6, 8, 16, 18, 19});
-//    minLenUnSorted(new int[]{10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60});
 //    doBitsMain();
 //    doMathsLogicPuzzels();
-
-//    int res = maxTweet(new int[]{1, 2, 3}, 3);
-//    int res = maxTweet(new int[]{3, 1, 2, 1}, 4);
-
 //    doModerate();
 //    doLeetCode();
   }
@@ -303,7 +290,8 @@ public class Main {
 //    LinkedList_Main.testLinkedListOperations();
 //    LinkedList_Main.testDeepCopyRandomList();
 //    LinkedList_Main.testReverseBetween();
-    LinkedList_Main.testPalindrome();
+//    LinkedList_Main.testPalindrome();
+    LinkedList_Main.testIntersection();
   }
 
   private static void doBitsMain() {
