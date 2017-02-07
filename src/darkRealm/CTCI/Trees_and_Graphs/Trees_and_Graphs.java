@@ -839,7 +839,7 @@ public class Trees_and_Graphs {
   *   Q) find the min path sum from root to leaf & print, if two paths are minimum print the shorter one.
   * */
   public static void printMinPathSum(Tree tree) {
-    if(tree==null){
+    if (tree == null) {
       return;
     }
     List<Integer> levels = new ArrayList<>();

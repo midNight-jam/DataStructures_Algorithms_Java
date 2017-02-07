@@ -211,4 +211,35 @@ public class Linked_List {
     sumRes.head = sumList;
     return sumRes;
   }
+
+  /*  [Prob] reverse from mid
+  * 1 -> 2 -> 3 -> 4 -> 5
+  * 1 -> 2 -> 5 -> 4 -> 3
+  * */
+  public static LinkedList reverseFromMid(LinkedList list) {
+    Node head = list.head;
+    Node slowPrev = null;
+    Node slow;
+    Node fast;
+    slow = fast = list.head;
+    while (fast != null && fast.next != null) {
+      slowPrev = slow;
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    Node temp;
+    Node prev = null;
+    Node trav = slow;
+    while (trav != null) {
+      temp = trav.next;
+      trav.next = prev;
+      prev = trav;
+      trav = temp;
+    }
+    slowPrev.next = prev;
+
+    LinkedList res = new LinkedList();
+    res.head = head;
+    return res;
+  }
 }

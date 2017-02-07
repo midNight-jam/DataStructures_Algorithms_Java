@@ -29,8 +29,8 @@ public class Main {
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-    doTrees_Graph();
-//    doLinkedLsit();
+//    doTrees_Graph();
+    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
@@ -293,7 +293,8 @@ public class Main {
 //    LinkedList_Main.testReverseBetween();
 //    LinkedList_Main.testPalindrome();
 //    LinkedList_Main.testIntersection();
-    LinkedList_Main.testSumListNatural();
+//    LinkedList_Main.testSumListNatural();
+    LinkedList_Main.testReverseMid();
 //    LinkedList_Main.testSumList();
 //    LinkedList_Main.testPartition();
   }
