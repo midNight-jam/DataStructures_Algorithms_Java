@@ -491,15 +491,15 @@ public class Arrays_and_Strings {
     firstColZero = firstRowZero = false;
     // first we check if the first row or col has zero, if yes we will zero first row & col also at end. because till then
     // we would utlise the first cells to store which row & column repectively wwill be going total 0.
-    for (int i = 0; i < matrix.length; i++) {
+    for (int i = 0; i < matrix[0].length; i++) {
       if (matrix[0][i] == 0) {
         firstRowZero = true;
         break;
       }
     }
 
-    for (int i = 0; i < matrix[0].length; i++) {
-      if (matrix[0][i] == 0) {
+    for (int i = 0; i < matrix.length; i++) {
+      if (matrix[i][0] == 0) {
         firstColZero = true;
         break;
       }

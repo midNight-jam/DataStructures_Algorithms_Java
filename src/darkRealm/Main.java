@@ -24,12 +24,12 @@ public class Main {
 
 
     // write your code here, testing after new git
-//    doArray_and_Strings_Main();
+    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-    doTrees_Graph();
+//    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
@@ -94,16 +94,16 @@ public class Main {
 //    System.out.println(" res " + res);
 
 //    Arrays_and_Strings_Main.testHotelBook();
-//    Arrays_and_Strings_Main.testMatrixZeroes();
+    Arrays_and_Strings_Main.testMatrixZeroes();
 //    Arrays_and_Strings_Main.testStringRotation();
 //    Arrays_and_Strings_Main.testRotateMatrix();
 //    Arrays_and_Strings_Main.testStringCompression();
-    Arrays_and_Strings_Main.testOneEditAway();
+//    Arrays_and_Strings_Main.testOneEditAway();
   }
 
   private static void doStack_and_Queue() {
 //    Stack_and_Queues_Main.testMyStack();
-    Stack_and_Queues_Main.testMinStack();
+//    Stack_and_Queues_Main.testMinStack();
 //    Stack_and_Queues_Main.testSortStack();
 //    Stack_and_Queues_Main.testSetStacks();
 //    Stack_and_Queues_Main.testThreeStacks();
@@ -138,7 +138,7 @@ public class Main {
 //    Trees_and_Graphs_Main.testBFSAndDFS();
 //    Trees_and_Graphs_Main.testIsRoutePresentBetweenNodes();
 //    Trees_and_Graphs_Main.testMinimalHeightTree();
-    Trees_and_Graphs_Main.testListOfDepths();
+//    Trees_and_Graphs_Main.testListOfDepths();
 //    Trees_and_Graphs_Main.testIsBalanced();
 //    Trees_and_Graphs_Main.testIsBST();
 //    Trees_and_Graphs_Main.testPredecessorAndSuccessor();

@@ -112,13 +112,22 @@ public class Arrays_and_Strings_Main {
   }
 
   public static void testMatrixZeroes() {
+//    int[][] matrix = new int[][]{
+//        {9, 1, 1, 4, 51},
+//        {2, 0, 2, 4, 52},
+//        {3, 2, 3, 4, 53},
+//        {4, 3, 0, 4, 54},
+//        {5, 4, 4, 4, 0}
+//    };
+
     int[][] matrix = new int[][]{
-        {9, 1, 1, 4, 51},
-        {2, 0, 2, 4, 52},
-        {3, 2, 3, 4, 53},
-        {4, 3, 0, 4, 54},
-        {5, 4, 4, 4, 0}
+        {0, 0, 0, 5},
+        {4, 3, 1, 4},
+        {0, 1, 1, 4},
+        {1, 2, 1, 3},
+        {0, 0, 1, 1}
     };
+
     Arrays_and_Strings.matrixZeroes(matrix);
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }

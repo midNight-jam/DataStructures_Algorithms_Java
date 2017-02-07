@@ -39,7 +39,8 @@ public class LeetCodeMain {
 //    testMaxProfit();
 //    testLetterCombinations();
 //    testGroupAnagram();
-    testValidAnagram();
+//    testValidAnagram();
+    testTrappingRainWater();
   }
 
   public static void testAddTwoNumbers() {
@@ -357,19 +358,27 @@ public class LeetCodeMain {
 //    String[] strs = new String[]{""};
 //    String[] strs = new String[]{"tea","","eat","","tea",""};
 //    String[] strs = new String[]{"ape","and","cat"};
-    String[] strs = new String[]{"","b"};
+    String[] strs = new String[]{"", "b"};
     List<List<String>> res = LC_Prob_Med2.groupAnagrams(strs);
     System.out.println("Res : " + Arrays.toString(res.toArray()));
   }
 
-  public static void testValidAnagram(){
+  public static void testValidAnagram() {
     String s = "anagram", t = "nagaram";
 //    String s = "", t = "nagaram";
 //    String s = "", t = "";
 //    String s = "", t = null;
 //    String s = "a", t ="a";
 
-    boolean res = LC_Prob_Med2.validAnagram(s,t);
-    System.out.println("Res : " + res+" S : "+s+"  T : "+t);
+    boolean res = LC_Prob_Med2.validAnagram(s, t);
+    System.out.println("Res : " + res + " S : " + s + "  T : " + t);
+  }
+
+  public static void testTrappingRainWater() {
+//    int[] world = new int[]{2, 1, 0, 1, 3, 2, 1};
+//    int[] world = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+    int[] world = new int[]{5,4,1,2};
+    int res = LC_Prob_Med2.trappingRainWater(world);
+    System.out.println("Res : " + res );
   }
 }
