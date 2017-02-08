@@ -44,7 +44,8 @@ public class LeetCodeMain {
 //    testTrappingRainWater();
 //    testRotateAntiClockWise();
 //    testPascalsTriangle();
-    testThirdMaximum();
+//    testThirdMaximum();
+    testSubsets();
   }
 
   public static void testAddTwoNumbers() {
@@ -412,8 +413,15 @@ public class LeetCodeMain {
 //    int[] arr = new int[]{1,1,2};
 //    int[] arr = new int[]{2, 1};
 //    int[] arr = new int[]{2, 1,Integer.MIN_VALUE};
-    int[] arr = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE,Integer.MIN_VALUE};
+    int[] arr = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
     int res = LC_Prob_Med2.thirdMaximumNumber(arr);
     System.out.println(" res : " + res + "  Arr : " + Arrays.toString(arr));
+  }
+
+  public static void testSubsets() {
+    int[] arr = new int[]{1,2,3};
+    List<List<Integer>> res = LC_Prob_Med2.subSet(arr);
+    System.out.println(" Arr : " + Arrays.toString(arr));
+    System.out.println(" Subsets : " + res);
   }
 }

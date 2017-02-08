@@ -237,10 +237,10 @@ public class LC_Prob_Med2 {
     Integer third = null;
 
     for (int i = 0; i < arr.length; i++) {
-      Integer j =arr[i];
-     if(j.equals(first) ||j.equals(second)||j.equals(third)){
-       continue;
-     }
+      Integer j = arr[i];
+      if (j.equals(first) || j.equals(second) || j.equals(third)) {
+        continue;
+      }
       if (first == null || arr[i] > first) {
         third = second;
         second = first;
@@ -248,13 +248,48 @@ public class LC_Prob_Med2 {
       } else if (second == null || arr[i] > second) {
         third = second;
         second = arr[i];
-      } else if (third == null ||  arr[i] > third) {
+      } else if (third == null || arr[i] > third) {
         third = arr[i];
       }
     }
     return third == null ? first : third;
   }
 
-  /*
+  /*  [Prob 78] Subsets
+  *   Given a set of distinct integers, nums, return all possible subsets.
+  *   Note: The solution set must not contain duplicate subsets.
+  *   For example,
+  *   If nums = [1,2,3], a solution is:
+  *   [
+  *   [3],
+  *   [1],
+  *   [2],
+  *   [1,2,3],
+  *   [1,3],
+  *   [2,3],
+  *   [1,2],
+  *   []
+  *   ]
   * */
+  public static List<List<Integer>> subSet(int[] arr) {
+    if (arr == null ) {
+      return new ArrayList<>();
+    }
+    List<List<Integer>> subsets = new ArrayList<>();
+    int setSize = (int) Math.pow(2, arr.length);
+    for (int i = 0; i < setSize; i++) {
+      int index = 0;
+      int j = i;
+      List<Integer> set = new ArrayList<>();
+      while (j != 0) {
+        if ((j & 1) == 1) {
+          set.add(arr[index]);
+        }
+        index++;
+        j = j >> 1;
+      }
+      subsets.add(set);
+    }
+    return subsets;
+  }
 }
