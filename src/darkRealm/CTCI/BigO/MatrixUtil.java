@@ -123,4 +123,57 @@ public class MatrixUtil {
     }
     return string.toString();
   }
+
+  public static void rotateMatrixClockWise(int[][] matrix) {
+    if (matrix == null || matrix.length == 0) {
+      return;
+    }
+    int levels = matrix.length;
+    int i = 0;
+    int swapLevel = 0;
+    while (i < (levels) / 2) {
+      swapLevel = i;
+      int temp;
+      for (int j = swapLevel; j < levels - swapLevel - 1; j++) {
+        temp = matrix[swapLevel][j];
+        // left to top
+        matrix[swapLevel][j] = matrix[levels - j - 1][swapLevel];
+
+        // bottom to left
+        matrix[levels - j - 1][swapLevel] = matrix[levels - swapLevel - 1][levels - j - 1];
+
+        // right to bottom
+        matrix[levels - swapLevel - 1][levels - j - 1] = matrix[j][levels - swapLevel - 1];
+
+        // top to right
+        matrix[j][levels - swapLevel - 1] = temp;
+      }
+      i++;
+    }
+  }
+
+  public static void rotateMatrixAntiClockWise(int[][] matrix) {
+    if (matrix == null || matrix.length == 0) {
+      return;
+    }
+    int levels = matrix.length;
+    int i = 0;
+    int swapLevel;
+    while (i < (levels) / 2) {
+      swapLevel = i;
+      int temp;
+      for (int j = i; j < levels - swapLevel - 1; j++) {
+        temp = matrix[swapLevel][j];
+        //right to top
+        matrix[swapLevel][j] = matrix[j][levels - swapLevel - 1];
+        //bottom to right
+        matrix[j][levels - swapLevel - 1] = matrix[levels - swapLevel - 1][levels - j - 1];
+        //left to bottom
+        matrix[levels - swapLevel - 1][levels - j - 1] = matrix[levels - j - 1][swapLevel];
+        //top to left
+        matrix[levels - j - 1][swapLevel]= temp;
+      }
+      i++;
+    }
+  }
 }

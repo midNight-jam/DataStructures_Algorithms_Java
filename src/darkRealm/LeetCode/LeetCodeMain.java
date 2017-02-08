@@ -1,5 +1,6 @@
 package darkRealm.LeetCode;
 
+import darkRealm.CTCI.BigO.MatrixUtil;
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
 
@@ -40,7 +41,8 @@ public class LeetCodeMain {
 //    testLetterCombinations();
 //    testGroupAnagram();
 //    testValidAnagram();
-    testTrappingRainWater();
+//    testTrappingRainWater();
+    testRotateAntiClockWise();
   }
 
   public static void testAddTwoNumbers() {
@@ -279,8 +281,20 @@ public class LeetCodeMain {
         {13, 14, 15, 16}
     };
 
-    LC_Prob_Med.rotate(matrix);
-//    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
+    MatrixUtil.rotateMatrixClockWise(matrix);
+    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
+  }
+
+  public static void testRotateAntiClockWise() {
+    int[][] matrix = new int[][]{
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
+    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
+    MatrixUtil.rotateMatrixAntiClockWise(matrix);
+    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 
   public static void testexceptSelf() {
