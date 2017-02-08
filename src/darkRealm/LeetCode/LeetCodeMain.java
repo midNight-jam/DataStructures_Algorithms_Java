@@ -46,7 +46,8 @@ public class LeetCodeMain {
 //    testPascalsTriangle();
 //    testThirdMaximum();
 //    testSubsets();
-    testRotateFunction();
+//    testRotateFunction();
+    testNumberOfIslands();
   }
 
   public static void testAddTwoNumbers() {
@@ -430,5 +431,17 @@ public class LeetCodeMain {
     int[] arr = new int[]{4, 3, 2, 6};
     int res = LC_Prob_Med2.rotate(arr);
     System.out.println("res : " + res + " Arr : " + Arrays.toString(arr));
+  }
+
+  public static void testNumberOfIslands() {
+    int[][] matrix = new int[][]{{1, 1, 0, 0, 0},
+        {0, 1, 0, 0, 1},
+        {1, 0, 0, 1, 1},
+        {0, 0, 0, 0, 0},
+        {1, 0, 1, 0, 1}
+    };
+    int islands = LC_Prob_Med2.numberOfIslands(matrix);
+    System.out.println(" Islands : " + islands);
+    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 }

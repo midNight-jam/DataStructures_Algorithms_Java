@@ -881,7 +881,7 @@ public class LC_Prob_Med {
     int temp = 1;
     // we have to create a shifted aray of products thats why we initialize with 1 and not arr[0], this will give us all
     // the nos product except the last number, now we traverse this product the array but from right, and multiply with
-    // the number ar same pos in res array.
+    // the number at same pos in res array.
     for (int i = 0; i < arr.length; i++) {
       res[i] = temp;
       temp *= arr[i];
