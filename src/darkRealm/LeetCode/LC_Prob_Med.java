@@ -798,7 +798,7 @@ public class LC_Prob_Med {
   * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
   * The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
   * */
-  public static boolean isValid(String str) {
+  public static boolean isValidParanthesis(String str) {
     Stack<Character> stack = new Stack<>();
     char c;
     char top;

@@ -58,8 +58,8 @@ public class Trees_and_Graphs {
 
   public static void doBFSAndDFS() {
     Graph graph = getSampleGraph();
-    graph.BreadthFirstTraversal();
-//    graph.DepthFirstTraversal();
+//    graph.BreadthFirstTraversal();
+    graph.DepthFirstTraversal();
   }
 
   public static void isRoutePresentBetweenNodes() {
@@ -117,6 +117,30 @@ public class Trees_and_Graphs {
     thisLevel.add(node.data);
     collateByLevel(node.left, level + 1, levels);
     collateByLevel(node.right, level + 1, levels);
+  }
+
+  public static boolean checkBalanced(Tree tree) {
+    int res = nodeHeightDiff(tree.root);
+    return res != Integer.MIN_VALUE;
+  }
+
+  private static int nodeHeightDiff(TNode node) {
+    if (node == null) {
+      return 0;
+    }
+    int leftHeight = nodeHeightDiff(node.left);
+    if (leftHeight == Integer.MIN_VALUE) {
+      return leftHeight;
+    }
+    int rightHeight = nodeHeightDiff(node.right);
+    if (rightHeight == Integer.MIN_VALUE) {
+      return rightHeight;
+    }
+    int diff = leftHeight - rightHeight;
+    if (diff < -1 || diff > 1) {
+      return Integer.MIN_VALUE;
+    }
+    return 1 + Math.max(leftHeight, rightHeight);
   }
 
   /*  [Prob 4.4]
@@ -490,7 +514,6 @@ public class Trees_and_Graphs {
   * */
 
   private static boolean checkSubtree(TNode t1, TNode t2, TNode t2Root) {
-
     if (t1 == null) {
       return false;
     }
@@ -870,4 +893,8 @@ public class Trees_and_Graphs {
     findMinPath(node.left, sum + node.data, levels, level + 1);
     findMinPath(node.right, sum + node.data, levels, level + 1);
   }
+
+  static int _successor = Integer.MAX_VALUE;
+  static int _successorPrev = Integer.MAX_VALUE;
+  static boolean found = false;
 }

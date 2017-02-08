@@ -171,7 +171,7 @@ public class MatrixUtil {
         //left to bottom
         matrix[levels - swapLevel - 1][levels - j - 1] = matrix[levels - j - 1][swapLevel];
         //top to left
-        matrix[levels - j - 1][swapLevel]= temp;
+        matrix[levels - j - 1][swapLevel] = temp;
       }
       i++;
     }

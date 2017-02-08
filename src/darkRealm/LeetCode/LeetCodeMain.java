@@ -42,7 +42,8 @@ public class LeetCodeMain {
 //    testGroupAnagram();
 //    testValidAnagram();
 //    testTrappingRainWater();
-    testRotateAntiClockWise();
+//    testRotateAntiClockWise();
+    testPascalsTriangle();
   }
 
   public static void testAddTwoNumbers() {
@@ -269,7 +270,7 @@ public class LeetCodeMain {
 
   public static void testValidString() {
     String str = "[]]";
-    boolean res = LC_Prob_Med.isValid(str);
+    boolean res = LC_Prob_Med.isValidParanthesis(str);
     System.out.println(" Str : " + str + "  valid : " + res);
   }
 
@@ -394,5 +395,11 @@ public class LeetCodeMain {
     int[] world = new int[]{5, 4, 1, 2};
     int res = LC_Prob_Med2.trappingRainWater(world);
     System.out.println("Res : " + res);
+  }
+
+  public static void testPascalsTriangle() {
+    int n = 5;
+    List<Integer> res = LC_Prob_Med2.pascalsTriangleRow(n);
+    System.out.println(n+"th row : "+res);
   }
 }

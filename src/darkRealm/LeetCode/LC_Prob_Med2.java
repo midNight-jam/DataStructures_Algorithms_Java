@@ -190,6 +190,31 @@ public class LC_Prob_Med2 {
     }
     return water;
   }
-
-
+  /*  [Prob] ith Row of Pascals Triangle
+  * */
+  public static List<Integer> pascalsTriangleRow(int n) {
+    if (n < 0) {
+      return new ArrayList<>();
+    }
+    List<List<Integer>> rows = new ArrayList<>();
+    List<Integer> first = new ArrayList<>();
+    first.add(1);
+    rows.add(first);
+    for (int i = 1; i <= n; i++) {
+      if (rows.size() < i + 1) {
+        List<Integer> ithRow = new ArrayList<>();
+        ithRow.add(1);
+        rows.add(ithRow);
+      }
+      List<Integer> prevRow = rows.get(i - 1);
+      List<Integer> thisRow = rows.get(i);
+      for (int j = 1; j <= i; j++) {
+        int a = prevRow.get(j - 1);
+        int b = j >= prevRow.size() ? 0 : prevRow.get(j);
+        int sum = a + b;
+        thisRow.add(sum);
+      }
+    }
+    return rows.get(n);
+  }
 }
