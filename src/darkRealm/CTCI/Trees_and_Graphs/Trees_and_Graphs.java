@@ -894,7 +894,6 @@ public class Trees_and_Graphs {
     findMinPath(node.right, sum + node.data, levels, level + 1);
   }
 
-
   /* [Prob 199] Binary Tree Right Side View
   * Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see
   * ordered from top to bottom.
@@ -908,7 +907,7 @@ public class Trees_and_Graphs {
       You should return [1, 3, 4].
   * */
   public static List<Integer> rightSideView(Tree tree) {
-    if(tree==null){
+    if (tree == null) {
       return null;
     }
     List<Integer> rightSide = new ArrayList<>();
