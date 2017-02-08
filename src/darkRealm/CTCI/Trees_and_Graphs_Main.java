@@ -326,4 +326,16 @@ public class Trees_and_Graphs_Main {
     System.out.println("Christopher Walken has bacon No "+ actorBaconNo + " Kevin Bacon");
 
   }
+
+  public static void testRightSideView(){
+    Tree tree = new Tree();
+    tree.root = new TNode(1);
+    tree.root.left = new TNode(2);
+    tree.root.left.left = new TNode(1);
+    tree.root.left.left.left = new TNode(1);
+    tree.root.right = new TNode(3);
+    tree.root.right.left = new TNode(4);
+    List<Integer> right = Trees_and_Graphs.rightSideView(null);
+    System.out.println(" Right : "+right);
+  }
 }

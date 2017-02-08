@@ -894,7 +894,36 @@ public class Trees_and_Graphs {
     findMinPath(node.right, sum + node.data, levels, level + 1);
   }
 
-  static int _successor = Integer.MAX_VALUE;
-  static int _successorPrev = Integer.MAX_VALUE;
-  static boolean found = false;
+
+  /* [Prob 199] Binary Tree Right Side View
+  * Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see
+  * ordered from top to bottom.
+  * For example:
+  * Given the following binary tree,
+         1            <---
+       /   \
+      2     3         <---
+       \     \
+        5     4       <---
+      You should return [1, 3, 4].
+  * */
+  public static List<Integer> rightSideView(Tree tree) {
+    if(tree==null){
+      return null;
+    }
+    List<Integer> rightSide = new ArrayList<>();
+    mostRight(tree.root, 0, rightSide);
+    return rightSide;
+  }
+
+  private static void mostRight(TNode node, int level, List<Integer> rightSide) {
+    if (node == null) {
+      return;
+    }
+    if (rightSide.size() < level + 1) {
+      rightSide.add(level, node.data);
+    }
+    mostRight(node.right, level + 1, rightSide);
+    mostRight(node.left, level + 1, rightSide);
+  }
 }
