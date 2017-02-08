@@ -190,7 +190,9 @@ public class LC_Prob_Med2 {
     }
     return water;
   }
-  /*  [Prob] ith Row of Pascals Triangle
+
+  /*  [Prob 119] ith Row of Pascals Triangle
+   Pascal's Triangle II
   * */
   public static List<Integer> pascalsTriangleRow(int n) {
     if (n < 0) {
@@ -217,4 +219,42 @@ public class LC_Prob_Med2 {
     }
     return rows.get(n);
   }
+
+  /*  [Prob 414] Third Maximum Number
+  *   Given a non-empty array of integers, return the third maximum number in this array. If it does not exist, return
+  *   the maximum number. The time complexity must be in O(n).
+  *   Example 1:
+  *   Input: [3, 2, 1]
+  *   Output: 1
+  *   Explanation: The third maximum is 1.
+  * */
+  public static int thirdMaximumNumber(int[] arr) {
+    if (arr == null || arr.length == 0) {
+      return 0;
+    }
+    Integer first = null;
+    Integer second = null;
+    Integer third = null;
+
+    for (int i = 0; i < arr.length; i++) {
+      Integer j =arr[i];
+     if(j.equals(first) ||j.equals(second)||j.equals(third)){
+       continue;
+     }
+      if (first == null || arr[i] > first) {
+        third = second;
+        second = first;
+        first = arr[i];
+      } else if (second == null || arr[i] > second) {
+        third = second;
+        second = arr[i];
+      } else if (third == null ||  arr[i] > third) {
+        third = arr[i];
+      }
+    }
+    return third == null ? first : third;
+  }
+
+  /*
+  * */
 }

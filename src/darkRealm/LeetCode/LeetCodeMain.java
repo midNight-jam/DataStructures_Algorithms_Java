@@ -43,7 +43,8 @@ public class LeetCodeMain {
 //    testValidAnagram();
 //    testTrappingRainWater();
 //    testRotateAntiClockWise();
-    testPascalsTriangle();
+//    testPascalsTriangle();
+    testThirdMaximum();
   }
 
   public static void testAddTwoNumbers() {
@@ -400,6 +401,19 @@ public class LeetCodeMain {
   public static void testPascalsTriangle() {
     int n = 5;
     List<Integer> res = LC_Prob_Med2.pascalsTriangleRow(n);
-    System.out.println(n+"th row : "+res);
+    System.out.println(n + "th row : " + res);
+  }
+
+  public static void testThirdMaximum() {
+//    int[] arr = new int[]{3, 2, 1};
+//    int[] arr = new int[]{2, 2, 3, 1};
+//    int[] arr = new int[]{1,2,2,5,3,5};
+//    int[] arr = new int[]{1,2};
+//    int[] arr = new int[]{1,1,2};
+//    int[] arr = new int[]{2, 1};
+//    int[] arr = new int[]{2, 1,Integer.MIN_VALUE};
+    int[] arr = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE,Integer.MIN_VALUE};
+    int res = LC_Prob_Med2.thirdMaximumNumber(arr);
+    System.out.println(" res : " + res + "  Arr : " + Arrays.toString(arr));
   }
 }
