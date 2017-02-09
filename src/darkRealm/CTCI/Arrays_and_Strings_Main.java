@@ -143,18 +143,6 @@ public class Arrays_and_Strings_Main {
     System.out.println(" s : " + s + "  t: " + t + "  isrotaion : " + isRotation);
   }
 
-  public static void testRotateMatrix() {
-    int[][] matrix = new int[][]{
-        {9, 1, 1, 4, 5},
-        {2, 0, 2, 4, 5},
-        {3, 2, 3, 4, 5},
-        {4, 3, 0, 4, 5},
-        {5, 4, 4, 4, 5}
-    };
-    Arrays_and_Strings.rotateMatrix(matrix);
-    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
-  }
-
   public static void testStringCompression() {
 //    String str = "AAaassaaaS";
     String str = "AAaasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssaaa" +
