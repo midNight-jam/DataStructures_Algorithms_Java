@@ -894,6 +894,29 @@ public class Trees_and_Graphs {
     findMinPath(node.right, sum + node.data, levels, level + 1);
   }
 
+  /* [Prob] print paths from root to leaf
+  * */
+  public static List<String> pathsOfTree(Tree tree){
+    if(tree==null){
+      return new ArrayList<>();
+    }
+    String path="";
+    List<String> paths = new ArrayList<>();
+    traverseTree(tree.root,path,paths);
+    return paths;
+  }
+
+  private static void traverseTree(TNode node, String path, List<String> paths) {
+    if (node.left == null && node.right == null) {
+      paths.add(path+node.data);
+      return;
+    }
+    if(node.left!=null)
+      traverseTree(node.left, path + node.data+" -> ", paths);
+    if(node.right!=null)
+      traverseTree(node.right, path + node.data +" -> ", paths);
+  }
+
   /* [Prob 199] Binary Tree Right Side View
   * Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see
   * ordered from top to bottom.

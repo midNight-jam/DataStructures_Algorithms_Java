@@ -263,53 +263,6 @@ public class Searching_Sorting {
     arr[high] = other;
   }
 
-  /*[Prob 10.9]
-  *   Q) Sorted Matrix Search : Given a M*N matrix in which each row & each column is sorted in ascending order, write
-  *   a method to find an element
-  *   A) The idea is very similar to binary search but rather than on one dimension like array we do it for 2 dimesion matrix
-  *     First take low as top left corner, & high as bottom right corner. now take mid which will be any element in between
-  *     the matrix. Compare this mid with k if k is greater than move in the upper half, if k is smaller than move in the
-  *     lower half. We stop at a point where we have narowed down to 2 consecutive rows among which the element K shoud be
-  *     present. However, we dont do a binary serach on whole rows, rather we benefit from fact that its sorted matrix
-  *     and in first row we srach from low index to end. And in second row we search from start to high index
-  * */
-  public static int sortedMatrixSearch(int[][] mat, int k) {
-    int lowX, lowY, highX, highY, midX, midY;
-    lowX = lowY = 0;
-    highX = mat.length;
-    highY = mat[0].length;
-    while (true) {  // till we have not found two rows within which our element should be
-      midX = (lowX + highX) / 2;
-      midY = (lowY + highY) / 2;
-
-      if (mat[midX][midY] == k) {
-        return mat[midX][midY]; // Lucky Case!!
-      }
-      if (Math.abs(lowX - highX) == 1) {
-        break;  // the closest rows
-      }
-
-      if (k < mat[midX][midY]) {
-        highX = midX;
-        highY = midY;
-      }
-      if (k > mat[midX][midY]) {
-        lowX = midX;
-        lowY = midY;
-      }
-    }
-
-    int resX = lowX;
-    //binary search on lowX row, between LowY till end for searching K
-    int resY = BinarySearchUtil.binarySearchRecursive(mat[lowX], k, lowY, mat[lowX].length - 1);
-    //binary search on highX row, between start till highY for searching K
-    if (resY == Integer.MIN_VALUE) {
-      resX = highX;
-      resY = BinarySearchUtil.binarySearchRecursive(mat[highX], k, 0, highY);
-    }
-    return resY == Integer.MIN_VALUE ? Integer.MIN_VALUE : mat[resX][resY];
-  }
-
   /*  [Prob 10.5]
   *   Q) Sparse Search : Given a sorted array of strings that is interparsed with empty strings, write a method to find the
   *   location of a given string

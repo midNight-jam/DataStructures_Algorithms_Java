@@ -338,4 +338,16 @@ public class Trees_and_Graphs_Main {
     List<Integer> right = Trees_and_Graphs.rightSideView(null);
     System.out.println(" Right : "+right);
   }
+
+  public static void testPathsOfTree(){
+    Tree tree = new Tree();
+    tree.root = new TNode(1);
+    tree.root.left = new TNode(2);
+    tree.root.left.left = new TNode(1);
+    tree.root.left.left.left = new TNode(1);
+    tree.root.right = new TNode(3);
+    tree.root.right.left = new TNode(4);
+    List<String> paths = Trees_and_Graphs.pathsOfTree(tree);
+    System.out.println(" Paths : "+paths);
+  }
 }

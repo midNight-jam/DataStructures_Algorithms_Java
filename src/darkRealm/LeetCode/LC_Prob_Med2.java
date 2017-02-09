@@ -536,4 +536,26 @@ public class LC_Prob_Med2 {
       maxStart = left + 1;
     }
   }
+
+  /* 1 : Two sum
+  *
+  * */
+
+  public static int[] twoSum(int[] nums, int sum) {
+    if (nums == null || nums.length == 0) {
+      return new int[]{};
+    }
+    HashMap<Integer, Integer> nos = new HashMap<>();
+    int[] res = new int[2];
+    for (int i = 0; i < nums.length; i++) {
+      int find = sum - nums[i];
+      if (nos.containsKey(find)) {
+        res[1] = i;
+        res[0] = nos.get(find);
+        return res;
+      }
+      nos.put(nums[i], i);
+    }
+    return res;
+  }
 }

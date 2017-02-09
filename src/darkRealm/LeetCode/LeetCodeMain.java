@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class LeetCodeMain {
   public static void run() {
-    testAddTwoNumbers();
+//    testAddTwoNumbers();
 //    testlongestSubstring();
 //    testLongestPalindrome();
 //    testZigZag();
@@ -51,7 +51,8 @@ public class LeetCodeMain {
 //    testNumberOfIslands();
 //    testWordLadder();
 //    testRegularExpression();
-    testLongestPalindromeString();
+//    testLongestPalindromeString();
+    testTwoSum();
   }
 
   public static void testAddTwoNumbers() {
@@ -497,5 +498,19 @@ public class LeetCodeMain {
 
     String res = LC_Prob_Med2.longestPalindrome(str);
     System.out.println("Str : " + str + " res : " + res);
+  }
+
+  public static void testTwoSum() {
+//    int[] arr = new int[]{2, 7, 11, 15};
+//    int targer = 9;
+
+//    int[] arr = new int[]{3,3};
+//    int targer = 6;
+
+    int[] arr = new int[]{3,2,4};
+    int targer = 6;
+    int[] res = LC_Prob_Med2.twoSum(arr, targer);
+    System.out.println(Arrays.toString(arr) + "  target : " + targer);
+    System.out.println(Arrays.toString(res));
   }
 }

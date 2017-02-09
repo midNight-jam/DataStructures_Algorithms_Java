@@ -83,19 +83,6 @@ public class Sorting_and_Searching_Main {
     System.out.println(Arrays.toString(arr));
   }
 
-  public static void testSortedMatrixSearch() {
-    int[][] mat = new int[][]{
-        {1, 2, 5, 7, 9},
-        {10, 11, 14, 16, 17},
-        {20, 21, 23, 27, 29},
-        {30, 34, 39, 45, 48},
-        {31, 35, 40, 46, 49},
-        {32, 36, 41, 47, 50}
-    };
-    int k = 33;
-    int res = Searching_Sorting.sortedMatrixSearch(mat, k);
-    System.out.println("Found some " + res);
-  }
 
   public static void testSparseSearch() {
 //    String[] arr = new String[]{"", "bbb", "", "ddd", "", "", "ggg", "", "","jjj"};
