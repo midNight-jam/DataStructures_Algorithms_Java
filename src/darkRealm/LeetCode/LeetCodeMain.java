@@ -49,7 +49,8 @@ public class LeetCodeMain {
 //    testSubsets();
 //    testRotateFunction();
 //    testNumberOfIslands();
-    testWordLadder();
+//    testWordLadder();
+    testRegularExpression();
   }
 
   public static void testAddTwoNumbers() {
@@ -450,11 +451,11 @@ public class LeetCodeMain {
   public static void testWordLadder() {
     List<String> dict = new ArrayList<>();
 
-    String[] arr = new String[]{"hot","cog","dot","dog","hit","lot","log"};
+    String[] arr = new String[]{"hot", "cog", "dot", "dog", "hit", "lot", "log"};
     dict.addAll(Arrays.asList(arr));
     String start = "hit";
-    String end ="cog";
-    
+    String end = "cog";
+
 //    String[] arr = new String[]{"hot", "dot", "dog", "lot", "log"};
 //    dict.addAll(Arrays.asList(arr));
 //    String start = "hit";
@@ -468,5 +469,21 @@ public class LeetCodeMain {
     int res = LC_Prob_Med2.wordLadder(start, end, dict);
 //    List<List<String>> res = LC_Prob_Med2.wordLadderDFS(start, end, dict);
     System.out.println("res : " + res);
+  }
+
+  public static void testRegularExpression() {
+//    String str = "aab";
+//    String pat = "c*a*b";
+//
+//    String str = "xaabyc";
+//    String pat = "xa*b.c";
+//
+    String str = "abcd";
+    String pat = "d*";
+
+
+    boolean res = LC_Prob_Med2.regularExpressionMatching(str, pat);
+    System.out.println(" Str : " + str + "  Pattern : " + pat);
+    System.out.println(" Res : " + res);
   }
 }
