@@ -499,4 +499,41 @@ public class LC_Prob_Med2 {
     }
     return dp[str.length()][pattern.length()];
   }
+
+
+  /*  [Prob 5] Longest Palindromic Substring
+  *   Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+  *   Example:
+  *   Input: "babad"
+  *   Output: "bab"
+  *   Note: "aba" is also a valid answer.
+  *   Example:
+  *   Input: "cbbd"
+  *   Output: "bb"
+  * */
+  static int maxLen = Integer.MIN_VALUE;
+  static int maxStart;
+
+  public static String longestPalindrome(String str) {
+    if (str == null || str.length() < 2) {
+      return str;
+    }
+    for (int i = 0; i < str.length(); i++) {
+      expandPalindrome(str, i, i);  // odd len palindrome
+      expandPalindrome(str, i, i + 1);  // even len palindrome
+    }
+    return str.substring(maxStart, maxStart + maxLen);
+  }
+
+  private static void expandPalindrome(String str, int left, int right) {
+    while ((left >= 0 && right < str.length()) && (str.charAt(left) == str.charAt(right))) {
+      left--;
+      right++;
+    }
+    int hereLen = right - left - 1;
+    if (hereLen > maxLen) {
+      maxLen = hereLen;
+      maxStart = left + 1;
+    }
+  }
 }

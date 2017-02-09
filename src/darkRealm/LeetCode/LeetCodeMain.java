@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class LeetCodeMain {
   public static void run() {
-//    testAddTwoNumbers();
+    testAddTwoNumbers();
 //    testlongestSubstring();
 //    testLongestPalindrome();
 //    testZigZag();
@@ -50,7 +50,8 @@ public class LeetCodeMain {
 //    testRotateFunction();
 //    testNumberOfIslands();
 //    testWordLadder();
-    testRegularExpression();
+//    testRegularExpression();
+    testLongestPalindromeString();
   }
 
   public static void testAddTwoNumbers() {
@@ -485,5 +486,16 @@ public class LeetCodeMain {
     boolean res = LC_Prob_Med2.regularExpressionMatching(str, pat);
     System.out.println(" Str : " + str + "  Pattern : " + pat);
     System.out.println(" Res : " + res);
+  }
+
+  public static void testLongestPalindromeString() {
+//    String str = "babad";
+//    String str = "dababad";
+//    String str = "cbbd";
+    String str = "bb";
+//    String str = "a";
+
+    String res = LC_Prob_Med2.longestPalindrome(str);
+    System.out.println("Str : " + str + " res : " + res);
   }
 }
