@@ -1,9 +1,6 @@
 package darkRealm.LeetCode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Jayam on 2/4/2017.
@@ -375,7 +372,7 @@ public class LC_Prob_Med2 {
 
   static int _ROW, _COL;
 
-  private static boolean isSafe(int [][]matrix,int row, int col, boolean[][] visited) {
+  private static boolean isSafe(int[][] matrix, int row, int col, boolean[][] visited) {
     boolean isSafe = (row > -1 && row < _ROW) && (col > -1 && col < _COL) && matrix[row][col] == 1 && !visited[row][col];
     return isSafe;
   }
@@ -390,9 +387,73 @@ public class LC_Prob_Med2 {
     for (int i = 0; i < rowNeighbours.length; i++) {
       eRow = row + rowNeighbours[i];
       eCol = col + colNeighbours[i];
-      if (isSafe(matrix,eRow, eCol, visited)) {
+      if (isSafe(matrix, eRow, eCol, visited)) {
         DFS(matrix, row + rowNeighbours[i], col + colNeighbours[i], visited);
       }
     }
+  }
+
+  /*  [Prob 127] Word Ladder
+  *   Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation
+  *   sequence from beginWord to endWord, such that:
+  *   Only one letter can be changed at a time.
+  *   Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
+  *   For example,
+  *   Given:
+  *   beginWord = "hit"
+  *   endWord = "cog"
+  *   wordList = ["hot","dot","dog","lot","log","cog"]
+  *   As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
+  *   return its length 5.
+  *
+  *   A) Would use Bidirectinal BFS while keeoing the nodes of the most recent levels from both the ends will terminate
+  *   when we find any one word os found in most recent level from other side.
+  *   Complexity N/2 * maxBreadth(the nodes on the level) wordLength * 26
+  * */
+  public static int wordLadder(String start, String end, List<String> dictionary) {
+    if (start == null || end == null || start.equals(end) || !dictionary.contains(end)) {
+      return 0;
+    }
+    HashSet<String> headSet = new HashSet<>();
+    HashSet<String> endSet = new HashSet<>();
+    HashSet<String> set;
+    HashSet<String> visited = new HashSet<>();
+
+    int pathLen = 1;
+    headSet.add(start);
+    endSet.add(end);
+    set = headSet;
+    while (!headSet.isEmpty() && !endSet.isEmpty()) {
+      if (headSet.size() > endSet.size()) { // swap both as weh to traverse from the opposoite direction now
+        set = headSet;
+        headSet = endSet;
+        endSet = set;
+      }
+      HashSet<String> temp = new HashSet<String>(); /// this is required to store nodes of only this level, we dont need to
+      // carry nodes of other levels as we only need them for checking is visited or not, and for that purpose they are already in
+      //visited set
+      for (String word : headSet) {
+        char c;
+        char[] wordArr = word.toCharArray();
+        for (int i = 0; i < wordArr.length; i++) {
+          c = word.charAt(i);
+          for (char cj = 'a'; cj <= 'z'; cj++) {
+            wordArr[i] = cj;
+            String formed = String.valueOf(wordArr);
+            if (endSet.contains(formed)) {
+              return pathLen + 1;
+            }
+            if (!visited.contains(formed) && dictionary.contains(formed)) {
+              temp.add(formed);
+              visited.add(formed);
+            }
+          }
+          wordArr[i] = c;
+        }
+        headSet = temp;
+        pathLen++;
+      }
+    }
+    return 0;
   }
 }

@@ -4,6 +4,7 @@ import darkRealm.CTCI.BigO.MatrixUtil;
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -47,7 +48,8 @@ public class LeetCodeMain {
 //    testThirdMaximum();
 //    testSubsets();
 //    testRotateFunction();
-    testNumberOfIslands();
+//    testNumberOfIslands();
+    testWordLadder();
   }
 
   public static void testAddTwoNumbers() {
@@ -443,5 +445,28 @@ public class LeetCodeMain {
     int islands = LC_Prob_Med2.numberOfIslands(matrix);
     System.out.println(" Islands : " + islands);
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
+  }
+
+  public static void testWordLadder() {
+    List<String> dict = new ArrayList<>();
+
+    String[] arr = new String[]{"hot","cog","dot","dog","hit","lot","log"};
+    dict.addAll(Arrays.asList(arr));
+    String start = "hit";
+    String end ="cog";
+    
+//    String[] arr = new String[]{"hot", "dot", "dog", "lot", "log"};
+//    dict.addAll(Arrays.asList(arr));
+//    String start = "hit";
+//    String end ="cog";
+//
+//    String[] arr = new String[]{"a","b","c"};
+//    dict.addAll(Arrays.asList(arr));
+//    String start = "a";
+//    String end = "c";
+
+    int res = LC_Prob_Med2.wordLadder(start, end, dict);
+//    List<List<String>> res = LC_Prob_Med2.wordLadderDFS(start, end, dict);
+    System.out.println("res : " + res);
   }
 }
