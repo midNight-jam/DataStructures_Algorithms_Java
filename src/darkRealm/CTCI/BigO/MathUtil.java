@@ -82,4 +82,32 @@ public class MathUtil {
     }
     return false;
   }
+
+  /* Prob [204] Count Primes
+  * Count the number of prime numbers less than a non-negative number, n.
+  * Finding Prime numbers - Sieve of Eratosthenes
+  * Fastest : Complexity O(n log (logn ))
+  * */
+  public static int countPrimes(int n) {
+    if (n < 2) {
+      return 0;
+    }
+    boolean[] isPrime = new boolean[n + 1];
+    for (int i = 0; i < n; i++) {
+      isPrime[i] = true;
+    }
+
+    int primeCount = 0;
+    for (int i = 2; i * i < n; i++) {
+      if (isPrime[i]) {
+        for (int j = 2; j * i < n; j++) {
+          isPrime[j * i] = false;
+        }
+      }
+    }
+    for (int i = 2; i < n; i++) {
+      if (isPrime[i]) primeCount++;
+    }
+    return primeCount;
+  }
 }

@@ -36,7 +36,7 @@ public class QuickSortUtil {
   }
 
   public static int kthSmallestElement(int[] arr, int low, int high, int k) {
-    int pos = findModifiedPivot(arr, low, high, k);
+    int pos = findModifiedPivot(arr, low, high);
     if (pos - 1 == k - 1) {
       return arr[pos];
     }
@@ -50,7 +50,7 @@ public class QuickSortUtil {
     }
   }
 
-  private static int findModifiedPivot(int[] arr, int low, int high, int k) {
+  private static int findModifiedPivot(int[] arr, int low, int high) {
     int pivot = arr[(low + high) / 2];
     while (low <= high) {
       while (arr[low] < pivot) {
@@ -88,37 +88,5 @@ public class QuickSortUtil {
     arr[randIndex] = arr[low];
     arr[low] = temp;
     return findPivot(arr, low, high);
-  }
-
-
-  public static void quickSortZZ(int[] arr, int low, int high) {
-    int pivot = findPivotZZ(arr, low, high);
-    if (low < pivot - 1) {
-      quickSortZZ(arr, low, pivot - 1);
-    }
-    if (pivot < high) {
-      quickSortZZ(arr, pivot, high);
-    }
-  }
-
-  private static int findPivotZZ(int[] arr, int low, int high) {
-    int pivot;
-    while (low <= high) {
-      pivot = arr[low + (high - low) / 2];
-      while (arr[low] < pivot) {
-        low++;
-      }
-      while (pivot < arr[high]) {
-        high--;
-      }
-      if (low <= high) {
-        int temp = arr[low];
-        arr[low] = arr[high];
-        arr[high] = temp;
-        low++;
-        high--;
-      }
-    }
-    return low;
   }
 }

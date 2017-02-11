@@ -1,10 +1,13 @@
 package darkRealm;
 
-import darkRealm.CTCI.*;
+import darkRealm.CTCI.Arrays_and_Strings_Main;
 import darkRealm.CTCI.BigO.BitsUtil;
 import darkRealm.CTCI.BigO.MathUtil;
 import darkRealm.CTCI.BigO.MatrixUtil;
+import darkRealm.CTCI.LinkedList_Main;
 import darkRealm.CTCI.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
+import darkRealm.CTCI.PrintProbs;
+import darkRealm.CTCI.Recursion_DP_Main;
 import darkRealm.LeetCode.LeetCodeMain;
 
 import java.util.ArrayList;
@@ -22,9 +25,6 @@ public class Main {
 ////      e.printStackTrace();
 //      System.out.println("Some thing went wrong while settting up logs");
 //    }
-
-
-    // write your code here, testing after new git
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
@@ -32,12 +32,12 @@ public class Main {
 //    doprint();
 //    doTrees_Graph();
 //    doLinkedLsit();
-//    doMathUtils();
+    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
 //    doLeetCode();
-    doMatrix();
+//    doMatrix();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -162,8 +162,21 @@ public class Main {
   }
 
   private static void doMathUtils() {
-    int gcd = MathUtil.geatestCommonDivisor(48, 180);
-    System.out.println(" gcd - " + gcd);
+//    int gcd = MathUtil.geatestCommonDivisor(48, 180);
+//    System.out.println(" gcd - " + gcd);
+//
+//    int n = 0;
+//    int n = 1;
+//    int n = 2;
+//    int n = 3;
+//    int n = 4;
+//    int n = 5;
+//    int n = 6;
+//    int n = 7;
+    int n = 8;
+    int res = MathUtil.countPrimes(n);
+//    int res = MathUtil.nthPrimeNumber(5);
+    System.out.println(" count :  " + res + " N : " + n);
   }
 
   public static String getTime(int a, int b, int c, int d) {
@@ -344,7 +357,7 @@ public class Main {
   }
 
   private static void doSortingAndSearching() {
-    Sorting_and_Searching_Main.testMergeSort();
+//    Sorting_and_Searching_Main.testMergeSort();
 //    Sorting_and_Searching_Main.testBinarySearch();
 //    Sorting_and_Searching_Main.testSortedMerge();
 //    Sorting_and_Searching_Main.testKthSmallestElement();

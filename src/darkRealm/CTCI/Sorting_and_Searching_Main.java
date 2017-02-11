@@ -49,7 +49,6 @@ public class Sorting_and_Searching_Main {
     int kth = QuickSortUtil.kthSmallestElement(arr, 0, arr.length - 1, 7);
     System.out.println("Array : " + Arrays.toString(arr));
     System.out.println("Kth smalles : " + kth);
-
   }
 
   public static void testSearchRotatedArray() {
@@ -82,7 +81,6 @@ public class Sorting_and_Searching_Main {
     System.out.println("Rank of " + k + " is " + rank);
     System.out.println(Arrays.toString(arr));
   }
-
 
   public static void testSparseSearch() {
 //    String[] arr = new String[]{"", "bbb", "", "ddd", "", "", "ggg", "", "","jjj"};
@@ -129,7 +127,6 @@ public class Sorting_and_Searching_Main {
 
     //    QuickSortUtil.quicksort(arr, 0, arr.length-1);
 //    QuickSortUtil.quicksort(arr, 0, arr.length - 1);
-    QuickSortUtil.quickSortZZ(arr, 0, arr.length - 1);
     System.out.println("Arr : " + Arrays.toString(arr));
   }
 
