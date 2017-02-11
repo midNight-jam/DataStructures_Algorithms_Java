@@ -600,6 +600,4 @@ public class LC_Prob_Med2 {
     }
     return false;
   }
-
- 
 }

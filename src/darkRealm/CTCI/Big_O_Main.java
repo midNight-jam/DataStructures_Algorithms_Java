@@ -191,27 +191,6 @@ public class Big_O_Main {
         ArrayUtil.printPairsWithSumK(arr, 0);
     }
 
-    private static void useMatrix() {
-//        int[][] m1 = new int[][]{{1, 2}, {3, 4}};
-//        int[][] m2 = new int[][]{{9, 7, 5}, {8, 6, 4}};
-//        MatrixUtil.multiplyMatrix(m1, m2);
-//        MatrixUtil.transposeMatrix(m2);
-//        int[][] sqm = new int[][]{{9, 7, 5}, {8, 6, 4}, {1, 2, 3}};
-//        MatrixUtil.transposeSquareMatrix(sqm);
-
-        int[][] rowColumnSortedMatrix = new int[][]{
-                {10,20,30,40},
-                {15,25,35,45},
-                {24,29,37,48},
-                {32,33,39,50},
-                {32,34,49,60}
-        };
-        long start = System.currentTimeMillis();
-        MatrixUtil.searchSortedMatrixOZ(rowColumnSortedMatrix,37);
-        System.out.println(" time ms : " + (System.currentTimeMillis() - start));
-
-    }
-
     private static void arrayUtil(){
         int[] arr = new int[]{1,2,3,4,7};
         int[] brr = new int[]{0,5,6,9};

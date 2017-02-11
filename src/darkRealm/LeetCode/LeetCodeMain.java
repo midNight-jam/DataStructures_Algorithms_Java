@@ -5,6 +5,7 @@ import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
 import darkRealm.CTCI.Trees_and_Graphs.TNode;
 import darkRealm.CTCI.Trees_and_Graphs.Tree;
+import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -540,7 +541,7 @@ public class LeetCodeMain {
     Tree tree = new Tree();
     tree.root = node;
 
-    int []  res = LC_Prob_Med2.findFrequentTreeSum(tree.root);
+    int []  res = Trees_and_Graphs.findFrequentTreeSum(tree.root);
     System.out.println(" Final res : "+Arrays.toString(res));
   }
 }

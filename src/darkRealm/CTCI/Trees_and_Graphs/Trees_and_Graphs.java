@@ -200,12 +200,12 @@ public class Trees_and_Graphs {
   *   we update the min value with that of the parent. And, If  at any instant the value is not in range we return false
   * */
   public static boolean isBST(Tree tree) {
-    boolean res = checkBST(tree.root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    boolean res = checkBST(tree.root, Long.MIN_VALUE, Long.MAX_VALUE);
     System.out.println("IsBST - " + res);
     return res;
   }
 
-  private static boolean checkBST(TNode node, int min, int max) {
+  private static boolean checkBST(TNode node, long min, long max) {
     if (node == null) { // is a leaf node or no node base case
       return true;
     }

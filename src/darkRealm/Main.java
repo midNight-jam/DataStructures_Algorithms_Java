@@ -3,6 +3,7 @@ package darkRealm;
 import darkRealm.CTCI.*;
 import darkRealm.CTCI.BigO.BitsUtil;
 import darkRealm.CTCI.BigO.MathUtil;
+import darkRealm.CTCI.BigO.MatrixUtil;
 import darkRealm.CTCI.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
 import darkRealm.LeetCode.LeetCodeMain;
 
@@ -35,7 +36,8 @@ public class Main {
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-    doLeetCode();
+//    doLeetCode();
+    doMatrix();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -392,7 +394,16 @@ public class Main {
     PrintProbs.triangle4();
   }
 
-  public static void tes2(){
-    int [] arr = new int[0];
+  public static void doMatrix() {
+    int[][] matrix = new int[][]{
+        {1, 4, 7, 11, 15},
+        {2, 5, 8, 12, 19},
+        {3, 6, 9, 16, 22},
+        {10, 13, 14, 17, 24},
+        {18, 21, 23, 26, 30}
+    };
+//    int res = MatrixUtil.searchRowSortedMatrix(matrix, 12);
+    int res = MatrixUtil.searchSortedMatrix(matrix, 12);
+    System.out.println(" Res : " + res);
   }
 }

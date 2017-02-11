@@ -1,8 +1,6 @@
 package darkRealm.CTCI.BigO;
 
 
-import darkRealm.CTCI.Sorting_and_Searching.BinarySearchUtil;
-
 /**
  * Created by Jayam on 9/25/2016.
  */
@@ -60,105 +58,47 @@ public class MatrixUtil {
     return mtx;
   }
 
-  //searches matrix sequentially
-  public static int searchSortedMatrix(int[][] matrix, int target) {
-    //if matrix is sorted... traverse with 1 row to determin which column will contain K
-    // then binary search that column to find the K
-    if(matrix==null||matrix.length==0){
-      return -1;
+  // Integers in each row are sorted from left to right.
+  public static int searchRowSortedMatrix(int[][] matrix, int target) {
+    if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+      return Integer.MIN_VALUE;
     }
-    int rows = matrix.length;
-    int cols = matrix[0].length;
-
-    //first find the col in which K will be present by traversing 1st row
-    int i;
-    for (i = 0; i < cols; i++) {
-      if (matrix[0][i] > target)
-        break;
-    }
-    // if we reached end/ or we stood at 1st then element not in matrix
-    if (i == cols || i == 0)
-      return -1;
-
-    //now we have the column in which it will be present
-
-    int j;
-    for (j = 0; j < rows; j++) {
-      if (matrix[j][i - 1] == target) {
-        System.out.println("element found at : " + j + " , " + (i - 1));
-        return target;
-      }
-    }
-    return -1;
-  }
-
-  /*[Prob 10.9]
-  *   Q) Sorted Matrix Search : Given a M*N matrix in which each row & each column is sorted in ascending order, write
-  *   a method to find an element
-  *   A) The idea is very similar to binary search but rather than on one dimension like array we do it for 2 dimesion matrix
-  *     First take low as top left corner, & high as bottom right corner. now take mid which will be any element in between
-  *     the matrix. Compare this mid with k if k is greater than move in the upper half, if k is smaller than move in the
-  *     lower half. We stop at a point where we have narowed down to 2 consecutive rows among which the element K shoud be
-  *     present. However, we dont do a binary serach on whole rows, rather we benefit from fact that its sorted matrix
-  *     and in first row we srach from low index to end. And in second row we search from start to high index
-  * */
-  public static int sortedMatrixSearch(int[][] mat, int k) {
-    int lowX, lowY, highX, highY, midX, midY;
-    lowX = lowY = 0;
-    highX = mat.length;
-    highY = mat[0].length;
-    while (true) {  // till we have not found two rows within which our element should be
-      midX = (lowX + highX) / 2;
-      midY = (lowY + highY) / 2;
-
-      if (mat[midX][midY] == k) {
-        return mat[midX][midY]; // Lucky Case!!
-      }
-      if (Math.abs(lowX - highX) == 1) {
-        break;  // the closest rows
-      }
-
-      if (k < mat[midX][midY]) {
-        highX = midX;
-        highY = midY;
-      }
-      if (k > mat[midX][midY]) {
-        lowX = midX;
-        lowY = midY;
-      }
-    }
-
-    int resX = lowX;
-    //binary search on lowX row, between LowY till end for searching K
-    int resY = BinarySearchUtil.binarySearchRecursive(mat[lowX], k, lowY, mat[lowX].length - 1);
-    //binary search on highX row, between start till highY for searching K
-    if (resY == Integer.MIN_VALUE) {
-      resX = highX;
-      resY = BinarySearchUtil.binarySearchRecursive(mat[highX], k, 0, highY);
-    }
-    return resY == Integer.MIN_VALUE ? Integer.MIN_VALUE : mat[resX][resY];
-  }
-
-  // searches matrix from bottom left corner
-  public static boolean searchSortedMatrixOZ(int[][] mtx, int k) {
-    int rows = mtx.length;
-    int cols = mtx[0].length;
-    int i = rows - 1;
-    int j = 0;
-    while (i >= 0 && j <= cols) {
-      if (mtx[i][j] > k) {
-        i--;
-      } else if (mtx[i][j] < k) {
-        j++;
+    int row = matrix.length;
+    int col = matrix[0].length;
+    int low = 0;
+    int high = row * col - 1;
+    int mid;
+    while (low != high) {
+      mid = (low + high - 1) / 2;
+      if (matrix[mid / col][mid % col] < target) {
+        low = mid + 1;
       } else {
-        System.out.println("Found at " + i + " , " + j);
-        return true;
+        high = mid;
       }
     }
-    System.out.println("Not Found at ");
-
-    return false;
+    return matrix[high / col][high % col] == target ? target : Integer.MIN_VALUE;
   }
+
+  //
+  public static int searchSortedMatrix(int [][]matrix, int target) {
+    if (matrix == null || matrix.length < 1 || matrix[0].length < 1) {
+      return Integer.MIN_VALUE;
+    }
+    int row = matrix.length - 1;
+    int col = 0;
+
+    while (row >= 0 && col < matrix[0].length) {
+      if (matrix[row][col] > target) {
+        row--;
+      } else if (matrix[row][col] < target) {
+        col++;
+      } else {
+        return matrix[row][col];
+      }
+    }
+    return matrix[row][col] == target ? target : Integer.MIN_VALUE;
+  }
+
 
   public static String getPrintableMatrix(int[][] m) {
     int rows = m.length;
