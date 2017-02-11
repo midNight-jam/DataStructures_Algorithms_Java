@@ -25,7 +25,7 @@ public class Trees_and_Graphs_Main {
 
   public static void testMinimalHeightTree() {
 //    int[] arr = new int[]{2, 5, 7, 10, 19, 20, 25};
-    int[] arr = new int[]{2,3,4};
+    int[] arr = new int[]{2, 3, 4};
 //    int[] arr = new int[]{};
     Trees_and_Graphs.createMinimalHeightTree(arr);
   }
@@ -39,8 +39,8 @@ public class Trees_and_Graphs_Main {
     tree.root.right.left = new TNode(25);
     tree.root.right.left.left = new TNode(22);
     tree.root.right.left.left.left = new TNode(21);
-    tree.root.right.left.right= new TNode(27);
-    tree.root.right.right= new TNode(35);
+    tree.root.right.left.right = new TNode(27);
+    tree.root.right.right = new TNode(35);
     tree.root.left.right = new TNode(15);
     tree.root.left.right.right = new TNode(17);
     tree.root.left.left = new TNode(5);
@@ -71,7 +71,8 @@ public class Trees_and_Graphs_Main {
     tree.root.left.left = new TNode(1);
     tree.root.left.left.left = new TNode(1);
 //    tree.root.left = new TNode(3);
-    tree.root.right = new TNode(3);
+    tree.root.right = new TNode(2);
+    tree.root.right.left = new TNode(2);
 
     Trees_and_Graphs.printMinPathSum(tree);
   }
@@ -102,7 +103,7 @@ public class Trees_and_Graphs_Main {
 
 //    Trees_and_Graphs.isBalanced(tree);
     boolean res = Trees_and_Graphs.checkBalanced(tree);
-    System.out.println("IsBalanced : "+res);
+    System.out.println("IsBalanced : " + res);
   }
 
   public static void testIsBST() {
@@ -313,21 +314,21 @@ public class Trees_and_Graphs_Main {
     for (Integer key :
         res.keySet()) {
 //      System.out.println(" " + key + " actors : " + res.get(key).size());
-      System.out.print(" "+key);
+      System.out.print(" " + key);
       ArrayList<String> actors = res.get(key);
-      System.out.print("     ("+actors.size()+") ");
-      for(int i =0; i<actors.size();i++){
-        System.out.print("  "+actors.get(i));
+      System.out.print("     (" + actors.size() + ") ");
+      for (int i = 0; i < actors.size(); i++) {
+        System.out.print("  " + actors.get(i));
       }
       System.out.println("");
     }
 
     int actorBaconNo = adjMap.getBaconNumber("Keanu Reeves");
-    System.out.println("Christopher Walken has bacon No "+ actorBaconNo + " Kevin Bacon");
+    System.out.println("Christopher Walken has bacon No " + actorBaconNo + " Kevin Bacon");
 
   }
 
-  public static void testRightSideView(){
+  public static void testRightSideView() {
     Tree tree = new Tree();
     tree.root = new TNode(1);
     tree.root.left = new TNode(2);
@@ -336,10 +337,10 @@ public class Trees_and_Graphs_Main {
     tree.root.right = new TNode(3);
     tree.root.right.left = new TNode(4);
     List<Integer> right = Trees_and_Graphs.rightSideView(null);
-    System.out.println(" Right : "+right);
+    System.out.println(" Right : " + right);
   }
 
-  public static void testPathsOfTree(){
+  public static void testPathsOfTree() {
     Tree tree = new Tree();
     tree.root = new TNode(1);
     tree.root.left = new TNode(2);
@@ -348,6 +349,18 @@ public class Trees_and_Graphs_Main {
     tree.root.right = new TNode(3);
     tree.root.right.left = new TNode(4);
     List<String> paths = Trees_and_Graphs.pathsOfTree(tree);
-    System.out.println(" Paths : "+paths);
+    System.out.println(" Paths : " + paths);
+  }
+
+  public static void testMinHeight() {
+    Tree tree = new Tree();
+    tree.root = new TNode(1);
+    tree.root.left = new TNode(2);
+    tree.root.left.left = new TNode(1);
+    tree.root.left.left.left = new TNode(1);
+    tree.root.right = new TNode(3);
+    tree.root.right.left = new TNode(4);
+    int min = Trees_and_Graphs.findMinimumDepth(tree);
+    System.out.println(min);
   }
 }

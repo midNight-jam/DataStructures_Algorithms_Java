@@ -3,6 +3,8 @@ package darkRealm.LeetCode;
 import darkRealm.CTCI.BigO.MatrixUtil;
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
+import darkRealm.CTCI.Trees_and_Graphs.TNode;
+import darkRealm.CTCI.Trees_and_Graphs.Tree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +54,9 @@ public class LeetCodeMain {
 //    testWordLadder();
 //    testRegularExpression();
 //    testLongestPalindromeString();
-    testTwoSum();
+//    testTwoSum();
+//    testSubStringPattern();
+    testMostFrequentSum();
   }
 
   public static void testAddTwoNumbers() {
@@ -507,10 +511,36 @@ public class LeetCodeMain {
 //    int[] arr = new int[]{3,3};
 //    int targer = 6;
 
-    int[] arr = new int[]{3,2,4};
+    int[] arr = new int[]{3, 2, 4};
     int targer = 6;
     int[] res = LC_Prob_Med2.twoSum(arr, targer);
     System.out.println(Arrays.toString(arr) + "  target : " + targer);
     System.out.println(Arrays.toString(res));
+  }
+
+  public static void testSubStringPattern() {
+//    String str = "aaaabbaaaaba";
+//    String str = "abab";
+//    String str = "aba";
+    String str = "abcabcabcabc";
+    boolean res = LC_Prob_Med2.repeatedSubStringPattern(str);
+    System.out.println("Res : " + res + " Str : " + str);
+  }
+
+  public static void testMostFrequentSum(){
+//    TNode node = new TNode(5);
+//    node.left = new TNode(2);
+//    node.right = new TNode(-3);
+//    Tree tree = new Tree();
+//    tree.root = node;
+
+    TNode node = new TNode(5);
+    node.left = new TNode(2);
+    node.right = new TNode(-5);
+    Tree tree = new Tree();
+    tree.root = node;
+
+    int []  res = LC_Prob_Med2.findFrequentTreeSum(tree.root);
+    System.out.println(" Final res : "+Arrays.toString(res));
   }
 }

@@ -975,7 +975,7 @@ public class LC_Prob_Med {
     min = max = prices[0];
     int maxProfit = 0;
     for (int i = 1; i < prices.length; i++) {
-      if (prices[i] < prices[i - 1] && prices[i]<min) {
+      if (prices[i] < prices[i - 1] && prices[i] < min) {
         if (max - min > maxProfit) {
           maxProfit = max - min;
         }
@@ -990,4 +990,6 @@ public class LC_Prob_Med {
     }
     return maxProfit;
   }
+
+
 }

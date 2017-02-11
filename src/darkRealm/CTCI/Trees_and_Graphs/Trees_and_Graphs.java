@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Trees_and_Graphs {
 
-  private static Graph getSampleGraph() {
+  public static Graph getSampleGraph() {
     int vertices = 6;
     Graph graph = new Graph(vertices);
     Node vertex0 = new Node(vertices);
@@ -65,7 +65,7 @@ public class Trees_and_Graphs {
   public static void isRoutePresentBetweenNodes() {
     Graph graph = getSampleGraph();
     Node p = graph.allVertices[0];
-    Node q = graph.allVertices[0];
+    Node q = graph.allVertices[2];
     System.out.println("Route Present - " + graph.isRouteBetween(p, q));
   }
 
@@ -882,9 +882,8 @@ public class Trees_and_Graphs {
       if (sum + node.data <= min) {
         min = sum + node.data;
         levels.add(level, node.data);
-        levels.subList(level + 1, levels.size()).clear();
         if (levels.size() < minPathLength) {
-          minPath = new ArrayList<>(levels);
+          minPath = new ArrayList<>(levels.subList(0,level+1));
         }
         return;
       }
@@ -893,6 +892,8 @@ public class Trees_and_Graphs {
     findMinPath(node.left, sum + node.data, levels, level + 1);
     findMinPath(node.right, sum + node.data, levels, level + 1);
   }
+
+
 
   /* [Prob] print paths from root to leaf
   * */
@@ -915,6 +916,33 @@ public class Trees_and_Graphs {
       traverseTree(node.left, path + node.data+" -> ", paths);
     if(node.right!=null)
       traverseTree(node.right, path + node.data +" -> ", paths);
+  }
+
+  /*  [Prob] find min depth
+  * */
+  public static int findMinimumDepth(Tree tree){
+    if(tree==null){
+      return 0;
+    }
+    return getMinHeight(tree.root);
+  }
+
+  private static int getMinHeight(TNode node) {
+    if (node == null) {
+      return 0;
+    }
+    if (node.left == null && node.right == null) {
+      return 1;
+    }
+    int left = 0;
+    if (node.left != null) {
+      left = getMinHeight(node.left);
+    }
+    int right = 0;
+    if (node.right != null) {
+      right = getMinHeight(node.right);
+    }
+    return Math.min(left, right) +1;
   }
 
   /* [Prob 199] Binary Tree Right Side View
@@ -947,5 +975,62 @@ public class Trees_and_Graphs {
     }
     mostRight(node.right, level + 1, rightSide);
     mostRight(node.left, level + 1, rightSide);
+  }
+
+  /* [Prob 508] Most Frequent Subtree Sum
+ *  Given the root of a tree, you are asked to find the most frequent subtree sum. The subtree sum of a node is defined
+  * as the sum of all the node values formed by the subtree rooted at that node (including the node itself).
+  * So what is the most frequent subtree sum value? If there is a tie, return all the values with the highest
+  * frequency in any order.
+  * Examples 1
+  * Input:
+     5
+    /  \
+   2   -3
+   return [2, -3, 4], since all the values happen only once, return all of them in any order.
+   Examples 2
+   Input:
+
+     5
+    /  \
+   2   -5
+   return [2], since 2 happens twice, however -5 only occur once.
+ * */
+  public static int[] findFrequentTreeSum(TNode node) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    int max = Integer.MIN_VALUE;
+    postOrderSum(node, map);
+    List<Integer> res = new ArrayList<>();
+    for (Integer key :
+        map.keySet()) {
+      if (map.get(key) > max) {
+        max = map.get(key);
+      }
+    }
+
+    for (Integer key :
+        map.keySet()) {
+      if (map.get(key) == max) {
+        res.add(key);
+      }
+    }
+    int[] finalRes = new int[res.size()];
+    for (int i = 0; i < finalRes.length; i++) {
+      finalRes[i] = res.get(i);
+    }
+    return finalRes;
+  }
+
+  private static int postOrderSum(TNode node, HashMap<Integer, Integer> map) {
+    if (node == null) {
+      return 0;
+    }
+    int sum = postOrderSum(node.left, map) + postOrderSum(node.right, map) + node.data;
+    if (map.containsKey(sum)) {
+      map.put(sum, map.get(sum) + 1);
+    } else {
+      map.put(sum, 1);
+    }
+    return sum;
   }
 }

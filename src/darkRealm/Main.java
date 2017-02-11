@@ -29,13 +29,13 @@ public class Main {
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-    doTrees_Graph();
+//    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-//    doLeetCode();
+    doLeetCode();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -155,7 +155,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testAdjacencyGraph();
 //    Trees_and_Graphs_Main.testMinPathSum();
 //    Trees_and_Graphs_Main.testRightSideView();
-    Trees_and_Graphs_Main.testPathsOfTree();
+//    Trees_and_Graphs_Main.testPathsOfTree();
+//    Trees_and_Graphs_Main.testMinHeight();
   }
 
   private static void doMathUtils() {
