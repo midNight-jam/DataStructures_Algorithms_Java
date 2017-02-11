@@ -57,7 +57,8 @@ public class LeetCodeMain {
 //    testLongestPalindromeString();
 //    testTwoSum();
 //    testSubStringPattern();
-    testMostFrequentSum();
+//    testMostFrequentSum();
+    testGrayCode();
   }
 
   public static void testAddTwoNumbers() {
@@ -528,7 +529,7 @@ public class LeetCodeMain {
     System.out.println("Res : " + res + " Str : " + str);
   }
 
-  public static void testMostFrequentSum(){
+  public static void testMostFrequentSum() {
 //    TNode node = new TNode(5);
 //    node.left = new TNode(2);
 //    node.right = new TNode(-3);
@@ -541,7 +542,13 @@ public class LeetCodeMain {
     Tree tree = new Tree();
     tree.root = node;
 
-    int []  res = Trees_and_Graphs.findFrequentTreeSum(tree.root);
-    System.out.println(" Final res : "+Arrays.toString(res));
+    int[] res = Trees_and_Graphs.findFrequentTreeSum(tree.root);
+    System.out.println(" Final res : " + Arrays.toString(res));
+  }
+
+  public static void testGrayCode() {
+    int n = 3;
+    List<Integer> res = LC_Prob_Med2.grayCode(n);
+    System.out.println(" N : " + n + " gray : " + res);
   }
 }

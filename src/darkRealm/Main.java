@@ -32,11 +32,11 @@ public class Main {
 //    doprint();
 //    doTrees_Graph();
 //    doLinkedLsit();
-    doMathUtils();
+//    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-//    doLeetCode();
+    doLeetCode();
 //    doMatrix();
   }
 
