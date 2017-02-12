@@ -59,7 +59,9 @@ public class LeetCodeMain {
 //    testSubStringPattern();
 //    testMostFrequentSum();
 //    testGrayCode();
-    testFrequencySort();
+//    testFrequencySort();
+//    testWordBreak();
+    testLongestPalindromicSubsequence();
   }
 
   public static void testAddTwoNumbers() {
@@ -460,10 +462,17 @@ public class LeetCodeMain {
   public static void testWordLadder() {
     List<String> dict = new ArrayList<>();
 
-    String[] arr = new String[]{"hot", "cog", "dot", "dog", "hit", "lot", "log"};
+//    String[] arr = new String[]{"hot", "cog", "dot", "dog", "hit", "lot", "log"};
+//    dict.addAll(Arrays.asList(arr));
+//    String start = "hit";
+//    String end = "cog";
+
+
+    String[] arr = new String[]{"hot", "dot", "dog", "lot", "log", "cog"};
     dict.addAll(Arrays.asList(arr));
     String start = "hit";
     String end = "cog";
+
 
 //    String[] arr = new String[]{"hot", "dot", "dog", "lot", "log"};
 //    dict.addAll(Arrays.asList(arr));
@@ -553,12 +562,54 @@ public class LeetCodeMain {
     System.out.println(" N : " + n + " gray : " + res);
   }
 
-  public static void testFrequencySort(){
+  public static void testFrequencySort() {
 //    String str = "tree";
 //    String str = "zaaactcccfddtddzdeef";
 //    String str = "cccaaa";
     String str = "Aabb";
     String res = LC_Prob_Med2.sortByFrequency(str);
-    System.out.println("Str : "+str+" Sorted : "+res);
+    System.out.println("Str : " + str + " Sorted : " + res);
+  }
+
+  public static void testWordBreak() {
+//    String str = "leetcode";
+//    List<String> dict = new ArrayList<>();
+//    dict.add("leet");
+//    dict.add("code");
+//    dict.add("coder");
+
+//    String str = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
+//        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
+//    String str = "aaaabaaaaaa";
+//    List<String> dict = new ArrayList<>();
+//    dict.add("b");
+//    dict.add("a");
+//    dict.add("aa");
+//    dict.add("aaa");
+//    dict.add("aaaa");
+//    dict.add("aaaaa");
+//    dict.add("aaaaaa");
+//    dict.add("aaaaaaa");
+//    dict.add("aaaaaaaa");
+//    dict.add("aaaaaaaaa");
+//    dict.add("aaaaaaaaaa");
+//
+    String str = "bb";
+    List<String> dict = new ArrayList<>();
+    dict.add("b");
+    dict.add("a");
+    dict.add("bbb");
+    dict.add("bbbb");
+    Long start = System.currentTimeMillis();
+    boolean res = LC_Prob_Med2.wordBreak(str, dict);
+    System.out.println(" " + (System.currentTimeMillis() - start));
+    System.out.println(" Res : " + res + " str : " + str + " Dict : " + dict);
+  }
+
+  public static void testLongestPalindromicSubsequence() {
+//    String str = "bbbab";
+    String str = "cbbd";
+    int res = LC_Prob_Med2.longestPalidromicSubsequence(str);
+    System.out.println("Res : " + res + " Str : " + str);
   }
 }

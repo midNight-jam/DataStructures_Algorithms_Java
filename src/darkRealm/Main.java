@@ -31,12 +31,12 @@ public class Main {
 //    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
-    doLinkedLsit();
+//    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-//    doLeetCode();
+    doLeetCode();
 //    doMatrix();
   }
 

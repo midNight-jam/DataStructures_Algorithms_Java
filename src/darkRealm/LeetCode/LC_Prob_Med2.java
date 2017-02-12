@@ -393,7 +393,7 @@ public class LC_Prob_Med2 {
     }
   }
 
-  /*  [Prob 127] Word Ladder
+  /*  [Prob 127] Word Ladder TODO FAILING!!!!!
   *   Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation
   *   sequence from beginWord to endWord, such that:
   *   Only one letter can be changed at a time.
@@ -421,6 +421,10 @@ public class LC_Prob_Med2 {
 
     int pathLen = 1;
     headSet.add(start);
+    if (dictionary.contains(start)) {
+      visited.add(start);
+      pathLen++;
+    }
     endSet.add(end);
     set = headSet;
     while (!headSet.isEmpty() && !endSet.isEmpty()) {
@@ -656,16 +660,102 @@ public class LC_Prob_Med2 {
       }
     }
     StringBuilder helper = new StringBuilder();
-    for (int i = max; i >= 0; i--) {
+    for (int i = max; i >= 0; i--) {  // reading from behind as we had to put higher frequnecy chars first
       String s2 = buckets[i];
       if (s2 != null && !s2.equals("")) {
         for (int j = 0; j < s2.length(); j++) {
           for (int k = 0; k < i; k++) {
-            helper.append(s2.charAt(j));
+            helper.append(s2.charAt(j));  // adding each char as many times as they have appeared in the oriiganl string
           }
         }
       }
     }
     return helper.toString();
+  }
+
+  /* [Prob 139] Word Break  TODO FAILING
+  * Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be
+  * segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not
+  * contain duplicate words.
+  * For example, given
+  * s = "leetcode",
+  * dict = ["leet", "code"].
+  * Return true because "leetcode" can be segmented as "leet code".
+  * */
+  public static boolean wordBreak(String str, List<String> dictionary) {
+    if (str == null) return false;
+    HashMap<String, Boolean> map = new HashMap<>();
+    for (int i = 0; i < dictionary.size(); i++) {
+      map.put(dictionary.get(i), true);
+    }
+    return wordBreakRecur(str, map);
+  }
+
+  private static boolean wordBreakRecur(String str, HashMap<String, Boolean> map) {
+    if (str.equals("")) return true;
+    StringBuilder partA = new StringBuilder();
+    String partB;
+    for (int i = 0; i < str.length(); i++) {
+      partA.append(str.charAt(i));
+      if (map.containsKey(partA.toString()) && map.get(partA.toString())) {
+        partB = str.substring(i + 1);
+        map.put(partA.toString(), false);
+        boolean validPartB = wordBreakRecur(partB, map);
+        if (validPartB) {
+          return true;
+        }
+        map.put(partA.toString(), true);
+      }
+    }
+    return false;
+  }
+
+  /* [Prob 516] Longest Palindromic Subsequence
+	* Given a string s, find the longest palindromic subsequence's length in s.
+	* You may assume that the maximum length of s is 1000.
+	* Example 1:
+	* Input:
+	* "bbbab"
+	* Output:
+	* 4
+	* One possible longest palindromic subsequence is "bbbb".
+	* Example 2:
+	* Input:
+	* "cbbd"
+	* Output:
+	* 2
+	* One possible longest palindromic subsequence is "bb".
+	*  A) USE DP  In this solution we solve while moving towards top right, rather than usual bottom right. So Effectively
+	*  lower half of matrix is useless, only top half of matrix is utilized
+	*  Two Rules :
+	*   if char at head == char at tail pick vlaue from lower diagonal & add 2
+	*   if chats are diff then take max of one col behind & one row below
+	*/
+  public static int longestPalidromicSubsequence(String str) {
+    if (str == null || str.length() < 1) return 0;
+
+    int[][] dp = new int[str.length()][str.length()];
+
+    for (int i = 0; i < str.length(); i++) {
+      dp[i][i] = 1;
+    }
+
+    int head, tail;
+    for (int i = 1; i < dp.length; i++) {
+      head = tail = 0;
+      for (int j = 0; j < i; j++, tail++) ;
+      while (tail < dp.length) {
+        char h = str.charAt(head);
+        char t = str.charAt(tail);
+        if (h == t) {
+          dp[head][tail] = dp[head + 1][tail - 1] + 2;
+        } else {
+          dp[head][tail] = Math.max(dp[head + 1][tail], dp[head][tail - 1]);
+        }
+        head++;
+        tail++;
+      }
+    }
+    return dp[0][str.length() - 1];
   }
 }
