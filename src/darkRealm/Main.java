@@ -31,12 +31,12 @@ public class Main {
 //    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
-//    doLinkedLsit();
+    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-    doLeetCode();
+//    doLeetCode();
 //    doMatrix();
   }
 
@@ -312,9 +312,10 @@ public class Main {
 //    LinkedList_Main.testPalindrome();
 //    LinkedList_Main.testIntersection();
 //    LinkedList_Main.testSumListNatural();
-    LinkedList_Main.testReverseMid();
+//    LinkedList_Main.testReverseMid();
 //    LinkedList_Main.testSumList();
 //    LinkedList_Main.testPartition();
+    LinkedList_Main.testMergeTwoList();
   }
 
   private static void doBitsMain() {

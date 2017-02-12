@@ -102,10 +102,10 @@ public class LinkedList_Main {
 
   public static void testSumList() {
     Node n0 = new Node(1);
-//    Node n1 = new Node(1);
-//    Node n2 = new Node(9);
-//    n0.next = n1;
-//    n1.next = n2;
+    Node n1 = new Node(1);
+    Node n2 = new Node(9);
+    n0.next = n1;
+    n1.next = n2;
     LinkedList L1 = new LinkedList();
     L1.head = n0;
 
@@ -165,5 +165,32 @@ public class LinkedList_Main {
     System.out.println(" List : " + L1);
     LinkedList res = Linked_List.reverseFromMid(L1);
     System.out.println("  Res : " + res);
+  }
+
+  public static void testMergeTwoList() {
+    Node n0 = new Node(1);
+    Node n1 = new Node(5);
+    Node n2 = new Node(8);
+    n0.next = n1;
+    n1.next = n2;
+    LinkedList L1 = new LinkedList();
+    L1.head = n0;
+
+    Node n3 = new Node(3);
+    Node n4 = new Node(7);
+    Node n5 = new Node(9);
+    Node n6 = new Node(10);
+    n3.next = n4;
+    n4.next = n5;
+    n5.next = n6;
+    LinkedList L2 = new LinkedList();
+    L2.head = n3;
+
+//    Node res = Linked_List.mergeSortedList(n0, n3);
+    Node res = Linked_List.mergeSortedListRecur(n0, n3);
+//    Node res = Linked_List.mergeSortedList(null, n3);
+//    Node res = Linked_List.mergeSortedListRecur(null, n3);
+//    Node res = Linked_List.mergeSortedList(n0, null);
+    System.out.println("Result : " + res.data);
   }
 }
