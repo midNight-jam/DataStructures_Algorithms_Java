@@ -300,4 +300,96 @@ public class Linked_List {
     }
     return trav;
   }
+  
+	/* [Prob 23] Merge k Sorted Lists
+	*	Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+  * The MergeSortLike method (mergeKListsFinal) is the fasteest as compared to iterative & recursive approach
+  */
+
+  public static Node mergeKLists(Node[] lists) {
+//    return mergeKRecur(lists);
+    return mergeKIterative(lists);
+  }
+
+  private static Node mergeKRecur(Node[] lists) {
+    int min = Integer.MAX_VALUE;
+    Node trav = null;
+    int minIndex = 0;
+    for (int i = 0; i < lists.length; i++)
+      if (lists[i] != null && lists[i].data < min) {
+        min = lists[i].data;
+        minIndex = i;
+        trav = lists[i];
+      }
+    if (lists[minIndex] != null) {
+      lists[minIndex] = lists[minIndex].next;
+      trav.next = mergeKRecur(lists);
+    }
+    return trav;
+  }
+
+  private static Node mergeKIterative(Node[] lists) {
+    if (lists == null || lists.length < 1) return null;
+    Node head, prev;
+    head = prev = null;
+    int min;
+    int minIndex = 0;
+    int exhausted = 0;
+    while (exhausted != lists.length) {
+      exhausted = 0;
+      min = Integer.MAX_VALUE;
+      for (int i = 0; i < lists.length; i++) {
+        if (lists[i] != null && lists[i].data < min) {
+          min = lists[i].data;
+          minIndex = i;
+        }
+        if (lists[i] == null) exhausted++;
+      }
+      if (lists[minIndex] != null) {
+        if (head == null) {
+          head = lists[minIndex];
+          prev = head;
+        } else {
+          prev.next = lists[minIndex];
+          prev = prev.next;
+        }
+        lists[minIndex] = lists[minIndex].next;
+      }
+    }
+    prev.next = null;
+    return head;
+  }
+
+  /* [Prob 23] Merge k Sorted Lists
+	*	Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+  * The MergeSortLike method is the fasteest as compared to iterative & recursive approach
+  */
+  public static Node mergeKListsFinal(Node[] lists) {
+    if (lists == null || lists.length < 1) return null;
+    return mergeList(lists, 0, lists.length - 1);
+  }
+
+  private static Node mergeList(Node[] lists, int low, int high) {
+    if (low > high) return null;
+    if (low == high) return lists[low];
+    Node head = new Node(0);
+    Node trav = head;
+    Node a, b;
+    int mid = low + (high - low) / 2;
+
+    a = mergeList(lists, low, mid);
+    b = mergeList(lists, mid + 1, high);
+    while (a != null && b != null) {
+      if (a.data < b.data) {
+        trav.next = a;
+        a = a.next;
+      } else {
+        trav.next = b;
+        b = b.next;
+      }
+      trav = trav.next;
+    }
+    trav.next = a != null ? a : b;
+    return head.next;
+  }
 }

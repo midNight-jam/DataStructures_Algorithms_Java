@@ -193,4 +193,37 @@ public class LinkedList_Main {
 //    Node res = Linked_List.mergeSortedList(n0, null);
     System.out.println("Result : " + res.data);
   }
+	
+	public static void testMergeKLists(){
+		Node n0 = new Node(1);
+    Node n1 = new Node(5);
+//    Node n2 = new Node(8);
+    n0.next = n1;
+//    n1.next = n2;
+    LinkedList L1 = new LinkedList();
+    L1.head = n0;
+
+    Node n3 = new Node(3);
+    Node n4 = new Node(7);
+//    Node n5 = new Node(9);
+//    Node n6 = new Node(10);
+    n3.next = n4;
+//    n4.next = n5;
+//    n5.next = n6;
+    LinkedList L2 = new LinkedList();
+    L2.head = n3;
+
+    Node n10 = new Node(2);
+    Node n11 = new Node(4);
+//    Node n5 = new Node(9);
+//    Node n6 = new Node(10);
+    n10.next = n11;
+
+		Node [] lists = new Node[]{n0,n3,n10};
+
+//    Node res = Linked_List.mergeKLists(lists);
+//    Node res = Linked_List.mergeKLists(lists);
+    Node res = Linked_List.mergeKListsFinal(lists);
+		System.out.println(" Res : "+res.data);
+	}
 }

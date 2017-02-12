@@ -315,7 +315,8 @@ public class Main {
 //    LinkedList_Main.testReverseMid();
 //    LinkedList_Main.testSumList();
 //    LinkedList_Main.testPartition();
-    LinkedList_Main.testMergeTwoList();
+//		LinkedList_Main.testMergeTwoList();
+		LinkedList_Main.testMergeKLists();
   }
 
   private static void doBitsMain() {
