@@ -627,4 +627,45 @@ public class LC_Prob_Med2 {
   private static int binaryToGray(int k) {
     return (k >> 1) ^ k;
   }
+
+  /* [Prob] Sort by frequency
+  * Given a string, sort it in decreasing order based on the frequency of characters.
+  * Input:
+  * "tree"
+  * Output:
+  * "eert"
+  * Explanation:
+  * 'e' appears twice while 'r' and 't' both appear once.
+  * So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
+  *
+  * Solution : Use Bucket Sort
+  * */
+  public static String sortByFrequency(String str) {
+    if (str == null || str.length() < 1) return str;
+    int[] map = new int[256];
+    int max = 0;
+    for (int i = 0; i < str.length(); i++) {
+      map[str.charAt(i)]++;
+      max = Math.max(map[str.charAt(i)], max);
+    }
+    String[] buckets = new String[max + 1]; // creating the merge list
+    for (int i = 0; i < map.length; i++) {
+      String s = buckets[map[i]];
+      if (map[i] > 0) {
+        buckets[map[i]] = s == null ? "" + (char) i : s + (char) i; // merging te same frequency chars
+      }
+    }
+    StringBuilder helper = new StringBuilder();
+    for (int i = max; i >= 0; i--) {
+      String s2 = buckets[i];
+      if (s2 != null && !s2.equals("")) {
+        for (int j = 0; j < s2.length(); j++) {
+          for (int k = 0; k < i; k++) {
+            helper.append(s2.charAt(j));
+          }
+        }
+      }
+    }
+    return helper.toString();
+  }
 }

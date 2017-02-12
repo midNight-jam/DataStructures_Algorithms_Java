@@ -58,7 +58,8 @@ public class LeetCodeMain {
 //    testTwoSum();
 //    testSubStringPattern();
 //    testMostFrequentSum();
-    testGrayCode();
+//    testGrayCode();
+    testFrequencySort();
   }
 
   public static void testAddTwoNumbers() {
@@ -550,5 +551,14 @@ public class LeetCodeMain {
     int n = 3;
     List<Integer> res = LC_Prob_Med2.grayCode(n);
     System.out.println(" N : " + n + " gray : " + res);
+  }
+
+  public static void testFrequencySort(){
+//    String str = "tree";
+//    String str = "zaaactcccfddtddzdeef";
+//    String str = "cccaaa";
+    String str = "Aabb";
+    String res = LC_Prob_Med2.sortByFrequency(str);
+    System.out.println("Str : "+str+" Sorted : "+res);
   }
 }
