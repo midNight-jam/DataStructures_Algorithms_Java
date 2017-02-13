@@ -7,7 +7,6 @@ import java.util.*;
  */
 public class ArrayUtil {
 
-
   private static int[] _temp;
   private static HashMap<Integer, Integer> record = new HashMap<>();
 
@@ -336,5 +335,4 @@ public class ArrayUtil {
     }
     return -1;
   }
-
 }

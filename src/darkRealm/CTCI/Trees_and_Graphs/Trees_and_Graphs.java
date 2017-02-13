@@ -870,7 +870,6 @@ public class Trees_and_Graphs {
     System.out.println("Sum : " + min + "  " + minPath);
   }
 
-  static int min = Integer.MAX_VALUE;
   static int minPathLength = Integer.MAX_VALUE;
   static List<Integer> minPath;
 
@@ -893,7 +892,30 @@ public class Trees_and_Graphs {
     findMinPath(node.right, sum + node.data, levels, level + 1);
   }
 
+  static int min = Integer.MAX_VALUE;
+  public static int getMinPathSum(Tree tree) {
+    if (tree == null) {
+      return 0;
+    }
+    min = Integer.MAX_VALUE;
+    minPathSum(tree.root, 0);
+    System.out.println("Sum : " + min + "  " + minPath);
+    return min;
+  }
 
+  private static void minPathSum(TNode node, int sum) {
+    if (node == null) {
+      return;
+    }
+    if (node.left == null && node.right == null) {
+      if (sum + node.data <= min) {
+        min = sum + node.data;
+        return;
+      }
+    }
+    minPathSum(node.left, sum + node.data);
+    minPathSum(node.right, sum + node.data);
+  }
 
   /* [Prob] print paths from root to leaf
   * */

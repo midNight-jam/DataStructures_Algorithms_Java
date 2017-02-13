@@ -51,6 +51,15 @@ public class Sorting_and_Searching_Main {
     System.out.println("Kth smalles : " + kth);
   }
 
+  public static void testKthLargestElement() {
+//    int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
+    int[] arr = new int[]{2,3,1};
+    int k  = 3;
+    int kth = QuickSortUtil.kthLargestElement(arr, 0, arr.length - 1, k);
+    System.out.println("Array : " + Arrays.toString(arr));
+    System.out.println(k+" Kth largest : " + kth);
+  }
+
   public static void testSearchRotatedArray() {
 //    int[] arr = new int[]{15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 12, 13, 15};
 //    int [] arr = new int[] {12,13,14,15,16,19,20,25,1,3,4,5,7};
@@ -123,9 +132,10 @@ public class Sorting_and_Searching_Main {
 
   public static void testQuickSort() {
 //    int[] arr = new int[]{36, 14, 27, 40, 31};
-    int[] arr = new int[]{3, 1, 0};
+//    int[] arr = new int[]{3, 1, 0};
+    int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
 
-    //    QuickSortUtil.quicksort(arr, 0, arr.length-1);
+        QuickSortUtil.quicksort(arr, 0, arr.length-1);
 //    QuickSortUtil.quicksort(arr, 0, arr.length - 1);
     System.out.println("Arr : " + Arrays.toString(arr));
   }

@@ -65,16 +65,23 @@ public class Trees_and_Graphs_Main {
 //    tree.root.left.right.left.right = new TNode(25);
 //    tree.root.left.left.left = new TNode(1);
 //
-    Tree tree = new Tree();
-    tree.root = new TNode(1);
-    tree.root.left = new TNode(1);
-    tree.root.left.left = new TNode(1);
-    tree.root.left.left.left = new TNode(1);
+//    Tree tree = new Tree();
+//    tree.root = new TNode(7);
 //    tree.root.left = new TNode(3);
-    tree.root.right = new TNode(2);
-    tree.root.right.left = new TNode(2);
+//    tree.root.left.left = new TNode(1);
+//    tree.root.left.left.left = new TNode(0);
+//    tree.root.left.right = null;
+//    tree.root.right = new TNode(10);
+//    tree.root.right.left = new TNode(8);
+//    tree.root.right.left = new TNode(12);
 
-    Trees_and_Graphs.printMinPathSum(tree);
+    Tree tree = new Tree();
+    tree.root = new TNode(10);
+    tree.root.left = new TNode(5);
+    tree.root.right = new TNode(15);
+
+    //    Trees_and_Graphs.printMinPathSum(tree);
+    int res = Trees_and_Graphs.getMinPathSumZZ(tree);
   }
 
   public static void testIsBalanced() {
