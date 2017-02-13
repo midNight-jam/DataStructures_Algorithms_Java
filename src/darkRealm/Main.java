@@ -152,10 +152,11 @@ public class Main {
 //    Trees_and_Graphs_Main.testPathsWithSum();
 //    Trees_and_Graphs_Main.testInorderTraversalIterative();
 //    Trees_and_Graphs_Main.testAdjacencyGraph();
-    Trees_and_Graphs_Main.testMinPathSum();
+//    Trees_and_Graphs_Main.testMinPathSum();
 //    Trees_and_Graphs_Main.testRightSideView();
 //    Trees_and_Graphs_Main.testPathsOfTree();
 //    Trees_and_Graphs_Main.testMinHeight();
+    Trees_and_Graphs_Main.testSerialize();
   }
 
   private static void doMathUtils() {

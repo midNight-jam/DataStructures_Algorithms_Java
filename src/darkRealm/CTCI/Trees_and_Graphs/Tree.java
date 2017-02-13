@@ -2,9 +2,7 @@ package darkRealm.CTCI.Trees_and_Graphs;
 
 import darkRealm.CTCI.Stacks_and_queues.MyStack;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by Jayam on 12/27/2016.
@@ -79,5 +77,44 @@ public class Tree {
       }
     }
     return inorderTraversalIterative;
+  }
+
+  /* Storing the pre-order traversal  of the tree
+  *  space " " being the delimiter
+  * */
+  public String serialize(TNode node) {
+    StringBuilder sb = new StringBuilder();
+    writePreOrderTree(node, sb);
+    String res = sb.toString().substring(0, sb.length() - 1);
+    return res;
+  }
+
+  private void writePreOrderTree(TNode node, StringBuilder sb) {
+    if (node == null) {
+      sb.append("N ");
+      return;
+    }
+    sb.append(node.data + " ");
+    writePreOrderTree(node.left, sb);
+    writePreOrderTree(node.right, sb);
+  }
+
+  /*Decode the tree from the string
+  *  return null when you encounter N (terminator)
+  * */
+  public TNode deserialize(String srz) {
+    if (srz == null || srz.length() < 1) return null;
+    LinkedList<String> nodes = new LinkedList<>();
+    nodes.addAll(Arrays.asList(srz.split(" ")));
+    return constructTree(nodes);
+  }
+
+  private TNode constructTree(LinkedList<String> nodes) {
+    String last = nodes.remove();
+    if (last.equals("N")) return null;
+    TNode node = new TNode(Integer.valueOf(last));
+    node.left = constructTree(nodes);
+    node.right = constructTree(nodes);
+    return node;
   }
 }

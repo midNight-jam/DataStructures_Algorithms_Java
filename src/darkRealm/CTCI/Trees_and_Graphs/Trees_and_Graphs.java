@@ -893,6 +893,7 @@ public class Trees_and_Graphs {
   }
 
   static int min = Integer.MAX_VALUE;
+
   public static int getMinPathSum(Tree tree) {
     if (tree == null) {
       return 0;

@@ -217,6 +217,7 @@ public class Linked_List {
   * 1 -> 2 -> 5 -> 4 -> 3
   * */
   public static LinkedList reverseFromMid(LinkedList list) {
+    if(list==null || list.head.next==null) return list;
     Node head = list.head;
     Node slowPrev = null;
     Node slow;
