@@ -27,13 +27,13 @@ public class Main {
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-    doTrees_Graph();
+//    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-//    doLeetCode();
+    doLeetCode();
 //    doMatrix();
   }
 

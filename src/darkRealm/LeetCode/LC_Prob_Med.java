@@ -245,67 +245,29 @@ public class LC_Prob_Med {
   * Implement atoi to convert a string to an integer.
   * */
   public static int stringToInteger(String str) {
-    str = str.trim();
-    if (str.length() == 0) {
-      return 0;
+    if (str == null || str.length() == 0) return 0;
+    int index = 0;
+    int sign = 1;
+    while (str.charAt(index) == ' ') index++;
+    if (str.charAt(index) == '+' || str.charAt(index) == '-') {
+      sign = str.charAt(index) == '-' ? -1 : 1;
+      index++;
     }
-    int minus = 1;
-    int endIndex = 0;
-    if (str.charAt(0) == '-') {
-      minus = -1;
-      endIndex = 1;
-    } else if (str.charAt(0) == '+') {
-      minus = 1;
-      endIndex = 1;
+    int digit = 0;
+    int total = 0;
+    while (index < str.length()) {
+      digit = str.charAt(index) - '0';
+      if (digit < 0 || digit > 9) break;
+      // we have to check for both when we mulitply by 10 an over flow can occur,
+      // but also an over flow can occur if adding the last digit will take us ahead of overflow
+      // to check this we check if the last digit is bigger than the last digit of MAX_VALUE then there is
+      // an overflow
+      if (Integer.MAX_VALUE / 10 <= total && Integer.MAX_VALUE %10 < digit)
+        return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+      total = 10 * total + digit;
+      index++;
     }
-    int number = 0;
-    int last;
-    int powTen = 1;
-    for (int i = str.length() - 1; i >= endIndex; i--) {
-      last = getInt(str.charAt(i));
-      if (last == Integer.MIN_VALUE) {
-        number = 0;
-        powTen = 1;
-        continue;
-      }
-      if ((last * 10) / 10 != last) {
-        return 0;
-      }
-      last = last * powTen;
-      if (number + last < 0) {
-        int res = number + last;
-        return res == Integer.MIN_VALUE ? Integer.MIN_VALUE : 0;
-      }
-      number += last;
-      powTen = powTen * 10;
-    }
-    return number * minus;
-  }
-
-  private static int getInt(char c) {
-    switch (c) {
-      case '0':
-        return 0;
-      case '1':
-        return 1;
-      case '2':
-        return 2;
-      case '3':
-        return 3;
-      case '4':
-        return 4;
-      case '5':
-        return 5;
-      case '6':
-        return 6;
-      case '7':
-        return 7;
-      case '8':
-        return 8;
-      case '9':
-        return 9;
-    }
-    return Integer.MIN_VALUE;
+    return total * sign;
   }
 
   /*  [Prob 151]   Reverse Words in a String

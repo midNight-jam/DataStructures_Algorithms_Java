@@ -21,7 +21,7 @@ public class LeetCodeMain {
 //    testLongestPalindrome();
 //    testZigZag();
 //    testReverseInteger();
-//    testStringToInteger();
+    testStringToInteger();
 //    testReverseWords();
 //    testCompareVersion();
 //    testSurroundRegion();
@@ -61,7 +61,7 @@ public class LeetCodeMain {
 //    testGrayCode();
 //    testFrequencySort();
 //    testWordBreak();
-    testLongestPalindromicSubsequence();
+//    testLongestPalindromicSubsequence();
   }
 
   public static void testAddTwoNumbers() {
@@ -141,7 +141,12 @@ public class LeetCodeMain {
 //    String str = Integer.MAX_VALUE+"";
 //    String str = "1534236469";
 //    String str = "-2147483648";
-    String str = "2147483648";
+//    String str = "-2147483649";
+//    String str = "2147483648";
+//    String str = "    +11191657170";
+//    String str = "";
+//    String str = "-2147483647";
+    String str = "      -11919730356x";
 
 
     int res = LC_Prob_Med.stringToInteger(str);

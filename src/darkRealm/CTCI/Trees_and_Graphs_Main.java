@@ -390,20 +390,12 @@ public class Trees_and_Graphs_Main {
 //    tree.root.left.left.left = new TNode(3);
 //    tree.root.left.left.right = new TNode(7);
 
-//    String res = tree.serialize(tree.root);
-//    System.out.println(" Res : "+ res);
-//    String [] s = res.split(" ");
-//    System.out.println(" Res : "+ Arrays.toString(s));
-//    Tree treeD  = new Tree();
-//    treeD.root = tree.deserialize(res);
-//    treeD.printInorderTraversal();
-
-    String res = tree.serializeZZ(tree.root);
+    String res = tree.serialize(tree.root);
     System.out.println(" Res : "+ res);
     String [] s = res.split(" ");
     System.out.println(" Res : "+ Arrays.toString(s));
     Tree treeD  = new Tree();
-    treeD.root = tree.deserializeZZ(res);
+    treeD.root = tree.deserialize(res);
     treeD.printInorderTraversal();
 
   }
