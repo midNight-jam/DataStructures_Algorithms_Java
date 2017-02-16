@@ -372,14 +372,14 @@ public class Trees_and_Graphs_Main {
     System.out.println(min);
   }
 
-  public static void testSerialize(){
+  public static void testSerialize() {
     Tree tree = new Tree();
     tree.root = new TNode(20);
     tree.root.left = new TNode(10);
     tree.root.right = new TNode(30);
     tree.root.left.left = new TNode(5);
 //    tree.root.left.right = new TNode(15);
-    tree.root.right.right= new TNode(45);
+    tree.root.right.right = new TNode(45);
 //    tree.root.right.left.left = new TNode(22);
 //    tree.root.right.left.left.left = new TNode(21);
 //    tree.root.right.left.right = new TNode(27);
@@ -391,12 +391,30 @@ public class Trees_and_Graphs_Main {
 //    tree.root.left.left.right = new TNode(7);
 
     String res = tree.serialize(tree.root);
-    System.out.println(" Res : "+ res);
-    String [] s = res.split(" ");
-    System.out.println(" Res : "+ Arrays.toString(s));
-    Tree treeD  = new Tree();
+    System.out.println(" Res : " + res);
+    String[] s = res.split(" ");
+    System.out.println(" Res : " + Arrays.toString(s));
+    Tree treeD = new Tree();
     treeD.root = tree.deserialize(res);
     treeD.printInorderTraversal();
+  }
 
+  public static void testSubtreeSum() {
+    Tree tree = new Tree();
+    tree.root = new TNode(8);
+    tree.root.left = new TNode(5);
+    tree.root.right = new TNode(4);
+    tree.root.left.left = new TNode(9);
+    tree.root.left.right = new TNode(7);
+    tree.root.left.right.left = new TNode(1);
+    tree.root.left.right.right = new TNode(12);
+    tree.root.left.right.right.left = new TNode(2);
+    tree.root.right.right = new TNode(11);
+    tree.root.right.right.left = new TNode(3);
+//    int sum = 22;
+//    int sum = 21;
+    int sum = 14;
+    boolean res = Trees_and_Graphs.subTreeSum(tree, sum);
+    System.out.println(" res : " + res);
   }
 }

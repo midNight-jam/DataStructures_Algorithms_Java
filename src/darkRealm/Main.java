@@ -27,7 +27,7 @@ public class Main {
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-//    doTrees_Graph();
+    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
@@ -156,7 +156,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testRightSideView();
 //    Trees_and_Graphs_Main.testPathsOfTree();
 //    Trees_and_Graphs_Main.testMinHeight();
-    Trees_and_Graphs_Main.testSerialize();
+//    Trees_and_Graphs_Main.testSerialize();
+    Trees_and_Graphs_Main.testSubtreeSum();
   }
 
   private static void doMathUtils() {

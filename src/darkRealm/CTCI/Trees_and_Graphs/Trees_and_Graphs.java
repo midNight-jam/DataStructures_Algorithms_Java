@@ -882,7 +882,7 @@ public class Trees_and_Graphs {
         min = sum + node.data;
         levels.add(level, node.data);
         if (levels.size() < minPathLength) {
-          minPath = new ArrayList<>(levels.subList(0,level+1));
+          minPath = new ArrayList<>(levels.subList(0, level + 1));
         }
         return;
       }
@@ -920,31 +920,31 @@ public class Trees_and_Graphs {
 
   /* [Prob] print paths from root to leaf
   * */
-  public static List<String> pathsOfTree(Tree tree){
-    if(tree==null){
+  public static List<String> pathsOfTree(Tree tree) {
+    if (tree == null) {
       return new ArrayList<>();
     }
-    String path="";
+    String path = "";
     List<String> paths = new ArrayList<>();
-    traverseTree(tree.root,path,paths);
+    traverseTree(tree.root, path, paths);
     return paths;
   }
 
   private static void traverseTree(TNode node, String path, List<String> paths) {
     if (node.left == null && node.right == null) {
-      paths.add(path+node.data);
+      paths.add(path + node.data);
       return;
     }
-    if(node.left!=null)
-      traverseTree(node.left, path + node.data+" -> ", paths);
-    if(node.right!=null)
-      traverseTree(node.right, path + node.data +" -> ", paths);
+    if (node.left != null)
+      traverseTree(node.left, path + node.data + " -> ", paths);
+    if (node.right != null)
+      traverseTree(node.right, path + node.data + " -> ", paths);
   }
 
   /*  [Prob] find min depth
   * */
-  public static int findMinimumDepth(Tree tree){
-    if(tree==null){
+  public static int findMinimumDepth(Tree tree) {
+    if (tree == null) {
       return 0;
     }
     return getMinHeight(tree.root);
@@ -965,7 +965,7 @@ public class Trees_and_Graphs {
     if (node.right != null) {
       right = getMinHeight(node.right);
     }
-    return Math.min(left, right) +1;
+    return Math.min(left, right) + 1;
   }
 
   /* [Prob 199] Binary Tree Right Side View
@@ -1055,5 +1055,31 @@ public class Trees_and_Graphs {
       map.put(sum, 1);
     }
     return sum;
+  }
+
+  /*  [Prob] subtreeSum if sum can be found by any subtree in the tree
+  * */
+  public static boolean subTreeSum(Tree tree, int sum) {
+    TNode node = tree.root;
+    getSum(node, sum);
+    return foundSum;
+  }
+
+  static boolean foundSum = false;
+  static TNode foundNode = null;
+
+  private static int getSum(TNode node, int sum) {
+    if (node == null) return 0;
+
+    int left = getSum(node.left, sum);
+
+    int right = getSum(node.right, sum);
+    int sumHere = node.data + left + right;
+    if (left+node.data == sum || right+node.data == sum || sumHere == sum) {
+      foundSum = true;
+      foundNode = node;
+    }
+
+    return node.data + left + right;
   }
 }
