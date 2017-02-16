@@ -681,33 +681,32 @@ public class LC_Prob_Med2 {
   * s = "leetcode",
   * dict = ["leet", "code"].
   * Return true because "leetcode" can be segmented as "leet code".
+  * A) we slide a window and try to see if the current chars in a window for a string that is in dictionary.
+  * We also keep this intermediate result saved in a boolean array to propogate the result forward when we increase the
+  * sliding window size. if (Iam) "I" and "am" can be formed using dictionary while breaking the string we satore the
+  * result that string of length 3 can be formed using dictionary, similarly if the result for the length of the string
+  * is also true mean the whole string can be formed using the dictionary while doing some partitions at places.
   * */
-  public static boolean wordBreak(String str, List<String> dictionary) {
-    if (str == null) return false;
-    HashMap<String, Boolean> map = new HashMap<>();
-    for (int i = 0; i < dictionary.size(); i++) {
-      map.put(dictionary.get(i), true);
-    }
-    return wordBreakRecur(str, map);
-  }
-
-  private static boolean wordBreakRecur(String str, HashMap<String, Boolean> map) {
-    if (str.equals("")) return true;
-    StringBuilder partA = new StringBuilder();
-    String partB;
-    for (int i = 0; i < str.length(); i++) {
-      partA.append(str.charAt(i));
-      if (map.containsKey(partA.toString()) && map.get(partA.toString())) {
-        partB = str.substring(i + 1);
-        map.put(partA.toString(), false);
-        boolean validPartB = wordBreakRecur(partB, map);
-        if (validPartB) {
-          return true;
+  public static boolean wordBreak(String str, List<String> wordDict) {
+    if (str == null || str.length() == 0) return true;
+    int n = str.length();
+    boolean[] partition = new boolean[n + 1];
+    partition[0] = true;
+    String part = null;
+    for (int i = 1; i <= n; i++) {
+      System.out.print(" " + i + " ");
+      for (int j = 0; j < i; j++) {
+        part = str.substring(j, i);
+        if (wordDict.contains(part) && partition[j]) {
+//          System.out.print(" present - ");
+          partition[i] = true;
+          break;
         }
-        map.put(partA.toString(), true);
+//        System.out.print(j + " " + part + "    ");
       }
+//      System.out.println();
     }
-    return false;
+    return partition[n];
   }
 
   /* [Prob 516] Longest Palindromic Subsequence

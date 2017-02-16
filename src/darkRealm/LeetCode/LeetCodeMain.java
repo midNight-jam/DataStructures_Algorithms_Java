@@ -21,7 +21,7 @@ public class LeetCodeMain {
 //    testLongestPalindrome();
 //    testZigZag();
 //    testReverseInteger();
-    testStringToInteger();
+//    testStringToInteger();
 //    testReverseWords();
 //    testCompareVersion();
 //    testSurroundRegion();
@@ -60,7 +60,7 @@ public class LeetCodeMain {
 //    testMostFrequentSum();
 //    testGrayCode();
 //    testFrequencySort();
-//    testWordBreak();
+    testWordBreak();
 //    testLongestPalindromicSubsequence();
   }
 
@@ -577,12 +577,19 @@ public class LeetCodeMain {
   }
 
   public static void testWordBreak() {
-//    String str = "leetcode";
+    String str = "leetcoder";
+    List<String> dict = new ArrayList<>();
+    dict.add("leet");
+    dict.add("code");
+    dict.add("coder");
+//
+//    String str = "Iamace";
 //    List<String> dict = new ArrayList<>();
-//    dict.add("leet");
-//    dict.add("code");
-//    dict.add("coder");
-
+//    dict.add("I");
+//    dict.add("a");
+//    dict.add("am");
+//    dict.add("ace");
+//
 //    String str = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
 //        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
 //    String str = "aaaabaaaaaa";
@@ -599,12 +606,12 @@ public class LeetCodeMain {
 //    dict.add("aaaaaaaaa");
 //    dict.add("aaaaaaaaaa");
 //
-    String str = "bb";
-    List<String> dict = new ArrayList<>();
-    dict.add("b");
-    dict.add("a");
-    dict.add("bbb");
-    dict.add("bbbb");
+//    String str = "bb";
+//    List<String> dict = new ArrayList<>();
+//    dict.add("b");
+//    dict.add("a");
+//    dict.add("bbb");
+//    dict.add("bbbb");
     Long start = System.currentTimeMillis();
     boolean res = LC_Prob_Med2.wordBreak(str, dict);
     System.out.println(" " + (System.currentTimeMillis() - start));
