@@ -708,40 +708,45 @@ public class LC_Prob_Med2 {
     }
     return partition[n];
   }
-	
-	public static List<String> wordBreakAll(String str, List<String> dict) {
-    if (str == null || str.length() == 0) return all;
-    if (dict.contains(str)) {
-      all.add(str);
-      return all;
-    }
-    Set<String> set = new HashSet<>(dict);
-    String part;
-    for (int i = 1; i <= str.length(); i++) {
-      part = str.substring(0, i);
-      if (set.contains(part)) {
-        String rem = str.substring(i);
-        wordDfs(rem, set, part + "");
-      }
-    }
-    return all;
+
+  /*  [Prob 140]
+  * Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to
+  * construct a sentence where each word is a valid dictionary word. You may assume the dictionary does not contain
+  * duplicate words.
+  * Return all such possible sentences.
+  * For example, given
+  * s = "catsanddog",
+  * dict = ["cat", "cats", "and", "sand", "dog"].
+  * solution is ["cats and dog", "cat sand dog"].
+  * A) we use a hashMap to store the list of words that can be formed via dictionary by using some portion of the original
+  * string. For this purpose we break the string from behind & check if the backPortion cab be formed using dictinary,
+  * if yes then we send the front remainder for same process if at the end the frontRem can be broken down in to valid word
+  * formed via dictionary then those words are returned, this is the portion to pay attention we verify this by checking
+  * the returned sub list length, while this subresult is returned & stored in map, we add these
+  * results to the previously borken down backPortion and add this sub portion in map. hence while returning from recursion
+  * we will fianlly have the results of valid borken words  against the same key from where we can return.
+  * */
+  public static List<String> wordBreakDriver(String str, List<String> wordDict) {
+    Map<String, List<String>> subResMap = new HashMap<>();
+    return wordBreakAll(str, wordDict, subResMap);
   }
-
-  static List<String> all = new ArrayList<>();
-
-	private static void wordDfs( String str , Set<String> dict, String sol) {
-    if (str.length() == 0) {
-      all.add(sol);
-      return;
-    }
-    String sub = null;
-    for (int i = 1; i <= str.length(); i++) {
-      sub = str.substring(0, i);
-      if (dict.contains(sub)) {
-        String rem = str.substring(i);
-        wordDfs(rem, dict, sol + " " + sub);
+  private static List<String> wordBreakAll(String str, List<String> dict, Map<String, List<String>> subResMap ) {
+    if (subResMap.containsKey(str)) return subResMap.get(str);
+    List<String> subList = new ArrayList<>();
+    if (dict.contains(str)) subList.add(str);
+    String backPart;
+    for (int i = 1; i < str.length(); i++) {
+      backPart = str.substring(i);
+      if (dict.contains(backPart)) {
+        String frontRem = str.substring(0, i);
+        List<String> backRes = wordBreakAll(frontRem, dict, subResMap);
+        if (backRes.size() > 0)
+          for (int j = 0; j < backRes.size(); j++)
+            subList.add(backRes.get(j) + " " + backPart);
       }
     }
+    subResMap.put(str, subList);
+    return subResMap.get(str);
   }
 
   /* [Prob 516] Longest Palindromic Subsequence

@@ -632,7 +632,7 @@ public class LeetCodeMain {
 //    dict.add("coder");
 
 //    String str = "catsanddog";
-//    String str = "catsanddogstop";
+    String str = "catsanddogstop";
 //    String str = "catsanddogstopz";
 //    String str = "catsanddogs";
 //    String str = "catsanddog";
@@ -643,7 +643,7 @@ public class LeetCodeMain {
 //    String str = "ca";
 //    String str = "c";
 //    String str = "";
-    String str = null;
+//    String str = null;
     List<String> dict = new ArrayList<>();
     dict.add("cat");
     dict.add("sand");
@@ -682,7 +682,7 @@ public class LeetCodeMain {
 //    dict.add("a");
 //    dict.add("bbb");
 //    dict.add("bbbb");
-    List<String> res = LC_Prob_Med2.wordBreakAll(str, dict);
+    List<String> res = LC_Prob_Med2.wordBreakDriver(str, dict);
     System.out.println(" str : " + str + " Dict : " + dict);
     System.out.println(" Res : " + res );
   }
