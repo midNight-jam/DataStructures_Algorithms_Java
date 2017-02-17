@@ -708,6 +708,41 @@ public class LC_Prob_Med2 {
     }
     return partition[n];
   }
+	
+	public static List<String> wordBreakAll(String str, List<String> dict) {
+    if (str == null || str.length() == 0) return all;
+    if (dict.contains(str)) {
+      all.add(str);
+      return all;
+    }
+    Set<String> set = new HashSet<>(dict);
+    String part;
+    for (int i = 1; i <= str.length(); i++) {
+      part = str.substring(0, i);
+      if (set.contains(part)) {
+        String rem = str.substring(i);
+        wordDfs(rem, set, part + "");
+      }
+    }
+    return all;
+  }
+
+  static List<String> all = new ArrayList<>();
+
+	private static void wordDfs( String str , Set<String> dict, String sol) {
+    if (str.length() == 0) {
+      all.add(sol);
+      return;
+    }
+    String sub = null;
+    for (int i = 1; i <= str.length(); i++) {
+      sub = str.substring(0, i);
+      if (dict.contains(sub)) {
+        String rem = str.substring(i);
+        wordDfs(rem, dict, sol + " " + sub);
+      }
+    }
+  }
 
   /* [Prob 516] Longest Palindromic Subsequence
 	* Given a string s, find the longest palindromic subsequence's length in s.

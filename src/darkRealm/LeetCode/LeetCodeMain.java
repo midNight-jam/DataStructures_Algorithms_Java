@@ -60,8 +60,9 @@ public class LeetCodeMain {
 //    testMostFrequentSum();
 //    testGrayCode();
 //    testFrequencySort();
-    testWordBreak();
+//    testWordBreak();
 //    testLongestPalindromicSubsequence();
+    testWordBreakSequence();
   }
 
   public static void testAddTwoNumbers() {
@@ -577,12 +578,17 @@ public class LeetCodeMain {
   }
 
   public static void testWordBreak() {
-    String str = "leetcoder";
+//    String str = "leetcoder";
+//    List<String> dict = new ArrayList<>();
+//    dict.add("leet");
+//    dict.add("code");
+//    dict.add("coder");
+
+    String str = "catsanddog";
     List<String> dict = new ArrayList<>();
-    dict.add("leet");
-    dict.add("code");
-    dict.add("coder");
-//
+    dict.add("cat");
+    dict.add("sand");
+    dict.add("dog");
 //    String str = "Iamace";
 //    List<String> dict = new ArrayList<>();
 //    dict.add("I");
@@ -616,6 +622,69 @@ public class LeetCodeMain {
     boolean res = LC_Prob_Med2.wordBreak(str, dict);
     System.out.println(" " + (System.currentTimeMillis() - start));
     System.out.println(" Res : " + res + " str : " + str + " Dict : " + dict);
+  }
+
+  public static void testWordBreakSequence() {
+//    String str = "leetcoder";
+//    List<String> dict = new ArrayList<>();
+//    dict.add("leet");
+//    dict.add("code");
+//    dict.add("coder");
+
+//    String str = "catsanddog";
+//    String str = "catsanddogstop";
+//    String str = "catsanddogstopz";
+//    String str = "catsanddogs";
+//    String str = "catsanddog";
+//    String str = "catanddog";
+//    String str = "catsand";
+//    String str = "catand";
+//    String str = "cat";
+//    String str = "ca";
+//    String str = "c";
+//    String str = "";
+    String str = null;
+    List<String> dict = new ArrayList<>();
+    dict.add("cat");
+    dict.add("sand");
+    dict.add("dog");
+    dict.add("dogs");
+    dict.add("and");
+    dict.add("top");
+    dict.add("stop");
+    dict.add("cats");
+//    String str = "Iamace";
+//    List<String> dict = new ArrayList<>();
+//    dict.add("I");
+//    dict.add("a");
+//    dict.add("am");
+//    dict.add("ace");
+//
+//    String str = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
+//        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
+//    String str = "aaaabaaaaaa";
+//    List<String> dict = new ArrayList<>();
+//    dict.add("b");
+//    dict.add("a");
+//    dict.add("aa");
+//    dict.add("aaa");
+//    dict.add("aaaa");
+//    dict.add("aaaaa");
+//    dict.add("aaaaaa");
+//    dict.add("aaaaaaa");
+//    dict.add("aaaaaaaa");
+//    dict.add("aaaaaaaaa");
+//    dict.add("aaaaaaaaaa");
+//
+//    String str = "bb";
+//    List<String> dict = new ArrayList<>();
+//    dict.add("b");
+//    dict.add("a");
+//    dict.add("bbb");
+//    dict.add("bbbb");
+    List<String> res = LC_Prob_Med2.wordBreakAll(str, dict);
+    System.out.println(" str : " + str + " Dict : " + dict);
+    System.out.println(" Res : " + res );
   }
 
   public static void testLongestPalindromicSubsequence() {
