@@ -289,6 +289,43 @@ public class LC_Prob_Med2 {
     }
     return subsets;
   }
+  /* [Prob] Given a collection of integers that might contain duplicates, nums, return all possible subsets
+Note: The solution set must not contain duplicate subsets.
+For example,
+If nums = [1,2,2], a solution is:
+[
+  [2],
+  [1],
+  [1,2,2],
+  [2,2],
+  [1,2],
+  []
+]
+  * */
+  public static List<List<Integer>> subSetII(int[] arr) {
+    Map<String, List<Integer>> map = new HashMap<>();
+    List<Integer> dummy = new ArrayList<>();
+    map.put(dummy.toString(),dummy);
+    if (arr == null) return new ArrayList<>(map.values());
+    String key;
+    int setSize = (int) Math.pow(2, arr.length);
+    Arrays.sort(arr);
+    for (int i = 0; i < setSize; i++) {
+      int index = 0;
+      int j = i;
+      List<Integer> set = new ArrayList<>();
+      while (j != 0) {
+        if ((j & 1) == 1) {
+          set.add(arr[index]);
+        }
+        index++;
+        j = j >> 1;
+      }
+      key = set.toString();
+      if (!map.containsKey(key))  map.put(key, new ArrayList<>(set));
+    }
+    return new ArrayList<>(map.values());
+  }
 
   /*  [Prob 396] Rotate Function
    * Given an array of integers A and let n to be its length. Assume Bk to be an array obtained by rotating the array
@@ -730,7 +767,8 @@ public class LC_Prob_Med2 {
     Map<String, List<String>> subResMap = new HashMap<>();
     return wordBreakAll(str, wordDict, subResMap);
   }
-  private static List<String> wordBreakAll(String str, List<String> dict, Map<String, List<String>> subResMap ) {
+
+  private static List<String> wordBreakAll(String str, List<String> dict, Map<String, List<String>> subResMap) {
     if (subResMap.containsKey(str)) return subResMap.get(str);
     List<String> subList = new ArrayList<>();
     if (dict.contains(str)) subList.add(str);
@@ -797,4 +835,5 @@ public class LC_Prob_Med2 {
     }
     return dp[0][str.length() - 1];
   }
+
 }

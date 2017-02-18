@@ -50,6 +50,7 @@ public class LeetCodeMain {
 //    testPascalsTriangle();
 //    testThirdMaximum();
 //    testSubsets();
+    testSubsetsII();
 //    testRotateFunction();
 //    testNumberOfIslands();
 //    testWordLadder();
@@ -62,7 +63,7 @@ public class LeetCodeMain {
 //    testFrequencySort();
 //    testWordBreak();
 //    testLongestPalindromicSubsequence();
-    testWordBreakSequence();
+//    testWordBreakSequence();
   }
 
   public static void testAddTwoNumbers() {
@@ -441,8 +442,20 @@ public class LeetCodeMain {
   }
 
   public static void testSubsets() {
-    int[] arr = new int[]{1, 2, 3};
+//    int[] arr = new int[]{1, 2, 3};
+    int[] arr = new int[]{1, 2, 2};
     List<List<Integer>> res = LC_Prob_Med2.subSet(arr);
+    System.out.println(" Arr : " + Arrays.toString(arr));
+    System.out.println(" Subsets : " + res);
+  }
+
+  public static void testSubsetsII() {
+//    int[] arr = new int[]{1, 2, 2};
+    int[] arr = new int[]{4,4,4,1,4};
+//    int[] arr = new int[]{1,2,3};
+//    int[] arr = new int[]{1,2,3,4,5};
+//    int[] arr = new int[]{1, 2, 2, 3 ,4};
+    List<List<Integer>> res = LC_Prob_Med2.subSetII(arr);
     System.out.println(" Arr : " + Arrays.toString(arr));
     System.out.println(" Subsets : " + res);
   }
@@ -684,7 +697,7 @@ public class LeetCodeMain {
 //    dict.add("bbbb");
     List<String> res = LC_Prob_Med2.wordBreakDriver(str, dict);
     System.out.println(" str : " + str + " Dict : " + dict);
-    System.out.println(" Res : " + res );
+    System.out.println(" Res : " + res);
   }
 
   public static void testLongestPalindromicSubsequence() {
