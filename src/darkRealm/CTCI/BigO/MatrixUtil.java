@@ -80,7 +80,7 @@ public class MatrixUtil {
   }
 
   //
-  public static int searchSortedMatrix(int [][]matrix, int target) {
+  public static int searchSortedMatrix(int[][] matrix, int target) {
     if (matrix == null || matrix.length < 1 || matrix[0].length < 1) {
       return Integer.MIN_VALUE;
     }
@@ -100,13 +100,15 @@ public class MatrixUtil {
   }
 
 
-  public static String getPrintableMatrix(int[][] m) {
-    int rows = m.length;
-    int columns = m[0].length;
+  public static String getPrintableMatrix(int[][] matrix) {
+    if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
+      return "";
+    int rows = matrix.length;
+    int columns = matrix[0].length;
     StringBuffer string = new StringBuffer();
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < columns; j++) {
-        string.append(" " + m[i][j]);
+        string.append(" " + matrix[i][j]);
       }
       System.out.println("");
       string.append("\n");
@@ -128,13 +130,10 @@ public class MatrixUtil {
         temp = matrix[swapLevel][j];
         // left to top
         matrix[swapLevel][j] = matrix[levels - j - 1][swapLevel];
-
         // bottom to left
         matrix[levels - j - 1][swapLevel] = matrix[levels - swapLevel - 1][levels - j - 1];
-
         // right to bottom
         matrix[levels - swapLevel - 1][levels - j - 1] = matrix[j][levels - swapLevel - 1];
-
         // top to right
         matrix[j][levels - swapLevel - 1] = temp;
       }

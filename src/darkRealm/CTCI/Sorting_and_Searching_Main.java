@@ -53,11 +53,11 @@ public class Sorting_and_Searching_Main {
 
   public static void testKthLargestElement() {
 //    int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
-    int[] arr = new int[]{2,3,1};
-    int k  = 3;
-    int kth = QuickSortUtil.kthLargestElement(arr, 0, arr.length - 1, k);
+    int[] arr = new int[]{2, 3, 1};
+    int k = 3;
+    //int kth = QuickSortUtil.kthLargestElement(arr, 0, arr.length - 1, k);
     System.out.println("Array : " + Arrays.toString(arr));
-    System.out.println(k+" Kth largest : " + kth);
+    //System.out.println(k + " Kth largest : " + kth);
   }
 
   public static void testSearchRotatedArray() {
@@ -135,7 +135,7 @@ public class Sorting_and_Searching_Main {
 //    int[] arr = new int[]{3, 1, 0};
     int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
 
-        QuickSortUtil.quicksort(arr, 0, arr.length-1);
+    QuickSortUtil.quicksort(arr, 0, arr.length - 1);
 //    QuickSortUtil.quicksort(arr, 0, arr.length - 1);
     System.out.println("Arr : " + Arrays.toString(arr));
   }
@@ -152,5 +152,16 @@ public class Sorting_and_Searching_Main {
     int[] arr = new int[]{16341, 20101, 801, 33101, 26440};
     arr = RadixSortUtil.radixSort(arr, 5);
     System.out.println("Arr : " + Arrays.toString(arr));
+  }
+
+  public static void testFindMinInRotatedArray() {
+//    int[] arr = new int[]{0, 1, 2, 3, 4, 5};
+//    int[] arr = new int[]{5, 0, 1, 2, 3, 4};
+//    int[] arr = new int[]{4, 5, 0, 1, 2, 3};
+//    int[] arr = new int[]{3, 4, 5, 0, 1, 2};
+//    int[] arr = new int[]{2, 3, 4, 5, 0, 1};
+    int[] arr = new int[]{1, 2, 3, 4, 5, 0};
+    int res = Searching_Sorting.minimumInRotatedArray(arr, 0, arr.length - 1);
+    System.out.println("Res : " + res + " " + Arrays.toString(arr));
   }
 }

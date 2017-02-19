@@ -638,4 +638,130 @@ public class Arrays_and_Strings {
     }
     return true;
   }
+
+  public static void minLenUnSorted(int[] arr) {
+    int start, end;
+    start = end = -1;
+
+    for (int i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        start = i + 1;
+        break;
+      }
+    }
+
+    for (int i = arr.length - 1; i > 0; i--) {
+      if (arr[i] < arr[i - 1]) {
+        end = i - 1;
+        break;
+      }
+    }
+
+    if (start > end) {
+      int t = start;
+      start = end;
+      end = t;
+    }
+    int maxR = Integer.MIN_VALUE;
+    int minR = Integer.MAX_VALUE;
+    // get the max from the range
+    for (int k = start; k <= end; k++) {
+      if (arr[k] > maxR) {
+        maxR = arr[k];
+      }
+      if (arr[k] < minR) {
+        minR = arr[k];
+      }
+    }
+
+    int RStart = -1;
+    // 1st index fro minR
+    for (int i = 0; i < arr.length - 1; i++) {
+      if (arr[i] <= minR && minR <= arr[i + 1]) {
+        RStart = i + 1;
+        break;
+      }
+    }
+
+    // 1st index for maxR
+    int REnd = -1;
+    for (int i = arr.length - 1; i > 1; i--) {
+      if (arr[i] >= maxR && maxR >= arr[i - 1]) {
+        REnd = i - 1;
+        break;
+      }
+    }
+    System.out.println("is it working Rs - " + RStart + "  Re- " + REnd);
+  }
+
+  public static String getTime(int a, int b, int c, int d) {
+
+    ArrayList<Integer> nos = new ArrayList<>();
+    nos.add(a);
+    nos.add(b);
+    nos.add(c);
+    nos.add(d);
+    nos.sort(new Comparator<Integer>() {
+      @Override
+      public int compare(Integer o1, Integer o2) {
+        return o1 - o2;
+      }
+    });
+    // get the max between 0-2
+    Integer h1 = -1;
+    for (int i = 0; i < nos.size(); i++) {
+      int temp = nos.get(i);
+      if (temp > h1 && temp < 3) {
+        h1 = temp;
+      }
+    }
+
+    if (h1 == -1) {
+      return "Error";
+    }
+    nos.remove(h1);
+    // any between 0-9
+    Integer h2 = -1;
+    for (int i = 0; i < nos.size(); i++) {
+      int temp = nos.get(i);
+      if (h1 == 2 && temp < 4 && temp > h2) {
+        h2 = temp;
+      } else if (h1 == 0 || h1 == 1 && (temp > h2)) {
+        h2 = temp;
+      }
+    }
+    if (h2 == -1) {
+      return "Error";
+    }
+    nos.remove(h2);
+
+    // any between 0-5
+    Integer m1 = -1;
+    for (int i = 0; i < nos.size(); i++) {
+      int temp = nos.get(i);
+      if (temp > m1 && temp < 6) {
+        m1 = temp;
+      }
+    }
+
+    if (m1 == -1) {
+      return "Error";
+    }
+    nos.remove(m1);
+
+    String time = "";
+    time += h1;
+    time += h2;
+    time += ":";
+    time += m1;
+    time += nos.get(0);
+
+    System.out.println("somes " + time);
+
+    // get a no between 0-1-2 & get max, if not return Error
+    // get the next number should be max from 0-9
+    // get the third no between 0-5 max
+    // add the last remaingin no
+    return time;
+  }
 }

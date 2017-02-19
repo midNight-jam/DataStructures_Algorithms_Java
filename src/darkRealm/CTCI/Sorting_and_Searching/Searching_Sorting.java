@@ -347,6 +347,7 @@ public class Searching_Sorting {
       }
     }
   }
+
   /*[Prob 10.8]*/
   public static void findDuplicatesMyBitsArray(int[] arr, int memorySize) {
     MyBitArray myBitArray = new MyBitArray(memorySize);
@@ -357,5 +358,24 @@ public class Searching_Sorting {
         myBitArray.set(arr[i]);
       }
     }
+  }
+
+
+  /*  [Prob 153] Find Minimum in Rotated Sorted Array
+  * Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+  * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+  * Find the minimum element.
+  * You may assume no duplicate exists in the array.
+  * */
+  public static int minimumInRotatedArray(int[] arr, int low, int high) {
+    if (arr == null || arr.length == 0) return Integer.MIN_VALUE;
+    int mid;
+    while (low < high) {
+      if (arr[low] < arr[high]) return arr[low];
+      mid = low + (high - low) / 2;
+      if (arr[low] <= arr[mid]) low = mid + 1;
+      else high = mid;
+    }
+    return arr[low];
   }
 }
