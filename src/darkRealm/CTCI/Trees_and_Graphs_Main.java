@@ -417,4 +417,21 @@ public class Trees_and_Graphs_Main {
     boolean res = Trees_and_Graphs.subTreeSum(tree, sum);
     System.out.println(" res : " + res);
   }
+
+
+  public static void testKthSmallest() {
+    Tree tree = new Tree();
+    tree.root = new TNode(5);
+    tree.root.left = new TNode(3);
+    tree.root.right = new TNode(7);
+    tree.root.left.left = new TNode(2);
+    tree.root.left.right = new TNode(3);
+    tree.root.left.left.left = new TNode(1);
+    tree.root.left.left.right = new TNode(3);
+    tree.root.left.right = new TNode(4);
+    tree.root.right.right = new TNode(8);
+    tree.root.right.left = new TNode(6);
+    TNode res = tree.getKthSmallestBST(1);
+    System.out.println(" res : " + res.data);
+  }
 }

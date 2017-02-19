@@ -27,8 +27,8 @@ public class Main {
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-//    doTrees_Graph();
-    doLinkedLsit();
+    doTrees_Graph();
+//    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
@@ -147,7 +147,6 @@ public class Main {
 //    Trees_and_Graphs_Main.testInsertNode();
 //    Trees_and_Graphs_Main.testBuildOrder();
 //    Trees_and_Graphs_Main.testNumberOfBSTSequences();
-
 //    Trees_and_Graphs_Main.testPossibleBSTArrays();
 //    Trees_and_Graphs_Main.testPathsWithSum();
 //    Trees_and_Graphs_Main.testInorderTraversalIterative();
@@ -157,7 +156,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testPathsOfTree();
 //    Trees_and_Graphs_Main.testMinHeight();
 //    Trees_and_Graphs_Main.testSerialize();
-    Trees_and_Graphs_Main.testSubtreeSum();
+//    Trees_and_Graphs_Main.testSubtreeSum();
+    Trees_and_Graphs_Main.testKthSmallest();
   }
 
   private static void doMathUtils() {
