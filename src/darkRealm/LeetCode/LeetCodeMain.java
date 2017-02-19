@@ -50,7 +50,7 @@ public class LeetCodeMain {
 //    testPascalsTriangle();
 //    testThirdMaximum();
 //    testSubsets();
-    testSubsetsII();
+//    testSubsetsII();
 //    testRotateFunction();
 //    testNumberOfIslands();
 //    testWordLadder();
@@ -64,6 +64,7 @@ public class LeetCodeMain {
 //    testWordBreak();
 //    testLongestPalindromicSubsequence();
 //    testWordBreakSequence();
+    testSN();
   }
 
   public static void testAddTwoNumbers() {
@@ -451,7 +452,7 @@ public class LeetCodeMain {
 
   public static void testSubsetsII() {
 //    int[] arr = new int[]{1, 2, 2};
-    int[] arr = new int[]{4,4,4,1,4};
+    int[] arr = new int[]{4, 4, 4, 1, 4};
 //    int[] arr = new int[]{1,2,3};
 //    int[] arr = new int[]{1,2,3,4,5};
 //    int[] arr = new int[]{1, 2, 2, 3 ,4};
@@ -705,5 +706,38 @@ public class LeetCodeMain {
     String str = "cbbd";
     int res = LC_Prob_Med2.longestPalidromicSubsequence(str);
     System.out.println("Res : " + res + " Str : " + str);
+  }
+
+  public static void testSN() {
+//    char[][] matrix = null;
+//    char[][] matrix = new char[][]{};
+//    char[][] matrix = new char[][]{{}};
+//    char[][] matrix = new char[][]{{'a','b'}};
+//    char[][] matrix = new char[][]{{'a','b','c'}};
+//    char[][] matrix = new char[][]{{'a','b','c','d'}};
+//    char[][] matrix = new char[][]{
+//        {'a','b','c','d'},
+//        {'a','c','b','d'},
+//        {'a','d','c','b'},
+//        {'a','b','c','z'},
+//    };
+
+//    char[][] matrix = new char[][]{
+//        {'a','b'},
+//        {'e','f'}
+//    };
+//    char[][] matrix = new char[][]{
+//        {'a','b','c'},
+//        {'d','e','f'},
+//        {'g','h','i'}
+//    };
+    char[][] matrix = new char[][]{
+        {'a','b','c','d'},
+        {'e','f','g','h'},
+        {'i','j','k','l'},
+        {'m','n','o','z'},
+    };
+    String res = LC_Prob_Med2.shortestPath(matrix, 'n', 'd');
+    System.out.println(" Res : " + res);
   }
 }

@@ -289,6 +289,7 @@ public class LC_Prob_Med2 {
     }
     return subsets;
   }
+
   /* [Prob] Given a collection of integers that might contain duplicates, nums, return all possible subsets
 Note: The solution set must not contain duplicate subsets.
 For example,
@@ -305,7 +306,7 @@ If nums = [1,2,2], a solution is:
   public static List<List<Integer>> subSetII(int[] arr) {
     Map<String, List<Integer>> map = new HashMap<>();
     List<Integer> dummy = new ArrayList<>();
-    map.put(dummy.toString(),dummy);
+    map.put(dummy.toString(), dummy);
     if (arr == null) return new ArrayList<>(map.values());
     String key;
     int setSize = (int) Math.pow(2, arr.length);
@@ -322,7 +323,7 @@ If nums = [1,2,2], a solution is:
         j = j >> 1;
       }
       key = set.toString();
-      if (!map.containsKey(key))  map.put(key, new ArrayList<>(set));
+      if (!map.containsKey(key)) map.put(key, new ArrayList<>(set));
     }
     return new ArrayList<>(map.values());
   }
@@ -444,8 +445,8 @@ If nums = [1,2,2], a solution is:
   *   return its length 5.
   *
   *   A) Would use Bidirectinal BFS while keeoing the nodes of the most recent levels from both the ends will terminate
-  *   when we find any one word os found in most recent level from other side.
-  *   Complexity N/2 * maxBreadth(the nodes on the level) wordLength * 26
+  *   when we find any one word os found in most recent dist from other side.
+  *   Complexity N/2 * maxBreadth(the nodes on the dist) wordLength * 26
   * */
   public static int wordLadder(String start, String end, List<String> dictionary) {
     if (start == null || end == null || start.equals(end) || !dictionary.contains(end)) {
@@ -470,7 +471,7 @@ If nums = [1,2,2], a solution is:
         headSet = endSet;
         endSet = set;
       }
-      HashSet<String> temp = new HashSet<String>(); /// this is required to store nodes of only this level, we dont need to
+      HashSet<String> temp = new HashSet<String>(); /// this is required to store nodes of only this dist, we dont need to
       // carry nodes of other levels as we only need them for checking is visited or not, and for that purpose they are already in
       //visited set
       for (String word : headSet) {
@@ -836,4 +837,67 @@ If nums = [1,2,2], a solution is:
     return dp[0][str.length() - 1];
   }
 
+
+  public static String shortestPath(char[][] matrix, char a, char b) {
+    if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return "";
+    int startR, startC;
+    startR = startC = 0;
+    boolean found = false;
+    char toSearch = '\u0000';
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[0].length; j++) {
+        if (matrix[i][j] == a || matrix[i][j] == b) {
+          startR = i;
+          startC = j;
+          found = true;
+          toSearch = matrix[i][j] == a ? b : a;
+          break;
+        }
+      }
+      if (found) break;
+    }
+    return found ? bfsShortestPath(matrix, startR, startC, toSearch) : "";
+  }
+
+
+  private static String bfsShortestPath(char[][] matrix, int startR, int startC, char toSearch) {
+    boolean[][] visited = new boolean[matrix.length][matrix[0].length];
+    int[] rowNeighbours = new int[]{-1, -1, -1, 0, 1, 1, 1, 0};
+    int[] colNeighbours = new int[]{-1, 0, 1, 1, 1, 0, -1, -1};
+    Queue<QueNode> queue = new LinkedList<>();
+    queue.add(new QueNode(0, startR, startC,matrix[startR][startC]+""));
+    QueNode trav;
+    while (!queue.isEmpty()) {
+      trav = queue.remove();
+      visited[trav.row][trav.col] = true;
+      if (toSearch == matrix[trav.row][trav.col]) {
+        return trav.path;
+      }
+      int eRow, eCol;
+      for (int i = 0; i < rowNeighbours.length; i++) {
+        eRow = trav.row + rowNeighbours[i];
+        eCol = trav.col + colNeighbours[i];
+        if (isSafe(matrix, eRow, eCol, visited))
+          queue.add(new QueNode(trav.dist + 1, eRow, eCol, trav.path +" "+matrix[eRow][eCol]));
+      }
+    }
+    return "";
+  }
+
+  private static boolean isSafe(char[][] matrix, int r, int c, boolean[][] visited) {
+    return (r > -1 && r < matrix.length && c > -1 && c < matrix[0].length && !visited[r][c]);
+  }
+
+  private static class QueNode {
+    int dist;
+    int row;
+    int col;
+    String path;
+    QueNode(int l, int r, int c, String p) {
+      dist = l;
+      row = r;
+      col = c;
+      path = p;
+    }
+  }
 }
