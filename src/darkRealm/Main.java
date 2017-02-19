@@ -28,12 +28,12 @@ public class Main {
 //    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
-//    doLinkedLsit();
+    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-    doLeetCode();
+//    doLeetCode();
 //    doMatrix();
   }
 
@@ -311,7 +311,8 @@ public class Main {
 //    LinkedList_Main.testPalindrome();
 //    LinkedList_Main.testIntersection();
 //    LinkedList_Main.testSumListNatural();
-    LinkedList_Main.testReverseMid();
+    LinkedList_Main.testSumListII();
+//    LinkedList_Main.testReverseMid();
 //    LinkedList_Main.testSumList();
 //    LinkedList_Main.testPartition();
 //		LinkedList_Main.testMergeTwoList();
@@ -421,6 +422,4 @@ public class Main {
     int res = MatrixUtil.searchSortedMatrix(matrix, 12);
     System.out.println(" Res : " + res);
   }
-
-
 }

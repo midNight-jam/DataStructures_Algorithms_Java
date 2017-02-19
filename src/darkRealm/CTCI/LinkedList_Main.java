@@ -124,6 +124,51 @@ public class LinkedList_Main {
     System.out.println(" r : " + res);
   }
 
+
+  public static void testSumListII() {
+    //7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
+//    Node n0 = new Node(7);
+//    Node n1 = new Node(2);
+//    Node n2 = new Node(4);
+//    Node n3 = new Node(3);
+//    n0.next = n1;
+//    n1.next = n2;
+//    n2.next = n3;
+//    LinkedList L1 = new LinkedList();
+//    L1.head = n0;
+//
+//    Node n4 = new Node(5);
+//    Node n5 = new Node(6);
+//    Node n6 = new Node(4);
+//    n4.next = n5;
+//    n5.next = n6;
+//    LinkedList L2 = new LinkedList();
+//    L2.head = n4;
+
+    Node n0 = new Node(1);
+    Node n1 = new Node(0);
+    Node n2 = new Node(0);
+    Node n3 = new Node(1);
+    n0.next = n1;
+    n1.next = n2;
+    n2.next = n3;
+    LinkedList L1 = new LinkedList();
+    L1.head = n0;
+
+    Node n4 = new Node(9);
+    Node n5 = new Node(9);
+    Node n6 = new Node(9);
+    n4.next = n5;
+    n5.next = n6;
+    LinkedList L2 = new LinkedList();
+    L2.head = n4;
+
+    LinkedList res = Linked_List.addTwoNumbers(L1, L2);
+    System.out.println(" a : " + L1);
+    System.out.println(" b : " + L2);
+    System.out.println(" r : " + res);
+  }
+
   public static void testSumListNatural() {
     Node n0 = new Node(1);
     Node n1 = new Node(1);
