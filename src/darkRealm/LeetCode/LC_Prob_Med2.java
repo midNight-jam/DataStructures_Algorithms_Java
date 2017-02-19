@@ -837,7 +837,6 @@ If nums = [1,2,2], a solution is:
     return dp[0][str.length() - 1];
   }
 
-
   public static String shortestPath(char[][] matrix, char a, char b) {
     if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return "";
     int startR, startC;
@@ -858,7 +857,6 @@ If nums = [1,2,2], a solution is:
     }
     return found ? bfsShortestPath(matrix, startR, startC, toSearch) : "";
   }
-
 
   private static String bfsShortestPath(char[][] matrix, int startR, int startC, char toSearch) {
     boolean[][] visited = new boolean[matrix.length][matrix[0].length];

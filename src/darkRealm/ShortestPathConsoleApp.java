@@ -60,7 +60,6 @@ public class ShortestPathConsoleApp {
     return found ? bfsShortestPath(matrix, startR, startC, toSearch) : "";
   }
 
-
   private static String bfsShortestPath(char[][] matrix, int startR, int startC, char toSearch) {
     boolean[][] visited = new boolean[matrix.length][matrix[0].length];
     int[] rowNeighbours = new int[]{-1, -1, -1, 0, 1, 1, 1, 0};

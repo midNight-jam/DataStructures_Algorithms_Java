@@ -262,7 +262,7 @@ public class LC_Prob_Med {
       // but also an over flow can occur if adding the last digit will take us ahead of overflow
       // to check this we check if the last digit is bigger than the last digit of MAX_VALUE then there is
       // an overflow
-      if (Integer.MAX_VALUE / 10 <= total && Integer.MAX_VALUE %10 < digit)
+      if (Integer.MAX_VALUE / 10 <= total && Integer.MAX_VALUE % 10 < digit)
         return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
       total = 10 * total + digit;
       index++;
@@ -953,5 +953,23 @@ public class LC_Prob_Med {
     return maxProfit;
   }
 
-
+  /*  [Prob 121] Best Time to Buy and Sell Stock
+    * Say you have an array for which the ith element is the price of a given stock on day i.
+    *  You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times).
+    *  However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
+    *  -2, 2, 4, 1, 2, 3, 5, 6  MaxP = 11 -2 to 4 + 1 to 6
+    *  */
+  public static int maxProfitII(int[] prices) {
+    if (prices == null || prices.length < 2) return 0;
+    int maxP = 0;
+    // this is the explanation
+    // a<= b <= c <= d;
+    // d - a = (b - a) + (c - b) + (d - c)
+    // d - a = b -a + c -b + d -c
+    // d - a = d - a
+    for (int i = 1; i < prices.length; i++)
+      if (prices[i] > prices[i - 1])
+        maxP += prices[i] - prices[i - 1];
+    return maxP;
+  }
 }
