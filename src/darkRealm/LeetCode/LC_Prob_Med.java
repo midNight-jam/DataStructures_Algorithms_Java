@@ -860,6 +860,29 @@ public class LC_Prob_Med {
     return minSum;
   }
 
+  /*  [259] 3SumSmaller
+  * Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target.
+  * Return the sum of the three integers. You may assume that each input would have exactly one solution.
+  * For example, given array S = {-1 2 1 -4}, and target = 1.
+  * The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+  * */
+  public static int threeSumSmaller(int[] arr, int target) {
+    Arrays.sort(arr);
+    int count = 0;
+    int low, high;
+    for (int i = 0; i < arr.length - 2; i++) {
+      low = i + 1;
+      high = arr.length - 1;
+      while (low < high) {
+        if (arr[i] + arr[low] + arr[high] < target) {
+          count += high - low;
+          low++;
+        } else high--;
+      }
+    }
+    return count;
+  }
+
   /*  [239] Sliding Window Maximum
    *   Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the
    *   very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
