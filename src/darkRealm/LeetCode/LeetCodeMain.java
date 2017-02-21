@@ -26,7 +26,7 @@ public class LeetCodeMain {
 //    testCompareVersion();
 //    testSurroundRegion();
 //    testThreeSum();
-//    testThreeSumClosest();
+    testThreeSumClosest();
 //    testCountingBits();
 //    testCircularLoop();
 //    testDuplicates();
@@ -69,7 +69,7 @@ public class LeetCodeMain {
 //    testMaxProfitIII();
 //    testMaxProfitIV();
 //    testLongestTwoCHarString();
-    testLongestKDistinctString();
+//    testLongestKDistinctString();
 }
 
   public static void testAddTwoNumbers() {
@@ -337,9 +337,11 @@ public class LeetCodeMain {
 
   public static void testThreeSumClosest() {
 //    int[] arr = new int[]{-1, 2, 1, -4};
-    int[] arr = new int[]{0, 0, 0, 0};
+//    int[] arr = new int[]{0, 0, 0, 0};
+    int[] arr = new int[]{0, 1, 2};
+//    int[] arr = new int[]{ 1, -4  };
 //    int[] arr = new int[]{ 1, -4};
-    int target = 1;
+    int target = 3;
     int res = LC_Prob_Med.threeSumClosest(arr, target);
     System.out.println("res : " + res + " Arr : " + Arrays.toString(arr));
   }
