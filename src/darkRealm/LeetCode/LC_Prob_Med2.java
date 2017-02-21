@@ -863,7 +863,7 @@ If nums = [1,2,2], a solution is:
     int[] rowNeighbours = new int[]{-1, -1, -1, 0, 1, 1, 1, 0};
     int[] colNeighbours = new int[]{-1, 0, 1, 1, 1, 0, -1, -1};
     Queue<QueNode> queue = new LinkedList<>();
-    queue.add(new QueNode(0, startR, startC,matrix[startR][startC]+""));
+    queue.add(new QueNode(0, startR, startC, matrix[startR][startC] + ""));
     QueNode trav;
     while (!queue.isEmpty()) {
       trav = queue.remove();
@@ -876,7 +876,7 @@ If nums = [1,2,2], a solution is:
         eRow = trav.row + rowNeighbours[i];
         eCol = trav.col + colNeighbours[i];
         if (isSafe(matrix, eRow, eCol, visited))
-          queue.add(new QueNode(trav.dist + 1, eRow, eCol, trav.path +" "+matrix[eRow][eCol]));
+          queue.add(new QueNode(trav.dist + 1, eRow, eCol, trav.path + " " + matrix[eRow][eCol]));
       }
     }
     return "";
@@ -891,11 +891,54 @@ If nums = [1,2,2], a solution is:
     int row;
     int col;
     String path;
+
     QueNode(int l, int r, int c, String p) {
       dist = l;
       row = r;
       col = c;
       path = p;
     }
+  }
+
+  /*  [Prob 159] Longest Substring with At Most Two Distinct Characters
+  *   Given a string, find the length of the longest substring T that contains at most 2 distinct characters.
+  *   For example, Given s = “eceba”,
+  *   T is "ece" which its length is 3.
+  * */
+  public static int lengthOfLongestSubstringTwoDistinct(String str) {
+    if (str == null || str.length() == 0) return 0;
+    HashMap<Character, Integer> map = new HashMap<>();
+    String sub, longest = "";
+    char c;
+    int min, max, start = 0;
+    char minCh;
+    minCh = '\u0000';
+    for (int i = 0; i < str.length(); i++) {
+      c = str.charAt(i);
+      if (map.containsKey(c) || (!map.containsKey(c) && map.size() <= 1)) map.put(c, i);
+      else {
+        min = Integer.MAX_VALUE;
+        max = Integer.MIN_VALUE;
+        for (Character k : map.keySet()) {
+          if (map.get(k) < min) {
+            minCh = k;
+            min = map.get(k);
+          }
+          if (map.get(k) > max) {
+            max = map.get(k);
+          }
+        }
+        sub = str.substring(start, max + 1);
+        if (sub.length() > longest.length()) longest = sub;
+        map.remove(minCh);
+        map.put(c, i);
+//        start = max;
+        start = min + 1;
+      }
+    }
+    sub = str.substring(start);
+    System.out.println("Sub : " + sub);
+    System.out.println("Longes : " + longest);
+    return longest.length() > sub.length() ? longest.length() : sub.length();
   }
 }

@@ -67,7 +67,8 @@ public class LeetCodeMain {
 //    testSN();
 //    testMaxProfitII();
 //    testMaxProfitIII();
-    testMaxProfitIV();
+//    testMaxProfitIV();
+    testLongestTwoCHarString();
   }
 
   public static void testAddTwoNumbers() {
@@ -404,7 +405,7 @@ public class LeetCodeMain {
     int[] arr = new int[]{1, 4, 5, 7, 6, 3, 2, 9};
 //    int res = LC_Prob_Med.maxProfitIIIDP(arr);
     int res = LC_Prob_Med.maxProfitIII(arr);
-    System.out.println(Arrays.toString(arr)+  "  prices : " + "res : " + res );
+    System.out.println(Arrays.toString(arr) + "  prices : " + "res : " + res);
   }
 
   public static void testMaxProfitIV() {
@@ -770,12 +771,19 @@ public class LeetCodeMain {
 //        {'g','h','i'}
 //    };
     char[][] matrix = new char[][]{
-        {'a','b','c','d'},
-        {'e','f','g','h'},
-        {'i','j','k','l'},
-        {'m','n','o','z'},
+        {'a', 'b', 'c', 'd'},
+        {'e', 'f', 'g', 'h'},
+        {'i', 'j', 'k', 'l'},
+        {'m', 'n', 'o', 'z'},
     };
     String res = LC_Prob_Med2.shortestPath(matrix, 'n', 'd');
     System.out.println(" Res : " + res);
+  }
+
+  public static void testLongestTwoCHarString() {
+//    String str = "eeba";
+    String str = "eebabbebe";
+    int res = LC_Prob_Med2.lengthOfLongestSubstringTwoDistinct(str);
+    System.out.println(" Res : " + res + " Str : " + str);
   }
 }
