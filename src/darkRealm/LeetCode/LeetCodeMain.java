@@ -66,8 +66,8 @@ public class LeetCodeMain {
 //    testWordBreakSequence();
 //    testSN();
 //    testMaxProfitII();
-    testMaxProfitIII();
-
+//    testMaxProfitIII();
+    testMaxProfitIV();
   }
 
   public static void testAddTwoNumbers() {
@@ -402,8 +402,22 @@ public class LeetCodeMain {
 //    int[] arr = new int[]{2, 4, 1};
 //    int[] arr = new int[]{-2, 2, 4, 1, 2, 3, 5, 6};
     int[] arr = new int[]{1, 4, 5, 7, 6, 3, 2, 9};
-    int res = LC_Prob_Med.maxProfitIIIDP(arr);
+//    int res = LC_Prob_Med.maxProfitIIIDP(arr);
+    int res = LC_Prob_Med.maxProfitIII(arr);
     System.out.println(Arrays.toString(arr)+  "  prices : " + "res : " + res );
+  }
+
+  public static void testMaxProfitIV() {
+//    int[] arr = new int[]{7, 1, 5, 3, 6, 4};
+//    int[] arr = new int[]{7, 6, 4, 3, 1};
+//    int[] arr = new int[]{7, 6, 4, 3, 1, 5, 7};
+//    int[] arr = new int[]{2, 4, 1};
+//    int[] arr = new int[]{-2, 2, 4, 1, 2, 3, 5, 6};
+//    int[] arr = new int[]{1, 4, 5, 7, 6, 3, 2, 9};
+    int[] arr = new int[]{2, 5, 7, 1, 4, 3, 1, 3};
+    int k = 3;
+    int res = LC_Prob_Med.maxProfitFinal(arr, k);
+    System.out.println(Arrays.toString(arr) + "  prices : " + "res : " + res);
   }
 
   public static void testLetterCombinations() {

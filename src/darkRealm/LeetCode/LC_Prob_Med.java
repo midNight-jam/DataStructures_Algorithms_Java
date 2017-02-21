@@ -1005,4 +1005,32 @@ public class LC_Prob_Med {
 
     return max;
   }
+
+  public static int maxProfitIII(int[] prices) {
+    if (prices == null || prices.length == 0) return 0;
+    int buy1, sell1, buy2, sell2;
+    buy1 = buy2 = Integer.MIN_VALUE;
+    sell1 = sell2 = 0;
+    for (int i = 0; i < prices.length; i++) {
+      sell2 = Math.max(sell2, buy2 + prices[i]);
+      buy2 = Math.max(buy2, sell1 - prices[i]);
+      sell1 = Math.max(sell1, buy1 + prices[i]);
+      buy1 = Math.max(buy1, -prices[i]);
+    }
+    return sell2;
+  }
+
+  public static int maxProfitFinal(int[] prices, int k) {
+    if (prices == null || prices.length == 0) return 0;
+    int[][] DP = new int[k + 1][prices.length];
+    int maxDiff = 0;
+    for (int i = 1; i < DP.length; i++) {
+      maxDiff = -prices[0];
+      for (int j = 1; j < DP[0].length; j++) {
+        DP[i][j] = Math.max(DP[i][j - 1], prices[j] + maxDiff);
+        maxDiff = Math.max(maxDiff, DP[i-1][j] - prices[j]);
+      }
+    }
+    return DP[k][prices.length - 1];
+  }
 }
