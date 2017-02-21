@@ -378,4 +378,24 @@ public class Searching_Sorting {
     }
     return arr[low];
   }
+
+  /*  [Prob 154] Find Minimum in Rotated Sorted Array II
+  * Follow up for "Find Minimum in Rotated Sorted Array":
+  * What if duplicates are allowed?
+  * Would this affect the run-time complexity? How and why?
+  * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+  * Find the minimum element.
+  * You may assume no duplicate exists in the array.
+  * */
+  public static int minimumInRotatedArrayII(int[] arr, int low, int high) {
+    if (arr == null || arr.length == 0) return Integer.MIN_VALUE;
+    int mid;
+    while (low < high) {
+      mid = low + (high - low) / 2;
+      if (arr[mid] > arr[high]) low = mid + 1;
+      else if (arr[mid] < arr[high]) high = mid;
+      else high--;
+    }
+    return arr[low];
+  }
 }

@@ -22,7 +22,7 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-    doSortingAndSearching();
+//    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
 //    doLinkedLsit();
@@ -30,7 +30,7 @@ public class Main {
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-//    doLeetCode();
+    doLeetCode();
 //    doMatrix();
   }
 
@@ -235,7 +235,8 @@ public class Main {
 //    Sorting_and_Searching_Main.testSortedMerge();
 //    Sorting_and_Searching_Main.testKthSmallestElement();
 //    Sorting_and_Searching_Main.testKthLargestElement();
-    Sorting_and_Searching_Main.testFindMinInRotatedArray();
+//    Sorting_and_Searching_Main.testFindMinInRotatedArray();
+    Sorting_and_Searching_Main.testFindMinInRotatedArrayII();
 //    Sorting_and_Searching_Main.testSearchRotatedArray();
 //    Searching_Sorting.testSortedSearchNoSize();
 //    Sorting_and_Searching_Main.testPeaksValleys();
@@ -290,7 +291,7 @@ public class Main {
 //        {10, 13, 14, 17, 24},
 //        {18, 21, 23, 26, 30}
 //    };
-
+//
     int[][] matrix = new int[][]{
         {1, 5, 9},
         {10, 11, 13},
@@ -311,7 +312,11 @@ public class Main {
 //    };
 //    int res = MatrixUtil.searchRowSortedMatrix(matrix, 12);
 //    int res = MatrixUtil.searchSortedMatrix(matrix, 12);
-    int res = MatrixUtil.kthSmallest(matrix, 6);
+//    int[][] matrix = new int[][]{
+//        {1, 1},
+//        {1, 3}
+//    };
+    int res = MatrixUtil.kthSmallestSortedMatrix(matrix, 6);
     System.out.println(" " + MatrixUtil.getPrintableMatrix(matrix));
     System.out.println(" Res : " + res);
   }

@@ -164,4 +164,22 @@ public class Sorting_and_Searching_Main {
     int res = Searching_Sorting.minimumInRotatedArray(arr, 0, arr.length - 1);
     System.out.println("Res : " + res + " " + Arrays.toString(arr));
   }
+
+  public static void testFindMinInRotatedArrayII() {
+//    int[] arr = new int[]{0, 1, 2, 3, 4, 5};
+//    int[] arr = new int[]{5, 0, 1, 2, 3, 4};
+//    int[] arr = new int[]{4, 5, 0, 1, 2, 3};
+//    int[] arr = new int[]{3, 4, 5, 0, 1, 2};
+//    int[] arr = new int[]{2, 3, 4, 5, 0, 1};
+//    int[] arr = new int[]{1, 2, 3, 4, 5, 0};
+//    int[] arr = new int[]{0, 1, 1, 2, 2};
+//    int[] arr = new int[]{2, 0, 1, 1, 2};
+//    int[] arr = new int[]{2, 2, 0, 1, 1};
+    int[] arr = new int[]{1, 1, 2, 2, 0};
+//    int[] arr = new int[]{0, 1, 1, 1, 1};
+//    int[] arr = new int[]{1, 0, 1, 1, 1};
+//    int[] arr = new int[]{0, 1, 1, 1, 1};
+    int res = Searching_Sorting.minimumInRotatedArrayII(arr, 0, arr.length - 1);
+    System.out.println("Res : " + res + " " + Arrays.toString(arr));
+  }
 }

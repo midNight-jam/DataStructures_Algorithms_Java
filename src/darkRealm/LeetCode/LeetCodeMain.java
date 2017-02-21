@@ -65,7 +65,8 @@ public class LeetCodeMain {
 //    testLongestPalindromicSubsequence();
 //    testWordBreakSequence();
 //    testSN();
-    testMaxProfitII();
+//    testMaxProfitII();
+    testMaxProfitIII();
 
   }
 
@@ -392,6 +393,17 @@ public class LeetCodeMain {
     int[] arr = new int[]{-2, 2, 4, 1, 2, 3, 5, 6};
     int res = LC_Prob_Med.maxProfitII(arr);
     System.out.println("res : " + res + "  prices : " + Arrays.toString(arr));
+  }
+
+  public static void testMaxProfitIII() {
+//    int[] arr = new int[]{7, 1, 5, 3, 6, 4};
+//    int[] arr = new int[]{7, 6, 4, 3, 1};
+//    int[] arr = new int[]{7, 6, 4, 3, 1, 5, 7};
+//    int[] arr = new int[]{2, 4, 1};
+//    int[] arr = new int[]{-2, 2, 4, 1, 2, 3, 5, 6};
+    int[] arr = new int[]{1, 4, 5, 7, 6, 3, 2, 9};
+    int res = LC_Prob_Med.maxProfitIIIDP(arr);
+    System.out.println(Arrays.toString(arr)+  "  prices : " + "res : " + res );
   }
 
   public static void testLetterCombinations() {
