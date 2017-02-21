@@ -68,8 +68,9 @@ public class LeetCodeMain {
 //    testMaxProfitII();
 //    testMaxProfitIII();
 //    testMaxProfitIV();
-    testLongestTwoCHarString();
-  }
+//    testLongestTwoCHarString();
+    testLongestKDistinctString();
+}
 
   public static void testAddTwoNumbers() {
     LinkedList l1 = new LinkedList();
@@ -785,5 +786,17 @@ public class LeetCodeMain {
     String str = "eebabbebe";
     int res = LC_Prob_Med2.lengthOfLongestSubstringTwoDistinct(str);
     System.out.println(" Res : " + res + " Str : " + str);
+  }
+
+  public static void testLongestKDistinctString() {
+//    String str = "eeba";
+//    String str = "kkzzeebabbebezzz";
+    String str = "eebababebbeb";
+    int k = 2;
+//    String str = "a";
+//    int k = 3;
+
+    int res = LC_Prob_Med2.lengthOfLongestSubstringKDistinct(str, k);
+    System.out.println(" KKK Res : " + res + " Str : " + str);
   }
 }

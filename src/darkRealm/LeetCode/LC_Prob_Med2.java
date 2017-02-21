@@ -932,7 +932,6 @@ If nums = [1,2,2], a solution is:
         if (sub.length() > longest.length()) longest = sub;
         map.remove(minCh);
         map.put(c, i);
-//        start = max;
         start = min + 1;
       }
     }
@@ -940,5 +939,29 @@ If nums = [1,2,2], a solution is:
     System.out.println("Sub : " + sub);
     System.out.println("Longes : " + longest);
     return longest.length() > sub.length() ? longest.length() : sub.length();
+  }
+
+  /* [Prob 340] Longest Substring with At Most K Distinct Characters
+  * Given a string, find the length of the longest substring T that contains at most k distinct characters.
+  * For example, Given s = “eceba” and k = 2,
+  * T is "ece" which its length is 3.
+  * */
+  public static int lengthOfLongestSubstringKDistinct(String str, int k) {
+    if (str == null || str.length() == 0 || k < 1) return 0;
+    HashMap<Character, Integer> map = new HashMap<>();
+    int i = 0, left = 0, maxLen = 0;
+    char leftCh, ch;
+    for (; i < str.length(); i++) {
+      ch = str.charAt(i);
+      map.put(ch, map.getOrDefault(ch, 0) + 1);
+      while (map.size() > k) {
+        leftCh = str.charAt(left);
+        map.put(leftCh, map.get(leftCh) - 1);
+        if (map.get(leftCh) == 0) map.remove(leftCh);
+        left++;
+      }
+      maxLen = Math.max(maxLen, i - left + 1);
+    }
+    return maxLen;
   }
 }
