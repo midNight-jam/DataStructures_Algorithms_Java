@@ -6,6 +6,7 @@ import darkRealm.CTCI.LinkedLists.Node;
 import darkRealm.CTCI.Trees_and_Graphs.TNode;
 import darkRealm.CTCI.Trees_and_Graphs.Tree;
 import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
+import darkRealm.LeetCode.Cache.LRU;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,7 +28,7 @@ public class LeetCodeMain {
 //    testSurroundRegion();
 //    testThreeSum();
 //    testThreeSumClosest();
-    testThreeSumSmaller();
+//    testThreeSumSmaller();
 //    testCountingBits();
 //    testCircularLoop();
 //    testDuplicates();
@@ -54,6 +55,7 @@ public class LeetCodeMain {
 //    testSubsetsII();
 //    testRotateFunction();
 //    testNumberOfIslands();
+//    testNumberOfIslandsII();
 //    testWordLadder();
 //    testRegularExpression();
 //    testLongestPalindromeString();
@@ -71,6 +73,7 @@ public class LeetCodeMain {
 //    testMaxProfitIV();
 //    testLongestTwoCHarString();
 //    testLongestKDistinctString();
+    testLRU();
 }
 
   public static void testAddTwoNumbers() {
@@ -538,6 +541,23 @@ public class LeetCodeMain {
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 
+  public static void testNumberOfIslandsII() {
+//    int[][] matrix = new int[][]{{1, 1, 0, 0, 0},
+//        {0, 1, 0, 0, 1},
+//        {1, 0, 0, 1, 1},
+//        {0, 0, 0, 0, 0},
+//        {1, 0, 1, 0, 1}
+//    };
+    int[][] matrix = new int[][]{
+        {1, 0, 1},
+        {1, 0, 0},
+        {1, 0, 1}
+    };
+    List<Integer> islands = LC_Prob_Med2.numIslandsII(1, 1, matrix);
+    System.out.println(" Islands : " + islands);
+    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
+  }
+
   public static void testWordLadder() {
     List<String> dict = new ArrayList<>();
 
@@ -817,5 +837,18 @@ public class LeetCodeMain {
 
     int res = LC_Prob_Med2.lengthOfLongestSubstringKDistinct(str, k);
     System.out.println(" KKK Res : " + res + " Str : " + str);
+  }
+
+  public static void testLRU(){
+    LRU lru = new LRU(2);
+    lru.put(1,1);
+    lru.put(2,2);
+    int res = lru.get(1);
+    lru.put(3,3);
+    res = lru.get(2);
+    lru.put(4,4);
+    res = lru.get(1);
+    res = lru.get(3);
+    res = lru.get(4);
   }
 }

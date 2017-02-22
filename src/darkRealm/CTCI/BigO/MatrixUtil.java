@@ -1,6 +1,5 @@
 package darkRealm.CTCI.BigO;
 
-
 /**
  * Created by Jayam on 9/25/2016.
  */
@@ -79,7 +78,6 @@ public class MatrixUtil {
     return matrix[high / col][high % col] == target ? target : Integer.MIN_VALUE;
   }
 
-  //
   public static int searchSortedMatrix(int[][] matrix, int target) {
     if (matrix == null || matrix.length < 1 || matrix[0].length < 1) {
       return Integer.MIN_VALUE;
@@ -98,7 +96,6 @@ public class MatrixUtil {
     }
     return matrix[row][col] == target ? target : Integer.MIN_VALUE;
   }
-
 
   public static String getPrintableMatrix(int[][] matrix) {
     if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
@@ -164,5 +161,54 @@ public class MatrixUtil {
       }
       i++;
     }
+  }
+
+
+  /*  [Prob 378] Kth Smallest Element in a Sorted Matrix
+  *   Given a n x n matrix where each of the rows and columns are sorted in ascending order,
+  *   find the kth smallest element in the matrix.
+  *   Note that it is the kth smallest element in the sorted order, not the kth distinct element.
+  *   Example:
+  *   matrix = [
+                 [ 1,  5,  9],
+                 [10, 11, 13],
+                 [12, 13, 15]
+              ],
+  *   k = 8,
+  *   return 13.
+  *   Note: You may assume k is always valid, 1 ≤ k ≤ n2.
+  *
+  *   A) we will use binary search, first using the left(left most) nad right (rightmost) number we will calculate a mid
+  *   a mid not necesarrily in the matrix. now we will take each row, and will try to find the count of numbers that are
+  *   smaller than mid and keep adding these small number count. Now after adding all these counts if the count is smaller
+  *   than the asked Kth number then we serach in first half of matrix, else we search in the second half of the matrix.
+  *   And this process continues.
+  *   O(nlog(n)log(N)), n is the number of rows
+  * */
+  public static int kthSmallestSortedMatrix(int[][] matrix, int k) {
+    if (matrix == null || matrix.length == 0 || k > matrix.length * matrix.length) return 0;
+    int n = matrix.length;
+    int left = matrix[0][0];
+    int right = matrix[n - 1][n - 1];
+
+    while (left < right) {
+      int mid = left + (right - left) / 2;
+      int count = 0;
+      for (int i = 0; i < n; i++) {
+        int[] row = matrix[i];
+        int pleft = 0, pright = n;
+        while (pleft < pright) {
+          int pmid = pleft + (pright - pleft) / 2;
+          int val = row[pmid];
+          if (val > mid) pright = pmid;
+          else pleft = pmid + 1;
+        }
+        count += pleft;
+      }
+
+      if (count < k) left = mid + 1;
+      else right = mid;
+    }
+    return left;
   }
 }

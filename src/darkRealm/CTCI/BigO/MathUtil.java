@@ -111,7 +111,9 @@ public class MathUtil {
     return primeCount;
   }
 
-  /* Reverse a number */
+  /* Reverse a number
+  *  return reverse(reverse(321) + reverse(654)) 321--123
+  * */
   public static int reverse(int n) {
     int r, d;
     r = d = 0;
