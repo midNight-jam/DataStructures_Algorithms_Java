@@ -6,6 +6,7 @@ import darkRealm.CTCI.LinkedLists.Node;
 import darkRealm.CTCI.Trees_and_Graphs.TNode;
 import darkRealm.CTCI.Trees_and_Graphs.Tree;
 import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
+import darkRealm.LeetCode.Cache.LFU;
 import darkRealm.LeetCode.Cache.LRU;
 
 import java.util.ArrayList;
@@ -55,7 +56,6 @@ public class LeetCodeMain {
 //    testSubsetsII();
 //    testRotateFunction();
 //    testNumberOfIslands();
-//    testNumberOfIslandsII();
 //    testWordLadder();
 //    testRegularExpression();
 //    testLongestPalindromeString();
@@ -73,8 +73,9 @@ public class LeetCodeMain {
 //    testMaxProfitIV();
 //    testLongestTwoCHarString();
 //    testLongestKDistinctString();
-    testLRU();
-}
+//    testLRU();
+    testLFU();
+  }
 
   public static void testAddTwoNumbers() {
     LinkedList l1 = new LinkedList();
@@ -357,10 +358,10 @@ public class LeetCodeMain {
 //    int[] arr = new int[]{ 1, -4  };
 //    int[] arr = new int[]{ 1, -4};
 
-    int[] arr = new int []{11,-11,-12,-2,-13,-10,-8,-4,-5,-6,-9,14,14,-9,14,6,-11,6,-4,-14,2,-11,13,-5,-13,1,-10,5,3,-1,
-        -11,-5,-2,-10,-6,-5,-13,8,2,-6,-8,-9,3,13,3,-14,-12,-8,-13,-2,8,0,11,14,-3,-15,-15,-4,-13,-4,0,-2,12,-9,13,-5,-7,
-        6,-9,13,14,3,-11,-13,6,-13,-5,10,1,-6,0,-5,5,14,-10,1,-13,-9,1,14,-6,9,-12,8,8,-7,-13,-8,11,3,9,1,6,-2,-9,-2,-5,
-        6,-7,0,-15,-1};
+    int[] arr = new int[]{11, -11, -12, -2, -13, -10, -8, -4, -5, -6, -9, 14, 14, -9, 14, 6, -11, 6, -4, -14, 2, -11, 13, -5, -13, 1, -10, 5, 3, -1,
+        -11, -5, -2, -10, -6, -5, -13, 8, 2, -6, -8, -9, 3, 13, 3, -14, -12, -8, -13, -2, 8, 0, 11, 14, -3, -15, -15, -4, -13, -4, 0, -2, 12, -9, 13, -5, -7,
+        6, -9, 13, 14, 3, -11, -13, 6, -13, -5, 10, 1, -6, 0, -5, 5, 14, -10, 1, -13, -9, 1, 14, -6, 9, -12, 8, 8, -7, -13, -8, 11, 3, 9, 1, 6, -2, -9, -2, -5,
+        6, -7, 0, -15, -1};
     int target = -12;
     int res = LC_Prob_Med.threeSumSmaller(arr, target);
     System.out.println("res : " + res + " Arr : " + Arrays.toString(arr));
@@ -537,23 +538,6 @@ public class LeetCodeMain {
         {1, 0, 1, 0, 1}
     };
     int islands = LC_Prob_Med2.numberOfIslands(matrix);
-    System.out.println(" Islands : " + islands);
-    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
-  }
-
-  public static void testNumberOfIslandsII() {
-//    int[][] matrix = new int[][]{{1, 1, 0, 0, 0},
-//        {0, 1, 0, 0, 1},
-//        {1, 0, 0, 1, 1},
-//        {0, 0, 0, 0, 0},
-//        {1, 0, 1, 0, 1}
-//    };
-    int[][] matrix = new int[][]{
-        {1, 0, 1},
-        {1, 0, 0},
-        {1, 0, 1}
-    };
-    List<Integer> islands = LC_Prob_Med2.numIslandsII(1, 1, matrix);
     System.out.println(" Islands : " + islands);
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
@@ -839,16 +823,30 @@ public class LeetCodeMain {
     System.out.println(" KKK Res : " + res + " Str : " + str);
   }
 
-  public static void testLRU(){
+  public static void testLRU() {
     LRU lru = new LRU(2);
-    lru.put(1,1);
-    lru.put(2,2);
+    lru.put(1, 1);
+    lru.put(2, 2);
     int res = lru.get(1);
-    lru.put(3,3);
+    lru.put(3, 3);
     res = lru.get(2);
-    lru.put(4,4);
+    lru.put(4, 4);
     res = lru.get(1);
     res = lru.get(3);
     res = lru.get(4);
+  }
+
+  public static void testLFU(){
+    LFU lfu = new LFU(2);
+    lfu.put(1,1);
+    lfu.put(2,2);
+    lfu.get(1);
+    lfu.put(3,3);
+    lfu.get(2);
+    lfu.get(3);
+    lfu.put(4,4);
+    lfu.get(1);
+    lfu.get(3);
+    lfu.get(4);
   }
 }
