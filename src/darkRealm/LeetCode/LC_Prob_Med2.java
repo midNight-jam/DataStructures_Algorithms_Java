@@ -449,52 +449,36 @@ If nums = [1,2,2], a solution is:
   *   Complexity N/2 * maxBreadth(the nodes on the dist) wordLength * 26
   * */
   public static int wordLadder(String start, String end, List<String> dictionary) {
-    if (start == null || end == null || start.equals(end) || !dictionary.contains(end)) {
-      return 0;
-    }
-    HashSet<String> headSet = new HashSet<>();
-    HashSet<String> endSet = new HashSet<>();
-    HashSet<String> set;
-    HashSet<String> visited = new HashSet<>();
-
+    if (!dictionary.contains(end)) return 0;
+    Set<String> words = new HashSet<>(dictionary);
+    Set<String> startSet = new HashSet<>(), endSet = new HashSet<>(), next = null;
     int pathLen = 1;
-    headSet.add(start);
-    if (dictionary.contains(start)) {
-      visited.add(start);
-      pathLen++;
-    }
+    startSet.add(start);
     endSet.add(end);
-    set = headSet;
-    while (!headSet.isEmpty() && !endSet.isEmpty()) {
-      if (headSet.size() > endSet.size()) { // swap both as weh to traverse from the opposoite direction now
-        set = headSet;
-        headSet = endSet;
-        endSet = set;
-      }
-      HashSet<String> temp = new HashSet<String>(); /// this is required to store nodes of only this dist, we dont need to
-      // carry nodes of other levels as we only need them for checking is visited or not, and for that purpose they are already in
-      //visited set
-      for (String word : headSet) {
-        char c;
+    words.remove(start);
+    words.remove(end);
+    while (!startSet.isEmpty()) {
+      next = new HashSet<>();
+      for (String word : startSet) {
         char[] wordArr = word.toCharArray();
         for (int i = 0; i < wordArr.length; i++) {
-          c = word.charAt(i);
-          for (char cj = 'a'; cj <= 'z'; cj++) {
-            wordArr[i] = cj;
-            String formed = String.valueOf(wordArr);
-            if (endSet.contains(formed)) {
+          char old = wordArr[i];
+          for (char c = 'a'; c <= 'z'; c++) {
+            wordArr[i] = c;
+            String formed = new String(wordArr);
+            if (endSet.contains(formed))
               return pathLen + 1;
-            }
-            if (!visited.contains(formed) && dictionary.contains(formed)) {
-              temp.add(formed);
-              visited.add(formed);
+            if (words.contains(formed)) {
+              next.add(formed);
+              words.remove(formed);
             }
           }
-          wordArr[i] = c;
+          wordArr[i] = old;
         }
-        headSet = temp;
-        pathLen++;
       }
+      startSet = next.size() < endSet.size() ? next : endSet;
+      endSet = startSet.size() < endSet.size() ? endSet : next;
+      pathLen++;
     }
     return 0;
   }

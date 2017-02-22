@@ -46,7 +46,7 @@ public class LFU {
     node.keys.remove(key);
 
     if (node.next == null) {
-        // if there is no next node with the increased count, why Plus 1 because we have accessed this node thats why its
+      // if there is no next node with the increased count, why Plus 1 because we have accessed this node thats why its
       // frequency count will inrease, thus we check if already a node is present that is holding the frequent items
       node.next = new DLinkNode(node.count + 1);
       node.next.prev = node;

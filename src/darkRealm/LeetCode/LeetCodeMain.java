@@ -23,7 +23,7 @@ public class LeetCodeMain {
 //    testLongestPalindrome();
 //    testZigZag();
 //    testReverseInteger();
-//    testStringToInteger();
+    testStringToInteger();
 //    testReverseWords();
 //    testCompareVersion();
 //    testSurroundRegion();
@@ -56,7 +56,7 @@ public class LeetCodeMain {
 //    testSubsetsII();
 //    testRotateFunction();
 //    testNumberOfIslands();
-//    testWordLadder();
+    testWordLadder();
 //    testRegularExpression();
 //    testLongestPalindromeString();
 //    testTwoSum();
@@ -74,7 +74,7 @@ public class LeetCodeMain {
 //    testLongestTwoCHarString();
 //    testLongestKDistinctString();
 //    testLRU();
-    testLFU();
+//    testLFU();
   }
 
   public static void testAddTwoNumbers() {
@@ -162,7 +162,7 @@ public class LeetCodeMain {
     String str = "      -11919730356x";
 
 
-    int res = LC_Prob_Med.stringToInteger(str);
+    int res = LC_Prob_Med.atoi(str);
     System.out.println(" Str : " + str + "   res : " + (res));
   }
 
@@ -836,15 +836,15 @@ public class LeetCodeMain {
     res = lru.get(4);
   }
 
-  public static void testLFU(){
+  public static void testLFU() {
     LFU lfu = new LFU(2);
-    lfu.put(1,1);
-    lfu.put(2,2);
+    lfu.put(1, 1);
+    lfu.put(2, 2);
     lfu.get(1);
-    lfu.put(3,3);
+    lfu.put(3, 3);
     lfu.get(2);
     lfu.get(3);
-    lfu.put(4,4);
+    lfu.put(4, 4);
     lfu.get(1);
     lfu.get(3);
     lfu.get(4);

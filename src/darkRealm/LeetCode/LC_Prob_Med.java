@@ -244,30 +244,29 @@ public class LC_Prob_Med {
   /*  [Prob 8]   String to Integer
   * Implement atoi to convert a string to an integer.
   * */
-  public static int stringToInteger(String str) {
-    if (str == null || str.length() == 0) return 0;
-    int index = 0;
+  public static int atoi(String str) {
+    if (str == null || str.length() < 1) return 0;
     int sign = 1;
-    while (str.charAt(index) == ' ') index++;
+    int index = 0;
+    int res = 0;
+    while (str.charAt(index) == ' ' && index < str.length()) index++;
     if (str.charAt(index) == '+' || str.charAt(index) == '-') {
       sign = str.charAt(index) == '-' ? -1 : 1;
       index++;
     }
     int digit = 0;
-    int total = 0;
     while (index < str.length()) {
       digit = str.charAt(index) - '0';
       if (digit < 0 || digit > 9) break;
-      // we have to check for both when we mulitply by 10 an over flow can occur,
-      // but also an over flow can occur if adding the last digit will take us ahead of overflow
-      // to check this we check if the last digit is bigger than the last digit of MAX_VALUE then there is
-      // an overflow
-      if (Integer.MAX_VALUE / 10 <= total && Integer.MAX_VALUE % 10 < digit)
+      boolean bigger = res > Integer.MAX_VALUE / 10;
+      boolean partOver = res == Integer.MAX_VALUE / 10 && Integer.MAX_VALUE % 10 < digit;
+
+      if (bigger || partOver)
         return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
-      total = 10 * total + digit;
+      res = 10 * res + digit;
       index++;
     }
-    return total * sign;
+    return res * sign;
   }
 
   /*  [Prob 151]   Reverse Words in a String
