@@ -221,8 +221,10 @@ public class Main {
 //    System.out.println("next bigger : " + nextSmaller);
 
 //    BitsUtil.swapPairOfBits(218);
-    byte[] screen = new byte[4];
-    BitsUtil.drawLine(screen, 8, 6, 18, 18);
+//    byte[] screen = new byte[4];
+//    BitsUtil.drawLine(screen, 8, 6, 18, 18);
+//
+    BitsUtil.flipALL(16);
   }
 
   private static void doMathsLogicPuzzels() {

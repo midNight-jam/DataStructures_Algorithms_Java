@@ -431,7 +431,7 @@ If nums = [1,2,2], a solution is:
     }
   }
 
-  /*  [Prob 127] Word Ladder TODO FAILING!!!!!
+  /*  [Prob 127] Word Ladder
   *   Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation
   *   sequence from beginWord to endWord, such that:
   *   Only one letter can be changed at a time.
@@ -481,6 +481,87 @@ If nums = [1,2,2], a solution is:
       pathLen++;
     }
     return 0;
+  }
+
+
+  /* [Prob 126]
+  * */
+
+  static Map<String,List<String>> adjMap;
+  static List<List<String>> paths;
+
+  public static List<List<String>> wordLadderII(String start, String end, List<String> dict) {
+    paths = new ArrayList<>();
+    if (dict.size() == 0)
+      return paths;
+
+    int minDist=Integer.MAX_VALUE;
+
+    Queue<String> queue= new LinkedList<>();
+    queue.add(start);
+
+    adjMap = new HashMap<>();
+    // create a dist map to keep track of the minimum dist required to reach that node
+    Map<String,Integer> distMap = new HashMap<>();
+    //initialize all the distances to max ,as we will have to find min dist while traversing, except of start which is 0
+    for (String s:dict)
+      distMap.put(s, Integer.MAX_VALUE);
+    distMap.put(start, 0);
+
+    while (!queue.isEmpty()) {
+
+      String trav = queue.poll();
+
+      int dist = distMap.get(trav)+1;//'step' indicates how many steps are needed to travel to one word.
+
+      if (dist>minDist) break;
+
+      for (int i = 0; i < trav.length(); i++){
+        StringBuilder builder = new StringBuilder(trav);
+        for (char ch='a';  ch <= 'z'; ch++){
+          builder.setCharAt(i,ch);
+          String formed=builder.toString();
+          if (distMap.containsKey(formed)) {
+
+            if (dist>distMap.get(formed)) // dist to reach this word is bigger than the minimum distance
+              continue;
+            else if (dist<distMap.get(formed)){  // new dist to reach this word is smaller than previous recorded dist
+              queue.add(formed);
+              distMap.put(formed, dist);
+            }
+
+            if (adjMap.containsKey(formed)) // add the current processing node in the adjacency
+              adjMap.get(formed).add(trav);
+            else{ // add list for this formed word
+              List<String> list= new LinkedList<>();
+              list.add(trav);
+              adjMap.put(formed,list);
+            }
+
+            if (formed.equals(end))
+              minDist=dist;
+          }
+        }
+      }
+    }
+
+    LinkedList<String> result = new LinkedList<>();
+    backTrace(end,start,result);
+    return paths;
+  }
+
+  private static void backTrace(String word,String start,List<String> list){
+    if (word.equals(start)){
+      list.add(0,start);
+      paths.add(new ArrayList<>(list));
+      list.remove(0);
+      return;
+    }
+    list.add(0,word);
+    if (adjMap.get(word)!=null)
+      for (String s: adjMap.get(word))
+        backTrace(s,start,list);
+    list.remove(0);
   }
 
   /*  [Prob 10] Regular Expression Matching
