@@ -57,7 +57,7 @@ public class LeetCodeMain {
 //    testRotateFunction();
 //    testNumberOfIslands();
 //    testWordLadder();
-    testWordLadderII();
+//    testWordLadderII();
 //    testRegularExpression();
 //    testLongestPalindromeString();
 //    testTwoSum();
@@ -76,6 +76,7 @@ public class LeetCodeMain {
 //    testLongestKDistinctString();
 //    testLRU();
 //    testLFU();
+    testWashingMachines();
   }
 
   public static void testAddTwoNumbers() {
@@ -582,7 +583,7 @@ public class LeetCodeMain {
 //    String end = "cog";
 
 
-    String[] arr = new String[]{"hot","dot","dog","lot","log","cog"};
+    String[] arr = new String[]{"hot", "dot", "dog", "lot", "log", "cog"};
     dict.addAll(Arrays.asList(arr));
     String start = "hit";
     String end = "cog";
@@ -879,5 +880,14 @@ public class LeetCodeMain {
     lfu.get(1);
     lfu.get(3);
     lfu.get(4);
+  }
+
+  public static void testWashingMachines() {
+//    int[] machines = new int[]{1, 0, 5};
+//    int[] machines = new int[]{0, 3, 0};
+//    int[] machines = new int[]{0, 2, 0};
+    int[] machines = new int[]{0, 0, 11, 5};
+    int moves = LC_Prob3.findMoves(machines);
+    System.out.println(" Moves : " + moves + " Machines : " + Arrays.toString(machines));
   }
 }
