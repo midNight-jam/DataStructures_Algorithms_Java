@@ -434,4 +434,10 @@ public class Trees_and_Graphs_Main {
     TNode res = tree.getKthSmallestBST(1);
     System.out.println(" res : " + res.data);
   }
+
+  public static void testUniqueBSTCount() {
+    int n = 4;
+    int res = Tree.uniqueBinarySearchTreesCount(n);
+    System.out.println(" n : " + n + " res : " + res);
+  }
 }

@@ -146,4 +146,18 @@ public class Tree {
     }
     inOrderDriver(node.right, k);
   }
+
+  public static int uniqueBinarySearchTreesCount(int n) {
+    if (n < 1) return 0;
+    int[] res = new int[n + 1];
+    // DP Solution
+    // no of bst  = left Bst * right Bst
+    res[0] = res[1] = 1; // only two nodes so only two bst possible, this is our recursion base case
+    for (int i = 2; i <= n; i++) {
+      for (int j = 1; j <= i; j++) {
+        res[i] += res[j - 1] * res[i - j];  // no of left bst * no of right bst
+      }
+    }
+    return res[n];
+  }
 }
