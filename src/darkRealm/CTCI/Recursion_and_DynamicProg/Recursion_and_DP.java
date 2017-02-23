@@ -816,8 +816,10 @@ public class Recursion_and_DP {
         bc = b.charAt(j);
 
         if (ac == bc) {
+          // if both the chars are equal we take the value from diagonal and add 1
           matrix[i][j] = matrix[i - 1][j - 1] + 1;
         } else if (ac != bc) {
+          // if chars are not equal, we try to create a longer sequence by choosing one from prev char of any string
           matrix[i][j] = Math.max(matrix[i - 1][j], matrix[i][j - 1]);
         }
       }
@@ -825,6 +827,29 @@ public class Recursion_and_DP {
 
     System.out.print("Longest SubSequence Length : " + matrix[a.length() - 1][b.length() - 1]);
     return matrix[a.length() - 1][b.length() - 1];
+  }
+
+  /* [Prob Longest Increasing Subsequence]
+  *  The formula is
+  *  assign DP[0...n] = 1 for all , each element can result in at least 1 length of long subsequence thats why
+  *  if(arr[j] < arr[i])
+  *     DP[i] =  MAX of { DP[i], DP[j] + 1}
+  * */
+
+  public static int LongestIncreasingSubsequenceLength(int [] arr) {
+    if (arr == null || arr.length == 0) return 0;
+    int[] DP = new int[arr.length];
+    for(int i=0; i<DP.length;i++) DP[i] = 1;
+    int longest = 1;
+    for (int i = 1; i < arr.length; i++) {
+      for (int j = 0; j <= i; j++) {
+        if (arr[j] < arr[i]) {
+          DP[i] = Math.max(DP[j] + 1, DP[i]);
+          longest = Math.max(longest, DP[i]);
+        }
+      }
+    }
+    return longest;
   }
 
   /*  [Prob]

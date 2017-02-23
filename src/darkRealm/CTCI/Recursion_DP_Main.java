@@ -3,6 +3,7 @@ package darkRealm.CTCI;
 import darkRealm.CTCI.Recursion_and_DynamicProg.Recursion_and_DP;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -145,16 +146,22 @@ public class Recursion_DP_Main {
     System.out.println("time miliseconds - " + ((after - b4)));
   }
 
-  public static void testLongestSubSequence(){
+  public static void testLongestSubSequence() {
     String a = "GVCEKST";
     String b = "GDVEGTA";
-    int res = Recursion_and_DP.LongestCommonSubsequence(a,b);
-    System.out.println("Longest Subsequence : "+res);
+    int res = Recursion_and_DP.LongestCommonSubsequence(a, b);
+    System.out.println("Longest Subsequence : " + res);
   }
 
-  public static void testRobotWays(){
-    int n=5;
+  public static void testRobotWays() {
+    int n = 5;
     int res = Recursion_and_DP.robotNoOfWays(n);
-    System.out.println("step : "+n+" ways : "+res);
+    System.out.println("step : " + n + " ways : " + res);
+  }
+
+  public static void testLongestIncreasingSubSequence() {
+    int[] arr = new int[]{3, 4, -1, 0, 6, 2, 3};
+    int res = Recursion_and_DP.LongestIncreasingSubsequenceLength(arr);
+    System.out.println("LCS : " + res + " Arr : " + Arrays.toString(arr));
   }
 }

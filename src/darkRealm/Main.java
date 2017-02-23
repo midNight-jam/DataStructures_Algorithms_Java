@@ -21,7 +21,7 @@ public class Main {
 //    }
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
-//    doRecursion_DP();
+    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
@@ -30,7 +30,7 @@ public class Main {
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-    doLeetCode();
+//    doLeetCode();
 //    doMatrix();
   }
 
@@ -127,7 +127,8 @@ public class Main {
 //    Recursion_DP_Main.testPermuteExpression();
 //    Recursion_DP_Main.testBooleanEvaluation();
 //    Recursion_DP_Main.testLongestSubSequence();
-    Recursion_DP_Main.testRobotWays();
+//    Recursion_DP_Main.testRobotWays();
+    Recursion_DP_Main.testLongestIncreasingSubSequence();
   }
 
   private static void doTrees_Graph() {

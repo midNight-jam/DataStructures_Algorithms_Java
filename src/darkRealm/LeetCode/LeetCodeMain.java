@@ -76,7 +76,7 @@ public class LeetCodeMain {
 //    testLongestKDistinctString();
 //    testLRU();
 //    testLFU();
-    testWashingMachines();
+//    testWashingMachines();
   }
 
   public static void testAddTwoNumbers() {
