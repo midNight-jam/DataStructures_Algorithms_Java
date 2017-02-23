@@ -212,34 +212,6 @@ public class Graph {
     }
   }
 
-//  TODO
-//  public String modifiedDepthFirstTraversal() {
-//    String intermediateBuildOrder = "";
-//    Node trav;
-//    MyStack<Node> stack = new MyStack<>();
-//    stack.push(start);
-//    start.status = Node.Status.UnderProcessing;
-//    System.out.println("Depth First traversal");
-//
-//    while (!stack.isEmpty()) {
-//      trav = stack.pop();
-//      trav.status = Node.Status.Processed;
-////      if (trav.status == Node.Status.UnderProcessing) {
-////        return "Error"; // we have reached a cycle
-////      }
-//      intermediateBuildOrder += " " + trav.name;
-//      // add the next adjacent vertices in stack for processing
-//      for (int i = 0; i < trav.childs.length; i++) {
-//        // if the next vertex has not been processed put it in for processing in the stack
-//        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
-//          stack.push(trav.childs[i]);
-//          trav.childs[i].status = Node.Status.UnderProcessing;
-//        }
-//      }
-//    }
-//    return intermediateBuildOrder;
-//  }
-
   public String topologicalSort() {
     Set<Node> visited = new HashSet<>();
     Stack<Node> stack = new Stack<>();
