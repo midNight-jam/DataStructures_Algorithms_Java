@@ -230,6 +230,7 @@ public class Graph {
   private void topologicalSortUtil(Node trav, Set<Node> visited, Stack<Node> stack) {
     visited.add(trav);
     for (int i = 0; i < trav.childs.length; i++) {
+      // i have null check because of my implementation, Originally its not required
       if (visited.contains(trav.childs[i]) || trav.childs[i] == null) continue;
       topologicalSortUtil(trav.childs[i], visited, stack);
     }
