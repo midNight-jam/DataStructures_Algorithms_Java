@@ -1,5 +1,6 @@
 package darkRealm.LeetCode;
 
+import java.util.Stack;
 /**
  * Created by Jayam on 2/22/2017.
  */
@@ -41,5 +42,26 @@ public class LC_Prob3 {
       maxShift = Math.max(Math.abs(buckets[i]), maxShift);
     }
     return Math.max(maxDue, maxShift);
+  }
+
+  public static int longestValidParanthesis(String str) {
+    if (str == null || str.length() == 0) return 0;
+    Stack<Integer> stack = new Stack<>();
+    int left = -1;
+    int max = 0;
+    for (int i = 0; i < str.length(); i++) {
+      if (str.charAt(i) == '(') stack.push(i);
+      else {
+        if (stack.isEmpty()) left = i;
+        else {
+          stack.pop();
+          if (stack.isEmpty())
+            max = Math.max(max, i - left);
+          else
+            max = Math.max(max, i - stack.peek());
+        }
+      }
+    }
+    return max;
   }
 }

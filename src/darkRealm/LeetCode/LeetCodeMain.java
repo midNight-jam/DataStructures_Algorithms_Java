@@ -77,6 +77,7 @@ public class LeetCodeMain {
 //    testLRU();
 //    testLFU();
 //    testWashingMachines();
+    testLongestValidParanthesis();
   }
 
   public static void testAddTwoNumbers() {
@@ -889,5 +890,12 @@ public class LeetCodeMain {
     int[] machines = new int[]{0, 0, 11, 5};
     int moves = LC_Prob3.findMoves(machines);
     System.out.println(" Moves : " + moves + " Machines : " + Arrays.toString(machines));
+  }
+
+  public static void testLongestValidParanthesis() {
+    String str = ")(()()(";
+//    String str = "(()";
+    int res = LC_Prob3.longestValidParanthesis(str);
+    System.out.println(" Res : " + res + " Str : " + str);
   }
 }

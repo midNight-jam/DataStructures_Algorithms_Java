@@ -5,6 +5,7 @@ import darkRealm.CTCI.BigO.BitsUtil;
 import darkRealm.CTCI.BigO.MathUtil;
 import darkRealm.CTCI.BigO.MatrixUtil;
 import darkRealm.CTCI.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
+import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
 import darkRealm.LeetCode.LeetCodeMain;
 
 /*
@@ -21,10 +22,10 @@ public class Main {
 //    }
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
-    doRecursion_DP();
+//    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-//    doTrees_Graph();
+    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
@@ -155,7 +156,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testMinHeight();
 //    Trees_and_Graphs_Main.testSerialize();
 //    Trees_and_Graphs_Main.testSubtreeSum();
-    Trees_and_Graphs_Main.testKthSmallest();
+//    Trees_and_Graphs_Main.testKthSmallest();
+    Trees_and_Graphs.doDijkstras();
   }
 
   private static void doMathUtils() {
