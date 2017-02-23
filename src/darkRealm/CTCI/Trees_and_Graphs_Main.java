@@ -1,10 +1,7 @@
 package darkRealm.CTCI;
 
 import darkRealm.CTCI.LinkedLists.LinkedList;
-import darkRealm.CTCI.Trees_and_Graphs.KevinBaconsGame;
-import darkRealm.CTCI.Trees_and_Graphs.TNode;
-import darkRealm.CTCI.Trees_and_Graphs.Tree;
-import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
+import darkRealm.CTCI.Trees_and_Graphs.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -439,5 +436,57 @@ public class Trees_and_Graphs_Main {
     int n = 4;
     int res = Tree.uniqueBinarySearchTreesCount(n);
     System.out.println(" n : " + n + " res : " + res);
+  }
+
+  public static void testAllPossibleBST() {
+//    int n = 1;
+//    int n = 0;
+//    int n = 2;
+    int n = 3;
+    List<TNode> res = Tree.uniqueBstList(n);
+    System.out.println("N : " + n + " Trees : " + res);
+  }
+
+  public static void testTopologicalSort() {
+    int vertices = 7;
+    Graph graph = new Graph(vertices);
+    Node vA = new Node(vertices);
+    vA.name = "A";
+    graph.start = vA;
+    Node vC = new Node(vertices);
+    vC.name = "C";
+    graph.start.childs[2] = vC;
+
+    Node vB = new Node(vertices);
+    vB.name = "B";
+    vB.childs[2] = vC;
+
+    Node vE = new Node(vertices);
+    vE.name = "E";
+    vB.childs[5] = vB;
+
+    Node vD = new Node(vertices);
+    vD.name = "D";
+    vC.childs[4] = vD;
+
+    Node vF = new Node(vertices);
+    vF.name = "F";
+    vD.childs[5] = vF;
+    vE.childs[5] = vF;
+
+    Node vG = new Node(vertices);
+    vG.name = "G";
+    vF.childs[6] = vG;
+
+    graph.allVertices[0] = vA;
+    graph.allVertices[1] = vC;
+    graph.allVertices[2] = vE;
+    graph.allVertices[3] = vF;
+    graph.allVertices[4] = vD;
+    graph.allVertices[5] = vB;
+    graph.allVertices[6] = vG;
+
+    String bOrd = graph.topologicalSort();
+    System.out.println("Oredr : " + bOrd);
   }
 }

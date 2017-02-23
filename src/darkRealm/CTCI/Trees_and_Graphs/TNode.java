@@ -41,8 +41,7 @@ public class TNode {
     if (index == size) {
       System.out.println("node reached - " + data);
       return this;
-    }
-    else {
+    } else {
       int skipLeftSubTree = index - (leftSize + 1); // plus one is for counting the node from which we are skipping
       return right.getIndexNode(skipLeftSubTree);
     }
@@ -50,5 +49,10 @@ public class TNode {
 
   public boolean isLeaf() {
     return ((left == null) && (right == null));
+  }
+
+  @Override
+  public String toString() {
+    return data + " R";
   }
 }

@@ -160,4 +160,37 @@ public class Tree {
     }
     return res[n];
   }
+
+  public static List<TNode> uniqueBstList(int n) {
+    if (n < 1) return new ArrayList<>();
+    return createTrees(1, n);
+  }
+
+  private static List<TNode> createTrees(int start, int end) {
+    List<TNode> list = new ArrayList<>();
+    if (start > end) {  // terminals of leaf nodes
+      list.add(null);
+      return list;
+    }
+    if (start == end) {   // leaf node
+      list.add(new TNode(start));
+      return list;
+    }
+    List<TNode> left, right;
+
+    for (int i = start; i <= end; i++) {
+      left = createTrees(start, i - 1); // getting all possible left & right subtrees in postorder format
+      right = createTrees(i + 1, end);
+      // cartesian product of left & right subtrees
+      for (TNode lnode : left) {
+        for (TNode rnode : right) {
+          TNode root = new TNode(i);
+          root.left = lnode;
+          root.right = rnode;
+          list.add(root);
+        }
+      }
+    }
+    return list;
+  }
 }

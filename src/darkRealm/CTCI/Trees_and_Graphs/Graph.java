@@ -4,6 +4,9 @@ import darkRealm.CTCI.Stacks_and_queues.MyQueue;
 import darkRealm.CTCI.Stacks_and_queues.MyStack;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Stack;
 
 /**
  * Created by Jayam on 12/28/2016.
@@ -68,14 +71,12 @@ public class Graph {
     resetNodesStatus();
   }
 
-  private static int minDistance(int dist[], Boolean shortestPathSet[])
-  {
+  private static int minDistance(int dist[], Boolean shortestPathSet[]) {
     // Initialize min value
-    int min = Integer.MAX_VALUE, min_index=-1;
+    int min = Integer.MAX_VALUE, min_index = -1;
 
     for (int v = 0; v < dist.length; v++)
-      if (shortestPathSet[v] == false && dist[v] <= min)
-      {
+      if (shortestPathSet[v] == false && dist[v] <= min) {
         min = dist[v];
         min_index = v;
       }
@@ -239,4 +240,27 @@ public class Graph {
 //    return intermediateBuildOrder;
 //  }
 
+  public String topologicalSort() {
+    Set<Node> visited = new HashSet<>();
+    Stack<Node> stack = new Stack<>();
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < allVertices.length; i++) {
+      if (visited.contains(allVertices[i])) continue;
+      topologicalSortUtil(allVertices[i], visited, stack);
+    }
+
+    while (!stack.isEmpty()) {
+      sb.append(stack.pop().name+" ");
+    }
+    return sb.toString();
+  }
+
+  private void topologicalSortUtil(Node trav, Set<Node> visited, Stack<Node> stack) {
+    visited.add(trav);
+    for (int i = 0; i < trav.childs.length; i++) {
+      if (visited.contains(trav.childs[i]) || trav.childs[i] == null) continue;
+      topologicalSortUtil(trav.childs[i], visited, stack);
+    }
+    stack.push(trav);
+  }
 }

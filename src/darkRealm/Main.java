@@ -157,7 +157,9 @@ public class Main {
 //    Trees_and_Graphs_Main.testSubtreeSum();
 //    Trees_and_Graphs_Main.testKthSmallest();
 //    Trees_and_Graphs.doDijkstras();
-    Trees_and_Graphs_Main.testUniqueBSTCount();
+//    Trees_and_Graphs_Main.testUniqueBSTCount();
+//    Trees_and_Graphs_Main.testAllPossibleBST();
+    Trees_and_Graphs_Main.testTopologicalSort();
   }
 
   private static void doMathUtils() {
