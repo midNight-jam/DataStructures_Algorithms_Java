@@ -222,7 +222,7 @@ public class Graph {
     }
 
     while (!stack.isEmpty()) {
-      sb.append(stack.pop().name+" ");
+      sb.append(stack.pop().name + " ");
     }
     return sb.toString();
   }

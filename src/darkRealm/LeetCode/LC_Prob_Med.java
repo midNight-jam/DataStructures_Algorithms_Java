@@ -653,7 +653,7 @@ public class LC_Prob_Med {
   }
 
   /*  [287] Find the Duplicate Number
-  * Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive),
+  * Given an array numbers containing n + 1 integers where each integer is between 1 and n (inclusive),
   * prove that at least one duplicate number must exist. Assume that there is only one duplicate number,
   * find the duplicate one.
   * Note:
@@ -797,8 +797,8 @@ public class LC_Prob_Med {
   }
 
   /*  [238] Product of Array Except Self
-  *Given an array of n integers where n > 1, nums, return an array output such that output[i] is equal to the product
-  * of all the elements of nums except nums[i].
+  *Given an array of n integers where n > 1, numbers, return an array output such that output[i] is equal to the product
+  * of all the elements of numbers except numbers[i].
   * Solve it without division and in O(n).
   * For example, given [1,2,3,4], return [24,12,8,6].
   * */
@@ -883,10 +883,10 @@ public class LC_Prob_Med {
   }
 
   /*  [239] Sliding Window Maximum
-   *   Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the
+   *   Given an array numbers, there is a sliding window of size k which is moving from the very left of the array to the
    *   very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
    *   For example,
-   *   Given nums = [1,3,-1,-3,5,3,6,7], and k = 3.
+   *   Given numbers = [1,3,-1,-3,5,3,6,7], and k = 3.
    * */
   public static int[] slidingWindowMaximum(int[] arr, int k) {
     PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {

@@ -253,10 +253,10 @@ public class LC_Prob_Med2 {
   }
 
   /*  [Prob 78] Subsets
-  *   Given a set of distinct integers, nums, return all possible subsets.
+  *   Given a set of distinct integers, numbers, return all possible subsets.
   *   Note: The solution set must not contain duplicate subsets.
   *   For example,
-  *   If nums = [1,2,3], a solution is:
+  *   If numbers = [1,2,3], a solution is:
   *   [
   *   [3],
   *   [1],
@@ -290,10 +290,10 @@ public class LC_Prob_Med2 {
     return subsets;
   }
 
-  /* [Prob] Given a collection of integers that might contain duplicates, nums, return all possible subsets
+  /* [Prob] Given a collection of integers that might contain duplicates, numbers, return all possible subsets
 Note: The solution set must not contain duplicate subsets.
 For example,
-If nums = [1,2,2], a solution is:
+If numbers = [1,2,2], a solution is:
 [
   [2],
   [1],

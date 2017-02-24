@@ -465,22 +465,11 @@ public class Trees_and_Graphs {
   *   at any nde we check if we are getting data(not null) from both the left & right then that node is the common ancestor
   *   In case of two node being par & child, parent node will be returned which is a always the common ancestor amon 2 nodes
   * */
-  public static TNode findCommonAncestor(TNode node, int p, int q) {
-    if (node == null || node.data == p || node.data == q) {
-      return node;
-    }
-    TNode left = findCommonAncestor(node.left, p, q);
-    TNode right = findCommonAncestor(node.right, p, q);
-    if (left == null && right != null) {
-      return right;
-    }
-    if (left != null && right == null) {
-      return left;
-    }
-    if (left != null && right != null) {
-      return node;
-    }
-    return null;
+  public static TNode findCommonAncestor(TNode root, TNode  p, TNode q) {
+    if (root == null || root == p || root == q) return root;
+    TNode left = findCommonAncestor(root.left, p, q);
+    TNode right = findCommonAncestor(root.right, p, q);
+    return left == null ? right : right == null ? left : root;
   }
 
 
