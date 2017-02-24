@@ -472,7 +472,6 @@ public class Trees_and_Graphs {
     return left == null ? right : right == null ? left : root;
   }
 
-
   public static boolean checkSubtree(Tree t1, Tree t2) {
     boolean res = checkSubtree(t1.root, t2.root, t2.root);
     System.out.print("res - " + res);

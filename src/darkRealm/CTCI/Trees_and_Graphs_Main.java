@@ -159,8 +159,8 @@ public class Trees_and_Graphs_Main {
 //    TNode res = Trees_and_Graphs.findCommonAncestor(tree.root, 3, 40);
 //    TNode res = Trees_and_Graphs.findCommonAncestor(tree.root, 10, 17);
 //    TNode res = Trees_and_Graphs.findCommonAncestor(tree.root, 10, 18);
-    TNode res = Trees_and_Graphs.findCommonAncestor(tree.root, 19, 18);
-    System.out.println("RES : " + res.data);
+//    TNode res = Trees_and_Graphs.findCommonAncestor(tree.root, 19, 18);
+//    System.out.println("RES : " + res.data);
   }
 
   public static void testCheckSubtree() {
