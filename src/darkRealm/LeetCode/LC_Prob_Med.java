@@ -1052,11 +1052,17 @@ public class LC_Prob_Med {
     if (prices == null || prices.length == 0) return 0;
     int[][] DP = new int[k + 1][prices.length];
     int maxDiff = 0;
+    /*  DP Rule is
+    *   T[i,j] = Max of{ T[i, j-1] --> not transacting
+    *                   OR
+    *                   Price[j] + maxDiff
+    *                 maxDiff = max(maxDiff, T[i-1][j] - price[j])
+    * */
     for (int i = 1; i < DP.length; i++) {
       maxDiff = -prices[0];
       for (int j = 1; j < DP[0].length; j++) {
         DP[i][j] = Math.max(DP[i][j - 1], prices[j] + maxDiff);
-        maxDiff = Math.max(maxDiff, DP[i-1][j] - prices[j]);
+        maxDiff = Math.max(maxDiff, DP[i - 1][j] - prices[j]);
       }
     }
     return DP[k][prices.length - 1];
