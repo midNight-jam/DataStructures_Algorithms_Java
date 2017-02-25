@@ -54,7 +54,7 @@ public class LeetCodeMain {
 //    testThirdMaximum();
 //    testSubsets();
 //    testSubsetsII();
-//    testRotateFunction();
+    testRotateFunction();
 //    testNumberOfIslands();
 //    testWordLadder();
 //    testWordLadderII();
@@ -77,7 +77,7 @@ public class LeetCodeMain {
 //    testLRU();
 //    testLFU();
 //    testWashingMachines();
-    testLongestValidParanthesis();
+//    testLongestValidParanthesis();
   }
 
   public static void testAddTwoNumbers() {

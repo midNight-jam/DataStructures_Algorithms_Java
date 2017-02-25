@@ -1,9 +1,10 @@
 package darkRealm;
 
-import darkRealm.CTCI.*;
+import darkRealm.CTCI.Arrays_and_Strings.Arrays_and_Strings;
 import darkRealm.CTCI.BigO.BitsUtil;
 import darkRealm.CTCI.BigO.MathUtil;
 import darkRealm.CTCI.BigO.MatrixUtil;
+import darkRealm.CTCI.*;
 import darkRealm.CTCI.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
 import darkRealm.LeetCode.LeetCodeMain;
 
@@ -24,14 +25,14 @@ public class Main {
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-    doTrees_Graph();
+//    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
 //    doLeetCode();
-//    doMatrix();
+    doMatrix();
   }
 
   private static void doArray_and_Strings_Main() {
@@ -90,11 +91,18 @@ public class Main {
 //    System.out.println(" res " + res);
 
 //    Arrays_and_Strings_Main.testHotelBook();
-    Arrays_and_Strings_Main.testMatrixZeroes();
 //    Arrays_and_Strings_Main.testStringRotation();
 //    Arrays_and_Strings_Main.testRotateMatrix();
 //    Arrays_and_Strings_Main.testStringCompression();
 //    Arrays_and_Strings_Main.testOneEditAway();
+
+//    String str = "abc"; // 00L
+//    String res = Arrays_and_Strings.operation(str,0,0,'L');
+//    String str = "abc"; // 22L
+//    String res = Arrays_and_Strings.operation(str,2,2,'L');
+    String str = "abc"; // 02R
+    String res = Arrays_and_Strings.operation(str, new String[]{"0 0 L", "2 2 L", "0 2 R"});
+    System.out.println(res);
   }
 
   private static void doStack_and_Queue() {
@@ -298,33 +306,42 @@ public class Main {
 //        {10, 13, 14, 17, 24},
 //        {18, 21, 23, 26, 30}
 //    };
-//
+////
     int[][] matrix = new int[][]{
         {1, 5, 9},
         {10, 11, 13},
         {12, 14, 15}
     };
+////
+////    int[][] matrix = new int[][]{
+////        {5}
+////    };
 //
-//    int[][] matrix = new int[][]{
-//        {5}
-//    };
+////    int[][] matrix = new int[][]{
+////        {0,1},
+////        {2,3}
+////    };
+////    int[][] matrix = new int[][]{
+////        {1, 2},
+////        {1, 3}
+////    };
+////    int res = MatrixUtil.searchRowSortedMatrix(matrix, 12);
+////    int res = MatrixUtil.searchSortedMatrix(matrix, 12);
+////    int[][] matrix = new int[][]{
+////        {1, 1},
+////        {1, 3}
+////    };
+//    int res = MatrixUtil.kthSmallestSortedMatrix(matrix, 6);
+//    System.out.println(" " + MatrixUtil.getPrintableMatrix(matrix));
+//    System.out.println(" Res : " + res);
 
 //    int[][] matrix = new int[][]{
-//        {0,1},
-//        {2,3}
+//        {0}, {1}
 //    };
-//    int[][] matrix = new int[][]{
-//        {1, 2},
-//        {1, 3}
-//    };
-//    int res = MatrixUtil.searchRowSortedMatrix(matrix, 12);
-//    int res = MatrixUtil.searchSortedMatrix(matrix, 12);
-//    int[][] matrix = new int[][]{
-//        {1, 1},
-//        {1, 3}
-//    };
-    int res = MatrixUtil.kthSmallestSortedMatrix(matrix, 6);
-    System.out.println(" " + MatrixUtil.getPrintableMatrix(matrix));
-    System.out.println(" Res : " + res);
+//    MatrixUtil.matrixZeroes(matrix);
+    int[][] nmat = MatrixUtil.rotateMNMatrixClockWise(matrix);
+    System.out.println(MatrixUtil.getPrintableMatrix(nmat));
+    nmat = MatrixUtil.rotateMNMatrixAntiClockWise(matrix);
+    System.out.println(MatrixUtil.getPrintableMatrix(nmat));
   }
 }

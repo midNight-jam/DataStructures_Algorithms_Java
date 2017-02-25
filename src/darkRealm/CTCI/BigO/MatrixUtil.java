@@ -211,4 +211,60 @@ public class MatrixUtil {
     }
     return left;
   }
+
+  /*  [Prob 1.8]
+  *   Q) Zero Matix
+  *   A) We have to use constant space, thus we will use matrix itself.
+  *   For this , we store this adidtional info in first row & col,
+  *   Thus, first we sacn the first row & col to check if it contains a sero, if yes we make a note of that, so that in
+  *   end we will make first row/col also zero. now we scan the matrix and any time when we encounter a 0, we store that
+  *   row index in that rows first cell, & store that cols index in that cols first index.
+  *   Later we read first rows & cols & nullify the rrespective rows & cols
+  *   Finally if the first row or col had 0 in it nullify them also.
+  * */
+  public static void matrixZeroes(int[][] matrix) {
+    // first we check if the first row or col has zero, if yes we will zero first row & col also at end. because till then
+    // we would utlise the first cells to store which row & column repectively wwill be going total 0.
+    boolean firstCol = false;
+    int rows = matrix.length, cols = matrix[0].length;
+    for (int i = 0; i < rows; i++) {
+      if (matrix[i][0] == 0) firstCol = true;
+      for (int j = 1; j < cols; j++)
+        if (matrix[i][j] == 0)
+          matrix[i][0] = matrix[0][j] = 0;
+    }
+    // Startting from bottom right, making all the zero containing rows  cols to zero
+    for (int i = rows - 1; i >= 0; i--) {
+      for (int j = cols - 1; j >= 1; j--)
+        if (matrix[i][0] == 0 || matrix[0][j] == 0)
+          matrix[i][j] = 0;
+      if (firstCol) matrix[i][0] = 0;
+    }
+  }
+
+  public static int[][] rotateMNMatrixClockWise(int[][] matrix) {
+    if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return matrix;
+    int row = matrix.length;
+    int col = matrix[0].length;
+    int[][] newMat = new int[row][col];
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[0].length; j++) {
+        newMat[j][i] = matrix[row - i - 1][j];
+      }
+    }
+    return newMat;
+  }
+
+  public static int[][] rotateMNMatrixAntiClockWise(int[][] matrix) {
+    if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return matrix;
+    int row = matrix.length;
+    int col = matrix[0].length;
+    int[][] newMat = new int[row][col];
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[0].length; j++) {
+        newMat[j][i] = matrix[i][col - j - 1];
+      }
+    }
+    return newMat;
+  }
 }

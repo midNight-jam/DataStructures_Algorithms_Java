@@ -1,6 +1,5 @@
 package darkRealm.CTCI;
 
-import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.Trees_and_Graphs.*;
 
 import java.util.ArrayList;
@@ -29,7 +28,7 @@ public class Trees_and_Graphs_Main {
   }
 
   public static void testListOfDepths() {
-//    Trees_and_Graphs.listOfDepths();
+//    Trees_and_Graphs.levelOrderTraversal();
     Tree tree = new Tree();
     tree.root = new TNode(20);
     tree.root.left = new TNode(10);
@@ -195,7 +194,6 @@ public class Trees_and_Graphs_Main {
     Trees_and_Graphs.checkSubtree(tree, t2);
   }
 
-
   public static void testInsertNode() {
     Tree tree = new Tree(20);
     tree.insert(30);
@@ -246,11 +244,11 @@ public class Trees_and_Graphs_Main {
 //    tree.insert(5);
 //    tree.insert(6);
 //    tree.insert(7);
-    ArrayList<LinkedList> res = Trees_and_Graphs.possibleBSTArrays(tree.root);
-    for (LinkedList r : res
-        ) {
-      System.out.println(r);
-    }
+//    ArrayList<LinkedList> res = Trees_and_Graphs.possibleBSTArrays(tree.root);
+//    for (LinkedList r : res
+//        ) {
+//      System.out.println(r);
+//    }
   }
 
   public static void testPathsWithSum() {

@@ -487,25 +487,11 @@ public class Arrays_and_Strings {
   *   Finally if the first row or col had 0 in it nullify them also.
   * */
   public static void matrixZeroes(int[][] matrix) {
-    boolean firstRowZero, firstColZero;
-    firstColZero = firstRowZero = false;
+    boolean firstColZero = false;
     // first we check if the first row or col has zero, if yes we will zero first row & col also at end. because till then
     // we would utlise the first cells to store which row & column repectively wwill be going total 0.
-    for (int i = 0; i < matrix[0].length; i++) {
-      if (matrix[0][i] == 0) {
-        firstRowZero = true;
-        break;
-      }
-    }
-
-    for (int i = 0; i < matrix.length; i++) {
-      if (matrix[i][0] == 0) {
-        firstColZero = true;
-        break;
-      }
-    }
-
     for (int i = 1; i < matrix.length; i++) {
+      firstColZero = matrix[i][0] == 0;
       for (int j = 1; j < matrix[0].length; j++) {
         if (matrix[i][j] == 0) {
           matrix[i][0] = 0; // marking in row
@@ -513,39 +499,13 @@ public class Arrays_and_Strings {
         }
       }
     }
-
-    // making all the zero containing rows to zero
-    for (int i = 0; i < matrix.length; i++) {
-      if (matrix[i][0] == 0) {
-        int j = 0;
-        while (j < matrix[0].length) {
+    // Startting from bottom right, making all the zero containing rows  cols to zero
+    for (int i = matrix.length - 1; i >= 0; i++) {
+      for (int j = matrix[0].length - 1; j >= 1; j--) {
+        if (matrix[i][0] == 0 || matrix[0][i] == 0) {
           matrix[i][j] = 0;
-          j++;
         }
-      }
-    }
-
-    // making all the zero containing cols to zero
-    for (int i = 0; i < matrix[0].length; i++) {
-      if (matrix[0][i] == 0) {
-        int j = 0;
-        while (j < matrix.length) {
-          matrix[j][i] = 0;
-          j++;
-        }
-      }
-    }
-    // if first row had zero, its safe to make it zero as all info is used up
-    if (firstRowZero) {
-      for (int i = 0; i < matrix[0].length; i++) {
-        matrix[0][i] = 0;
-      }
-    }
-
-    // if first col had zero, its safe to make it zero as all info is used up
-    if (firstColZero) {
-      for (int i = 0; i < matrix.length; i++) {
-        matrix[i][0] = 0;
+        if (firstColZero) matrix[i][0] = 0;
       }
     }
   }
@@ -763,5 +723,30 @@ public class Arrays_and_Strings {
     // get the third no between 0-5 max
     // add the last remaingin no
     return time;
+  }
+
+  public static String operation(String str, String[] op) {
+    if (str == null || str.length() == 0) return str;
+    char[] arr = str.toCharArray();
+    for (int k = 0; k < op.length; k++) {
+      String stv = op[k];
+      int s = Integer.parseInt(stv.charAt(0) + "");
+      int e = Integer.parseInt(stv.charAt(2) + "");
+      char c = stv.charAt(4);
+
+      char ch;
+      for (int i = s; i <= e; i++) {
+        ch = arr[i];
+        if (c == 'L') {
+          ch--;
+          ch = ch < 'a' ? 'z' : ch;
+        } else {
+          ch++;
+          ch = ch > 'z' ? 'a' : ch;
+        }
+        arr[i] = ch;
+      }
+    }
+    return new String(arr);
   }
 }

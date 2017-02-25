@@ -1,6 +1,6 @@
 package darkRealm.CTCI;
+
 import darkRealm.CTCI.Arrays_and_Strings.Arrays_and_Strings;
-import darkRealm.CTCI.BigO.MatrixUtil;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -111,26 +111,6 @@ public class Arrays_and_Strings_Main {
     System.out.println(" res - " + res);
   }
 
-  public static void testMatrixZeroes() {
-//    int[][] matrix = new int[][]{
-//        {9, 1, 1, 4, 51},
-//        {2, 0, 2, 4, 52},
-//        {3, 2, 3, 4, 53},
-//        {4, 3, 0, 4, 54},
-//        {5, 4, 4, 4, 0}
-//    };
-
-    int[][] matrix = new int[][]{
-        {0, 0, 0, 5},
-        {4, 3, 1, 4},
-        {0, 1, 1, 4},
-        {1, 2, 1, 3},
-        {0, 0, 1, 1}
-    };
-
-    Arrays_and_Strings.matrixZeroes(matrix);
-    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
-  }
 
   public static void testStringRotation() {
 //    String s = "waterbotlle";

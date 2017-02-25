@@ -249,12 +249,15 @@ public class LC_Prob_Med {
     int sign = 1;
     int index = 0;
     int res = 0;
+    //skip all spaces
     while (str.charAt(index) == ' ' && index < str.length()) index++;
+    //find the sign
     if (str.charAt(index) == '+' || str.charAt(index) == '-') {
       sign = str.charAt(index) == '-' ? -1 : 1;
       index++;
     }
     int digit = 0;
+    // create the number
     while (index < str.length()) {
       digit = str.charAt(index) - '0';
       if (digit < 0 || digit > 9) break;

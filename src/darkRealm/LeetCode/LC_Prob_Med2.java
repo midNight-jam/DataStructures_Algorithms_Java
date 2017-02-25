@@ -195,27 +195,31 @@ public class LC_Prob_Med2 {
     if (n < 0) {
       return new ArrayList<>();
     }
-    List<List<Integer>> rows = new ArrayList<>();
-    List<Integer> first = new ArrayList<>();
-    first.add(1);
-    rows.add(first);
-    for (int i = 1; i <= n; i++) {
-      if (rows.size() < i + 1) {
-        List<Integer> ithRow = new ArrayList<>();
-        ithRow.add(1);
-        rows.add(ithRow);
-      }
-      List<Integer> prevRow = rows.get(i - 1);
-      List<Integer> thisRow = rows.get(i);
-      for (int j = 1; j <= i; j++) {
-        int a = prevRow.get(j - 1);
-        int b = j >= prevRow.size() ? 0 : prevRow.get(j);
-        int sum = a + b;
-        thisRow.add(sum);
+    Integer[] res = new Integer[n + 1];
+    res[0] = 1;
+    for (int i = 1; i < n + 1; i++) {
+      for (int j = i; j >= 1; j--) {
+        res[j] = res[j] + res[j - 1];
       }
     }
-    return rows.get(n);
+    return Arrays.asList(res);
   }
+
+  public static List<List<Integer>> pascalsTriangle(int n) {
+    if (n < 1) return new ArrayList<>();
+    List<List<Integer>> all = new ArrayList<>();
+    List<Integer> list = new ArrayList<>();
+    for (int i = 0; i < n; i++) {
+      list.add(0,1);
+      for(int j = 0; j<list.size();j++){
+        list.set(j-1,list.get(j-1+list.get(j)));
+      }
+
+      all.add(new ArrayList<>(list));
+    }
+    return all;
+  }
+
 
   /*  [Prob 414] Third Maximum Number
   *   Given a non-empty array of integers, return the third maximum number in this array. If it does not exist, return
@@ -304,28 +308,21 @@ If numbers = [1,2,2], a solution is:
 ]
   * */
   public static List<List<Integer>> subSetII(int[] arr) {
-    Map<String, List<Integer>> map = new HashMap<>();
-    List<Integer> dummy = new ArrayList<>();
-    map.put(dummy.toString(), dummy);
-    if (arr == null) return new ArrayList<>(map.values());
-    String key;
-    int setSize = (int) Math.pow(2, arr.length);
+    if (arr == null || arr.length == 0) return new ArrayList<>();
     Arrays.sort(arr);
-    for (int i = 0; i < setSize; i++) {
-      int index = 0;
-      int j = i;
-      List<Integer> set = new ArrayList<>();
-      while (j != 0) {
-        if ((j & 1) == 1) {
-          set.add(arr[index]);
-        }
-        index++;
-        j = j >> 1;
-      }
-      key = set.toString();
-      if (!map.containsKey(key)) map.put(key, new ArrayList<>(set));
+    List<List<Integer>> all = new ArrayList<>();
+    genSets(arr, 0, arr.length, all, new ArrayList<>());
+    return all;
+  }
+
+  private static void genSets(int [] arr, int pos, int len, List<List<Integer>> all, List<Integer> list) {
+    if (pos <= len) all.add(new ArrayList<>(list));
+    for (int i = pos; i < len; i++) {
+      if (i > pos && arr[i] == arr[i - 1]) continue;
+      list.add(arr[i]);
+      genSets(arr, i + 1, len, all, list);
+      list.remove(list.size() - 1);
     }
-    return new ArrayList<>(map.values());
   }
 
   /*  [Prob 396] Rotate Function
@@ -347,25 +344,15 @@ If numbers = [1,2,2], a solution is:
     if (arr == null || arr.length == 0) {
       return 0;
     }
-    int pass = 0;
-    int max = Integer.MIN_VALUE;
-    int i, val, j, m;
-    while (pass < arr.length) {
-      val = 0;
-      i = pass;
-      for (; i < arr.length; i++) {
-        m = i - pass;
-        val += arr[i] * m;
-      }
-      for (j = 0; j < pass; j++) {
-        m = arr.length - pass + j;
-        val += arr[j] * m;
-      }
-      System.out.println(val);
-      if (val > max) {
-        max = val;
-      }
-      pass++;
+    int sum = 0, prevRotationSum = 0;
+    for (int i = 0; i < arr.length; i++) {
+      sum += arr[i];
+      prevRotationSum += i * arr[i];
+    }
+    int max = prevRotationSum;
+    for (int i = arr.length - 1; i > 0; i--) {
+      prevRotationSum += sum - arr.length * arr[i]; //sum - no of passes into arr[i]
+      max = Math.max(prevRotationSum, max);
     }
     return max;
   }
@@ -732,6 +719,7 @@ If numbers = [1,2,2], a solution is:
   }
 
   private static int binaryToGray(int k) {
+    // divide by 2 & XOR with self
     return (k >> 1) ^ k;
   }
 
