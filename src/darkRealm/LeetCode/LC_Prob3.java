@@ -1,5 +1,6 @@
 package darkRealm.LeetCode;
 
+import java.util.LinkedList;
 import java.util.Stack;
 /**
  * Created by Jayam on 2/22/2017.
@@ -63,5 +64,30 @@ public class LC_Prob3 {
       }
     }
     return max;
+  }
+
+  public static int[] slidingWindowMaximum(int[] arr, int k) {
+    if (arr == null || arr.length == 0) return new int[]{};
+    int max = Integer.MIN_VALUE, maxPrev = Integer.MIN_VALUE;
+    int windows = arr.length - k + 1;
+    int[] res = new int[windows];
+    // stores the indexes
+    LinkedList<Integer> deque = new LinkedList<>();
+    for (int i = 0; i < arr.length; i++) {
+      // couldnt get the real reason for this
+      if (!deque.isEmpty() && deque.peek() == i - k) {
+        deque.poll();
+      }
+
+      while (!deque.isEmpty() && arr[deque.peekLast()] < arr[i]) {
+        deque.removeLast(); // why removing last, beause a new max has arrived & we cannot hold smaller elements now, so remove all smaller
+      }
+
+      deque.add(i);
+      if (i + 1 >= k) {// means window has expanded
+        res[i + 1 - k] = arr[deque.peek()];
+      }
+    }
+    return res;
   }
 }

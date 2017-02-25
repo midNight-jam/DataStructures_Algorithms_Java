@@ -874,20 +874,39 @@ If numbers = [1,2,2], a solution is:
     int head, tail;
     for (int i = 1; i < dp.length; i++) {
       head = tail = 0;
-      for (int j = 0; j < i; j++, tail++) ;
-      while (tail < dp.length) {
-        char h = str.charAt(head);
-        char t = str.charAt(tail);
-        if (h == t) {
-          dp[head][tail] = dp[head + 1][tail - 1] + 2;
-        } else {
-          dp[head][tail] = Math.max(dp[head + 1][tail], dp[head][tail - 1]);
+      for (int j = 0; j < i; j++, tail++) {
+        while (tail < dp.length) {
+          char h = str.charAt(head);
+          char t = str.charAt(tail);
+          if (h == t) {
+            dp[head][tail] = dp[head + 1][tail - 1] + 2;
+          } else {
+            dp[head][tail] = Math.max(dp[head + 1][tail], dp[head][tail - 1]);
+          }
+          head++;
+          tail++;
         }
-        head++;
-        tail++;
       }
     }
     return dp[0][str.length() - 1];
+  }
+
+  public static int longestPalidromicSubsequenceZZZ(String str) {
+    int len = str.length();
+    int[][] DP = new int[len][len];
+    // red strings fromlast
+    for (int i = len - 1; i >= 0; i--) {
+      DP[i][i] = 1;
+      for (int j = i + 1; j < len; j++) {
+        if (str.charAt(i) == str.charAt(j)) {
+          DP[i][j] = DP[i + 1][j - 1] + 2;
+        } else {
+          DP[i][j] = Math.max(DP[i + 1][j], DP[i][j - 1]);
+        }
+        System.out.println(str.substring(i, j));
+      }
+    }
+    return DP[0][len - 1];
   }
 
   public static String shortestPath(char[][] matrix, char a, char b) {

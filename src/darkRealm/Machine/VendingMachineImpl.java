@@ -160,9 +160,9 @@ public class VendingMachineImpl implements VendingMachine {
   }
 
   private void updateCashInventory(List change) {
-    for (Coin c : change) {
-      cashInventory.deduct(c);
-    }
+//    for (Coin c : change) {
+//      cashInventory.deduct(c);
+//    }
   }
 
   public long getTotalSales() {
