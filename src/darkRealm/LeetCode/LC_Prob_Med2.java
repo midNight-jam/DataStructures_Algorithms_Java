@@ -863,35 +863,6 @@ If numbers = [1,2,2], a solution is:
 	*   if chats are diff then take max of one col behind & one row below
 	*/
   public static int longestPalidromicSubsequence(String str) {
-    if (str == null || str.length() < 1) return 0;
-
-    int[][] dp = new int[str.length()][str.length()];
-
-    for (int i = 0; i < str.length(); i++) {
-      dp[i][i] = 1;
-    }
-
-    int head, tail;
-    for (int i = 1; i < dp.length; i++) {
-      head = tail = 0;
-      for (int j = 0; j < i; j++, tail++) {
-        while (tail < dp.length) {
-          char h = str.charAt(head);
-          char t = str.charAt(tail);
-          if (h == t) {
-            dp[head][tail] = dp[head + 1][tail - 1] + 2;
-          } else {
-            dp[head][tail] = Math.max(dp[head + 1][tail], dp[head][tail - 1]);
-          }
-          head++;
-          tail++;
-        }
-      }
-    }
-    return dp[0][str.length() - 1];
-  }
-
-  public static int longestPalidromicSubsequenceZZZ(String str) {
     int len = str.length();
     int[][] DP = new int[len][len];
     // red strings fromlast
