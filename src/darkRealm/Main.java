@@ -31,8 +31,8 @@ public class Main {
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-//    doLeetCode();
-    doMatrix();
+    doLeetCode();
+//    doMatrix();
   }
 
   private static void doArray_and_Strings_Main() {
