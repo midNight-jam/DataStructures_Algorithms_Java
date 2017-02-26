@@ -1,6 +1,10 @@
 package darkRealm.LeetCode;
 
+import darkRealm.CTCI.Trees_and_Graphs.TNode;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 /**
  * Created by Jayam on 2/22/2017.
@@ -89,5 +93,86 @@ public class LC_Prob3 {
       }
     }
     return res;
+  }
+
+  public static int kthLargestElement(int[] nums, int k) {
+    if (k < 1 || nums == null) {
+      return 0;
+    }
+
+    return getKth(nums.length - k + 1, nums, 0, nums.length - 1);
+  }
+
+  public static int getKth(int k, int[] nums, int start, int end) {
+
+    int pivot = nums[end];
+
+    int left = start;
+    int right = end;
+
+    while (true) {
+
+      while (nums[left] < pivot && left < right) {
+        left++;
+      }
+
+      while (nums[right] >= pivot && right > left) {
+        right--;
+      }
+
+      if (left == right) {
+        break;
+      }
+
+      swap(nums, left, right);
+    }
+
+    swap(nums, left, end);
+
+    if (k == left + 1) {
+      return pivot;
+    } else if (k < left + 1) {
+      return getKth(k, nums, start, left - 1);
+    } else {
+      return getKth(k, nums, left + 1, end);
+    }
+  }
+
+  public static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+
+  public static List<TNode> uniqueBinarySearchTrees(int n) {
+    if (n < 1) return new ArrayList<>();
+    return createTree(1, n);
+  }
+
+  private static List<TNode> createTree(int start, int end) {
+    List<TNode> treeList = new ArrayList<>();
+    if (start > end) {
+      treeList.add(null);
+      return treeList;
+    }
+    if (start == end) {
+      List<TNode> list = new ArrayList<>();
+      list.add(new TNode(start));
+      return list;
+    }
+    for (int i = start; i <= end; i++) {
+      List<TNode> left = createTree(start, i - 1);
+      List<TNode> right = createTree(i + 1, end);
+      // cartesian Product
+      for (TNode lnode : left) {
+        for (TNode rnode : right) {
+          TNode node = new TNode(i);
+          node.left = lnode;
+          node.right = rnode;
+          treeList.add(node);
+        }
+      }
+    }
+    return treeList;
   }
 }

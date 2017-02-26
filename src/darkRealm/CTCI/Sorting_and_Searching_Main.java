@@ -55,7 +55,7 @@ public class Sorting_and_Searching_Main {
 //    int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
     int[] arr = new int[]{2, 3, 1};
     int k = 3;
-    //int kth = QuickSortUtil.kthLargestElement(arr, 0, arr.length - 1, k);
+    int kth = QuickSortUtil.kthLargestElement(arr, 0, arr.length - 1, k);
     System.out.println("Array : " + Arrays.toString(arr));
     //System.out.println(k + " Kth largest : " + kth);
   }

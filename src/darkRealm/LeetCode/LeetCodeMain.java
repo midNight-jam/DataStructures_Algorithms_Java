@@ -66,7 +66,7 @@ public class LeetCodeMain {
 //    testGrayCode();
 //    testFrequencySort();
 //    testWordBreak();
-    testLongestPalindromicSubsequence();
+//    testLongestPalindromicSubsequence();
 //    testWordBreakSequence();
 //    testSN();`
 //    testMaxProfitII();
@@ -81,6 +81,7 @@ public class LeetCodeMain {
 //    testLongestStringWithoutRepeatingChars();
 //    testLongestSubstringWithAtLeastKRepeatingCharacters();
 //    testSlidingWindowMaximum();
+    testKthLargest();
   }
 
   public static void testAddTwoNumbers() {
@@ -795,7 +796,7 @@ public class LeetCodeMain {
 //    dict.add("a");
 //    dict.add("bbb");
 //    dict.add("bbbb");
-    List<String> res = LC_Prob_Med2.wordBreakDriver(str, dict);
+    List<String> res = LC_Prob_Med2.wordBreakII(str, dict);
     System.out.println(" str : " + str + " Dict : " + dict);
     System.out.println(" Res : " + res);
   }
@@ -803,9 +804,7 @@ public class LeetCodeMain {
   public static void testLongestPalindromicSubsequence() {
     String str = "bbbab";
 //    String str = "cbbd";
-//    int res = LC_Prob_Med2.longestPalidromicSubsequence(str);
-    int res = LC_Prob_Med2.longestPalidromicSubsequenceZZZ(str);
-
+    int res = LC_Prob_Med2.longestPalidromicSubsequence(str);
     System.out.println("Res : " + res + " Str : " + str);
   }
 
@@ -941,5 +940,14 @@ public class LeetCodeMain {
     int k = 3;
     int[] res = LC_Prob3.slidingWindowMaximum(arr, k);
     System.out.println("Res : " + Arrays.toString(res));
+  }
+
+  public static void testKthLargest() {
+//    int[] arr = new int[]{2, 1};
+//    int[] arr = new int[]{-1, -1};
+    int[] arr = new int[]{-1,2};
+    int k = 2;
+    int res = LC_Prob3.kthLargestElement(arr, k);
+    System.out.println("Res : " + res + "  - " + Arrays.toString(arr));
   }
 }

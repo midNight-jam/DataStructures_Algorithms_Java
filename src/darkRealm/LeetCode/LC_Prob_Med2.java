@@ -817,7 +817,7 @@ If numbers = [1,2,2], a solution is:
   * results to the previously borken down backPortion and add this sub portion in map. hence while returning from recursion
   * we will fianlly have the results of valid borken words  against the same key from where we can return.
   * */
-  public static List<String> wordBreakDriver(String str, List<String> wordDict) {
+  public static List<String> wordBreakII(String str, List<String> wordDict) {
     Map<String, List<String>> subResMap = new HashMap<>();
     return wordBreakAll(str, wordDict, subResMap);
   }

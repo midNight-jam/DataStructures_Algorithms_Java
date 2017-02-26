@@ -829,7 +829,7 @@ public class Recursion_and_DP {
     return matrix[a.length() - 1][b.length() - 1];
   }
 
-  /* [Prob Longest Increasing Subsequence]
+  /* [Prob 300] Longest Increasing Subsequence
   *  The formula is
   *  assign DP[0...n] = 1 for all , each element can result in at least 1 length of long subsequence thats why
   *  if(arr[j] < arr[i])

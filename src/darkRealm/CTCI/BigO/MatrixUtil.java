@@ -179,8 +179,8 @@ public class MatrixUtil {
   *   Note: You may assume k is always valid, 1 ≤ k ≤ n2.
   *
   *   A) we will use binary search, first using the left(left most) nad right (rightmost) number we will calculate a mid
-  *   a mid not necesarrily in the matrix. now we will take each row, and will try to find the count of numbers that are
-  *   smaller than mid and keep adding these small number count. Now after adding all these counts if the count is smaller
+  *   a hypothetical mid not necesarrily in the matrix. now we will take each row, and will try to find the count of numbers that are
+  *   smaller than each rows hypothetical mid and keep adding these small number count. Now after adding all these counts if the count is smaller
   *   than the asked Kth number then we serach in first half of matrix, else we search in the second half of the matrix.
   *   And this process continues.
   *   O(nlog(n)log(N)), n is the number of rows
