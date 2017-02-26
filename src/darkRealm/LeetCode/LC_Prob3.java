@@ -287,4 +287,31 @@ public class LC_Prob3 {
     if (carry == 1) sb.append('1');
     return sb.reverse().toString();
   }
+/*  [Prob 520] Detect Capital*/
+  public static int addDigits(int num) {
+    int sum = 0;
+    while (num > 9) {
+      sum = 0;
+      while (num > 0) {
+        sum += num % 10;
+        num = num / 10;
+      }
+      num = sum;
+    }
+    return num;
+  }
+
+  public static boolean detectCapitals(String word) {
+    if (word == null || word.length() == 0) return false;
+    int upCount = 0;
+    boolean firstUp = false;
+    if (word.charAt(0) >= 'A' && word.charAt(0) <= 'Z') firstUp = true;
+    for (int i = 1; i < word.length(); i++) {
+      if (word.charAt(i) >= 'A' && word.charAt(i) <= 'Z') upCount++;
+      if (!firstUp && upCount > 0) return false;
+    }
+
+    if (firstUp && word.length() == upCount + 1) return true;
+    return upCount ==0 ? true : false;
+  }
 }

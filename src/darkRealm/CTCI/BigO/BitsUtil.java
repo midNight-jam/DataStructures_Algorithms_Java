@@ -662,4 +662,19 @@ public class BitsUtil {
       screen[(width/8) * y +b] = (byte)0xFF; // all 1's
     }
   }
+
+  public static void flipALL(int n){
+    int r = ~n;
+    System.out.println(" r : "+r +" N: "+n);
+    int nbits = (int)(Math.log(n)/Math.log(2)) ;
+    int pow = (int)Math.pow(2,nbits);
+    int allOne = pow -1;
+    int x = 1;
+    while(nbits !=0){
+      x = x | (x  << 1);
+      nbits--;
+    }
+    int xor = n ^ x;
+    System.out.println(" r : "+r +" N: "+n + " XOR : "+xor);
+  }
 }

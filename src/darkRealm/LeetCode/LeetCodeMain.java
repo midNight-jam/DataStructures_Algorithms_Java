@@ -85,7 +85,9 @@ public class LeetCodeMain {
 ////    testRussianDolls();
 //    testMulitply();
 //    testPlusOne();
-    testAddBinary();
+//    testAddBinary();
+//    testAddDigits();
+    testDetectCapitals();
   }
 
   public static void testAddTwoNumbers() {
@@ -998,5 +1000,24 @@ public class LeetCodeMain {
     System.out.println(res);
     System.out.println(res2);
     System.out.println(res.equals(res2));
+  }
+
+  public static void testAddDigits() {
+//    int n = 123555;
+    int n = 38;
+    int res = LC_Prob3.addDigits(n);
+    System.out.println(" n : " + n + "  res : " + res);
+  }
+
+  public static void testDetectCapitals() {
+//    String str = "Flag";
+//    String str = "FlaGa";
+//    String str = "g";
+//    String str = "USA";
+//    String str = "abcd";
+//    String str = "Abcd";
+    String str = "AbcD";
+    boolean res = LC_Prob3.detectCapitals(str);
+    System.out.println(" Str : " + str + " res : " + res);
   }
 }

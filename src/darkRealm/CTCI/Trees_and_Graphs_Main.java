@@ -81,6 +81,15 @@ public class Trees_and_Graphs_Main {
     int res = Trees_and_Graphs.getMinPathSum(tree);
   }
 
+  public static void testInorder(){
+    Tree tree = new Tree();
+    tree.root = new TNode(10);
+    tree.root.left = new TNode(5);
+    tree.root.right = new TNode(15);
+    List<Integer> list = tree.inorderTraversal(tree.root);
+    System.out.println(list);
+  }
+
   public static void testIsBalanced() {
 //    Tree tree = Trees_and_Graphs.getSampleTree();
 
