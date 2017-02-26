@@ -18,72 +18,74 @@ import java.util.List;
  */
 public class LeetCodeMain {
   public static void run() {
-//    testAddTwoNumbers();
-//    testlongestSubstring();
-//    testLongestPalindrome();
-//    testZigZag();
-//    testReverseInteger();
-//    testStringToInteger();
-//    testReverseWords();
-//    testCompareVersion();
-//    testSurroundRegion();
-//    testThreeSum();
-//    testThreeSumClosest();
-//    testThreeSumSmaller();
-//    testCountingBits();
-//    testCircularLoop();
-//    testDuplicates();
-//    testMissing();
-//    testMissingFirstPositive();
-//    testDuplicateNumber();
-//    testSingleNumber();
-//    testFindAnagram();
-//    testValidString();
-//    testRotateClockwise();
-//    testexceptSelf();
-//    testRandomizeSet();
-//    testSlidingMaximum();
-//    testFirstUniqueChar();
-//    testMaxProfit();
-//    testLetterCombinations();
-//    testGroupAnagram();
-//    testValidAnagram();
-//    testTrappingRainWater();
-//    testRotateAntiClockWise();
-//    testPascalsTriangle();
-//    testThirdMaximum();
-//    testSubsets();
-//    testSubsetsII();
-//    testRotateFunction();
-//    testNumberOfIslands();
-//    testWordLadder();
-//    testWordLadderII();
-//    testRegularExpression();
-//    testLongestPalindromeString();
-//    testTwoSum();
-//    testSubStringPattern();
-//    testMostFrequentSum();
-//    testGrayCode();
-//    testFrequencySort();
-//    testWordBreak();
-//    testLongestPalindromicSubsequence();
-//    testWordBreakSequence();
-//    testSN();`
-//    testMaxProfitII();
-//    testMaxProfitIII();
-//    testMaxProfitIV();
-//    testLongestTwoCHarString();
-//    testLongestKDistinctString();
-//    testLRU();
-//    testLFU();
-//    testWashingMachines();
-//    testLongestValidParanthesis();
-//    testLongestStringWithoutRepeatingChars();
-//    testLongestSubstringWithAtLeastKRepeatingCharacters();
-//    testSlidingWindowMaximum();
-//    testKthLargest();
-//    testRussianDolls();
-    testMulitply();
+////    testAddTwoNumbers();
+////    testlongestSubstring();
+////    testLongestPalindrome();
+////    testZigZag();
+////    testReverseInteger();
+////    testStringToInteger();
+////    testReverseWords();
+////    testCompareVersion();
+////    testSurroundRegion();
+////    testThreeSum();
+////    testThreeSumClosest();
+////    testThreeSumSmaller();
+////    testCountingBits();
+////    testCircularLoop();
+////    testDuplicates();
+////    testMissing();
+////    testMissingFirstPositive();
+////    testDuplicateNumber();
+////    testSingleNumber();
+////    testFindAnagram();
+////    testValidString();
+////    testRotateClockwise();
+////    testexceptSelf();
+////    testRandomizeSet();
+////    testSlidingMaximum();
+////    testFirstUniqueChar();
+////    testMaxProfit();
+////    testLetterCombinations();
+////    testGroupAnagram();
+////    testValidAnagram();
+////    testTrappingRainWater();
+////    testRotateAntiClockWise();
+////    testPascalsTriangle();
+////    testThirdMaximum();
+////    testSubsets();
+////    testSubsetsII();
+////    testRotateFunction();
+////    testNumberOfIslands();
+////    testWordLadder();
+////    testWordLadderII();
+////    testRegularExpression();
+////    testLongestPalindromeString();
+////    testTwoSum();
+////    testSubStringPattern();
+////    testMostFrequentSum();
+////    testGrayCode();
+////    testFrequencySort();
+////    testWordBreak();
+////    testLongestPalindromicSubsequence();
+////    testWordBreakSequence();
+////    testSN();`
+////    testMaxProfitII();
+////    testMaxProfitIII();
+////    testMaxProfitIV();
+////    testLongestTwoCHarString();
+////    testLongestKDistinctString();
+////    testLRU();
+////    testLFU();
+////    testWashingMachines();
+////    testLongestValidParanthesis();
+////    testLongestStringWithoutRepeatingChars();
+////    testLongestSubstringWithAtLeastKRepeatingCharacters();
+////    testSlidingWindowMaximum();
+////    testKthLargest();
+////    testRussianDolls();
+//    testMulitply();
+//    testPlusOne();
+    testAddBinary();
   }
 
   public static void testAddTwoNumbers() {
@@ -971,5 +973,30 @@ public class LeetCodeMain {
     String n2 = "987654321";
     String res = LC_Prob3.multiply("1111", "3");
     System.out.println(n1 + " : " + n2 + "  : res : " + res);
+  }
+
+  public static void testPlusOne() {
+//    int[] nums = new int[]{0,0};
+//    int[] nums = new int[]{0,9};
+    int[] nums = new int[]{7, 9};
+//    int[] nums = new int[]{9,8};
+    System.out.println("Nums : " + Arrays.toString(nums));
+    int[] res = LC_Prob3.plusOne(nums);
+    System.out.println("+ 1 : " + Arrays.toString(res));
+  }
+
+  public static void testAddBinary() {
+//    String a = "11";
+//    String b = "1";
+//    String a = "0";
+//    String b = "0";
+
+    String a = "10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101";
+    String b = "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011";
+    String res2 = "110111101100010011000101110110100000011101000101011001000011011000001100011110011010010011000000000";
+    String res = LC_Prob3.addBinary(a, b);
+    System.out.println(res);
+    System.out.println(res2);
+    System.out.println(res.equals(res2));
   }
 }
