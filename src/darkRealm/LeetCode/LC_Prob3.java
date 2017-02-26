@@ -144,6 +144,8 @@ public class LC_Prob3 {
     arr[j] = temp;
   }
 
+
+  /* [Prob 96]*/
   public static List<TNode> uniqueBinarySearchTrees(int n) {
     if (n < 1) return new ArrayList<>();
     return createTree(1, n);
@@ -174,5 +176,18 @@ public class LC_Prob3 {
       }
     }
     return treeList;
+  }
+
+  /*[Prob 95]*/
+  public static int uniqueBST(int n) {
+    if (n < 1) return 0;
+    int[] DP = new int[n + 1];
+    DP[0] = DP[1] = 1;
+    for (int i = 2; i <= n; i++) {
+      for (int j = 1; j <= i; j++) {
+        DP[i] += (DP[j - 1] * DP[i - j]); // cartesian product
+      }
+    }
+    return DP[n];
   }
 }
