@@ -228,4 +228,23 @@ public class Tree {
     }
     return list;
   }
+  /* [513] Find Bottom Left Tree Value
+  * */
+  public static int bottomLeftTreeValue(TNode node) {
+    Queue<TNode> queue = new LinkedList<>();
+    queue.add(node);
+    TNode first = null;
+    while (!queue.isEmpty()) {
+      int size = queue.size();
+      first = null;
+      TNode trav;
+      for (int i = 0; i < size; i++) {
+        trav = queue.poll();
+        if (first == null) first = trav;
+        if (trav.left != null) queue.add(trav.left);
+        if (trav.right != null) queue.add(trav.right);
+      }
+    }
+    return first.data;
+  }
 }
