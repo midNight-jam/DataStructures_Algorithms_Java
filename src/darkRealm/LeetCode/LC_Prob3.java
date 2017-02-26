@@ -287,7 +287,8 @@ public class LC_Prob3 {
     if (carry == 1) sb.append('1');
     return sb.reverse().toString();
   }
-/*  [Prob 520] Detect Capital*/
+
+
   public static int addDigits(int num) {
     int sum = 0;
     while (num > 9) {
@@ -301,6 +302,7 @@ public class LC_Prob3 {
     return num;
   }
 
+  /*  [Prob 520] Detect Capital*/
   public static boolean detectCapitals(String word) {
     if (word == null || word.length() == 0) return false;
     int upCount = 0;
@@ -312,6 +314,27 @@ public class LC_Prob3 {
     }
 
     if (firstUp && word.length() == upCount + 1) return true;
-    return upCount ==0 ? true : false;
+    return upCount == 0 ? true : false;
   }
+
+  /* [Prob 515] Find Largest Value in Each Tree Row*/
+  public static List<Integer> largestValues(TNode node) {
+    List<Integer> list = new ArrayList<>();
+    if (node == null) return list;
+    levelwise(node, 0, list);
+    return list;
+  }
+
+  private static void levelwise(TNode node, int level, List<Integer> list) {
+    if (node == null) return;
+    if (list.size() < level + 1)
+      list.add(Integer.MIN_VALUE);
+
+    levelwise(node.left, level + 1, list);
+    if (node.data > list.get(level))
+      list.set(level, node.data);
+    levelwise(node.right, level + 1, list);
+  }
+
+
 }

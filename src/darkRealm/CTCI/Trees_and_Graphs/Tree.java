@@ -200,13 +200,31 @@ public class Tree {
     TNode cur = root;
     Stack<TNode> stack = new Stack<>();
     while (cur != null || !stack.isEmpty()) {
-      while (cur!= null) {
+      while (cur != null) {
         stack.push(cur);
         cur = cur.left;
       }
       cur = stack.pop();
       list.add(cur.data);
       cur = cur.right;
+    }
+    return list;
+  }
+
+  public List<Integer> iterativeLevelOrder(TNode node) {
+    List<Integer> list = new ArrayList<>();
+    if (node == null) return list;
+    Queue<TNode> queue = new LinkedList<>();
+    queue.add(node);
+    while (!queue.isEmpty()) {
+      int size = queue.size();
+      for (int i = 0; i < size; i++) {
+        TNode trav = queue.poll();
+        System.out.print(" " + trav.data);
+        if(trav.left!=null) queue.add(trav.left);
+        if(trav.right!=null) queue.add(trav.right);
+      }
+      System.out.println();
     }
     return list;
   }

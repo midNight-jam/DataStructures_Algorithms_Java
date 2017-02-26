@@ -87,7 +87,9 @@ public class LeetCodeMain {
 //    testPlusOne();
 //    testAddBinary();
 //    testAddDigits();
-    testDetectCapitals();
+//    testDetectCapitals();
+//    testLevelMaxValues();
+    testIterativeLevelOrder();
   }
 
   public static void testAddTwoNumbers() {
@@ -1019,5 +1021,65 @@ public class LeetCodeMain {
     String str = "AbcD";
     boolean res = LC_Prob3.detectCapitals(str);
     System.out.println(" Str : " + str + " res : " + res);
+  }
+
+  public static void testLevelMaxValues() {
+//    Tree tree = new Tree();
+//    tree.insert(10);
+//    tree.insert(5);
+//    tree.insert(15);
+//    tree.insert(3);
+//    tree.insert(6);
+//    tree.insert(13);
+//    tree.insert(25);
+//    tree.insert(1);
+//    tree.insert(4);
+//    tree.insert(8);
+//    tree.insert(14);
+//    tree.insert(18);
+
+    Tree tree = new Tree();
+    tree.root = new TNode(8);
+    tree.root.left = new TNode(5);
+    tree.root.right = new TNode(4);
+    tree.root.left.left = new TNode(9);
+    tree.root.left.right = new TNode(7);
+    tree.root.left.right.left = new TNode(1);
+    tree.root.left.right.right = new TNode(12);
+    tree.root.left.right.right.left = new TNode(2);
+    tree.root.right.right = new TNode(11);
+    tree.root.right.right.left = new TNode(3);
+
+    List<Integer> list = LC_Prob3.largestValues(tree.root);
+    System.out.println(" Largest : " + list);
+  }
+
+  private static void testIterativeLevelOrder(){
+//    Tree tree = new Tree();
+//    tree.root = new TNode(8);
+//    tree.root.left = new TNode(5);
+//    tree.root.right = new TNode(4);
+//    tree.root.left.left = new TNode(9);
+//    tree.root.left.right = new TNode(7);
+//    tree.root.left.right.left = new TNode(1);
+//    tree.root.left.right.right = new TNode(12);
+//    tree.root.left.right.right.left = new TNode(2);
+//    tree.root.right.right = new TNode(11);
+//    tree.root.right.right.left = new TNode(3);
+
+    Tree tree = new Tree();
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(15);
+    tree.insert(3);
+    tree.insert(6);
+    tree.insert(13);
+    tree.insert(25);
+    tree.insert(1);
+    tree.insert(4);
+    tree.insert(8);
+    tree.insert(14);
+    tree.insert(18);
+    tree.iterativeLevelOrder(tree.root);
   }
 }
