@@ -78,7 +78,8 @@ public class LeetCodeMain {
 //    testLFU();
 //    testWashingMachines();
 //    testLongestValidParanthesis();
-    testLongestStringWithoutRepeatingChars();
+//    testLongestStringWithoutRepeatingChars();
+    testLongestSubstringWithAtLeastKRepeatingCharacters();
   }
 
   public static void testAddTwoNumbers() {
@@ -869,6 +870,23 @@ public class LeetCodeMain {
 //    String str = "aaabb";
     int res = LC_Prob_Med2.longestSubStringWithoutRepeatingCharacters(str);
     System.out.println("Res : " + res + " Str : " + str);
+  }
+
+  public static void testLongestSubstringWithAtLeastKRepeatingCharacters() {
+//    String str = "aaabb";
+//    int k = 3;
+
+//    String str = "ababbc";
+//    int k = 2;
+//
+//    String str = "aaccbbeeddggffiihhkkjjmmllzxyvwturspqno";
+//    int k = 2;
+//
+    String str = "abcdedghijklmnopqrstuvwxyz";
+    int k = 2;
+
+    int res = LC_Prob_Med2.longestSubstringWithAtLeastKRepeatingCharacters(str, k);
+    System.out.println(" Res : " + res + " Str : " + str);
   }
 
   public static void testLRU() {

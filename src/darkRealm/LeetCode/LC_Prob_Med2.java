@@ -1038,4 +1038,30 @@ If numbers = [1,2,2], a solution is:
     }
     return max;
   }
+
+  /*  [Prob 395 ] Longest Substring with At Least K Repeating Characters
+  *
+  * */
+  public static int longestSubstringWithAtLeastKRepeatingCharacters(String str, int k) {
+    if (str == null || str.length() < k) return 0;
+    return kHelper(str, 0, str.length()-1, k);
+  }
+
+  private static int kHelper(String str, int start, int end, int k) {
+    if (end - start + 1 < k) return 0;
+    int[] map = new int[26];
+    for (int i = start; i <= end; i++) {
+      int index = str.charAt(i) - 'a';
+      map[index]++;
+    }
+    for (int i = start; i <= end; i++) {
+      // split the original string in to two parts from the char is repeating less times than K
+      // and calculate the max again using recursion
+      int index = str.charAt(i) - 'a';
+      if (map[index] < k) {
+        return Math.max(kHelper(str, start, i - 1, k), kHelper(str, i + 1, end, k));
+      }
+    }
+    return end - start + 1;
+  }
 }
