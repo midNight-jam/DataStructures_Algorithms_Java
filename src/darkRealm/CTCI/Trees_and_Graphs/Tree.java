@@ -221,13 +221,14 @@ public class Tree {
       for (int i = 0; i < size; i++) {
         TNode trav = queue.poll();
         System.out.print(" " + trav.data);
-        if(trav.left!=null) queue.add(trav.left);
-        if(trav.right!=null) queue.add(trav.right);
+        if (trav.left != null) queue.add(trav.left);
+        if (trav.right != null) queue.add(trav.right);
       }
       System.out.println();
     }
     return list;
   }
+
   /* [513] Find Bottom Left Tree Value
   * */
   public static int bottomLeftTreeValue(TNode node) {
@@ -246,5 +247,38 @@ public class Tree {
       }
     }
     return first.data;
+  }
+
+  public String antiClockWiseCircumference(TNode node) {
+    if (node == null) return "";
+    List<List<Integer>> levels = new ArrayList<>();
+    Queue<TNode> queue = new LinkedList<>();
+    queue.add(node);
+    while (!queue.isEmpty()) {
+      int size = queue.size();
+      List<Integer> list = new ArrayList<>();
+      for (int i = 0; i < size; i++) {
+        TNode trav = queue.poll();
+        list.add(trav.data);
+        if (trav.left != null) queue.add(trav.left);
+        if (trav.right != null) queue.add(trav.right);
+      }
+      levels.add(list);
+    }
+    StringBuilder sbL = new StringBuilder();
+    StringBuilder sbR = new StringBuilder();
+    for (int i = 1; i < levels.size(); i++) {
+      List<Integer> lv = levels.get(i);
+      sbL.append(lv.get(0)+" ");
+    }
+    for (int i = levels.size() - 1; i > 0; i--) {
+      List<Integer> lv = levels.get(i);
+      sbR.append(lv.get(lv.size() - 1)+" ");
+    }
+
+    List<Integer> lastRow = levels.get(levels.size() - 1);
+    lastRow = lastRow.subList(1, lastRow.size() - 1);
+
+    return node.data + " " + sbL.toString() + lastRow.toString() + sbR.toString();
   }
 }

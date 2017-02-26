@@ -90,7 +90,8 @@ public class LeetCodeMain {
 //    testDetectCapitals();
 //    testLevelMaxValues();
     testIterativeLevelOrder();
-    testBottomLeft();
+//    testBottomLeft();
+    testCircumference();
   }
 
   public static void testAddTwoNumbers() {
@@ -1056,31 +1057,31 @@ public class LeetCodeMain {
   }
 
   private static void testIterativeLevelOrder() {
-    Tree tree = new Tree();
-    tree.root = new TNode(8);
-    tree.root.left = new TNode(5);
-    tree.root.right = new TNode(4);
-    tree.root.left.left = new TNode(9);
-    tree.root.left.right = new TNode(7);
-    tree.root.left.right.left = new TNode(1);
-    tree.root.left.right.right = new TNode(12);
-    tree.root.left.right.right.left = new TNode(2);
-    tree.root.right.right = new TNode(11);
-    tree.root.right.right.left = new TNode(3);
-
 //    Tree tree = new Tree();
-//    tree.insert(10);
-//    tree.insert(5);
-//    tree.insert(15);
-//    tree.insert(3);
-//    tree.insert(6);
-//    tree.insert(13);
-//    tree.insert(25);
-//    tree.insert(1);
-//    tree.insert(4);
-//    tree.insert(8);
-//    tree.insert(14);
-//    tree.insert(18);
+//    tree.root = new TNode(8);
+//    tree.root.left = new TNode(5);
+//    tree.root.right = new TNode(4);
+//    tree.root.left.left = new TNode(9);
+//    tree.root.left.right = new TNode(7);
+//    tree.root.left.right.left = new TNode(1);
+//    tree.root.left.right.right = new TNode(12);
+//    tree.root.left.right.right.left = new TNode(2);
+//    tree.root.right.right = new TNode(11);
+//    tree.root.right.right.left = new TNode(3);
+
+    Tree tree = new Tree();
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(15);
+    tree.insert(3);
+    tree.insert(6);
+    tree.insert(13);
+    tree.insert(25);
+    tree.insert(1);
+    tree.insert(4);
+    tree.insert(8);
+    tree.insert(14);
+    tree.insert(18);
     tree.iterativeLevelOrder(tree.root);
   }
 
@@ -1111,6 +1112,36 @@ public class LeetCodeMain {
 //    tree.insert(14);
 //    tree.insert(18);
     int res = tree.bottomLeftTreeValue(tree.root);
+    System.out.println("Res : " + res);
+  }
+
+  public static void testCircumference() {
+//    Tree tree = new Tree();
+//    tree.root = new TNode(8);
+//    tree.root.left = new TNode(5);
+//    tree.root.right = new TNode(4);
+//    tree.root.left.left = new TNode(9);
+//    tree.root.left.right = new TNode(7);
+//    tree.root.left.right.left = new TNode(1);
+//    tree.root.left.right.right = new TNode(12);
+//    tree.root.left.right.right.left = new TNode(2);
+//    tree.root.right.right = new TNode(11);
+//    tree.root.right.right.left = new TNode(3);
+
+    Tree tree = new Tree();
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(15);
+    tree.insert(3);
+    tree.insert(6);
+    tree.insert(13);
+    tree.insert(25);
+    tree.insert(1);
+    tree.insert(4);
+    tree.insert(8);
+    tree.insert(14);
+    tree.insert(18);
+    String res = tree.antiClockWiseCircumference(tree.root);
     System.out.println("Res : " + res);
   }
 }
