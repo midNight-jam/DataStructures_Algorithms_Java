@@ -84,8 +84,10 @@ public class Recursion_DP_Main {
   }
 
   public static void testMultiply() {
-    long res = Recursion_and_DP.mulitply(2, 6);
-    System.out.println(" mulipty res - " + res);
+    long res = Recursion_and_DP.mulitply(12345, 60000);
+//    long res = Recursion_and_DP.mulitply(123456789, 987654321);
+//    long res = Recursion_and_DP.mulitply(333333, Integer.MAX_VALUE);
+    System.out.println(" mulipty res : " + res);
   }
 
   public static void testTowerOfHanoi() {

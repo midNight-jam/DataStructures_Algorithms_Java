@@ -22,7 +22,7 @@ public class Main {
 //    }
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
-//    doRecursion_DP();
+    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
@@ -125,7 +125,7 @@ public class Main {
 //    Recursion_DP_Main.testAllPermutationsWithDups();
 //    Recursion_DP_Main.testParensCombination();
 //    Recursion_DP_Main.testMagicIndex();
-//    Recursion_DP_Main.testMultiply();
+    Recursion_DP_Main.testMultiply();
 //    System.out.println(Math.log(256)/Math.log(2));
 //    Recursion_DP_Main.testTowerOfHanoi();
 //    Recursion_DP_Main.testBalancedParanthesis();
@@ -136,7 +136,7 @@ public class Main {
 //    Recursion_DP_Main.testBooleanEvaluation();
 //    Recursion_DP_Main.testLongestSubSequence();
 //    Recursion_DP_Main.testRobotWays();
-    Recursion_DP_Main.testLongestIncreasingSubSequence();
+//    Recursion_DP_Main.testLongestIncreasingSubSequence();
   }
 
   private static void doTrees_Graph() {

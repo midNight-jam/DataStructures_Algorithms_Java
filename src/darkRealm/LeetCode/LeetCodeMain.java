@@ -81,7 +81,9 @@ public class LeetCodeMain {
 //    testLongestStringWithoutRepeatingChars();
 //    testLongestSubstringWithAtLeastKRepeatingCharacters();
 //    testSlidingWindowMaximum();
-    testKthLargest();
+//    testKthLargest();
+//    testRussianDolls();
+    testMulitply();
   }
 
   public static void testAddTwoNumbers() {
@@ -945,9 +947,29 @@ public class LeetCodeMain {
   public static void testKthLargest() {
 //    int[] arr = new int[]{2, 1};
 //    int[] arr = new int[]{-1, -1};
-    int[] arr = new int[]{-1,2};
+    int[] arr = new int[]{-1, 2};
     int k = 2;
     int res = LC_Prob3.kthLargestElement(arr, k);
     System.out.println("Res : " + res + "  - " + Arrays.toString(arr));
+  }
+
+  public static void testRussianDolls() {
+    int[][] envlopes = new int[][]{
+        {5, 4},
+        {6, 4},
+        {6, 7},
+        {2, 3}
+    };
+    int res = LC_Prob3.russianDollEnvelopes(envlopes);
+    System.out.println("Res : " + res);
+  }
+
+  public static void testMulitply() {
+//    String n1 = "123";
+//    String n2 = "4";
+    String n1 = "123456789";
+    String n2 = "987654321";
+    String res = LC_Prob3.multiply("1111", "3");
+    System.out.println(n1 + " : " + n2 + "  : res : " + res);
   }
 }
