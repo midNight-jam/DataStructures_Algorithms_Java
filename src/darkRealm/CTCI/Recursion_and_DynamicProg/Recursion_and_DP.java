@@ -369,7 +369,7 @@ public class Recursion_and_DP {
       return x * y;
     }
 
-    int len = (int) Math.log10(Math.max(x,y)) + 1;
+    int len = (int) Math.log10(Math.max(x, y)) + 1;
 
     long powerOfTen = (long) Math.pow(10, len / 2);
 
@@ -837,10 +837,10 @@ public class Recursion_and_DP {
   *     DP[i] =  MAX of { DP[i], DP[j] + 1}
   * */
 
-  public static int LongestIncreasingSubsequenceLength(int [] arr) {
+  public static int LongestIncreasingSubsequenceLength(int[] arr) {
     if (arr == null || arr.length == 0) return 0;
     int[] DP = new int[arr.length];
-    for(int i=0; i<DP.length;i++) DP[i] = 1;
+    for (int i = 0; i < DP.length; i++) DP[i] = 1;
     int longest = 1;
     for (int i = 1; i < arr.length; i++) {
       for (int j = 0; j <= i; j++) {
@@ -877,5 +877,22 @@ public class Recursion_and_DP {
       }
     }
     return w;
+  }
+
+  /* Maximum sum of increasing Subsequence*/
+  public static int maximumSumIncreasingSubsequence(int[] arr) {
+    if (arr == null || arr.length == 0) return 0;
+    int[] DP = new int[arr.length];
+    int max = Integer.MIN_VALUE;
+    for (int i = 0; i < DP.length; i++) DP[i] = 1;
+    for (int i = 1; i < DP.length; i++) {
+      for (int j = 0; j <= i; j++) {
+        if (arr[i] > arr[j] && DP[i] < arr[i] + DP[j]) {
+          DP[i] = arr[i] + DP[j];
+          max = Math.max(DP[i], max);
+        }
+      }
+    }
+    return max;
   }
 }
