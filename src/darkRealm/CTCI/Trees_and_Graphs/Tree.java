@@ -284,6 +284,7 @@ public class Tree {
 
   int maxValue;
 
+  /* [124]  Binary Tree Maximum Path Sum*/
   public int maxPathSum(TNode root) {
     maxValue = Integer.MIN_VALUE;
     maxPathFinder(root);
@@ -296,5 +297,30 @@ public class Tree {
     int right = Math.max(0, maxPathFinder(node.right));
     maxValue = Math.max(maxValue, left + right + node.data);
     return Math.max(left, right) + node.data;
+  }
+
+  public static void recover(TNode node) {
+    if (node == null) return;
+    inorderFind(node);
+    int temp = first.data;
+    first.data = second.data;
+    second.data = temp;
+  }
+
+  static TNode first, second, prevNode = new TNode(Integer.MIN_VALUE);
+
+  private static void inorderFind(TNode node) {
+    if (node == null) return;
+    inorderFind(node.left);
+    // actual logic do inrder traversal & remember the prv node to compare if not find increasing then this is the broken node
+    if (first == null && prevNode.data >= node.data) {
+      first = prevNode;
+    }
+    if (first != null && prevNode.data >= node.data) {
+      second = node;
+    }
+    prevNode = node;
+
+    inorderFind(node.right);
   }
 }
