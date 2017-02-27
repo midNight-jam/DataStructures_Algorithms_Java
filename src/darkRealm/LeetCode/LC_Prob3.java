@@ -335,7 +335,4 @@ public class LC_Prob3 {
       list.set(level, node.data);
     levelwise(node.right, level + 1, list);
   }
-
-
-
 }

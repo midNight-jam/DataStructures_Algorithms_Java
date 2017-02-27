@@ -89,9 +89,10 @@ public class LeetCodeMain {
 //    testAddDigits();
 //    testDetectCapitals();
 //    testLevelMaxValues();
-    testIterativeLevelOrder();
+//    testIterativeLevelOrder();
 //    testBottomLeft();
-    testCircumference();
+//    testCircumference();
+    testMaxPathSum();
   }
 
   public static void testAddTwoNumbers() {
@@ -1142,6 +1143,34 @@ public class LeetCodeMain {
     tree.insert(14);
     tree.insert(18);
     String res = tree.antiClockWiseCircumference(tree.root);
+    System.out.println("Res : " + res);
+  }
+
+  public static void testMaxPathSum() {
+//    Tree tree = new Tree();
+//    tree.root = new TNode(-2);
+//    tree.root.left = new TNode(-5);
+//    tree.root.right = new TNode(9);
+//    tree.root.left.left = new TNode(-1);
+//    tree.root.left.right = new TNode(2);
+//    tree.root.right.left = new TNode(3);
+//    tree.root.right.right = new TNode(-2);
+//    tree.root.left.right.left = new TNode(1);
+//    tree.root.left.right.right = new TNode(12);
+//    tree.root.left.right.right.left = new TNode(2);
+//    tree.root.right.right = new TNode(11);
+//    tree.root.right.right.left = new TNode(3);
+
+    Tree tree = new Tree();
+    tree.root = new TNode(-2);
+    tree.root.left = new TNode(3);
+    tree.root.right = new TNode(9);
+//    tree.root.left.left = new TNode(-1);
+//    tree.root.left.right = new TNode(2);
+//    tree.root.right.left = new TNode(3);
+//    tree.root.right.right = new TNode(-2);
+
+    int res = tree.maxPathSum(tree.root);
     System.out.println("Res : " + res);
   }
 }

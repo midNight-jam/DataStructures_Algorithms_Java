@@ -269,16 +269,32 @@ public class Tree {
     StringBuilder sbR = new StringBuilder();
     for (int i = 1; i < levels.size(); i++) {
       List<Integer> lv = levels.get(i);
-      sbL.append(lv.get(0)+" ");
+      sbL.append(lv.get(0) + " ");
     }
     for (int i = levels.size() - 1; i > 0; i--) {
       List<Integer> lv = levels.get(i);
-      sbR.append(lv.get(lv.size() - 1)+" ");
+      sbR.append(lv.get(lv.size() - 1) + " ");
     }
 
     List<Integer> lastRow = levels.get(levels.size() - 1);
     lastRow = lastRow.subList(1, lastRow.size() - 1);
 
     return node.data + " " + sbL.toString() + lastRow.toString() + sbR.toString();
+  }
+
+  int maxValue;
+
+  public int maxPathSum(TNode root) {
+    maxValue = Integer.MIN_VALUE;
+    maxPathFinder(root);
+    return maxValue;
+  }
+
+  private int maxPathFinder(TNode node) {
+    if (node == null) return 0;
+    int left = Math.max(0, maxPathFinder(node.left));
+    int right = Math.max(0, maxPathFinder(node.right));
+    maxValue = Math.max(maxValue, left + right + node.data);
+    return Math.max(left, right) + node.data;
   }
 }
