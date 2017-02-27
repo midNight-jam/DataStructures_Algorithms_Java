@@ -92,7 +92,8 @@ public class LeetCodeMain {
 //    testIterativeLevelOrder();
 //    testBottomLeft();
 //    testCircumference();
-    testMaxPathSum();
+//    testMaxPathSum();
+    testInorderIterative();
   }
 
   public static void testAddTwoNumbers() {
@@ -1161,7 +1162,7 @@ public class LeetCodeMain {
 //    tree.root.right.right = new TNode(11);
 //    tree.root.right.right.left = new TNode(3);
 
-    Tree tree = new Tree();
+    Tree tree = new Tree(1);
     tree.root = new TNode(-2);
     tree.root.left = new TNode(3);
     tree.root.right = new TNode(9);
@@ -1172,5 +1173,23 @@ public class LeetCodeMain {
 
     int res = tree.maxPathSum(tree.root);
     System.out.println("Res : " + res);
+  }
+
+  public static void testInorderIterative() {
+    Tree tree = new Tree(10);
+    tree.insert(5);
+    tree.insert(15);
+    tree.insert(3);
+    tree.insert(6);
+    tree.insert(13);
+    tree.insert(25);
+    tree.insert(1);
+    tree.insert(4);
+    tree.insert(8);
+    tree.insert(14);
+    tree.insert(18);
+
+    List<Integer> list = tree.inorderTraversalIterative(tree.root);
+    System.out.println(list);
   }
 }

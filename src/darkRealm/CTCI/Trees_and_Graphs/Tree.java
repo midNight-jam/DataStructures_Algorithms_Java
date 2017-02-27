@@ -1,7 +1,5 @@
 package darkRealm.CTCI.Trees_and_Graphs;
 
-import darkRealm.CTCI.Stacks_and_queues.MyStack;
-
 import java.util.*;
 
 /**
@@ -12,7 +10,6 @@ public class Tree {
 
   public Tree() {
   }
-
   public Tree(int data) {
     root = new TNode(data);
   }
@@ -44,39 +41,24 @@ public class Tree {
     return root.getIndexNode(index);
   }
 
-  public List<Integer> inorderTraversalIterative() {
-    MyStack<TNode> stack = new MyStack<>();
-    List<Integer> inorderTraversalIterative = new ArrayList<>();
-    TNode trav = root;
-    stack.push(trav);
-    while (!stack.isEmpty()) {
-      trav = stack.peek();
-      // if has left child then push left child in stack
-      if (trav.left != null) {
-        stack.push(trav.left);
+  public List<Integer> inorderTraversalIterative(TNode node) {
+    List<Integer> list = new ArrayList<>();
+    if (node == null) return list;
+    Stack<TNode> stack = new Stack<>();
+    TNode trav = node;
+    while (!stack.isEmpty() || trav != null) {
+      if (trav != null) {
+        stack.push(trav);
         trav = trav.left;
-        continue;
       }
-      // if doesnt has a left child then print this nodes, as its inorder correct place has arrived & pop from stack
-      else if (trav.left == null) {
+      // no left child time to go right
+      else {
         trav = stack.pop();
-        System.out.print(" " + trav.data);
-        inorderTraversalIterative.add(trav.data);
-        if (stack.isEmpty()) {
-          return inorderTraversalIterative; //  if stack has became empty its time to return
-        }
-        while (trav.right == null && !stack.isEmpty()) {  //  Traverse upwards till we have reached a node that has its right child, there we will make a turn
-          trav = stack.pop();
-          System.out.print(" " + trav.data);
-          inorderTraversalIterative.add(trav.data);
-        }
-
-        if (trav.right != null) {
-          stack.push(trav.right);
-        }
+        list.add(trav.data);
+        trav = trav.right;
       }
     }
-    return inorderTraversalIterative;
+    return list;
   }
 
   /* Storing the pre-order traversal  of the tree
@@ -299,7 +281,7 @@ public class Tree {
     return Math.max(left, right) + node.data;
   }
 
-  public static void recover(TNode node) {
+  public void recover(TNode node) {
     if (node == null) return;
     inorderFind(node);
     int temp = first.data;
@@ -309,7 +291,7 @@ public class Tree {
 
   static TNode first, second, prevNode = new TNode(Integer.MIN_VALUE);
 
-  private static void inorderFind(TNode node) {
+  private void inorderFind(TNode node) {
     if (node == null) return;
     inorderFind(node.left);
     // actual logic do inrder traversal & remember the prv node to compare if not find increasing then this is the broken node
@@ -322,5 +304,17 @@ public class Tree {
     prevNode = node;
 
     inorderFind(node.right);
+  }
+
+  /* 270 Closest binary Search Tree */
+  /* Also good example of iterative binary search*/
+  public int closestBinarySearchTreeValue(TNode node, double target) {
+    int closest = node.data;
+    while (node != null) {
+      if (Math.abs(target - node.data) < Math.abs(closest - target))
+        closest = node.data;
+      node = target > node.data ? node.right : node.left;
+    }
+    return closest;
   }
 }
