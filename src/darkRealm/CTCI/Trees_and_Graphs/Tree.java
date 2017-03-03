@@ -389,4 +389,49 @@ public class Tree {
     prev = curr;
     return prev;
   }
+
+
+  /* Print paths from root to leaf but without recursion*/
+  public List<List<Integer>> pathsIteratively(TNode node) {
+    List<List<Integer>> paths = new ArrayList<>();
+    if (node == null) return paths;
+    Stack<TNode> stack = new Stack<>();
+    Map<TNode, TNode> parentMap = new HashMap<>();
+    parentMap.put(node, null);// root doesnt has any parent
+    /* Pop all items one by one. Do following for
+       every popped item
+        a) push its right child and set its parent
+           pointer
+        b) push its left child and set its parent
+           pointer
+       Note that right child is pushed first so that
+       left is processed first */
+    stack.push(node);
+    TNode trav;
+    while (!stack.isEmpty()) {
+      trav = stack.pop();
+      if (trav != null && trav.left == null && trav.right == null) {
+        paths.add(getPath(parentMap, trav));
+      }
+      if (trav.right != null) {
+        stack.push(trav.right);
+        parentMap.put(trav.right, trav);
+      }
+      if (trav.left != null) {
+        stack.push(trav.left);
+        parentMap.put(trav.left, trav);
+      }
+    }
+    return paths;
+  }
+
+  private List<Integer> getPath(Map<TNode, TNode> map, TNode curr) {
+    List<Integer> path = new ArrayList<>();
+    while (curr != null) {
+      path.add(0, curr.data);
+      curr = map.get(curr);
+    }
+    return path;
+  }
 }
+
