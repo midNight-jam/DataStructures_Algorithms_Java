@@ -25,13 +25,13 @@ public class Main {
 //    doRecursion_DP();
 //    doSortingAndSearching();
 //    doprint();
-//    doTrees_Graph();
+    doTrees_Graph();
 //    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-    doLeetCode();
+//    doLeetCode();
 //    doMatrix();
   }
 
@@ -168,7 +168,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testUniqueBSTCount();
 //    Trees_and_Graphs_Main.testAllPossibleBST();
 //    Trees_and_Graphs_Main.testTopologicalSort();
-    Trees_and_Graphs_Main.testInorder();
+//    Trees_and_Graphs_Main.testPreorderTraversalIterative();
+    Trees_and_Graphs_Main.testPostorderTraversalIterative();
   }
 
   private static void doMathUtils() {
@@ -196,12 +197,13 @@ public class Main {
 //    LinkedList_Main.testPalindrome();
 //    LinkedList_Main.testIntersection();
 //    LinkedList_Main.testSumListNatural();
-    LinkedList_Main.testSumListII();
+//    LinkedList_Main.testSumListII();
 //    LinkedList_Main.testReverseMid();
 //    LinkedList_Main.testSumList();
 //    LinkedList_Main.testPartition();
 //		LinkedList_Main.testMergeTwoList();
 //		LinkedList_Main.testMergeKLists();
+    LinkedList_Main.testReverse();
   }
 
   private static void doBitsMain() {

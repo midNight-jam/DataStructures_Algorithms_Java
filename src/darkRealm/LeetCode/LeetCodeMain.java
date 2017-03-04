@@ -93,7 +93,10 @@ public class LeetCodeMain {
 //    testBottomLeft();
 //    testCircumference();
 //    testMaxPathSum();
-    testInorderIterative();
+//    testInorderIterative();
+//    testzigZag();
+//    testPostOrderIterative();
+    testMoveZeroes();
   }
 
   public static void testAddTwoNumbers() {
@@ -1087,6 +1090,23 @@ public class LeetCodeMain {
     tree.iterativeLevelOrder(tree.root);
   }
 
+  public static void testPostOrderIterative() {
+    Tree tree = new Tree();
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(15);
+//    tree.insert(3);
+//    tree.insert(6);
+//    tree.insert(13);
+//    tree.insert(25);
+//    tree.insert(1);
+//    tree.insert(4);
+//    tree.insert(8);
+//    tree.insert(14);
+//    tree.insert(18);
+    tree.postOrderTraversalIterative(tree.root);
+  }
+
   public static void testBottomLeft() {
     Tree tree = new Tree();
     tree.root = new TNode(8);
@@ -1191,5 +1211,32 @@ public class LeetCodeMain {
 
     List<Integer> list = tree.inorderTraversalIterative(tree.root);
     System.out.println(list);
+  }
+
+  public static void testzigZag() {
+    Tree tree = new Tree();
+    tree.insert(10);
+    tree.insert(5);
+    tree.insert(15);
+    tree.insert(3);
+    tree.insert(6);
+    tree.insert(13);
+    tree.insert(25);
+    tree.insert(1);
+    tree.insert(4);
+    tree.insert(8);
+    tree.insert(14);
+    tree.insert(18);
+    List<List<Integer>> list = tree.zigZagLevelOrder(tree.root);
+    System.out.println(" list : " + list);
+  }
+
+  public static void testMoveZeroes() {
+//    int[] arr = new int[]{0, 1, 0, 3, 12};
+//    int[] arr = new int[]{1};
+    int[] arr = new int[]{0};
+    System.out.println(Arrays.toString(arr));
+    LC_Prob3.moveZeroes(arr);
+    System.out.println(Arrays.toString(arr));
   }
 }

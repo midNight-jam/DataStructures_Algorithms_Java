@@ -176,6 +176,19 @@ public class LinkedList {
     return true;
   }
 
+  public void reverse(Node trav) {
+    if (trav == null) return;
+
+    if (trav.next == null) {
+      head = trav;
+      return;
+    }
+
+    reverse(trav.next);
+    trav.next.next = trav;
+    trav.next = null;
+  }
+
   @Override
   public String toString() {
     StringBuilder stringBuilder = new StringBuilder();

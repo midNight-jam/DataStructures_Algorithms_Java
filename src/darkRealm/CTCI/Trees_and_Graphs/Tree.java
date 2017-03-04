@@ -10,20 +10,9 @@ public class Tree {
 
   public Tree() {
   }
+
   public Tree(int data) {
     root = new TNode(data);
-  }
-
-  public void printInorderTraversal() {
-    inOrder(root);
-  }
-
-  private void inOrder(TNode node) {
-    if (node != null) {
-      inOrder(node.left);
-      System.out.println(" " + node.data);
-      inOrder(node.right);
-    }
   }
 
   public void insert(int d) {
@@ -41,6 +30,24 @@ public class Tree {
     return root.getIndexNode(index);
   }
 
+  public List<Integer> preorderTraversalItreative(TNode node) {
+    List<Integer> preRes = new ArrayList<>();
+    if (node == null) return preRes;
+    Stack<TNode> stack = new Stack<>();
+    TNode trav = node;
+    while (trav != null || !stack.isEmpty()) {
+      if (trav != null) {
+        stack.push(trav);
+        preRes.add(trav.data); // processing before going to child
+        trav = trav.left; // and move to left
+      } else {
+        trav = stack.pop();
+        trav = trav.right; // now moving to right as left is processed
+      }
+    }
+    return preRes;
+  }
+
   public List<Integer> inorderTraversalIterative(TNode node) {
     List<Integer> list = new ArrayList<>();
     if (node == null) return list;
@@ -54,11 +61,31 @@ public class Tree {
       // no left child time to go right
       else {
         trav = stack.pop();
-        list.add(trav.data);
+        list.add(trav.data);  // processing after coming to child
         trav = trav.right;
       }
     }
     return list;
+  }
+
+  /* POst Order Traversal Iterative, in put tree should be copy of the original tree, becuse below meth breaks the tree*/
+  public List<Integer> postOrderTraversalIterative(TNode node) {
+    List<Integer> postResult = new ArrayList<>();
+    if (node == null) return postResult;
+    Stack<TNode> stack = new Stack<>();
+    stack.push(node);
+    TNode trav;
+    while (!stack.isEmpty()) {
+      trav = stack.pop();
+      postResult.add(0,trav.data); // first process the current before moving to childs
+      if(trav.left!=null){
+        stack.push(trav.left);
+      }
+      if(trav.right!=null){
+        stack.push(trav.right);
+      }
+    }
+    return postResult;
   }
 
   /* Storing the pre-order traversal  of the tree
@@ -172,23 +199,6 @@ public class Tree {
           list.add(root);
         }
       }
-    }
-    return list;
-  }
-
-  public List<Integer> inorderTraversal(TNode root) {
-    List<Integer> list = new ArrayList<>();
-    if (root == null) return list;
-    TNode cur = root;
-    Stack<TNode> stack = new Stack<>();
-    while (cur != null || !stack.isEmpty()) {
-      while (cur != null) {
-        stack.push(cur);
-        cur = cur.left;
-      }
-      cur = stack.pop();
-      list.add(cur.data);
-      cur = cur.right;
     }
     return list;
   }
@@ -316,5 +326,50 @@ public class Tree {
       node = target > node.data ? node.right : node.left;
     }
     return closest;
+  }
+
+  public List<List<Integer>> zigZagLevelOrder(TNode node) {
+    List<List<Integer>> zigZag = new ArrayList<>();
+    if (node == null) return zigZag;
+    Queue<TNode> queue = new LinkedList<>();
+    queue.add(node);
+    int level = 0;
+    while (!queue.isEmpty()) {
+      int size = queue.size();
+      List<Integer> levelList = new ArrayList<>();
+      for (int i = 0; i < size; i++) {
+        TNode trav = queue.poll();
+        if ((level & 1) == 0) levelList.add(trav.data);
+        else levelList.add(0, trav.data);
+        if (trav.left != null) queue.add(trav.left);
+        if (trav.right != null) queue.add(trav.right);
+      }
+      zigZag.add(levelList);
+      level++;
+    }
+    return zigZag;
+  }
+
+  public int countNodes(TNode node) {
+    int h = leftHeight(node);
+    if (h < 0) return 0;
+    else if (leftHeight(node.right) == h - 1) {
+      return 1 << h + countNodes(node.right);
+    } else {
+      return 1 << h - 1 + countNodes(node.left);
+    }
+  }
+
+  public int leftHeight(TNode node) {
+    return root == null ? -1 : 1 + leftHeight(node.left);
+  }
+
+  public TNode mirror(TNode node) {
+    if (node == null) return null;
+    TNode left = mirror(node.left);
+    TNode right = mirror(node.right);
+    node.left = right;
+    node.right = left;
+    return node;
   }
 }

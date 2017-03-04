@@ -124,7 +124,6 @@ public class LinkedList_Main {
     System.out.println(" r : " + res);
   }
 
-
   public static void testSumListII() {
     //7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
 //    Node n0 = new Node(7);
@@ -238,9 +237,9 @@ public class LinkedList_Main {
 //    Node res = Linked_List.mergeSortedList(n0, null);
     System.out.println("Result : " + res.data);
   }
-	
-	public static void testMergeKLists(){
-		Node n0 = new Node(1);
+
+  public static void testMergeKLists() {
+    Node n0 = new Node(1);
     Node n1 = new Node(5);
 //    Node n2 = new Node(8);
     n0.next = n1;
@@ -264,11 +263,31 @@ public class LinkedList_Main {
 //    Node n6 = new Node(10);
     n10.next = n11;
 
-		Node [] lists = new Node[]{n0,n3,n10};
+    Node[] lists = new Node[]{n0, n3, n10};
 
 //    Node res = Linked_List.mergeKLists(lists);
 //    Node res = Linked_List.mergeKLists(lists);
     Node res = Linked_List.mergeKListsFinal(lists);
-		System.out.println(" Res : "+res.data);
-	}
+    System.out.println(" Res : " + res.data);
+  }
+
+  public static void testReverse() {
+    Node n0 = new Node(1);
+    Node n1 = new Node(2);
+    Node n2 = new Node(3);
+    Node n3 = new Node(4);
+    Node n4 = new Node(5);
+    Node n5 = new Node(6);
+    n0.next = n1;
+    n1.next = n2;
+    n2.next = n3;
+    n3.next = n4;
+    n4.next = n5;
+    LinkedList L1 = new LinkedList();
+    L1.head = n0;
+
+
+    L1.reverse(L1.head);
+    System.out.println(L1);
+  }
 }

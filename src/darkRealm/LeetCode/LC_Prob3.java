@@ -335,4 +335,17 @@ public class LC_Prob3 {
       list.set(level, node.data);
     levelwise(node.right, level + 1, list);
   }
+
+  public static void moveZeroes(int[] arr) {
+    if (arr == null || arr.length == 0) return;
+    int zi = 0;
+    while (zi<arr.length && arr[zi] != 0) zi++;
+    for (int i = zi + 1; i < arr.length; i++) {
+      if (arr[i] != 0) {
+        arr[zi] = arr[i];
+        arr[i] = 0;
+        zi++;
+      }
+    }
+  }
 }

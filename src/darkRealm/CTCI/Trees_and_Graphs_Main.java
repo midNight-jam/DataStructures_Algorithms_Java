@@ -81,15 +81,6 @@ public class Trees_and_Graphs_Main {
     int res = Trees_and_Graphs.getMinPathSum(tree);
   }
 
-  public static void testInorder(){
-    Tree tree = new Tree();
-    tree.root = new TNode(10);
-    tree.root.left = new TNode(5);
-    tree.root.right = new TNode(15);
-    List<Integer> list = tree.inorderTraversal(tree.root);
-    System.out.println(list);
-  }
-
   public static void testIsBalanced() {
 //    Tree tree = Trees_and_Graphs.getSampleTree();
 
@@ -296,6 +287,30 @@ public class Trees_and_Graphs_Main {
     Trees_and_Graphs.inorderTraversalIterative(tree);
   }
 
+  public static void testPreorderTraversalIterative() {
+    Tree tree = new Tree();
+    tree.root = new TNode(17);
+    tree.root.left = new TNode(30);
+    tree.root.right = new TNode(25);
+    tree.root.left.left = new TNode(12);
+    tree.root.right.right = new TNode(35);
+
+    List<Integer> res = tree.preorderTraversalItreative(tree.root);
+    System.out.println(res);
+  }
+
+  public static void testPostorderTraversalIterative() {
+    Tree tree = new Tree();
+    tree.root = new TNode(17);
+    tree.root.left = new TNode(30);
+    tree.root.right = new TNode(25);
+    tree.root.left.left = new TNode(12);
+    tree.root.right.right = new TNode(35);
+
+    List<Integer> res = tree.postOrderTraversalIterative(tree.root);
+    System.out.println(res);
+  }
+
   public static void testAdjacencyGraph() {
     KevinBaconsGame adjMap = new KevinBaconsGame();
     adjMap.addActor("Kevin Bacon");
@@ -400,7 +415,6 @@ public class Trees_and_Graphs_Main {
     System.out.println(" Res : " + Arrays.toString(s));
     Tree treeD = new Tree();
     treeD.root = tree.deserialize(res);
-    treeD.printInorderTraversal();
   }
 
   public static void testSubtreeSum() {
