@@ -77,11 +77,11 @@ public class Tree {
     TNode trav;
     while (!stack.isEmpty()) {
       trav = stack.pop();
-      postResult.add(0,trav.data); // first process the current before moving to childs
-      if(trav.left!=null){
+      postResult.add(0, trav.data); // first process the current before moving to childs
+      if (trav.left != null) {
         stack.push(trav.left);
       }
-      if(trav.right!=null){
+      if (trav.right != null) {
         stack.push(trav.right);
       }
     }
@@ -371,5 +371,22 @@ public class Tree {
     node.left = right;
     node.right = left;
     return node;
+  }
+
+  /* Idea is to do preorder, but instaed of going left first we go right first & build the tree from behind*/
+  public TNode flattenDriver(TNode root) {
+    TNode flat = flatten(root, null);
+    return flat;
+  }
+
+  // doing a bottom up approach thus building tree from behind
+  private TNode flatten(TNode curr, TNode prev) {
+    if (curr == null) return prev;
+    prev = flatten(curr.right, prev);
+    prev = flatten(curr.left, prev);
+    curr.right = prev;
+    curr.left = null;
+    prev = curr;
+    return prev;
   }
 }

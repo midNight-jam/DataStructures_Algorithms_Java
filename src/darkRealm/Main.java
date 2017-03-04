@@ -169,7 +169,8 @@ public class Main {
 //    Trees_and_Graphs_Main.testAllPossibleBST();
 //    Trees_and_Graphs_Main.testTopologicalSort();
 //    Trees_and_Graphs_Main.testPreorderTraversalIterative();
-    Trees_and_Graphs_Main.testPostorderTraversalIterative();
+//    Trees_and_Graphs_Main.testPostorderTraversalIterative();
+    Trees_and_Graphs_Main.testFlatTree();
   }
 
   private static void doMathUtils() {

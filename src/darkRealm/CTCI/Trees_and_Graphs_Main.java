@@ -311,6 +311,18 @@ public class Trees_and_Graphs_Main {
     System.out.println(res);
   }
 
+  public static void testFlatTree() {
+    Tree tree = new Tree();
+    tree.root = new TNode(17);
+    tree.root.left = new TNode(30);
+    tree.root.right = new TNode(25);
+//    tree.root.left.left = new TNode(12);
+//    tree.root.right.right = new TNode(35);
+
+    TNode root = tree.flattenDriver(tree.root);
+    System.out.println(root);
+  }
+
   public static void testAdjacencyGraph() {
     KevinBaconsGame adjMap = new KevinBaconsGame();
     adjMap.addActor("Kevin Bacon");
