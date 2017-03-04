@@ -23,10 +23,10 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-//    doSortingAndSearching();
+    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
-    doLinkedLsit();
+//    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
@@ -251,13 +251,14 @@ public class Main {
   }
 
   private static void doSortingAndSearching() {
+    Sorting_and_Searching_Main.testBucketSort();
 //    Sorting_and_Searching_Main.testMergeSort();
 //    Sorting_and_Searching_Main.testBinarySearch();
 //    Sorting_and_Searching_Main.testSortedMerge();
 //    Sorting_and_Searching_Main.testKthSmallestElement();
 //    Sorting_and_Searching_Main.testKthLargestElement();
 //    Sorting_and_Searching_Main.testFindMinInRotatedArray();
-    Sorting_and_Searching_Main.testFindMinInRotatedArrayII();
+//    Sorting_and_Searching_Main.testFindMinInRotatedArrayII();
 //    Sorting_and_Searching_Main.testSearchRotatedArray();
 //    Searching_Sorting.testSortedSearchNoSize();
 //    Sorting_and_Searching_Main.testPeaksValleys();

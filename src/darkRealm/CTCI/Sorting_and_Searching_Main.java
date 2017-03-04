@@ -19,6 +19,16 @@ public class Sorting_and_Searching_Main {
     System.out.println("After Sorting : " + Arrays.toString(arr));
   }
 
+  public static void testBucketSort() {
+//    int[] arr = new int[]{2, 4, 3, 10, 9, 8};
+    int[] arr = new int[]{11, 31, 42, 4, 53, 50, 9, 2};
+
+//    int [] arr =new int[]{122,164,121,412,314,396,468,996,210};
+    BucketSortUtil.dobucketSort(arr);
+//    QuickSortUtil.quicksort(arr, 0, arr.length - 1);
+    System.out.println("After Sorting : " + Arrays.toString(arr));
+  }
+
   public static void testBinarySearch() {
     int[] arr = new int[]{0, 1, 2, 4, 6, 9, 71};
     int res = BinarySearchUtil.binarySearchRecursive(arr, 90, 0, arr.length - 1);
