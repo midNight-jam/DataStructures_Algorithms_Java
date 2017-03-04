@@ -290,4 +290,37 @@ public class LinkedList_Main {
     L1.reverse(L1.head);
     System.out.println(L1);
   }
+
+  public static void testMergerLinkedList() {
+    Node n0 = new Node(1);
+    Node n1 = new Node(3);
+    Node n2 = new Node(5);
+    Node n3 = new Node(7);
+    Node n4 = new Node(9);
+    Node n5 = new Node(11);
+    n0.next = n1;
+    n1.next = n2;
+    n2.next = n3;
+    n3.next = n4;
+    n4.next = n5;
+    LinkedList L1 = new LinkedList();
+    L1.head = n0;
+
+    Node m0 = new Node(2);
+    Node m1 = new Node(4);
+    Node m2 = new Node(6);
+    Node m3 = new Node(8);
+    Node m4 = new Node(10);
+    Node m5 = new Node(12);
+    m0.next = m1;
+    m1.next = m2;
+    m2.next = m3;
+    m3.next = m4;
+    m4.next = m5;
+    LinkedList L2 = new LinkedList();
+    L2.head = m0;
+
+    Node mergeHead = L1.mergeWith(L2);
+    System.out.println(mergeHead);
+  }
 }

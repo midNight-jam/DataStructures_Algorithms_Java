@@ -26,12 +26,12 @@ public class Main {
 //    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
-//    doLinkedLsit();
+    doLinkedLsit();
 //    doMathUtils();
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-    doLeetCode();
+//    doLeetCode();
 //    doMatrix();
   }
 
@@ -205,7 +205,8 @@ public class Main {
 //    LinkedList_Main.testPartition();
 //		LinkedList_Main.testMergeTwoList();
 //		LinkedList_Main.testMergeKLists();
-    LinkedList_Main.testReverse();
+//    LinkedList_Main.testReverse();
+    LinkedList_Main.testMergerLinkedList();
   }
 
   private static void doBitsMain() {
