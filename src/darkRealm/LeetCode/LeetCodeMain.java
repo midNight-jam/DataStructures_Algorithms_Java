@@ -97,7 +97,9 @@ public class LeetCodeMain {
 //    testzigZag();
 //    testPostOrderIterative();
 //    testMoveZeroes();
-    testDivide();
+//    testDivide();
+//    testBaseChange();
+    testSortLinkedList();
   }
 
   public static void testAddTwoNumbers() {
@@ -1244,5 +1246,33 @@ public class LeetCodeMain {
   public static void testDivide() {
     int res = LC_Prob3.divide(15, 2);
     System.out.println(" Res : " + res);
+  }
+
+  public static void testBaseChange() {
+    int n = -7;
+    int base = 7;
+    String res = LC_Prob3.numToBase(n, base);
+    System.out.println(" Changed Base : " + res + " Orig " + n);
+  }
+
+  public static void testSortLinkedList() {
+    Node n3 = new Node(1);
+    Node n1 = new Node(2);
+    Node n5 = new Node(3);
+    Node n0 = new Node(4);
+    Node n4 = new Node(5);
+    Node n2 = new Node(6);
+    n0.next = n1;
+    n1.next = n2;
+    n2.next = n3;
+    n3.next = n4;
+    n4.next = n5;
+    LinkedList L1 = new LinkedList();
+    L1.head = n0;
+    System.out.println(" B4 : " + L1.toString());
+    Node newHead = L1.sortLinkedList();
+    LinkedList L2 = new LinkedList();
+    L2.head = newHead;
+    System.out.println(" after : " + L2.toString());
   }
 }

@@ -199,4 +199,25 @@ public class LinkedList {
     }
     return stringBuilder.toString();
   }
+
+  /*Sorting a linked list using Insertion Sort*/
+  public Node sortLinkedList() {
+    if (head == null || head.next == null) return head;
+    Node dummyHead = new Node(0);
+    Node curr = head;
+    Node prev = dummyHead;
+    Node next = null;
+    while (curr != null) {
+      next = curr.next; // preserving the next
+      // scanning the list to find the right place to insert
+      while (prev.next != null && prev.next.data <= curr.data) prev = prev.next;
+
+      // inseritng in between
+      curr.next = prev.next;
+      prev.next = curr;
+      prev = dummyHead;
+      curr = next;
+    }
+    return dummyHead.next;
+  }
 }

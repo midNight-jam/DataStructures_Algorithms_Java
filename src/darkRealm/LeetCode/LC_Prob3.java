@@ -413,4 +413,37 @@ public class LC_Prob3 {
     cache.put(b, val);
     return val;
   }
+
+  public static String numToBase(int num, int base) {
+    if (num == 0) return "0";
+    int i = 0;
+    boolean sign = num < 0;
+    num = Math.abs(num);
+    StringBuilder sb = new StringBuilder();
+    while (num > 0) {
+      sb.append(getSymbol(num % base));
+      num /= base;
+    }
+    if (sign) sb.append("-");
+    return sb.reverse().toString();
+  }
+
+  private static char getSymbol(int n) {
+    if (n >= 0 && n <= 9) return (char) (n + '0');
+    else return (char) (n - 10 + 'A');
+  }
+
+  public static String smallestGoodBase(String n) {
+    if (n == null || n.length() == 0) return "";
+    int base = 3;
+    int num = Integer.parseInt(n);
+    while (true) {
+      String changed = numToBase(num, base);
+      int i = 0;
+      for (; i < changed.length(); i++)
+        if (changed.charAt(i) != '1') break;
+      if (i == changed.length()) return base+"";
+      base++;
+    }
+  }
 }
