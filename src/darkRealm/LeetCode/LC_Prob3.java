@@ -339,7 +339,7 @@ public class LC_Prob3 {
   public static void moveZeroes(int[] arr) {
     if (arr == null || arr.length == 0) return;
     int zi = 0;
-    while (zi<arr.length && arr[zi] != 0) zi++;
+    while (zi < arr.length && arr[zi] != 0) zi++;
     for (int i = zi + 1; i < arr.length; i++) {
       if (arr[i] != 0) {
         arr[zi] = arr[i];
@@ -347,5 +347,26 @@ public class LC_Prob3 {
         zi++;
       }
     }
+  }
+
+  /*[Prob 29] Divide two integers*/
+  public static int divide(int dividend, int divisor) {
+    if (divisor == 0 || dividend == Integer.MIN_VALUE && divisor == -1) return Integer.MAX_VALUE;
+    int sign = (dividend < 0) ^ (divisor < 0) ? -1 : 1;
+    long dvd = Math.abs((long) dividend);
+    long dvs = Math.abs((long) divisor);
+    int res = 0;
+    while (dvd >= dvs) {
+      // calculate the number of shifts
+      long temp = dvs;
+      int mul = 1;
+      while (dvd >= temp << 1) {
+        temp = temp << 1;
+        mul = mul << 1;
+      }
+      dvd = dvd - temp;
+      res = res + mul;
+    }
+    return sign == -1 ? -res : res;
   }
 }

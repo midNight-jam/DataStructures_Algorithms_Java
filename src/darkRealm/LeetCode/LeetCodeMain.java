@@ -96,7 +96,8 @@ public class LeetCodeMain {
 //    testInorderIterative();
 //    testzigZag();
 //    testPostOrderIterative();
-    testMoveZeroes();
+//    testMoveZeroes();
+    testDivide();
   }
 
   public static void testAddTwoNumbers() {
@@ -1238,5 +1239,10 @@ public class LeetCodeMain {
     System.out.println(Arrays.toString(arr));
     LC_Prob3.moveZeroes(arr);
     System.out.println(Arrays.toString(arr));
+  }
+
+  public static void testDivide() {
+    int res = LC_Prob3.divide(15, 2);
+    System.out.println(" Res : " + res);
   }
 }
