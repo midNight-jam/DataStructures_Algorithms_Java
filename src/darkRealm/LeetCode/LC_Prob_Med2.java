@@ -124,28 +124,20 @@ public class LC_Prob_Med2 {
   * Follow up:  What if the inputs contain unicode characters? How would you adapt your solution to such case?
   * */
   public static boolean validAnagram(String s, String t) {
-    if (s == null || t == null || s.length() != t.length()) {
-      return false;
-    }
-    int[] charCount = new int[256];
-    for (int i = 0; i < s.length(); i++) {
-      char c = s.charAt(i);
-      charCount[c]++;
-    }
+    if (s == null || t == null || s.length() != t.length()) return false;
+    int[] map = new int[256];
+    int len = s.length();
 
-    for (int i = 0; i < t.length(); i++) {
-      char c = t.charAt(i);
-      if (charCount[c] >= 1) {
-        charCount[c]--;
-      } else {
-        return false;
-      }
-    }
+    for (int i = 0; i < len; i++)
+      map[s.charAt(i)]++;
 
-    for (int i = 0; i < charCount.length; i++) {
-      if (charCount[i] != 0) {
+    char c;
+    for (int i = 0; i < len; i++) {
+      c = t.charAt(i);
+      if (map[c] > 0)
+        map[c]--;
+      else
         return false;
-      }
     }
     return true;
   }
