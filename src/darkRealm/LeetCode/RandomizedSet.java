@@ -35,7 +35,7 @@ public class RandomizedSet {
     valueMap.remove(value);
     indexMap.remove(index);
 
-    if (valueMap.size() == 0) return true; // map empty
+    if (valueMap.isEmpty()) return true; // map empty
     if (index == indexMap.size()) return true; // last element is removed
 
     // update last elements index
@@ -45,5 +45,11 @@ public class RandomizedSet {
     indexMap.remove(indexMap.size()); // removing the last element from the indexMap
     indexMap.put(index, last);  // updating the index of the last value
     return true;
+  }
+
+  public int getRandom() {
+    if (valueMap.isEmpty()) return -1;  // map is still empty
+    int ri = rand.nextInt(valueMap.size()); // get the random index
+    return indexMap.get(ri);  // get the val at that index, using the indexMap
   }
 }
