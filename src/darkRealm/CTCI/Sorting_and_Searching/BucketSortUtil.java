@@ -30,7 +30,7 @@ public class BucketSortUtil {
     for (int i = 0; i < buckets.length; i++)
       for (int j = 0; j < buckets[i].size(); j++)
         arr[index++] = buckets[i].get(j);
-
     System.out.println(Arrays.toString(arr));
+
   }
 }
