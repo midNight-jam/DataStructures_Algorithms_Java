@@ -393,7 +393,7 @@ public class LeetCodeMain {
   }
 
   public static void testRandomizeSet() {
-    RandomizedCollection rset = new RandomizedCollection();
+    RandomizedSet rset = new RandomizedSet();
     boolean res = rset.insert(13);
     res = rset.insert(13);
     rset.insert(5);
