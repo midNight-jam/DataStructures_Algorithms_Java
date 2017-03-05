@@ -468,7 +468,9 @@ public class Trees_and_Graphs {
     if (root == null || root == p || root == q) return root;
     TNode left = findCommonAncestor(root.left, p, q);
     TNode right = findCommonAncestor(root.right, p, q);
-    return left == null ? right : right == null ? left : root;
+    if (left == null) return right;
+    if (right == null) return left;
+    return root; // this is the node at which result has came from both left & right
   }
 
   public static boolean checkSubtree(Tree t1, Tree t2) {
