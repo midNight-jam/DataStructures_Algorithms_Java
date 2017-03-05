@@ -1,5 +1,7 @@
 package darkRealm;
 
+import java.util.Random;
+
 /**
  * Created by Jayam on 3/3/2017.
  */
@@ -22,8 +24,10 @@ public class CardDeck {
   }
 
   public void shuffle() {
+    Random rand = new Random();
     for (int i = 0; i < capacity; i++) {
-      int ni = (int) (Math.random() * (capacity - i));
+//      int ni = (int) (Math.random() * (capacity - i));
+      int ni = rand.nextInt(capacity - i) + i;
       Card temp = deck[ni];
       deck[ni] = deck[i];
       deck[i] = temp;
