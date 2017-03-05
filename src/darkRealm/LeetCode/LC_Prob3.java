@@ -442,7 +442,7 @@ public class LC_Prob3 {
       int i = 0;
       for (; i < changed.length(); i++)
         if (changed.charAt(i) != '1') break;
-      if (i == changed.length()) return base+"";
+      if (i == changed.length()) return base + "";
       base++;
     }
   }

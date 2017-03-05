@@ -113,8 +113,8 @@ public class Tree {
   * */
   public TNode deserialize(String srz) {
     if (srz == null || srz.length() < 1) return null;
-    LinkedList<String> nodes = new LinkedList<>();
-    nodes.addAll(Arrays.asList(srz.split(" ")));
+    LinkedList<String> nodes = new LinkedList<>(Arrays.asList(srz.split(" ")));
+//    nodes.addAll(Arrays.asList(srz.split(" ")));
     return constructTree(nodes);
   }
 

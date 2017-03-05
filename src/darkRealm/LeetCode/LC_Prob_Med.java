@@ -765,39 +765,23 @@ public class LC_Prob_Med {
   public static boolean isValidParanthesis(String str) {
     Stack<Character> stack = new Stack<>();
     char c;
-    char top;
     for (int i = 0; i < str.length(); i++) {
       c = str.charAt(i);
-      if (c == '{' || c == '[' || c == '(') {
-        stack.push(c);
-      } else {
-        if (stack.isEmpty()) {
+      if (c == '(')
+        stack.push(')');
+      else if (c == '{')
+        stack.push('}');
+      else if (c == '[')
+        stack.push(']');
+      else {
+        if (stack.isEmpty() || stack.pop() != c)
           return false;
-        }
-        top = stack.peek();
-        if (c == getClosing(top)) {
-          stack.pop();
-        } else break;
       }
     }
     return stack.isEmpty();
   }
 
-  private static char getClosing(char c) {
-    char closing = 'X';
-    switch (c) {
-      case '{':
-        closing = '}';
-        break;
-      case '[':
-        closing = ']';
-        break;
-      case '(':
-        closing = ')';
-        break;
-    }
-    return closing;
-  }
+
 
   /*  [238] Product of Array Except Self
   *Given an array of n integers where n > 1, numbers, return an array output such that output[i] is equal to the product

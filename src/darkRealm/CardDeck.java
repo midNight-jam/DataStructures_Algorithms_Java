@@ -16,11 +16,9 @@ public class CardDeck {
     Suit[] allSuits = Suit.values();
     Rank[] allRanks = Rank.values();
     int index = 0;
-    for (int i = 0; i < suiteLen; i++) {
-      for (int j = 0; j < rankLen; j++) {
+    for (int i = 0; i < suiteLen; i++)
+      for (int j = 0; j < rankLen; j++)
         deck[index++] = new Card(allSuits[i], allRanks[j]);
-      }
-    }
   }
 
   public void shuffle() {
