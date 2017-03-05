@@ -100,75 +100,27 @@ public class LC_Prob_Med {
   *   Example:
   *   Input: "cbbd"
   *   Output: "bb"
-  * *********NOT A GOOD SOLUTION, DONOT PAY ATTENTION, ITS A WORK IN PROGRESS*********
+  *
   * */
-  public static String longestPalindrome(String s) {
-    int beg = 0;
-    int end = s.length() - 1;
-    while (beg < end) {
-      if (s.charAt(beg) != s.charAt(end)) {
-        break;
-      }
-      beg++;
-      end--;
+  static int start, maxLen;
+  public static String longestPalindromicSubString(String s) {
+    if (s == null || s.length() < 2) return s;
+    for (int i = 0; i < s.length() - 1; i++) {
+      expand(s, i, i);  // odd len palidrome
+      expand(s, i, i + 1); // even len palidrome
     }
-    if (beg >= end) {
-      return s;
+    return s.substring(start, start + maxLen);
+  }
+
+  private static void expand(String str , int left, int right) {
+    while (left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
+      left--;
+      right++;
     }
-
-    String maxPalindromeString = "";
-    int maxPalindromeLength = 0;
-    int palinStart, palinEnd;
-    palinStart = palinEnd = 0;
-    int len = 0;
-    char leftChar, rightChar;
-    char[] arr = s.toCharArray();
-    for (int i = 0; i < s.length(); i++) {
-      // considering for odd length palindrome
-      int left = i == 0 ? i : i - 1;
-      int right = arr[i] == arr[left] ? i : Integer.MAX_VALUE;
-      len = 0;
-      while (left >= 0 && right < s.length()) {
-        leftChar = arr[left];
-        rightChar = arr[right];
-
-        if (leftChar == rightChar) {
-          len = right - left;
-          if (len > maxPalindromeLength) {
-            maxPalindromeLength = len;
-            palinStart = left;
-            palinEnd = right;
-          }
-        } else {
-          break;
-        }
-        left--;
-        right++;
-      }
-
-      left = i == 0 ? i : i - 1;
-      right = i < arr.length - 1 ? arr[i + 1] == arr[left] ? i + 1 : Integer.MAX_VALUE : i;
-      len = 0;
-      while (left >= 0 && right < s.length()) {
-        leftChar = arr[left];
-        rightChar = arr[right];
-
-        if (leftChar == rightChar) {
-          len = right - left;
-          if (len > maxPalindromeLength) {
-            maxPalindromeLength = len;
-            palinStart = left;
-            palinEnd = right;
-          }
-        } else {
-          break;
-        }
-        left--;
-        right++;
-      }
+    if (maxLen < right - left - 1) {
+      maxLen = right - left - 1;
+      start = left;
     }
-    maxPalindromeString = s.substring(palinStart, palinEnd + 1);
-    return maxPalindromeString;
   }
 
   /*  [Prob 6] ZigZag Conversion
