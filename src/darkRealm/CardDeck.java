@@ -62,19 +62,29 @@ public class CardDeck {
   }
 
   public enum Rank {
-    Ace,
-    King,
-    Queen,
-    Jack,
-    Two,
-    Three,
-    Four,
-    Five,
-    Six,
-    Seven,
-    Eight,
-    Nine,
-    Ten
+    Ace(1),
+    King(13),
+    Queen(12),
+    Jack(11),
+    Two(2),
+    Three(3),
+    Four(4),
+    Five(5),
+    Six(6),
+    Seven(7),
+    Eight(8),
+    Nine(9),
+    Ten(10);
+    private int value;
+
+    Rank(int v) {
+      value = v;
+    }
+
+    public int value() {
+      return value;
+    }
+
   }
 
   public static void main(String[] args) {
