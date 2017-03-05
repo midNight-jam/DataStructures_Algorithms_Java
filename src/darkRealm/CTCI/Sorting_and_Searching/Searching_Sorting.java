@@ -112,7 +112,7 @@ public class Searching_Sorting {
     return res;
   }
 
-  /*[Prob 10.2]
+  /*[Prob 49. Group Anagrams]
    Q) Group Anagrmas : a method to sort an array of strings so that all the anagrams are next to each other
    A) we create a hashmap of sorted string as key and arraylist of string as value. we sort each word & see if it can be
    placed agains an existing key else we create that key & initailize with that word in array list against tht key.
@@ -120,17 +120,17 @@ public class Searching_Sorting {
 
   public static List<List<String>> groupAnagrams(String[] strs) {
     List<List<String>> res = new ArrayList<>();
-    if(strs==null || strs.length ==0) return res;
+    if (strs == null || strs.length == 0) return res;
 
-    Map<String,List<String>> map = new HashMap<>();
-    char [] charr;
-    for(int i=0; i<strs.length;i++){
-      charr = strs[i].toCharArray();
+    Map<String, List<String>> map = new HashMap<>();
+    char[] charr;
+    for (String s : strs) {
+      charr = s.toCharArray();
       Arrays.sort(charr);
       String formed = new String(charr);
-      if(!map.containsKey(formed))
-        map.put(formed,new ArrayList<>());
-      map.get(formed).add(strs[i]);
+      if (!map.containsKey(formed))
+        map.put(formed, new ArrayList<>());
+      map.get(formed).add(s);
     }
     return new ArrayList(map.values());
   }
