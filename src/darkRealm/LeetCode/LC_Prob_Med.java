@@ -103,6 +103,7 @@ public class LC_Prob_Med {
   *
   * */
   static int start, maxLen;
+
   public static String longestPalindromicSubString(String s) {
     if (s == null || s.length() < 2) return s;
     for (int i = 0; i < s.length() - 1; i++) {
@@ -112,7 +113,7 @@ public class LC_Prob_Med {
     return s.substring(start, start + maxLen);
   }
 
-  private static void expand(String str , int left, int right) {
+  private static void expand(String str, int left, int right) {
     while (left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
       left--;
       right++;
@@ -823,7 +824,6 @@ public class LC_Prob_Med {
   }
 
 
-
   /*  [Prob 387] First Unique Character in a String
   *   Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
   *   Examples:
@@ -956,6 +956,7 @@ public class LC_Prob_Med {
   public static int maxProfitFinal(int[] prices, int k) {
     if (prices == null || prices.length == 0) return 0;
     int[][] DP = new int[k + 1][prices.length];
+    if (k >= prices.length / 2) return quickProfit(prices);
     int maxDiff = 0;
     /*  DP Rule is
     *   T[i,j] = Max of{ T[i, j-1] --> not transacting
@@ -971,5 +972,13 @@ public class LC_Prob_Med {
       }
     }
     return DP[k][prices.length - 1];
+  }
+
+  private static int quickProfit(int[] prices) {
+    int max = 0;
+    for (int i = 1; i < prices.length; i++)
+      if (prices[i] > prices[i - 1])
+        max += prices[i] - prices[i - 1];
+    return max;
   }
 }

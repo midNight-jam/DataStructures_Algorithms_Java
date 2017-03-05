@@ -433,4 +433,12 @@ public class Tree {
     }
     return path;
   }
+
+  public TNode lowestCommonAncestorBST(TNode root, TNode p, TNode q) {
+    if (root.data < p.data && root.data < q.data)
+      return lowestCommonAncestorBST(root.left, p, q);
+    if (root.data > p.data && root.data > q.data)
+      return lowestCommonAncestorBST(root.right, p, q);
+    return root;
+  }
 }

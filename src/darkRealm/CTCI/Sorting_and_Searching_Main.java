@@ -3,6 +3,7 @@ package darkRealm.CTCI;
 import darkRealm.CTCI.Sorting_and_Searching.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Jayam on 1/10/2017.
@@ -116,7 +117,8 @@ public class Sorting_and_Searching_Main {
 //    String [] arr = new String[]{"caa","baa","aba","aaa","aab","aac"};
 //    String [] arr = new String[]{"aca","aab","aaa","aba","aaa","baa","aac"};
 //    String [] arr = new String[]{"cat","tac","sad","das","asd","act"};
-    Searching_Sorting.groupAnagrams(arr);
+    List<List<String>> fianl = Searching_Sorting.groupAnagrams(arr);
+    System.out.println(fianl);
   }
 
   public static void testFindDuplicates() {

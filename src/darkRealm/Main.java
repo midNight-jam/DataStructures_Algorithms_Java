@@ -4,11 +4,8 @@ import darkRealm.CTCI.Arrays_and_Strings.Arrays_and_Strings;
 import darkRealm.CTCI.BigO.BitsUtil;
 import darkRealm.CTCI.BigO.MathUtil;
 import darkRealm.CTCI.BigO.MatrixUtil;
-import darkRealm.CTCI.LinkedList_Main;
+import darkRealm.CTCI.*;
 import darkRealm.CTCI.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
-import darkRealm.CTCI.PrintProbs;
-import darkRealm.CTCI.Recursion_DP_Main;
-import darkRealm.CTCI.Trees_and_Graphs_Main;
 import darkRealm.LeetCode.LeetCodeMain;
 
 /*
@@ -26,7 +23,7 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-//    doSortingAndSearching();
+    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
 //    doLinkedLsit();
@@ -34,7 +31,7 @@ public class Main {
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-    doLeetCode();
+//    doLeetCode();
 //    doMatrix();
   }
 
@@ -268,7 +265,7 @@ public class Main {
 //    Sorting_and_Searching_Main.testRankStream();
 //    Sorting_and_Searching_Main.testSortedMatrixSearch();
 //    Sorting_and_Searching_Main.testSparseSearch();
-//    Sorting_and_Searching_Main.testGroupAnagrams();
+    Sorting_and_Searching_Main.testGroupAnagrams();
 //    Sorting_and_Searching_Main.testFindDuplicates();
 //    Sorting_and_Searching_Main.testInsertionSort();
 //    Sorting_and_Searching_Main.testQuickSort();

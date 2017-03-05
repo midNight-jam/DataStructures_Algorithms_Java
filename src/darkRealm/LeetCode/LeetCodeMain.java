@@ -952,8 +952,6 @@ public class LeetCodeMain {
     System.out.println(" Res : " + res + " Str : " + str);
   }
 
-
-
   public static void testSlidingWindowMaximum() {
     int[] arr = new int[]{1, 3, -1, -3, 5, 3};
 //    int[] arr = new int[]{4, 2, 5, 3, 7, 9};

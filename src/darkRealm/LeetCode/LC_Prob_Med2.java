@@ -12,7 +12,7 @@ public class LC_Prob_Med2 {
   * Input:Digit string "23"
   * Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
   * */
-  public static List<String> letterCombinations(int num) {
+  public static List<String> letterCombinationsForNumber(int num) {
     if (num < 1) {
       return new ArrayList<>();
     }
@@ -28,13 +28,12 @@ public class LC_Prob_Med2 {
     keyBoard.put(9, new char[]{'w', 'x', 'y', 'z'});
     int len = (int) Math.log10(num) + 1;
 
-    keyBoardString(keyBoard, num, len, "");
+    keyBoardStringForNumber(keyBoard, num, len, "");
     return results;
   }
 
-  private static List<String> results = new ArrayList<>();
 
-  private static void keyBoardString(HashMap<Integer, char[]> keyboard, int num, int len, String str) {
+  private static void keyBoardStringForNumber(HashMap<Integer, char[]> keyboard, int num, int len, String str) {
     if (len == 0) {
       results.add(str);
       return;
@@ -45,10 +44,11 @@ public class LC_Prob_Med2 {
     if (keyboard.containsKey(key)) {
       char[] chars = keyboard.get(key);
       for (int i = 0; i < chars.length; i++) {
-        keyBoardString(keyboard, num, len - 1, str + chars[i]);
+        keyBoardStringForNumber(keyboard, num, len - 1, str + chars[i]);
       }
     }
   }
+  private static List<String> results = new ArrayList<>();
 
   public static List<String> letterCombinations(String digits) {
     if (digits == null || digits.length() == 0) {
@@ -431,7 +431,7 @@ If numbers = [1,2,2], a solution is:
   *   As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
   *   return its length 5.
   *
-  *   A) Would use Bidirectinal BFS while keeoing the nodes of the most recent levels from both the ends will terminate
+  *   A) Would use Bidirectinal BFS while keeping the nodes of the most recent levels from both the ends will terminate
   *   when we find any one word os found in most recent dist from other side.
   *   Complexity N/2 * maxBreadth(the nodes on the dist) wordLength * 26
   * */
@@ -440,6 +440,7 @@ If numbers = [1,2,2], a solution is:
     Set<String> words = new HashSet<>(dictionary);
     Set<String> startSet = new HashSet<>(), endSet = new HashSet<>(), next = null;
     int pathLen = 1;
+    // add start & end words to their sets
     startSet.add(start);
     endSet.add(end);
     words.remove(start);
@@ -473,7 +474,6 @@ If numbers = [1,2,2], a solution is:
 
   /* [Prob 126]
   * */
-
   static Map<String, List<String>> adjMap;
   static List<List<String>> paths;
 

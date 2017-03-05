@@ -2,10 +2,7 @@ package darkRealm.CTCI.Sorting_and_Searching;
 
 import darkRealm.CTCI.Trees_and_Graphs.RankTree;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.BitSet;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * Created by Jayam on 1/11/2017.
@@ -121,28 +118,21 @@ public class Searching_Sorting {
    placed agains an existing key else we create that key & initailize with that word in array list against tht key.
   * */
 
-  public static void groupAnagrams(String[] arr) {
-    HashMap<String, ArrayList<String>> result = new HashMap<>();
-    for (int i = 0; i < arr.length; i++) {
-      char[] w = arr[i].toCharArray();
-      Arrays.sort(w);
-      String word = new String(w);
-      if (result.containsKey(word)) {
-        result.get(word).add(arr[i]);
-      } else {
-        ArrayList<String> list = new ArrayList<>();
-        list.add(arr[i]);
-        result.put(word, list);
-      }
-    }
+  public static List<List<String>> groupAnagrams(String[] strs) {
+    List<List<String>> res = new ArrayList<>();
+    if(strs==null || strs.length ==0) return res;
 
-    for (String w :
-        result.keySet()) {
-      ArrayList<String> list = result.get(w);
-      for (int i = 0; i < list.size(); i++) {
-        System.out.print(" " + list.get(i));
-      }
+    Map<String,List<String>> map = new HashMap<>();
+    char [] charr;
+    for(int i=0; i<strs.length;i++){
+      charr = strs[i].toCharArray();
+      Arrays.sort(charr);
+      String formed = new String(charr);
+      if(!map.containsKey(formed))
+        map.put(formed,new ArrayList<>());
+      map.get(formed).add(strs[i]);
     }
+    return new ArrayList(map.values());
   }
 
   /* [Prob 10.4]

@@ -237,4 +237,25 @@ public class LinkedList {
       return n2;
     }
   }
+
+  public Node reverseInKGroups(Node node, int k) {
+    Node trav = node;
+    int count = 0;
+    while (trav != null && count != k) {
+      trav = trav.next;
+      count++;
+    }
+    if (count == k) {
+      trav = reverseInKGroups(trav, k);
+      while (count > 0) {
+        Node next = head.next;
+        head.next = trav;
+        trav = head;
+        head = next;
+        count--;
+      }
+      head = trav;
+    }
+    return head;
+  }
 }
