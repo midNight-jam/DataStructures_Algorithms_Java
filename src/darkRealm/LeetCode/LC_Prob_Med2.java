@@ -464,83 +464,73 @@ If numbers = [1,2,2], a solution is:
   }
 
 
-  /* [Prob 126]
+  /* [Prob 126] WordLadderII
   * */
-  static Map<String, List<String>> adjMap;
-  static List<List<String>> paths;
+ static class WNode { // a helper node for Djikstrars
+    String word;
+    int dist;
+    WNode prev;
 
-  public static List<List<String>> wordLadderII(String start, String end, List<String> dict) {
-    paths = new ArrayList<>();
-    if (dict.size() == 0)
-      return paths;
+    public WNode(String word, int dist, WNode prev){
+      this.word = word;
+      this.dist = dist;
+      this.prev = prev;
+    }
+  }
 
-    int minDist = Integer.MAX_VALUE;
+  public static List<List<String>> wordLadderII(String start, String end, List<String> wordList) {
+    Set<String> dict = new HashSet<>(wordList);
+    List<List<String>> paths = new ArrayList<>();
+    if (!dict.contains(end)) return paths; // if end not in dict then return
 
-    Queue<String> queue = new LinkedList<>();
-    queue.add(start);
+    LinkedList<WNode> queue = new LinkedList<>();
+    queue.add(new WNode(start, 1, null));// start que with start word & dist as 1
 
-    adjMap = new HashMap<>();
-    // create a dist map to keep track of the minimum dist required to reach that node
-    Map<String, Integer> distMap = new HashMap<>();
-    //initialize all the distances to max ,as we will have to find min dist while traversing, except of start which is 0
-    for (String s : dict)
-      distMap.put(s, Integer.MAX_VALUE);
-    distMap.put(start, 0);
+    HashSet<String> visited = new HashSet<>();
+    HashSet<String> unvisited = new HashSet<>();
+    unvisited.addAll(dict);
+    int preDist = 0;
 
     while (!queue.isEmpty()) {
+      WNode trav = queue.remove();
+      String word = trav.word;
+      int currDist = trav.dist;
 
-      String trav = queue.poll();
+      // type this after you have typed the word forming logic
+      if (word.equals(end)) { // we ahve found
+        ArrayList<String> list = new ArrayList<String>();
+        list.add(trav.word);
+        while (trav.prev != null) {
+          list.add(0, trav.prev.word);
+          trav = trav.prev;
+        }
+        paths.add(list);
+        continue;
+      }
 
-      int dist = distMap.get(trav) + 1;//'step' indicates how many steps are needed to travel to one word.
+      if (preDist < currDist) { // means we have reached here with the min dist thus there is no point in processsing these words again
+        unvisited.removeAll(visited);
+      }
+      preDist = currDist;
 
-      if (dist > minDist) break;
-
-      for (int i = 0; i < trav.length(); i++) {
-        StringBuilder builder = new StringBuilder(trav);
-        for (char ch = 'a'; ch <= 'z'; ch++) {
-          builder.setCharAt(i, ch);
-          String formed = builder.toString();
-          if (distMap.containsKey(formed)) {
-
-            if (dist > distMap.get(formed)) // dist to reach this word is bigger than the minimum distance
-              continue;
-            else if (dist < distMap.get(formed)) {  // new dist to reach this word is smaller than previous recorded dist
-              queue.add(formed);
-              distMap.put(formed, dist);
-            }
-
-            if (adjMap.containsKey(formed)) // add the current processing node in the adjacency
-              adjMap.get(formed).add(trav);
-            else { // add list for this formed word
-              List<String> list = new LinkedList<>();
-              list.add(trav);
-              adjMap.put(formed, list);
-            }
-
-            if (formed.equals(end))
-              minDist = dist;
+      // new word forming logic
+      char[] arr = word.toCharArray();
+      for (int i = 0; i < arr.length; i++) {
+        for (char c = 'a'; c <= 'z'; c++) {
+          char temp = arr[i];
+          if (arr[i] != c) {
+            arr[i] = c;
           }
+          String formed = new String(arr);
+          if (unvisited.contains(formed)) {
+            queue.add(new WNode(formed, trav.dist + 1, trav));
+            visited.add(formed);
+          }
+          arr[i] = temp;
         }
       }
     }
-
-    LinkedList<String> result = new LinkedList<>();
-    backTrace(end, start, result);
     return paths;
-  }
-
-  private static void backTrace(String word, String start, List<String> list) {
-    if (word.equals(start)) {
-      list.add(0, start);
-      paths.add(new ArrayList<>(list));
-      list.remove(0);
-      return;
-    }
-    list.add(0, word);
-    if (adjMap.get(word) != null)
-      for (String s : adjMap.get(word))
-        backTrace(s, start, list);
-    list.remove(0);
   }
 
   /*  [Prob 10] Regular Expression Matching
@@ -757,7 +747,7 @@ If numbers = [1,2,2], a solution is:
     return helper.toString();
   }
 
-  /* [Prob 139] Word Break  TODO FAILING
+  /* [Prob 139] Word Break
   * Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be
   * segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not
   * contain duplicate words.
@@ -778,17 +768,13 @@ If numbers = [1,2,2], a solution is:
     partition[0] = true;
     String part = null;
     for (int i = 1; i <= n; i++) {
-      System.out.print(" " + i + " ");
       for (int j = 0; j < i; j++) {
         part = str.substring(j, i);
         if (wordDict.contains(part) && partition[j]) {
-//          System.out.print(" present - ");
           partition[i] = true;
           break;
         }
-//        System.out.print(j + " " + part + "    ");
       }
-//      System.out.println();
     }
     return partition[n];
   }

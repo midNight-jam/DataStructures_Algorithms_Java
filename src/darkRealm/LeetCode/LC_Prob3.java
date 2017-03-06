@@ -445,4 +445,17 @@ public class LC_Prob3 {
       base++;
     }
   }
+
+  /*[Prob 167] Two Sum II - Input array is sorted*/
+  public static int[] twoSum(int[] numbers, int target) {
+    if (numbers == null || numbers.length < 1) return new int[]{};
+    int left = 0, right = numbers.length - 1;
+    while (numbers[left] + numbers[right] != target) {
+      if (numbers[left] + numbers[right] < target)
+        left++;
+      else
+        right--;
+    }
+    return new int[]{left + 1, right + 1};
+  }
 }
