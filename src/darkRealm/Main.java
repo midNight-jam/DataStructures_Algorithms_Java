@@ -26,7 +26,7 @@ public class Main {
 //    doArray_and_Strings_Main();
 //    doStack_and_Queue();
 //    doRecursion_DP();
-    doSortingAndSearching();
+//    doSortingAndSearching();
 //    doprint();
 //    doTrees_Graph();
 //    doLinkedLsit();
@@ -34,7 +34,7 @@ public class Main {
 //    doBitsMain();
 //    doMathsLogicPuzzels();
 //    doModerate();
-//    doLeetCode();
+    doLeetCode();
 //    doMatrix();
   }
 

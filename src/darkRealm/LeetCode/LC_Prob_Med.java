@@ -3,7 +3,10 @@ package darkRealm.LeetCode;
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by Jayam on 1/27/2017.
@@ -867,42 +870,7 @@ public class LC_Prob_Med {
     return count;
   }
 
-  /*  [239] Sliding Window Maximum
-   *   Given an array numbers, there is a sliding window of size k which is moving from the very left of the array to the
-   *   very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
-   *   For example,
-   *   Given numbers = [1,3,-1,-3,5,3,6,7], and k = 3.
-   * */
-  public static int[] slidingWindowMaximum(int[] arr, int k) {
-    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
-      @Override
-      public int compare(Integer o1, Integer o2) {
-        return o2 - o1;
-      }
-    });
-    int head = 0;
-    int tail = 0;
-    while (tail < k - 1) {
-      maxHeap.add(arr[tail]);
-      tail++;
-    }
-    List<Integer> nos = new ArrayList<>();
-    while (tail < arr.length) {
-      maxHeap.add(arr[tail]);
-      int max = maxHeap.peek();
-      nos.add(max);
-      int outGoing = arr[head];
-      maxHeap.remove(outGoing);
-      head++;
-      tail++;
-    }
 
-    int[] res = new int[nos.size()];
-    for (int i = 0; i < nos.size(); i++) {
-      res[i] = nos.get(i);
-    }
-    return res;
-  }
 
   /*  [Prob 387] First Unique Character in a String
   *   Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.

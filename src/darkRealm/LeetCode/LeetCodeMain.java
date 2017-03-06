@@ -42,8 +42,8 @@ public class LeetCodeMain {
 ////    testRotateClockwise();
 ////    testexceptSelf();
 ////    testRandomizeSet();
-////    testSlidingMaximum();
-////    testFirstUniqueChar();
+//    testSlidingMaximum();
+//    testFirstUniqueChar();
 ////    testMaxProfit();
 ////    testLetterCombinations();
 ////    testGroupAnagram();
@@ -80,7 +80,7 @@ public class LeetCodeMain {
 ////    testLongestValidParanthesis();
 ////    testLongestStringWithoutRepeatingChars();
 ////    testLongestSubstringWithAtLeastKRepeatingCharacters();
-////    testSlidingWindowMaximum();
+    testSlidingWindowMaximum();
 ////    testKthLargest();
 ////    testRussianDolls();
 //    testMulitply();
@@ -99,7 +99,7 @@ public class LeetCodeMain {
 //    testMoveZeroes();
 //    testDivide();
 //    testBaseChange();
-    testSortLinkedList();
+//    testSortLinkedList();
   }
 
   public static void testAddTwoNumbers() {
@@ -412,7 +412,7 @@ public class LeetCodeMain {
 //    int[] arr = new int[]{9,10,9,-7,-4,-8,2,-6};
 //    int k = 5;
 
-    int[] nos = LC_Prob_Med.slidingWindowMaximum(arr, k);
+    int[] nos = LC_Prob3.slidingWindowMaximum(arr, k);
     System.out.println("Arr : " + Arrays.toString(arr));
     System.out.println("List : " + Arrays.toString(nos));
   }
@@ -951,6 +951,8 @@ public class LeetCodeMain {
     int res = LC_Prob3.longestValidParanthesis(str);
     System.out.println(" Res : " + res + " Str : " + str);
   }
+
+
 
   public static void testSlidingWindowMaximum() {
     int[] arr = new int[]{1, 3, -1, -3, 5, 3};
