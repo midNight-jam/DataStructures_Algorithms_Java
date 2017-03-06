@@ -48,6 +48,7 @@ public class LC_Prob_Med2 {
       }
     }
   }
+
   private static List<String> results = new ArrayList<>();
 
   public static List<String> letterCombinations(String digits) {
@@ -466,12 +467,12 @@ If numbers = [1,2,2], a solution is:
 
   /* [Prob 126] WordLadderII
   * */
- static class WNode { // a helper node for Djikstrars
+  static class WNode { // a helper node for Djikstrars
     String word;
     int dist;
     WNode prev;
 
-    public WNode(String word, int dist, WNode prev){
+    public WNode(String word, int dist, WNode prev) {
       this.word = word;
       this.dist = dist;
       this.prev = prev;
@@ -930,37 +931,22 @@ If numbers = [1,2,2], a solution is:
   public static int lengthOfLongestSubstringTwoDistinct(String str) {
     if (str == null || str.length() == 0) return 0;
     HashMap<Character, Integer> map = new HashMap<>();
-    String sub, longest = "";
-    char c;
-    int min, max, start = 0;
-    char minCh;
-    minCh = '\u0000';
+    int k = 2;
+    int left = 0, maxLen = 0;
+    char leftCh = str.charAt(0);
+    char ch;
     for (int i = 0; i < str.length(); i++) {
-      c = str.charAt(i);
-      if (map.containsKey(c) || (!map.containsKey(c) && map.size() <= 1)) map.put(c, i);
-      else {
-        min = Integer.MAX_VALUE;
-        max = Integer.MIN_VALUE;
-        for (Character k : map.keySet()) {
-          if (map.get(k) < min) {
-            minCh = k;
-            min = map.get(k);
-          }
-          if (map.get(k) > max) {
-            max = map.get(k);
-          }
-        }
-        sub = str.substring(start, max + 1);
-        if (sub.length() > longest.length()) longest = sub;
-        map.remove(minCh);
-        map.put(c, i);
-        start = min + 1;
+      ch = str.charAt(i);
+      map.put(ch, map.getOrDefault(ch, 0) + 1);
+      while (map.size() > k) {
+        leftCh = str.charAt(left);
+        map.put(leftCh, map.get(leftCh) - 1);
+        if (map.get(leftCh) == 0) map.remove(leftCh);
+        left++;
       }
+      maxLen = Math.max(maxLen, i - left + 1);
     }
-    sub = str.substring(start);
-    System.out.println("Sub : " + sub);
-    System.out.println("Longes : " + longest);
-    return longest.length() > sub.length() ? longest.length() : sub.length();
+    return maxLen;
   }
 
   /* [Prob 340] Longest Substring with At Most K Distinct Characters
@@ -971,9 +957,9 @@ If numbers = [1,2,2], a solution is:
   public static int lengthOfLongestSubstringKDistinct(String str, int k) {
     if (str == null || str.length() == 0 || k < 1) return 0;
     HashMap<Character, Integer> map = new HashMap<>();
-    int i = 0, left = 0, maxLen = 0;
+    int left = 0, maxLen = 0;
     char leftCh, ch;
-    for (; i < str.length(); i++) {
+    for (int i = 0; i < str.length(); i++) {
       ch = str.charAt(i);
       map.put(ch, map.getOrDefault(ch, 0) + 1);
       while (map.size() > k) {
@@ -1011,26 +997,39 @@ If numbers = [1,2,2], a solution is:
   /*  [Prob 395 ] Longest Substring with At Least K Repeating Characters
   *
   * */
-  public static int longestSubstringWithAtLeastKRepeatingCharacters(String str, int k) {
-    if (str == null || str.length() < k) return 0;
-    return kHelper(str, 0, str.length()-1, k);
-  }
+  public static int longestSubstring(String s, int k) {
+    HashMap<Character, Integer> countMap = new HashMap<Character, Integer>();
 
-  private static int kHelper(String str, int start, int end, int k) {
-    if (end - start + 1 < k) return 0;
-    int[] map = new int[26];
-    for (int i = start; i <= end; i++) {
-      int index = str.charAt(i) - 'a';
-      map[index]++;
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      countMap.put(c, countMap.getOrDefault(c, 0) + 1);
     }
-    for (int i = start; i <= end; i++) {
-      // split the original string in to two parts from the char is repeating less times than K
-      // and calculate the max again using recursion
-      int index = str.charAt(i) - 'a';
-      if (map[index] < k) {
-        return Math.max(kHelper(str, start, i - 1, k), kHelper(str, i + 1, end, k));
+
+    HashSet<Character> missSet = new HashSet<>();
+    for (char c : countMap.keySet())
+      if (countMap.get(c) < k)
+        missSet.add(c);
+
+    if (missSet.isEmpty()) {
+      return s.length();
+    }
+
+    int max = 0;
+    int left = 0, right = 0;
+    while (right < s.length()) {
+      char c = s.charAt(right);
+      if (missSet.contains(c)) {
+        if (right != left) {
+          max = Math.max(max, longestSubstring(s.substring(left, right), k));
+        }
+        left = right + 1;
       }
+      right++;
     }
-    return end - start + 1;
+
+    if (left != right)
+      max = Math.max(max, longestSubstring(s.substring(left, right), k));
+
+    return max;
   }
 }
