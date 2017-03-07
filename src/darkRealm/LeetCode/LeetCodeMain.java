@@ -80,7 +80,7 @@ public class LeetCodeMain {
 //    testLongestValidParanthesis();
 //    testLongestStringWithoutRepeatingChars();
 //    testLongestSubstringWithAtLeastKRepeatingCharacters();
-    testTextJustification();
+//    testTextJustification();
 //    testSlidingWindowMaximum();
 //    testKthLargest();
 //    testRussianDolls();
@@ -101,6 +101,8 @@ public class LeetCodeMain {
 //    testDivide();
 //    testBaseChange();
 //    testSortLinkedList();
+//    testTinyUrl();
+    testKPairs();
   }
 
   public static void testAddTwoNumbers() {
@@ -199,18 +201,6 @@ public class LeetCodeMain {
     String res = LC_Prob_Med.reverseWords(str);
     System.out.println(" Str : " + str + "   res : " + res);
     System.out.println(" Str : " + str.length() + "   res : " + res.length());
-  }
-
-  public static void testCompareVersion() {
-//    String v1 = "  1.1.3  ";
-//    String v2 = "  1.12   ";
-
-    String v1 = "1.2.2...1";
-    String v2 = "1.2.3...1";
-
-    int res = LC_Prob_Med.compareVersion(v1, v2);
-    System.out.println(" V1: " + v1 + "   V2 : " + v2);
-    System.out.println("   res : " + res);
   }
 
   public static void testSurroundRegion() {
@@ -1282,5 +1272,28 @@ public class LeetCodeMain {
     int maxlen = 16;
     List<String> res = LC_Prob3.textJustification(str, maxlen);
     System.out.println(" Res : " + res);
+  }
+
+  public static void testTinyUrl() {
+    TinyURL tinyURL = new TinyURL();
+    String str = "NetGear";
+    String res = tinyURL.encode(str);
+    System.out.println("Long : " + str + " Short : " + res);
+    String decode = tinyURL.decode(res);
+    System.out.println("hosrt : " + res + " long : " + decode);
+  }
+
+  public static void testKPairs() {
+//    int[] arr = new int[]{3, 1, 4, 1, 5};
+//    int k = 2;
+//    int[] arr = new int[]{1, 2, 3, 4, 5};
+//    int k = 1;
+//    int[] arr = new int[]{3, 1, 5, 4, 1};
+//    int k = 0;
+    int[] arr = new int[]{1, 2, 3, 4, 5};
+    int k = 3;
+
+    int res = LC_Prob3.kDiffFindPairs(arr, k);
+    System.out.println(res);
   }
 }

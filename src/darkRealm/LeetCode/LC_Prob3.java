@@ -82,7 +82,8 @@ public class LC_Prob3 {
         deque.poll();
 
       while (!deque.isEmpty() && arr[deque.peekLast()] < arr[i])
-        deque.removeLast(); // why removing last, beause a new max has arrived & we cannot hold smaller elements now, so remove all smaller
+        deque.removeLast(); // why removing last, because a new max has arrived & we cannot hold smaller elements now,
+      // so remove all smaller
 
       deque.add(i);
       if (i + 1 >= k) // means window has expanded
@@ -464,7 +465,7 @@ public class LC_Prob3 {
     if (words == null || words.length == 0) return result;
     int wi = 0, wlen = 0, lineLen = 0;
     StringBuilder sb;
-    int prev =0;
+    int prev = 0;
     while (wi < words.length) {
       lineLen = 0;
       while (lineLen < maxLen) {
@@ -476,7 +477,7 @@ public class LC_Prob3 {
         wi++;
       }
       sb = new StringBuilder();
-      for (int i = prev; i < wi -1; i++) {
+      for (int i = prev; i < wi - 1; i++) {
         sb.append(words[i]);
         if (sb.length() < maxLen) sb.append(" ");
       }
@@ -485,8 +486,58 @@ public class LC_Prob3 {
         lineLen++;
       }
       result.add(sb.toString());
-      prev = wi-1;
+      prev = wi - 1;
     }
     return result;
+  }
+
+  /*[Prob 532]  K-diff Pairs in an Array */
+  public static int kDiffFindPairs(int[] arr, int k) {
+    if (arr == null || arr.length == 0 || k < 0) return 0;
+
+    Map<Integer, Integer> map = new HashMap<>();
+    int pair = 0;
+    for (int i : arr) {
+      map.put(i, map.getOrDefault(i, 0) + 1);
+    }
+
+    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+      if (k == 0) {
+        //count how many elements in the array that appear more than twice.
+        if (entry.getValue() >= 2) {
+          pair++;
+        }
+      } else {
+        if (map.containsKey(entry.getKey() + k)) {
+          pair++;
+        }
+      }
+    }
+
+    return pair;
+  }
+  /*[Prob 531] Lonely Pixel I */
+  public int findLonelyPixel(char[][] picture) {
+    if (picture == null || picture.length == 0 || picture[0].length == 0) return 0;
+    int[] rowsCount = new int[picture.length];
+    int[] colsCount = new int[picture[0].length];
+    for (int i = 0; i < picture.length; i++) {
+      for (int j = 0; j < picture[0].length; j++) {
+        if (picture[i][j] == 'B') {
+          rowsCount[i]++;
+          colsCount[j]++;
+        }
+      }
+    }
+
+    int lonelyB = 0;
+    for (int i = 0; i < picture.length; i++) {
+      for (int j = 0; j < picture[0].length; j++) {
+        if (picture[i][j] == 'B' && rowsCount[i] == 1 && colsCount[j] == 1)
+          lonelyB++;
+      }
+    }
+
+    return lonelyB;
   }
 }
