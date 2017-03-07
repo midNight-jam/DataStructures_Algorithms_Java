@@ -79,7 +79,8 @@ public class LeetCodeMain {
 //    testWashingMachines();
 //    testLongestValidParanthesis();
 //    testLongestStringWithoutRepeatingChars();
-    testLongestSubstringWithAtLeastKRepeatingCharacters();
+//    testLongestSubstringWithAtLeastKRepeatingCharacters();
+    testTextJustification();
 //    testSlidingWindowMaximum();
 //    testKthLargest();
 //    testRussianDolls();
@@ -905,8 +906,8 @@ public class LeetCodeMain {
 //    String str = "abcdedghijklmnopqrstuvwxyz";
 //    int k = 2;
 
-    int res = LC_Prob_Med2.longestSubstringWithAtLeastKRepeatingCharacters(str, k);
-    System.out.println(" Res : " + res + " Str : " + str);
+//    int res = LC_Prob_Med2.longestSubstringWithAtLeastKRepeatingCharacters(str, k);
+//    System.out.println(" Res : " + res + " Str : " + str);
   }
 
   public static void testLRU() {
@@ -1274,5 +1275,12 @@ public class LeetCodeMain {
     LinkedList L2 = new LinkedList();
     L2.head = newHead;
     System.out.println(" after : " + L2.toString());
+  }
+
+  public static void testTextJustification() {
+    String[] str = new String[]{"This", "is", "an", "example", "of", "text", "justification."};
+    int maxlen = 16;
+    List<String> res = LC_Prob3.textJustification(str, maxlen);
+    System.out.println(" Res : " + res);
   }
 }

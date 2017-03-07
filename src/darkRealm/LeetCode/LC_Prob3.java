@@ -458,4 +458,35 @@ public class LC_Prob3 {
     }
     return new int[]{left + 1, right + 1};
   }
+
+  public static List<String> textJustification(String[] words, int maxLen) {
+    List<String> result = new ArrayList<>();
+    if (words == null || words.length == 0) return result;
+    int wi = 0, wlen = 0, lineLen = 0;
+    StringBuilder sb;
+    int prev =0;
+    while (wi < words.length) {
+      lineLen = 0;
+      while (lineLen < maxLen) {
+        wlen = words[wi].length();
+        lineLen = lineLen + wlen;
+        if (lineLen + 1 < maxLen) {
+          lineLen++;
+        }
+        wi++;
+      }
+      sb = new StringBuilder();
+      for (int i = prev; i < wi -1; i++) {
+        sb.append(words[i]);
+        if (sb.length() < maxLen) sb.append(" ");
+      }
+      while (sb.length() < maxLen) {
+        sb.append(" ");
+        lineLen++;
+      }
+      result.add(sb.toString());
+      prev = wi-1;
+    }
+    return result;
+  }
 }

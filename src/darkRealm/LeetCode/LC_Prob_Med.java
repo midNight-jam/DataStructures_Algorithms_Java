@@ -234,30 +234,15 @@ public class LC_Prob_Med {
   * Given s = "the sky is blue",
   * return "blue is sky the".
   * */
-  public static String reverseWords(String sentence) {
-    sentence = sentence.trim();
-    StringBuilder reverse = new StringBuilder();
-    int wordBeg, wordEnd;
-    wordBeg = wordEnd = 0;
-    for (int i = sentence.length() - 1; i > -1; i--) {
-      while (sentence.charAt(i) == ' ') {
-        i--;
-      }
-      if (sentence.charAt(i) != ' ') {
-        wordBeg = i;
-      }
-      while (i >= 0 && sentence.charAt(i) != ' ') {
-        i--;
-        wordEnd = i;
-      }
-      if (wordEnd < wordBeg) {
-        reverse.append(sentence.substring(wordEnd + 1, wordBeg + 1));
-        if (i != -1) {
-          reverse.append(" ");
-        }
-      }
+  public static String reverseWords(String str) {
+    StringBuilder res = new StringBuilder();
+    for (int start = str.length() - 1; start >= 0; start--) {
+      if (str.charAt(start) == ' ') continue;
+      int end = start;
+      while (start >= 0 && str.charAt(start) != ' ') start--;
+      res.append(str.substring(start + 1, end + 1)).append(" ");
     }
-    return reverse.toString();
+    return res.toString().trim();
   }
 
   /*  [Prob 165]  Compare Version Numbers
