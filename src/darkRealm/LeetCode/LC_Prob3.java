@@ -518,7 +518,7 @@ public class LC_Prob3 {
   }
 
   /*[Prob 531] Lonely Pixel I */
-  public int findLonelyPixelI(char[][] picture) {
+  public static int findLonelyPixelI(char[][] picture) {
     if (picture == null || picture.length == 0 || picture[0].length == 0) return 0;
     int[] rowsCount = new int[picture.length];
     int[] colsCount = new int[picture[0].length];
@@ -543,7 +543,7 @@ public class LC_Prob3 {
   }
 
   /*[Prob 531] Lonely Pixel I */
-  public int findLonelyPixelII(char[][] picture, int N) {
+  public static int findLonelyPixelII(char[][] picture, int N) {
     if (picture == null || picture.length == 0 || picture[0].length == 0) return 0;
     int[] colsCount = new int[picture[0].length];
     Map<String, Integer> map = new HashMap<>();
@@ -574,7 +574,7 @@ public class LC_Prob3 {
   }
 
   /*[Prob 4] Median of Two Sorted Arrays*/
-  public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+  public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
     int len = nums1.length + nums2.length;
     if (len % 2 == 0) { //even thus avg of 2 mid elements
       return (getKth(len / 2 + 1, nums1, nums2, 0, 0)
@@ -584,7 +584,7 @@ public class LC_Prob3 {
     }
   }
 
-  public int getKth(int k, int[] na, int[] nb, int sa, int sb) {
+  public static int getKth(int k, int[] na, int[] nb, int sa, int sb) {
     if (sa >= na.length)
       return nb[sb + k - 1];
 
@@ -605,5 +605,50 @@ public class LC_Prob3 {
     } else {
       return getKth(k - k / 2, na, nb, sa, m2 + 1);
     }
+  }
+
+  public static boolean isPalindrome(int x) {
+    if (x < 0 || x != 0 && x % 10 == 0) return false;
+    int rev = 0;
+    while (x > rev) {
+      rev = rev * 10 + x % 10;
+      x /= 10;
+    }
+    return (x == rev || x == rev / 10);
+  }
+
+  public static boolean isHappy(int n) {
+    Set<Integer> set = new HashSet<>();
+    int r = 0;
+    while (true) {
+      set.add(n);
+      r = 0;
+      while (n > 0) {
+        r += (n % 10) * (n % 10);
+        n = n / 10;
+      }
+      if (r == 1)
+        return true;
+      else if (set.contains(r))
+        return false;
+      set.add(r);
+      n = r;
+    }
+  }
+
+  public static Map<Long, Integer> primeFactorization(long n) {
+    Map<Long, Integer> primeFactors = new HashMap<>();
+    for (long factor = 2; factor * factor <= n; factor++) {
+      while (n % factor == 0) {
+        System.out.print(factor + " ");
+        n = n / factor;
+        primeFactors.put(factor, primeFactors.getOrDefault(factor, 0) + 1);
+      }
+    }
+    if (n > 1) {
+      primeFactors.put(n, primeFactors.getOrDefault(n, 0) + 1);
+      System.out.println(n);
+    }
+    return primeFactors;
   }
 }

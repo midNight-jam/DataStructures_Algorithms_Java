@@ -12,6 +12,7 @@ import darkRealm.LeetCode.Cache.LRU;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Jayam on 1/27/2017.
@@ -102,7 +103,10 @@ public class LeetCodeMain {
 //    testBaseChange();
 //    testSortLinkedList();
 //    testTinyUrl();
-    testKPairs();
+//    testKPairs();
+//    testNumberPalindrome();
+//    testHappyNumber();
+    testPrimeFactorization();
   }
 
   public static void testAddTwoNumbers() {
@@ -1294,6 +1298,29 @@ public class LeetCodeMain {
     int k = 3;
 
     int res = LC_Prob3.kDiffFindPairs(arr, k);
+    System.out.println(res);
+  }
+
+  public static void testNumberPalindrome() {
+    int k = 11011;
+//    int k = -2147483648;
+//    int k = -1;
+//    int k = 10;
+    boolean res = LC_Prob3.isPalindrome(k);
+    System.out.println(" k : " + k + "  Res : " + res);
+  }
+
+  public static void testHappyNumber() {
+    int k = 19;
+    boolean res = LC_Prob3.isHappy(k);
+    System.out.println(" k : " + k + "  Res : " + res);
+  }
+
+  public static void testPrimeFactorization() {
+//    int n = 2;
+//    int n = 38;
+    int n = 510;
+    Map<Long, Integer> res = LC_Prob3.primeFactorization(n);
     System.out.println(res);
   }
 }

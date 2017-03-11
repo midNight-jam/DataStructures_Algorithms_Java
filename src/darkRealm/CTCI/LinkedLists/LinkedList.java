@@ -270,4 +270,25 @@ public class LinkedList {
     }
     return false;
   }
+
+  /* [19] Remove Nth Node From End of List
+  * */
+  public Node removeKthFromEnd(Node node, int n) {
+    if (node == null) return node;
+    Node trav = node;
+    while (trav != null && n-- > 0)
+      trav = trav.next;
+    if (trav == null && n != 0) return null;
+    Node prev = null, pivot = node;
+    while (trav != null) {
+      trav = trav.next;
+      prev = pivot;
+      pivot = pivot.next;
+    }
+    if (prev != null)
+      prev.next = pivot.next;
+    else
+      this.head = this.head.next;
+    return this.head;
+  }
 }
