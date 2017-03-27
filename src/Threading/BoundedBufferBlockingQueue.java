@@ -22,7 +22,7 @@ public class BoundedBufferBlockingQueue {
   private static void consumer() throws InterruptedException {
     Random random = new Random();
     while (true) {
-      Thread.sleep(100);
+      Thread.sleep(100);  // simulate reading time
       if (random.nextInt(10) == 0) {
         Integer val = bque.take();  // take will patiently wait if the que is empty
         System.out.println("Taken value : " + val + " Queue Size : " + bque.size());
