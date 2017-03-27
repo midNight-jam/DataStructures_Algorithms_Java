@@ -651,4 +651,29 @@ public class LC_Prob3 {
     }
     return primeFactors;
   }
+
+  public static int[] searchRange(int[] nums, int target) {
+    if (nums == null || nums.length == 0) return new int[]{};
+    int low = 0, high = nums.length - 1;
+    int mid;
+    int[] res = new int[2];
+    while (low < high) {
+      mid = low + (high - low) / 2;
+      if (mid != 0 && nums[mid - 1] <= target) {
+        res[0] = mid - 1;
+      }
+      if (mid != nums.length - 1 && nums[mid + 1] >= target) {
+        res[1] = mid + 1;
+      }
+      if (target > nums[mid]) {
+        low = mid;
+        continue;
+      }
+      if (target < nums[mid]) {
+        high = mid;
+        continue;
+      }
+    }
+    return res;
+  }
 }

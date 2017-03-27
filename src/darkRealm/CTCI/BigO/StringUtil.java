@@ -75,71 +75,6 @@ public class StringUtil {
         return result;
     }
 
-    /*First, this fucntion was really complex & I was not happy to have such a big function.
-    Second, however it worked for many scenarios it failed insome, for eg: "Abcdedcd" gives ouptut as edc,
-    where as output should have been "Abcde". thus this method is discarded.
-    * */
-    /*public static String maxDistinctSubString(String str) {
-        str = str.toLowerCase();
-        Stack<Character> stack = new Stack<>();
-        boolean[] arrival = new boolean[26];
-        int ai, si, ri;
-        ai = si = ri = 0;
-        String s1, s2;
-        s1 = s2 = "";
-        char c;
-        for (int i = 0; i < str.length(); i++) {
-            c = str.charAt(i);
-            ai = c - 'a';
-            // if repeating char
-            if (arrival[ai]) {
-                // if we evalautaed already
-                s2 = s1;
-                s1 = "";
-                ri = -1;
-                //first get the string that is in stack
-                for (si = 0; si < stack.size(); si++) {
-                    s1 += stack.elementAt(si);
-                    // use this loop to initialize the index of repeating char
-                    if (stack.elementAt(si) == c) {
-                        ri = si;
-                    }
-                }
-                // now remove extra , & keep only those chars which are after the char that is repeating,
-                // or iam just trying to remove those chars till repating char from stack
-                for (int j = 0; j <= ri; j++) {
-                    stack.remove(0);
-                }
-                // add the current char also to stack
-                stack.push(c);
-            }
-            // new char, insert in stack & make arrival true
-            else {
-                stack.push(str.charAt(i));
-                arrival[ai] = true;
-            }
-        }
-
-        //after loop compare s1 with string in stack whcih is longer return that,
-        String stackStr = "";
-        for (int i = 0; i < stack.size(); i++) {
-            stackStr += stack.elementAt(i);
-        }
-
-        // get the string with max length
-        int m = s1.length();
-        String result = s1;
-        if (m < s2.length()) {
-            result = s2;
-            m = s2.length();
-        }
-        if (m < stackStr.length()) {
-            result = stackStr;
-        }
-
-        return result;
-    }*/
-
     public static void printAllFoundPermutations(String small, String big) {
         if (big.length() > small.length()) {
 
@@ -148,7 +83,7 @@ public class StringUtil {
             int count;
             int wi;
             char sc, bc;
-            String result="";
+            String result = "";
             int windowSize = small.length();
             for (int si = 0; si < small.length(); si++) {
                 sc = small.charAt(si);
@@ -186,30 +121,7 @@ public class StringUtil {
                 }
             }
 
-/*      //older logic that only checks for presence, but doesnt mathces
-        //the exact count of each numbers
-     boolean matching;
-            char c;
-            int w = 0;
-            String result = "";
-            int windowSize = small.length();
-
-            for (int i = 0; i < big.length() - windowSize; i++) {
-                matching = false;
-                for (w = i; w < i + windowSize; w++) {
-                    c = big.charAt(w);
-                    if (smallChars.containsKey(c)) {
-                        matching = true;
-                    } else {
-                        matching = false;
-                        break;
-                    }
-                }
-                if (w == i + windowSize && matching) {
-                    result += " "+i;
-                }
-            }*/
-            System.out.println("mathces found at : "+result);
+            System.out.println("mathces found at : " + result);
 
         }
     }
