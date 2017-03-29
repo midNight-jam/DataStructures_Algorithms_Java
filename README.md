@@ -7,11 +7,15 @@ This section contains implementation of different Data Structures in Java.
 
 | Data Structure   | Implementation |
 |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| <b>Stack</b>  <br>  Methods Implemented: push(), pop(), peek(), isEmpty()               | [Click](https://github.com/bhasin11/Algorithms-in-JavaScript/blob/master/src/stack.js)|
-| <b>Queue</b>  <br>  Methods Implemented: offer(), poll(), peek(), isEmpty()               | [Click](https://github.com/bhasin11/Algorithms-in-JavaScript/blob/master/src/queue.js)|
-| <b>Circular Queue</b>  <br>  Methods Implemented: offer(), poll(), peek(), isEmpty()             | [Click](https://github.com/bhasin11/Algorithms-in-JavaScript/blob/master/src/circularQueue.js)|
-| <b>Linked List</b>  <br>  Methods Implemented: insertFirst(), insertLast(), insertAt(), removeFirst(), removeLast(), removeAt(), displayAll(), contains(), indexOf(), clear(), get(), set(), size()               | [Click](https://github.com/bhasin11/Algorithms-in-JavaScript/blob/master/src/linkedList.js)|
-| <b>Doubly Linked List</b>  <br>  Methods Implemented: insertFirst(), insertLast(), insertAt(), removeFirst(), removeLast(), removeAt(), displayAll(), contains(), indexOf(), clear(), get(), set(), size()               | [Click](https://github.com/bhasin11/Algorithms-in-JavaScript/blob/master/src/doublyLinkedList.js)|
+| <b>Stack</b>  <br>  Methods Implemented: push(), pop(), peek(), isEmpty()               | [Click](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Stacks_and_queues/MyStack.java)|
+| <b>Queue</b>  <br>  Methods Implemented: offer(), poll(), peek(), isEmpty()               | [Click](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Stacks_and_queues/MyQueue.java)|
+| <b>Linked List</b>  <br>  Methods Implemented: insertFirst(), insertLast(), insertAt(), removeFirst(), removeLast(), removeAt(), displayAll(), contains(), indexOf(), clear(), get(), set(), size()               | [Click](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/LinkedLists/LinkedList.java)|
+| <b>Tree</b>  <br>  Methods Implemented: preorderIterative(), inorderIterative(), levelOrder() ... many more| [Click](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Trees_and_Graphs/Tree.java)|
+| <b>Graph</b>  <br>  Methods Implemented: BFS(), DFS(), Djikstras(), TopologicalSort()               | [Click](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Trees_and_Graphs/Graph.java)|
+| <b>Trie</b>  <br>  Methods Implemented: search(), print()               | [Click](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Trie/Trie.java)|
+| <b>MaxHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [Click](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Heap/MaxHeap.java)|
+| <b>MinHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [Click](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Heap/MinHeap.java)|
+
 
 
 # Solutions in Python
