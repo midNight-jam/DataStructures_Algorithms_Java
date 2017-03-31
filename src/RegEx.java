@@ -77,7 +77,6 @@ public class RegEx {
     }
     m.appendTail(result);
     System.out.println(result);
-
-
+    //User clientId=***masked***. Some more text clientId=***masked***. This clientNum=100
   }
 }
