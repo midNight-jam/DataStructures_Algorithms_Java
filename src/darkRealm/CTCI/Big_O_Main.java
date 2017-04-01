@@ -159,21 +159,6 @@ public class Big_O_Main {
         }
     }
 
-    private static void maxDistinctSubString() {
-//        String s =StringUtil.maxDistinctSubString("Abcded");
-//       String s =StringUtil.maxDistinctSubString("Cdekdfc");
-//       String s =StringUtil.maxDistinctSubString("abbab");
-//        String s =StringUtil.maxDistinctSubString("Abababab");
-//        String s =StringUtil.maxDistinctSubString("Abcdedcd");
-//        String s =StringUtil.maxDistinctSubString("Abcdedefgckf");
-//        String s =StringUtil.maxDistinctSubString("Aaaaa");
-//        String s =StringUtil.maxDistinctSubString("Aiklmcdefdg");
-        String s = StringUtil.maxDistinctSubString("Abcdedc");
-
-
-        System.out.println(" String : " + s);
-    }
-
     private static void allPermutations() {
         String s = "cacadb";
         StringUtil.printAllFoundPermutations("ccac", s);

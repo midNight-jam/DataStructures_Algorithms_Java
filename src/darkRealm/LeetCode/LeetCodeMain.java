@@ -194,7 +194,7 @@ public class LeetCodeMain {
     String str = "      -11919730356x";
 
 
-    int res = LC_Prob_Med.atoi(str);
+    int res = LC_Prob_Med.stringToInteger(str);
     System.out.println(" Str : " + str + "   res : " + (res));
   }
 
