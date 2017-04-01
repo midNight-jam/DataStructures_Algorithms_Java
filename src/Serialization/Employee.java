@@ -7,7 +7,8 @@ import java.io.Serializable;
  */
 public class Employee implements Serializable {
   String name;
-  int age;
+  transient int age;
+  static int employeeCount = 99;
 
   private static final long serialVersionUID = 123456789l;
 

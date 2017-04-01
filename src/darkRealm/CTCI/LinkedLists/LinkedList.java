@@ -238,23 +238,23 @@ public class LinkedList {
     }
   }
 
-  public Node reverseInKGroups(Node node, int k) {
-    Node trav = node;
+  public Node reverseInKGroups(Node head, int k) {
+    Node curr = head;
     int count = 0;
-    while (trav != null && count != k) {
-      trav = trav.next;
+    while (curr != null && count < k) {
+      curr = curr.next;
       count++;
     }
+
     if (count == k) {
-      trav = reverseInKGroups(trav, k);
+      curr = reverseInKGroups(curr, k);
       while (count > 0) {
         Node next = head.next;
-        head.next = trav;
-        trav = head;
+        head.next = curr;
+        curr = head;
         head = next;
-        count--;
       }
-      head = trav;
+      head = curr;
     }
     return head;
   }
