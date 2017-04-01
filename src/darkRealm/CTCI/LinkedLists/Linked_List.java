@@ -247,9 +247,9 @@ public class Linked_List {
   /* [Prob 21] Merge Sorted Lists
   * Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together
   * the nodes of the first two lists.
-  * Recursive Solution is very compact, but has a tradeoff for stack
+  * Recursive Solution is very compact (in linkedList Class), but has a tradeoff for stack
   * */
-  public static Node mergeSortedList(Node L1, Node L2) {
+  public static Node mergeSortedListIterative(Node L1, Node L2) {
     if (L1 == null && L2 == null) return null;
     else if (L1 == null) return L2;
     else if (L2 == null) return L1;
@@ -285,21 +285,6 @@ public class Linked_List {
       trav = trav.next;
     }
     return newHead;
-  }
-
-  // same problem but recursive solution
-  public static Node mergeSortedListRecur(Node L1, Node L2) {
-    if (L1 == null) return L2;
-    else if (L2 == null) return L1;
-    Node trav = null;
-    if (L1.data < L2.data) {
-      L1.next = mergeSortedListRecur(L1.next, L2);
-      trav = L1;
-    } else {
-      L2.next = mergeSortedListRecur(L1, L2.next);
-      trav = L2;
-    }
-    return trav;
   }
   
 	/* [Prob 23] Merge k Sorted Lists

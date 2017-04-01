@@ -37,44 +37,6 @@ public class StringUtil {
         return String.valueOf(str);
     }
 
-
-    // failing cases Abababab, Aaaaa
-    public static String maxDistinctSubString(String str) {
-        str = str.toLowerCase();
-        boolean[] arrival = new boolean[26];
-        int len = str.length();
-        int tempLen = 0;
-        int prevTempLen = 0;
-        int distinctIndex = 0;
-        char c;
-        int ci = 0;
-        String tempString = "";
-        String result = "";
-        for (int i = 0; i < len; i++) {
-            c = str.charAt(i);
-            ci = c - 'a';
-            if (arrival[ci]) {
-                // take count of string
-                if (tempLen > prevTempLen) {
-                    prevTempLen = tempLen;
-                    distinctIndex = i - tempLen;
-                    arrival = new boolean[26]; // resetting the boolean array, weel this is not working
-                    tempString = str.substring(distinctIndex, prevTempLen);
-                    tempLen = tempLen - str.indexOf(c) - 1; // dont set it blindly to 0, ithas to also consdier the length made
-                    // from last occurence, so repeatin char index + 1
-                }
-            }
-            arrival[ci] = true;
-            tempLen++;
-        }
-        if (tempString.length() < tempLen) {
-            result = str.substring(str.length() - tempLen);
-        } else {
-            result = str.substring(distinctIndex, prevTempLen);
-        }
-        return result;
-    }
-
     public static void printAllFoundPermutations(String small, String big) {
         if (big.length() > small.length()) {
 

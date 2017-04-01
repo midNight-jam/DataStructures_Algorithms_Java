@@ -1,7 +1,7 @@
 package PatternsZ;
 
 import PatternsZ.Adapter.Adapter;
-import PatternsZ.Adapter.Target;
+import PatternsZ.Adapter.NewContract;
 import PatternsZ.ChainOfResponsibility.ConcreteHandler1;
 import PatternsZ.ChainOfResponsibility.ConcreteHandler2;
 import PatternsZ.ChainOfResponsibility.Handler;
@@ -112,7 +112,7 @@ public class Client {
   }
 
   public void testAdapterPattern() {
-    Target target = new Adapter();
+    NewContract target = new Adapter();
     target.sayHello();
   }
 

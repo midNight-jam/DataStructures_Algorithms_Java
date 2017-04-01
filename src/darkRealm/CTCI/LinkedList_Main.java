@@ -230,12 +230,12 @@ public class LinkedList_Main {
     LinkedList L2 = new LinkedList();
     L2.head = n3;
 
-//    Node res = Linked_List.mergeSortedList(n0, n3);
-    Node res = Linked_List.mergeSortedListRecur(n0, n3);
-//    Node res = Linked_List.mergeSortedList(null, n3);
+//    Node res = Linked_List.mergeSortedListIterative(n0, n3);
+//    Node res = Linked_List.mergeSortedListRecur(n0, n3);
+//    Node res = Linked_List.mergeSortedListIterative(null, n3);
 //    Node res = Linked_List.mergeSortedListRecur(null, n3);
-//    Node res = Linked_List.mergeSortedList(n0, null);
-    System.out.println("Result : " + res.data);
+//    Node res = Linked_List.mergeSortedListIterative(n0, null);
+//    System.out.println("Result : " + res.data);
   }
 
   public static void testMergeKLists() {

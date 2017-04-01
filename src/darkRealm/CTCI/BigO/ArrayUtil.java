@@ -186,26 +186,6 @@ public class ArrayUtil {
     return result;
   }
 
-  public static int[] maxInWindow_failed_first_attempt(int[] arr, int windowSize) {
-    int tempMax = Integer.MIN_VALUE;
-    int[] result = new int[(arr.length) / windowSize + 1];
-    int ri = 0;
-    for (int i = 0; i < arr.length; i++) {
-      if (tempMax < arr[i]) {
-        tempMax = arr[i];
-      }
-      if ((i + 1) % windowSize == 0) {
-        //save max
-        result[ri++] = tempMax;
-        tempMax = Integer.MIN_VALUE;
-      }
-    }
-    if (arr.length % windowSize != 0) {
-      result[ri++] = tempMax;
-    }
-    return result;
-  }
-
   public static String maxInWindow(int[] arr, int windowSize) {
     int tempMax = Integer.MIN_VALUE;
     Queue<Integer> window = new LinkedList<>();

@@ -5,7 +5,6 @@ package darkRealm.CTCI.BigO;
  */
 public class BinarySearch {
 
-
     public static int doBinarySearch(int[] arr, int n) {
         int low = 0;
         int high = arr.length - 1;
