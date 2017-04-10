@@ -114,9 +114,9 @@ public class MatrixUtil {
   }
 
   public static void rotateMatrixClockWise(int[][] matrix) {
-    if (matrix == null || matrix.length == 0) {
+    if (matrix == null || matrix.length == 0)
       return;
-    }
+
     int levels = matrix.length;
     int i = 0;
     int swapLevel = 0;
@@ -139,9 +139,9 @@ public class MatrixUtil {
   }
 
   public static void rotateMatrixAntiClockWise(int[][] matrix) {
-    if (matrix == null || matrix.length == 0) {
+    if (matrix == null || matrix.length == 0)
       return;
-    }
+
     int levels = matrix.length;
     int i = 0;
     int swapLevel;
@@ -247,11 +247,10 @@ public class MatrixUtil {
     int row = matrix.length;
     int col = matrix[0].length;
     int[][] newMat = new int[row][col];
-    for (int i = 0; i < matrix.length; i++) {
-      for (int j = 0; j < matrix[0].length; j++) {
+    for (int i = 0; i < matrix.length; i++)
+      for (int j = 0; j < matrix[0].length; j++)
         newMat[j][i] = matrix[row - i - 1][j];
-      }
-    }
+
     return newMat;
   }
 
@@ -260,11 +259,9 @@ public class MatrixUtil {
     int row = matrix.length;
     int col = matrix[0].length;
     int[][] newMat = new int[row][col];
-    for (int i = 0; i < matrix.length; i++) {
-      for (int j = 0; j < matrix[0].length; j++) {
+    for (int i = 0; i < matrix.length; i++)
+      for (int j = 0; j < matrix[0].length; j++)
         newMat[j][i] = matrix[i][col - j - 1];
-      }
-    }
     return newMat;
   }
 }

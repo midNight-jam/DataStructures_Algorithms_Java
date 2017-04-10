@@ -6,14 +6,12 @@ package PatternsZ.Iterator;
 public class ConcreteAggregate implements Aggregate {
   private String[] data;
 
-
   public void fetchData() {
     data = new String[]{"aa", "bb", "cc", "dd"};
   }
 
   @Override
   public Iterator createIterator() {
-
     return new ConcreteIterator(data);
   }
 }

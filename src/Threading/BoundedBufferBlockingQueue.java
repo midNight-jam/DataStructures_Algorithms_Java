@@ -10,7 +10,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class BoundedBufferBlockingQueue {
   // A bounded buffer sort of collection provided by Java
-  private static BlockingQueue<Integer> bque = new ArrayBlockingQueue<Integer>(10);
+  private static BlockingQueue<Integer> bque = new ArrayBlockingQueue<>(10);
 
   private static void producer() throws InterruptedException {
     Random random = new Random();
