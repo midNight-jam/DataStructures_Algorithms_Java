@@ -15,9 +15,9 @@ public class PalindromeReverse {
 
   public static String reverse(String str) {
     char[] arr = str.toCharArray();
-    int li  = 0;
+    int li = 0;
     for (int i = 0; i < str.length() / 2; i++) {
-      li = str.length() - i -1;
+      li = str.length() - i - 1;
       char temp = arr[i];
       arr[i] = arr[li];
       arr[li] = temp;
@@ -26,9 +26,11 @@ public class PalindromeReverse {
   }
 
   public static void main(String[] args) {
-    String str = "ragecar";
-    boolean res = palindrome(str);
-    String str2 = "AAABBCCDDEE";
-    System.out.println(reverse(str2));
+//    String str = "ragecar";
+//    boolean res = palindrome(str);
+//    String str2 = "AAABBCCDDEE";
+//    System.out.println(reverse(str2));
+
+
   }
 }
