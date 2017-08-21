@@ -1,8 +1,8 @@
-# hyperLC : Data Structures and Algorithms in Java + Python
+# hyperLC : Data Structures and Algorithms in Java
    
 This repository is a collection of algorithms, data structures and coding challenges which I've solved over a period of time. The algorithms/solutions are implemented considering effecient Time and Space Complexity approaches. All the solutions are 100% correct and tested against various test cases, unless marked as TODO/InProgress.
 
-# Data Structures in Java  
+# Data Structures Java  
 This section contains implementation of different Data Structures in Java.
 
 | Data Structure   | Implementation |
@@ -15,3 +15,11 @@ This section contains implementation of different Data Structures in Java.
 | <b>Trie</b>  <br>  Methods Implemented: search(), print()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Trie/Trie.java)|
 | <b>MaxHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Heap/MaxHeap.java)|
 | <b>MinHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Heap/MinHeap.java)|
+
+
+# Algorithms Problems Java  
+This section contains implementation of different Data Structures in Java.
+
+| Problem   | Description |
+|------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| <b>Stack</b>  <br>  Methods Implemented: push(), pop(), peek(), isEmpty()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Stacks_and_queues/MyStack.java)|
