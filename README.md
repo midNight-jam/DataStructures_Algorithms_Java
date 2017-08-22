@@ -1,8 +1,8 @@
-# hyperLC : Data Structures and Algorithms in Java + Python
+# hyperLC : Data Structures and Algorithms in Java
    
 This repository is a collection of algorithms, data structures and coding challenges which I've solved over a period of time. The algorithms/solutions are implemented considering effecient Time and Space Complexity approaches. All the solutions are 100% correct and tested against various test cases, unless marked as TODO/InProgress.
 
-# Data Structures in Java  
+# Data Structures Java  
 This section contains implementation of different Data Structures in Java.
 
 | Data Structure   | Implementation |
@@ -17,11 +17,9 @@ This section contains implementation of different Data Structures in Java.
 | <b>MinHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Heap/MinHeap.java)|
 
 
+# Algorithms Problems Java  
+This section contains implementation of different Data Structures in Java.
 
-# Solutions in Python
-This section contains different coding challenges and their soluitons in Python. 
-
-| Description   | Solution | Difficulty |
-|------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| <b>FizzBuzz</b> - A program that outputs the string representation of numbers from 1 to n. But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.  <br>  | [Look](https://github.com/midNight-jam/hyperLC/blob/master/python/FizzBuzz.py)                               |Easy|
-| <b>Hamming Distance</b> - The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance. Input: x = 1, y = 4 Output: 2 number of positions where the corresponding bits are different.<br>  | [Look](https://github.com/midNight-jam/hyperLC/blob/master/python/HammingDistance.py)                               |Easy|
+| Problem   | Description |
+|------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| <b>Stack</b>  <br>  Methods Implemented: push(), pop(), peek(), isEmpty()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Stacks_and_queues/MyStack.java)|
