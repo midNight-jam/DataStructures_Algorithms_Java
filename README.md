@@ -22,4 +22,4 @@ This section contains implementation of different Data Structures in Java.
 
 | Problem   | Description |
 |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| <b>Stack</b>  <br>  Methods Implemented: push(), pop(), peek(), isEmpty()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Stacks_and_queues/MyStack.java)|
+| <b>Island Perimeter</b>  <br>             | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/IslandPerimeter.java)|
