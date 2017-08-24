@@ -19,11 +19,11 @@ public class NextGreaterElement1 {
     if (nums1 == null || nums2 == null || nums1.length > nums2.length)
       return new int[0];
     Map<Integer, Integer> map = new HashMap<>();
-    for(int i = 0; i < nums2.length; i++)
+    for (int i = 0; i < nums2.length; i++)
       map.put(nums2[i], i);
-    int [] res = new int[nums1.length];
+    int[] res = new int[nums1.length];
     int nextBig;
-    for(int i = 0; i  < nums1.length; i++) {
+    for (int i = 0; i < nums1.length; i++) {
       nextBig = -1;
       for (int j = map.get(nums1[i]) + 1; j < nums2.length; j++)
         if (nums2[j] > nums1[i]) {
@@ -42,11 +42,11 @@ public class NextGreaterElement1 {
     int[] res = new int[nums1.length];
     Stack<Integer> stack = new Stack<>();
     for (int i = 0; i < nums2.length; i++) {
-      while (!stack.isEmpty() && stack.peek()< nums2[i])
+      while (!stack.isEmpty() && stack.peek() < nums2[i])
         map.put(stack.pop(), nums2[i]); // against all the small elements store this one as the next Big ELement
       stack.push(nums2[i]);
     }
-    for(int i = 0; i < nums1.length; i++)
+    for (int i = 0; i < nums1.length; i++)
       res[i] = map.getOrDefault(nums1[i], -1);
 
     return res;
