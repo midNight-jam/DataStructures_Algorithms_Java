@@ -23,5 +23,4 @@ This section contains implementation of different Data Structures in Java.
 | Problem   | Description |
 |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | <b>Island Perimeter</b>  <br>             | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/IslandPerimeter.java)|
-
-| <b>Island Perimeter</b>  <br>             | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/ReshapeMatrix.java)|
+| <b>Reshape Matrix</b>  <br>             | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/ReshapeMatrix.java)|
