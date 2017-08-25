@@ -32,3 +32,5 @@ This section contains implementation of different Data Structures in Java.
 | <b>Two Sum 4 BST</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TwoSum4BST.java)|
 | <b>Find the difference</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindDifference.java)|
 | <b>Merge Two Binary Trees</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MergeTwoBinaryTrees.java)|
+| <b>Sum of 2 Integers</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SumOfTwoIntegers.java)|
+
