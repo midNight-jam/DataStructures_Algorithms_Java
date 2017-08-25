@@ -31,4 +31,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>Invert a Binary Tree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/InvertBinaryTree.java)|
 | <b>Two Sum 4 BST</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TwoSum4BST.java)|
 | <b>Find the difference</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindDifference.java)|
-
+| <b>Find the difference</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MergeTwoBinaryTrees.java)|
