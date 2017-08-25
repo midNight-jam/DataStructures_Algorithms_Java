@@ -4,7 +4,7 @@ public class ReverseWordsInSentence3 {
   /*
   * Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
   * Example 1:
-  * Input: "Let's take LeetCode contest"
+  * Input: "Let's take Hyper contest"
   * Output: "s'teL ekat edoCteeL tsetnoc"
   * */
   public static String reverseWordsSentence(String str) {

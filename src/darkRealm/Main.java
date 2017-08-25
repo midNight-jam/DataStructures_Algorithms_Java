@@ -6,7 +6,7 @@ import darkRealm.CTCI.BigO.MathUtil;
 import darkRealm.CTCI.BigO.MatrixUtil;
 import darkRealm.CTCI.*;
 import darkRealm.CTCI.Maths_and_Logic_Puzzels.Maths_Logic_Puzzels;
-import darkRealm.LeetCode.LeetCodeMain;
+import darkRealm.Hyper.HyperMain;
 
 /*
 * Uncomment a function to run, each is a method for solved problem.
@@ -296,7 +296,7 @@ public class Main {
   }
 
   public static void doLeetCode() {
-    LeetCodeMain.run();
+    HyperMain.run();
   }
 
   public static void doprint() {

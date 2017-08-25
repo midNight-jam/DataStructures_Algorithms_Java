@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="95629eee-3038-4014-9303-355540637645" name="Rejected commit: Default" comment="adding the minStack Data Structure" />
-    <list default="true" id="e7ad46dd-fe3d-4dce-8f09-eab7873dbcb8" name="Default" comment="239 sliding window maximum" />
+    <list default="true" id="e7ad46dd-fe3d-4dce-8f09-eab7873dbcb8" name="Default" comment="239 sliding window maximum">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/Cache/LFU.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/Cache/LFU.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/Cache/LRU.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/Cache/LRU.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob3.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/LC_Prob3.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_Med.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/LC_Prob_Med.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_Med2.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/LC_Prob_Med2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/LeetCodeMain.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/HyperMain.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/LongestCommonPrefix.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/LongestCommonPrefix.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/RandomizedSet.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/RandomizedSet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/RandomizedSetDupsEnabled.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/RandomizedSetDupsEnabled.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/StrStr.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/StrStr.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/darkRealm/LeetCode/TinyURL.java" afterPath="$PROJECT_DIR$/src/darkRealm/Hyper/TinyURL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/darkRealm/Main.java" afterPath="$PROJECT_DIR$/src/darkRealm/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/darkRealm/ReverseWordsInSentence3.java" afterPath="$PROJECT_DIR$/src/darkRealm/ReverseWordsInSentence3.java" />
+    </list>
     <ignored path="megaCTCI.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -14,6 +30,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/hyperLC$NextGreaterElement1.coverage" NAME="NextGreaterElement1 Coverage Results" MODIFIED="1503556489387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>darkRealm.*</FILTER>
+    </SUITE>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="D:\_Darkspace\GIT\megaCTCI" />
   </component>
@@ -22,34 +43,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Adapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PatternsZ/Adapter/Adapter.java">
+      <file leaf-file-name="HyperMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/darkRealm/Hyper/HyperMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
-                <element signature="e#178#179#0" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewContract.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PatternsZ/Adapter/NewContract.java">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OldImplementation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PatternsZ/Adapter/OldImplementation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="36">
+              <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -67,7 +77,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>deserialize</find>
       <find>anagram</find>
       <find>valid</find>
       <find>ancestor</find>
@@ -97,6 +106,7 @@
       <find>kthsmalles</find>
       <find>permutation</find>
       <find>frequency</find>
+      <find>log</find>
     </findStrings>
     <replaceStrings>
       <replace>DARKLOGGER</replace>
@@ -118,16 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/darkRealm/LeetCode/TinyURL.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/InsiderTrader.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/LeetCode/LeetCodeMain.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/Main.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob3.java" />
-        <option value="$PROJECT_DIR$/src/Threading/App.java" />
-        <option value="$PROJECT_DIR$/src/Threading/AppRun.java" />
-        <option value="$PROJECT_DIR$/src/Threading/AppRunnable.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/Threading/Processor.java" />
         <option value="$PROJECT_DIR$/src/Threading/Synchronised.java" />
         <option value="$PROJECT_DIR$/src/Threading/Worker.java" />
         <option value="$PROJECT_DIR$/src/Threading/ThreadPool.java" />
@@ -169,12 +169,23 @@
         <option value="$PROJECT_DIR$/src/Threading/AppThread.java" />
         <option value="$PROJECT_DIR$/src/Threading/BoundedBufferBlockingQueue.java" />
         <option value="$PROJECT_DIR$/src/PatternsZ/Adapter/Adapter.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/NumberComplement.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/KeyboardRow.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/ReverseWordsInSentence3.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/DistributeCandies.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/IslandPerimeter.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/ReshapeMatrix.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/NextGreaterElement1.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/AverageOfLevelsInBinaryTree.java" />
+        <option value="$PROJECT_DIR$/src/darkRealm/Hyper/HyperMain.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="390" />
     <option name="y" value="-3" />
-    <option name="width" value="1366" />
+    <option name="width" value="844" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -240,19 +251,45 @@
               <item name="hyperLC" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyperLC" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hyperLC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyperLC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyperLC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyperLC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="darkRealm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyperLC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyperLC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="darkRealm" type="462c0819:PsiDirectoryNode" />
+              <item name="Hyper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyperLC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyperLC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="darkRealm" type="462c0819:PsiDirectoryNode" />
+              <item name="Hyper" type="462c0819:PsiDirectoryNode" />
+              <item name="Cache" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -277,34 +314,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DeSerializeEmployee">
-    <configuration name="DeSerializeEmployee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Serialization.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="Serialization.DeSerializeEmployee" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="hyperLC" />
-      <envs />
-    </configuration>
-    <configuration name="LongestSubStringWithOutRepeatingChars" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.AverageOfLevelsInBinaryTree">
+    <configuration name="AverageOfLevelsInBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="darkRealm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="darkRealm.LongestSubStringWithOutRepeatingChars" />
+      <option name="MAIN_CLASS_NAME" value="darkRealm.AverageOfLevelsInBinaryTree" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -316,14 +334,14 @@
       <module name="hyperLC" />
       <envs />
     </configuration>
-    <configuration name="LongestSubstringKDistinct" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="DistributeCandies" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="darkRealm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="darkRealm.LongestSubstringKDistinct" />
+      <option name="MAIN_CLASS_NAME" value="darkRealm.DistributeCandies" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -335,14 +353,14 @@
       <module name="hyperLC" />
       <envs />
     </configuration>
-    <configuration name="MinimumWindowSubString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="IslandPerimeter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="darkRealm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="darkRealm.MinimumWindowSubString" />
+      <option name="MAIN_CLASS_NAME" value="darkRealm.IslandPerimeter" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -354,14 +372,33 @@
       <module name="hyperLC" />
       <envs />
     </configuration>
-    <configuration name="SerializeEmployee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="NextGreaterElement1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Serialization.*" />
+          <option name="PATTERN" value="darkRealm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="Serialization.SerializeEmployee" />
+      <option name="MAIN_CLASS_NAME" value="darkRealm.NextGreaterElement1" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="hyperLC" />
+      <envs />
+    </configuration>
+    <configuration name="ReshapeMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="darkRealm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="darkRealm.ReshapeMatrix" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -654,19 +691,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.MinimumWindowSubString" />
-      <item index="1" class="java.lang.String" itemvalue="Application.LongestSubStringWithOutRepeatingChars" />
-      <item index="2" class="java.lang.String" itemvalue="Application.LongestSubstringKDistinct" />
-      <item index="3" class="java.lang.String" itemvalue="Application.SerializeEmployee" />
-      <item index="4" class="java.lang.String" itemvalue="Application.DeSerializeEmployee" />
+      <item index="0" class="java.lang.String" itemvalue="Application.DistributeCandies" />
+      <item index="1" class="java.lang.String" itemvalue="Application.IslandPerimeter" />
+      <item index="2" class="java.lang.String" itemvalue="Application.ReshapeMatrix" />
+      <item index="3" class="java.lang.String" itemvalue="Application.NextGreaterElement1" />
+      <item index="4" class="java.lang.String" itemvalue="Application.AverageOfLevelsInBinaryTree" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.DeSerializeEmployee" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SerializeEmployee" />
-        <item index="2" class="java.lang.String" itemvalue="Application.LongestSubstringKDistinct" />
-        <item index="3" class="java.lang.String" itemvalue="Application.LongestSubStringWithOutRepeatingChars" />
-        <item index="4" class="java.lang.String" itemvalue="Application.MinimumWindowSubString" />
+        <item index="0" class="java.lang.String" itemvalue="Application.AverageOfLevelsInBinaryTree" />
+        <item index="1" class="java.lang.String" itemvalue="Application.NextGreaterElement1" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ReshapeMatrix" />
+        <item index="3" class="java.lang.String" itemvalue="Application.IslandPerimeter" />
+        <item index="4" class="java.lang.String" itemvalue="Application.DistributeCandies" />
       </list>
     </recent_temporary>
   </component>
@@ -1042,7 +1079,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-3" width="1366" height="771" extended-state="6" />
+    <frame x="390" y="-3" width="1368" height="786" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1051,17 +1089,17 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33715925" sideWeight="0.51437217" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3069307" sideWeight="0.48562783" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19939117" sideWeight="0.48562783" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31993568" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25549048" sideWeight="0.49356914" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18448023" sideWeight="0.49356914" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46054518" sideWeight="0.4897511" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29680365" sideWeight="0.4897511" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23600605" sideWeight="0.50643086" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1074,6 +1112,7 @@
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30868167" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.669967" sideWeight="0.49167928" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1202,13 +1241,13 @@
           <option name="timeStamp" value="1329" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob3.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/Hyper/LC_Prob3.java</url>
           <line>292</line>
           <properties />
           <option name="timeStamp" value="1331" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/darkRealm/LeetCode/TinyURL.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/Hyper/TinyURL.java</url>
           <line>25</line>
           <properties />
           <option name="timeStamp" value="1333" />
@@ -1220,13 +1259,13 @@
           <option name="timeStamp" value="1338" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob3.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/Hyper/LC_Prob3.java</url>
           <line>625</line>
           <properties />
           <option name="timeStamp" value="1344" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob3.java</url>
+          <url>file://$PROJECT_DIR$/src/darkRealm/Hyper/LC_Prob3.java</url>
           <line>640</line>
           <properties />
           <option name="timeStamp" value="1345" />
@@ -1291,11 +1330,23 @@
           <properties />
           <option name="timeStamp" value="1366" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/darkRealm/DistributeCandies.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="1376" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/darkRealm/AverageOfLevelsInBinaryTree.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="1378" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="1368" />
+      <option name="time" value="1379" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1304,149 +1355,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/LinkedLists/LinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="844">
-          <caret line="263" column="21" lean-forward="true" selection-start-line="263" selection-start-column="21" selection-end-line="263" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Serialization/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/LinkedLists/Linked_List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1709">
-          <caret line="302" column="21" lean-forward="true" selection-start-line="302" selection-start-column="21" selection-end-line="302" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Arrays_and_Strings/Arrays_and_Strings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="562" column="21" lean-forward="false" selection-start-line="562" selection-start-column="21" selection-end-line="562" selection-end-column="21" />
-          <folding>
-            <element signature="docComment;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#CheckPermutation#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#palindromePermutation#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="e#6134#6247#0" expanded="false" />
-            <element signature="e#6589#6703#0" expanded="false" />
-            <element signature="method#shortestPathBetweenWords#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#shortestPathBetweenWordsBFS#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#minMutation#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#isAdjacent#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#findPathOfWords#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#pairEqualToSum#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="e#13568#13569#0" expanded="true" />
-            <element signature="e#13618#13619#0" expanded="true" />
-            <element signature="method#bookingHotel#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#matrixZeroes#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="e#18418#18536#0" expanded="false" />
-            <element signature="method#isStringRotation#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#compress#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#oneEditAway#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#minLenUnSorted#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="method#getTime#0;class#Arrays_and_Strings#0" expanded="false" />
-            <element signature="class#23731:23859" expanded="false" />
-            <element signature="e#24872#24928#0" expanded="false" />
-            <element signature="method#operation#0;class#Arrays_and_Strings#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/ArrayUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1064">
-          <caret line="227" column="27" lean-forward="true" selection-start-line="227" selection-start-column="27" selection-end-line="227" selection-end-column="27" />
-          <folding>
-            <element signature="e#6317#6318#0" expanded="true" />
-            <element signature="e#6361#6362#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/BinarySearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/BitsUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2390">
-          <caret line="222" column="29" lean-forward="false" selection-start-line="222" selection-start-column="29" selection-end-line="222" selection-end-column="29" />
-          <folding>
-            <element signature="docComment;class#BitsUtil#0" expanded="false" />
-            <element signature="method#binaryRepresentation#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#insertionBits#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#FractionToBinaryString#0;class#BitsUtil#0" expanded="false" />
-            <element signature="e#9906#9940#0" expanded="false" />
-            <element signature="method#oneShort#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#oneBig#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#updateIthBit#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#FlipBitToWin#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#getAlternatingSequence#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#findLongestSequence#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#coversionEstimate#0;class#BitsUtil#0" expanded="false" />
-            <element signature="e#16539#16594#0" expanded="false" />
-            <element signature="method#nextBiggerWithSame_1_Bits#0;class#BitsUtil#0" expanded="false" />
-            <element signature="e#19365#19479#0" expanded="false" />
-            <element signature="method#nextSmallerWithSame_1_Bits#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#swapPairOfBits#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#drawLine#0;class#BitsUtil#0" expanded="false" />
-            <element signature="method#flipALL#0;class#BitsUtil#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/MathUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-724">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/MatrixUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4036">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/MergeSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/MyArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/PairUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/LongestCommonPrefix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/darkRealm/LongestSubstringKDistinct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1579,7 +1487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/LeetCode/LC_Prob_Med.java">
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/Hyper/LC_Prob_Med.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12">
           <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
@@ -1703,10 +1611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#178#179#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1714,7 +1618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1722,6 +1625,128 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/BigO/BitsUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="668" column="48" lean-forward="false" selection-start-line="668" selection-start-column="4" selection-end-line="668" selection-end-column="48" />
+          <folding>
+            <element signature="docComment;class#BitsUtil#0" expanded="false" />
+            <element signature="method#binaryRepresentation#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#insertionBits#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#FractionToBinaryString#0;class#BitsUtil#0" expanded="false" />
+            <element signature="e#9906#9940#0" expanded="false" />
+            <element signature="method#oneShort#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#oneBig#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#updateIthBit#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#FlipBitToWin#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#getAlternatingSequence#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#findLongestSequence#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#coversionEstimate#0;class#BitsUtil#0" expanded="false" />
+            <element signature="e#16539#16594#0" expanded="false" />
+            <element signature="method#nextBiggerWithSame_1_Bits#0;class#BitsUtil#0" expanded="false" />
+            <element signature="e#19365#19479#0" expanded="false" />
+            <element signature="method#nextSmallerWithSame_1_Bits#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#swapPairOfBits#0;class#BitsUtil#0" expanded="false" />
+            <element signature="method#drawLine#0;class#BitsUtil#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/NumberComplement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/KeyboardRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/ReverseWordsInSentence3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/DistributeCandies.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/IslandPerimeter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/ReshapeMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/NextGreaterElement1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/AverageOfLevelsInBinaryTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/JudgeRouteCircle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore.swp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/darkRealm/Hyper/HyperMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
           <folding />
         </state>
       </provider>

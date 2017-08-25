@@ -1,4 +1,4 @@
-package darkRealm.LeetCode;
+package darkRealm.Hyper;
 
 /**
  * Created by Jayam on 7/30/2017.

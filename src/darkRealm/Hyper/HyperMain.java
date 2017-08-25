@@ -1,4 +1,4 @@
-package darkRealm.LeetCode;
+package darkRealm.Hyper;
 
 import darkRealm.CTCI.BigO.MatrixUtil;
 import darkRealm.CTCI.LinkedLists.LinkedList;
@@ -6,8 +6,8 @@ import darkRealm.CTCI.LinkedLists.Node;
 import darkRealm.CTCI.Trees_and_Graphs.TNode;
 import darkRealm.CTCI.Trees_and_Graphs.Tree;
 import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
-import darkRealm.LeetCode.Cache.LFU;
-import darkRealm.LeetCode.Cache.LRU;
+import darkRealm.Hyper.Cache.LFU;
+import darkRealm.Hyper.Cache.LRU;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * Created by Jayam on 1/27/2017.
  */
-public class LeetCodeMain {
+public class HyperMain {
   public static void run() {
 //    testAddTwoNumbers();
 //    testlongestSubstring();

@@ -1,4 +1,4 @@
-package darkRealm.LeetCode;
+package darkRealm.Hyper;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package darkRealm.LeetCode;
+package darkRealm.Hyper;
 
 import darkRealm.CTCI.LinkedLists.LinkedList;
 import darkRealm.CTCI.LinkedLists.Node;

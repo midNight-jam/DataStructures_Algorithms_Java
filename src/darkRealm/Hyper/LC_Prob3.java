@@ -1,4 +1,4 @@
-package darkRealm.LeetCode;
+package darkRealm.Hyper;
 
 import darkRealm.CTCI.Trees_and_Graphs.TNode;
 
