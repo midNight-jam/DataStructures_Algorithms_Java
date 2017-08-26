@@ -37,3 +37,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>Construct Rectangle</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ConstructRectangle.java)|
 | <b>Distribute Candies</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DistributeCandies.java)|
 | <b>Convert BST to Greater Tree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BST_To_GreaterTree.java)|
+| <b>Intersection of 2 Arrays</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/Intersection.java)|
