@@ -29,6 +29,7 @@ public class BST_To_GreaterTree {
   public static int runningSum = 0;
 
   public static void convertBSTSum(TreeNode node) {
+    // drop down to the right most & keep track of running sum, while returning add it to the current node val
     if(null == node) return;
     convertBSTSum(node.right);
     runningSum += node.val;
