@@ -31,8 +31,22 @@ public class MinimumAbsoluteDifferenceBST {
   }
 
   static int minAbsDiff = Integer.MAX_VALUE;
+  static TreeNode prev;
 
   public static int getMinimumDifference(TreeNode node) {
+    inorder(node);
+    return minAbsDiff;
+  }
+
+  public static void inorder(TreeNode node) {
+    if (node == null) return;
+    inorder(node.left);
+    if (prev != null) minAbsDiff = Math.min(node.val - prev.val, minAbsDiff);
+    prev = node;
+    inorder(node.right);
+  }
+
+  public static int getMinimumDifferenceOLD(TreeNode node) {
     TreeNode trav;
     if (node == null) return minAbsDiff;
     int leftVal, diff, rightVal;
