@@ -45,3 +45,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>Binary Tree Tilt</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryTreeTilt.java)|
 | <b>Sum of left leaves</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SumOfLeftLeaves.java)|
 | <b>Minimum index sum of 2 lists</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumIndexSumOfTwoLists.java)|
+| <b>Majority Element</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MajorityElement.java)|
