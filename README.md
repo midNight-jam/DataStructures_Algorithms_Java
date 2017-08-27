@@ -1,4 +1,5 @@
 #Data Structures and Algorithms in Java
+
 This repository is a collection of algorithms, data structures and coding challenges which I've solved over a period of time. The algorithms/solutions are implemented considering effecient Time and Space Complexity approaches. All the solutions are 100% correct and tested against various test cases, unless marked as TODO/InProgress.
 
 # Data Structures Java  
@@ -43,3 +44,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>Assign Cookies</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/AssignCookies.java)|
 | <b>Binary Tree Tilt</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryTreeTilt.java)|
 | <b>Sum of left leaves</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SumOfLeftLeaves.java)|
+| <b>Minimum index sum of 2 lists</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumIndexSumOfTwoLists.java)|
