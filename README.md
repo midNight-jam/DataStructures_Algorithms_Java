@@ -1,5 +1,4 @@
 #Data Structures and Algorithms in Java
-   
 This repository is a collection of algorithms, data structures and coding challenges which I've solved over a period of time. The algorithms/solutions are implemented considering effecient Time and Space Complexity approaches. All the solutions are 100% correct and tested against various test cases, unless marked as TODO/InProgress.
 
 # Data Structures Java  
