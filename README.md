@@ -50,3 +50,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>Delete Node</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DeleteNode.java)|
 | <b>Contains Duplicate</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ContainsDuplicate.java)|
 | <b>Minimum moves to equal array</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumMovesToEqualArrayElements.java)|
+| <b>Longest Palindrome</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestPalindrome.java)|
