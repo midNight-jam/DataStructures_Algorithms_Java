@@ -53,3 +53,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>Longest Palindrome</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestPalindrome.java)|
 | <b>Max product 3 nos</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumProductThreeNos.java)|
 | <b>Student attendance record</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StudentAttendanceRecord1.java)|
+| <b>Diameter of Binary Tree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DiameterBinaryTree.java)|
