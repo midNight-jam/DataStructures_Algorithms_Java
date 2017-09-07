@@ -58,3 +58,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>Longest Harmonic Subsequence Length</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestHarmoniousSubsequence.java)|
 | <b>UglyNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/UglyNumber.java)|
 | <b>Symmetric SubTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SymmetricTree.java)|
+| <b>PathSum III</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PathSumIII.java)|
