@@ -14,6 +14,27 @@ public class SearchInsertPosition {
 //      [1,3,5,6], 0 → 0
 
   public static int searchInsertPosition(int [] arr, int n){
+    int low = 0, high = arr.length - 1;
+    int mid = (high - low )/ 2;
+
+    if(null == arr || arr.length == 0) return 0;
+    if(n <= arr[0]) return 0;
+    else if(n == arr[arr.length - 1]) return arr.length - 1;
+    else if(n > arr[arr.length - 1]) return arr.length ;
+    else{
+      while(low<=high) {
+        mid = (high + low) / 2;
+        if (arr[mid] > n)
+          high = mid - 1;
+        else if (arr[mid] < n)
+          low = mid + 1;
+        else return mid;
+      }
+    }
+    return low;
+  }
+
+  public static int searchInsertPositionOLD(int [] arr, int n){
     if(null == arr || arr.length == 0) return 0;
     if(n <= arr[0]) return 0;
     else if(n == arr[arr.length - 1]) return arr.length - 1;
@@ -30,7 +51,7 @@ public class SearchInsertPosition {
 //    int n = 5;
 
     int [] arr = new int []{1,3};
-    int n = 3;
+    int n = 2;
 
     int pos = searchInsertPosition(arr, n);
     System.out.println("Arr: " + Arrays.toString(arr));
