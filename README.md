@@ -56,3 +56,5 @@ This section contains implementation of different Data Structures in Java.
 | <b>Diameter of Binary Tree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DiameterBinaryTree.java)|
 | <b>Sorted array to BST</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SortedToBST.java)|
 | <b>Longest Harmonic Subsequence Length</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestHarmoniousSubsequence.java)|
+| <b>UglyNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/UglyNumber.java)|
+| <b>Symmetric SubTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SymmetricTree.java)|
