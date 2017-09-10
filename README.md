@@ -59,3 +59,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>UglyNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/UglyNumber.java)|
 | <b>Symmetric SubTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SymmetricTree.java)|
 | <b>PathSum III</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PathSumIII.java)|
+| <b>Power Of 2</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PowerOfTwo.java)|
+| <b>House Robber I</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/HouseRobber.java)|
+| <b>Level Order Bottomup</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryTreeLevelOrderII.java)|
+| <b>Set Mismatch</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SetMismatch.java)|
+
