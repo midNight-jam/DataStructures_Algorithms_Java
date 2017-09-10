@@ -63,4 +63,5 @@ This section contains implementation of different Data Structures in Java.
 | <b>House Robber I</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/HouseRobber.java)|
 | <b>Level Order Bottomup</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryTreeLevelOrderII.java)|
 | <b>Set Mismatch</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SetMismatch.java)|
-
+| <b>Intersection Arrays</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/IntersectionArrays.java)|
+| <b>LongestIncreasingSubsequence</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestContinuosIncreasingSubsequence.java)|
