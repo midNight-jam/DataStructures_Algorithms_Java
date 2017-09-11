@@ -68,3 +68,6 @@ This section contains implementation of different Data Structures in Java.
 | <b>Power 4</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PowerOfFour.java)|
 | <b>ReverseOfVowels</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReverseOfVowels.java)|
 | <b>image Smoother</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ImageSmoother.java)|
+| <b>Perfect Square</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidPerfectSquare.java)|
+| <b>Balanced Binary Tree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BalancedBinaryTree.java)|
+| <b>Arange Coins</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ArrangeCoins.java)|
