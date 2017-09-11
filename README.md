@@ -65,3 +65,6 @@ This section contains implementation of different Data Structures in Java.
 | <b>Set Mismatch</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SetMismatch.java)|
 | <b>Intersection Arrays</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/IntersectionArrays.java)|
 | <b>LongestIncreasingSubsequence</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestContinuosIncreasingSubsequence.java)|
+| <b>Power 4</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PowerOfFour.java)|
+| <b>ReverseOfVowels</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReverseOfVowels.java)|
+| <b>image Smoother</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ImageSmoother.java)|
