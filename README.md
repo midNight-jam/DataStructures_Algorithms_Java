@@ -71,3 +71,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>Perfect Square</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidPerfectSquare.java)|
 | <b>Balanced Binary Tree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BalancedBinaryTree.java)|
 | <b>Arange Coins</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ArrangeCoins.java)|
+| <b>Isomorphic String</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/IsomorphicString.java)|
+| <b>Factorial Zeroes</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FactorialZeroes.java)|
+| <b>Path Sum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PathSum.java)|
+
