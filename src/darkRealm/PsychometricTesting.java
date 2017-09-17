@@ -10,7 +10,7 @@ public class PsychometricTesting {
   // high = [8,4]
   // so ranges are {(2,8), (4,4)}
   // result will be [3,1] bcoz all 3 elements fall in the first range and only 4 falls in the second range
-  
+
   public static int [] jobOffers(int [] scores , int [] lowerLimits, int [] upperLimits){
     Arrays.sort(scores);
     int  [] res = new int[lowerLimits.length];
