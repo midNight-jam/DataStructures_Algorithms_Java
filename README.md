@@ -74,4 +74,12 @@ This section contains implementation of different Data Structures in Java.
 | <b>Isomorphic String</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/IsomorphicString.java)|
 | <b>Factorial Zeroes</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FactorialZeroes.java)|
 | <b>Path Sum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PathSum.java)|
+| <b>Min Depth</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinDepth.java)|
+| <b>WordPattern</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WordPattern.java)|
+| <b>Non Decreasing Array</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NonDecreasingArray.java)|
+| <b>PsychometricTesting</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PsychometricTesting.java)|
+| <b>Sum Square Number</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SumSquareNumber.java)|
+| <b>Length Of Last Word</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LengthOfLastWord.java)|
+| <b>Valid Palindrome II </b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidPalindromeII.java)|
+
 
