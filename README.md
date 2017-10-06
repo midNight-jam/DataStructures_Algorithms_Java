@@ -81,5 +81,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>Sum Square Number</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SumSquareNumber.java)|
 | <b>Length Of Last Word</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LengthOfLastWord.java)|
 | <b>Valid Palindrome II </b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidPalindromeII.java)|
+| <b>ExcelSheetColumnTitle</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ExcelSheetColumnTitle.java.java)|
+| <b>PerfectNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PerfectNumber.java)|
+| <b>FirstBadVersion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FirstBadVersion.java)|
 
 
