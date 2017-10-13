@@ -1,48 +1,48 @@
-package darkRealm.CTCI.LinkedLists;
+package ADT;
 
 /**
  * Created by Jayam on 1/4/2017.
  */
 public class LinkedList {
-  public Node head;
-  public Node tail;
+  public LLNode head;
+  public LLNode tail;
   int size;
 
-  public void appendToTail(Node d) {
+  public void appendToTail(LLNode d) {
     if (d == null) {
       return;
     }
     if (head == null) {
-      head = new Node(d.data);
+      head = new LLNode(d.data);
       tail = head;
       size++;
       return;
     }
-    tail.next = new Node(d.data);
+    tail.next = new LLNode(d.data);
     tail = tail.next;
     size++;
   }
 
   public void add(int d) {
-    appendToTail(new Node(d));
+    appendToTail(new LLNode(d));
   }
 
-  public void appendToHead(Node d) {
+  public void appendToHead(LLNode d) {
     if (head == null) {
-      head = new Node(d.data);
+      head = new LLNode(d.data);
       tail = head;
       size++;
       return;
     }
-    Node temp = new Node(d.data);
+    LLNode temp = new LLNode(d.data);
     temp.next = head;
     head = temp;
     size++;
   }
 
-  public Node removeFirst() {
+  public LLNode removeFirst() {
     if (size() > 0) {
-      Node temp = head;
+      LLNode temp = head;
       head = head.next;
       size--;
       return temp;
@@ -50,12 +50,12 @@ public class LinkedList {
     return null;
   }
 
-  public Node removeLast() {
-    Node trav = head;
+  public LLNode removeLast() {
+    LLNode trav = head;
     while (trav.next.next != null) {
       trav = trav.next;
     }
-    Node temp = trav;
+    LLNode temp = trav;
     tail = trav;
     size--;
     return temp;
@@ -66,7 +66,7 @@ public class LinkedList {
   }
 
   public LinkedList clone() {
-    Node travA = this.head;
+    LLNode travA = this.head;
     LinkedList clone = new LinkedList();
     while (travA != null) {
       clone.add(travA.data);
@@ -76,32 +76,32 @@ public class LinkedList {
   }
 
   public void addAll(LinkedList list) {
-    Node trav = list.head;
+    LLNode trav = list.head;
     while (trav != null) {
       if (this.tail == null) {
-        this.tail = new Node(trav.data);
+        this.tail = new LLNode(trav.data);
       } else {
-        this.tail.next = new Node(trav.data);
+        this.tail.next = new LLNode(trav.data);
       }
       this.tail = this.tail.next;
       trav = trav.next;
     }
   }
 
-  public Node reverseBetween(int m, int n) {
+  public LLNode reverseBetween(int m, int n) {
     if (m < 1 || n < 1) {
       return head;
     }
-    Node trav = head;
-    Node pos = head;
+    LLNode trav = head;
+    LLNode pos = head;
     for (int i = 1; i < m; i++) {
       pos = trav;
       trav = trav.next;
     }
-    Node prev = null;
-    Node curr = trav;
-    Node last = curr;
-    Node temp = curr.next;
+    LLNode prev = null;
+    LLNode curr = trav;
+    LLNode last = curr;
+    LLNode temp = curr.next;
     int t = m;
     while (t <= n) {
       temp = curr.next;
@@ -119,14 +119,14 @@ public class LinkedList {
     return head;
   }
 
-  public Node getMid(Node head) {
-    Node slow = head;
-    Node fast = head;
+  public LLNode getMid(LLNode head) {
+    LLNode slow = head;
+    LLNode fast = head;
     while (fast != null && fast.next != null) {
       slow = slow.next;
       fast = fast.next.next;
     }
-    Node mid = slow;
+    LLNode mid = slow;
     if (fast == null) {//even
       mid = slow;
     } else {
@@ -136,26 +136,26 @@ public class LinkedList {
   }
 
   // will go till mid & reverse the link from mid to end , now will read from haed & mid & keep matching if all matched true
-  public boolean isPalindrome(Node head) {
+  public boolean isPalindrome(LLNode head) {
     if (head == null) {
       return true;
     }
-    Node trav = head;
-    Node slow = head;
-    Node fast = head;
+    LLNode trav = head;
+    LLNode slow = head;
+    LLNode fast = head;
     while (fast != null && fast.next != null) {
       slow = slow.next;
       fast = fast.next.next;
     }
-    Node otherHalf;
+    LLNode otherHalf;
     if (fast == null) { // even
       otherHalf = slow;
     } else {  // odd
       otherHalf = slow.next;
     }
-    Node prev = null;
-    Node trav2 = otherHalf;
-    Node temp;
+    LLNode prev = null;
+    LLNode trav2 = otherHalf;
+    LLNode temp;
     while (trav2 != null) {
       temp = trav2.next;
       trav2.next = prev;
@@ -176,7 +176,7 @@ public class LinkedList {
     return true;
   }
 
-  public void reverse(Node trav) {
+  public void reverse(LLNode trav) {
     if (trav == null) return;
 
     if (trav.next == null) {
@@ -192,7 +192,7 @@ public class LinkedList {
   @Override
   public String toString() {
     StringBuilder stringBuilder = new StringBuilder();
-    Node trav = head;
+    LLNode trav = head;
     while (trav != null) {
       stringBuilder.append(" " + trav.data);
       trav = trav.next;
@@ -201,12 +201,12 @@ public class LinkedList {
   }
 
   /*Sorting a linked list using Insertion Sort*/
-  public Node sortLinkedList() {
+  public LLNode sortLinkedList() {
     if (head == null || head.next == null) return head;
-    Node dummyHead = new Node(0);
-    Node curr = head;
-    Node prev = dummyHead;
-    Node next = null;
+    LLNode dummyHead = new LLNode(0);
+    LLNode curr = head;
+    LLNode prev = dummyHead;
+    LLNode next = null;
     while (curr != null) {
       next = curr.next; // preserving the next
       // scanning the list to find the right place to insert
@@ -221,11 +221,11 @@ public class LinkedList {
     return dummyHead.next;
   }
 
-  public Node mergeWith(LinkedList secondList) {
+  public LLNode mergeWith(LinkedList secondList) {
     return mergeTwoLists(head, secondList.head);
   }
 
-  private Node mergeTwoLists(Node n1, Node n2) {
+  private LLNode mergeTwoLists(LLNode n1, LLNode n2) {
     if (n1 == null) return n2;
     if (n2 == null) return n1;
 
@@ -238,8 +238,8 @@ public class LinkedList {
     }
   }
 
-  public Node reverseInKGroups(Node head, int k) {
-    Node curr = head;
+  public LLNode reverseInKGroups(LLNode head, int k) {
+    LLNode curr = head;
     int count = 0;
     while (curr != null && count < k) {
       curr = curr.next;
@@ -249,7 +249,7 @@ public class LinkedList {
     if (count == k) {
       curr = reverseInKGroups(curr, k);
       while (count > 0) {
-        Node next = head.next;
+        LLNode next = head.next;
         head.next = curr;
         curr = head;
         head = next;
@@ -261,8 +261,8 @@ public class LinkedList {
 
   public boolean hasCycle() {
     if (head == null) return false;
-    Node fast = head;
-    Node slow = head;
+    LLNode fast = head;
+    LLNode slow = head;
     while (fast.next != null && fast.next.next != null) {
       slow = slow.next;
       fast = fast.next.next;
@@ -271,15 +271,15 @@ public class LinkedList {
     return false;
   }
 
-  /* [19] Remove Nth Node From End of List
+  /* [19] Remove Nth LLNode From End of List
   * */
-  public Node removeKthFromEnd(Node node, int n) {
-    if (node == null) return node;
-    Node trav = node;
+  public LLNode removeKthFromEnd(LLNode LLNode, int n) {
+    if (LLNode == null) return LLNode;
+    LLNode trav = LLNode;
     while (trav != null && n-- > 0)
       trav = trav.next;
     if (trav == null && n != 0) return null;
-    Node prev = null, pivot = node;
+    LLNode prev = null, pivot = LLNode;
     while (trav != null) {
       trav = trav.next;
       prev = pivot;

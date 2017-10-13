@@ -1,7 +1,7 @@
 package darkRealm.Hyper;
 
-import darkRealm.CTCI.LinkedLists.LinkedList;
-import darkRealm.CTCI.LinkedLists.Node;
+import ADT.LinkedList;
+import ADT.LLNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +20,7 @@ public class LC_Prob_Med {
   * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
   * Output: 7 -> 0 -> 8
   * */
-  public static Node AddTwoNumbers(LinkedList n1, LinkedList n2) {
+  public static LLNode AddTwoNumbers(LinkedList n1, LinkedList n2) {
     int sum = addTwoNodes(n1.head, n2.head, 1);
     LinkedList resList = new LinkedList();
 //    while (sum != 0) {
@@ -28,15 +28,15 @@ public class LC_Prob_Med {
 //      sum = sum / 10;
 //    }
 
-    Node trav = null;
-    Node head = null;
+    LLNode trav = null;
+    LLNode head = null;
     while (sum != 0) {
 
       if (head == null) {
-        head = new Node(sum % 10);
+        head = new LLNode(sum % 10);
         trav = head;
       } else {
-        trav.next = new Node(sum % 10);
+        trav.next = new LLNode(sum % 10);
         trav = trav.next;
       }
 
@@ -46,7 +46,7 @@ public class LC_Prob_Med {
     return head;
   }
 
-  private static int addTwoNodes(Node a, Node b, int powerTen) {
+  private static int addTwoNodes(LLNode a, LLNode b, int powerTen) {
     if (a == null && b == null) {
       return 0;
     }

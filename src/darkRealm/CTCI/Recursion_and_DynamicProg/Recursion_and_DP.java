@@ -1,6 +1,6 @@
 package darkRealm.CTCI.Recursion_and_DynamicProg;
 
-import darkRealm.CTCI.Stacks_and_queues.MyStack;
+import ADT.MyStack;
 
 import java.util.*;
 

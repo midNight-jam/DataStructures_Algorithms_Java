@@ -1,6 +1,7 @@
-package darkRealm.CTCI.Trees_and_Graphs;
+package ADT;
 
 import java.util.*;
+import java.util.LinkedList;
 
 /**
  * Created by Jayam on 12/27/2016.
@@ -113,12 +114,12 @@ public class Tree {
   * */
   public TNode deserialize(String srz) {
     if (srz == null || srz.length() < 1) return null;
-    LinkedList<String> nodes = new LinkedList<>(Arrays.asList(srz.split(" ")));
+    java.util.LinkedList<String> nodes = new java.util.LinkedList<>(Arrays.asList(srz.split(" ")));
 //    nodes.addAll(Arrays.asList(srz.split(" ")));
     return constructTree(nodes);
   }
 
-  private TNode constructTree(LinkedList<String> nodes) {
+  private TNode constructTree(java.util.LinkedList<String> nodes) {
     String last = nodes.remove();
     if (last.equals("N")) return null;
     TNode node = new TNode(Integer.valueOf(last));
@@ -206,7 +207,7 @@ public class Tree {
   public List<Integer> iterativeLevelOrder(TNode node) {
     List<Integer> list = new ArrayList<>();
     if (node == null) return list;
-    Queue<TNode> queue = new LinkedList<>();
+    Queue<TNode> queue = new java.util.LinkedList<>();
     queue.add(node);
     while (!queue.isEmpty()) {
       int size = queue.size();
@@ -224,7 +225,7 @@ public class Tree {
   /* [513] Find Bottom Left Tree Value
   * */
   public static int bottomLeftTreeValue(TNode node) {
-    Queue<TNode> queue = new LinkedList<>();
+    Queue<TNode> queue = new java.util.LinkedList<>();
     queue.add(node);
     TNode first = null;
     while (!queue.isEmpty()) {
@@ -244,7 +245,7 @@ public class Tree {
   public String antiClockWiseCircumference(TNode node) {
     if (node == null) return "";
     List<List<Integer>> levels = new ArrayList<>();
-    Queue<TNode> queue = new LinkedList<>();
+    Queue<TNode> queue = new java.util.LinkedList<>();
     queue.add(node);
     while (!queue.isEmpty()) {
       int size = queue.size();

@@ -1,21 +1,21 @@
-package darkRealm.CTCI.Trees_and_Graphs;
+package ADT;
 
 /**
  * Created by Jayam on 12/28/2016.
  */
-public class Node {
+public class GNode {
   public String name;
-  public Node[] childs;
+  public GNode[] childs;
   public Status status;
   private int childsCount;
   public int incomingEdges;
 
-  public Node(int childs) {
-    this.childs = new Node[childs];
+  public GNode(int childs) {
+    this.childs = new GNode[childs];
     status = Status.NotProcessed;
   }
 
-  public void addChild(Node child) {
+  public void addChild(GNode child) {
     childs[childsCount] = child;
     childsCount++;
     child.incomingEdges++;

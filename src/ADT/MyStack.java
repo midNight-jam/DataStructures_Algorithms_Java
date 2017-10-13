@@ -1,4 +1,4 @@
-package darkRealm.CTCI.Stacks_and_queues;
+package ADT;
 
 import java.util.EmptyStackException;
 

@@ -1,6 +1,6 @@
 package darkRealm.CTCI.Trees_and_Graphs;
 
-import darkRealm.CTCI.Stacks_and_queues.MyStack;
+import ADT.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,28 +14,28 @@ public class Trees_and_Graphs {
   public static Graph getSampleGraph() {
     int vertices = 6;
     Graph graph = new Graph(vertices);
-    Node vertex0 = new Node(vertices);
+    GNode vertex0 = new GNode(vertices);
     vertex0.name = "0";
     graph.start = vertex0;
-    Node vertex1 = new Node(vertices);
+    GNode vertex1 = new GNode(vertices);
     vertex1.name = "1";
     graph.start.childs[1] = vertex1;
 
-    Node vertex5 = new Node(vertices);
+    GNode vertex5 = new GNode(vertices);
     vertex5.name = "5";
     graph.start.childs[5] = vertex5;
 
-    Node vertex4 = new Node(vertices);
+    GNode vertex4 = new GNode(vertices);
     vertex4.name = "4";
     graph.start.childs[4] = vertex4;
 
     vertex1.childs[4] = vertex4;
 
-    Node vertex2 = new Node(vertices);
+    GNode vertex2 = new GNode(vertices);
     vertex2.name = "2";
     vertex2.childs[1] = vertex1;
 
-    Node vertex3 = new Node(vertices);
+    GNode vertex3 = new GNode(vertices);
     vertex3.name = "3";
     vertex3.childs[2] = vertex2;
     vertex3.childs[4] = vertex4;
@@ -63,8 +63,8 @@ public class Trees_and_Graphs {
 
   public static void isRoutePresentBetweenNodes() {
     Graph graph = getSampleGraph();
-    Node p = graph.allVertices[0];
-    Node q = graph.allVertices[2];
+    GNode p = graph.allVertices[0];
+    GNode q = graph.allVertices[2];
     System.out.println("Route Present - " + graph.isRouteBetween(p, q));
   }
 
@@ -355,9 +355,9 @@ public class Trees_and_Graphs {
   public static String buildOrder(String projects, String dependencies) {
     String buildOrder = "";
     String[] projs = projects.split(",");
-    HashMap<String, Node> nodes = new HashMap<>();
+    HashMap<String, GNode> nodes = new HashMap<>();
     for (int i = 0; i < projs.length; i++) {
-      Node temp = new Node(projs.length);
+      GNode temp = new GNode(projs.length);
       temp.name = projs[i];
       nodes.put(projs[i], temp);
     }
@@ -367,11 +367,11 @@ public class Trees_and_Graphs {
       String parent = Character.toString(depends[i].charAt(1));
       String child = Character.toString(depends[i].charAt(3));
 
-      Node parentNode = nodes.get(parent);
-      parentNode.addChild(nodes.get(child));
+      GNode parentGNode = nodes.get(parent);
+      parentGNode.addChild(nodes.get(child));
     }
 
-    Node start = getNodeWhichDoesntHaveParent(projs, nodes);
+    GNode start = getNodeWhichDoesntHaveParent(projs, nodes);
     Graph graph = new Graph(projs.length);
     graph.start = start;
     graph.processed = projs.length;
@@ -393,15 +393,14 @@ public class Trees_and_Graphs {
     return buildOrder;
   }
 
-  private static Node getNodeWhichDoesntHaveParent(String[] projs, HashMap<String, Node> nodes) {
-    Node node = null;
+  private static GNode getNodeWhichDoesntHaveParent(String[] projs, HashMap<String, GNode> nodes) {
     for (int i = 0; i < projs.length; i++) {
-      Node temp = nodes.get(projs[i]);
-      if ((temp.status != Node.Status.Processed) && temp.incomingEdges == 0) {
+      GNode temp = nodes.get(projs[i]);
+      if ((temp.status != GNode.Status.Processed) && temp.incomingEdges == 0)
         return temp;
-      }
+
     }
-    return node;
+    return null;
   }
 
   //TODO
@@ -409,9 +408,9 @@ public class Trees_and_Graphs {
 //    String buildOrder = "";
 //    // first prepare the graph
 //    String[] projs = projects.split(",");
-//    HashMap<String, Node> nodes = new HashMap<>();
+//    HashMap<String, LLNode> nodes = new HashMap<>();
 //    for (int i = 0; i < projs.length; i++) {
-//      Node temp = new Node(projs.length);
+//      LLNode temp = new LLNode(projs.length);
 //      temp.name = projs[i];
 //      nodes.put(projs[i], temp);
 //    }
@@ -421,18 +420,18 @@ public class Trees_and_Graphs {
 //      String parent = Character.toString(depends[i].charAt(1));
 //      String child = Character.toString(depends[i].charAt(3));
 //
-//      Node parentNode = nodes.get(parent);
+//      LLNode parentNode = nodes.get(parent);
 //      parentNode.addChild(nodes.get(child));
 //    }
 //
 //    //next we fire a DFS from any given node & continue to build the DFS traverse as the build order,
 //    // untill we have either exhausted all the nodes from the grpah or we have encountered a Cycle
-//    Node start = nodes.get(projs[0]);
+//    LLNode start = nodes.get(projs[0]);
 //    // peerfrom the DFS from this node
 //    while (!allProcessed(nodes)) {
 //      // get the first node of the graph & use it to initialize the graph
 //
-//      Node tempNode = nodes.get(nodes.keySet().toArray()[0]);
+//      LLNode tempNode = nodes.get(nodes.keySet().toArray()[0]);
 //      Graph graph = new Graph(projs.length);
 //      graph.start = tempNode;
 //      String res = graph.modifiedDepthFirstTraversal();
@@ -447,9 +446,9 @@ public class Trees_and_Graphs {
 //    return buildOrder;
 //  }
 //
-//  private static boolean allProcessed(HashMap<String, Node> map) {
-//    for (Map.Entry<String, Node> entry : map.entrySet()) {
-//      if (entry.getValue().status == Node.Status.NotProcessed) {
+//  private static boolean allProcessed(HashMap<String, LLNode> map) {
+//    for (Map.Entry<String, LLNode> entry : map.entrySet()) {
+//      if (entry.getValue().status == LLNode.Status.NotProcessed) {
 //        return false;
 //      }
 //    }

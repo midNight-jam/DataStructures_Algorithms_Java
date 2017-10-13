@@ -1,6 +1,6 @@
 package darkRealm.Hyper;
 
-import darkRealm.CTCI.Trees_and_Graphs.TNode;
+import ADT.TNode;
 
 import java.util.*;
 

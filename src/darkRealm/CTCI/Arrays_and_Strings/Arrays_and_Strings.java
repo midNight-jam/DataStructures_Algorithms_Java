@@ -1,10 +1,10 @@
 package darkRealm.CTCI.Arrays_and_Strings;
 
 import darkRealm.CTCI.BigO.QuickSort;
-import darkRealm.CTCI.Heap.MinHeap;
+import ADT.MinHeap;
 import darkRealm.CTCI.Sorting_and_Searching.BinarySearchUtil;
 import darkRealm.CTCI.Sorting_and_Searching.MergeSortUtil;
-import darkRealm.CTCI.Stacks_and_queues.MyQueue;
+import ADT.MyQueue;
 
 import java.util.*;
 

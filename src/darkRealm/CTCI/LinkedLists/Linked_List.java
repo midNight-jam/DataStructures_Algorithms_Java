@@ -1,5 +1,8 @@
 package darkRealm.CTCI.LinkedLists;
 
+import ADT.LLNode;
+import ADT.LinkedList;
+
 import java.util.Stack;
 
 /**
@@ -64,10 +67,10 @@ public class Linked_List {
    *   is a intersection. Now we take diff of lengths, this is crucial in deciding where the intersecting node will be
    *   the list which is longer, we send a pointer in that list which is ahead by the diff of lengths. Now we traverse
     *   with this pointers onw that is skipped in longer & one from the start of the shorter list, The point at which
-    *   they meet at a same node, is the intersection Node.
+    *   they meet at a same node, is the intersection LLNode.
   * */
-  public static Node intersection(LinkedList l1, LinkedList l2) {
-    Node trav1, trav2;
+  public static LLNode intersection(LinkedList l1, LinkedList l2) {
+    LLNode trav1, trav2;
     trav1 = l1.head;
     trav2 = l2.head;
     int len1, len2;
@@ -82,7 +85,7 @@ public class Linked_List {
     }
     if (trav1 == trav2) {// they both intersect
       // get the longer list
-      Node longer, shorter;
+      LLNode longer, shorter;
       if (len1 > len2) {
         longer = l1.head;
         shorter = l2.head;
@@ -91,13 +94,13 @@ public class Linked_List {
         shorter = l1.head;
       }
       int diff = Math.abs(len1 - len2);
-      Node skipped = longer;
+      LLNode skipped = longer;
       // skip the longer list, this is done in order to bring both pointers at same dist from end.
       while (diff != 0) {
         skipped = skipped.next;
         diff--;
       }
-      Node second = shorter;
+      LLNode second = shorter;
       while (skipped != second) {
         skipped = skipped.next;
         second = second.next;
@@ -117,9 +120,9 @@ public class Linked_List {
       return null;
     }
     int carry = 0;
-    Node sumList = null;
-    Node sumTrav = null;
-    Node atrav, btrav;
+    LLNode sumList = null;
+    LLNode sumTrav = null;
+    LLNode atrav, btrav;
     atrav = a.head;
     btrav = b.head;
     int sum;
@@ -130,17 +133,17 @@ public class Linked_List {
       carry = sum < 10 ? 0 : 1;
       sum = sum % 10;
       if (sumList == null) {
-        sumList = new Node(sum);
+        sumList = new LLNode(sum);
         sumTrav = sumList;
       } else {
-        sumTrav.next = new Node(sum);
+        sumTrav.next = new LLNode(sum);
         sumTrav = sumTrav.next;
       }
       atrav = atrav.next;
       btrav = btrav.next;
     }
 
-    Node nextPart = null;
+    LLNode nextPart = null;
     if (atrav == null && btrav != null) {
       nextPart = btrav;
     } else if (btrav == null && atrav != null) {
@@ -150,12 +153,12 @@ public class Linked_List {
       sum = nextPart.data + carry;
       carry = sum < 10 ? 0 : 1;
       sum = sum % 10;
-      sumTrav.next = new Node(sum);
+      sumTrav.next = new LLNode(sum);
       sumTrav = sumTrav.next;
       nextPart = nextPart.next;
     }
     if (carry == 1) {
-      sumTrav.next = new Node(carry);
+      sumTrav.next = new LLNode(carry);
     }
     LinkedList sumRes = new LinkedList();
     sumRes.head = sumList;
@@ -169,7 +172,7 @@ public class Linked_List {
     Stack<Integer> list1 = new Stack<>();
     Stack<Integer> list2 = new Stack<>();
 
-    Node trav = a.head;
+    LLNode trav = a.head;
     while (trav != null) {
       list1.push(trav.data);
       trav = trav.next;
@@ -181,14 +184,14 @@ public class Linked_List {
     }
     int x, y, sum, carry;
     carry = sum = 0;
-    Node sumList = null;
+    LLNode sumList = null;
     while (list1.size() != 0 && list2.size() != 0) {
       x = list1.pop();
       y = list2.pop();
       sum = x + y + carry;
       carry = sum > 9 ? 1 : 0;
       sum = sum % 10;
-      Node temp = new Node(sum);
+      LLNode temp = new LLNode(sum);
       temp.next = sumList;
       sumList = temp;
     }
@@ -198,12 +201,12 @@ public class Linked_List {
       sum = x + carry;
       carry = sum > 9 ? 1 : 0;
       sum = sum % 10;
-      Node temp = new Node(sum);
+      LLNode temp = new LLNode(sum);
       temp.next = sumList;
       sumList = temp;
     }
     if (carry == 1) {
-      Node temp = new Node(carry);
+      LLNode temp = new LLNode(carry);
       temp.next = sumList;
       sumList = temp;
     }
@@ -218,19 +221,19 @@ public class Linked_List {
   * */
   public static LinkedList reverseFromMid(LinkedList list) {
     if (list == null || list.head.next == null) return list;
-    Node head = list.head;
-    Node slowPrev = null;
-    Node slow;
-    Node fast;
+    LLNode head = list.head;
+    LLNode slowPrev = null;
+    LLNode slow;
+    LLNode fast;
     slow = fast = list.head;
     while (fast != null && fast.next != null) {
       slowPrev = slow;
       slow = slow.next;
       fast = fast.next.next;
     }
-    Node temp;
-    Node prev = null;
-    Node trav = slow;
+    LLNode temp;
+    LLNode prev = null;
+    LLNode trav = slow;
     while (trav != null) {
       temp = trav.next;
       trav.next = prev;
@@ -249,13 +252,13 @@ public class Linked_List {
   * the nodes of the first two lists.
   * Recursive Solution is very compact (in linkedList Class), but has a tradeoff for stack
   * */
-  public static Node mergeSortedListIterative(Node L1, Node L2) {
+  public static LLNode mergeSortedListIterative(LLNode L1, LLNode L2) {
     if (L1 == null && L2 == null) return null;
     else if (L1 == null) return L2;
     else if (L2 == null) return L1;
 
-    Node newHead = null;
-    Node trav = null;
+    LLNode newHead = null;
+    LLNode trav = null;
     if (L1.data < L2.data) {
       newHead = L1;
       L1 = L1.next;
@@ -292,14 +295,14 @@ public class Linked_List {
   * The MergeSortLike method (mergeKListsFinal) is the fasteest as compared to iterative & recursive approach
   */
 
-  public static Node mergeKLists(Node[] lists) {
+  public static LLNode mergeKLists(LLNode[] lists) {
 //    return mergeKRecur(lists);
     return mergeKIterative(lists);
   }
 
-  private static Node mergeKRecur(Node[] lists) {
+  private static LLNode mergeKRecur(LLNode[] lists) {
     int min = Integer.MAX_VALUE;
-    Node trav = null;
+    LLNode trav = null;
     int minIndex = 0;
     for (int i = 0; i < lists.length; i++)
       if (lists[i] != null && lists[i].data < min) {
@@ -314,9 +317,9 @@ public class Linked_List {
     return trav;
   }
 
-  private static Node mergeKIterative(Node[] lists) {
+  private static LLNode mergeKIterative(LLNode[] lists) {
     if (lists == null || lists.length < 1) return null;
-    Node head, prev;
+    LLNode head, prev;
     head = prev = null;
     int min;
     int minIndex = 0;
@@ -350,17 +353,17 @@ public class Linked_List {
 	*	Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
   * The MergeSortLike method is the fasteest as compared to iterative & recursive approach
   */
-  public static Node mergeKListsFinal(Node[] lists) {
+  public static LLNode mergeKListsFinal(LLNode[] lists) {
     if (lists == null || lists.length < 1) return null;
     return mergeList(lists, 0, lists.length - 1);
   }
 
-  private static Node mergeList(Node[] lists, int low, int high) {
+  private static LLNode mergeList(LLNode[] lists, int low, int high) {
     if (low > high) return null;
     if (low == high) return lists[low];
-    Node head = new Node(0);
-    Node trav = head;
-    Node a, b;
+    LLNode head = new LLNode(0);
+    LLNode trav = head;
+    LLNode a, b;
     int mid = low + (high - low) / 2;
 
     a = mergeList(lists, low, mid);
@@ -391,9 +394,9 @@ public class Linked_List {
    *  * */
   public static LinkedList addTwoNumbers(LinkedList l1, LinkedList l2) {
     if (l1 == null || l2 == null) return null;
-    Stack<Node> stack1 = new Stack<>();
-    Stack<Node> stack2 = new Stack<>();
-    Node trav = l1.head;
+    Stack<LLNode> stack1 = new Stack<>();
+    Stack<LLNode> stack2 = new Stack<>();
+    LLNode trav = l1.head;
     while (trav != null) {
       stack1.push(trav);
       trav = trav.next;
@@ -412,16 +415,16 @@ public class Linked_List {
       sum +=carry;
       carry = sum / 10;
       sum = sum % 10;
-      if (res.head == null) res.head = new Node(sum);
+      if (res.head == null) res.head = new LLNode(sum);
       else {
-        trav = new Node(sum);
+        trav = new LLNode(sum);
         trav.next = res.head;
         res.head = trav;
       }
     }
 
     if(carry>0){
-      trav = new Node(carry);
+      trav = new LLNode(carry);
       trav.next = res.head;
       res.head = trav;
     }

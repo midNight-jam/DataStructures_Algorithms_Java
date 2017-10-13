@@ -1,10 +1,10 @@
 package darkRealm.Hyper;
 
+import ADT.LLNode;
 import darkRealm.CTCI.BigO.MatrixUtil;
-import darkRealm.CTCI.LinkedLists.LinkedList;
-import darkRealm.CTCI.LinkedLists.Node;
-import darkRealm.CTCI.Trees_and_Graphs.TNode;
-import darkRealm.CTCI.Trees_and_Graphs.Tree;
+import ADT.LinkedList;
+import ADT.TNode;
+import ADT.Tree;
 import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
 import darkRealm.Hyper.Cache.LFU;
 import darkRealm.Hyper.Cache.LRU;
@@ -121,8 +121,8 @@ public class HyperMain {
     l2.add(4);
 
 //    LinkedList res = LC_Prob_Med.AddTwoNumbers(l1, l2);
-    Node trav = LC_Prob_Med.AddTwoNumbers(l1, l2);
-//    Node trav = res.head;
+    LLNode trav = LC_Prob_Med.AddTwoNumbers(l1, l2);
+//    LLNode trav = res.head;
     while (trav != null) {
       System.out.println(" d : " + trav.data);
       trav = trav.next;
@@ -1251,12 +1251,12 @@ public class HyperMain {
   }
 
   public static void testSortLinkedList() {
-    Node n3 = new Node(1);
-    Node n1 = new Node(2);
-    Node n5 = new Node(3);
-    Node n0 = new Node(4);
-    Node n4 = new Node(5);
-    Node n2 = new Node(6);
+    LLNode n3 = new LLNode(1);
+    LLNode n1 = new LLNode(2);
+    LLNode n5 = new LLNode(3);
+    LLNode n0 = new LLNode(4);
+    LLNode n4 = new LLNode(5);
+    LLNode n2 = new LLNode(6);
     n0.next = n1;
     n1.next = n2;
     n2.next = n3;
@@ -1265,7 +1265,7 @@ public class HyperMain {
     LinkedList L1 = new LinkedList();
     L1.head = n0;
     System.out.println(" B4 : " + L1.toString());
-    Node newHead = L1.sortLinkedList();
+    LLNode newHead = L1.sortLinkedList();
     LinkedList L2 = new LinkedList();
     L2.head = newHead;
     System.out.println(" after : " + L2.toString());

@@ -2,7 +2,7 @@ package darkRealm.CTCI;
 
 import darkRealm.CTCI.Stacks_and_queues.AnimalShelter;
 import darkRealm.CTCI.Stacks_and_queues.MinStack;
-import darkRealm.CTCI.Stacks_and_queues.MyStack;
+import ADT.MyStack;
 import darkRealm.CTCI.Stacks_and_queues.Stacks_and_Queues;
 
 /**

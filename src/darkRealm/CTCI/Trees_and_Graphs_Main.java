@@ -1,5 +1,9 @@
 package darkRealm.CTCI;
 
+import ADT.GNode;
+import ADT.Graph;
+import ADT.TNode;
+import ADT.Tree;
 import darkRealm.CTCI.Trees_and_Graphs.*;
 
 import java.util.ArrayList;
@@ -494,31 +498,31 @@ public class Trees_and_Graphs_Main {
   public static void testTopologicalSort() {
     int vertices = 7;
     Graph graph = new Graph(vertices);
-    Node vA = new Node(vertices);
+    GNode vA = new GNode(vertices);
     vA.name = "A";
     graph.start = vA;
-    Node vC = new Node(vertices);
+    GNode vC = new GNode(vertices);
     vC.name = "C";
     graph.start.childs[2] = vC;
 
-    Node vB = new Node(vertices);
+    GNode vB = new GNode(vertices);
     vB.name = "B";
     vB.childs[2] = vC;
 
-    Node vE = new Node(vertices);
+    GNode vE = new GNode(vertices);
     vE.name = "E";
     vB.childs[5] = vB;
 
-    Node vD = new Node(vertices);
+    GNode vD = new GNode(vertices);
     vD.name = "D";
     vC.childs[4] = vD;
 
-    Node vF = new Node(vertices);
+    GNode vF = new GNode(vertices);
     vF.name = "F";
     vD.childs[5] = vF;
     vE.childs[5] = vF;
 
-    Node vG = new Node(vertices);
+    GNode vG = new GNode(vertices);
     vG.name = "G";
     vF.childs[6] = vG;
 

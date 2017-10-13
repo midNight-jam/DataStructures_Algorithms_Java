@@ -1,5 +1,7 @@
 package darkRealm.CTCI.Stacks_and_queues;
 
+import ADT.MyQueue;
+
 /**
  * Created by Jayam on 1/7/2017.
  * [Prob 3.6]

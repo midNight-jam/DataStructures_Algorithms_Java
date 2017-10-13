@@ -1,10 +1,10 @@
 package darkRealm.CTCI.Moderate;
 
 import darkRealm.CTCI.Sorting_and_Searching.BinarySearchUtil;
-import darkRealm.CTCI.Stacks_and_queues.MyQueue;
-import darkRealm.CTCI.Stacks_and_queues.MyStack;
-import darkRealm.CTCI.Trie.Trie;
-import darkRealm.CTCI.Trie.TrieNode;
+import ADT.MyQueue;
+import ADT.MyStack;
+import ADT.Trie;
+import ADT.TrieNode;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;

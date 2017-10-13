@@ -1,4 +1,4 @@
-package darkRealm.CTCI.Stacks_and_queues;
+package ADT;
 
 import jdk.internal.dynalink.beans.StaticClass;
 

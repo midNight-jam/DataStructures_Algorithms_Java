@@ -1,6 +1,6 @@
 package darkRealm.CTCI.Trees_and_Graphs;
 
-import darkRealm.CTCI.Stacks_and_queues.MyQueue;
+import ADT.MyQueue;
 
 import java.util.*;
 

@@ -1,8 +1,8 @@
 package darkRealm.CTCI;
 
-import darkRealm.CTCI.LinkedLists.LinkedList;
+import ADT.LLNode;
+import ADT.LinkedList;
 import darkRealm.CTCI.LinkedLists.Linked_List;
-import darkRealm.CTCI.LinkedLists.Node;
 
 import static darkRealm.CTCI.LinkedLists.Linked_List.deepCopyOfRandomList;
 
@@ -14,8 +14,8 @@ public class LinkedList_Main {
     LinkedList list = new LinkedList();
     list.add(1);
     list.add(2);
-    list.appendToTail(new Node(3));
-    list.appendToHead(new Node(0));
+    list.appendToTail(new LLNode(3));
+    list.appendToHead(new LLNode(0));
     LinkedList l2 = list.clone();
     list.addAll(l2);
     System.out.println("list - " + list);
@@ -70,17 +70,17 @@ public class LinkedList_Main {
     list.add(4);
     list.add(5);
 //    list.add(6);
-    Node temp = list.reverseBetween(0, 3);
+    LLNode temp = list.reverseBetween(0, 3);
     System.out.println(" List : ");
   }
 
   public static void testIntersection() {
-    Node n0 = new Node(0);
-    Node n1 = new Node(11);
-    Node n2 = new Node(22);
-    Node n3 = new Node(33);
-    Node n4 = new Node(44);
-    Node n5 = new Node(55);
+    LLNode n0 = new LLNode(0);
+    LLNode n1 = new LLNode(11);
+    LLNode n2 = new LLNode(22);
+    LLNode n3 = new LLNode(33);
+    LLNode n4 = new LLNode(44);
+    LLNode n5 = new LLNode(55);
     n0.next = n1;
     n1.next = n2;
     n2.next = n3;
@@ -90,29 +90,29 @@ public class LinkedList_Main {
     LinkedList l1 = new LinkedList();
     l1.head = n0;
 
-//    Node p1 = new Node(101);
-//    Node p2 = n0;
+//    LLNode p1 = new LLNode(101);
+//    LLNode p2 = n0;
 //    p1.next = p2;
     LinkedList l2 = new LinkedList();
     l2.head = n0;
 
-    Node intersection = Linked_List.intersection(l1, l2);
+    LLNode intersection = Linked_List.intersection(l1, l2);
     System.out.println(" intersection : " + intersection.data);
   }
 
   public static void testSumList() {
-    Node n0 = new Node(1);
-    Node n1 = new Node(1);
-    Node n2 = new Node(9);
+    LLNode n0 = new LLNode(1);
+    LLNode n1 = new LLNode(1);
+    LLNode n2 = new LLNode(9);
     n0.next = n1;
     n1.next = n2;
     LinkedList L1 = new LinkedList();
     L1.head = n0;
 
-    Node n3 = new Node(9);
-    Node n4 = new Node(8);
-    Node n5 = new Node(8);
-    Node n6 = new Node(8);
+    LLNode n3 = new LLNode(9);
+    LLNode n4 = new LLNode(8);
+    LLNode n5 = new LLNode(8);
+    LLNode n6 = new LLNode(8);
     n3.next = n4;
     n4.next = n5;
     n5.next = n6;
@@ -126,37 +126,37 @@ public class LinkedList_Main {
 
   public static void testSumListII() {
     //7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
-//    Node n0 = new Node(7);
-//    Node n1 = new Node(2);
-//    Node n2 = new Node(4);
-//    Node n3 = new Node(3);
+//    LLNode n0 = new LLNode(7);
+//    LLNode n1 = new LLNode(2);
+//    LLNode n2 = new LLNode(4);
+//    LLNode n3 = new LLNode(3);
 //    n0.next = n1;
 //    n1.next = n2;
 //    n2.next = n3;
 //    LinkedList L1 = new LinkedList();
 //    L1.head = n0;
 //
-//    Node n4 = new Node(5);
-//    Node n5 = new Node(6);
-//    Node n6 = new Node(4);
+//    LLNode n4 = new LLNode(5);
+//    LLNode n5 = new LLNode(6);
+//    LLNode n6 = new LLNode(4);
 //    n4.next = n5;
 //    n5.next = n6;
 //    LinkedList L2 = new LinkedList();
 //    L2.head = n4;
 
-    Node n0 = new Node(1);
-    Node n1 = new Node(0);
-    Node n2 = new Node(0);
-    Node n3 = new Node(1);
+    LLNode n0 = new LLNode(1);
+    LLNode n1 = new LLNode(0);
+    LLNode n2 = new LLNode(0);
+    LLNode n3 = new LLNode(1);
     n0.next = n1;
     n1.next = n2;
     n2.next = n3;
     LinkedList L1 = new LinkedList();
     L1.head = n0;
 
-    Node n4 = new Node(9);
-    Node n5 = new Node(9);
-    Node n6 = new Node(9);
+    LLNode n4 = new LLNode(9);
+    LLNode n5 = new LLNode(9);
+    LLNode n6 = new LLNode(9);
     n4.next = n5;
     n5.next = n6;
     LinkedList L2 = new LinkedList();
@@ -169,18 +169,18 @@ public class LinkedList_Main {
   }
 
   public static void testSumListNatural() {
-    Node n0 = new Node(1);
-    Node n1 = new Node(1);
-    Node n2 = new Node(9);
+    LLNode n0 = new LLNode(1);
+    LLNode n1 = new LLNode(1);
+    LLNode n2 = new LLNode(9);
     n0.next = n1;
     n1.next = n2;
     LinkedList L1 = new LinkedList();
     L1.head = n0;
 
-    Node n3 = new Node(9);
-    Node n4 = new Node(9);
-    Node n5 = new Node(9);
-    Node n6 = new Node(9);
+    LLNode n3 = new LLNode(9);
+    LLNode n4 = new LLNode(9);
+    LLNode n5 = new LLNode(9);
+    LLNode n6 = new LLNode(9);
     n3.next = n4;
     n4.next = n5;
     n5.next = n6;
@@ -193,12 +193,12 @@ public class LinkedList_Main {
   }
 
   public static void testReverseMid() {
-    Node n0 = new Node(1);
-//    Node n1 = new Node(2);
-//    Node n2 = new Node(3);
-//    Node n3 = new Node(4);
-//    Node n4 = new Node(5);
-//    Node n5 = new Node(6);
+    LLNode n0 = new LLNode(1);
+//    LLNode n1 = new LLNode(2);
+//    LLNode n2 = new LLNode(3);
+//    LLNode n3 = new LLNode(4);
+//    LLNode n4 = new LLNode(5);
+//    LLNode n5 = new LLNode(6);
 //    n0.next = n1;
 //    n1.next = n2;
 //    n2.next = n3;
@@ -212,72 +212,72 @@ public class LinkedList_Main {
   }
 
   public static void testMergeTwoList() {
-    Node n0 = new Node(1);
-    Node n1 = new Node(5);
-    Node n2 = new Node(8);
+    LLNode n0 = new LLNode(1);
+    LLNode n1 = new LLNode(5);
+    LLNode n2 = new LLNode(8);
     n0.next = n1;
     n1.next = n2;
     LinkedList L1 = new LinkedList();
     L1.head = n0;
 
-    Node n3 = new Node(3);
-    Node n4 = new Node(7);
-    Node n5 = new Node(9);
-    Node n6 = new Node(10);
+    LLNode n3 = new LLNode(3);
+    LLNode n4 = new LLNode(7);
+    LLNode n5 = new LLNode(9);
+    LLNode n6 = new LLNode(10);
     n3.next = n4;
     n4.next = n5;
     n5.next = n6;
     LinkedList L2 = new LinkedList();
     L2.head = n3;
 
-//    Node res = Linked_List.mergeSortedListIterative(n0, n3);
-//    Node res = Linked_List.mergeSortedListRecur(n0, n3);
-//    Node res = Linked_List.mergeSortedListIterative(null, n3);
-//    Node res = Linked_List.mergeSortedListRecur(null, n3);
-//    Node res = Linked_List.mergeSortedListIterative(n0, null);
+//    LLNode res = Linked_List.mergeSortedListIterative(n0, n3);
+//    LLNode res = Linked_List.mergeSortedListRecur(n0, n3);
+//    LLNode res = Linked_List.mergeSortedListIterative(null, n3);
+//    LLNode res = Linked_List.mergeSortedListRecur(null, n3);
+//    LLNode res = Linked_List.mergeSortedListIterative(n0, null);
 //    System.out.println("Result : " + res.data);
   }
 
   public static void testMergeKLists() {
-    Node n0 = new Node(1);
-    Node n1 = new Node(5);
-//    Node n2 = new Node(8);
+    LLNode n0 = new LLNode(1);
+    LLNode n1 = new LLNode(5);
+//    LLNode n2 = new LLNode(8);
     n0.next = n1;
 //    n1.next = n2;
     LinkedList L1 = new LinkedList();
     L1.head = n0;
 
-    Node n3 = new Node(3);
-    Node n4 = new Node(7);
-//    Node n5 = new Node(9);
-//    Node n6 = new Node(10);
+    LLNode n3 = new LLNode(3);
+    LLNode n4 = new LLNode(7);
+//    LLNode n5 = new LLNode(9);
+//    LLNode n6 = new LLNode(10);
     n3.next = n4;
 //    n4.next = n5;
 //    n5.next = n6;
     LinkedList L2 = new LinkedList();
     L2.head = n3;
 
-    Node n10 = new Node(2);
-    Node n11 = new Node(4);
-//    Node n5 = new Node(9);
-//    Node n6 = new Node(10);
+    LLNode n10 = new LLNode(2);
+    LLNode n11 = new LLNode(4);
+//    LLNode n5 = new LLNode(9);
+//    LLNode n6 = new LLNode(10);
     n10.next = n11;
 
-    Node[] lists = new Node[]{n0, n3, n10};
+    LLNode[] lists = new LLNode[]{n0, n3, n10};
 
-//    Node res = Linked_List.mergeKLists(lists);
-//    Node res = Linked_List.mergeKLists(lists);
-    Node res = Linked_List.mergeKListsFinal(lists);
+//    LLNode res = Linked_List.mergeKLists(lists);
+//    LLNode res = Linked_List.mergeKLists(lists);
+    LLNode res = Linked_List.mergeKListsFinal(lists);
     System.out.println(" Res : " + res.data);
   }
 
   public static void testReverse() {
-    Node n0 = new Node(1);
-    Node n1 = new Node(2);
-    Node n2 = new Node(3);
-    Node n3 = new Node(4);
-    Node n4 = new Node(5);
-    Node n5 = new Node(6);
+    LLNode n0 = new LLNode(1);
+    LLNode n1 = new LLNode(2);
+    LLNode n2 = new LLNode(3);
+    LLNode n3 = new LLNode(4);
+    LLNode n4 = new LLNode(5);
+    LLNode n5 = new LLNode(6);
     n0.next = n1;
     n1.next = n2;
     n2.next = n3;
@@ -292,12 +292,12 @@ public class LinkedList_Main {
   }
 
   public static void testMergerLinkedList() {
-    Node n0 = new Node(1);
-    Node n1 = new Node(3);
-    Node n2 = new Node(5);
-    Node n3 = new Node(7);
-    Node n4 = new Node(9);
-    Node n5 = new Node(11);
+    LLNode n0 = new LLNode(1);
+    LLNode n1 = new LLNode(3);
+    LLNode n2 = new LLNode(5);
+    LLNode n3 = new LLNode(7);
+    LLNode n4 = new LLNode(9);
+    LLNode n5 = new LLNode(11);
     n0.next = n1;
     n1.next = n2;
     n2.next = n3;
@@ -306,12 +306,12 @@ public class LinkedList_Main {
     LinkedList L1 = new LinkedList();
     L1.head = n0;
 
-    Node m0 = new Node(2);
-    Node m1 = new Node(4);
-    Node m2 = new Node(6);
-    Node m3 = new Node(8);
-    Node m4 = new Node(10);
-    Node m5 = new Node(12);
+    LLNode m0 = new LLNode(2);
+    LLNode m1 = new LLNode(4);
+    LLNode m2 = new LLNode(6);
+    LLNode m3 = new LLNode(8);
+    LLNode m4 = new LLNode(10);
+    LLNode m5 = new LLNode(12);
     m0.next = m1;
     m1.next = m2;
     m2.next = m3;
@@ -320,17 +320,17 @@ public class LinkedList_Main {
     LinkedList L2 = new LinkedList();
     L2.head = m0;
 
-    Node mergeHead = L1.mergeWith(L2);
+    LLNode mergeHead = L1.mergeWith(L2);
     System.out.println(mergeHead);
   }
 
   public static void testKRemoveFromEnd() {
-    Node n0 = new Node(1);
-    Node n1 = new Node(3);
-//    Node n2 = new Node(5);
-//    Node n3 = new Node(7);
-//    Node n4 = new Node(9);
-//    Node n5 = new Node(11);
+    LLNode n0 = new LLNode(1);
+    LLNode n1 = new LLNode(3);
+//    LLNode n2 = new LLNode(5);
+//    LLNode n3 = new LLNode(7);
+//    LLNode n4 = new LLNode(9);
+//    LLNode n5 = new LLNode(11);
     n0.next = n1;
 //    n1.next = n2;
 //    n2.next = n3;
@@ -339,7 +339,7 @@ public class LinkedList_Main {
     LinkedList L1 = new LinkedList();
     L1.head = n0;
     System.out.println(L1);
-    Node res = L1.removeKthFromEnd(L1.head, 2);
+    LLNode res = L1.removeKthFromEnd(L1.head, 2);
     System.out.println(res.data);
     System.out.println(L1);
   }

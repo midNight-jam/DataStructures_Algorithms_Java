@@ -1,4 +1,4 @@
-package darkRealm.CTCI.Trie;
+package ADT;
 
 /**
  * Created by Jayam on 9/5/2016.

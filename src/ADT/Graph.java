@@ -1,7 +1,4 @@
-package darkRealm.CTCI.Trees_and_Graphs;
-
-import darkRealm.CTCI.Stacks_and_queues.MyQueue;
-import darkRealm.CTCI.Stacks_and_queues.MyStack;
+package ADT;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -14,34 +11,34 @@ import java.util.Stack;
 
 public class Graph {
   public int vertices;
-  public Node start;
-  public Node[] allVertices;
-  int processed;
-  String buildOrder;
+  public GNode start;
+  public GNode[] allVertices;
+  public int processed;
+  public String buildOrder;
 
   public Graph(int v) {
     vertices = v;
-    start = new Node(vertices);
-    allVertices = new Node[vertices];
+    start = new GNode(vertices);
+    allVertices = new GNode[vertices];
     buildOrder = "";
   }
 
   public void BreadthFirstTraversal() {
-    MyQueue<Node> queue = new MyQueue<>();
+    MyQueue<GNode> queue = new MyQueue<>();
     queue.enqueue(start);
-    start.status = Node.Status.UnderProcessing;
-    Node trav;
+    start.status = GNode.Status.UnderProcessing;
+    GNode trav;
     System.out.println("Breadth First traversal");
     while (!queue.isEmpty()) {
       trav = queue.deque();
       visitNode(trav);
-      trav.status = Node.Status.Processed;
+      trav.status = GNode.Status.Processed;
       // add the next adjacent vertices in queue for processing
       for (int i = 0; i < trav.childs.length; i++) {
         // if the next vertex has not been processed put it in for processing in the queue
-        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
+        if ((trav.childs[i] != null) && trav.childs[i].status == GNode.Status.NotProcessed) {
           queue.enqueue(trav.childs[i]);
-          trav.childs[i].status = Node.Status.UnderProcessing;
+          trav.childs[i].status = GNode.Status.UnderProcessing;
         }
       }
     }
@@ -49,22 +46,22 @@ public class Graph {
   }
 
   public void DepthFirstTraversal() {
-    Node trav;
-    MyStack<Node> stack = new MyStack<>();
+    GNode trav;
+    MyStack<GNode> stack = new MyStack<>();
     stack.push(start);
-    start.status = Node.Status.UnderProcessing;
+    start.status = GNode.Status.UnderProcessing;
     System.out.println("Depth First traversal");
 
     while (!stack.isEmpty()) {
       trav = stack.pop();
       visitNode(trav);
-      trav.status = Node.Status.Processed;
+      trav.status = GNode.Status.Processed;
       // add the next adjacent vertices in stack for processing
       for (int i = 0; i < trav.childs.length; i++) {
         // if the next vertex has not been processed put it in for processing in the stack
-        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
+        if ((trav.childs[i] != null) && trav.childs[i].status == GNode.Status.NotProcessed) {
           stack.push(trav.childs[i]);
-          trav.childs[i].status = Node.Status.UnderProcessing;
+          trav.childs[i].status = GNode.Status.UnderProcessing;
         }
       }
     }
@@ -85,7 +82,7 @@ public class Graph {
   }
 
 
-  static void dijkstra(int graph[][], int src) {
+  public static void dijkstra(int graph[][], int src) {
     int vertices = graph.length;
     int dist[] = new int[vertices]; // The output array. dist[i] will hold
     // the shortest distance from src to i
@@ -127,11 +124,11 @@ public class Graph {
     System.out.println("Dist : " + Arrays.toString(dist));
   }
 
-  private void visitNode(Node n) {
+  private void visitNode(GNode n) {
     System.out.println("Visiting - " + n.name);
   }
 
-  private void reduceIncoming(Node n) {
+  private void reduceIncoming(GNode n) {
     for (int i = 0; i < n.childs.length; i++) {
       if (n.childs[i] != null && n.childs[i].incomingEdges > 0) {
         n.childs[i].incomingEdges--;
@@ -143,7 +140,7 @@ public class Graph {
     for (int i = 0; i < vertices; i++) {
       for (int j = 0; j < vertices; j++) {
         if (allVertices[i] != null && allVertices[i].childs[j] != null) {
-          allVertices[i].childs[j].status = Node.Status.NotProcessed;
+          allVertices[i].childs[j].status = GNode.Status.NotProcessed;
         }
       }
     }
@@ -154,15 +151,15 @@ public class Graph {
   *   two nodes.
   *   A) Will use BFS for finding if we can reach the node 2 from node 1 (as the given is directed)
   * */
-  public boolean isRouteBetween(Node p, Node q) {
+  public boolean isRouteBetween(GNode p, GNode q) {
     return modifiedBFS(p, q);
   }
 
-  private boolean modifiedBFS(Node p, Node q) {
-    MyQueue<Node> queue = new MyQueue<>();
+  private boolean modifiedBFS(GNode p, GNode q) {
+    MyQueue<GNode> queue = new MyQueue<>();
     queue.enqueue(p);
-    p.status = Node.Status.UnderProcessing;
-    Node trav;
+    p.status = GNode.Status.UnderProcessing;
+    GNode trav;
     boolean oneVisited;
     oneVisited = false;
     while (!queue.isEmpty()) {
@@ -175,11 +172,11 @@ public class Graph {
         System.out.println("Route present between " + p.name + "  & " + q.name);
         return true;
       }
-      trav.status = Node.Status.Processed;
+      trav.status = GNode.Status.Processed;
       for (int i = 0; i < trav.childs.length; i++) {
-        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
+        if ((trav.childs[i] != null) && trav.childs[i].status == GNode.Status.NotProcessed) {
           queue.enqueue(trav.childs[i]);
-          trav.childs[i].status = Node.Status.UnderProcessing;
+          trav.childs[i].status = GNode.Status.UnderProcessing;
         }
       }
     }
@@ -188,33 +185,33 @@ public class Graph {
   }
 
   public void modifiedBreadthFirstTraversal() {
-    MyQueue<Node> queue = new MyQueue<>();
+    MyQueue<GNode> queue = new MyQueue<>();
     queue.enqueue(start);
-    start.status = Node.Status.UnderProcessing;
-    Node trav;
+    start.status = GNode.Status.UnderProcessing;
+    GNode trav;
     System.out.println("Breadth First traversal");
     while (!queue.isEmpty()) {
       trav = queue.deque();
       reduceIncoming(trav);
       if (trav.incomingEdges == 0) {
-        trav.status = Node.Status.Processed;
+        trav.status = GNode.Status.Processed;
         processed--;
         buildOrder += " " + trav.name;
       }
       // add the next adjacent vertices in queue for processing
       for (int i = 0; i < trav.childs.length; i++) {
         // if the next vertex has not been processed put it in for processing in the queue
-        if ((trav.childs[i] != null) && trav.childs[i].status == Node.Status.NotProcessed) {
+        if ((trav.childs[i] != null) && trav.childs[i].status == GNode.Status.NotProcessed) {
           queue.enqueue(trav.childs[i]);
-          trav.childs[i].status = Node.Status.UnderProcessing;
+          trav.childs[i].status = GNode.Status.UnderProcessing;
         }
       }
     }
   }
 
   public String topologicalSort() {
-    Set<Node> visited = new HashSet<>();
-    Stack<Node> stack = new Stack<>();
+    Set<GNode> visited = new HashSet<>();
+    Stack<GNode> stack = new Stack<>();
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < allVertices.length; i++) {
       if (visited.contains(allVertices[i])) continue;
@@ -227,7 +224,7 @@ public class Graph {
     return sb.toString();
   }
 
-  private void topologicalSortUtil(Node trav, Set<Node> visited, Stack<Node> stack) {
+  private void topologicalSortUtil(GNode trav, Set<GNode> visited, Stack<GNode> stack) {
     visited.add(trav);
     for (int i = 0; i < trav.childs.length; i++) {
       // i have null check because of my implementation, Originally its not required
