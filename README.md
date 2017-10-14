@@ -84,5 +84,9 @@ This section contains implementation of different Data Structures in Java.
 | <b>ExcelSheetColumnTitle</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ExcelSheetColumnTitle.java.java)|
 | <b>PerfectNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PerfectNumber.java)|
 | <b>FirstBadVersion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FirstBadVersion.java)|
-
-
+| <b>Can Place Flowers</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CanPlaceFlowers.java)|
+| <b>Square Root</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SquareRoot.java)|
+| <b>MaximumAverageSubarrayI</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumAverageSubarrayI.java)|
+| <b>SwapNodesInPairs</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SwapNodesInPairs.java)|
+| <b>Subsets I</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubsetsI.java)|
+| <b>Subsets II</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubsetsII.java)|
