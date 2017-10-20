@@ -90,3 +90,11 @@ This section contains implementation of different Data Structures in Java.
 | <b>SwapNodesInPairs</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SwapNodesInPairs.java)|
 | <b>Subsets I</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubsetsI.java)|
 | <b>Subsets II</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubsetsII.java)|
+| <b>Permutations</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/Permutations.java)|
+| <b>Permutations II</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PermutationsII.java)|
+| <b>CombinationSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSum.java)|
+| <b>ValidSquare</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidSquare.java)|
+| <b>KEmptySlots</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/KEmptySlots.java)|
+| <b>LongestAbsolutePath</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestAbsolutePath.java)|
+| <b>LongestSubStringWithKDistinctChars</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestSubStringWithKDistinctChars.java)|
+| <b>LicenseKeyFormatting</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LicenseKeyFormatting.java)|
