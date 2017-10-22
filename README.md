@@ -1,8 +1,8 @@
-#Data Structures and Algorithms in Java
+# Data Structures and Algorithms in Java  
 
 This repository is a collection of algorithms, data structures and coding challenges which I've solved over a period of time. The algorithms/solutions are implemented considering effecient Time and Space Complexity approaches. All the solutions are 100% correct and tested against various test cases, unless marked as TODO/InProgress.
 
-# Data Structures Java  
+
 This section contains implementation of different Data Structures in Java.
 
 | Data Structure   | Implementation |
@@ -98,3 +98,11 @@ This section contains implementation of different Data Structures in Java.
 | <b>LongestAbsolutePath</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestAbsolutePath.java)|
 | <b>LongestSubStringWithKDistinctChars</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestSubStringWithKDistinctChars.java)|
 | <b>LicenseKeyFormatting</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LicenseKeyFormatting.java)|
+| <b>RangeSumQuery2DMutable</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RangeSumQuery2DMutable.java)|
+| <b>MovingAverage</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MovingAverage.java)|
+| <b>BinaryTreeLongestConsecutiveSequence</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryTreeLongestConsecutiveSequence.java)|
+| <b>SentenceScreenFitting</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SentenceScreenFitting.java)|
+| <b>BombEnemy</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BombEnemy.java)|
+| <b>ZigZagIterator</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ZigZagIterator.java)|
+| <b>DecodeString</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DecodeString.java)|
+| <b>MissingRanges</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MissingRanges.java)|
