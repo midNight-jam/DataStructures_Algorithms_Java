@@ -24,7 +24,7 @@ public class ValidTriangleNumber {
     int count = 0, l= 0 , h = 0;
     Arrays.sort(nums);
     // Why we choose to iterate from back, because when taking from back we have already taken a bigger no for 2nd side
-    // and adding small number 1st side to it will be easily greter than the 3rd side
+    // and adding small number 1st side to it will be easily greater than the 3rd side
     for(int i = nums.length - 1; i >= 1; i--) {
       l = 0;
       h = i - 1;
@@ -38,8 +38,8 @@ public class ValidTriangleNumber {
   }
 
   public static void main(String[] args) {
-//    int[] nums = new int[]{2, 2, 3, 4};
-    int[] nums = new int[]{2, 3, 3, 4, 4};
+    int[] nums = new int[]{2, 2, 3, 4};
+//    int[] nums = new int[]{2, 3, 3, 4, 4};
     int count = triangleNumber(nums);
     System.out.println(Arrays.toString(nums));
     System.out.println("C : " + count);
