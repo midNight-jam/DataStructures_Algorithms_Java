@@ -23,6 +23,8 @@ public class ValidTriangleNumber {
     if(nums == null || nums.length == 0) return 0;
     int count = 0, l= 0 , h = 0;
     Arrays.sort(nums);
+    // Why we choose to iterate from back, because when taking from back we have already taken a bigger no for 2nd side
+    // and adding small number 1st side to it will be easily greter than the 3rd side
     for(int i = nums.length - 1; i >= 1; i--) {
       l = 0;
       h = i - 1;
