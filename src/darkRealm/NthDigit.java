@@ -24,6 +24,10 @@ public class NthDigit {
   public static int nthDigitZZ(int n) {
     int len = 1, start = 1;
     long count = 9;
+    // why this config, beacuase there are ...
+    // 9 number's of 1 digit [1-9]
+    // 90 number's of 2 digit [10-99]
+    // 900 number's of 3 digit [100-999] ... so on..
     while (n > len * count) {
       n -= len * count;
       len++;
