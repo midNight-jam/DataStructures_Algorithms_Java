@@ -155,3 +155,11 @@ This section contains implementation of different Data Structures in Java.
 | <b>StrobogrammaticNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StrobogrammaticNumber.java)|
 | <b>WiggleSort</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WiggleSort.java)|
 | <b>BinaryTreeVerticalOrderTraversal</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryTreeVerticalOrderTraversal.java)|
+| <b>TrapRainWater</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TrapRainWater.java)|
+| <b>NthDigit</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NthDigit.java)|
+| <b>MaximumProductSubarray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumProductSubarray.java)|
+| <b>IsSubSequence</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/IsSubSequence.java)|
+| <b>RangeSumQueryImmutable</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RangeSumQueryImmutable.java)|
+| <b>PaintHouse</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PaintHouse.java)|
+| <b>EditDistance</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EditDistance.java)|
+| <b>LargestRectangleInHistogram</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LargestRectangleInHistogram.java)|
