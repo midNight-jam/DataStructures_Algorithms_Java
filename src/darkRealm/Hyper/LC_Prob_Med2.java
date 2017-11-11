@@ -624,7 +624,7 @@ If numbers = [1,2,2], a solution is:
 //    HashMap<Integer, Integer> nos = new HashMap<>();
     Set<Integer> nos = new HashSet<>();
     int[] res = new int[2];
-    // while putting in hashmap/hasset(if ids are not required) check if the diff is already present in the hashset/hashmap
+    // while putting in hash map/hash set(if ids are not required) check if the diff is already present in the hashset/hashmap
     for (int i = 0; i < nums.length; i++) {
       int find = sum - nums[i];
       if (nos.contains(find)) {

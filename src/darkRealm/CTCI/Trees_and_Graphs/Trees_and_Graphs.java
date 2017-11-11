@@ -575,8 +575,6 @@ public class Trees_and_Graphs {
   }
 
   private static int calculateWaysBSTSequence(int rootIndex, int[] arr) {
-
-
     int rightSize = arr.length - rootIndex - 1; //accounting for root so -1
     int leftSize = arr.length - rightSize - 1; //accounting for root so -1
 
