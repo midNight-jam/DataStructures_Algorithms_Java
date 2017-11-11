@@ -17,6 +17,8 @@ public class LargestRectangleInHistogram {
     if (heights == null || heights.length == 0) return 0;
     int max = 0;
     // Intuition is to use stack, pop every time we get a smaller bar against the top of stack and calculate the area
+    // because this means for the bar in stack on right side we have found a smaller bar, right edge, now popping from
+    // the stack we have to find the left edge, which will be the first bar that has height smaller than the stack top
     Stack<Integer> stack = new Stack<>();
     int left = 0, top = 0, area = 0, h = 0;
     for (int i = 0; i <= heights.length; i++) {
@@ -33,7 +35,9 @@ public class LargestRectangleInHistogram {
         // and minus 1, bcoz this bar is smaller so it will not take part in rectangle
       else {
         top = stack.pop();
-        left = stack.isEmpty() ? i : i - stack.peek() - 1;
+        left = stack.isEmpty() ? i : i - stack.peek() - 1;// why left = i when stack is empty, because when stack is empty
+        // means that the current top height is the smallest height in the histogram, and thus we can multiply it with
+        // the length of the histogram, which is at this point i will be nums.length
         area = heights[top] * left;
         max = Math.max(area, max);
         i--; // this is applied so that i == length condition can be met which will cause the stack to become empty once
@@ -45,7 +49,8 @@ public class LargestRectangleInHistogram {
 
   public static void main(String[] args) {
 //    int[] nums = new int[]{2, 1, 5, 6, 2, 3};
-    int[] nums = new int[]{1};
+//    int[] nums = new int[]{1};
+    int[] nums = new int[]{1, 1};
     int res = largestRectangleArea(nums);
     System.out.println(Arrays.toString(nums));
     System.out.println("M ; " + res);

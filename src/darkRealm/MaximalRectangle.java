@@ -52,7 +52,9 @@ public class MaximalRectangle {
         stack.push(i);
       else {
         top = stack.pop();
-        left = stack.isEmpty() ? i : i - stack.peek() - 1; // equals to i deals with case when heights are same
+        left = stack.isEmpty() ? i : i - stack.peek() - 1; // why left = i when stack is empty, because when stack is empty
+        // means that the current top height is the smallest height in the histogram, and thus we can multiply it with
+        // the length of the histogram, which is at this point i will be nums.length
         maxRectArea = Math.max(maxRectArea, nums[top] * left);
         i--;
       }
