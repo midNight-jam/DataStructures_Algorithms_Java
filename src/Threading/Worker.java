@@ -73,6 +73,7 @@ public class Worker {
 
     t1.start();
     t2.start();
+    t1.interrupt();
     try {
       t1.join();
       t2.join();

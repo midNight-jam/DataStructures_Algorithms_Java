@@ -7,9 +7,9 @@ public class Synchronised {
   private int count = 0;
 
   public void increment() {
-    synchronized (this) { // sort of Mutex, second thread has to wait till the first thread has released the lock
+//    synchronized (this) { // sort of Mutex, second thread has to wait till the first thread has released the lock
       count++;
-    }
+//    }
   }
 
   public void doWork() {
@@ -41,8 +41,13 @@ public class Synchronised {
       e.printStackTrace();
     }
     // Logs < 20000 some times without synchronization as some increments are missed
-    System.out.println("Count : " + count); // Logs 0 without join, beacuse this main thread is not waiting for the worker threads to
-    // finish their work, hence after starting them it continues and logs count as 0
+    // Why because in increment() we are doing count++, if we expand this, it is count = count + 1. now when t1 thread comes
+    // it fetches the value of count as 0 adds 1 to it, but before it can update count with incremented value, control is
+    // taken away from t1 an t2 gets it, this time when t2 fetches the value of count it still gets 0, because despite
+    // t1 being performing the addition of + 1 it didnt got chance to update the value for count, thus without synchronization
+    // we loose some increments and count may not reach 20000.
+    System.out.println("Count : " + count); // Logs 0 or < 20000 without join, beacuse this main thread is not waiting
+    // for the worker threads to finish their work, hence after starting them it continues and logs count as 0
   }
 
 
