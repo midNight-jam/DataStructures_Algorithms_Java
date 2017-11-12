@@ -9,7 +9,7 @@ class WProcessor {
   public void produce() throws InterruptedException {
     synchronized (this) {
       System.out.println("Producer Thread Running ...");
-      wait(); // waits & relinqueshes control of this object
+      wait(); // pause here and release the lock on the object
       System.out.println("Resumed");
     }
   }
@@ -21,7 +21,7 @@ class WProcessor {
       System.out.println("Waiting for enter Key...");
       sc.nextLine();
       notify(); // notifies any of the waiting thread on this object that it can wake up,
-      // but doesnt necessaril gurantees that it will get this object, as the control has still not
+      // but doesn't necessarily guarantees that it will get this object, as the control has still not
       // finished this synchronized block
       Thread.sleep(5000); // this sleep proves that notify wont give control to waiting thread
     }
