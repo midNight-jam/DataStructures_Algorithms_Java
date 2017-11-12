@@ -7,9 +7,9 @@ public class Synchronised {
   private int count = 0;
 
   public void increment() {
-//    synchronized (this) { // sort of Mutex, second thread has to wait till the first thread has released the lock
+    synchronized (this) { // sort of Mutex, second thread has to wait till the first thread has released the lock
       count++;
-//    }
+    }
   }
 
   public void doWork() {
