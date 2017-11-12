@@ -3,7 +3,7 @@ package Threading;
 public class DoubleCheckSynchronizationSingleton {
 
   private static final Object lock = new Object();
-  // final to ensure only one lock object is created, static makes this lock shared among all the object.
+  // final to ensure only one lock object cannot be changed, static makes this lock shared among all the object.
 
   private static volatile DoubleCheckSynchronizationSingleton instance;
   // volatile keyword here makes sure that the changes made in one thread are immediately reflect in other thread
