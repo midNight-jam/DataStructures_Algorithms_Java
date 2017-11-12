@@ -37,7 +37,7 @@ public class CountDownLatches {
     }
 
     try {
-      latch.await(); // wait till the lath has been counted down till 0
+      latch.await(); // wait till the latch has been counted down till 0
     } catch (InterruptedException e) {
       e.printStackTrace();
     }

@@ -12,11 +12,6 @@ public class Synchronised {
     }
   }
 
-  public static void main(String[] args) {
-    Synchronised sync = new Synchronised();
-    sync.doWork();
-  }
-
   public void doWork() {
     Thread t1 = new Thread(new Runnable() {
       @Override
@@ -48,5 +43,11 @@ public class Synchronised {
     // Logs < 20000 some times without synchronization as some increments are missed
     System.out.println("Count : " + count); // Logs 0 without join, beacuse this main thread is not waiting for the worker threads to
     // finish their work, hence after starting them it continues and logs count as 0
+  }
+
+
+  public static void main(String[] args) {
+    Synchronised sync = new Synchronised();
+    sync.doWork();
   }
 }

@@ -5,6 +5,7 @@ import java.util.Random;
 
 /**
  * Created by Jayam on 3/27/2017.
+ * Useful explanation  - https://stackoverflow.com/questions/18356795/static-versus-non-static-lock-object-in-synchronized-block
  */
 
 class BProcessor {
@@ -20,8 +21,8 @@ class BProcessor {
           lock.wait();  // To wait if the buffer is already full,
         }
         list.add(value++);
-        lock.notify();  // this notifies is used to wake up consumer if it is data because there was no data
-        // and now it can resume as producer has given some data in buffer
+        lock.notify();  // this notifies is used to wake up consumer if it was sleeping because there was no data
+        // and now it can resume as producer has produced some data in buffer
       }
     }
   }
@@ -33,11 +34,11 @@ class BProcessor {
         while(list.size() ==0){
           lock.wait();  // TO wait if there is no data in buffer to be consumed yet
         }
-        System.out.print(" List Size : " + list.size());
         int remove = list.removeFirst();
         System.out.println(" removed : " + remove);
-        lock.notify();  // notifies the producer that it has consumed some data from the buffer, and that if producer was
-        // waiting because the buffer was full, it can wake up and produce again as consumer has consumed some data
+        System.out.print(" List Size : " + list.size());
+        lock.notify();  // notifies the producer that it has consumed data from the buffer, and that if producer was
+        // waiting because the buffer was full, it can wake up and produce again as consumer has consumed data
       }
       Thread.sleep(random.nextInt(1000)); // to simulate that consumer is slow to consume
     }

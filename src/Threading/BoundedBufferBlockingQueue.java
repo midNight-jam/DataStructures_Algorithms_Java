@@ -58,7 +58,7 @@ public class BoundedBufferBlockingQueue {
 
     try {
       t1.join();
-      t2.join();
+      t2.join();  // wait for both the threads to finish
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
