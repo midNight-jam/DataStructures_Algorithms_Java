@@ -163,3 +163,14 @@ This section contains implementation of different Data Structures in Java.
 | <b>PaintHouse</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PaintHouse.java)|
 | <b>EditDistance</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EditDistance.java)|
 | <b>LargestRectangleInHistogram</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LargestRectangleInHistogram.java)|
+| <b>ShortestUnsortedContinuousSubarray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ShortestUnsortedContinuousSubarray.java)|
+| <b>MaximalRectangle</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximalRectangle.java)|
+| <b>PerfectSquares</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PerfectSquares.java)|
+| <b>DoubeCheckedSynchronizationSingleton</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DoubeCheckedSynchronizationSingleton.java)|
+| <b>BurstBalloons</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BurstBalloons.java)|
+| <b>CoinChange</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CoinChange.java)|
+| <b>DecodeWays</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DecodeWays.java)|
+| <b>BestTimeToBuyAndSellStock</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BestTimeToBuyAndSellStock.java)|
+| <b>BestTimeToBuyAndSellStockWithCooldown</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BestTimeToBuyAndSellStockWithCooldown.java)|
+| <b>UglyNumberII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/UglyNumberII.java)|
+| <b>IntegerBreak</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/IntegerBreak.java)|
