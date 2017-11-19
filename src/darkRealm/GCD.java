@@ -2,6 +2,7 @@ package darkRealm;
 
 public class GCD {
 
+  //Complexity  ::: Time - O(log(min[a,b]))
   private static int gcd(int big, int small) {
     int temp;
     // If we mod the smaller number from larger we reduce the larger number and GCD doesnt changes, so we keep
