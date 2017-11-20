@@ -1,5 +1,7 @@
 package darkRealm;
 
+import java.util.Arrays;
+
 public class CoinChange {
 
 
@@ -17,6 +19,28 @@ public class CoinChange {
 //  You may assume that you have an infinite number of each kind of coin.
 
   public static int coinChange(int[] coins, int amount) {
+    int[] res = new int[amount + 1];
+    Arrays.fill(res, -1); // mark all amounts as invalid initially
+    res[0] = 0; // base case, we can always reach 0, if all coins with out using any coin
+    //here amount 0 is our base case, against this base case we see if for given amount and reducing each coin can we
+    // reach 0 or any valid amount, if yes we add + 1 to it, we do this for all coins and keep track of min.
+    for (int i = 1; i <= amount; i++) {
+      int min = Integer.MAX_VALUE;
+      for (int c = 0; c < coins.length; c++) {
+        // Why coins[c] > i ::: lets say we have coins 5,7 & 9etc, now we can never reach amount 1-4 with these coins
+        // Why res[i - coins[c]] ::: lets say coins are 3, 5 now for amount 4, res[4 - 1] (i - coins[0]) is -1, as our
+        // base case itself is invalid we can never reach this amount with given coins
+        if (coins[c] > i || res[i - coins[c]] == -1) continue;
+        min = Math.min(res[i - coins[c]] + 1, min);
+      }
+      res[i] = min == Integer.MAX_VALUE ? -1 : min;
+    }
+    System.out.println(Arrays.toString(res));
+    return res[amount];
+  }
+
+
+  public static int coinChange_OLD(int[] coins, int amount) {
     if (coins == null || coins.length == 0 || amount < 0) return 0;
     int[] dp = new int[amount + 1];
     int sum = 0, min = -1, coin, temp;
@@ -42,15 +66,16 @@ public class CoinChange {
     return dp[amount];
   }
 
+
   public static void main(String[] args) {
 //    int[] coins = new int[]{1, 2, 5};
 //    int amount = 11;
-
-    int[] coins = new int[]{2};
-    int amount = 3;
-
-//    int[] coins = new int[]{186, 419, 83, 408};
-//    int amount = 6249; // 20
+//    int[] coins = new int[]{2};
+//    int amount = 3;
+//    int[] coins = new int[]{1};
+//    int amount = 2;
+    int[] coins = new int[]{186, 419, 83, 408};
+    int amount = 6249; // 20
 
     int count = coinChange(coins, amount);
     System.out.println("C : " + count);
