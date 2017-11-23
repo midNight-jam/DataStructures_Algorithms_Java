@@ -192,3 +192,12 @@ This section contains implementation of different Data Structures in Java.
 | <b>GCD</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/GCD.java)|
 | <b>ExtendedEuclideanAlgorithm</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ExtendedEuclideanAlgorithm.java)|
 | <b>WaterJugProblem</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WaterJugProblem.java)|
+| <b>NextPermutation</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NextPermutation.java)|
+| <b>MaximumVacationDays</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumVacationDays.java)|
+| <b>LongestIncreasingSubSequence</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestIncreasingSubSequence.java)|
+| <b>PaintFence</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PaintFence.java)|
+| <b>LongestCommonSubsequence</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestCommonSubsequence.java)|
+| <b>MinimumInsertionForPalindrome</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumInsertionForPalindrome.java)|
+| <b>PowerOfThree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PowerOfThree.java)|
+| <b>SubstringWithConcatenationOfWords</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubstringWithConcatenationOfWords.java)|
+| <b>CombinationSumII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumII.java)|
