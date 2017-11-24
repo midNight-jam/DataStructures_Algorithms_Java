@@ -5,10 +5,9 @@ import java.util.Arrays;
 public class SegmentTree_RangeSum {
 
   //  Time Complexity :  Building - O(N) , Searching - O(logN)
-  // Space Complexity :
+  // Space Complexity : O(2^H), where H is the least height of binary tree which will give N leaf nodes
 
   private SegmentNode[] nodes;
-  private int[] array;
   private int size;
   private int n;
 
@@ -25,8 +24,7 @@ public class SegmentTree_RangeSum {
   }
 
   public SegmentTree_RangeSum(int[] nums) {
-    this.array = Arrays.copyOf(nums, nums.length);
-    n = array.length;
+    n = nums.length;
     //Max no of nodes is 2* [2^ceil(Log2(n))] -1
     // Which is the height of tree for having atleast n leaves
     int height = (int)Math.ceil(Math.log(nums.length) / Math.log(2));
@@ -66,10 +64,10 @@ public class SegmentTree_RangeSum {
   }
 
   public static void main(String[] args) {
-//    int[] nums = new int[]{1, 3, 5, 7, 9, 11};
+    int[] nums = new int[]{1, 3, 5, 7, 9, 11};
 //    int[] nums = new int[]{1};
 //    int[] nums = new int[]{1,3};
-    int[] nums = new int[]{1, 3, 5};
+//    int[] nums = new int[]{1, 3, 5};
 //    int[] nums = new int[]{1, 3, 5, 7, 9, 11};
 //    int[] nums = new int[]{1, 3, 5, 7, 9, 11};
     SegmentTree_RangeSum segTree = new SegmentTree_RangeSum(nums);
@@ -78,8 +76,8 @@ public class SegmentTree_RangeSum {
 //    int res = segTree.getSum(-1, 20);
 //    int res = segTree.getSum(1, 10);
 //    int res = segTree.getSum(0, 5);
-//    int res = segTree.getSum(0, 4);
-    int res = segTree.getSum(1, 1);
+    int res = segTree.getSum(0, 4);
+//    int res = segTree.getSum(1, 1);
 //    int res = segTree.getSum(4, 4);
     System.out.println("\nR : " + res);
   }
