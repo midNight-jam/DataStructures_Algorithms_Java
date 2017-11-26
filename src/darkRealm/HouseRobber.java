@@ -15,19 +15,19 @@ public class HouseRobber {
     // The problem is solved by DP, at every house we take the decision that if we rob this and the profit with ith- 2
     //  house the profit is max, or if we just rob the ith house then the profit is max.
     // The Rule is :: maxRob [i] = Math.max(maxRob[i-1], maxRob[i-2] + house[i])
-    if (house == null || 0 == house.length) return 0;
-    if (house.length == 1) return house[0];
-    int[] maxRob = new int[house.length];
-    maxRob[0] = house[0];
-    maxRob[1] = Math.max(house[0], house[1]);
-
-    for (int i = 2; i < maxRob.length; i++)
-      maxRob[i] = Math.max(maxRob[i - 1], maxRob[i - 2] + house[i]);
-    return maxRob[maxRob.length - 1];
+    if (house == null || house.length == 0) return 0;
+    int[] dp = new int[house.length];
+    dp[0] = house[0];
+    for (int i = 1; i < house.length; i++) {
+      int twoBefore = i - 2 > -1 ? dp[i - 2] : 0;
+      dp[i] = Math.max(dp[i - 1], twoBefore + house[i]);
+    }
+    return dp[house.length - 1];
   }
 
   public static void main(String[] args) {
-    int[] arr = new int[]{2, 1, 1, 2};
+//    int[] arr = new int[]{2, 1, 1, 2};
+    int[] arr = new int[]{1, 1};
     int res = houseRobber(arr);
     System.out.println("Arr : " + Arrays.toString(arr));
     System.out.println("RES : " + res);
