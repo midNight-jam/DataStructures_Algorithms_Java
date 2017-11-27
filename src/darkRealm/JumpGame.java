@@ -12,9 +12,19 @@ public class JumpGame {
 //  A = [2,3,1,1,4], return true.
 //
 //  A = [3,2,1,0,4], return false.
+
+
+  public static boolean canJump(int[] nums) {
+    int max = nums[0];  // at first we can max reach nums[0]
+    for(int i = 0; i < nums.length; i++){
+      if(i > max) return false; // for any i we cannot reach return false
+      max = Math.max(max, i + nums[i]);
+    }
+    return true;
+  }
 //  It is a must to go through this explaination I learned a lot!
 //  https://leetcode.com/problems/jump-game/solution/#nodebb-comments
-  public static boolean canJump(int[] nums) {
+  public static boolean canJump_OLD(int[] nums) {
     if (nums == null || nums.length == 0) return false;
 
     boolean[] goodPosition = new boolean[nums.length];
