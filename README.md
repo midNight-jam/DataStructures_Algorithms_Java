@@ -187,7 +187,6 @@ This section contains implementation of different Data Structures in Java.
 | <b>JumpGame</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/JumpGame.java)|
 | <b>SearchForRange</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SearchForRange.java)|
 | <b>PeekingIterator</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PeekingIterator.java)|
-| <b>PeekingIterator</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PeekingIterator.java)|
 | <b>LongestWordInDictionaryViaDeleting</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestWordInDictionaryViaDeleting.java)|
 | <b>GCD</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/GCD.java)|
 | <b>ExtendedEuclideanAlgorithm</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ExtendedEuclideanAlgorithm.java)|
@@ -201,3 +200,16 @@ This section contains implementation of different Data Structures in Java.
 | <b>PowerOfThree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PowerOfThree.java)|
 | <b>SubstringWithConcatenationOfWords</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubstringWithConcatenationOfWords.java)|
 | <b>CombinationSumII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumII.java)|
+| <b>StringCompression</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StringCompression.java)|
+| <b>SegmentTree_RangeSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SegmentTree_RangeSum.java)|
+| <b>SegmentTree_RangeMin</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SegmentTree_RangeMin.java)|
+| <b>CountSmallerNumberAfterSelf</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CountSmallerNumberAfterSelf.java)|
+| <b>RangeSumQuery</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RangeSumQuery.java)|
+| <b>MaximumBinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumBinaryTree.java)|
+| <b>LargestBSTSubtree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumII.java)|
+| <b>HouseRobberII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/HouseRobberII.java)|
+| <b>CombinationSumII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumII.java)|
+| <b>TwoKeysKeyboard</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TwoKeysKeyboard.java)|
+| <b>MovieRating</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MovieRating.java)|
+| <b>KStringSizeWith1CharRepeating2ce</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/KStringSizeWith1CharRepeating2ce.java)|
+| <b>FindSegementSize</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindSegementSize.java)|
