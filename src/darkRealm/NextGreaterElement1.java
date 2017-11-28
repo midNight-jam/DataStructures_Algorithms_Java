@@ -15,26 +15,6 @@ public class NextGreaterElement1 {
 //  For number 1 in the first array, the next greater number for it in the second array is 3.
 //  For number 2 in the first array, there is no next greater number for it in the second array, so output -1.
 
-  public static int[] nextGreaterElementOLD(int[] nums1, int[] nums2) {
-    if (nums1 == null || nums2 == null || nums1.length > nums2.length)
-      return new int[0];
-    Map<Integer, Integer> map = new HashMap<>();
-    for (int i = 0; i < nums2.length; i++)
-      map.put(nums2[i], i);
-    int[] res = new int[nums1.length];
-    int nextBig;
-    for (int i = 0; i < nums1.length; i++) {
-      nextBig = -1;
-      for (int j = map.get(nums1[i]) + 1; j < nums2.length; j++)
-        if (nums2[j] > nums1[i]) {
-          nextBig = nums2[j];
-          break;
-        }
-      res[i] = nextBig;
-    }
-    return res;
-  }
-
   public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
     if (nums1 == null || nums2 == null || nums1.length > nums2.length)
       return new int[0];
