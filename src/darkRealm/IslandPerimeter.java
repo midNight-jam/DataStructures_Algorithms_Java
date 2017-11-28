@@ -19,24 +19,6 @@ public class IslandPerimeter {
 //
 //  Answer: 16
 
-  public static int islandPerimeterOLD(int[][] matrix) {
-    if (null == matrix || matrix.length == 0 || matrix[0].length == 0)
-      return 0;
-    int perimeter = 0;
-    int[] x = new int[]{-1, 0, 1, 0};
-    int[] y = new int[]{0, -1, 0, 1};
-    for (int i = 0; i < matrix.length; i++)
-      for (int j = 0; j < matrix[0].length; j++)
-        if (1 == matrix[i][j])
-          for (int k = 0; k < 4; k++) {
-            int r = i + x[k];
-            int c = j + y[k];
-            if ((r < 0 || r >= matrix.length) || (c < 0 || c >= matrix[0].length) || (0 == matrix[r][c]))
-              perimeter++;
-          }
-    return perimeter;
-  }
-
   public static int islandPerimeter(int[][] matrix) {
     if (null == matrix || matrix.length == 0 || matrix[0].length == 0)
       return 0;
