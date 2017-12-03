@@ -918,18 +918,6 @@ public class HyperMain {
     System.out.println(" Res : " + res + " Str : " + str);
   }
 
-
-  public static void testRussianDolls() {
-    int[][] envlopes = new int[][]{
-        {5, 4},
-        {6, 4},
-        {6, 7},
-        {2, 3}
-    };
-    int res = LC_Prob3.russianDollEnvelopes(envlopes);
-    System.out.println("Res : " + res);
-  }
-
   public static void testMulitply() {
 //    String n1 = "123";
 //    String n2 = "4";

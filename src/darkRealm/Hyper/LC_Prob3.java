@@ -31,58 +31,9 @@ public class LC_Prob3 {
     return max;
   }
 
-
-
-
-  /*[Prob 95]*/
-  public static int uniqueBST(int n) {
-    if (n < 1) return 0;
-    int[] DP = new int[n + 1];
-    DP[0] = DP[1] = 1;
-    for (int i = 2; i <= n; i++) {
-      for (int j = 1; j <= i; j++) {
-        DP[i] += (DP[j - 1] * DP[i - j]); // cartesian product
-      }
-    }
-    return DP[n];
-  }
-
   /* [Prob 354]
   *
   * */
-  public static int russianDollEnvelopes(int[][] envelopes) {
-    Envelope[] arr = new Envelope[envelopes.length];
-    for (int i = 0; i < envelopes.length; i++) {
-      arr[i] = new Envelope(envelopes[i][0], envelopes[i][1]);
-    }
-    Arrays.sort(arr, new Comparator<Envelope>() {
-      public int compare(Envelope e1, Envelope e2) {
-        int res = e1.h - e2.h;
-        return res != 0 ? res : e1.w - e2.w;
-      }
-    });
-    int max = Integer.MIN_VALUE;
-    int[] DP = new int[arr.length];
-    for (int i = 0; i < arr.length; i++) {
-      DP[i] = 1;
-      for (int j = 0; j <= i; j++) {
-        if (arr[j].h < arr[i].h && arr[j].w < arr[i].w) {
-          DP[i] = Math.max(DP[i], DP[j] + 1);
-        }
-      }
-      max = Math.max(max, DP[i]);
-    }
-    return max;
-  }
-
-  private static class Envelope {
-    int h, w;
-
-    Envelope(int h, int w) {
-      this.h = h;
-      this.w = w;
-    }
-  }
 
   /*[Prob 43] Multiply Strings
   * */
