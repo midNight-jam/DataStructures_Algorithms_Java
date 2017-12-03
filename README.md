@@ -117,7 +117,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>LinkedListCycle</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LinkedListCycle.java)|
 | <b>PopulatingNextRightPointersI</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PopulatingNextRightPointersI.java)|
 | <b>SearchInRotatedSortedArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SearchInRotatedSortedArray.java)|
-| <b>SpiralMatrix</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SpiralMatrix.java)|
+| <b>SpiralMatrixNoTouch</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SpiralMatrixNoTouch.java)|
 | <b>InorderSuccessorBST</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/InorderSuccessorBST.java)|
 | <b>SortColors</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SortColors.java)|
 | <b>FindMinimumInRotatedSortedArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindMinimumInRotatedSortedArray.java)|
