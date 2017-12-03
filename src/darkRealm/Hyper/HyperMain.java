@@ -401,16 +401,6 @@ public class HyperMain {
     res = rset.remove(13);
   }
 
-  public static void testSlidingMaximum() {
-    int[] arr = new int[]{1, 3, -1, -3, 5, 3, 6, 7};
-    int k = 3;
-//    int[] arr = new int[]{9,10,9,-7,-4,-8,2,-6};
-//    int k = 5;
-
-    int[] nos = LC_Prob3.slidingWindowMaximum(arr, k);
-    System.out.println("Arr : " + Arrays.toString(arr));
-    System.out.println("List : " + Arrays.toString(nos));
-  }
 
   public static void testFirstUniqueChar() {
 //    String str = "leetcode";
@@ -921,15 +911,6 @@ public class HyperMain {
     lfu.get(4);
   }
 
-  public static void testWashingMachines() {
-//    int[] machines = new int[]{1, 0, 5};
-//    int[] machines = new int[]{0, 3, 0};
-//    int[] machines = new int[]{0, 2, 0};
-    int[] machines = new int[]{0, 0, 11, 5};
-    int moves = LC_Prob3.findMoves(machines);
-    System.out.println(" Moves : " + moves + " Machines : " + Arrays.toString(machines));
-  }
-
   public static void testLongestValidParanthesis() {
     String str = ")(()()(";
 //    String str = "(()";
@@ -937,22 +918,6 @@ public class HyperMain {
     System.out.println(" Res : " + res + " Str : " + str);
   }
 
-  public static void testSlidingWindowMaximum() {
-    int[] arr = new int[]{1, 3, -1, -3, 5, 3};
-//    int[] arr = new int[]{4, 2, 5, 3, 7, 9};
-    int k = 3;
-    int[] res = LC_Prob3.slidingWindowMaximum(arr, k);
-    System.out.println("Res : " + Arrays.toString(res));
-  }
-
-  public static void testKthLargest() {
-//    int[] arr = new int[]{2, 1};
-//    int[] arr = new int[]{-1, -1};
-    int[] arr = new int[]{-1, 2};
-    int k = 2;
-    int res = LC_Prob3.kthLargestElement(arr, k);
-    System.out.println("Res : " + res + "  - " + Arrays.toString(arr));
-  }
 
   public static void testRussianDolls() {
     int[][] envlopes = new int[][]{
