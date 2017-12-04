@@ -124,55 +124,6 @@ public class LC_Prob_Med {
     }
   }
 
-  /*  [Prob 6] ZigZag Conversion
-  * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
-  * (you may want to display this pattern in a fixed font for better legibility)
-  * P   A   H   N
-  * A P L S I I G
-  * Y   I   R
-  * And then read line by line: "PAHNAPLSIIGYIR"
-  * Write the code that will take a string and make this conversion given a number of rows:
-  * string convert(string text, int nRows);
-  * convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
-  * */
-  public static String zigZagConversion(String str, int numRows) {
-    StringBuilder[] zigZag = new StringBuilder[numRows];
-    for (int i = 0; i < zigZag.length; i++) {
-      zigZag[i] = new StringBuilder();
-    }
-    char c;
-    int up = 0;
-    int down = -1;
-    boolean upwards = true;
-    for (int i = 0; i < str.length(); i++) {
-      c = str.charAt(i);
-      if (upwards && up < zigZag.length) {
-        zigZag[up].append(c);
-        up++;
-      } else if (down > 0 && !upwards) {
-        zigZag[down].append(c);
-        down--;
-      }
-      if (up == numRows && upwards) {
-        upwards = !upwards;
-        down = zigZag.length - 2;
-        if (down <= 0) {
-          down = 0;
-          upwards = !upwards;
-          up = 0;
-        }
-      } else if (down == 0 && !upwards) {
-        upwards = !upwards;
-        up = 0;
-      }
-    }
-    StringBuilder res = new StringBuilder();
-    for (int i = 0; i < zigZag.length; i++) {
-      res.append(zigZag[i]);
-    }
-
-    return res.toString();
-  }
 
   /*  [Prob 7]
   * Reverse digits of an integer.
@@ -595,53 +546,6 @@ public class LC_Prob_Med {
       }
     }
     return xorResult;
-  }
-
-  /* [438] Find All Anagrams in a String
-  * Q) Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
-  * Strings consists of lowercase English letters only and the length of both strings s and p will not be larger
-  * than 20,100.
-  * */
-  public static List<Integer> findAnagrams(String str, String anagram) {
-    List<Integer> matchIndexes = new ArrayList<>();
-    if (str == null || str.length() == 0 || anagram == null || anagram.length() == 0) {
-      return matchIndexes;
-    }
-    // create a hashmap from anagram to keep the count of chars
-    int[] hash = new int[256];
-    int window = anagram.length();
-    for (int i = 0; i < window; i++) {
-      hash[anagram.charAt(i)]++;
-    }
-    // now we will slide the window & decrement the frequency of the chars in hash. The point is when we slide the window
-    // we just to increase the frequency of the character going out of the window, hence we will increase its frequency
-    // when sliding. and only increase the windowCount by 1 if the outgoing char was in hash.
-    int head = 0;
-    int tail = 0;
-    int len = str.length();
-    int windowCount = window;
-    char c;
-    char outGoing;
-    while (tail < len) {
-      c = str.charAt(tail);
-      if (hash[c] >= 1) {
-        windowCount--;
-      }
-      hash[c]--;
-      tail++;
-      if (windowCount == 0) {
-        matchIndexes.add(head);
-      }
-      if (tail - head == window) {
-        outGoing = str.charAt(head);
-        if (hash[outGoing] >= 0) {
-          windowCount++;
-        }
-        hash[outGoing]++;
-        head++;
-      }
-    }
-    return matchIndexes;
   }
 
   /*  [20] Valid Parentheses

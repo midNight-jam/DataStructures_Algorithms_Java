@@ -155,20 +155,6 @@ public class HyperMain {
     System.out.println(" len " + plain.length());
   }
 
-  public static void testZigZag() {
-    String str = "paypalishiring";
-    int k = 4;
-//
-//    String str = "ab";
-//    int k = 1;
-
-//    String str = "ABC";
-//    int k = 2;
-
-    String res = LC_Prob_Med.zigZagConversion(str, k);
-    System.out.print("str : " + str + " Level : " + k);
-    System.out.print("  res : " + res);
-  }
 
   public static void testReverseInteger() {
     int x = -123;
@@ -310,19 +296,6 @@ public class HyperMain {
     System.out.println("res  : " + res + "  " + Arrays.toString(arr));
   }
 
-  public static void testFindAnagram() {
-    String str = "cbaebabacd";
-//    String str = "aaa";
-//    String str = "cba";
-//    String str = "abab";
-    String anagram = "ab";
-//    String str = "ccacc";
-//    String anagram ="cc";
-//    String anagram ="aa";
-    List<Integer> res = LC_Prob_Med.findAnagrams(str, anagram);
-    System.out.println(" Str : " + str + "  anagram : " + anagram);
-    System.out.println(" Str : " + Arrays.toString(res.toArray()));
-  }
 
   public static void testValidString() {
     String str = "[]]";
