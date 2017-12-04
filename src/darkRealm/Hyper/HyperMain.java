@@ -918,24 +918,6 @@ public class HyperMain {
     System.out.println(" Res : " + res + " Str : " + str);
   }
 
-  public static void testMulitply() {
-//    String n1 = "123";
-//    String n2 = "4";
-    String n1 = "123456789";
-    String n2 = "987654321";
-    String res = LC_Prob3.multiply("1111", "3");
-    System.out.println(n1 + " : " + n2 + "  : res : " + res);
-  }
-
-  public static void testPlusOne() {
-//    int[] nums = new int[]{0,0};
-//    int[] nums = new int[]{0,9};
-    int[] nums = new int[]{7, 9};
-//    int[] nums = new int[]{9,8};
-    System.out.println("Nums : " + Arrays.toString(nums));
-    int[] res = LC_Prob3.plusOne(nums);
-    System.out.println("+ 1 : " + Arrays.toString(res));
-  }
 
   public static void testAddBinary() {
 //    String a = "11";
@@ -1179,11 +1161,6 @@ public class HyperMain {
     System.out.println(Arrays.toString(arr));
     LC_Prob3.moveZeroes(arr);
     System.out.println(Arrays.toString(arr));
-  }
-
-  public static void testDivide() {
-    int res = LC_Prob3.divide(15, 2);
-    System.out.println(" Res : " + res);
   }
 
   public static void testBaseChange() {
