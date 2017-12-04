@@ -71,26 +71,6 @@ public class LC_Prob3 {
     return num;
   }
 
-
-  /* [Prob 515] Find Largest Value in Each Tree Row*/
-  public static List<Integer> largestValues(TNode node) {
-    List<Integer> list = new ArrayList<>();
-    if (node == null) return list;
-    levelwise(node, 0, list);
-    return list;
-  }
-
-  private static void levelwise(TNode node, int level, List<Integer> list) {
-    if (node == null) return;
-    if (list.size() < level + 1)
-      list.add(Integer.MIN_VALUE);
-
-    levelwise(node.left, level + 1, list);
-    if (node.data > list.get(level))
-      list.set(level, node.data);
-    levelwise(node.right, level + 1, list);
-  }
-
   public static void moveZeroes(int[] arr) {
     if (arr == null || arr.length == 0) return;
     int zi = 0;
