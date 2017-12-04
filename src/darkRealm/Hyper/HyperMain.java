@@ -371,22 +371,6 @@ public class HyperMain {
     System.out.println("res : " + res + " Arr : " + Arrays.toString(arr));
   }
 
-  public static void testThreeSumSmaller() {
-//    int[] arr = new int[]{-1, 2, 1, -4};
-//    int[] arr = new int[]{0, 0, 0, 0};
-//    int[] arr = new int[]{-2, 0, 1, 3};
-//    int[] arr = new int[]{ 1, -4  };
-//    int[] arr = new int[]{ 1, -4};
-
-    int[] arr = new int[]{11, -11, -12, -2, -13, -10, -8, -4, -5, -6, -9, 14, 14, -9, 14, 6, -11, 6, -4, -14, 2, -11, 13, -5, -13, 1, -10, 5, 3, -1,
-        -11, -5, -2, -10, -6, -5, -13, 8, 2, -6, -8, -9, 3, 13, 3, -14, -12, -8, -13, -2, 8, 0, 11, 14, -3, -15, -15, -4, -13, -4, 0, -2, 12, -9, 13, -5, -7,
-        6, -9, 13, 14, 3, -11, -13, 6, -13, -5, 10, 1, -6, 0, -5, 5, 14, -10, 1, -13, -9, 1, 14, -6, 9, -12, 8, 8, -7, -13, -8, 11, 3, 9, 1, 6, -2, -9, -2, -5,
-        6, -7, 0, -15, -1};
-    int target = -12;
-    int res = LC_Prob_Med.threeSumSmaller(arr, target);
-    System.out.println("res : " + res + " Arr : " + Arrays.toString(arr));
-  }
-
   public static void testMaxProfitII() {
 //    int[] arr = new int[]{7, 1, 5, 3, 6, 4};
 //    int[] arr = new int[]{7, 6, 4, 3, 1};
