@@ -30,30 +30,7 @@ public class LC_Prob3 {
     }
     return max;
   }
-  /*[Prob 43] Multiply Strings
-  * */
-  public static String multiply(String n1, String n2) {
-    int a = n1.length(), b = n2.length();
-    int[] pos = new int[a + b];
-    // p1 goes at part (i + j) p2 goes at (i + j + 1) p1 = sum/10 p2  = sum % 10
-    for (int i = n1.length() - 1; i >= 0; i--) {
-      for (int j = n2.length() - 1; j >= 0; j--) {
-        int prod = (n1.charAt(i) - '0') * (n2.charAt(j) - '0');
-        int p1 = i + j;
-        int p2 = i + j + 1;
 
-        int sum = prod + pos[p2];
-        pos[p1] += sum / 10;
-        pos[p2] = sum % 10;
-      }
-    }
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < pos.length; i++) {
-      if (!(pos[i] == 0 && sb.length() == 0))// dont append extra zeros at head
-        sb.append(pos[i]);
-    }
-    return sb.length() == 0 ? "0" : sb.toString();
-  }
 
   public static int[] plusOne(int[] nums) {
     if (nums == null || nums.length == 0) return nums;
