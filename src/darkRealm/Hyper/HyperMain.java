@@ -1230,19 +1230,6 @@ public class HyperMain {
     System.out.println("hosrt : " + res + " long : " + decode);
   }
 
-  public static void testKPairs() {
-//    int[] arr = new int[]{3, 1, 4, 1, 5};
-//    int k = 2;
-//    int[] arr = new int[]{1, 2, 3, 4, 5};
-//    int k = 1;
-//    int[] arr = new int[]{3, 1, 5, 4, 1};
-//    int k = 0;
-    int[] arr = new int[]{1, 2, 3, 4, 5};
-    int k = 3;
-
-    int res = LC_Prob3.kDiffFindPairs(arr, k);
-    System.out.println(res);
-  }
 
   public static void testNumberPalindrome() {
     int k = 11011;
