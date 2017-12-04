@@ -295,56 +295,7 @@ public class LC_Prob3 {
     return result;
   }
 
-  /*[Prob 532]  K-diff Pairs in an Array */
-  public static int kDiffFindPairs(int[] arr, int k) {
-    if (arr == null || arr.length == 0 || k < 0) return 0;
 
-    Map<Integer, Integer> map = new HashMap<>();
-    int pair = 0;
-    for (int i : arr) {
-      map.put(i, map.getOrDefault(i, 0) + 1);
-    }
-
-    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-      if (k == 0) {
-        //count how many elements in the array that appear more than twice.
-        if (entry.getValue() >= 2) {
-          pair++;
-        }
-      } else {
-        if (map.containsKey(entry.getKey() + k)) {
-          pair++;
-        }
-      }
-    }
-
-    return pair;
-  }
-
-  /*[Prob 531] Lonely Pixel I */
-  public static int findLonelyPixelI(char[][] picture) {
-    if (picture == null || picture.length == 0 || picture[0].length == 0) return 0;
-    int[] rowsCount = new int[picture.length];
-    int[] colsCount = new int[picture[0].length];
-    for (int i = 0; i < picture.length; i++) {
-      for (int j = 0; j < picture[0].length; j++) {
-        if (picture[i][j] == 'B') {
-          rowsCount[i]++;
-          colsCount[j]++;
-        }
-      }
-    }
-
-    int lonelyB = 0;
-    for (int i = 0; i < picture.length; i++) {
-      for (int j = 0; j < picture[0].length; j++) {
-        if (picture[i][j] == 'B' && rowsCount[i] == 1 && colsCount[j] == 1)
-          lonelyB++;
-      }
-    }
-
-    return lonelyB;
-  }
 
   public static boolean isPalindrome(int x) {
     if (x < 0 || x != 0 && x % 10 == 0) return false;
