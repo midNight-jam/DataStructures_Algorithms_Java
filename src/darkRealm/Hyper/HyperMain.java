@@ -1096,15 +1096,6 @@ public class HyperMain {
     System.out.println(" list : " + list);
   }
 
-  public static void testMoveZeroes() {
-//    int[] arr = new int[]{0, 1, 0, 3, 12};
-//    int[] arr = new int[]{1};
-    int[] arr = new int[]{0};
-    System.out.println(Arrays.toString(arr));
-    LC_Prob3.moveZeroes(arr);
-    System.out.println(Arrays.toString(arr));
-  }
-
   public static void testBaseChange() {
     int n = -7;
     int base = 7;

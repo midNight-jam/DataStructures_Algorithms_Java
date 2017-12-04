@@ -45,18 +45,7 @@ public class LC_Prob3 {
     return num;
   }
 
-  public static void moveZeroes(int[] arr) {
-    if (arr == null || arr.length == 0) return;
-    int zi = 0;
-    while (zi < arr.length && arr[zi] != 0) zi++;
-    for (int i = zi + 1; i < arr.length; i++) {
-      if (arr[i] != 0) {
-        arr[zi] = arr[i];
-        arr[i] = 0;
-        zi++;
-      }
-    }
-  }
+
 
   public static String numToBase(int num, int base) {
     if (num == 0) return "0";
