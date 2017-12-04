@@ -21,7 +21,7 @@ public class PlusOne {
     newNo[0] = 1;
     return newNo;
   }
-  
+
   public static void main(String[] args) {
 
   }

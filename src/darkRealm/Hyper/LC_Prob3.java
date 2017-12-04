@@ -138,51 +138,7 @@ public class LC_Prob3 {
     }
     return sign == -1 ? -res : res;
   }
-
-  /* [Prob 190] Reverse bits
-  * */
-  public static int reverseBits(int n) {
-    int rev = 0;
-    for (int i = 0; i < 32; i++) {
-      rev += n & 1; // getting the last bit
-      n = n >>> 1; // doing unsigned shift
-      if (i < 31) //  so that our shoft doesnt causes a sign bit
-        rev = rev << 1;
-    }
-    return rev;
-  }
-
-  /* [Prob 190] Reverse bits Efficient optimized for mulitple calls
-  * */
-  static final Map<Byte, Integer> cache = new HashMap<>();
-
-  public static int reverseBitsEfficient(int n) {
-    byte[] bytes = new byte[4];
-    for (int i = 0; i < 4; i++)
-      bytes[i] = (byte) ((n >>> 8 * i) & 0xFF);
-
-    int res = 0;
-    for (int i = 0; i < 4; i++) {
-      res += reverseBytes(bytes[i]);
-      if (i < 3)
-        res = res << 8;
-    }
-    return res;
-  }
-
-  private static int reverseBytes(byte b) {
-    if (cache.containsKey(b)) return cache.get(b);
-    int val = 0;
-    for (int i = 0; i < 8; i++) {
-      val += ((b >>> i) & 1);
-      if (i < 7) {
-        val = val << 1;
-      }
-    }
-    cache.put(b, val);
-    return val;
-  }
-
+  
   public static String numToBase(int num, int base) {
     if (num == 0) return "0";
     int i = 0;
