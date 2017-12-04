@@ -1,7 +1,7 @@
-package darkRealm.Hyper;
+package darkRealm;
 
 /**
- * Created by Jayam on 7/30/2017.
+ * #28. Implement strStr()
  * Q) Implement StrStr functionality of C language
  *  The function returns the first index of the given search string it finds in target or  -1 if the string is not found
  * A) Iterate over the haystack and have a inner loop that will check for needle char by char, if we reach the end of
