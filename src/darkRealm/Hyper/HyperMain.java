@@ -261,15 +261,6 @@ public class HyperMain {
     List<Integer> res = LC_Prob_Med.disappearedNumbers(arr);
     System.out.println("res  : " + Arrays.toString(res.toArray()) + "  " + Arrays.toString(arr));
   }
-  public static void testDuplicateNumber() {
-//    int[] arr = new int[]{2, 5, 1, 1, 4, 3};
-//    int[] arr = new int[]{1, 1};
-    int[] arr = new int[]{3, 1, 3, 4, 2};
-//    int[] arr = new int[]{4,1,2,3,2};
-//    int[] arr = new int[]{1,2,3,2};
-    int res = LC_Prob_Med.duplicateNumber(arr);
-    System.out.println("res  : " + res + "  " + Arrays.toString(arr));
-  }
 
   public static void testSingleNumber() {
 //    int [] arr  = new int[]{3,2,3,4,1,2,1};
