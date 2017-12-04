@@ -261,21 +261,6 @@ public class HyperMain {
     List<Integer> res = LC_Prob_Med.disappearedNumbers(arr);
     System.out.println("res  : " + Arrays.toString(res.toArray()) + "  " + Arrays.toString(arr));
   }
-
-  public static void testMissingFirstPositive() {
-//    int[] arr = new int[0];
-//    int[] arr = new int[]{-2,2,3};
-//    int[] arr = new int[]{3,4,2,1};
-//    int[] arr = new int[]{3,4,-1,1};
-//    int[] arr = new int[]{1, 2, 0};
-//    int[] arr = new int[]{1};
-//    int[] arr = new int[]{2};
-//    int[] arr = new int[]{0};
-    int[] arr = new int[]{1, 1};
-    int res = LC_Prob_Med.firstMissingPositive(arr);
-    System.out.println("res  : " + res + "  " + Arrays.toString(arr));
-  }
-
   public static void testDuplicateNumber() {
 //    int[] arr = new int[]{2, 5, 1, 1, 4, 3};
 //    int[] arr = new int[]{1, 1};
