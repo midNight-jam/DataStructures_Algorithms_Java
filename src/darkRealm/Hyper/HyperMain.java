@@ -911,21 +911,6 @@ public class HyperMain {
     lfu.get(4);
   }
 
-  public static void testLongestValidParanthesis() {
-    String str = ")(()()(";
-//    String str = "(()";
-    int res = LC_Prob3.longestValidParanthesis(str);
-    System.out.println(" Res : " + res + " Str : " + str);
-  }
-
-  public static void testAddDigits() {
-//    int n = 123555;
-    int n = 38;
-    int res = LC_Prob3.addDigits(n);
-    System.out.println(" n : " + n + "  res : " + res);
-  }
-
-
   private static void testIterativeLevelOrder() {
 //    Tree tree = new Tree();
 //    tree.root = new TNode(8);
@@ -1096,13 +1081,6 @@ public class HyperMain {
     System.out.println(" list : " + list);
   }
 
-  public static void testBaseChange() {
-    int n = -7;
-    int base = 7;
-    String res = LC_Prob3.numToBase(n, base);
-    System.out.println(" Changed Base : " + res + " Orig " + n);
-  }
-
   public static void testSortLinkedList() {
     LLNode n3 = new LLNode(1);
     LLNode n1 = new LLNode(2);
@@ -1122,13 +1100,6 @@ public class HyperMain {
     LinkedList L2 = new LinkedList();
     L2.head = newHead;
     System.out.println(" after : " + L2.toString());
-  }
-
-  public static void testTextJustification() {
-    String[] str = new String[]{"This", "is", "an", "example", "of", "text", "justification."};
-    int maxlen = 16;
-    List<String> res = LC_Prob3.textJustification(str, maxlen);
-    System.out.println(" Res : " + res);
   }
 
   public static void testTinyUrl() {
