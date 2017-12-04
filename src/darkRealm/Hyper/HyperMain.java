@@ -6,8 +6,8 @@ import ADT.LinkedList;
 import ADT.TNode;
 import ADT.Tree;
 import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
-import darkRealm.Hyper.Cache.LFU;
-import darkRealm.Hyper.Cache.LRU;
+import darkRealm.LeastFrequentlyUsed;
+import darkRealm.LeastRecentlyUsed;
 import darkRealm.RandomizedSet;
 import darkRealm.TinyURL;
 
@@ -386,21 +386,6 @@ public class HyperMain {
     int res = LC_Prob_Med.threeSumSmaller(arr, target);
     System.out.println("res : " + res + " Arr : " + Arrays.toString(arr));
   }
-
-  public static void testRandomizeSet() {
-    RandomizedSet rset = new RandomizedSet();
-    boolean res = rset.insert(13);
-    res = rset.insert(13);
-    rset.insert(5);
-    int rand = rset.getRandom();
-    rand = rset.getRandom();
-    rand = rset.getRandom();
-    rand = rset.getRandom();
-
-    res = rset.remove(1);
-    res = rset.remove(13);
-  }
-
 
   public static void testFirstUniqueChar() {
 //    String str = "leetcode";
@@ -885,30 +870,30 @@ public class HyperMain {
   }
 
   public static void testLRU() {
-    LRU lru = new LRU(2);
-    lru.put(1, 1);
-    lru.put(2, 2);
-    int res = lru.get(1);
-    lru.put(3, 3);
-    res = lru.get(2);
-    lru.put(4, 4);
-    res = lru.get(1);
-    res = lru.get(3);
-    res = lru.get(4);
+    LeastRecentlyUsed leastRecentlyUsed = new LeastRecentlyUsed(2);
+    leastRecentlyUsed.put(1, 1);
+    leastRecentlyUsed.put(2, 2);
+    int res = leastRecentlyUsed.get(1);
+    leastRecentlyUsed.put(3, 3);
+    res = leastRecentlyUsed.get(2);
+    leastRecentlyUsed.put(4, 4);
+    res = leastRecentlyUsed.get(1);
+    res = leastRecentlyUsed.get(3);
+    res = leastRecentlyUsed.get(4);
   }
 
   public static void testLFU() {
-    LFU lfu = new LFU(2);
-    lfu.put(1, 1);
-    lfu.put(2, 2);
-    lfu.get(1);
-    lfu.put(3, 3);
-    lfu.get(2);
-    lfu.get(3);
-    lfu.put(4, 4);
-    lfu.get(1);
-    lfu.get(3);
-    lfu.get(4);
+    LeastFrequentlyUsed leastFrequentlyUsed = new LeastFrequentlyUsed(2);
+    leastFrequentlyUsed.put(1, 1);
+    leastFrequentlyUsed.put(2, 2);
+    leastFrequentlyUsed.get(1);
+    leastFrequentlyUsed.put(3, 3);
+    leastFrequentlyUsed.get(2);
+    leastFrequentlyUsed.get(3);
+    leastFrequentlyUsed.put(4, 4);
+    leastFrequentlyUsed.get(1);
+    leastFrequentlyUsed.get(3);
+    leastFrequentlyUsed.get(4);
   }
 
   private static void testIterativeLevelOrder() {
@@ -1100,14 +1085,5 @@ public class HyperMain {
     LinkedList L2 = new LinkedList();
     L2.head = newHead;
     System.out.println(" after : " + L2.toString());
-  }
-
-  public static void testTinyUrl() {
-    TinyURL tinyURL = new TinyURL();
-    String str = "NetGear";
-    String res = tinyURL.encode(str);
-    System.out.println("Long : " + str + " Short : " + res);
-    String decode = tinyURL.decode(res);
-    System.out.println("hosrt : " + res + " long : " + decode);
   }
 }
