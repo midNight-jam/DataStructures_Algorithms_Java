@@ -32,18 +32,6 @@ public class LC_Prob3 {
   }
 
 
-  public static int[] plusOne(int[] nums) {
-    if (nums == null || nums.length == 0) return nums;
-    for (int i = nums.length - 1; i >= 0; i--) {
-      if (nums[i] < 9) {
-        nums[i]++;
-        return nums;
-      } else nums[i] = 0;
-    }
-    int[] newNo = new int[nums.length + 1];
-    newNo[0] = 1;
-    return newNo;
-  }
 
   public static String addBinary(String a, String b) {
     int na = 0, nb = 0;
