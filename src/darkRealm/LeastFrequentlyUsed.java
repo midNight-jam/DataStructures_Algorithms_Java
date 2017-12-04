@@ -1,4 +1,4 @@
-package darkRealm.Hyper.Cache;
+package darkRealm;
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -6,13 +6,13 @@ import java.util.LinkedHashSet;
 /**
  * Created by Jayam on 2/21/2017.
  */
-public class LFU {
+public class LeastFrequentlyUsed {
   private DLinkNode head = null;
   private int capacity = 0;
   private HashMap<Integer, Integer> valueHash;
   private HashMap<Integer, DLinkNode> nodeHash;
 
-  public LFU(int cap) {
+  public LeastFrequentlyUsed(int cap) {
     valueHash = new HashMap<>();
     nodeHash = new HashMap<>();
     capacity = cap;
