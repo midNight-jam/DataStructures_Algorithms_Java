@@ -387,14 +387,6 @@ public class HyperMain {
     System.out.println("res : " + res + " Arr : " + Arrays.toString(arr));
   }
 
-  public static void testFirstUniqueChar() {
-//    String str = "leetcode";
-//    String str = "loveleetcode";
-    String str = null;
-    int res = LC_Prob_Med.firstUniqueCharacter(str);
-    System.out.println("res : " + res + "  Str : " + str);
-  }
-
   public static void testMaxProfitII() {
 //    int[] arr = new int[]{7, 1, 5, 3, 6, 4};
 //    int[] arr = new int[]{7, 6, 4, 3, 1};

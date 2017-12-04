@@ -754,32 +754,6 @@ public class LC_Prob_Med {
   }
 
 
-  /*  [Prob 387] First Unique Character in a String
-  *   Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
-  *   Examples:
-  *   s = "leetcode"
-  *   return 0.
-  *   s = "loveleetcode",
-  *   return 2.
-  * */
-  public static int firstUniqueCharacter(String str) {
-    int firstCharIndex = -1;
-    if (str == null || str.length() == 0) {
-      return firstCharIndex;
-    }
-    int[] allChars = new int[256];
-
-    for (int i = 0; i < str.length(); i++) {
-      allChars[str.charAt(i)]++;
-    }
-    for (int i = 0; i < str.length(); i++) {
-      if (allChars[str.charAt(i)] == 1) {
-        firstCharIndex = i;
-        break;
-      }
-    }
-    return firstCharIndex;
-  }
 
   /*  [Prob 121] Best Time to Buy and Sell Stock
     * Say you have an array for which the ith element is the price of a given stock on day i.
@@ -801,38 +775,7 @@ public class LC_Prob_Med {
     return maxP;
   }
 
-  /*  [Prob 123] : Best Time to Buy and Sell Stock III
-  * Say you have an array for which the ith element is the price of a given stock on day i.
-  * Design an algorithm to find the maximum profit. You may complete at most two transactions.
-  * Note:
-  * You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
-  * */
-  public static int maxProfitIIIDP(int[] prices) {
-    if (prices == null || prices.length == 0) return Integer.MIN_VALUE;
-    int[] left = new int[prices.length];
-    int[] right = new int[prices.length];
-    int min = prices[0], max = prices[0];
 
-    left[0] = 0;
-    for (int i = 1; i < prices.length; i++) {
-      min = Math.min(min, prices[i]);
-      left[i] = Math.max(left[i - 1], prices[i] - min);
-    }
-    System.out.println(Arrays.toString(left));
-
-    right[prices.length - 1] = 0;
-    max = prices[prices.length - 1];
-    for (int i = prices.length - 2; i > -1; i--) {
-      max = Math.max(max, prices[i]);
-      right[i] = Math.max(right[i + 1], max - prices[i]);
-    }
-
-    System.out.println(Arrays.toString(right));
-    max = 0;
-    for (int i = 0; i < prices.length; i++) max = Math.max(max, left[i] + right[i]);
-
-    return max;
-  }
 
   public static int maxProfitIII(int[] prices) {
     if (prices == null || prices.length == 0) return 0;
