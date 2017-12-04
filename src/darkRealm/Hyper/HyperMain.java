@@ -1175,12 +1175,6 @@ public class HyperMain {
     System.out.println(" k : " + k + "  Res : " + res);
   }
 
-  public static void testHappyNumber() {
-    int k = 19;
-    boolean res = LC_Prob3.isHappy(k);
-    System.out.println(" k : " + k + "  Res : " + res);
-  }
-
   public static void testPrimeFactorization() {
 //    int n = 2;
 //    int n = 38;

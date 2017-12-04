@@ -31,8 +31,6 @@ public class LC_Prob3 {
     return max;
   }
 
-
-
   public static String addBinary(String a, String b) {
     int na = 0, nb = 0;
     int i = a.length() - 1;
@@ -56,7 +54,6 @@ public class LC_Prob3 {
     if (carry == 1) sb.append('1');
     return sb.reverse().toString();
   }
-
 
   public static int addDigits(int num) {
     int sum = 0;
@@ -83,7 +80,6 @@ public class LC_Prob3 {
       }
     }
   }
-
 
   public static String numToBase(int num, int base) {
     if (num == 0) return "0";
@@ -118,7 +114,6 @@ public class LC_Prob3 {
     }
   }
 
-
   public static List<String> textJustification(String[] words, int maxLen) {
     List<String> result = new ArrayList<>();
     if (words == null || words.length == 0) return result;
@@ -150,8 +145,6 @@ public class LC_Prob3 {
     return result;
   }
 
-
-
   public static boolean isPalindrome(int x) {
     if (x < 0 || x != 0 && x % 10 == 0) return false;
     int rev = 0;
@@ -160,25 +153,6 @@ public class LC_Prob3 {
       x /= 10;
     }
     return (x == rev || x == rev / 10);
-  }
-
-  public static boolean isHappy(int n) {
-    Set<Integer> set = new HashSet<>();
-    int r = 0;
-    while (true) {
-      set.add(n);
-      r = 0;
-      while (n > 0) {
-        r += (n % 10) * (n % 10);
-        n = n / 10;
-      }
-      if (r == 1)
-        return true;
-      else if (set.contains(r))
-        return false;
-      set.add(r);
-      n = r;
-    }
   }
 
   public static Map<Long, Integer> primeFactorization(long n) {
