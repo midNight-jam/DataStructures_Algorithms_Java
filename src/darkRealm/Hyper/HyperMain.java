@@ -155,13 +155,6 @@ public class HyperMain {
     System.out.println("res  : " + Arrays.toString(res.toArray()) + "  " + Arrays.toString(arr));
   }
 
-  public static void testMissing() {
-//    int[] arr = new int[]{4, 3, 2, 7, 8, 2, 3, 1};
-    int[] arr = new int[]{4, 3, 2, 7, 8, 2, 3, 1};
-    List<Integer> res = LC_Prob_Med.disappearedNumbers(arr);
-    System.out.println("res  : " + Arrays.toString(res.toArray()) + "  " + Arrays.toString(arr));
-  }
-
   public static void testSingleNumber() {
 //    int [] arr  = new int[]{3,2,3,4,1,2,1};
 //    int [] arr  = new int[0];
