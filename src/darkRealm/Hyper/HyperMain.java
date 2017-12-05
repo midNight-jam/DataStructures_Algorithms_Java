@@ -302,13 +302,6 @@ public class HyperMain {
     MatrixUtil.rotateMatrixAntiClockWise(matrix);
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
-
-  public static void testexceptSelf() {
-    int[] arr = new int[]{1, 2, 3, 4};
-    arr = LC_Prob_Med.productExceptSelf(arr);
-    System.out.println(" Arr : " + Arrays.toString(arr));
-  }
-
   public static void testThreeSumClosest() {
 //    int[] arr = new int[]{-1, 2, 1, -4};
 //    int[] arr = new int[]{0, 0, 0, 0};
