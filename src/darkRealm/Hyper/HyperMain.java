@@ -120,18 +120,7 @@ public class HyperMain {
 //        {'X', 'O', 'X', 'X'},
 //    };
 
-    char[][] board = new char[][]{
-        {'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-        {'X', 'O', 'O', 'O', 'X', 'O', 'X'},
-        {'X', 'O', 'X', 'O', 'X', 'O', 'X'},
-        {'X', 'O', 'X', 'X', 'O', 'O', 'X'},
-        {'X', 'O', 'X', 'O', 'O', 'X', 'X'},
-        {'X', 'O', 'O', 'O', 'X', 'O', 'X'},
-        {'X', 'X', 'X', 'O', 'X', 'X', 'X'},
-    };
-//    char[][] board = new char[0][0];
 
-    LC_Prob_Med.surroundedRegions(board);
   }
 
   public static void testThreeSum() {
@@ -190,7 +179,7 @@ public class HyperMain {
     int res = LC_Prob_Med.singleNumber(arr);
     System.out.println("res  : " + res + "  " + Arrays.toString(arr));
   }
-  
+
   public static void testRotateClockwise() {
     int[][] matrix = new int[][]{
         {1, 2, 3, 4},
