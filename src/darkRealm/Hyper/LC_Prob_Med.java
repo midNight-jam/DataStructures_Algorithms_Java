@@ -303,30 +303,6 @@ public class LC_Prob_Med {
     return xorResult;
   }
 
-  /*  [20] Valid Parentheses
-  * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-  * The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
-  * */
-  public static boolean isValidParanthesis(String str) {
-    Stack<Character> stack = new Stack<>();
-    char c;
-    for (int i = 0; i < str.length(); i++) {
-      c = str.charAt(i);
-      if (c == '(')
-        stack.push(')');
-      else if (c == '{')
-        stack.push('}');
-      else if (c == '[')
-        stack.push(']');
-      else {
-        if (stack.isEmpty() || stack.pop() != c)
-          return false;
-      }
-    }
-    return stack.isEmpty();
-  }
-
-
   public static int threeSumClosest(int[] arr, int target) {
     Arrays.sort(arr);
     int minDiff = Integer.MAX_VALUE;

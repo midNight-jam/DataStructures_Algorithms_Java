@@ -190,14 +190,7 @@ public class HyperMain {
     int res = LC_Prob_Med.singleNumber(arr);
     System.out.println("res  : " + res + "  " + Arrays.toString(arr));
   }
-
-
-  public static void testValidString() {
-    String str = "[]]";
-    boolean res = LC_Prob_Med.isValidParanthesis(str);
-    System.out.println(" Str : " + str + "  valid : " + res);
-  }
-
+  
   public static void testRotateClockwise() {
     int[][] matrix = new int[][]{
         {1, 2, 3, 4},
