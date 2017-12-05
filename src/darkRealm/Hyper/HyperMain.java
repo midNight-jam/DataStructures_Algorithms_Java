@@ -138,14 +138,6 @@ public class HyperMain {
     }
   }
 
-  public static void testCountingBits() {
-//    int n =-3;
-//    int n =0;
-    int n = 5;
-    int[] arr = LC_Prob_Med.countingBits(n);
-    System.out.println("n : " + n + "  " + Arrays.toString(arr));
-  }
-
   public static void testCircularLoop() {
 //    int[] arr = new int[]{2, -1, 1, 2, 2};
 //    int[] arr = new int[]{1, -2, 1};
