@@ -112,45 +112,6 @@ public class HyperMain {
   public static void testLongestPalindrome() {
 //
   }
-
-
-  public static void testReverseInteger() {
-    int x = -123;
-//    int x = Integer.MAX_VALUE;
-//    int x = 10;
-//    int x = 1534236469;
-    int res = LC_Prob_Med.reverseInteger(x);
-    System.out.println(" x : " + x + "   res : " + res);
-  }
-
-  public static void testStringToInteger() {
-//    String str = "+123";
-//    String str = "+1";
-//    String str = "  -0012a42";
-//    String str = Integer.MAX_VALUE+"";
-//    String str = "1534236469";
-//    String str = "-2147483648";
-//    String str = "-2147483649";
-//    String str = "2147483648";
-//    String str = "    +11191657170";
-//    String str = "";
-//    String str = "-2147483647";
-    String str = "      -11919730356x";
-
-
-    int res = LC_Prob_Med.stringToInteger(str);
-    System.out.println(" Str : " + str + "   res : " + (res));
-  }
-
-  public static void testReverseWords() {
-    String str = "The sky  is blue";
-//    String str = "";
-//    String str = "   lag     bat ";
-    String res = LC_Prob_Med.reverseWords(str);
-    System.out.println(" Str : " + str + "   res : " + res);
-    System.out.println(" Str : " + str.length() + "   res : " + res.length());
-  }
-
   public static void testSurroundRegion() {
 //    char[][] board = new char[][]{
 //        {'X', 'X', 'X', 'X'},

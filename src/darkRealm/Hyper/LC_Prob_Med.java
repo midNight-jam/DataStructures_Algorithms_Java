@@ -14,73 +14,7 @@ import java.util.Stack;
 public class LC_Prob_Med {
 
 
-  /*  [Prob 7]
-  * Reverse digits of an integer.
-  * Example1: x = 123, return 321
-  * Example2: x = -123, return -321
-  * */
-  public static int reverseInteger(int x) {
-    int result = 0;
-    int t = Math.abs(x);
-    while (t != 0) {
-      if ((result * 10) / 10 != result) {
-        return 0;
-      }
-      result *= 10;
-      if ((result + t % 10) < 0) {
-        return 0;
-      }
-      result += t % 10;
-      t /= 10;
-    }
 
-    return x < 0 ? result * -1 : result;
-  }
-
-  /*  [Prob 8]   String to Integer
-  * Implement stringToInteger to convert a string to an integer.
-  * */
-  public static int stringToInteger(String str) {
-    if (str == null || str.length() == 0) return 0;
-    int sign = 1;
-    int index = 0;
-    int result = 0;
-    while (str.charAt(index) == ' ' && index < str.length())
-      index++;
-    if (str.charAt(index) == '+' || str.charAt(index) == '-') {
-      sign = str.charAt(index) == '-' ? -1 : 1;
-      index++;
-    }
-
-    int digit = 0;
-    while (index < str.length()) {
-      digit = str.charAt(index) - '0';
-      if (digit < 0 || digit > 9) break;
-
-      if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && Integer.MAX_VALUE % 10 < digit))
-        return sign == -1 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
-      result = result * 10 + digit;
-      index++;
-    }
-    return result * sign;
-  }
-
-  /*  [Prob 151]   Reverse Words in a String
-  * Given an input string, reverse the string word by word.
-  * For example,
-  * Given s = "the sky is blue",
-  * return "blue is sky the".
-  * */
-  public static String reverseWords(String str) {
-    StringBuilder res = new StringBuilder();
-    for (int start = str.length() - 1; start >= 0; start--) {
-      if (str.charAt(start) == ' ') continue;
-      int end = start;
-      while (start >= 0 && str.charAt(start) != ' ') start--;
-      res.append(str.substring(start + 1, end + 1)).append(" ");
-    }
-    return res.toString().trim();
-  }
 
   /*  130. Surrounded Regions
   * Given a 2D board containing 'X' and 'O' (the letter O), capture all regions surrounded by 'X'.
