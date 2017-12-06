@@ -11,6 +11,7 @@ public class SpiralMatrixNoTouch {
       int row = sc.nextInt();
       System.out.println("Cols : ");
       int col = sc.nextInt();
+      if(row < 1 || col < 1) return;
       int [][] matrix = new int[row][col];
       spiralMatrix(matrix);
     }
@@ -55,7 +56,7 @@ public class SpiralMatrixNoTouch {
       right -= 2;
 
       // fill left col from bottom to top
-      if (right >= left || left == 0)
+      if (right >= left)
         for (int i = bottom; i >= top; i--)
           matrix[i][left] = 1;
 

@@ -294,10 +294,6 @@ public class Main {
 //    Moderate_Main.testMasterMind();
   }
 
-  public static void doLeetCode() {
-    HyperMain.run();
-  }
-
   public static void doprint() {
 //    PrintProbs.trangle1();
 //    PrintProbs.trangle2();
