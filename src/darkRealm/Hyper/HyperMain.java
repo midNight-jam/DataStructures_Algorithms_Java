@@ -147,18 +147,6 @@ public class HyperMain {
     MatrixUtil.rotateMatrixAntiClockWise(matrix);
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
-  public static void testNumberOfIslands() {
-    int[][] matrix = new int[][]{{1, 1, 0, 0, 0},
-        {0, 1, 0, 0, 1},
-        {1, 0, 0, 1, 1},
-        {0, 0, 0, 0, 0},
-        {1, 0, 1, 0, 1}
-    };
-    int islands = LC_Prob_Med2.numberOfIslands(matrix);
-    System.out.println(" Islands : " + islands);
-    System.out.println(MatrixUtil.getPrintableMatrix(matrix));
-  }
-
   public static void testWordLadder() {
     List<String> dict = new ArrayList<>();
 
