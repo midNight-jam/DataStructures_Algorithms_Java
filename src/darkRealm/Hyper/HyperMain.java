@@ -8,8 +8,6 @@ import ADT.Tree;
 import darkRealm.CTCI.Trees_and_Graphs.Trees_and_Graphs;
 import darkRealm.LeastFrequentlyUsed;
 import darkRealm.LeastRecentlyUsed;
-import darkRealm.RandomizedSet;
-import darkRealm.TinyURL;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -122,22 +120,6 @@ public class HyperMain {
 
 
   }
-
-  public static void testThreeSum() {
-    int[] arr = new int[]{-1, 0, 1, 2, -1, -4};
-//    int[] arr = new int[]{-2, 0, 1, 2, -1, 4};
-//    int[] arr = new int[]{-1, 3, 1, 2, -1, -2};
-//    int[] arr = new int[]{-1,0,1,2,-1,-4};
-//    int[] arr = new int[]{0, 0, 0, 0};
-//    int[] arr = new int[]{-12, 3, 4, 1, 6, 9};
-//    int[] arr = new int[]{-2,0,1,1,2};
-
-    List<List<Integer>> res = LC_Prob_Med.threeSum(arr);
-    for (int i = 0; i < res.size(); i++) {
-      System.out.println("   res : " + Arrays.toString(res.get(i).toArray()));
-    }
-  }
-
   public static void testCircularLoop() {
 //    int[] arr = new int[]{2, -1, 1, 2, 2};
 //    int[] arr = new int[]{1, -2, 1};
