@@ -436,34 +436,7 @@ If numbers = [1,2,2], a solution is:
   *
   * Solution : Use Bucket Sort
   * */
-  public static String sortByFrequency(String str) {
-    if (str == null || str.length() < 1) return str;
-    int[] map = new int[256];
-    int max = 0;
-    for (int i = 0; i < str.length(); i++) {
-      map[str.charAt(i)]++;
-      max = Math.max(map[str.charAt(i)], max);
-    }
-    String[] buckets = new String[max + 1]; // creating the merge list
-    for (int i = 0; i < map.length; i++) {
-      String s = buckets[map[i]];
-      if (map[i] > 0) {
-        buckets[map[i]] = s == null ? "" + (char) i : s + (char) i; // merging te same frequency chars
-      }
-    }
-    StringBuilder helper = new StringBuilder();
-    for (int i = max; i >= 0; i--) {  // reading from behind as we had to put higher frequnecy chars first
-      String s2 = buckets[i];
-      if (s2 != null && !s2.equals("")) {
-        for (int j = 0; j < s2.length(); j++) {
-          for (int k = 0; k < i; k++) {
-            helper.append(s2.charAt(j));  // adding each char as many times as they have appeared in the oriiganl string
-          }
-        }
-      }
-    }
-    return helper.toString();
-  }
+
 
   /* [Prob 139] Word Break
   * Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be

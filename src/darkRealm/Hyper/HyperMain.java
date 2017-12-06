@@ -303,15 +303,6 @@ public class HyperMain {
     System.out.println(" N : " + n + " gray : " + res);
   }
 
-  public static void testFrequencySort() {
-//    String str = "tree";
-//    String str = "zaaactcccfddtddzdeef";
-//    String str = "cccaaa";
-    String str = "Aabb";
-    String res = LC_Prob_Med2.sortByFrequency(str);
-    System.out.println("Str : " + str + " Sorted : " + res);
-  }
-
   public static void testWordBreak() {
 //    String str = "leetcoder";
 //    List<String> dict = new ArrayList<>();
