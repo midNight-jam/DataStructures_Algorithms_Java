@@ -7,32 +7,7 @@ import java.util.*;
  */
 public class LC_Prob_Med2 {
 
-  /*  [Prob 242] Valid Anagram
-  *Given two strings s and t, write a function to determine if t is an anagram of s.
-  * For example,
-  * s = "anagram", t = "nagaram", return true.
-  * s = "rat", t = "car", return false.
-  * Note: You may assume the string contains only lowercase alphabets.
-  * Follow up:  What if the inputs contain unicode characters? How would you adapt your solution to such case?
-  * */
-  public static boolean validAnagram(String s, String t) {
-    if (s == null || t == null || s.length() != t.length()) return false;
-    int[] map = new int[256];
-    int len = s.length();
 
-    for (int i = 0; i < len; i++)
-      map[s.charAt(i)]++;
-
-    char c;
-    for (int i = 0; i < len; i++) {
-      c = t.charAt(i);
-      if (map[c] > 0)
-        map[c]--;
-      else
-        return false;
-    }
-    return true;
-  }
 
   /*  [42] Trapping Rain Water
   *   Q) Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much

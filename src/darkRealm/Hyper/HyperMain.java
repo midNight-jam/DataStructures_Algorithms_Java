@@ -148,16 +148,6 @@ public class HyperMain {
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 
-  public static void testValidAnagram() {
-    String s = "anagram", t = "nagaram";
-//    String s = "", t = "nagaram";
-//    String s = "", t = "";
-//    String s = "", t = null;
-//    String s = "a", t ="a";
-
-    boolean res = LC_Prob_Med2.validAnagram(s, t);
-    System.out.println("Res : " + res + " S : " + s + "  T : " + t);
-  }
 
   public static void testTrappingRainWater() {
 //    int[] world = new int[]{2, 1, 0, 1, 3, 2, 1};
