@@ -149,36 +149,6 @@ public class HyperMain {
   }
 
 
-  public static void testWordLadderII() {
-    List<String> dict = new ArrayList<>();
-
-//    String[] arr = new String[]{"hot", "cog", "dot", "dog", "hit", "lot", "log"};
-//    dict.addAll(Arrays.asList(arr));
-//    String start = "hit";
-//    String end = "cog";
-
-
-    String[] arr = new String[]{"hot", "dot", "dog", "lot", "log", "cog"};
-    dict.addAll(Arrays.asList(arr));
-    String start = "hit";
-    String end = "cog";
-
-
-//    String[] arr = new String[]{"hot", "dot", "dog", "lot", "log"};
-//    dict.addAll(Arrays.asList(arr));
-//    String start = "hit";
-//    String end ="cog";
-//
-//    String[] arr = new String[]{"a","b","c"};
-//    dict.addAll(Arrays.asList(arr));
-//    String start = "a";
-//    String end = "c";
-
-    List<List<String>> res = LC_Prob_Med2.wordLadderII(start, end, dict);
-//    List<List<String>> res = LC_Prob_Med2.wordLadderDFS(start, end, dict);
-    System.out.println("res : " + res);
-  }
-
   public static void testMostFrequentSum() {
 //    TNode node = new TNode(5);
 //    node.left = new TNode(2);
