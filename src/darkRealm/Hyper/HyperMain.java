@@ -148,25 +148,6 @@ public class HyperMain {
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 
-  public static void testSubsets() {
-//    int[] arr = new int[]{1, 2, 3};
-    int[] arr = new int[]{1, 2, 2};
-    List<List<Integer>> res = LC_Prob_Med2.subSet(arr);
-    System.out.println(" Arr : " + Arrays.toString(arr));
-    System.out.println(" Subsets : " + res);
-  }
-
-  public static void testSubsetsII() {
-//    int[] arr = new int[]{1, 2, 2};
-    int[] arr = new int[]{4, 4, 4, 1, 4};
-//    int[] arr = new int[]{1,2,3};
-//    int[] arr = new int[]{1,2,3,4,5};
-//    int[] arr = new int[]{1, 2, 2, 3 ,4};
-    List<List<Integer>> res = LC_Prob_Med2.subSetII(arr);
-    System.out.println(" Arr : " + Arrays.toString(arr));
-    System.out.println(" Subsets : " + res);
-  }
-
   public static void testRotateFunction() {
     int[] arr = new int[]{4, 3, 2, 6};
     int res = LC_Prob_Med2.rotate(arr);

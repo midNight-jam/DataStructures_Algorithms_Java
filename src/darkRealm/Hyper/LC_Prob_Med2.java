@@ -7,76 +7,6 @@ import java.util.*;
  */
 public class LC_Prob_Med2 {
 
-
-  /*  [Prob 78] Subsets
-  *   Given a set of distinct integers, numbers, return all possible subsets.
-  *   Note: The solution set must not contain duplicate subsets.
-  *   For example,
-  *   If numbers = [1,2,3], a solution is:
-  *   [
-  *   [3],
-  *   [1],
-  *   [2],
-  *   [1,2,3],
-  *   [1,3],
-  *   [2,3],
-  *   [1,2],
-  *   []
-  *   ]
-  * */
-  public static List<List<Integer>> subSet(int[] arr) {
-    if (arr == null) {
-      return new ArrayList<>();
-    }
-    List<List<Integer>> subsets = new ArrayList<>();
-    int setSize = (int) Math.pow(2, arr.length);
-    for (int i = 0; i < setSize; i++) {
-      int index = 0;
-      int j = i;
-      List<Integer> set = new ArrayList<>();
-      while (j != 0) {
-        if ((j & 1) == 1) {
-          set.add(arr[index]);
-        }
-        index++;
-        j = j >> 1;
-      }
-      subsets.add(set);
-    }
-    return subsets;
-  }
-
-  /* [Prob] Given a collection of integers that might contain duplicates, numbers, return all possible subsets
-Note: The solution set must not contain duplicate subsets.
-For example,
-If numbers = [1,2,2], a solution is:
-[
-  [2],
-  [1],
-  [1,2,2],
-  [2,2],
-  [1,2],
-  []
-]
-  * */
-  public static List<List<Integer>> subSetII(int[] arr) {
-    if (arr == null || arr.length == 0) return new ArrayList<>();
-    Arrays.sort(arr);
-    List<List<Integer>> all = new ArrayList<>();
-    genSets(arr, 0, arr.length, all, new ArrayList<>());
-    return all;
-  }
-
-  private static void genSets(int[] arr, int pos, int len, List<List<Integer>> all, List<Integer> list) {
-    if (pos <= len) all.add(new ArrayList<>(list));
-    for (int i = pos; i < len; i++) {
-      if (i > pos && arr[i] == arr[i - 1]) continue;
-      list.add(arr[i]);
-      genSets(arr, i + 1, len, all, list);
-      list.remove(list.size() - 1);
-    }
-  }
-
   /*  [Prob 396] Rotate Function
    * Given an array of integers A and let n to be its length. Assume Bk to be an array obtained by rotating the array
    * A k positions clock-wise, we define a "rotation function" F on A as follow:
@@ -681,45 +611,6 @@ If numbers = [1,2,2], a solution is:
         left++;
       }
     }
-    return max;
-  }
-
-  /*  [Prob 395 ] Longest Substring with At Least K Repeating Characters
-  *
-  * */
-  public static int longestSubstring(String s, int k) {
-    HashMap<Character, Integer> countMap = new HashMap<Character, Integer>();
-
-    for (int i = 0; i < s.length(); i++) {
-      char c = s.charAt(i);
-      countMap.put(c, countMap.getOrDefault(c, 0) + 1);
-    }
-
-    HashSet<Character> missSet = new HashSet<>();
-    for (char c : countMap.keySet())
-      if (countMap.get(c) < k)
-        missSet.add(c);
-
-    if (missSet.isEmpty()) {
-      return s.length();
-    }
-
-    int max = 0;
-    int left = 0, right = 0;
-    while (right < s.length()) {
-      char c = s.charAt(right);
-      if (missSet.contains(c)) {
-        if (right != left) {
-          max = Math.max(max, longestSubstring(s.substring(left, right), k));
-        }
-        left = right + 1;
-      }
-      right++;
-    }
-
-    if (left != right)
-      max = Math.max(max, longestSubstring(s.substring(left, right), k));
-
     return max;
   }
 }
