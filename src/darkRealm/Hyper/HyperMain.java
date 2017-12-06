@@ -148,21 +148,6 @@ public class HyperMain {
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 
-
-  public static void testTrappingRainWater() {
-//    int[] world = new int[]{2, 1, 0, 1, 3, 2, 1};
-//    int[] world = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-    int[] world = new int[]{5, 4, 1, 2};
-    int res = LC_Prob_Med2.trappingRainWater(world);
-    System.out.println("Res : " + res);
-  }
-
-  public static void testPascalsTriangle() {
-    int n = 5;
-    List<Integer> res = LC_Prob_Med2.pascalsTriangleRow(n);
-    System.out.println(n + "th row : " + res);
-  }
-
   public static void testThirdMaximum() {
 //    int[] arr = new int[]{3, 2, 1};
 //    int[] arr = new int[]{2, 2, 3, 1};

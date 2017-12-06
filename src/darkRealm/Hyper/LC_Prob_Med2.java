@@ -9,60 +9,7 @@ public class LC_Prob_Med2 {
 
 
 
-  /*  [42] Trapping Rain Water
-  *   Q) Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much
-   *   water it is able to trap after raining.
-   *   For example,
-   *   Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
-  * */
-  public static int trappingRainWater(int[] arr) {
-    if (arr == null || arr.length < 3) {
-      return 0;
-    }
-    int water = 0;
-    int[] left = new int[arr.length];
-    int[] right = new int[arr.length];
-    int max = arr[0];
-    left[0] = max;
-    for (int i = 1; i < arr.length; i++) {
-      max = Math.max(arr[i], max);
-      left[i] = max;
-    }
-    max = arr[arr.length - 1];
-    right[arr.length - 1] = max;
-    for (int j = arr.length - 2; j >= 0; j--) {
-      max = Math.max(arr[j], max);
-      right[j] = max;
-    }
 
-    int small = 0;
-    int diff = 0;
-    for (int i = 0; i < arr.length; i++) {
-      small = Math.min(left[i], right[i]);
-      diff = small - arr[i];
-      if (diff > 0) {
-        water += diff;
-      }
-    }
-    return water;
-  }
-
-  /*  [Prob 119] ith Row of Pascals Triangle
-   Pascal's Triangle II
-  * */
-  public static List<Integer> pascalsTriangleRow(int n) {
-    if (n < 0) {
-      return new ArrayList<>();
-    }
-    Integer[] res = new Integer[n + 1];
-    res[0] = 1;
-    for (int i = 1; i < n + 1; i++) {
-      for (int j = i; j >= 1; j--) {
-        res[j] = res[j] + res[j - 1];
-      }
-    }
-    return Arrays.asList(res);
-  }
 
   public static List<List<Integer>> pascalsTriangle(int n) {
     if (n < 1) return new ArrayList<>();
