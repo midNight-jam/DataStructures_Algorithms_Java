@@ -334,14 +334,6 @@ public class HyperMain {
     System.out.println(" str : " + str + " Dict : " + dict);
     System.out.println(" Res : " + res);
   }
-
-  public static void testLongestPalindromicSubsequence() {
-    String str = "bbbab";
-//    String str = "cbbd";
-    int res = LC_Prob_Med2.longestPalidromicSubsequence(str);
-    System.out.println("Res : " + res + " Str : " + str);
-  }
-
   public static void testSN() {
 //    char[][] matrix = null;
 //    char[][] matrix = new char[][]{};
