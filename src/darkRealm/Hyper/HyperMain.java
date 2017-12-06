@@ -124,16 +124,6 @@ public class HyperMain {
   public static void testDuplicates() {
 }
 
-  public static void testSingleNumber() {
-//    int [] arr  = new int[]{3,2,3,4,1,2,1};
-//    int [] arr  = new int[0];
-//    int [] arr  = new int[]{1};
-    int[] arr = new int[]{1, 1};
-//    int [] arr  = new int[]{1,1,-1};
-    int res = LC_Prob_Med.singleNumber(arr);
-    System.out.println("res  : " + res + "  " + Arrays.toString(arr));
-  }
-
   public static void testRotateClockwise() {
     int[][] matrix = new int[][]{
         {1, 2, 3, 4},
@@ -157,51 +147,7 @@ public class HyperMain {
     MatrixUtil.rotateMatrixAntiClockWise(matrix);
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
-  public static void testThreeSumClosest() {
-//    int[] arr = new int[]{-1, 2, 1, -4};
-//    int[] arr = new int[]{0, 0, 0, 0};
-    int[] arr = new int[]{0, 1, 2};
-//    int[] arr = new int[]{ 1, -4  };
-//    int[] arr = new int[]{ 1, -4};
-    int target = 3;
-    int res = LC_Prob_Med.threeSumClosest(arr, target);
-    System.out.println("res : " + res + " Arr : " + Arrays.toString(arr));
-  }
 
-  public static void testMaxProfitII() {
-//    int[] arr = new int[]{7, 1, 5, 3, 6, 4};
-//    int[] arr = new int[]{7, 6, 4, 3, 1};
-//    int[] arr = new int[]{7, 6, 4, 3, 1, 5, 7};
-//    int[] arr = new int[]{2, 4, 1};
-    int[] arr = new int[]{-2, 2, 4, 1, 2, 3, 5, 6};
-    int res = LC_Prob_Med.maxProfitII(arr);
-    System.out.println("res : " + res + "  prices : " + Arrays.toString(arr));
-  }
-
-  public static void testMaxProfitIII() {
-//    int[] arr = new int[]{7, 1, 5, 3, 6, 4};
-//    int[] arr = new int[]{7, 6, 4, 3, 1};
-//    int[] arr = new int[]{7, 6, 4, 3, 1, 5, 7};
-//    int[] arr = new int[]{2, 4, 1};
-//    int[] arr = new int[]{-2, 2, 4, 1, 2, 3, 5, 6};
-    int[] arr = new int[]{1, 4, 5, 7, 6, 3, 2, 9};
-//    int res = LC_Prob_Med.maxProfitIIIDP(arr);
-    int res = LC_Prob_Med.maxProfitIII(arr);
-    System.out.println(Arrays.toString(arr) + "  prices : " + "res : " + res);
-  }
-
-  public static void testMaxProfitIV() {
-//    int[] arr = new int[]{7, 1, 5, 3, 6, 4};
-//    int[] arr = new int[]{7, 6, 4, 3, 1};
-//    int[] arr = new int[]{7, 6, 4, 3, 1, 5, 7};
-//    int[] arr = new int[]{2, 4, 1};
-//    int[] arr = new int[]{-2, 2, 4, 1, 2, 3, 5, 6};
-//    int[] arr = new int[]{1, 4, 5, 7, 6, 3, 2, 9};
-    int[] arr = new int[]{2, 5, 7, 1, 4, 3, 1, 3};
-    int k = 3;
-    int res = LC_Prob_Med.maxProfitFinal(arr, k);
-    System.out.println(Arrays.toString(arr) + "  prices : " + "res : " + res);
-  }
 
   public static void testLetterCombinations() {
 //    int num = 23;
