@@ -224,54 +224,6 @@ public class HyperMain {
     System.out.println(" Final res : " + Arrays.toString(res));
   }
 
-
-  public static void testWordBreak() {
-//    String str = "leetcoder";
-//    List<String> dict = new ArrayList<>();
-//    dict.add("leet");
-//    dict.add("code");
-//    dict.add("coder");
-
-    String str = "catsanddog";
-    List<String> dict = new ArrayList<>();
-    dict.add("cat");
-    dict.add("sand");
-    dict.add("dog");
-//    String str = "Iamace";
-//    List<String> dict = new ArrayList<>();
-//    dict.add("I");
-//    dict.add("a");
-//    dict.add("am");
-//    dict.add("ace");
-//
-//    String str = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
-//        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
-//    String str = "aaaabaaaaaa";
-//    List<String> dict = new ArrayList<>();
-//    dict.add("b");
-//    dict.add("a");
-//    dict.add("aa");
-//    dict.add("aaa");
-//    dict.add("aaaa");
-//    dict.add("aaaaa");
-//    dict.add("aaaaaa");
-//    dict.add("aaaaaaa");
-//    dict.add("aaaaaaaa");
-//    dict.add("aaaaaaaaa");
-//    dict.add("aaaaaaaaaa");
-//
-//    String str = "bb";
-//    List<String> dict = new ArrayList<>();
-//    dict.add("b");
-//    dict.add("a");
-//    dict.add("bbb");
-//    dict.add("bbbb");
-    Long start = System.currentTimeMillis();
-    boolean res = LC_Prob_Med2.wordBreak(str, dict);
-    System.out.println(" " + (System.currentTimeMillis() - start));
-    System.out.println(" Res : " + res + " str : " + str + " Dict : " + dict);
-  }
-
   public static void testWordBreakSequence() {
 //    String str = "leetcoder";
 //    List<String> dict = new ArrayList<>();

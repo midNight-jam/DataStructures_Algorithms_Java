@@ -1,7 +1,7 @@
 package darkRealm;
 
 public class LongestPalindromicSubsequence {
-  
+
   /*
     #516 Longest Palindromic Subsequence
   * Given a string s, find the longest palindromic subsequence's length in s.
