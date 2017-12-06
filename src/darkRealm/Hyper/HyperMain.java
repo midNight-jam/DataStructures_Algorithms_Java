@@ -166,68 +166,6 @@ public class HyperMain {
     System.out.println(" Final res : " + Arrays.toString(res));
   }
 
-  public static void testWordBreakSequence() {
-//    String str = "leetcoder";
-//    List<String> dict = new ArrayList<>();
-//    dict.add("leet");
-//    dict.add("code");
-//    dict.add("coder");
-
-//    String str = "catsanddog";
-    String str = "catsanddogstop";
-//    String str = "catsanddogstopz";
-//    String str = "catsanddogs";
-//    String str = "catsanddog";
-//    String str = "catanddog";
-//    String str = "catsand";
-//    String str = "catand";
-//    String str = "cat";
-//    String str = "ca";
-//    String str = "c";
-//    String str = "";
-//    String str = null;
-    List<String> dict = new ArrayList<>();
-    dict.add("cat");
-    dict.add("sand");
-    dict.add("dog");
-    dict.add("dogs");
-    dict.add("and");
-    dict.add("top");
-    dict.add("stop");
-    dict.add("cats");
-//    String str = "Iamace";
-//    List<String> dict = new ArrayList<>();
-//    dict.add("I");
-//    dict.add("a");
-//    dict.add("am");
-//    dict.add("ace");
-//
-//    String str = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
-//        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
-//    String str = "aaaabaaaaaa";
-//    List<String> dict = new ArrayList<>();
-//    dict.add("b");
-//    dict.add("a");
-//    dict.add("aa");
-//    dict.add("aaa");
-//    dict.add("aaaa");
-//    dict.add("aaaaa");
-//    dict.add("aaaaaa");
-//    dict.add("aaaaaaa");
-//    dict.add("aaaaaaaa");
-//    dict.add("aaaaaaaaa");
-//    dict.add("aaaaaaaaaa");
-//
-//    String str = "bb";
-//    List<String> dict = new ArrayList<>();
-//    dict.add("b");
-//    dict.add("a");
-//    dict.add("bbb");
-//    dict.add("bbbb");
-    List<String> res = LC_Prob_Med2.wordBreakII(str, dict);
-    System.out.println(" str : " + str + " Dict : " + dict);
-    System.out.println(" Res : " + res);
-  }
   public static void testSN() {
 //    char[][] matrix = null;
 //    char[][] matrix = new char[][]{};

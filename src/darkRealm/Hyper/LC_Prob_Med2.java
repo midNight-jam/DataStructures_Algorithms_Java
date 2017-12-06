@@ -7,48 +7,6 @@ import java.util.*;
  */
 public class LC_Prob_Med2 {
 
-  /*  [Prob 140]
-  * Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to
-  * construct a sentence where each word is a valid dictionary word. You may assume the dictionary does not contain
-  * duplicate words.
-  * Return all such possible sentences.
-  * For example, given
-  * s = "catsanddog",
-  * dict = ["cat", "cats", "and", "sand", "dog"].
-  * solution is ["cats and dog", "cat sand dog"].
-  * A) we use a hashMap to store the list of words that can be formed via dictionary by using some portion of the original
-  * string. For this purpose we break the string from behind & check if the backPortion cab be formed using dictinary,
-  * if yes then we send the front remainder for same process if at the end the frontRem can be broken down in to valid word
-  * formed via dictionary then those words are returned, this is the portion to pay attention we verify this by checking
-  * the returned sub list length, while this subresult is returned & stored in map, we add these
-  * results to the previously borken down backPortion and add this sub portion in map. hence while returning from recursion
-  * we will fianlly have the results of valid borken words  against the same key from where we can return.
-  * */
-  public static List<String> wordBreakII(String str, List<String> wordDict) {
-    Map<String, List<String>> subResMap = new HashMap<>();
-    return wordBreakAll(str, wordDict, subResMap);
-  }
-
-  private static List<String> wordBreakAll(String str, List<String> dict, Map<String, List<String>> subResMap) {
-    if (subResMap.containsKey(str)) return subResMap.get(str);
-    List<String> subList = new ArrayList<>();
-    if (dict.contains(str)) subList.add(str);
-    String backPart;
-    for (int i = 1; i < str.length(); i++) {
-      backPart = str.substring(i);
-      if (dict.contains(backPart)) {
-        String frontRem = str.substring(0, i);
-        List<String> backRes = wordBreakAll(frontRem, dict, subResMap);
-        if (backRes.size() > 0)
-          for (int j = 0; j < backRes.size(); j++)
-            subList.add(backRes.get(j) + " " + backPart);
-      }
-    }
-    subResMap.put(str, subList);
-    return subResMap.get(str);
-  }
-
-
   public static String shortestPath(char[][] matrix, char a, char b) {
     if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return "";
     int startR, startC;
