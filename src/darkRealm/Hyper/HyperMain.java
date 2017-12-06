@@ -148,19 +148,6 @@ public class HyperMain {
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 
-  public static void testThirdMaximum() {
-//    int[] arr = new int[]{3, 2, 1};
-//    int[] arr = new int[]{2, 2, 3, 1};
-//    int[] arr = new int[]{1,2,2,5,3,5};
-//    int[] arr = new int[]{1,2};
-//    int[] arr = new int[]{1,1,2};
-//    int[] arr = new int[]{2, 1};
-//    int[] arr = new int[]{2, 1,Integer.MIN_VALUE};
-    int[] arr = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
-    int res = LC_Prob_Med2.thirdMaximumNumber(arr);
-    System.out.println(" res : " + res + "  Arr : " + Arrays.toString(arr));
-  }
-
   public static void testSubsets() {
 //    int[] arr = new int[]{1, 2, 3};
     int[] arr = new int[]{1, 2, 2};

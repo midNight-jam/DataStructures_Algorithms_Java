@@ -8,60 +8,6 @@ import java.util.*;
 public class LC_Prob_Med2 {
 
 
-
-
-
-  public static List<List<Integer>> pascalsTriangle(int n) {
-    if (n < 1) return new ArrayList<>();
-    List<List<Integer>> all = new ArrayList<>();
-    List<Integer> list = new ArrayList<>();
-    for (int i = 0; i < n; i++) {
-      list.add(0, 1);
-      for (int j = 0; j < list.size(); j++) {
-        list.set(j - 1, list.get(j - 1 + list.get(j)));
-      }
-
-      all.add(new ArrayList<>(list));
-    }
-    return all;
-  }
-
-
-  /*  [Prob 414] Third Maximum Number
-  *   Given a non-empty array of integers, return the third maximum number in this array. If it does not exist, return
-  *   the maximum number. The time complexity must be in O(n).
-  *   Example 1:
-  *   Input: [3, 2, 1]
-  *   Output: 1
-  *   Explanation: The third maximum is 1.
-  * */
-  public static int thirdMaximumNumber(int[] arr) {
-    if (arr == null || arr.length == 0) {
-      return 0;
-    }
-    Integer first = null;
-    Integer second = null;
-    Integer third = null;
-
-    for (int i = 0; i < arr.length; i++) {
-      Integer j = arr[i];
-      if (j.equals(first) || j.equals(second) || j.equals(third)) {
-        continue;
-      }
-      if (first == null || arr[i] > first) {
-        third = second;
-        second = first;
-        first = arr[i];
-      } else if (second == null || arr[i] > second) {
-        third = second;
-        second = arr[i];
-      } else if (third == null || arr[i] > third) {
-        third = arr[i];
-      }
-    }
-    return third == null ? first : third;
-  }
-
   /*  [Prob 78] Subsets
   *   Given a set of distinct integers, numbers, return all possible subsets.
   *   Note: The solution set must not contain duplicate subsets.
