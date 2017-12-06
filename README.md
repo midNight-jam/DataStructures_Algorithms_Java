@@ -234,3 +234,16 @@ This section contains implementation of different Data Structures in Java.
 | <b>StrStr</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StrStr.java)|
 | <b>LeastFrequentlyUsed</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LeastFrequentlyUsed.java)|
 | <b>LeastRecentlyUsed</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LeastRecentlyUsed.java)|
+| <b>FirstUniqueCharacter</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FirstUniqueCharacter.java)|
+| <b>ZigZagConversion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ZigZagConversion.java)|
+| <b>FirstMissingPositive</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FirstMissingPositive.java)|
+| <b>FindDuplicateNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindDuplicateNumber.java)|
+| <b>ProductArrayExceptSelf</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ProductArrayExceptSelf.java)|
+| <b>LongestPalindromicSubstring</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestPalindromicSubstring.java)|
+| <b>ReverseInteger</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReverseInteger.java)|
+| <b>ReverseInteger</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReverseInteger.java)|
+| <b>StringToInteger</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StringToInteger.java)|
+| <b>ValidParanthesis</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidParanthesis.java)|
+| <b>SurroundedRegions</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SurroundedRegions.java)|
+| <b>CountingBits</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CountingBits.java)|
+| <b>FindDisappearedNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindDisappearedNumber.java)|
