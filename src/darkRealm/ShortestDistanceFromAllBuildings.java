@@ -61,10 +61,10 @@ public class ShortestDistanceFromAllBuildings {
         int nr = r + ver[i];
         int nc = c + hor[i];
         if (isValid(grid, nr, nc) && !visited[nr][nc] && grid[nr][nc] == 0) {
-          dist[nr][nc]+= d+1;
+          dist[nr][nc] += d + 1;
           reached[nr][nc]++;
           visited[nr][nc] = true;
-          que.add(new int[]{nr, nc, d+1});
+          que.add(new int[]{nr, nc, d + 1});
         }
       }
     }
@@ -85,7 +85,7 @@ public class ShortestDistanceFromAllBuildings {
 //        {0, 0, 0},
 //        {0, 0, 1},
 //    };
-    for(int [] r : grid)
+    for (int[] r : grid)
       System.out.println(Arrays.toString(r));
     System.out.println("========================");
     int res = shortestDistance(grid);
