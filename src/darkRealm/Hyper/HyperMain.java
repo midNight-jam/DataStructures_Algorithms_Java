@@ -120,22 +120,9 @@ public class HyperMain {
 
 
   }
-  public static void testCircularLoop() {
-//    int[] arr = new int[]{2, -1, 1, 2, 2};
-//    int[] arr = new int[]{1, -2, 1};
-//    int[] arr = new int[]{1, 1, 1};
-    int[] arr = new int[]{-2, 1, -1 - 2, -2};
-//    int[] arr = new int[]{-1,2};
-    boolean res = LC_Prob_Med.isCircularArrayLoop(arr);
-    System.out.println("res  : " + res + "  " + Arrays.toString(arr));
-  }
 
   public static void testDuplicates() {
-//    int[] arr = new int[]{4, 3, 2, 7, 8, 2, 3, 1};
-    int[] arr = new int[]{4, 3, 2, 5, 6, 1, 3, 4, 5};
-    List<Integer> res = LC_Prob_Med.findDuplicates(arr);
-    System.out.println("res  : " + Arrays.toString(res.toArray()) + "  " + Arrays.toString(arr));
-  }
+}
 
   public static void testSingleNumber() {
 //    int [] arr  = new int[]{3,2,3,4,1,2,1};
