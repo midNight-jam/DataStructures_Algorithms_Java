@@ -326,46 +326,6 @@ public class LC_Prob_Med2 {
     return false;
   }
 
-  /*  [Prob 89] Gray Code
-  * The gray code is a binary numeral system where two successive values differ in only one bit.
-  * Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code.
-   * A gray code sequence must begin with 0.
-   * For example, given n = 2, return [0,1,3,2]. Its gray code sequence is:
-   * 00 - 0
-   * 01 - 1
-   *11 - 3
-   *10 - 2
-   *Note:
-   * For a given n, a gray code sequence is not uniquely defined.
-   *
-   *For example, [0,2,3,1] is also a valid gray code sequence according to the above definition.
-  * */
-  public static List<Integer> grayCode(int n) {
-    int end = (int) Math.pow(2, n);
-    List<Integer> res = new ArrayList<>();
-    for (int i = 0; i < end; i++) {
-      res.add(binaryToGray(i));
-    }
-    return res;
-  }
-
-  private static int binaryToGray(int k) {
-    // divide by 2 & XOR with self
-    return (k >> 1) ^ k;
-  }
-
-  /* [Prob] Sort by frequency
-  * Given a string, sort it in decreasing order based on the frequency of characters.
-  * Input:
-  * "tree"
-  * Output:
-  * "eert"
-  * Explanation:
-  * 'e' appears twice while 'r' and 't' both appear once.
-  * So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
-  *
-  * Solution : Use Bucket Sort
-  * */
 
 
   /* [Prob 139] Word Break
@@ -541,76 +501,5 @@ public class LC_Prob_Med2 {
       col = c;
       path = p;
     }
-  }
-
-  /*  [Prob 159] Longest Substring with At Most Two Distinct Characters
-  *   Given a string, find the length of the longest substring T that contains at most 2 distinct characters.
-  *   For example, Given s = “eceba”,
-  *   T is "ece" which its length is 3.
-  * */
-  public static int lengthOfLongestSubstringTwoDistinct(String str) {
-    if (str == null || str.length() == 0) return 0;
-    HashMap<Character, Integer> map = new HashMap<>();
-    int k = 2;
-    int left = 0, maxLen = 0;
-    char leftCh = str.charAt(0);
-    char ch;
-    for (int i = 0; i < str.length(); i++) {
-      ch = str.charAt(i);
-      map.put(ch, map.getOrDefault(ch, 0) + 1);
-      while (map.size() > k) {
-        leftCh = str.charAt(left);
-        map.put(leftCh, map.get(leftCh) - 1);
-        if (map.get(leftCh) == 0) map.remove(leftCh);
-        left++;
-      }
-      maxLen = Math.max(maxLen, i - left + 1);
-    }
-    return maxLen;
-  }
-
-  /* [Prob 340] Longest Substring with At Most K Distinct Characters
-  * Given a string, find the length of the longest substring T that contains at most k distinct characters.
-  * For example, Given s = “eceba” and k = 2,
-  * T is "ece" which its length is 3.
-  * */
-  public static int lengthOfLongestSubstringKDistinct(String str, int k) {
-    if (str == null || str.length() == 0 || k < 1) return 0;
-    HashMap<Character, Integer> map = new HashMap<>();
-    int left = 0, maxLen = 0;
-    char leftCh, ch;
-    for (int i = 0; i < str.length(); i++) {
-      ch = str.charAt(i);
-      map.put(ch, map.getOrDefault(ch, 0) + 1);
-      while (map.size() > k) {
-        leftCh = str.charAt(left);
-        map.put(leftCh, map.get(leftCh) - 1);
-        if (map.get(leftCh) == 0) map.remove(leftCh);
-        left++;
-      }
-      maxLen = Math.max(maxLen, i - left + 1);
-    }
-    return maxLen;
-  }
-
-  /* 3. Longest Substring Without Repeating Characters
-  * */
-  public static int longestSubStringWithoutRepeatingCharacters(String str) {
-    if (str == null || str.length() == 0) return 0;
-    Set<Character> set = new HashSet<>();
-    int left = 0, right = 0, len = str.length(), max = Integer.MIN_VALUE;
-    char ch;
-    while (right < len) {
-      ch = str.charAt(right);
-      if (!set.contains(ch)) {
-        set.add(ch);
-        max = Math.max(set.size(), max);
-        right++;
-      } else {
-        set.remove(str.charAt(left));
-        left++;
-      }
-    }
-    return max;
   }
 }

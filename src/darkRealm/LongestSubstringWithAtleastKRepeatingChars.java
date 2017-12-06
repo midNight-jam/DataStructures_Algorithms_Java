@@ -2,7 +2,6 @@ package darkRealm;
 
 public class LongestSubstringWithAtleastKRepeatingChars {
 
-
   /*
   #395. Longest Substring with At Least K Repeating Characters
   DescriptionHintsSubmissionsDiscussSolution
@@ -25,7 +24,7 @@ public class LongestSubstringWithAtleastKRepeatingChars {
 
   public static int longestSubstring(String str, int k) {
     if (str == null || str.length() < k) return 0;
-    return kHelper(str, 0, str.length()-1, k);
+    return kHelper(str, 0, str.length() - 1, k);
   }
 
   private static int kHelper(String str, int start, int end, int k) {
@@ -45,7 +44,11 @@ public class LongestSubstringWithAtleastKRepeatingChars {
     }
     return end - start + 1;
   }
-  public static void main(String[] args) {
 
+  public static void main(String[] args) {
+    String s = "aaabb";
+    int k = 3;
+    int res = longestSubstring(s, k);
+    System.out.println(res);
   }
 }

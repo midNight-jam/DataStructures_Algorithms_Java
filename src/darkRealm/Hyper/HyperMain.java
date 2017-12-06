@@ -278,11 +278,6 @@ public class HyperMain {
     System.out.println(" Final res : " + Arrays.toString(res));
   }
 
-  public static void testGrayCode() {
-    int n = 3;
-    List<Integer> res = LC_Prob_Med2.grayCode(n);
-    System.out.println(" N : " + n + " gray : " + res);
-  }
 
   public static void testWordBreak() {
 //    String str = "leetcoder";
@@ -432,39 +427,6 @@ public class HyperMain {
     };
     String res = LC_Prob_Med2.shortestPath(matrix, 'n', 'd');
     System.out.println(" Res : " + res);
-  }
-
-  public static void testLongestTwoCHarString() {
-//    String str = "eeba";
-    String str = "eebabbebe";
-    int res = LC_Prob_Med2.lengthOfLongestSubstringTwoDistinct(str);
-    System.out.println(" Res : " + res + " Str : " + str);
-  }
-
-  public static void testLongestKDistinctString() {
-//    String str = "eeba";
-//    String str = "kkzzeebabbebezzz";
-//    String str = "eebababebbeb";
-//    int k = 2;
-//    String str = "a";
-//    int k = 3;
-
-    String str = "aaabb";
-    int k = 2;
-    int res = LC_Prob_Med2.lengthOfLongestSubstringKDistinct(str, k);
-    System.out.println(" KKK Res : " + res + " Str : " + str);
-  }
-
-  public static void testLongestStringWithoutRepeatingChars() {
-//    String str = "ee";
-    String str = "eebae";
-//    String str = "eedfaaec";
-//    String str = "kkzzeebabbebezzz";
-//    String str = "eebababebbeb";
-//    String str = "a";
-//    String str = "aaabb";
-    int res = LC_Prob_Med2.longestSubStringWithoutRepeatingCharacters(str);
-    System.out.println("Res : " + res + " Str : " + str);
   }
 
   public static void testLongestSubstringWithAtLeastKRepeatingCharacters() {
