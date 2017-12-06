@@ -147,35 +147,7 @@ public class HyperMain {
     MatrixUtil.rotateMatrixAntiClockWise(matrix);
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
-  public static void testWordLadder() {
-    List<String> dict = new ArrayList<>();
 
-//    String[] arr = new String[]{"hot", "cog", "dot", "dog", "hit", "lot", "log"};
-//    dict.addAll(Arrays.asList(arr));
-//    String start = "hit";
-//    String end = "cog";
-
-
-    String[] arr = new String[]{"hot", "dot", "dog", "lot", "log", "cog"};
-    dict.addAll(Arrays.asList(arr));
-    String start = "hit";
-    String end = "cog";
-
-
-//    String[] arr = new String[]{"hot", "dot", "dog", "lot", "log"};
-//    dict.addAll(Arrays.asList(arr));
-//    String start = "hit";
-//    String end ="cog";
-//
-//    String[] arr = new String[]{"a","b","c"};
-//    dict.addAll(Arrays.asList(arr));
-//    String start = "a";
-//    String end = "c";
-
-    int res = LC_Prob_Med2.wordLadder(start, end, dict);
-//    List<List<String>> res = LC_Prob_Med2.wordLadderDFS(start, end, dict);
-    System.out.println("res : " + res);
-  }
 
   public static void testWordLadderII() {
     List<String> dict = new ArrayList<>();
