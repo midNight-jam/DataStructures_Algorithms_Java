@@ -219,41 +219,6 @@ public class HyperMain {
     System.out.println("res : " + res);
   }
 
-
-  public static void testLongestPalindromeString() {
-//    String str = "babad";
-//    String str = "dababad";
-//    String str = "cbbd";
-    String str = "bb";
-//    String str = "a";
-
-    String res = LC_Prob_Med2.longestPalindrome(str);
-    System.out.println("Str : " + str + " res : " + res);
-  }
-
-  public static void testTwoSum() {
-//    int[] arr = new int[]{2, 7, 11, 15};
-//    int targer = 9;
-
-//    int[] arr = new int[]{3,3};
-//    int targer = 6;
-
-    int[] arr = new int[]{3, 2, 4};
-    int targer = 6;
-    int[] res = LC_Prob_Med2.twoSum(arr, targer);
-    System.out.println(Arrays.toString(arr) + "  target : " + targer);
-    System.out.println(Arrays.toString(res));
-  }
-
-  public static void testSubStringPattern() {
-//    String str = "aaaabbaaaaba";
-//    String str = "abab";
-//    String str = "aba";
-    String str = "abcabcabcabc";
-    boolean res = LC_Prob_Med2.repeatedSubStringPattern(str);
-    System.out.println("Res : " + res + " Str : " + str);
-  }
-
   public static void testMostFrequentSum() {
 //    TNode node = new TNode(5);
 //    node.left = new TNode(2);
