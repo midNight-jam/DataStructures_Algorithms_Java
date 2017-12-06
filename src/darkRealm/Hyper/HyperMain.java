@@ -148,16 +148,6 @@ public class HyperMain {
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 
-  public static void testGroupAnagram() {
-//    String[] strs = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
-//    String[] strs = new String[]{""};
-//    String[] strs = new String[]{"tea","","eat","","tea",""};
-//    String[] strs = new String[]{"ape","and","cat"};
-    String[] strs = new String[]{"", "b"};
-    List<List<String>> res = LC_Prob_Med2.groupAnagrams(strs);
-    System.out.println("Res : " + Arrays.toString(res.toArray()));
-  }
-
   public static void testValidAnagram() {
     String s = "anagram", t = "nagaram";
 //    String s = "", t = "nagaram";

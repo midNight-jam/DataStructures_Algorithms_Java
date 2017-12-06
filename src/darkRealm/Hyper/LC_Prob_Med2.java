@@ -7,40 +7,6 @@ import java.util.*;
  */
 public class LC_Prob_Med2 {
 
-
-  /*  [Prob 49]  Group Anagrams
-  * Given an array of strings, group anagrams together.
-  * For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
-  * Return:
-  * [ ["ate", "eat","tea"],  ["nat","tan"],  ["bat"] ]
-  * Note: All inputs will be in lower-case.
-  * */
-  public static List<List<String>> groupAnagrams(String[] strs) {
-    if (strs == null || strs.length == 0) {
-      return new ArrayList<>();
-    }
-    HashMap<String, List<String>> map = new HashMap<>();
-    for (int i = 0; i < strs.length; i++) {
-      String s = strs[i];
-      char[] sar = s.toCharArray();
-      Arrays.sort(sar);
-      String s2 = new String(sar);
-      if (map.containsKey(s2)) {
-        map.get(s2).add(s);
-      } else {
-        List<String> list = new ArrayList<>();
-        list.add(s);
-        map.put(s2, list);
-      }
-    }
-    List<List<String>> results = new ArrayList<>();
-    for (String k :
-        map.keySet()) {
-      results.add(map.get(k));
-    }
-    return results;
-  }
-
   /*  [Prob 242] Valid Anagram
   *Given two strings s and t, write a function to determine if t is an anagram of s.
   * For example,
