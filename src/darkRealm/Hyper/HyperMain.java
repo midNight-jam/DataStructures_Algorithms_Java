@@ -148,19 +148,6 @@ public class HyperMain {
     System.out.println(MatrixUtil.getPrintableMatrix(matrix));
   }
 
-
-  public static void testLetterCombinations() {
-//    int num = 23;
-//    int num = 21;
-//    List<String> res = LC_Prob_Med2.letterCombinations(num);
-//    System.out.println("Arr : " + Arrays.toString(res.toArray()));
-
-    String num = "3";
-
-    List<String> res = LC_Prob_Med2.letterCombinations(num);
-    System.out.println("Arr : " + Arrays.toString(res.toArray()));
-  }
-
   public static void testGroupAnagram() {
 //    String[] strs = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
 //    String[] strs = new String[]{""};
