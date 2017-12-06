@@ -245,21 +245,6 @@ public class HyperMain {
     System.out.println("res : " + res);
   }
 
-  public static void testRegularExpression() {
-//    String str = "aab";
-//    String pat = "c*a*b";
-//
-//    String str = "xaabyc";
-//    String pat = "xa*b.c";
-//
-    String str = "abcd";
-    String pat = "d*";
-
-
-    boolean res = LC_Prob_Med2.regularExpressionMatching(str, pat);
-    System.out.println(" Str : " + str + "  Pattern : " + pat);
-    System.out.println(" Res : " + res);
-  }
 
   public static void testLongestPalindromeString() {
 //    String str = "babad";
