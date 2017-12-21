@@ -7,8 +7,8 @@ This section contains implementation of different Data Structures in Java.
 
 | Data Structure   | Implementation |
 |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| <b>Stack</b>  <br>  Methods Implemented: push(), pop(), peek(), isEmpty()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Stacks_and_queues/MyStack.java)|
-| <b>Queue</b>  <br>  Methods Implemented: offer(), poll(), peek(), isEmpty()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Stacks_and_queues/MyQueue.java)|
+| <b>Stack</b>  <br>  Methods Implemented: push(), pop(), peek(), isEmpty()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyStack.java)|
+| <b>Queue</b>  <br>  Methods Implemented: offer(), poll(), peek(), isEmpty()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyQueue.java)|
 | <b>Linked List</b>  <br>  Methods Implemented: appendToTail(), add(), appendToHead(), removeFirst(), removeLast(), clone(), addAll(), reverseBetween(), getMid(), isPalindrome(), reverse(), toString(), mergeWith(), mergeTwoLists(), reverseInKGroups(), hasCycle(), removeKthFromEnd()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/LinkedLists/LinkedList.java)|
 | <b>Tree</b>  <br>  Methods Implemented: preorderIterative(), inorderIterative(), levelOrder() ... many more| [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Trees_and_Graphs/Tree.java)|
 | <b>Graph</b>  <br>  Methods Implemented: BFS(), DFS(), Djikstras(), TopologicalSort()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/darkRealm/CTCI/Trees_and_Graphs/Graph.java)|
