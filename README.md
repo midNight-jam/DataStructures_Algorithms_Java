@@ -18,7 +18,6 @@ This section contains implementation of different Data Structures in Java.
 
 
 # Algorithms Problems Java  
-This section contains implementation of different Data Structures in Java.
 
 | Problem   | Description |
 |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
