@@ -15,7 +15,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>Trie</b>  <br>  Methods Implemented: search(), print()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Trie.java)|
 | <b>MaxHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MaxHeap.java)|
 | <b>MinHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MinHeap.java)|
-
+| <b>HashMap</b>  <br>  Methods Implemented: put(), add(), containsKey(), remove()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyHashMap.java)|
 
 # Algorithms Problems Java  
 
