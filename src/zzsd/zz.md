@@ -17,7 +17,9 @@ Load Balancer (LB) is another critical component of any distributed system. It h
 
 Typically a load balancer sits between the client and the server accepting incoming network and application traffic and distributing the traffic across multiple backend servers using various algorithms. By balancing application requests across multiple servers, a load balancer reduces individual server load and prevents any one application server from becoming a single point of failure, thus improving overall application availability and responsiveness.
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/zzsd/lb1.png)
+![Alt text](lb1.png?raw=true "Title")
+![Image of Yaktocat](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/zzsd/lb1.png)
 
 To utilize full scalability and redundancy, we can try to balance the load at each layer of the system. We can add LBs at three places:
 
