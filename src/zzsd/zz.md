@@ -24,3 +24,5 @@ To utilize full scalability and redundancy, we can try to balance the load at ea
 - Between the user and the web server
 - Between web servers and an internal platform layer, like application servers or cache servers
 - Between internal platform layer and database.
+
+![Load balancer in 3 layers](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/zzsd/images/lb2.JPG)
