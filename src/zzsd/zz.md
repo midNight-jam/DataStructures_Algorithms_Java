@@ -50,3 +50,7 @@ There is a variety of load balancing methods, which use different algorithms for
 - **Round Robin Method** — This method cycles through a list of servers and sends each new request to the next server. When it reaches the end of the list, it starts over at the beginning. It is most useful when the servers are of equal specification, and there are not many persistent connections.
 - **Weighted Round Robin Method** — The weighted round-robin scheduling is designed to better handle servers with different processing capacities. Each server is assigned a weight, an integer value that indicates the processing capacity. Servers with higher weights receive new connections first than those with less weights, and servers with higher weights get more connections than those with less weights.
 - **IP Hash** — This method calculates a hash of the IP address of the client to determine which server receives the request.
+
+### Redundant Load Balancers
+
+![Active / Passive Load balancer](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/zzsd/images/lb3.JPG)
