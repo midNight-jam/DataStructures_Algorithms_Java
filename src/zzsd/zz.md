@@ -19,7 +19,7 @@ Typically a load balancer sits between the client and the server accepting incom
 
 ![alt text](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/zzsd/lb1.png)
 ![Alt text](lb1.png?raw=true "Title")
-![Image of Yaktocat](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/zzsd/lb1.png)
+![Image of Yaktocat](https://github.com/midNight-jam/DataStructures_Algorithms_Java/tree/master/src/zzsd/lb1.png)
 
 To utilize full scalability and redundancy, we can try to balance the load at each layer of the system. We can add LBs at three places:
 
