@@ -265,3 +265,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>WordLadder</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WordLadder.java)|
 | <b>WordLadderII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WordLadderII.java)|
 | <b>WordBreakII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WordBreakII.java)|
+| <b> JewelsAndStones</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ JewelsAndStones.java)|
