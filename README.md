@@ -267,3 +267,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>WordBreakII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WordBreakII.java)|
 | <b>JewelsAndStones</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/JewelsAndStones.java)|
 | <b>UniqueEmailAddresses</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/UniqueEmailAddresses.java)|
+| <b>FindAnagramMappings</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindAnagramMappings.java)|
