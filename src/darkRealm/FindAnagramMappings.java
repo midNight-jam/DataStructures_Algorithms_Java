@@ -1,5 +1,6 @@
 package darkRealm;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,22 +29,27 @@ public class FindAnagramMappings {
 //  A[i], B[i] are integers in range [0, 10^5].
 
   public static int[] anagramMappings(int[] A, int[] B) {
-    if(A == null || A.length < 1 || B == null || B.length < 1)
+    if (A == null || A.length < 1 || B == null || B.length < 1)
       return A;
 
-    int [] res = new int[A.length];
+    int[] res = new int[A.length];
     Map<Integer, Integer> map = new HashMap<>();
 
-    for(int i = 0; i < B.length; i++)
+    for (int i = 0; i < B.length; i++)
       map.put(B[i], i);
 
-    for(int i = 0; i < A.length; i++)
+    for (int i = 0; i < A.length; i++)
       res[i] = map.get(A[i]);
 
     return res;
   }
 
   public static void main(String[] args) {
-
+    int[] A = new int[]{12, 28, 46, 32, 50, 0, 0, 0};
+    int[] B = new int[]{50, 12, 32, 46, 0, 0, 0, 28};
+    int[] res = anagramMappings(A, B);
+    System.out.println(Arrays.toString(A));
+    System.out.println(Arrays.toString(B));
+    System.out.println(Arrays.toString(res));
   }
 }
