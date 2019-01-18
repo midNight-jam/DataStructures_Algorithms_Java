@@ -271,3 +271,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>FlippingAnImage</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FlippingAnImage.java)|
 | <b>PeakIndexInAMountainArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PeakIndexInAMountainArray.java)|
 | <b>RecentCounter</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RecentCounter.java)|
+| <b>DeleteColumnsToMakeSorted</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DeleteColumnsToMakeSorted.java)|
