@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Combinations {
 
-
 //  #77. Combinations  ::: Complexity - Time : O(n^min{k, n - k}))
 //  Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
 //      For example,
@@ -37,9 +36,29 @@ public class Combinations {
     }
   }
 
+  // generate all combinations of size K using n sized input
+  public static List<List<Integer>> k_Combinations(int N, int k){
+    List<List<Integer>> res=  new ArrayList<>();
+    recurAndCombine(res, new ArrayList<>(), 0, N, k);
+    return res;
+  }
+
+  private static void recurAndCombine(List<List<Integer>> res, List<Integer> tempList, int startIndex, int N, int k){
+    if(k == 0){
+      res.add(new ArrayList<>(tempList));
+      return;
+    }
+    for(int i = startIndex; i < N; i++){
+      tempList.add(i);
+      recurAndCombine(res, tempList, i + 1, N, k - 1);
+      tempList.remove(tempList.size() - 1); // remove the last added element
+    }
+  }
+
   public static void main(String[] args) {
 //    List<List<Integer>> res = combine(4, 2);
-    List<List<Integer>> res = combine(5, 3);
+//    List<List<Integer>> res = combine(5, 3);
+    List<List<Integer>> res = k_Combinations(5, 3);
     for(List<Integer> l : res)
       System.out.println(l);
   }
