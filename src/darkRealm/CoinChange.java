@@ -19,23 +19,35 @@ public class CoinChange {
 //  You may assume that you have an infinite number of each kind of coin.
 
   public static int coinChange(int[] coins, int amount) {
-    int[] res = new int[amount + 1];
+    if(coins == null || coins.length < 1 || amount < 0) return -1;
+
+    int res [] = new int[amount + 1];
+
     Arrays.fill(res, -1); // mark all amounts as invalid initially
-    res[0] = 0; // base case, we can always reach 0, if all coins with out using any coin
+    res[0] = 0; // base case, we can always acheive 0 amount using 0 coins, hence res[0] = 0;
     //here amount 0 is our base case, against this base case we see if for given amount and reducing each coin can we
-    // reach 0 or any valid amount, if yes we add + 1 to it, we do this for all coins and keep track of min.
-    for (int i = 1; i <= amount; i++) {
+    // reach any valid amount (not -ve), if yes we add + 1 to it and keep track of min, do this for all coins.
+
+    // sort coins, this will help us break for an amount early if reducing the coin for amt is -ve
+    Arrays.sort(coins);
+
+    for(int amt = 1; amt <= amount; amt++){
       int min = Integer.MAX_VALUE;
-      for (int c = 0; c < coins.length; c++) {
-        // Why coins[c] > i ::: lets say we have coins 5,7 & 9etc, now we can never reach amount 1-4 with these coins
-        // Why res[i - coins[c]] ::: lets say coins are 3, 5 now for amount 4, res[4 - 1] (i - coins[0]) is -1, as our
-        // base case itself is invalid we can never reach this amount with given coins
-        if (coins[c] > i || res[i - coins[c]] == -1) continue;
-        min = Math.min(res[i - coins[c]] + 1, min);
+      for(int c : coins){
+
+        // if reducing coin makes amount -ve then no point in looking for this amount with more coins ahead, as we have sorted all will be -ve
+        if(amt - c < 0)
+          break;
+
+        // means a valid amount is possible
+        if(res[amt - c] != -1){
+          min = Math.min(res[amt - c] + 1, min);
+        }
       }
-      res[i] = min == Integer.MAX_VALUE ? -1 : min;
+      // mark this amount invalid again, if amt cant be achieved
+      res[amt] = min == Integer.MAX_VALUE ? -1 : min;
     }
-    System.out.println(Arrays.toString(res));
+
     return res[amount];
   }
 

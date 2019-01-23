@@ -277,4 +277,5 @@ This section contains implementation of different Data Structures in Java.
 | <b>BinaryTreeLevelOrderConstantSpace</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryTreeLevelOrderConstantSpace.java)|
 | <b>MinimumAreaRectangle</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumAreaRectangle.java)|
 | <b>MinimumAreaRectangleII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumAreaRectangleII.java)|
+| <b>PatchingArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PatchingArray.java)|
 
