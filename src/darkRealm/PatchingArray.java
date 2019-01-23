@@ -1,9 +1,6 @@
 package darkRealm;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class PatchingArray {
 
@@ -15,6 +12,7 @@ public class PatchingArray {
     int i = 0;
     while (sum_RightEndOfRangeInclusive < n) {
       // if the current rightEndOfRange + 1 doesnt cover the current num, then we must expand our range by rightEndOfRangeInclusive + 1
+      // first part of the condition if we have used all the nums given and still havent covered our target
       if (i >= nums.length || sum_RightEndOfRangeInclusive + 1 < nums[i]) {
         patches++;
         sum_RightEndOfRangeInclusive += sum_RightEndOfRangeInclusive + 1;
@@ -40,7 +38,7 @@ public class PatchingArray {
 //    int[] nums = new int[]{};
 //    int n = 7;
 
-    int[] nums = new int[]{1,2,31,33};
+    int[] nums = new int[]{1, 2, 31, 33};
     int n = 2147483647;
 
     int res = minPatches(nums, n);
