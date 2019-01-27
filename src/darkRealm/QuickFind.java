@@ -52,11 +52,14 @@ public class QuickFind {
     QuickFind qf = new QuickFind(7);
     qf.union(4,5);
     qf.union(0,2);
+    System.out.println("4 - > 2 connected : " + qf.areConnected(4,2));
     qf.currentAdjacencyGraph();
     qf.union(2,4);
+    System.out.println("4 - > 2 connected : " + qf.areConnected(4,2));
     qf.union(1,3);
     qf.currentAdjacencyGraph();
     qf.union(6,5);
+    System.out.println("0 - > 6 connected : " + qf.areConnected(0,6));
     qf.currentAdjacencyGraph();
   }
 }
