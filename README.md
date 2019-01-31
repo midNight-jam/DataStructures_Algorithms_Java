@@ -280,4 +280,5 @@ This section contains implementation of different Data Structures in Java.
 | <b>PatchingArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PatchingArray.java)|
 | <b>QuickFind</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/QuickFind.java)|
 | <b>QuickUnion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/QuickUnion.java)|
+| <b>NRepeatedElementInSize2NArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NRepeatedElementInSize2NArray.java)|
 
