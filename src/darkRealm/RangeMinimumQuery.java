@@ -1,7 +1,5 @@
 package darkRealm;
 
-import ADT.SegmentTree;
-
 import java.util.Arrays;
 
 public class RangeMinimumQuery {
