@@ -13,8 +13,8 @@ public class SegmentTree {
     this.arr = arr;
     N = arr.length;
 
-    // Height of  a tree is LOG_base2_N
-    int height = (int) Math.ceil((Math.log(N) / Math.log(2)));
+    // Height of  a tree is LOG_base2_N + 1
+    int height = (int) Math.floor((Math.log(N) / Math.log(2))) + 1;
 
     // Max no of nodes in full Binary tree are (2^(height+1) - 1)
     int no_of_nodes = (int) Math.pow(2, height + 1) - 1;
