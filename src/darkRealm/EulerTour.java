@@ -18,7 +18,7 @@ public class EulerTour {
 
   // N : no of nodes in the tree
   public int[] EulerTour(TreeNode root, int N) {
-    // euler tour is always odd, nth odd no
+    // euler tour length is always odd, nth odd no
     int eulerTourLength = 2 * N - 1;
     eulerTour = new int[eulerTourLength];
     index = 0;
@@ -44,7 +44,7 @@ public class EulerTour {
 
   // N : no of nodes in the tree
   public int[] EulerTour(int[] tree, int node, int N) {
-    // euler tour is always odd, nth odd no
+    // euler tour length is always odd, nth odd no
     int eulerTourLength = 2 * N - 1;
     eulerTour = new int[eulerTourLength];
     index = 0;
