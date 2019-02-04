@@ -7,16 +7,17 @@ This section contains implementation of different Data Structures in Java.
 
 | Data Structure   | Implementation |
 |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| <b>Stack</b>  <br>  Methods Implemented: push(), pop(), peek(), isEmpty()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyStack.java)|
-| <b>Queue</b>  <br>  Methods Implemented: offer(), poll(), peek(), isEmpty()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyQueue.java)|
-| <b>Linked List</b>  <br>  Methods Implemented: appendToTail(), add(), appendToHead(), removeFirst(), removeLast(), clone(), addAll(), reverseBetween(), getMid(), isPalindrome(), reverse(), toString(), mergeWith(), mergeTwoLists(), reverseInKGroups(), hasCycle(), removeKthFromEnd()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/LinkedList.java)|
-| <b>Tree</b>  <br>  Methods Implemented: preorderIterative(), inorderIterative(), levelOrder() ... many more| [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Tree.java)|
-| <b>Graph</b>  <br>  Methods Implemented: BFS(), DFS(), Djikstras(), TopologicalSort()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Graph.java)|
-| <b>Trie</b>  <br>  Methods Implemented: search(), print()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Trie.java)|
-| <b>MaxHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MaxHeap.java)|
-| <b>MinHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MinHeap.java)|
-| <b>HashMap</b>  <br>  Methods Implemented: put(), add(), containsKey(), remove()               | [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyHashMap.java)|
-| <b>SegmentTree</b>  <br>  Methods Implemented: query(), update()| [Look](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/SegmentTree.java)|
+| <b>Stack</b>  <br>  Methods Implemented: push(), pop(), peek(), isEmpty()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyStack.java)|
+| <b>Queue</b>  <br>  Methods Implemented: offer(), poll(), peek(), isEmpty()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyQueue.java)|
+| <b>Linked List</b>  <br>  Methods Implemented: appendToTail(), add(), appendToHead(), removeFirst(), removeLast(), clone(), addAll(), reverseBetween(), getMid(), isPalindrome(), reverse(), toString(), mergeWith(), mergeTwoLists(), reverseInKGroups(), hasCycle(), removeKthFromEnd()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/LinkedList.java)|
+| <b>Tree</b>  <br>  Methods Implemented: preorderIterative(), inorderIterative(), levelOrder() ... many more| [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Tree.java)|
+| <b>Graph</b>  <br>  Methods Implemented: BFS(), DFS(), Djikstras(), TopologicalSort()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Graph.java)|
+| <b>Trie</b>  <br>  Methods Implemented: search(), print()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Trie.java)|
+| <b>MaxHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MaxHeap.java)|
+| <b>MinHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MinHeap.java)|
+| <b>HashMap</b>  <br>  Methods Implemented: put(), add(), containsKey(), remove()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyHashMap.java)|
+| <b>SegmentTree</b>  <br>  Methods Implemented: query(), update()| [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/SegmentTree.java)|
+| <b>CartesianTree</b>  <br>  Methods Implemented: buildCartesianTree()| [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/CartesianTree.java)|
 
 # Algorithms Problems Java  
 

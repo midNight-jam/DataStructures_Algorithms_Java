@@ -11,7 +11,7 @@ public class RangeMinimumQuery {
   RangeMinimumQuery(int[] arr) {
     this.arr = arr;
     N = arr.length;
-    // Height of  a tree is LOG_base2_N + 1
+    // Height of a full binary tree which can accomodate N nodes is LOG_base2_N + 1
     int height = (int) Math.floor((Math.log(N) / Math.log(2))) + 1;
     int no_of_nodes = (int) Math.pow(2, height + 1) - 1;
     segTree = new int[no_of_nodes];
