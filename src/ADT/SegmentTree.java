@@ -10,6 +10,7 @@ public class SegmentTree {
   int N;
 
   SegmentTree(int[] arr) {
+    if(arr == null || arr.length < 1) return;
     this.arr = arr;
     N = arr.length;
 
@@ -79,7 +80,7 @@ public class SegmentTree {
     if (left > end || right < start)
       return 0;
 
-    // query within range, then we are at correct node, return res
+    // this range is within query,  so it will contribute to the result
     if (left <= start && end <= right)
       return seg_tree[node];
 
