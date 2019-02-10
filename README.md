@@ -291,3 +291,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>BinarySearch</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinarySearch.java)|
 | <b>FindSmallestLetterGreaterThanTarget</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindSmallestLetterGreaterThanTarget.java)|
 | <b>ClosestBinarySearchTreeValue</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ClosestBinarySearchTreeValue.java)|
+| <b>Heaters</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/Heaters.java)|
