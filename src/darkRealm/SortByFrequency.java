@@ -42,37 +42,44 @@ public class SortByFrequency {
 
   public static String sortByFrequency(String str) {
     if (str == null || str.length() < 1) return str;
+
     int[] map = new int[256];
     int max = 0;
+
     for (int i = 0; i < str.length(); i++) {
-      map[str.charAt(i)]++;
-      max = Math.max(map[str.charAt(i)], max);
+      map[(int) str.charAt(i)]++;
+      max = Math.max((int) map[str.charAt(i)], max);
     }
+
     String[] buckets = new String[max + 1]; // creating the merge list
-    for (int i = 0; i < map.length; i++) {
-      String s = buckets[map[i]];
+    StringBuilder freqHelper = new StringBuilder();
+
+    for (int i = 0; i < map.length; i++)
       if (map[i] > 0) {
-        buckets[map[i]] = s == null ? "" + (char) i : s + (char) i; // merging te same frequency chars
+        String s = buckets[map[i]];
+        freqHelper.setLength(0); // clear the buffer
+        s = (s == null) ? "" : s;
+        for (int j = 0; j < map[i]; j++)
+          freqHelper.append((char) i);
+
+        freqHelper.append(s);// merging te same frequency chars
+        buckets[map[i]] = freqHelper.toString();
       }
-    }
-    StringBuilder helper = new StringBuilder();
-    for (int i = max; i >= 0; i--) {  // reading from behind as we had to put higher frequnecy chars first
-      String s2 = buckets[i];
-      if (s2 != null && !s2.equals("")) {
-        for (int j = 0; j < s2.length(); j++) {
-          for (int k = 0; k < i; k++) {
-            helper.append(s2.charAt(j));  // adding each char as many times as they have appeared in the oriiganl string
-          }
-        }
-      }
-    }
-    return helper.toString();
+
+    StringBuilder res = new StringBuilder();
+
+    for (int i = buckets.length - 1; i > 0; i--)
+      if (buckets[i] != null)
+        res.append(buckets[i]);
+
+    return res.toString();
   }
+
   public static void main(String[] args) {
-//    String str = "tree";
+    String str = "tree";
 //    String str = "zaaactcccfddtddzdeef";
 //    String str = "cccaaa";
-    String str = "Aabb";
+//    String str = "Aabb";
     String res = sortByFrequency(str);
     System.out.println("Str : " + str + " Sorted : " + res);
   }
