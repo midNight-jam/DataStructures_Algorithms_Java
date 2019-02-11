@@ -30,8 +30,8 @@ public class ReversePairs {
 
     // The idea is to use bit, read input from behind as per the questiion,
     // Idea is when we query, we look for a value that is less than the half,
-    // And when we update we update the correct value,
-    // As bit works on indexes, the value in above statement refer to
+    // And when we update, we update the correct value,
+    // As bit works on indexes, the value in above statement refer to index
     int[] bit = new int[nums.length + 1];
     for (int i = nums.length - 1; i > -1; i--) {
       int n = nums[i];
