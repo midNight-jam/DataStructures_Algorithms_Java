@@ -13,16 +13,20 @@ public class SearchInsertPosition {
 //      [1,3,5,6], 7 → 4
 //      [1,3,5,6], 0 → 0
 
-  public static int searchInsertPosition(int [] arr, int n){
-    int low = 0, high = arr.length - 1;
-    int mid = (high - low )/ 2;
 
-    if(null == arr || arr.length == 0) return 0;
-    if(n <= arr[0]) return 0;
-    else if(n == arr[arr.length - 1]) return arr.length - 1;
-    else if(n > arr[arr.length - 1]) return arr.length ;
-    else{
-      while(low<=high) {
+  //I wanted to remove this, but I decided to keep it as an example of how shitty code I can write & still get away with
+  // it. Compared to the below version, not old is very neat. Learning : when you find ur self pushing these many conditions, you
+  // have either not understood the problem or solving a diff problem.
+  /*public static int searchInsertPositionOLD(int[] arr, int n) {
+    int low = 0, high = arr.length - 1;
+    int mid = (high - low) / 2;
+
+    if (null == arr || arr.length == 0) return 0;
+    if (n <= arr[0]) return 0;
+    else if (n == arr[arr.length - 1]) return arr.length - 1;
+    else if (n > arr[arr.length - 1]) return arr.length;
+    else {
+      while (low <= high) {
         mid = (high + low) / 2;
         if (arr[mid] > n)
           high = mid - 1;
@@ -32,26 +36,32 @@ public class SearchInsertPosition {
       }
     }
     return low;
-  }
+  }*/
 
-  public static int searchInsertPositionOLD(int [] arr, int n){
-    if(null == arr || arr.length == 0) return 0;
-    if(n <= arr[0]) return 0;
-    else if(n == arr[arr.length - 1]) return arr.length - 1;
-    else if(n > arr[arr.length - 1]) return arr.length ;
-    else{
-      for(int i = 0; i  < arr.length; i++)
-        if(arr[i]>= n) return i;
+  public static int searchInsertPosition(int[] nums, int target) {
+    if (nums == null || nums.length < 1) return 0;
+    int left = 0;
+    int right = nums.length - 1;
+    int mid;
+    while (left <= right) {
+      mid = left + (right - left) / 2;
+      if (nums[mid] < target)
+        left = mid + 1;
+      else if (nums[mid] > target)
+        right = mid - 1;
+      else
+        return mid;
     }
-    return 0;
+    // Why return left, well debug on paper with a pen, you will have ur answer
+    return left;
   }
 
   public static void main(String[] args) {
 //    int [] arr = new int []{1,3,5,6};
 //    int n = 5;
 
-    int [] arr = new int []{1,3};
-    int n = 2;
+    int[] arr = new int[]{1, 3, 5, 6};
+    int n = 5;
 
     int pos = searchInsertPosition(arr, n);
     System.out.println("Arr: " + Arrays.toString(arr));
