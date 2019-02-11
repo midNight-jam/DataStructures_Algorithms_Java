@@ -293,3 +293,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>ClosestBinarySearchTreeValue</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ClosestBinarySearchTreeValue.java)|
 | <b>Heaters</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/Heaters.java)|
 | <b>SearchInASortedArrayOfUnknownSize</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SearchInASortedArrayOfUnknownSize.java)|
+| <b>SearchInsertPosition</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SearchInsertPosition.java)|
