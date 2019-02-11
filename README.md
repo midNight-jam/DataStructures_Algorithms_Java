@@ -288,4 +288,5 @@ This section contains implementation of different Data Structures in Java.
 | <b>EulerTour</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EulerTour.java)|
 | <b>EulerTourGraph</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EulerTourGraph.java)|
 | <b>ReversePairs</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReversePairs.java)|
+| <b>BinarySearch</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinarySearch.java)|
 
