@@ -297,3 +297,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>TwoSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TwoSum.java)|
 | <b>MaxIncreaseToKeepCitySkyline</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaxIncreaseToKeepCitySkyline.java)|
 | <b>ContinuousSubarraySum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ContinuousSubarraySum.java)|
+| <b>LemonadeChange</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LemonadeChange.java)|
