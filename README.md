@@ -295,3 +295,5 @@ This section contains implementation of different Data Structures in Java.
 | <b>SearchInASortedArrayOfUnknownSize</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SearchInASortedArrayOfUnknownSize.java)|
 | <b>SearchInsertPosition</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SearchInsertPosition.java)|
 | <b>TwoSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TwoSum.java)|
+| <b>MaxIncreaseToKeepCitySkyline</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaxIncreaseToKeepCitySkyline.java)|
+| <b>ContinuousSubarraySum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ContinuousSubarraySum.java)|
