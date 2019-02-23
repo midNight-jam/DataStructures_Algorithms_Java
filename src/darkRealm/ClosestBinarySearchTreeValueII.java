@@ -175,9 +175,9 @@ public class ClosestBinarySearchTreeValueII {
     root.left.left = new TreeNode(1);
     root.left.right = new TreeNode(3);
 
-    List<Integer> res = closestKValuesFaster(root, 3.714286, 2);
-//    List<Integer> res = closestKValuesFaster(root, 4.414286, 2);
-//    List<Integer> res = closestKValues(root, 3.714286, 2);
+//    List<Integer> res = closestKValuesFaster_IDEARIGHT_BUTNOTCODE(root, 3.714286, 2);
+//    List<Integer> res = closestKValuesFaster_IDEARIGHT_BUTNOTCODE(root, 4.414286, 2);
+    List<Integer> res = closestKValues(root, 3.714286, 2);
     System.out.println(res);
   }
 }

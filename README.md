@@ -300,3 +300,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>LemonadeChange</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LemonadeChange.java)|
 | <b>StringWithoutAAAOrBBB</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StringWithoutAAAOrBBB.java)|
 | <b>MinimumAddToMakeParenthesesValid</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumAddToMakeParenthesesValid.java)|
+| <b>ScoreAfterFlippingMatrix</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ScoreAfterFlippingMatrix.java)|
