@@ -33,6 +33,8 @@ public class PermutationsII {
             if (used[i] || i > 0 && nums[i - 1] == nums[i] && used[i-1] == false) continue;
             // why have we used used[i-1] ==false ..??
             // when a number has the same value with its previous, we can use this number only if his previous is used
+            // taking example of [1, 1, 2], when in the iteration where we begin with 2nd 1 and we have (1, 2) is permutation,
+            // if we add the first 1 again, this will repeat the (1, 2, 1) permutation
             used[i] = true;
             temp.add(nums[i]);
             backtrack(res, temp, nums, used);

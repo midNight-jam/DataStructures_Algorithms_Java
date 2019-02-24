@@ -25,14 +25,13 @@ public class CombinationSumII {
   public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
     List<List<Integer>> res = new ArrayList<>();
     if (candidates == null || candidates.length == 0 || target < 1) return res;
-    List<Integer> list = new ArrayList<>();
-    Arrays.sort(candidates);  // sorting and aloways moving in forward dir gurantess that if 2,7 tuple is generated, 7,2
-    // tuple will not generate
-    helper(0, candidates, target, list, res);
+    // sorting and always moving in forward dir guarantees that if 2,7 tuple is generated, 7,2 tuple will not generate
+    Arrays.sort(candidates);
+    helper(0, candidates, target, new ArrayList<>(), res);
     return res;
   }
 
-  private static void helper(int start, int[] candidates, int target, List<Integer> list, List<List<Integer>> res) {
+  private static void helper(int start, int[] nums, int target, List<Integer> list, List<List<Integer>> res) {
     if (target < 0) return;
     if (target == 0) {
       List<Integer> temp = new ArrayList<>();
@@ -40,13 +39,11 @@ public class CombinationSumII {
       res.add(temp);
       return;
     }
-    for (int i = start; i < candidates.length; i++) {
-      if (i > start && candidates[i] == candidates[i - 1]) {
-        continue; // this solves the problem of duplicate numbers in input, bcoz after sort they will lie adjacent and
-        // we can skip them
-      }
-      list.add(candidates[i]);
-      helper(i + 1, candidates, target - candidates[i], list, res);
+    for (int i = start; i < nums.length; i++) {
+      //  if for the given starting index we have already included this element then dont include duplicates
+      if (i > start && nums[i] == nums[i - 1]) continue;
+      list.add(nums[i]);
+      helper(i + 1, nums, target - nums[i], list, res);
       list.remove(list.size() - 1);
     }
   }
