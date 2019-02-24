@@ -303,3 +303,4 @@ This section contains implementation of different Data Structures in Java.
 | <b>ScoreAfterFlippingMatrix</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ScoreAfterFlippingMatrix.java)|
 | <b>PartitionLabels</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PartitionLabels.java)|
 | <b>PalindromePartitioning</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePartitioning.java)|
+| <b>CombinationSumIII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumIII.java)|
