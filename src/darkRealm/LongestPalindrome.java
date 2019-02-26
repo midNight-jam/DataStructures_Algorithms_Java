@@ -18,18 +18,29 @@ public class LongestPalindrome {
 //  Explanation:
 //  One longest palindrome that can be built is "dccaccd", whose length is 7.
 
-  public static int longestPalidrome(String str) {
-    if (null == str || 0 == str.length())
-      return 0;
-    Set<Character> set = new HashSet<>();
-    int count = 0;
-    for (char c : str.toCharArray())
-      if (set.contains(c)) {
-        count++;
-        set.remove(c);
-      } else
-        set.add(c);
-    return set.isEmpty() ? count * 2 : count * 2 + 1;
+  public static int longestPalidrome(String s) {
+    if (s == null || s.length() < 1) return 0;
+
+    int[] map = new int[256];
+    for (char c : s.toCharArray())
+      map[c]++;
+
+    int res = 0;
+    boolean odd = false;
+    int freq;
+    for (int i = 0; i < map.length; i++) {
+      freq = map[i];
+      if ((freq & 1) == 0)
+        res += freq; // if even times this char can contribute to the palindrome
+      else {
+        odd = true;
+        res += freq - 1; // as it is odd time we are taking the max even from it bcoz same no of chars on both side
+      }
+    }
+
+    // now account for odd,
+    // bcoz if there were any chars that were present odd times, we can only use one of them for a valid palindrome
+    return odd ? res + 1 : res;
   }
 
   public static void main(String[] args) {
