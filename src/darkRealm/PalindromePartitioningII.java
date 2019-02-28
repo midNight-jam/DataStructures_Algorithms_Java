@@ -36,7 +36,8 @@ public class PalindromePartitioningII {
         // ----------------------------------------------- lookup from bottom left
         if (arr[start] == arr[end] && (end - start <= 2 || dp[start + 1][end - 1])) {
           if (start > 0) {
-            // if start to end is palin, take min among current cut[end] & the no of cuts b4 this palin. i.e. [start - 1] + 1 (for this palin)
+          // if start to end is palin, take min among current cut[end] & the no of cuts b4 this palin.
+            // i.e. [start - 1] + 1 (for this palin)
             cut[end] = Math.min(cut[end], cut[start - 1] + 1);
           } else
             cut[end] = 0;
