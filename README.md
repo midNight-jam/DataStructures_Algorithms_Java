@@ -305,3 +305,12 @@ This section contains implementation of different Data Structures in Java.
 | <b>PalindromePartitioning</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePartitioning.java)|
 | <b>CombinationSumIII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumIII.java)|
 | <b>MinimumNumberOfRefuelingStops</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumNumberOfRefuelingStops.java)|
+| <b>PalindromePartitioningII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePartitioningII.java)|
+
+# Misc
+
+DP
+0: reduce the problem to finite state machine
+1: reduce the fsm to graph
+2: reduce graph to logical graph
+3: traverse this graph with keeping constraints
