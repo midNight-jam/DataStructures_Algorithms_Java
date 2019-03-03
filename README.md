@@ -306,7 +306,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>CombinationSumIII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumIII.java)|
 | <b>MinimumNumberOfRefuelingStops</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumNumberOfRefuelingStops.java)|
 | <b>PalindromePartitioningII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePartitioningII.java)|
-| <b>PalindromePermutation</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePartitioningII.java)|
+| <b>PalindromePermutation</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePermutation.java)|
+| <b>PalindromePermutationII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePermutationII.java)|
 
 # Misc
 
