@@ -17,6 +17,39 @@ public class LongestPalindromicSubstring {
   static int start, maxLen;
 
   public static String longestPalindrome(String s) {
+    if (s == null || s.length() < 1) return s;
+    int[][] dp = new int[s.length()][s.length()];
+    char[] arr = s.toCharArray();
+
+    // as each single char is a palindrome in itself
+    for (int end = 0; end < s.length(); end++)
+      for (int start = 0; start <= end; start++)
+        if (start == end)
+          dp[start][end] = 1;
+    // we will be dealing in the upperhalf of the matrix only, and starting from bottom right, bcoz add a char at the
+    // end assuming adding this will make string palindrome
+    // why we are starting from behind, well debug on paper
+
+    int max = Integer.MIN_VALUE;
+    String res = null;
+    for (int end = 0; end < s.length(); end++) {
+      for (int start = 0; start <=end; start++) {
+        // ----------------------------------------------- lookup from bottom left
+        if (arr[start] == arr[end] && (end - start <= 2 || dp[start + 1][end - 1] == 1)) {
+          if (end - start > max) {
+            max = end - start;
+            res = s.substring(start, end + 1);
+          }
+          dp[start][end] = 1;
+        }
+      }
+    }
+    return res;
+  }
+
+
+  // @DEPRECATED DONOT REFERNECE THIS
+  public static String longestPalindromeOLD(String s) {
     if (s == null || s.length() < 2) return s;
     int len = s.length();
 
@@ -38,37 +71,6 @@ public class LongestPalindromicSubstring {
     }
   }
 
-  public static String longestPalindromeDP(String s) {
-    if (s == null || s.length() < 1) return s;
-    int[][] dp = new int[s.length()][s.length()];
-    char[] arr = s.toCharArray();
-
-    // as each single char is a palindrome in itself
-    for (int start = arr.length - 1; start >= 0; start--)
-      for (int end = arr.length - 1; start <= end; end--)
-        if (start == end)
-          dp[start][end] = 1;
-    // we will be dealing in the upperhalf of the matrix only, and starting from bottom right, bcoz add a char at the
-    // end assuming adding this will make string palindrome
-    // why we are starting from behind, well debug on paper
-
-    int max = Integer.MIN_VALUE;
-    String res = null;
-    for (int start = arr.length - 1; start >= 0; start--){
-      for (int end = arr.length - 1; end >= start; end--){
-//        boolean areAdjacent = end - start <= 2;
-//        boolean substrFrom_Start_plus_1_To_End_minus_1_IsPalindrome = dp[start + 1][end - 1] == 1;
-        if (arr[start] == arr[end] && (end - start <= 2 || dp[start + 1][end - 1] == 1)) {
-          if (end - start > max) {
-            max = end - start;
-            res = s.substring(start, end + 1);
-          }
-          dp[start][end] = 1;
-        }
-      }
-    }
-    return res;
-  }
 
   public static void main(String[] args) {
 //    String str = "edbabcdcbaba";
@@ -76,7 +78,9 @@ public class LongestPalindromicSubstring {
 //    String str = "abb";
 //    String str = "aaaa";
 //    String str = "bb";
-    String str = "asdasdabceecbaasdasdasd";
+//    String str = "asdasdabceecbaasdasdasd";
+    String str = "cabababcbc";
+
 //    String str = "asdasdasdbbaabbasdasdasdasdasdasdasdasdsafiwenrfblw ebrfbwjhrfb";
 //    String str = "azwdzwmwcqzgcobeeiphemqbjtxzwkhiqpbrprocbppbxrnsxnwgikiaqutwpftbiinlnpyqstkiqzbggcsdzzjbrkfmhgtnbujzszxsycmvipjtktpebaafycngqasbbhxaeawwmkjcziybxowkaibqnndcjbsoehtamhspnidjylyisiaewmypfyiqtwlmejkpzlieolfdjnxntonnzfgcqlcfpoxcwqctalwrgwhvqvtrpwemxhirpgizjffqgntsmvzldpjfijdncexbwtxnmbnoykxshkqbounzrewkpqjxocvaufnhunsmsazgibxedtopnccriwcfzeomsrrangufkjfzipkmwfbmkarnyyrgdsooosgqlkzvorrrsaveuoxjeajvbdpgxlcrtqomliphnlehgrzgwujogxteyulphhuhwyoyvcxqatfkboahfqhjgujcaapoyqtsdqfwnijlkknuralezqmcryvkankszmzpgqutojoyzsnyfwsyeqqzrlhzbc";
 //    String str = "aaaaaaaaaaaaaaaaaabbbbbbbbbbbb";
@@ -86,7 +90,6 @@ public class LongestPalindromicSubstring {
     System.out.println(" Str : " + str);
     System.out.println(" Longest substring : " + plain);
     System.out.println(" len " + plain.length());
-    plain = longestPalindromeDP(str);
     System.out.println(" Str : " + str);
     System.out.println(" Longest substring : " + plain);
     System.out.println(" len " + plain.length());
