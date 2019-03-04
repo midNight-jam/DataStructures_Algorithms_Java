@@ -1,43 +1,65 @@
-package darkRealm;
-
 public class PalindromicSubStrings {
 
-//  #647. Palindromic Substrings
+//647. Palindromic Substrings
 //  Given a string, your task is to count how many palindromic substrings in this string.
-//  The substrings with different start indexes or end indexes are counted as different substrings even they consist of same characters.
+//  The substrings with different start indexes or end indexes are counted as different substrings even they consist of
+//  same characters.
+//
 //  Example 1:
 //  Input: "abc"
 //  Output: 3
 //  Explanation: Three palindromic strings: "a", "b", "c".
+//
 //  Example 2:
 //  Input: "aaa"
 //  Output: 6
 //  Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".
+//
+//  Note:
+//  The input string length won't exceed 1000.
 
-  static int count = 0;
-  public static int countSubStrings(String s) {
-    for (int i = 0; i < s.length(); i++) {
-      tryPalindrome(s, i, i);
-      tryPalindrome(s, i, i + 1);
-    }
-    return count;
-  }
+  public static int countSubstrings(String s) {
+    int res = 0;
+    if (s == null || s.length() < 1) return res;
 
-  private static void tryPalindrome(String s, int left, int right) {
-    while (left > -1 && right < s.length()) {
-      if (s.charAt(left) == s.charAt(right)) {
-        count++;
-        left--;
-        right++;
-      } else break;
+    boolean[][] dp = new boolean[s.length()][s.length()];
+    for (int start = 0; start < s.length(); start++) {
+      int end = start;
+      dp[start][end] = true; // as each char is a palindrome by itself
     }
+
+    // Initial state is each char is a plaindrome in itslef,  thats why above initiliasation
+    // To acheieve the next state,  we add two chars (at the start & end) to the initial state &
+    // check if then new state is also a palindrome, how do we check if the new state is also a
+    // palindrome, firstly both start and enc chars should be same & secondly the substring among them (prev state)
+    // should be a palindrome , the info of prev state comes from dp[start + 1] [end - 1] (from down left), thats why
+    // we dont have to calculate isPalindrome on each substring. Also, is start & end are same & adjacent then they are \
+    // already palidrone & we dont need to look at prev state.
+
+    // we cover all states (substrings) of smaller len b4 going to higher len, because then only our knowledge of all
+    // prev valid states will be complete, thats why outer loop defines end (or could be length, but then will start from 1)
+    // and start is from 0, so that we cover all substring  0-0, 0-1, 0-2, 0-3, before calculating state of 0-4  (- = to)
+    for (int end = 0; end < s.length(); end++) {
+      for (int start = 0; start <= end; start++) {
+        if (s.charAt(start) == s.charAt(end)) {
+          boolean areAdjacent = end - start < 2;
+          boolean inBound = start + 1 < s.length() && end - 1 >= 0;
+          boolean isSubStringBetweenStartAndEndIsPalindrome = inBound ? dp[start + 1][end - 1] : false;
+          if (areAdjacent || isSubStringBetweenStartAndEndIsPalindrome) {
+            res++; // increase substring count as,
+            dp[start][end] = true; // this substring is a palindrome
+          }
+        }
+      }
+    }
+    return res;
   }
 
   public static void main(String[] args) {
-    String s = "abc";
-//    String s = "aaa";
-    int res = countSubStrings(s);
-    System.out.println("S : " + s);
-    System.out.println("R : " + res);
+    String s = "abba";
+//    String s = "aaaa";
+    int res = countSubstrings(s);
+    System.out.println(s);
+    System.out.println(res);
   }
 }
