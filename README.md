@@ -308,6 +308,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>PalindromePartitioningII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePartitioningII.java)|
 | <b>PalindromePermutation</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePermutation.java)|
 | <b>PalindromePermutationII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromePermutationII.java)|
+| <b>KClosestPointsToOrigin</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/KClosestPointsToOrigin.java)|
 
 # Misc
 
