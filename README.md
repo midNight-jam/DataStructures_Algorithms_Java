@@ -311,6 +311,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>KClosestPointsToOrigin</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/KClosestPointsToOrigin.java)|
 | <b>BoyerMoore</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BoyerMoore.java)|
 | <b>ConvertBinarySearchTreeToSortedDoublyLinkedList</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ConvertBinarySearchTreeToSortedDoublyLinkedList.java)|
+| <b>BeautifulArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BeautifulArray.java)|
 
 
 # Misc
