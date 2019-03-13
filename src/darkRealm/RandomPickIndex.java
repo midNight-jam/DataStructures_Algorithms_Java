@@ -33,7 +33,7 @@ public class RandomPickIndex {
   *  with 1/1 prob.
   *
   *           3's indexes : 2,3,4,11,12,13,14,15,16,17,18,19
-  *  3's count till index : 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+  *  3's count till index : 1,2,3, 4, 5, 6, 7, 8, 9,10,11,12
   *
   *  if we observe on every match with target we have the count & among all rand nos between 0 to count that can be
   *  generated with 1/N prob, there is one such no that is guranteed to be present always which is 0(as the count will be
