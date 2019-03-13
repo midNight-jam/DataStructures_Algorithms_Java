@@ -36,8 +36,8 @@ public class RandomPickIndex {
   *  3's count till index : 1,2,3,4,5,6,7,8,9,10,11,12,13,14
   *
   *  if we observe on every match with target we have the count & among all rand nos between 0 to count that can be
-  *  generated with 1/N prob, there is one such no that is guranteed to be present always which is 0(as it is guranteed
-  *  by the question that the target will always be present).
+  *  generated with 1/N prob, there is one such no that is guranteed to be present always which is 0(as the count will be
+  *  1, as guranteed by the question that the target will always be present).
   *
   *  Thus, when we get the match we generate a rand no between 0toN & if the rand is 0 (with 1/N probablity) we store
   *  the index in the result, and do the same next time we get the target.
