@@ -59,8 +59,8 @@ public class LinkedListRandomNode {
    *  So we generate a random no between (0-1] (excluding 1), which will be always 0
    *  for i = 1 the probality of it being in reservoir is 1/1+1 == 1/2
    *  So we generate a random no between (0-2] (excluding 2), which will be always 0 or 1, inorder to maintain "1/i+1"
-   *  probablity if the random no is equal to i, only then we select it.
-   *  i.e shouldSelect = (random.nextInt(i + 1) == i);
+   *  probablity if the random no is equal to 0 among o to i, is also 1/i+1.
+   *  i.e shouldSelect = (random.nextInt(i + 1) == 0);
    */
 
 
@@ -68,7 +68,7 @@ public class LinkedListRandomNode {
     ListNode randomNode = head;
     ListNode trav = head;
     for (int i = 0; trav != null; i++) {
-      boolean shouldSelect = (random.nextInt(i + 1) == i); // i + 1 bcoz the upperbound is excluded
+      boolean shouldSelect = (random.nextInt(i + 1) == 0); // i + 1 bcoz the upperbound is excluded
       if (shouldSelect)
         randomNode = trav;
 
