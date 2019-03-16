@@ -12,22 +12,17 @@ public class NimGame {
 //  For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones you
 // remove, the last stone will always be removed by your friend.
 
-  public static boolean canWin(int n) {
+  public static boolean canWinNim(int n) {
     // The one who gets the multiple of 4 coins will always loose the game, else you can pick some coin & pass the multiple
     // of 4 coins to the opponent so that he always loose
-    return n % 4 != 0;
-  }
-
-  public static boolean canWinOnTurn(int n, boolean turn) {
-    if (n < 4) return true;
-    int myPick = n % 4;
-    if (myPick == 0) return !turn;
-    return canWinOnTurn(n - myPick, !turn);
-  }
-
-  public static boolean canWinOLD(int n) {
-    if(1 > n) return false;
-    return canWinOnTurn(n, true);
+    if (n < 1) return false;
+    else if (n <= 3) return true;
+    else if (((n >> 2) << 2) == n) return false;
+    // This is a fast way to check if a no is a multiple of 4.
+    // If you plot the binary of multiples of 4 we will see that the last 2 bits are always 0.
+    // Thus, shifting the no right by 2 (droppping the last 2 bits) and then shifting the no to right again by 2 (multiply
+    // by 4) if the no remains same then the no is a multiple of 4.
+    return true;
   }
 
   public static void main(String[] args) {
@@ -40,7 +35,7 @@ public class NimGame {
 //    int n = 6;
 //    int n = 7;
     int n = 8;
-    boolean res = canWin(n);
+    boolean res = canWinNim(n);
     System.out.println("Stones : " + n + "\nRes : " + res);
   }
 }
