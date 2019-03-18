@@ -1,6 +1,7 @@
 package darkRealm;
 
 import java.util.List;
+import java.util.Stack;
 
 public class MaximumDepthOfNaryTree {
 
@@ -13,6 +14,45 @@ public class MaximumDepthOfNaryTree {
 //    Note:
 //    The depth of the tree is at most 1000.
 //    The total number of nodes is at most 5000.
+
+
+  class Helper {
+    int depth;
+    Node node;
+    Helper(Node n, int d){
+      depth = d;
+      node = n;
+    }
+  }
+
+  public int maxDepthIterative(Node root, int d) {
+    depth = 0;
+    if(root == null) return depth;
+
+    Stack<Helper> stack = new Stack<>();
+    Helper trav = new Helper(root, 1);
+    stack.push(trav);
+
+    while(stack.size() > 0){
+      trav = stack.pop();
+      if(trav.depth > depth) depth = trav.depth;
+      // why from behind, because this is a stack what i insert after will be on top of what is present in stack
+      //      1
+      //   /  |   \
+      //  2   3    4
+      // after processing 1 we will have stack [4,3,2]
+      // P.S. Well! starting from front also works, just found out -_-
+      for(int i = trav.node.children.size() - 1; i >= 0; i--){
+        stack.push(new Helper(trav.node.children.get(i), trav.depth + 1));
+      }
+    }
+    return depth;
+  }
+
+
+
+  // Conventional recursive method also, dont do this in interview plz. Go for iterative
+  int depth;
 
   private class Node {
     public int val;
@@ -27,7 +67,6 @@ public class MaximumDepthOfNaryTree {
     }
   }
 
-  int depth;
 
   public int maxDepth(Node root) {
     depth = 0;
@@ -41,6 +80,8 @@ public class MaximumDepthOfNaryTree {
     for (int i = 0; i < root.children.size(); i++)
       dfs(root.children.get(i), d + 1);
   }
+
+
 
   public static void main(String[] args) {
   }
