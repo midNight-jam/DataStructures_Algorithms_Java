@@ -321,6 +321,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>EmployeeImportance</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EmployeeImportance.java)|
 | <b>CousinsInBinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CousinsInBinaryTree.java)|
 | <b>IncreasingOrderSearchTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/IncreasingOrderSearchTree.java)|
+| <b>DistributeCoinsInBinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DistributeCoinsInBinaryTree.java)|
+
 
 
 
