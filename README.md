@@ -323,6 +323,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>IncreasingOrderSearchTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/IncreasingOrderSearchTree.java)|
 | <b>DistributeCoinsInBinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DistributeCoinsInBinaryTree.java)|
 | <b>KeysAndRooms</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/KeysAndRooms.java)|
+| <b>NumberOfConnectedComponentsInAnUndirectedGraph</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NumberOfConnectedComponentsInAnUndirectedGraph.java)|
+
 
 # Misc
 
