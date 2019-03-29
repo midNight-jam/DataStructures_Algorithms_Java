@@ -325,7 +325,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>KeysAndRooms</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/KeysAndRooms.java)|
 | <b>NumberOfConnectedComponentsInAnUndirectedGraph</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NumberOfConnectedComponentsInAnUndirectedGraph.java)|
 | <b>CloneGraph</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CloneGraph.java)|
-
+| <b>WeightedQuickUnionPathCompression</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WeightedQuickUnionPathCompression.java)|
+| <b>RedundantConnection</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RedundantConnection.java)|
 
 # Misc
 
