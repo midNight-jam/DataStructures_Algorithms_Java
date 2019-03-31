@@ -327,6 +327,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>CloneGraph</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CloneGraph.java)|
 | <b>WeightedQuickUnionPathCompression</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WeightedQuickUnionPathCompression.java)|
 | <b>RedundantConnection</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RedundantConnection.java)|
+| <b>MinimumDistanceBetweenBSTNodes</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumDistanceBetweenBSTNodes.java)|
 
 # Misc
 

@@ -62,28 +62,31 @@ public class RedundantConnection {
       if (pRoot == qRoot)
         return e;
 
-      // rank based union, lower rank component gets attached to higher rank component
-      if (sizeOfComponent[pRoot] > sizeOfComponent[qRoot]) {
-        component[qRoot] = pRoot;
-        sizeOfComponent[pRoot] += sizeOfComponent[qRoot];
-      } else {
-        component[pRoot] = qRoot;
-        sizeOfComponent[qRoot] += sizeOfComponent[pRoot];
-      }
+      rankBasedUnion(component, sizeOfComponent, pRoot, qRoot);
     }
 
     return new int[2];
-
   }
 
   private static int getRoot(int[] component, int x) {
     // usual path compression
     while (x != component[x]) {
-      // replacing prante with grand parent
+      // replacing parent with grand parent
       component[x] = component[component[x]];
       x = component[x];
     }
     return x;
+  }
+
+  private static void rankBasedUnion(int[] component, int[] sizeOfComponent, int pRoot, int qRoot) {
+    // rank based union, lower rank component gets attached to higher rank component
+    if (sizeOfComponent[pRoot] > sizeOfComponent[qRoot]) {
+      component[qRoot] = pRoot;
+      sizeOfComponent[pRoot] += sizeOfComponent[qRoot];
+    } else {
+      component[pRoot] = qRoot;
+      sizeOfComponent[qRoot] += sizeOfComponent[pRoot];
+    }
   }
 
   public static void main(String[] args) {
