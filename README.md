@@ -330,6 +330,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>MinimumDistanceBetweenBSTNodes</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumDistanceBetweenBSTNodes.java)|
 | <b>RangeSumOfBST</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RangeSumOfBST.java)|
 | <b>SplitBST</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SplitBST.java)|
+| <b>MyCalendarI</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MyCalendarI.java)|
 
 # Misc
 
