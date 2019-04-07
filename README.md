@@ -331,6 +331,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>RangeSumOfBST</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RangeSumOfBST.java)|
 | <b>SplitBST</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SplitBST.java)|
 | <b>MyCalendarI</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MyCalendarI.java)|
+| <b>ImplementRand10UsingRand7</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ImplementRand10UsingRand7.java)|
 
 # Misc
 
