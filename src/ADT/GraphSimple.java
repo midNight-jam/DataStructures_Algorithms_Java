@@ -11,7 +11,7 @@ public class GraphSimple {
   List<Integer>[] adjacencylist;
 
   GraphSimple(int vertices) {
-    N = vertices; // becoz i dont want to get in 0 index stuff
+    N = vertices;
     adjacencylist = new List[N];
     for (int i = 0; i < N; i++)
       adjacencylist[i] = new ArrayList<>();
