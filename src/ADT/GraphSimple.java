@@ -34,6 +34,7 @@ public class GraphSimple {
   }
 
   public List<Integer> topologicalSort() {
+    System.out.println("Topological sort only works if given graph is DAG");
     List<Integer> res = new ArrayList<>();
     // for keeping the processed nodes in reverse order
     Stack<Integer> stack = new Stack<>();
