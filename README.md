@@ -338,6 +338,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>CoinChangeII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CoinChangeII.java)|
 | <b>MinimumSizeSubarraySum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumSizeSubarraySum.java)|
 | <b>RemoveKDigits</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RemoveKDigits.java)|
+| <b>Find132pattern</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/Find132pattern.java)|
 
 # Misc
 
