@@ -340,6 +340,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>RemoveKDigits</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RemoveKDigits.java)|
 | <b>Find132pattern</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/Find132pattern.java)|
 | <b>EvaluateReversePolishNotation</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EvaluateReversePolishNotation.java)|
+| <b>AsteroidCollision</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/AsteroidCollision.java)|
 
 # Misc
 
