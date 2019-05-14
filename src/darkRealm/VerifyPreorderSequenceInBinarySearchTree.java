@@ -46,6 +46,27 @@ public class VerifyPreorderSequenceInBinarySearchTree {
     return true;
   }
 
+  public boolean verifyPreorderConstantSpace(int[] preorder) {
+    // Idea is to use the input array itself as the stack.
+    // Similar to pop, we traverse back in the array and the actual pop happens when we override the values in input arr
+    int low = Integer.MIN_VALUE, root;
+    int si = -1;
+    for(int i = 0; i < preorder.length; i++){
+      root = preorder[i];
+
+      if(root < low)
+        return false;
+
+      while(si >= 0 && preorder[si] < root){
+        low = preorder[si];
+        si--;
+      }
+
+      preorder[++si] = root;
+    }
+    return true;
+  }
+
   public static void main(String[] args) {
 //    int[] arr = new int[]{5, 2, 1, 3, 6};
 //    int[] arr = new int[]{5, 2, 6, 1, 3};
