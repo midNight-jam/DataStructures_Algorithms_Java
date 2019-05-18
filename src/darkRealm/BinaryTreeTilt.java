@@ -33,6 +33,22 @@ public class BinaryTreeTilt {
 
   static int treeTilt = 0;
 
+  static int res;
+  public static  int findTiltZZZ(TreeNode root) {
+    res = 0;
+    helper(root);
+    return res;
+  }
+
+  private static int helper(TreeNode root){
+    if(root == null) return 0;
+    int l = helper(root.left);
+    int r = helper(root.right);
+    res += Math.abs(l-r);
+    return l + r + root.val;
+  }
+
+
   public static int treeTilt(TreeNode node) {
     if (null == node) return 0;
     int leftVal = treeTilt(node.left);
@@ -43,7 +59,7 @@ public class BinaryTreeTilt {
     return node.val;
   }
 
-  public static int findTilt(TreeNode root) {
+  public static int findTiltOLD(TreeNode root) {
     treeTilt(root);
     return treeTilt;
   }
@@ -52,7 +68,7 @@ public class BinaryTreeTilt {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
-    int res = findTilt(root);
+    int res = findTiltZZZ(root);
     System.out.println("Res : " + res);
   }
 }
