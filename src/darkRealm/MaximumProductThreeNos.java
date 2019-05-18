@@ -18,10 +18,32 @@ public class MaximumProductThreeNos {
 //  Multiplication of any three numbers in the input won't exceed the range of 32-bit signed integer.
 
   public static int maxProductThreeNos(int[] nums) {
-    Arrays.sort(nums);
-    int maxProd = nums[nums.length - 3] * nums[nums.length - 2];
-    int minProd = nums[0] * nums[1];
-    return Math.max(maxProd * nums[nums.length - 1], minProd * nums[nums.length - 1]);
+    int max3, max2, max1;
+    int min1, min2;
+    max3 = max2 = max1 = Integer.MIN_VALUE;
+    min1 = min2 = Integer.MAX_VALUE;
+    for(int n : nums){
+      if(n > max3){
+        max1 = max2;
+        max2 = max3;
+        max3 = n;
+      }
+      else if(n > max2){
+        max1 = max2;
+        max2 = n;
+      }
+      else if(n > max1)
+        max1 = n;
+
+      if(n < min2){
+        min1 = min2;
+        min2 = n;
+      }
+      else if(n < min1)
+        min1 = n;
+    }
+
+    return Math.max(max3 * max2 * max1, max3 * min2 * min1);
   }
 
   public static void main(String[] args) {
