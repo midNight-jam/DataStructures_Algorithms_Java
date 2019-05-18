@@ -27,20 +27,22 @@ public class AssignCookies {
 //  You have 3 cookies and their sizes are big enough to gratify all of the children,
 //  You need to output 2.
 
-  public static int assignCookies(int[] greedyFactor, int[] sizes) {
-    if (null == greedyFactor || null == sizes) return 0;
-    Arrays.sort(greedyFactor);
-    Arrays.sort(sizes);
-    int satisfied = 0;
-    for (int i = 0, j = 0; i < greedyFactor.length && j < sizes.length; ) {
-      while (j < sizes.length && sizes[j] < greedyFactor[i]) j++;
-      if (j < sizes.length && sizes[j] >= greedyFactor[i]) {
-        satisfied++;
-        i++;
-        j++;
+  public static int assignCookies(int[] g, int[] s) {
+    if(g == null || g.length < 1 || s == null || s.length < 1) return 0;
+    Arrays.sort(g);
+    Arrays.sort(s);
+    int gi, si, cc;
+    gi = si = cc = 0;
+    while(gi < g.length && si < s.length){
+      if(s[si] >= g[gi]){
+        si++;
+        gi++;
+        cc++;
       }
+      else
+        si++;
     }
-    return satisfied;
+    return cc;
   }
 
   public static void main(String[] args) {
