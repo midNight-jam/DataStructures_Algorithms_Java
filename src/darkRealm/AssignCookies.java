@@ -35,12 +35,10 @@ public class AssignCookies {
     gi = si = cc = 0;
     while(gi < g.length && si < s.length){
       if(s[si] >= g[gi]){
-        si++;
         gi++;
         cc++;
       }
-      else
-        si++;
+      si++;
     }
     return cc;
   }
