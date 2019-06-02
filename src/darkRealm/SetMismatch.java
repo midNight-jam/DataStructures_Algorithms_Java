@@ -15,15 +15,23 @@ public class SetMismatch {
 //  Input: nums = [1,2,2,4]
 //  Output: [2,3]
 
-  public static int[] setMismatch(int[] arr) {
-    if (arr == null || 0 == arr.length) return new int[]{};
-    int[] res = new int[2];
-    for (int i = 0; i < arr.length; i++)
-      if (arr[Math.abs(arr[i]) - 1] < 0) res[0] = Math.abs(arr[i]);
-      else arr[Math.abs(arr[i]) - 1] *= -1;
-    for (int i = 0; i < arr.length; i++)
-      if (arr[i] > 0) res[1] = i + 1;
-
+  public static int[] setMismatch(int[] nums) {
+    int [] res = new int[2];
+    if(nums == null || nums.length < 1) return res;
+    int ni;
+    for(int i : nums){
+      ni = Math.abs(i);
+      if(nums[ni - 1] < 0)
+        res[0] = ni;
+      else
+        nums[ni - 1] *= -1;
+    }
+    for(int i = 0; i < nums.length; i++)
+      if(nums[i] > 0){
+        res[1] = i + 1;
+        break;
+      }
+    
     return res;
   }
 
