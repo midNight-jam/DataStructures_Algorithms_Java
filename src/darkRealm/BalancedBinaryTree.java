@@ -16,23 +16,21 @@ public class BalancedBinaryTree {
     }
   }
 
-  static boolean notBalanced = false;
+  static boolean res;
 
-  public static int getHeightBalance(TreeNode node) {
-    if (null == node || notBalanced) return 0;
-    int left = getHeightBalance(node.left);
-    if (notBalanced) return left;
-    int right = getHeightBalance(node.right);
-    if (notBalanced) return right;
-    int diff = Math.abs(left - right);
-    notBalanced = diff > 1;
-    if (notBalanced) return diff;
-    return Math.max(left, right) + 1;
+  private int helper(TreeNode root){
+    if(root == null || !res) return 0;
+    int l = helper(root.left);
+    int r = helper(root.right);
+    int diff = Math.abs(l - r);
+    res = res & diff < 2;
+    return Math.max(l, r) + 1;
   }
 
   public static boolean isBalanced(TreeNode node) {
-    getHeightBalance(node);
-    return !notBalanced;
+    res = true;
+    helper(root);
+    return res;
   }
 
   public static void main(String[] args) {
