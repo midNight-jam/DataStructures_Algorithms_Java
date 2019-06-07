@@ -19,21 +19,21 @@ public class NonDecreasingArray {
 //  Output: False
 //  Explanation: You can't get a non-decreasing array by modify at most one element.
 //  Note: The n belongs to [1, 10,000
-
-  public static boolean checkPossibility(int[] nums) {
-    int max = Integer.MIN_VALUE;
-    for (int i = 1; i < nums.length; i++) {
-      if (nums[i] < nums[i - 1]) {
-        if (max != Integer.MIN_VALUE) return false;
-        if (i - 1 == 0) max = nums[i];
-        else {
-          if (nums[i - 2] <= nums[i] && nums[i - 2] <= nums[i - 1])
-            max = Math.min(nums[i], nums[i - 1]);
-          else max = nums[i - 1];
-          nums[i] = max;
+  
+  public boolean checkPossibility(int[] nums) {
+    int count = 0;
+    for(int i = 0; i < nums.length -1; i++){
+      if(nums[i] > nums[i+1]){
+        count++;
+        if(count > 1) return false; // already raised once
+        
+        if(i > 0){
+          if(nums[i-1] < nums[i+1]) // if this is a dip, level it by using prev element
+            nums[i] = nums[i-1];
+          else  // if this is a high, raise the next element to same height
+            nums[i+1] = nums[i];
         }
       }
-      if (nums[i] < max) return false;
     }
     return true;
   }
