@@ -10,16 +10,17 @@ public class SquareRoot {
     if(x == 1) return x;
 
     int low = 0, high = x, mid;
+    // pay attention to high - 1
+    // bcoz @ 1 < 2 - 1, we should terminate, else endless loop
     while (low < high - 1) {
       mid = low + (high - low) / 2;
       //ATTENTION HERE : previuosly I was using (mid * mid  < x) expression, but this was causing overflow for higher
       // mids, thats why I shift one mid in denominator and use (mid < (x / mid))
       if (mid  < (x / mid)) low = mid;
       else if (mid > (x / mid)) high = mid;
-      else break;
+      else  return mid;
     }
-    mid = low + (high - low) / 2;
-    return mid;
+    return low;
   }
 
   public static void main(String[] args) {
