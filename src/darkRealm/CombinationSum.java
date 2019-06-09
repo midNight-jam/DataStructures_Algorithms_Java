@@ -22,22 +22,28 @@ public class CombinationSum {
 //      [2, 2, 3]
 //      ]
 
-  public static List<List<Integer>> combinationSum(int[] candidates, int target) {
-    Set<List<Integer>> res = new HashSet<>();
+  public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    List<List<Integer>> res = new ArrayList<>();
+    if(candidates == null || candidates.length < 1 || target < 0)
+      return res;
     List<Integer> temp = new ArrayList<>();
     Arrays.sort(candidates);
-    backtrack(res, temp, candidates, target, 0);
-    return new ArrayList<>(res);
+    helper(res, temp, 0,0, target, candidates);
+    return res;
   }
-
-
-  private static void backtrack(Set<List<Integer>> res, List<Integer> temp, int[] candidates, int remain, int start) {
-    if (remain < 0) return;
-    if (remain == 0)
+  
+  private void helper(List<List<Integer>> res, List<Integer> temp, int start, int sum, int target, int [] arr){
+    if(sum > target) return;
+    if(sum == target){
       res.add(new ArrayList<>(temp));
-    for (int i = start; i < candidates.length; i++) {
-      temp.add(candidates[i]);
-      backtrack(res, temp, candidates, remain - candidates[i], i); // using i , as we can use same numbers as many times
+      return;
+    }
+    
+    for(int i = start; i < arr.length; i++){
+      temp.add(arr[i]);
+      sum += arr[i];
+      helper(res, temp, i, sum, target, arr);
+      sum -= arr[i];
       temp.remove(temp.size() - 1);
     }
   }
