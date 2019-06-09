@@ -83,7 +83,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>Sum Square Number</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SumSquareNumber.java)|
 | <b>Length Of Last Word</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LengthOfLastWord.java)|
 | <b>Valid Palindrome II </b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidPalindromeII.java)|
-| <b>ExcelSheetColumnTitle</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ExcelSheetColumnTitle.java.java)|
+| <b>ExcelSheetColumnTitle</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ExcelSheetColumnTitle.java)|
 | <b>PerfectNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PerfectNumber.java)|
 | <b>FirstBadVersion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FirstBadVersion.java)|
 | <b>Can Place Flowers</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CanPlaceFlowers.java)|
@@ -91,7 +91,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>MaximumAverageSubarrayI</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumAverageSubarrayI.java)|
 | <b>SwapNodesInPairs</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SwapNodesInPairs.java)|
 | <b>Subsets I</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubsetsI.java)|
-| <b>Subsets II</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubsetsII.java)|
+| <b>Subsets II</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubSetsII.java)|
 | <b>Permutations</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/Permutations.java)|
 | <b>Permutations II</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PermutationsII.java)|
 | <b>CombinationSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSum.java)|
