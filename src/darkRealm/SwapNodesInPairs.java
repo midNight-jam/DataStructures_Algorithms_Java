@@ -24,14 +24,12 @@ public class SwapNodesInPairs {
     prev = null;
     trav = head;
     next = trav.next;
+    newHead = next;
     while(trav !=null && trav.next !=null){
       next = trav.next;
       if(prev != null)
         prev.next = next;      
-      
-      if(newHead == null)
-          newHead = next;
-      
+        
       temp = next.next;
       next.next = trav;
       trav.next = temp;
