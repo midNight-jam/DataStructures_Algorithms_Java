@@ -33,7 +33,7 @@ public class ValidSquare {
     for(double d: map.keySet())
       if(map.get(d) == 2) diag = true;
       else if(map.get(d) == 4) four = true;
-      else return true;
+      else return false;
     return (four && diag);
   }
   private static double getDistance(int[] p, int[] q) {
