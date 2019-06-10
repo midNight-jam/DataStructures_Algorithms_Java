@@ -39,7 +39,7 @@ public class LongestSubStringWithKDistinctChars {
     map.put(arr[0], 1);
     for(int i = 1; i < s.length(); i++){
       map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
-      while(map.size() > k && si < i){
+      while(map.size() > k){
         char sc = arr[si];
         if(map.get(sc) == 1)
           map.remove(sc);
