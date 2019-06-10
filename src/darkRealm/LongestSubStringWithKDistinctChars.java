@@ -30,33 +30,26 @@ public class LongestSubStringWithKDistinctChars {
   }
 
   public static int lengthOfLongestSubstringKDistinct_HashMap(String s, int k) {
-    int maxLen = 0;
-    int left  = 0, right = 0;
+    if(s == null || s.length() < 1 || k < 1 ) return 0;
     Map<Character, Integer> map = new HashMap<>();
-
-    while(right  < k && right < s.length()){
-      char c = s.charAt(right);
-      map.put(c, map.getOrDefault(c, 0) + 1);
-      if(map.size() <= k)
-        maxLen = Math.max(maxLen, right - left + 1);
-      right++;
-    }
-
-    while(right < s.length()){
-      char c = s.charAt(right);
-      map.put(c, map.getOrDefault(c,0)+1);
-      while(map.size() > k){
-        c = s.charAt(left);
-        if(map.get(c)>1) map.put(c, map.get(c)-1);
-        else map.remove(c);
-        left++;
+    int si;
+    si = 0;
+    char [] arr = s.toCharArray();
+    int res = 1;
+    map.put(arr[0], 1);
+    for(int i = 1; i < s.length(); i++){
+      map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+      while(map.size() > k && si < i){
+        char sc = arr[si];
+        if(map.get(sc) == 1)
+          map.remove(sc);
+        else
+          map.put(sc, map.get(sc) - 1);
+        si++;
       }
-      if(map.size() <= k)
-        maxLen = Math.max(maxLen, right - left + 1);
-      right++;
+      res = Math.max(res, i - si + 1);
     }
-
-    return maxLen;
+    return res;
   }
 
   public static void main(String[] args) {
