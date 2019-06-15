@@ -21,7 +21,41 @@ public class ZigZagIterator {
 //      [4,5,6,7]
 //      [8,9]
 //  It should return [1,4,8,2,5,9,3,6,7].
+  
+  
+  List<List<Integer>> all;
+  int rowIndex;
+  int [] colIndexes;
+  int k;
+  public ZigzagIterator(List<Integer> v1, List<Integer> v2) {
+    all = Arrays.asList(v1, v2);
+    colIndexes = new int []{0, 0};
+    rowIndex = -1;
+    k = 2;
+  }
 
+  public int next() {
+    List<Integer> useRow = all.get(rowIndex);
+    int res = useRow.get(colIndexes[rowIndex]);
+    colIndexes[rowIndex]++;
+    return res;
+  }
+
+  public boolean hasNext() {
+    for(int rowScanned = 0; rowScanned < k; rowScanned++){
+      rowIndex = (rowIndex + 1 ) % k;
+      if(colIndexes[rowIndex] < all.get(rowIndex).size()){
+        return true;
+      }
+    }
+    return false;
+  }
+  
+
+  ////////////////
+  /// OLD
+  ////////////////
+  
   private List<Integer> v1, v2;
   int[] pointers;
   List<List<Integer>> lists;
