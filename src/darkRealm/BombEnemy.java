@@ -14,7 +14,54 @@ public class BombEnemy {
 //  0 E 0 0
 //  return 3. (Placing a bomb at (1,1) kills 3 enemies)
 
-  public static int maxKilledEnemies(char[][] grid) {
+   public static int maxKilledEnemies(char[][] grid) {
+    int res = 0;
+    if(grid == null || grid.length < 1 || grid[0].length < 1)
+      return res;
+    
+    int row, col;
+    
+    row = grid.length;
+    col = grid[0].length;
+    int [] rowCount = new int [row];
+    int [] colCount = new int [col];
+    
+     //Project the no of rowKills + colKills if we are starting from first row/col OR if prev row/col was a wall
+    for(int r = 0; r < row; r++){
+      for(int c =0; c < col; c++){
+        
+        if(grid[r][c]=='W') 
+          continue;
+        
+        // if first row or prev row was a wall count the no of hits in this column
+        if(r == 0 || r > 0 && grid[r-1][c] == 'W'){
+          colCount[c] = 0; // reset the count as we are going to count from a wall or first row onwards
+          for(int i = r; i < row && grid[i][c] != 'W'; i++){
+            if(grid[i][c] == 'E')
+              colCount[c]++;
+          }
+            
+        }
+        
+        // if first col or prev col was a wall, count the no of hits in this row
+        if(c == 0 || c > 0 && grid[r][c-1] == 'W'){
+          rowCount[r] = 0;
+          for(int j = c; j < col && grid[r][j] != 'W'; j++){
+            if(grid[r][j] == 'E')
+              rowCount[r]++;
+          }
+        }
+        
+        // if this is a zero, where a bomb can be placed then update the result
+        if(grid[r][c] == '0')
+          res = Math.max(res, rowCount[r] + colCount[c]);
+      }
+    }
+    
+    return res;
+  }
+  
+  public static int maxKilledEnemiesLESSMEMORY(char[][] grid) {
     if (grid == null || grid.length == 0 || grid[0].length == 0) return 0;
     int rowKills = 0;
     int[] colKills = new int[grid[0].length];
