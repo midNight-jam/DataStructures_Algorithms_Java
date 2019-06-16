@@ -54,6 +54,38 @@ public class PalindromicSubStrings {
     }
     return res;
   }
+  
+  
+ // another variation with easy to understand loop 
+ public int countSubstrings2(String s) {
+    int res = 0;
+    if(s == null || s.length() < 1) return res;
+    int n = s.length();
+    boolean [][] dp = new boolean[n][n];
+    // each char is a palindrome in itself
+    for(int i = 0; i < n; i++){
+      dp[i][i] = true;
+      res++;
+    }
+    
+    // we start from bottom right & work our way up
+    for(int row = n -1; row >=0; row--){
+      int start = row;
+      int end = row;
+      while(end < n){
+        if(s.charAt(start) == s.charAt(end)){
+          boolean areAdjacent = start + 1 == end;
+          boolean inBetweenIsInPalindrome= start + 1 < end ? dp[start+1][end-1] : false;
+          if(areAdjacent || inBetweenIsInPalindrome){
+            dp[start][end] = true;
+            res++;
+          }
+        }
+        end++;
+      }
+    }
+    return res;
+  }
 
   public static void main(String[] args) {
     String s = "abba";
