@@ -8,8 +8,46 @@ public class EditDistance {
 //  a) Insert a character
 //  b) Delete a character
 //  c) Replace a character
+  
+  
+  public int minDistance(String word1, String word2) {
+     if(word1 == null || word2 == null) return  0;
 
-  public static int minDistance(String w1, String w2) {
+    int l1 = word1.length();
+    int l2 = word2.length();
+    char [] arr = word1.toCharArray();
+    char [] brr = word2.toCharArray();
+    int [][] dp = new int[l1 + 1][l2 + 1]; // + 1 beaucse in matrix first row+col will be for empty string
+
+    // "" because first row & col are empty string, & the edits required to make an empty string a new string is equal
+    // to the length of the string
+    for(int i = 0; i <= l1; i++)
+      dp[i][0] = i;
+
+    for(int j = 0; j <= l2; j++)
+      dp[0][j] = j;
+
+    for(int i = 1; i <= l1; i++){
+      for(int j = 1; j <= l2; j++){
+        if(arr[i-1] == brr[j-1]){ // if same char then dont update the distance, take from prev
+          dp[i][j] = dp[i-1][j-1];
+          continue;
+        }
+        // we delete c1 from word2, thus dist from above + 1
+        int deleteFromW1 = dp[i][j-1] + 1;
+        // we insert c2 in word1, thus dist from left + 1
+        int insertIntoW1 =  dp[i-1][j] + 1;
+        // we replace the char
+        int replace = dp[i-1][j-1] + 1;
+        int move = Math.min(Math.min(deleteFromW1, insertIntoW1), replace);
+        dp[i][j] = move;
+      }
+    }
+
+    return dp[l1][l2];
+  }
+
+  public static int minDistanceDETAILED(String w1, String w2) {
     if (w1 == null || w2 == null) return 0;
     int l1 = w1.length(), l2 = w2.length();
     int[][] dp = new int[l1 + 1][l2 + 1];
@@ -49,6 +87,8 @@ public class EditDistance {
     }
     return dp[l1][l2];
   }
+  
+  
 
   public static void main(String[] args) {
 //    String w1 = "cable";
