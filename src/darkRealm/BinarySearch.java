@@ -20,11 +20,10 @@ public class BinarySearch {
 //  The value of each element in nums will be in the range [-9999, 9999].
 
   public static int search(int[] nums, int target) {
-    int index = -1;
-    if (nums == null || nums.length < 1) return index;
-    int left = 0;
-    int right = nums.length - 1;
-    int mid;
+    if(arr == null || arr.length < 1) return -1;
+    int low, high, mid;
+    low = 0;
+    high = arr.length - 1;
     //left<=right : bcoz if array is size 1, left == right & only then it will go in loop
      while(low <= high){
       mid = low + (high - low) / 2;
