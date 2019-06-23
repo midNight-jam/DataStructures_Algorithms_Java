@@ -342,6 +342,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>EvaluateReversePolishNotation</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EvaluateReversePolishNotation.java)|
 | <b>AsteroidCollision</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/AsteroidCollision.java)|
 | <b>VerifyPreorderSequenceInBinarySearchTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/VerifyPreorderSequenceInBinarySearchTree.java)|
+| <b>AllNodesDistanceKInBinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/AllNodesDistanceKInBinaryTree.java)|
+| <b>PopulatingNextRightPointersInEachNodeII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PopulatingNextRightPointersInEachNodeII.java)|
 
 
 
