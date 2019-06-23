@@ -26,15 +26,20 @@ public class BinarySearch {
     int right = nums.length - 1;
     int mid;
     //left<=right : bcoz if array is size 1, left == right & only then it will go in loop
-    while (left <= right) {
-      mid = left + (right - left) / 2;
-      if (nums[mid] > target)
-        right = mid - 1; // mid - 1, not mid, it will get stuck in loop
-      else if (nums[mid] < target)
-        left = mid + 1; // mid + 1, not mid, it will get stuck in loop
-      else
+     while(low <= high){
+      mid = low + (high - low) / 2;
+      
+      if(arr[mid] == target)
         return mid;
+      
+      if(arr[mid] < target)
+        low = mid + 1; // because we have already analysed arr[mid] so no point in adjusting to it again
+      
+      else
+        high = mid - 1; // because we have already analysed arr[mid] so no point in adjusting to it again
     }
+    
+    System.out.println(low); // this will be the insert position if the target is not present in the array
     return -1;
   }
 
