@@ -34,7 +34,7 @@ public class SearchInRotatedSortedArray {
     return -1;
   }
 
-  public static int search_findRotationAndSearchInTwoArrays(int[] nums, int target) {
+  public static int search_findRotationAndSearchInTwoArrays(int[] arr, int target) {
     int low, high, mid;
     low = 0;
     high = arr.length - 1;
@@ -69,7 +69,7 @@ public class SearchInRotatedSortedArray {
   }
   
   // normal binary Search
-  private int binarySearch(int [] arr, int low, int high, int target){
+  private static int binarySearch(int [] arr, int low, int high, int target){
     int mid;
     while(low <= high){
       mid = low + (high - low) / 2;

@@ -26,7 +26,11 @@ public class FirstBadVersion {
     return low;
   }
 
-   // Calls API more # times
+  private boolean isBadVersion(int mid) {
+    return false;
+  }
+
+  // Calls API more # times
    public int firstBadVersionSLOW(int n) {
     int l = 0;
     int r = n;

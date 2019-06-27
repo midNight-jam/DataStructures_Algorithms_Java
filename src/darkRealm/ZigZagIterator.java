@@ -27,7 +27,7 @@ public class ZigZagIterator {
   int rowIndex;
   int [] colIndexes;
   int k;
-  public ZigzagIterator(List<Integer> v1, List<Integer> v2) {
+  public ZigZagIterator(List<Integer> v1, List<Integer> v2) {
     all = Arrays.asList(v1, v2);
     colIndexes = new int []{0, 0};
     rowIndex = -1;
@@ -56,45 +56,45 @@ public class ZigZagIterator {
   /// OLD
   ////////////////
   
-  private List<Integer> v1, v2;
-  int[] pointers;
-  List<List<Integer>> lists;
-  int ptr;
-  int consumed;
-  int k;
-
-  public ZigZagIterator(List<Integer> v1, List<Integer> v2) {
-    this.v1 = v1;
-    this.v2 = v2;
-    pointers = new int[2];
-    lists = new ArrayList<>();
-    lists.add(v1);
-    lists.add(v2);
-    ptr = 0;
-    consumed = v1.size() + v2.size();
-    k = 2;
-  }
-
-  public int next() {
-    int res = 0;
-    if (pointers[ptr] < lists.get(ptr).size()){
-      res = lists.get(ptr).get(pointers[ptr]);
-      pointers[ptr]++;
-      ptr = (ptr + 1) % k;
-    }
-    else {
-      while (pointers[ptr] == lists.get(ptr).size()) ptr = (ptr + 1) % k;
-      res = lists.get(ptr).get(pointers[ptr]);
-      pointers[ptr]++;
-      ptr = (ptr + 1) % k;
-    }
-    consumed--;
-    return res;
-  }
-
-  public boolean hasNext() {
-    return consumed > 0;
-  }
+//  private List<Integer> v1, v2;
+//  int[] pointers;
+//  List<List<Integer>> lists;
+//  int ptr;
+//  int consumed;
+//  int k;
+//
+//  public ZigZagIterator(List<Integer> v1, List<Integer> v2) {
+//    this.v1 = v1;
+//    this.v2 = v2;
+//    pointers = new int[2];
+//    lists = new ArrayList<>();
+//    lists.add(v1);
+//    lists.add(v2);
+//    ptr = 0;
+//    consumed = v1.size() + v2.size();
+//    k = 2;
+//  }
+//
+//  public int next() {
+//    int res = 0;
+//    if (pointers[ptr] < lists.get(ptr).size()){
+//      res = lists.get(ptr).get(pointers[ptr]);
+//      pointers[ptr]++;
+//      ptr = (ptr + 1) % k;
+//    }
+//    else {
+//      while (pointers[ptr] == lists.get(ptr).size()) ptr = (ptr + 1) % k;
+//      res = lists.get(ptr).get(pointers[ptr]);
+//      pointers[ptr]++;
+//      ptr = (ptr + 1) % k;
+//    }
+//    consumed--;
+//    return res;
+//  }
+//
+//  public boolean hasNext() {
+//    return consumed > 0;
+//  }
 
   public static void main(String[] args) {
     List<Integer> v1 = new ArrayList<>(Arrays.asList(new Integer[]{1, 2}));

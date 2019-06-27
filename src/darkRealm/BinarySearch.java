@@ -19,7 +19,7 @@ public class BinarySearch {
 //  n will be in the range [1, 10000].
 //  The value of each element in nums will be in the range [-9999, 9999].
 
-  public static int search(int[] nums, int target) {
+  public static int search(int[] arr, int target) {
     if(arr == null || arr.length < 1) return -1;
     int low, high, mid;
     low = 0;

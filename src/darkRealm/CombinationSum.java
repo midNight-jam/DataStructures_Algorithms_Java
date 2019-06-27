@@ -22,7 +22,7 @@ public class CombinationSum {
 //      [2, 2, 3]
 //      ]
 
-  public List<List<Integer>> combinationSum(int[] candidates, int target) {
+  public  static List<List<Integer>> combinationSum(int[] candidates, int target) {
     List<List<Integer>> res = new ArrayList<>();
     if(candidates == null || candidates.length < 1 || target < 0)
       return res;
@@ -32,7 +32,7 @@ public class CombinationSum {
     return res;
   }
   
-  private void helper(List<List<Integer>> res, List<Integer> temp, int start, int sum, int target, int [] arr){
+  private  static void helper(List<List<Integer>> res, List<Integer> temp, int start, int sum, int target, int [] arr){
     if(sum > target) return;
     if(sum == target){
       res.add(new ArrayList<>(temp));

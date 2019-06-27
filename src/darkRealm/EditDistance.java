@@ -10,7 +10,7 @@ public class EditDistance {
 //  c) Replace a character
   
   
-  public int minDistance(String word1, String word2) {
+  public static int minDistance(String word1, String word2) {
      if(word1 == null || word2 == null) return  0;
 
     int l1 = word1.length();

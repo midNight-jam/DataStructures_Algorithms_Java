@@ -20,7 +20,7 @@ public class NonDecreasingArray {
 //  Explanation: You can't get a non-decreasing array by modify at most one element.
 //  Note: The n belongs to [1, 10,000
   
-  public boolean checkPossibility(int[] nums) {
+  public static boolean checkPossibility(int[] nums) {
     int count = 0;
     for(int i = 0; i < nums.length -1; i++){
       if(nums[i] > nums[i+1]){

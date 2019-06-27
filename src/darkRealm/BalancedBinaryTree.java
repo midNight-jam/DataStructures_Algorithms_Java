@@ -18,7 +18,7 @@ public class BalancedBinaryTree {
 
   static boolean res;
 
-  private int helper(TreeNode root){
+  private static int helper(TreeNode root){
     if(root == null || !res) return 0;
     int l = helper(root.left);
     int r = helper(root.right);
@@ -27,7 +27,7 @@ public class BalancedBinaryTree {
     return Math.max(l, r) + 1;
   }
 
-  public static boolean isBalanced(TreeNode node) {
+  public static boolean isBalanced(TreeNode root) {
     res = true;
     helper(root);
     return res;
