@@ -130,7 +130,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>DungeonGame</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DungeonGame.java)|
 | <b>SerializeAndDeserializeBinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SerializeAndDeserializeBinaryTree.java)|
 | <b>MissingRanges</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MissingRanges.java)|
-| <b>LongestConsecutiveSequence</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/LongestConsecutiveSequence.java)|
+| <b>LongestConsecutiveSequence</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestConsecutiveSequence.java)|
 | <b>ValidTriangleNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidTriangleNumber.java)|
 | <b>ContainerWithMostWater</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ContainerWithMostWater.java)|
 | <b>BulbSwitcherI</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BulbSwitcherI.java)|
