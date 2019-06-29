@@ -40,10 +40,10 @@ public class LongestConsecutiveSequence {
       // 4 - 3 == 1 , which is the left boundary.
       
       int leftEdge = n - left;
-      map.put(n - left, thisSeqLen);
+      map.put(leftEdge, thisSeqLen);
       
       int rightEdge = n + right;
-      map.put(n + right, thisSeqLen);
+      map.put(rightEdge, thisSeqLen);
     }
     return res;
   }
