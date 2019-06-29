@@ -31,8 +31,9 @@ public class ValidTriangleNumber {
       while(low < high){
         // if triangle condition meets
         if(nums[low] + nums[high] > nums[i]){
-          // as the array is sorted, & if this condition is true, we know that the elements in this section will always keep the sum of 2 sides > 3rd one,
-          // because it will have elements atleast greater or equal to nums[low], thus its safe to take the len of this section, which equal to the no of windows 
+          // as the array is sorted, & if this condition is true, we know that the elements in this section will always keep the sum of
+          // 2 sides > 3rd one, because it will have elements atleast greater or equal to nums[low], thus its safe to take the len of 
+          // this section, which equal to the no of windows 
           // of len 2 (pairs) which keep the sum > 3rd side
           res += high - low;
           high--; // reduce high, so that we can search for another section
