@@ -19,7 +19,7 @@ public class ContainerWithMostWater {
       breadth = right - left;
       height = Math.min(nums[left], nums[right]);
       max = Math.max(max, height * breadth);
-      if (nums[left] < nums[right])
+      if (height == arr[left])
         left++; // because we have already considered the largest possible rectangle with this height, thus move on
       else
         right--;  // same as above, we have already considered largest possible rectangle with this height.
