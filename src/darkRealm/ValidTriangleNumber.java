@@ -20,21 +20,28 @@ public class ValidTriangleNumber {
 //  The integers in the given array are in the range of [0, 1000].
 
   public static int triangleNumber(int[] nums) {
-    if(nums == null || nums.length == 0) return 0;
-    int count = 0, l= 0 , h = 0;
+      if(nums == null || nums.length < 1) return 0;
     Arrays.sort(nums);
-    // Why we choose to iterate from back, because when taking from back we have already taken a bigger no for 2nd side
-    // and adding small number 1st side to it will be easily greater than the 3rd side
-    for(int i = nums.length - 1; i >= 1; i--) {
-      l = 0;
-      h = i - 1;
-      while (l < h)
-        if (nums[l] + nums[h] > nums[i]) { // till sum is low then current num
-          count += h - l;
-          h--;
-        } else l++; // increment l becuse has went down
+    int res = 0, low = 0, high;
+    
+    // The rule for a triangle is that sum ot two sides is greater than the 3rd side
+    for(int i = 2; i < nums.length; i++){
+      low = 0;
+      high = i - 1;
+      while(low < high){
+        if(nums[low] + nums[high] > nums[i]){
+          // as the array is sorted, & if this condition is true, we know that the elements in this section will always keep the sum of 2 sides > 3rd one,
+          // because it will have elements atleast greater or equal to nums[low], thus its safe to take the len of this section, which equal to the no of windows 
+          // of len 2 (pairs) which keep the sum > 3rd side
+          res += high - low;
+          high--; // reduce high, so that we can search for another section
+        }
+        else
+          low++; // as the sum has dropped or equalled to 3rd side, raise the smallest side
+      }
     }
-    return count;
+    
+    return res;
   }
 
   public static void main(String[] args) {
