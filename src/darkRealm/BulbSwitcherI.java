@@ -19,6 +19,7 @@ public class BulbSwitcherI {
     int sqrt = (int) Math.sqrt(n);
     int count = 0;
     // Prob is from aptitude, all the numbers below n that are perfect squares will have odd factors thus they will remain on.
+    // and we have the upper bound as sqrt, because any num > sqrt when sqred will be > n itself
     for (int i = 1; i <= sqrt; i++) {
       if (i * i <= n) count++;
     }
