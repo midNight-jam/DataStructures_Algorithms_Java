@@ -24,11 +24,12 @@ public class ValidTriangleNumber {
     Arrays.sort(nums);
     int res = 0, low = 0, high;
     
-    // The rule for a triangle is that sum ot two sides is greater than the 3rd side
+    // The rule for a triangle is that sum of two sides is greater than the 3rd side
     for(int i = 2; i < nums.length; i++){
       low = 0;
       high = i - 1;
       while(low < high){
+        // if triangle condition meets
         if(nums[low] + nums[high] > nums[i]){
           // as the array is sorted, & if this condition is true, we know that the elements in this section will always keep the sum of 2 sides > 3rd one,
           // because it will have elements atleast greater or equal to nums[low], thus its safe to take the len of this section, which equal to the no of windows 
