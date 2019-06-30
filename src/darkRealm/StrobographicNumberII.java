@@ -15,13 +15,10 @@ public class StrobographicNumberII {
    // this version is far better in mem usage than the old version.
    // Memory Usage: 50 MB, less than 99.75% of Java
    public List<String> findStrobogrammatic(int n) {
-    List<String> res = new ArrayList<>();
-    // even len
     String[] seeds = new String[] {"0","1","8"};
+    if(n == 1) return new ArrayList<String>(Arrays.asList(seeds));
     
-    if(n == 1)
-      return new ArrayList<String>(Arrays.asList(seeds));
-    
+    List<String> res = new ArrayList<>();
     boolean even = (n & 1) == 0;
     
     for(int i = 0; i < seeds.length; i++){
