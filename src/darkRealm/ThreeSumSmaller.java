@@ -14,22 +14,28 @@ public class ThreeSumSmaller {
 
 
   public static int threeSumSmaller(int[] nums, int target) {
-    if(nums == null || nums.length  == 0) return 0;
-    int l, h;
+    if(nums == null || nums.length < 3) return 0;
+    // Similar to traingle number problem, we reduce the triplet to triangle no by moving one of the triplet of sum from LHS to RHS
+    // nums[i] + nums[j] + nums[k] < target  === reduced to ====  nums[i] + nums[j] <  target - nums[k] 
     Arrays.sort(nums);
-    int triplet = 0;
-    for(int i = 0; i < nums.length - 2; i++){
-      l = i + 1;
-      h = nums.length - 1;
-      while(l < h){
-        if(nums[i] + nums[l] + nums[h] < target){
-          triplet += h - l; // because all in this range will create a triplet smaller than target
-          l++;
+    int low;
+    int high;
+    int k;
+    int res = 0;
+    for(int i = 2; i < nums.length; i++){
+      low = 0;
+      high = i - 1;
+      k = target - nums[i];
+      while(low < high){
+        if(nums[low] + nums[high] < k){
+          res += high - low;  // count the no of sliding windows that generate a pair who has sum less than k (target - nums[i])
+          low++;
         }
-        else h--;
+        else
+          high--;
       }
     }
-    return triplet;
+    return res;
   }
 
   public static void main(String[] args) {
