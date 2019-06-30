@@ -2,26 +2,23 @@ package darkRealm;
 
 public class StrobogrammaticNumber {
 
-  public static boolean isStrobogrammatic(String num) {
-    if (num == null || num.length() == 0) return false;
-    char[] arr = num.toCharArray();
-    int low = 0, high = arr.length - 1;
-    while (low <= high) {
-      if (!isValid(arr[low]) || !isValid(arr[high])) return false;
-      if (getOpposite(arr[low]) != arr[high]) return false;
-      low++;
-      high--;
+  public static boolean isStrobogrammatic(String nums) {
+    if(nums == null || nums.length() < 1) return false;
+    char [] arr = nums.toCharArray();
+    int left = 0 , right = arr.length - 1;
+    String valids = "018";
+    while(left <= right){
+      if(arr[left] == arr[right] && valids.indexOf(arr[left]) > -1){
+        left++;
+        right--;
+      }
+      else if((arr[left] == '6' && arr[right] == '9') || (arr[left] == '9' && arr[right] == '6')){
+        left++;
+        right--;
+      }
+      else return false;
     }
     return true;
-  }
-
-  private static char getOpposite(char c) {
-    if (c == '0' || c == '1' || c == '8') return c;
-    return c == '6' ? '9' : '6';
-  }
-
-  private static boolean isValid(char c) {
-    return (c == '0' || c == '1' || c == '6' || c == '8' || c == '9');
   }
 
   public static void main(String[] args) {
