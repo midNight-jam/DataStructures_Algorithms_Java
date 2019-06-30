@@ -139,7 +139,6 @@ This section contains implementation of different Data Structures in Java.
 | <b>CompareVersion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CompareVersion.java)|
 | <b>SummaryRanges</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SummaryRanges.java)|
 | <b>ThreeSumSmaller</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ThreeSumSmaller.java)|
-| <b>CompareVersion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CompareVersion.java)|
 | <b>UTF_8Validation</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/UTF_8Validation.java)|
 | <b>ValidAbbrevation</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidAbbrevation.java)|
 | <b>StrobographicNumberII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StrobographicNumberII.java)|
