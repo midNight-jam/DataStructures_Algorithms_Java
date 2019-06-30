@@ -15,7 +15,32 @@ public class SummaryRanges {
 //  Input: [0,2,3,4,6,8,9]
 //  Output: ["0","2->4","6","8->9"]
 
+    
   public static List<String> summaryRanges(int[] nums) {
+    List<String> res = new ArrayList<>();
+    if(nums == null || nums.length < 1) return res;
+    
+    int prevHead = nums[0];
+    int head = nums[0];
+    String str;
+    
+    for(int i = 1; i < nums.length; i++){
+      if(head + 1 == nums[i]){
+        head++;
+        continue;
+      }
+
+      str = (prevHead < head) ? (prevHead + "->" + head) : (prevHead + "");
+      res.add(str);
+      prevHead = head = nums[i];
+    }
+    
+    str = (prevHead < head) ? (prevHead + "->" + head) : (prevHead + "");
+    res.add(str);
+    return res;
+  }
+    
+  public static List<String> summaryRangesOLD(int[] nums) {
     List<String> res = new ArrayList<>();
     if(nums == null || nums.length == 0) return res;
     int start = nums[0];
