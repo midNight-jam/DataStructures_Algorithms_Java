@@ -25,6 +25,35 @@ public class ProductArrayExceptSelf {
     }
     return res;
   }
+  
+  public int[] productExceptSelfMAINIDEA(int[] nums) {
+    if(nums == null || nums.length < 1) return nums;
+    
+    int n = nums.length;
+    int [] leftProd = new int[nums.length];
+    int [] rightProd = new int[nums.length];
+    
+    int lprod = 1;
+    int rprod = 1;
+    int li, ri;
+    
+    for(int i = 0; i < n; i++){
+      li = i;
+      ri = n - 1 - i;
+      lprod *= nums[li];
+      leftProd[li] = lprod;
+      rprod *= nums[ri];
+      rightProd[ri] = rprod;
+    }
+
+    for(int i = 0; i < n; i++){
+      int l = i > 0 ? leftProd[i-1] : 1;
+      int r = i < n -1 ? rightProd[i+1] : 1;
+      nums[i] = l * r;
+    }
+    
+    return nums;
+  }
 
   public static void main(String[] args) {
 
