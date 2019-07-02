@@ -344,7 +344,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>AllNodesDistanceKInBinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/AllNodesDistanceKInBinaryTree.java)|
 | <b>PopulatingNextRightPointersInEachNodeII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PopulatingNextRightPointersInEachNodeII.java)|
 | <b>FindKthSmallestPairDistance</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindKthSmallestPairDistance.java)|
-
+| <b>NumberOfMatchingSubsequences</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NumberOfMatchingSubsequences.java)|
 
 
 # Misc
