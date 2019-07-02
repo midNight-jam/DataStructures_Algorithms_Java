@@ -1,6 +1,7 @@
 package darkRealm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class StrobographicNumberII {
@@ -81,7 +82,7 @@ public class StrobographicNumberII {
       if (nos[i] == 6) h = "6" + s + "9";
       else if (nos[i] == 9) h = "9" + s + "6";
       else h = nos[i] + s + nos[i];
-      helper(h, res, n, nos);
+      helperOLD(h, res, n, nos);
     }
   }
 
