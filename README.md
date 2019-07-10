@@ -346,7 +346,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>FindKthSmallestPairDistance</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindKthSmallestPairDistance.java)|
 | <b>NumberOfMatchingSubsequences</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NumberOfMatchingSubsequences.java)|
 | <b>ShortestWayToFormString</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ShortestWayToFormString.java)|
-| <b>TopologicalSort</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TopologicalSortit.java)|
+| <b>TopologicalSort</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TopologicalSort.java)|
 
 
 # Misc
