@@ -10,40 +10,43 @@ public class MergeIntervals {
 //  Given [1,3],[2,6],[8,10],[15,18],
 //  return [1,6],[8,10],[15,18].
 
-  public static class Interval {
-    int start;
-    int end;
-
-    Interval() {
-      start = 0;
-      end = 0;
-    }
-
-    Interval(int s, int e) {
-      start = s;
-      end = e;
-    }
-  }
-
-  public static List<Interval> merge(List<Interval> intervals) {
-    if (intervals == null || intervals.size() == 0) return intervals;
-    Collections.sort(intervals, new Comparator<Interval>() {
-      @Override
-      public int compare(Interval o1, Interval o2) {
-        return o1.start == o2.start ? o1.end - o2.end : o1.start - o2.start;
+ public static int[][] merge(int[][] intervals) {
+    if(intervals == null || intervals.length < 1) return intervals;
+    
+    Arrays.sort(intervals, new Comparator<int[]>(){
+      public int compare(int [] o1, int[] o2){
+        if(o1[0] < o2[0]) return -1;
+        else if(o1[0] > o2[0]) return 1;
+        return 0;
       }
     });
-    Stack<Interval> stack = new Stack<>();
-    for (Interval t : intervals) {
-      while (!stack.isEmpty() && (stack.peek().start >= t.start || t.start <= stack.peek().end)) {
-        t.start = Math.min(t.start, stack.peek().start);
-        t.end = Math.max(t.end, stack.peek().end);
+    
+    Stack<int[]> stack = new Stack<>();
+    stack.push(intervals[0]);
+    
+    for(int i = 1; i < intervals.length; i++){
+      int [] prev = stack.peek();
+      int [] curr = intervals[i]; 
+    
+      if(curr[0] <= prev[1]){
+        int start = Math.min(prev[0], curr[0]);
+        int end = Math.max(prev[1], curr[1]);
+        int [] newRange = new int[]{start, end};
         stack.pop();
+        stack.push(newRange);
       }
-      stack.push(t);
+      else
+        stack.push(curr);
     }
-
-    return stack;
+    
+    int[][] res = new int[stack.size()][2];
+    int i = stack.size() - 1;
+    
+    while(stack.size() > 0)
+      res[i--] = stack.pop();
+    
+    
+    return res;
   }
 
   public static void main(String[] args) {
@@ -55,11 +58,7 @@ public class MergeIntervals {
 //    }));
 
 
-    List<Interval> intervals = new ArrayList<>(Arrays.asList(new Interval[]{
-        new Interval(0, 11),
-        new Interval(12, 13),
-        new Interval(0, 10)
-    }));
+    int[][] intervals = new int[][] {{1,3},{2,6},{8,10},{15,18}};
     intervals = merge(intervals);
     for (Interval i : intervals)
       System.out.println(i.start + " - " + i.end);
