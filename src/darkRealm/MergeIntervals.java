@@ -39,12 +39,11 @@ public class MergeIntervals {
         stack.push(curr);
     }
     
-    int[][] res = new int[stack.size()][2];
+    int[][] res = new int[stack.size()][];
     int i = stack.size() - 1;
     
     while(stack.size() > 0)
       res[i--] = stack.pop();
-    
     
     return res;
   }
