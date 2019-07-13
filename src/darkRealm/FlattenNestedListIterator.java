@@ -1,9 +1,6 @@
 package darkRealm;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Stack;
+import java.util.*;
 
 public class FlattenNestedListIterator {
 
@@ -30,10 +27,50 @@ public class FlattenNestedListIterator {
     public List<NestedInteger> getList();
   }
 
-  public static class NestedIterator implements Iterator<Integer> {
+  public static class NestedInt implements NestedInteger {
+    Integer val;
+
+    public NestedInt(int v) {
+      val = v;
+    }
+
+    public boolean isInteger() {
+      return true;
+    }
+
+    public Integer getInteger() {
+      return val;
+    }
+
+    public List<NestedInteger> getList() {
+      return null;
+    }
+  }
+
+  public static class NestedList implements NestedInteger {
+    List<NestedInteger> val;
+
+    public NestedList() {
+      val = new ArrayList<>();
+    }
+
+    public boolean isInteger() {
+      return false;
+    }
+
+    public Integer getInteger() {
+      return null;
+    }
+
+    public List<NestedInteger> getList() {
+      return val;
+    }
+  }
+
+  public static class NestedIteratorOLD implements Iterator<Integer> {
     Stack<ListIterator<NestedInteger>> stack;
 
-    public NestedIterator(List<NestedInteger> nestedList) {
+    public NestedIteratorOLD(List<NestedInteger> nestedList) {
       stack = new Stack<>();
       stack.push(nestedList.listIterator());
     }
@@ -63,8 +100,70 @@ public class FlattenNestedListIterator {
     }
   }
 
+  public static class NestedIterator implements Iterator<Integer> {
+    Stack<NestedInteger> stack;
+
+    public NestedIterator(List<NestedInteger> nestedList) {
+      stack = new Stack<>();
+      pushEachOfListToStack(nestedList);
+    }
+
+    private void pushEachOfListToStack(List<NestedInteger> nestedList){
+      for(int i = nestedList.size() - 1; i >= 0; i--){
+        stack.push(nestedList.get(i));
+      }
+    }
+
+    @Override
+    public Integer next() {
+      return stack.pop().getInteger();
+    }
+
+    @Override
+    public boolean hasNext() {
+      while(stack.size() > 0){
+        NestedInteger ni = stack.peek();
+        if(ni.isInteger())
+          return true;
+        stack.pop(); // remove the nested list from stack, as we are going to push each element now
+        pushEachOfListToStack(ni.getList());
+      }
+      return false;
+    }
+  }
 
   public static void main(String[] args) {
+//    List<NestedInteger> nlist = new ArrayList<>();
+//    NestedList nli = new NestedList();
+//    nli.getList().add(new NestedInt(1));
+//
+//    NestedList nli2 = new NestedList();
+//    nli2.getList().add(new NestedInt(11));
+//    nli2.getList().add(new NestedInt(22));
+//    nli.getList().add(nli2);
+//    nli.getList().add(new NestedInt(2));
+//
+//    nlist.add(new NestedInt(0));
+//    nlist.add(nli);
+//    nlist.add(new NestedInt(3));
+
+//    List<NestedInteger> nlist = new ArrayList<>();
+//    NestedList nli = new NestedList();
+//    nli.getList().add(new NestedInt(1));
+//    nli.getList().add(new NestedInt(1));
+//    nlist.add(nli);
+//    nlist.add(new NestedInt(2));
+//    nlist.add(nli);
+
+
+    List<NestedInteger> nlist = new ArrayList<>();
+    NestedInteger nli = new NestedList();
+    nlist.add(nli);
+    NestedIterator nit = new NestedIterator(nlist);
+
+    while (nit.hasNext()) {
+      System.out.println(nit.next());
+    }
 
   }
 }

@@ -59,7 +59,7 @@ public class MergeIntervals {
 
     int[][] intervals = new int[][] {{1,3},{2,6},{8,10},{15,18}};
     intervals = merge(intervals);
-    for (Interval i : intervals)
-      System.out.println(i.start + " - " + i.end);
+    for (int [] i : intervals)
+      System.out.println(Arrays.toString(i));
   }
 }
