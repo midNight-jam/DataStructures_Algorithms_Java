@@ -36,26 +36,32 @@ public class EncodeAndDecodeStrings {
     // why separator, beacuse we need a way to determin the size of the string, if we just append the size of string
     // ahead of its contend we cannot be sure how long the string is if string begins with number.
     for (String s : strs)
-      sbr.append(s.length() + "/" + s);
+      sbr.append(s.length() + "##" + s);
     return sbr.toString();
   }
 
   public static List<String> decode(String s) {
     List<String> res = new ArrayList<>();
-    if (s == null || s.length() == 0) return res;
-    int i = 0, sepIndex, strSize;
-    while (i < s.length()) {
-      sepIndex = s.indexOf('/', i);
-      strSize = Integer.parseInt(s.substring(i, sepIndex));
-      String str = s.substring(sepIndex + 1, sepIndex + strSize + 1);
-      res.add(str);
-      i = sepIndex + strSize + 1;
+    if(s == null) return res;
+
+    int index = 0;
+    String sep = "##";
+    int sepIndex = -1;
+    int len, seplen = 2;
+    while(index < s.length()){
+      sepIndex = s.indexOf(sep, index);
+      len = Integer.parseInt(s.substring(index, sepIndex));
+      String r =s.substring(sepIndex + seplen, sepIndex + seplen + len);
+      res.add(r);
+      index = sepIndex + seplen + len;
     }
+
     return res;
   }
 
   public static void main(String[] args) {
-    String[] sarr = new String[]{"abc", "///", "123"};
+//    String[] sarr = new String[]{"abc", "///", "123"};
+    String[] sarr = new String[]{"C#","&","~Xp|F","R4QBf9g=_"};
     List<String> strs = new ArrayList<>(Arrays.asList(sarr));
     System.out.println(strs);
     String encodedStr = encode(strs);
