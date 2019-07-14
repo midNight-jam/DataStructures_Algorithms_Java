@@ -18,30 +18,43 @@ public class QueueReconstructionByHeight {
 //      [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
 
 
-  public static int[][] reconstructQueue(int[][] people) {
-    if (people == null || people.length == 0 || people[0].length == 0) return people;
+  public static int[][] reconstructQueue(int[][] ppl) {
+    if(ppl == null || ppl.length < 1 || ppl[0].length < 1) return ppl;
+    int[][] res = new int[ppl.length][2];
+
     // Intuition is to sort people based on height in descending
     // and if their hieght matches then on their position in ascending
     // Why sort based on height in descending, because we utilize the linked list DS ability to push elements further
     // if there is an element already on that index.
     // Linkedlist works for as inserting the people in the correct position
-    Arrays.sort(people, new Comparator<int[]>() {
-      @Override
-      public int compare(int[] t1, int[] t2) {
-        // first sort based on height descending, then on position ascending
-        if (t1[0] == t2[0]) return t1[1] - t2[1];
-        return t2[0] - t1[0];
+
+    Arrays.sort(ppl, new Comparator<int[]>(){
+      public int compare(int [] o1, int [] o2){
+        int h1 = o1[0], h2 = o2[0];
+        int p1 = o1[1], p2 = o2[1];
+
+        if(h1 > h2) return -1;
+        else if(h1 < h2) return 1;
+
+        if(p1 < p2) return -1;
+        else if(p1 > p2) return 1;
+
+        return 0;
       }
     });
 
-    List<int[]> res = new LinkedList<>();
-    for (int[] p : people)
-      res.add(p[1], p);
+    LinkedList<int[]> ll = new LinkedList<>();
 
-    int[][] finalRes = new int[res.size()][2];
-    for (int i = 0; i < res.size(); i++)
-      finalRes[i] = res.get(i);
-    return finalRes;
+    for(int [] hp : ppl){
+      int pos = hp[1];
+      ll.add(pos, hp);
+    }
+
+    for(int i = 0; i < res.length; i++){
+      res[i] = ll.get(i);
+    }
+
+    return res ;
   }
 
   public static void main(String[] args) {
