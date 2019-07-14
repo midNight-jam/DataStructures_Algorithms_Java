@@ -26,6 +26,32 @@ public class LongestSubstringWithAtMost2DistinctChars {
     }
     return maxLen;
   }
+  
+   public int lengthOfLongestSubstringTwoDistinctANOTHER(String s) {
+    if(s == null || s.length() < 1) return 0;
+    Map<Character, Integer> map = new HashMap<>();
+    int len = 0;
+    char [] arr = s.toCharArray();
+    int res = Integer.MIN_VALUE;
+    for(int i = 0; i < arr.length; i++){
+      if(!map.containsKey(arr[i]) && map.size() == 2){
+        int min = Integer.MAX_VALUE;
+        char out = arr[i];
+        for(char c : map.keySet()){
+          if(map.get(c) < min){
+            out = c;
+            min = map.get(c);
+          }
+        }
+        len = i - min - 1; //beacuse will get increment in the below statement
+        map.remove(out);
+      }
+      map.put(arr[i], i);
+      len++;
+      res = Math.max(res, len);
+    }    
+    return res;
+  }
 
   public static void main(String[] args) {
     System.out.println("R ");
