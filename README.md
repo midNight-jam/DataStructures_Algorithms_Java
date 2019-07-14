@@ -148,7 +148,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>EncodeAndDecodeStrings</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EncodeAndDecodeStrings.java)|
 | <b>QueueReconstructionByHeight.java</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/QueueReconstructionByHeight.java)|
 | <b>LongestSubstringWithAtMost2DistinctChars</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestSubstringWithAtMost2DistinctChars.java)|
-| <b>ConstructBinaryTreeFromInorderAndPostOrderTraversal</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ConstructBinaryTreeFromInorderAndPostOrderTraversal.java)|
+| <b>ConstructBinaryTreeFromInorderAndPostOrderTraversal</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ConstructBinaryTreeFromInOrderAndPostOrderTraversal.java)|
 | <b>ConstructBinaryTreeFromInorderAndPreOrderTraversal</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ConstructBinaryTreeFromInorderAndPreOrderTraversal.java)|
 | <b>RangeAddition</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RangeAddition.java)|
 | <b>ClimbStairs</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ClimbStairs.java)|
