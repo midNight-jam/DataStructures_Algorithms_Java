@@ -349,6 +349,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>TopologicalSort</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TopologicalSort.java)|
 | <b>VerifyingAnAlienDictionary</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/VerifyingAnAlienDictionary.java)|
 | <b>AlienDictionary</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/AlienDictionary.java)|
+| <b>ConstructBinaryTreeFromPreorderAndTraversal</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ConstructBinaryTreeFromPreorderAndTraversal.java)|
+
 
 
 # Misc
