@@ -41,10 +41,10 @@ public class RangeAddition {
       int end = up[1];
       int val = up[2];
       
-      // start using this value
+      // mark the inclusion of this value for this range
       res[start] += val;
       
-      // start excluding this value outside of the given range
+      // mark the exclusion of this value for outside of the given range
       if(end < res.length - 1)
         res[end+1] -= val;
     }
