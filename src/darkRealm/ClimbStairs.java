@@ -8,15 +8,17 @@ public class ClimbStairs {
 //  Note: Given n will be a positive integer.
 
   public static int climbStairs(int n) {
-    int prev = 0, here = 1;
-    int sum = 0;
-    while(n > 0){
-      sum = prev + here;
-      prev = here;
-      here = sum;
-      n--;
+    if(n < 3) return n;
+    
+    int n_1 = 1; // n minus 1
+    int n_2 = 2; // n minus 2
+    int res = 0;
+    for(int i = 3; i <= n; i++){
+      res = n_1 + n_2; // to reach this step total ways = (n minus 1) + (n minus 2)
+      n_1 = n_2; // as we move ahead n-1 & n-2 shifts
+      n_2 = res;
     }
-    return sum;
+    return res;
   }
 
   public static void main(String[] args) {
