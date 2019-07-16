@@ -1,5 +1,8 @@
 package darkRealm;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LongestSubstringWithAtMost2DistinctChars {
 
 //  #159. Longest Substring with At Most Two Distinct Characters
