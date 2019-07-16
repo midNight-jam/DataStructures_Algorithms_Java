@@ -351,7 +351,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>AlienDictionary</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/AlienDictionary.java)|
 | <b>ConstructBinaryTreeFromPreorderAndTraversal</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ConstructBinaryTreeFromPreorderAndTraversal.java)|
 | <b>WiggleSortII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/WiggleSortII.java)|
-
+| <b>VerticalOrderTraversalOfABinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/VerticalOrderTraversalOfABinaryTree.java)|
 
 
 # Misc
