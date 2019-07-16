@@ -10,23 +10,22 @@ public class WiggleSort {
     // problem in short is to arrange the nos in a way such that Odd positions have bigger nos
     // and even positions have smaller nos, so to achieve this we swap nos when they violate above
     // conditions
-    if (nums == null || nums.length == 0) return;
-    int temp = 0;
-    for (int i = 1; i < nums.length; i++) {
-      // Odd and the previous no is bigger, it violates above rule so swap
-      if ((i & 1) == 1) {
-        if (nums[i - 1] > nums[i]) {
-          temp = nums[i - 1];
+    if(nums == null || nums.length < 1) return;
+    for(int i = 1; i < nums.length; i++){
+      if((i & 1) == 0){
+      // even will be small
+        if(nums[i] > nums[i-1]){
+          int t = nums[i-1];
           nums[i - 1] = nums[i];
-          nums[i] = temp;
+          nums[i] = t;
         }
       }
-      // Even and the previous no is smaller, it violates above rule so swap
-      if ((i & 1) == 0) {
-        if (i != 0 && nums[i - 1] < nums[i]) {
-          temp = nums[i - 1];
+      else{
+      // odd will be bigger
+        if(nums[i] < nums[i-1]){
+          int t = nums[i-1];
           nums[i - 1] = nums[i];
-          nums[i] = temp;
+          nums[i] = t;
         }
       }
     }

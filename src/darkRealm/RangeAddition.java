@@ -29,22 +29,30 @@ public class RangeAddition {
 //      [-2, 0, 3, 5, 3 ]
 
   public static int[] getModifiedArray(int length, int[][] updates) {
+    if(updates == null) return new int[0];
     int[] res = new int[length];
     // Intuition is, for every range update mark the increment in the result array against the start and end. And then
     // do a single pass over the result array to apply increments. For each range we mark the increment for the start
     // but as soon as the range gets over we have to remove its effect also for this at the end + 1 index we mark the
     // negative of the update value, in this way we remove the effect of the update for range.
-    for (int[] upd : updates) {
-      int start = upd[0], end = upd[1], val = upd[2];
+
+    for(int [] up : updates){
+      int start = up[0];
+      int end = up[1];
+      int val = up[2];
+      
+      // mark the inclusion of this value for this range
       res[start] += val;
-      if (end < res.length - 1) res[end + 1] += -val; // why negative beacuse we would be removing the effect of this
-      // update as its range is over
+      
+      // mark the exclusion of this value for outside of the given range
+      if(end < res.length - 1)
+        res[end+1] -= val;
     }
-    int sum = res[0];
-    for (int i = 1; i < res.length; i++) {
-      res[i] += sum;
-      sum = res[i];
-    }
+
+    // preform sum of all such marked values
+    for(int i = 1; i < res.length; i++)
+      res[i] += res[i-1];
+    
     return res;
   }
 

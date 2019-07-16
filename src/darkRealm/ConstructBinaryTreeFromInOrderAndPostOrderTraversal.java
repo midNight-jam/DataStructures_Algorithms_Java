@@ -34,7 +34,7 @@ public class ConstructBinaryTreeFromInOrderAndPostOrderTraversal {
         inIdx = i;
         break;
       }
-
+    // right first, because we are doing in reverse order of left->right->root
     root.right = helper(inorder, inIdx + 1, high, postorder);
     root.left = helper(inorder, low, inIdx - 1, postorder);
     return root;
