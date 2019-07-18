@@ -40,8 +40,10 @@ public class LargestRectangleInHistogram {
         // the length of the histogram, which is at this point i will be nums.length
         area = heights[top] * left;
         max = Math.max(area, max);
-        i--; // this is applied so that i == length condition can be met which will cause the stack to become empty once
+        i--; // keep the pointer at this index as we want to process all the rectangles that can be made
+        // this is applied so that i == length condition can be met which will cause the stack to become empty once
         // we have reached the end of array, as then it will assign height as 0, which will cause the pops
+        
       }
     }
     return max;
