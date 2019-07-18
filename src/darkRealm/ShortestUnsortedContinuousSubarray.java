@@ -11,7 +11,7 @@ public class ShortestUnsortedContinuousSubarray {
     while (nums[r] >= nums[r-1]) r--;
     for (int i = l; i <= r; i++) {
       min = Math.min(min, nums[i]);
-      max = Math.min(max, nums[i]);
+      max = Math.max(max, nums[i]);
     }
     while (l >= 0 && nums[l] > min) l--;
     while (r < nums.length && nums[r] < max) r++;
