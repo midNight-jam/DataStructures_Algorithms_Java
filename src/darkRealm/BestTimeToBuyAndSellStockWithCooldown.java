@@ -17,22 +17,26 @@ public class BestTimeToBuyAndSellStockWithCooldown {
 
   public static int maxProfit(int[] prices) {
     if (prices == null || prices.length == 0) return 0;
-    int[] s0 = new int[prices.length];
-    int[] s1 = new int[prices.length];
-    int[] s2 = new int[prices.length];
+    int N = prices.length;
+    int [] resting = new int[N];
+    int [] bought = new int[N];
+    int [] sold = new int[N]; // or we can also name this array profit
 
     // Intuition is finite state machine with 3 states s0, s1 and s2, and rest, buy and sell being the transitions the we can make
     // Now, initially we start from s0, there are two transitions from s0, rest which doesnt changes the state, and buy
     // which takes us to state 2
-    //      [rest]       [rest]
-    //      (s0) <----------------  (s2)
-    //         \                  /
-    //          \               /
-    //    [buy]  \            /   [sell]
-    //   s0 to s1  \        /   s1 to s2
-    //               \    /
-    //              (s1)
-    //              [rest]
+    //      [restedge]            [restedge]
+    //      (S0/restingState) <---------------------  (S2/soldStae)
+    //          \                                 /
+    //           \                               /
+    //  [buyedge]  \                            /   [selledge]
+    //   s0 to s1  \                          /   s1 to s2
+    //               \                       /
+    //                 \                    /
+    //                    \              /
+    //                     \           /
+    //                    (S1/boughtState)
+    //                      [restedge]
     //
     // then by observing the incoming edges we can see the cost for reaching that state
     //  for price[i]
@@ -40,18 +44,24 @@ public class BestTimeToBuyAndSellStockWithCooldown {
     // to reach S1 == Max(S0[i-1] - price[i], S1[i-1]) , why -prices[i], bcoz we are puchasing ans that requires spending money
     // to reach S2 == S1[i-1] + price[i], why +price[i], bcoz we sold stock so profit
 
-    s0[0] = 0;  //only resting
-    s1[0] = -prices[0];    // intially we purchased the stock to reach state s1
-    s2[0] = Integer.MIN_VALUE;  //as we cannot reach S2 without selling so we set it to min
+    resting[0] = 0;
+    bought[0] = resting[0] - prices[0]; // I bought so I am in -ve, as I spend money out of pocket
+    sold[0] = Integer.MIN_VALUE; // initially no profit so we set to MIN & not 0 (we want to maximise profit)
+    
 
-    for (int i = 1; i < prices.length; i++) {
-      s0[i] = Math.max(s0[i - 1], s2[i - 1]);
-      s1[i] = Math.max(s0[i - 1] - prices[i], s1[i - 1]);
-      s2[i] = s1[i - 1] + prices[i];
+    // NO COST FOR RESTING (edge)
+    for(int i = 1; i < N; i++){
+      //either we can reach resting state by selling, or just resting
+      resting[i] = Math.max(sold[i-1], resting[i-1]);
+      // wither we reach bought by buying or resting after a buy
+      bought[i] = Math.max(bought[i-1], resting[i-1] - prices[i]);
+      // we reach sold state only after selling
+      sold[i] = prices[i] + bought[i-1]; // not -bought[i], because when I bought I am in -ve already, if I do -bought[i], -(-bought[i]) would becone +bought[i]
     }
-    // We can return only from S0 and S2, becuase when we are at S1 ,we are in middle of a trade as we have not sold what
-    // we bought, thus S0 & S1 are the valid states so we take the max profit from these states.
-    return Math.max(s0[prices.length - 1], s2[prices.length - 1]);
+    
+    // when finished we can be either at resting state or sold state, so we take the max among these states
+    //thus S0 & S1 are the valid states so we take the max profit from these states.
+    return Math.max(sold[N-1], resting[N-1]);
   }
 
   public static void main(String[] args) {
