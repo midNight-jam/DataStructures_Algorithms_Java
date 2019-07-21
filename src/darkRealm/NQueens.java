@@ -52,6 +52,32 @@ public class NQueens {
   }
 
   public static boolean isValid(char[][] board, int row, int col) {
+    int N = board.length;
+    for (int i = 0; i < board.length; i++) {
+      // why i!= col, because at [row][col] we already have placed the Queen
+      if (i != col && board[row][i] == 'Q') return false;
+      // why i!= row, because at [row][col] we already have placed the Queen
+      if (i != row && board[i][col] == 'Q') return false;
+      // why i== 0, because in all 4 diag dirs if we go 0 dist we are already at [row][col] 
+      // where we already have placed the Queen
+      if (i == 0) continue;
+      // top right
+      if (row - i >= 0 && col + i < N)
+        if (board[row - i][col + i] == 'Q') return false;
+      // bottom right
+      if (row + i < N && col + i < N)
+        if (board[row + i][col + i] == 'Q') return false;
+      // bottom left
+      if (row + i < N && col - i >= 0)
+        if (board[row + i][col - i] == 'Q') return false;
+      // top left
+      if (row - i >= 0 && col - i >= 0)
+        if (board[row - i][col - i] == 'Q') return false;
+    }
+    return true;
+  }
+  
+  public static boolean isValidOLD(char[][] board, int row, int col) {
     for (int i = 0; i < board.length; i++) {
       for (int j = 0; j < col; j++) {
         boolean alreadyPlaced = board[i][j] == 'Q';
