@@ -21,9 +21,9 @@ public class DistinctSubsequence {
 
     for (int i = 1; i < dp.length; i++) {
       // for each char in T
-      sc = t.charAt(i - 1);
+      tc = t.charAt(i - 1);
       for (int j = 1; j < dp[0].length; j++) {
-        tc = s.charAt(j - 1);
+        sc = s.charAt(j - 1);
         // If the chars at T nad S dnont match, then the no of distinct subsequences are carried from prev char in S, ie LEFT
         dp[i][j] = dp[i][j - 1];
         // If the chars at T and S match then, also add the value from diagonal, which is the no of distinct subseqeuences
@@ -32,7 +32,8 @@ public class DistinctSubsequence {
           dp[i][j] += dp[i - 1][j - 1];
       }
     }
-    return dp[s.length()][t.length()];
+
+    return dp[t.length()][s.length()]; 
   }
 
   public static void main(String[] args) {

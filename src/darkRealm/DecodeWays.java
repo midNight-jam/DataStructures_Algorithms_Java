@@ -36,8 +36,8 @@ public class DecodeWays {
     int oneDigit = 0, twoDigit = 0;
     for (int i = 2; i <= n; i++) {
       oneDigit = s.charAt(i - 1) - '0';
-      if (oneDigit != 0) // oneDigit is not 0, then initialize it with the previous, else its 0, because we cannot encode '0' char
-        dp[i] = dp[i - 1];
+      if (oneDigit != 0) // oneDigit is not 0, then use previous result, else its 0, because we cannot encode '0' char
+        dp[i] += dp[i - 1];
       twoDigit = Integer.parseInt(s.substring(i - 2, i));
       // if previous two char can be reprsented using ABC.., ie they are not bigger than 26 & we have > 10 check to handle
       // 0's in between the string
