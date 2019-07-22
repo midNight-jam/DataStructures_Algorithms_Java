@@ -30,13 +30,13 @@ public class JumpGameII {
     for (int i = 0; i < N && i <= max; i++) {
       int dist = nums[i];
       // calculate + update min jump for all the indexes that we can reach from here
-      for (int j = i + 1; j < N && dist > 0; j++, dist--) {
+      for (int j = i + 1; j < N && dist > 0; j++, dist--) 
         if (mins[i] + 1 < mins[j])
           mins[j] = mins[i] + 1;
-      }
-      if (i + nums[i] > max) {
+      
+      if (i + nums[i] > max) 
         max = i + nums[i];
-      }
+      
     }
     System.out.println(Arrays.toString(mins));
     return mins[N - 1];
