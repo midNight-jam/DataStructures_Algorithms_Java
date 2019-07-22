@@ -19,6 +19,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>SegmentTree</b>  <br>  Methods Implemented: query(), update()| [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/SegmentTree.java)|
 | <b>CartesianTree</b>  <br>  Methods Implemented: buildCartesianTree()| [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/CartesianTree.java)|
 | <b>BinaryIndexedTree</b>  <br>  Methods Implemented: build(), query(), queryRange()| [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/BinaryIndexedTree.java)|
+| <b>JumpGameII</b>  <br>  Methods Implemented: build(), query(), queryRange()| [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/JumpGameII.java)|
 
 # Algorithms Problems Java  
 
