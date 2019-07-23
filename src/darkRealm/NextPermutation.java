@@ -13,7 +13,44 @@ public class NextPermutation {
 //      3,2,1 → 1,2,3
 //      1,1,5 → 1,5,1
 
+  
   public static void nextPermutation(int[] nums) {
+    if(nums == null || nums.length < 1) return;
+    int k = -1;
+    // first, find the first number from behind that is GREATER then its previous
+    for(int i = nums.length - 1; i > 0; i--)
+      if(nums[i-1] < nums[i]){
+        k = i;
+        break;
+      }
+    
+    // This means that array is in descenfding
+    if( k == -1){
+      Arrays.sort(nums);
+      return;
+    }
+    
+   // second, find the first number from behind that is GREATER than nums[k-1] & swap
+    for(int i = nums.length - 1; i >= 0 ; i--)
+      if(nums[i] > nums[k-1]){
+        int temp = nums[i];
+        nums[i] = nums[k-1];
+        nums[k-1] = temp;
+        break;
+      }
+    
+    //Reverse the partition from k to end
+    int l = k, r = nums.length - 1, temp;
+    while(l <= r){
+      temp = nums[r];
+      nums[r] = nums[l];
+      nums[l] = temp;
+      l++;
+      r--;
+    }
+  }
+  
+  public static void nextPermutationOLD(int[] nums) {
     if (nums == null || nums.length == 0) return;
     for (int i = nums.length - 1; i > 0; i--) {
       // first, find the first number from behind that is smaller then its previous
