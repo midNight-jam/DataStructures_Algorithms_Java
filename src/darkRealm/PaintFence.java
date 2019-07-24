@@ -19,8 +19,8 @@ public class PaintFence {
     same[2] = k;
     diff[2] = k * (k - 1);
 
-    // now moving forward, if prev 2 were painted same, then this fence we have to paint differently, thus (k - 1), which can come from diff[i-1]
-    // and if we paint diff, then we have same paint * (k - 1) + diff paint * (k - 1)
+    // now moving forward, if prev 2 were painted same, then this fence we have to paint differently, thus (k - 1),
+    // which can come from diff[i-1] and if we paint diff, then we have same paint * (k - 1) + diff paint * (k - 1)
     for (int i = 3; i <= n; i++) {
       same[i] = diff[i - 1];
       diff[i] = same[i - 1] * (k - 1) + diff[i - 1] * (k - 1);
