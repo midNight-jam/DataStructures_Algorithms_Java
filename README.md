@@ -202,8 +202,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>SubstringWithConcatenationOfWords</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubstringWithConcatenationOfWords.java)|
 | <b>CombinationSumII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumII.java)|
 | <b>StringCompression</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StringCompression.java)|
-| <b>SegmentTree_RangeSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SegmentTree_RangeSum.java)|
-| <b>SegmentTree_RangeMin</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SegmentTree_RangeMin.java)|
+| <b>SegmentTree_RangeSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/ADT/SegmentTree_RangeSum.java)|
+| <b>SegmentTree_RangeMin</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/ADT/SegmentTree_RangeMin.java)|
 | <b>CountSmallerNumberAfterSelf</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CountOfSmallerNumbersAfterSelf.java)|
 | <b>RangeSumQuery</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RangeSumQuery.java)|
 | <b>MaximumBinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumBinaryTree.java)|
