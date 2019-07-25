@@ -25,9 +25,15 @@ public class CountOfSmallerNumbersAfterSelf {
     int[] bit = new int[max + 1];
     for (int i = nums.length - 1; i > -1; i--) {
       // first fetch how many elements smaller than this element are already present in the BIT
-      int smallCount = query(reducdedToIndexArray[i] - 1 , bit); // why -1 because excluding self how many smaller are present, if the prob was for <= then we can use same index
-      res.add(0, smallCount); // as we are reading the array from behind, the result will get created in reverse order, thus insert at head.
-      update(reducdedToIndexArray[i], bit); // insert this value in the BIT
+      // why -1 because excluding self how many smaller are present,
+      //if the prob was for <= then we can use same index
+      int smallCount = query(reducdedToIndexArray[i] - 1 , bit); 
+      
+      // as we are reading the array from behind, the result will get created in reverse order, thus insert at head.
+      res.add(0, smallCount); 
+      
+      // insert this value in the BIT
+      update(reducdedToIndexArray[i], bit); 
     }
     return res;
   }
