@@ -1,5 +1,6 @@
 package darkRealm;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,52 +21,56 @@ public class CountSmallerNumberAfterSelf {
     int val, smallCount, dupCount;
     TreeNode left, right;
 
-    TreeNode(int v, int s, int d) {
+    TreeNode(int v) {
       val = v;
-      smallCount = s;
-      dupCount = d;
+      dupCount = 1;
     }
   }
 
+  static TreeNode root;
+
   public static List<Integer> countSmaller(int[] nums) {
-    if (nums == null || nums.length == 0) return null;
-    Integer[] res = new Integer[nums.length];
-    TreeNode root = null;
+    if (nums == null || nums.length < 1) return new ArrayList<>();
+    List<Integer> res = new ArrayList<>();
     // Intuition is to built a BST from the array by scanning it from right to left, so we insert end elements first,
     // But the BST nodes now will also track the dup count and the small count. smallcount means the no of nodes smaller than
     // itself, and dupcount if the input contiains duplicate then for it.
-    root = build(root, res, nums.length - 1, nums[nums.length - 1], 0);
-    for (int i = nums.length - 2; i >= 0; i--)
-      build(root, res, i, nums[i], 0);
-
-    return Arrays.asList(res);
+    for (int i = nums.length - 1; i >= 0; i--) {
+      root = insert(nums[i], root, res, 0);
+    }
+    return res;
   }
 
-  private static TreeNode build(TreeNode node, Integer [] res, int index, int num, int runningSmallCount) {
-    if (node == null) {
-      node = new TreeNode(num, 0, 1); // dupCount count as one, counting it self
-      res[index] = runningSmallCount; // whatever the runningSmallCount is create new node with that
-    } else if (node.val == num) {
-      node.dupCount++;
-      res[index] = runningSmallCount + node.smallCount; // why we are taking here nodesmallCount in sum, bcoz for ex
+  private static TreeNode insert(int n, TreeNode root, List<Integer> res, int runningSmallCount) {
+    if (root == null) {
+      res.add(0, runningSmallCount); // add runningSmallCount to head
+      return new TreeNode(n); // dupCount count as one, counting it self
+    } else if (root.val == n) {
+      root.dupCount++;
+      res.add(0, runningSmallCount + root.smallCount);
+      // why we are taking here nodesmallCount in sum, bcoz for ex
       // the array is 2,1,4,2, now when firs time the 2 was inserted its small count was 0, but after inserting 1, its
-      // small count is 0+1, now when the 2nd 2 comes if we just take account of running small count it will be 1, which will
-      // be wrong , thus we add
-    } else if (num < node.val ) {
-      node.smallCount++;  // if we are moving left, we just increase the small count of this node, bcoz the new element
+      // small count is 0+1, now when the 2nd 2 comes if we just take account of running small count it will be 1, which
+      // will be wrong , thus we add
+    } else if (root.val > n) {
+      root.smallCount++;// if we are moving left, we just increase the small count of this node, bcoz the new element
       // getting inserted is smaller then this node
-      node.left = build(node.left, res, index, num, runningSmallCount);
+      root.left = insert(n, root.left, res, runningSmallCount);
     } else {
       // if we are moving right, we have to take account to small Counts of the left subtree of the node from which
       // we are moving right, thus we are adding the nodes smallcount and the dupCount to the runningSmallCount
-      node.right = build(node.right, res, index, num, runningSmallCount + node.dupCount + node.smallCount);
+      int nodesInLeftSubTree = runningSmallCount + root.smallCount + root.dupCount;
+      root.right = insert(n, root.right, res, nodesInLeftSubTree);
     }
-    return node;
+
+    return root;
   }
+
 
   public static void main(String[] args) {
 //    int[] nums = new int[]{5, 2, 6, 1};
-    int[] nums = new int[]{3, 2, 2, 6, 1};
+//    int[] nums = new int[]{3, 2, 2, 6, 1};
+    int[] nums = new int[]{0, 5, 5, 6, 1};
     List<Integer> res = countSmaller(nums);
     System.out.println(res);
   }
