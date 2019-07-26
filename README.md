@@ -204,12 +204,11 @@ This section contains implementation of different Data Structures in Java.
 | <b>StringCompression</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StringCompression.java)|
 | <b>SegmentTree_RangeSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/ADT/SegmentTree_RangeSum.java)|
 | <b>SegmentTree_RangeMin</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/ADT/SegmentTree_RangeMin.java)|
-| <b>CountSmallerNumberAfterSelf</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CountOfSmallerNumbersAfterSelf.java)|
+| <b>CountSmallerNumberAfterSelf</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CountSmallerNumberAfterSelf.java)|
 | <b>RangeSumQuery</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RangeSumQuery.java)|
 | <b>MaximumBinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumBinaryTree.java)|
-| <b>LargestBSTSubtree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumII.java)|
+| <b>LargestBSTSubtree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LargestBSTSubtree.java)|
 | <b>HouseRobberII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/HouseRobberII.java)|
-| <b>CombinationSumII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CombinationSumII.java)|
 | <b>TwoKeysKeyboard</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TwoKeysKeyboard.java)|
 | <b>MovieRating</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MovieRating.java)|
 | <b>ContigousSubarraysWithZeroSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubarraysWithZeroSum.java)|
