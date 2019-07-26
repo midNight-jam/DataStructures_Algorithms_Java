@@ -1,3 +1,5 @@
+package darkRealm;
+
 import java.util.*;
 
 public class MovieRating {
