@@ -1,7 +1,6 @@
 package darkRealm;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class KDiffPairsArray {
 
@@ -29,7 +28,26 @@ public class KDiffPairsArray {
     The length of the array won't exceed 10,000.
     All the integers in the given input belong to the range: [-1e7, 1e7].
   */
-  public static int kDiffFindPairs(int[] arr, int k) {
+  public static int kDiffFindPairs(int[] nums, int k) {
+    if (nums == null || nums.length < 1) return 0;
+    Set<Integer> set = new HashSet<>();
+    Set<Integer> used = new HashSet<>();
+    int res = 0;
+    Arrays.sort(nums);
+    for (int i = 0; i < nums.length; i++) {
+      if (used.contains(nums[i])) continue;
+      else if (set.contains(nums[i] - k)) {
+        res++;
+        used.add(nums[i]);
+      }
+      set.add(nums[i]);
+    }
+
+    return res;
+  }
+
+
+  public static int kDiffFindPairsOLD(int[] arr, int k) {
     if (arr == null || arr.length == 0 || k < 0) return 0;
 
     Map<Integer, Integer> map = new HashMap<>();
@@ -54,10 +72,11 @@ public class KDiffPairsArray {
     return pair;
   }
 
-
   public static void main(String[] args) {
     int[] nums = new int[]{1, 3, 1, 5, 4};
-    int k = 0;
+    int k = 2;
+//    int[] nums = new int[]{1, 3, 2, 5, 4};
+//    int k = 1;
     int res = kDiffFindPairs(nums, k);
     System.out.println(res);
   }
