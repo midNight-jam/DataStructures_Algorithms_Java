@@ -13,26 +13,30 @@ public class MultiplyStrings {
   */
 
   public static String multiply(String n1, String n2) {
+    // carry goes at poisiton (i + j) & digit goes at (i + j + 1) carry = sum/10,  digit  = sum % 10
     int a = n1.length(), b = n2.length();
-    int[] pos = new int[a + b];
-    // p1 goes at part (i + j) p2 goes at (i + j + 1) p1 = sum/10 p2  = sum % 10
+    int[] res = new int[a + b];
     for (int i = n1.length() - 1; i >= 0; i--) {
       for (int j = n2.length() - 1; j >= 0; j--) {
         int prod = (n1.charAt(i) - '0') * (n2.charAt(j) - '0');
-        int p1 = i + j;
-        int p2 = i + j + 1;
+        int carryPos = i + j;
+        int digitPos = i + j + 1;
 
-        int sum = prod + pos[p2];
-        pos[p1] += sum / 10;
-        pos[p2] = sum % 10;
+        int sum = prod + res[digitPos];
+        int digit = sum % 10;
+        int carry = sum / 10;
+        res[carryPos] = res[carryPos] + carry; // current carry get added to prev carry
+        res[digitPos] = digit; // current digits just overrides prev digit, as we have already captured overflow/carry in above step
       }
     }
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < pos.length; i++) {
-      if (!(pos[i] == 0 && sb.length() == 0))// dont append extra zeros at head
-        sb.append(pos[i]);
+    
+   StringBuilder sbr = new StringBuilder();
+    for (int i = 0; i < res.length; i++) {
+      // dont append extra zeros at head
+      if ((res[i] == 0 && sbr.length() == 0)) continue;
+      sbr.append(res[i]);
     }
-    return sb.length() == 0 ? "0" : sb.toString();
+    return sbr.length() < 1 ? "0" : sbr.toString();
   }
 
   public static void main(String[] args) {
