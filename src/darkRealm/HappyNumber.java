@@ -15,22 +15,23 @@ public class HappyNumber {
 */
 
   public static boolean isHappy(int n) {
-    Set<Integer> set = new HashSet<>();
-    int r = 0;
-    while (true) {
-      set.add(n);
-      r = 0;
-      while (n > 0) {
-        r += (n % 10) * (n % 10);
-        n = n / 10;
+    if(n < 1) return false;
+    Set<Integer> prevSums = new HashSet<>();
+    int t, sum;
+    while(n > 1){
+      t = n;
+      sum = 0;
+      while(t > 0){
+        sum += (t % 10) * (t % 10);
+        t = t / 10;
       }
-      if (r == 1)
-        return true;
-      else if (set.contains(r))
+      if(prevSums.contains(sum))
         return false;
-      set.add(r);
-      n = r;
+      prevSums.add(sum);
+      n = sum;
     }
+    
+    return true;
   }
 
   public static void main(String[] args) {
