@@ -242,7 +242,6 @@ This section contains implementation of different Data Structures in Java.
 | <b>ProductArrayExceptSelf</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ProductArrayExceptSelf.java)|
 | <b>LongestPalindromicSubstring</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LongestPalindromicSubstring.java)|
 | <b>ReverseInteger</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReverseInteger.java)|
-| <b>ReverseInteger</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReverseInteger.java)|
 | <b>StringToInteger</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StringToInteger.java)|
 | <b>ValidParanthesis</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ValidParanthesis.java)|
 | <b>SurroundedRegions</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SurroundedRegions.java)|
