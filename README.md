@@ -233,8 +233,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>PalindromeNumbers</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PalindromeNumbers.java)|
 | <b>NumberToBase</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NumberToBase.java)|
 | <b>StrStr</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StrStr.java)|
-| <b>LeastFrequentlyUsed</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LeastFrequentlyUsed.java)|
-| <b>LeastRecentlyUsed</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LeastRecentlyUsed.java)|
+| <b>LeastFrequentlyUsedCache</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LFUCache.java)|
+| <b>LeastRecentlyUsedCache</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LeastRecentlyUsed.java)|
 | <b>FirstUniqueCharacter</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FirstUniqueCharacter.java)|
 | <b>ZigZagConversion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ZigZagConversion.java)|
 | <b>FirstMissingPositive</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FirstMissingPositive.java)|
