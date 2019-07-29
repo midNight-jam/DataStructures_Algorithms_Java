@@ -10,17 +10,25 @@ public class CountingBits {
  * res[i] = res[i / 2] + i % 2;
  * */
   public static int[] countingBits(int n) {
-    if (n >= 0) {
-      int[] res = new int[n + 1];
-      for (int i = 1; i <= n; i++) {
-        res[i] = res[i / 2] + i % 2;
-      }
-      return res;
+    if(num < 0) return new int[0];
+    int [] dp = new int[num + 1];
+    dp[0] = 0;
+    for(int i = 1; i <= num; i++){
+      // if even, go to a prev even number i.e. after removing the even part (num / 2)
+      if((i & 1) == 0)
+        dp[i] = dp[i/2];
+      // if odd, go to a prev even number + an extra 1 bit for odd
+      else
+        dp[i] = dp[i/2] + 1;
     }
-    return new int[]{0};
+      
+    System.out.println(Arrays.toString(dp));
+    return dp;
   }
 
   public static void main(String[] args) {
-
+    int n = 13;
+    int [] res = countingBits(n);
+    System.out.println(Arrays.toString(res));
   }
 }
