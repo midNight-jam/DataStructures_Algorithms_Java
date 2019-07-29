@@ -14,39 +14,39 @@ public class LetterCombinationsOfPhoneNumber {
   * Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
   * */
 
+  static Map<Character , List<String>> map;
   public static List<String> letterCombinations(String digits) {
-    if (digits == null || digits.length() == 0) {
+    if(digits == null || digits.length() < 1 
+      || digits.indexOf("1") > -1 || digits.indexOf("0") > -1
+      || digits.indexOf("*") > -1 || digits.indexOf("#") > -1)
       return new ArrayList<>();
-    }
-    results = new ArrayList<>();
-    HashMap<Integer, char[]> keyBoard = new HashMap<>();
-    keyBoard.put(2, new char[]{'a', 'b', 'c'});
-    keyBoard.put(3, new char[]{'d', 'e', 'f'});
-    keyBoard.put(4, new char[]{'g', 'h', 'i'});
-    keyBoard.put(5, new char[]{'j', 'k', 'l'});
-    keyBoard.put(6, new char[]{'m', 'n', 'o'});
-    keyBoard.put(7, new char[]{'p', 'q', 'r', 's'});
-    keyBoard.put(8, new char[]{'t', 'u', 'v'});
-    keyBoard.put(9, new char[]{'w', 'x', 'y', 'z'});
-
-    keyBoardString(keyBoard, digits, 0, "");
-    return results;
+    
+    map = new HashMap<>();
+    map.put('2', Arrays.asList("a","b","c"));
+    map.put('3', Arrays.asList("d","e","f"));
+    map.put('4', Arrays.asList("g","h","i"));
+    map.put('5', Arrays.asList("j","k","l"));
+    map.put('6', Arrays.asList("m","n","o"));
+    map.put('7', Arrays.asList("p","q","r","s"));
+    map.put('8', Arrays.asList("t","u","v"));
+    map.put('9', Arrays.asList("w","x","y","z"));
+    
+    return helper(digits, 0);
   }
-
-  private static List<String> results = new ArrayList<>();
-
-  private static void keyBoardString(HashMap<Integer, char[]> keyboard, String digits, int index, String str) {
-    if (index == digits.length()) {
-      results.add(str);
-      return;
-    }
-    int key = Integer.parseInt(digits.charAt(index) + "");
-    if (keyboard.containsKey(key)) {
-      char[] chars = keyboard.get(key);
-      for (int i = 0; i < chars.length; i++) {
-        keyBoardString(keyboard, digits, index + 1, str + chars[i]);
-      }
-    }
+  
+  private static List<String> helper(String digits, int index){
+    if(index == digits.length() - 1)
+      return map.get(digits.charAt(index));
+    
+    List<String> res = new ArrayList<>();
+    List<String> here = map.get(digits.charAt(index));
+    List<String> next = helper(digits, index + 1);
+    
+    for(String s : here)
+      for(String n : next)
+        res.add(s + "" + n);
+    
+    return res;
   }
 
   public static void main(String[] args) {
