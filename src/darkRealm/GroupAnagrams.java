@@ -16,29 +16,24 @@ public class GroupAnagrams {
 * Note: All inputs will be in lower-case.
 * */
   public static List<List<String>> groupAnagrams(String[] strs) {
-    if (strs == null || strs.length == 0) {
-      return new ArrayList<>();
+    if(strs == null || strs.length < 1) return new ArrayList<>();
+    Map<String, List<String>> map = new HashMap<>();
+    char [] arr;
+    String k;
+    for(String s : strs){
+      arr = s.toCharArray();
+      Arrays.sort(arr);
+      k = new String(arr);
+      if(!map.containsKey(k))
+        map.put(k, new ArrayList<>());
+      map.get(k).add(s);
     }
-    HashMap<String, List<String>> map = new HashMap<>();
-    for (int i = 0; i < strs.length; i++) {
-      String s = strs[i];
-      char[] sar = s.toCharArray();
-      Arrays.sort(sar);
-      String s2 = new String(sar);
-      if (map.containsKey(s2)) {
-        map.get(s2).add(s);
-      } else {
-        List<String> list = new ArrayList<>();
-        list.add(s);
-        map.put(s2, list);
-      }
-    }
-    List<List<String>> results = new ArrayList<>();
-    for (String k :
-        map.keySet()) {
-      results.add(map.get(k));
-    }
-    return results;
+    
+    List<List<String>> res = new ArrayList<>();
+    for(String kk : map.keySet())
+      res.add(map.get(kk));
+    
+    return res;
   }
 
   public static void main(String[] args) {
