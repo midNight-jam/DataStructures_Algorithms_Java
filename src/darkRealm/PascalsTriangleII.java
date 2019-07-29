@@ -17,13 +17,19 @@ Note:
 Could you optimize your algorithm to use only O(k) extra space?
 * */
   public static List<Integer> pascalsTriangleRow(int n) {
-    Integer[] result =  new Integer[n + 1];
-    Arrays.fill(result, 0);
-    result[0] = 1;
-    for(int i = 1; i < n + 1; i++)
-      for(int j = i; j >= 1; j--)
-        result[j] += result[j - 1];
-    return Arrays.asList(result);
+    List<Integer> res = new ArrayList<>();
+
+    // Any pascal row has starts with 1 & ends with 1, thus we have  res.add(1) when starting the row
+    // & another one when returning
+    // the elements of a pascal row are the sum of two consecutive numbers of a previous pascal row
+    for(int i = 1; i <= rowIndex; i++){
+      res.add(1);
+      for(int j = res.size() - 1; j > 0; j--)
+        res.set(j, res.get(j-1) + res.get(j));  // set, update the val at that index
+    }
+
+    res.add(1);
+    return res;
   }
 
   public static void main(String[] args) {
