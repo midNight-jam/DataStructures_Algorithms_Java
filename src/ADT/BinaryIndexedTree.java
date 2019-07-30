@@ -28,7 +28,10 @@ public class BinaryIndexedTree {
 
     while (index <= N) {
       bit[index] += val;
-      index += (index & -index);
+      int minusIndex = -index;
+      String bi = Integer.toBinaryString(index);
+      String mbi = Integer.toBinaryString(minusIndex);
+      index += (index & minusIndex);
     }
   }
 
@@ -48,7 +51,8 @@ public class BinaryIndexedTree {
   }
 
   public static void main(String[] args) {
-    int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//    int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int[] nums = new int[]{5, 4, 3, 2, 1};
     BinaryIndexedTree bit = new BinaryIndexedTree(nums);
     for (int i = 1; i <= nums.length; i++)
       System.out.println("Index : " + i + " Sum : " + bit.query(i));

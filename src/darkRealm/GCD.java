@@ -17,8 +17,8 @@ public class GCD {
 
   public static void main(String[] args) {
 //    int a = 10, b = 15;
-//    int a = 31, b = 2;
-    int a = 63, b = 28;
+    int a = 31, b = 2;
+//    int a = 63, b = 28;
     int gcd = gcd(b, a);
     System.out.println("G : " + gcd);
   }

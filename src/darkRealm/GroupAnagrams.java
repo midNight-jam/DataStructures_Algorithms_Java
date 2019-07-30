@@ -1,38 +1,35 @@
 package darkRealm;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class GroupAnagrams {
 
 
   /*  #49 Group Anagrams
-* Given an array of strings, group anagrams together.
-* For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
-* Return:
-* [ ["ate", "eat","tea"],  ["nat","tan"],  ["bat"] ]
-* Note: All inputs will be in lower-case.
-* */
+   * Given an array of strings, group anagrams together.
+   * For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
+   * Return:
+   * [ ["ate", "eat","tea"],  ["nat","tan"],  ["bat"] ]
+   * Note: All inputs will be in lower-case.
+   * */
   public static List<List<String>> groupAnagrams(String[] strs) {
-    if(strs == null || strs.length < 1) return new ArrayList<>();
+    if (strs == null || strs.length < 1) return new ArrayList<>();
     Map<String, List<String>> map = new HashMap<>();
-    char [] arr;
+    char[] arr;
     String k;
-    for(String s : strs){
+    for (String s : strs) {
       arr = s.toCharArray();
       Arrays.sort(arr);
       k = new String(arr);
-      if(!map.containsKey(k))
+      if (!map.containsKey(k))
         map.put(k, new ArrayList<>());
       map.get(k).add(s);
     }
-    
+
     List<List<String>> res = new ArrayList<>();
-    for(String kk : map.keySet())
+    for (String kk : map.keySet())
       res.add(map.get(kk));
-    
+
     return res;
   }
 
@@ -44,6 +41,5 @@ public class GroupAnagrams {
     String[] strs = new String[]{"", "b"};
     List<List<String>> res = groupAnagrams(strs);
     System.out.println("Res : " + Arrays.toString(res.toArray()));
-
   }
 }

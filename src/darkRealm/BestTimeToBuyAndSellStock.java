@@ -25,7 +25,7 @@ public class BestTimeToBuyAndSellStock {
       if (prices[i] < min) {
         min = max = prices[i];
       }
-      if (prices[i] > max && maxi >= mini) {
+      if (prices[i] > max) {
         max = prices[i];
         maxP = Math.max(maxP, max - min);
       }

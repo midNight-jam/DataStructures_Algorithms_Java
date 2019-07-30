@@ -16,7 +16,7 @@ Return [1,3,3,1].
 Note:
 Could you optimize your algorithm to use only O(k) extra space?
 * */
-  public static List<Integer> pascalsTriangleRow(int n) {
+  public static List<Integer> pascalsTriangleRow(int rowIndex) {
     List<Integer> res = new ArrayList<>();
 
     // Any pascal row has starts with 1 & ends with 1, thus we have  res.add(1) when starting the row
