@@ -19,27 +19,32 @@ public class LongestSubstringWithAtleastKRepeatingChars {
   The longest substring is "ababb", as 'a' is repeated 2 times and 'b' is repeated 3 times.
   */
 
-
-  public static int longestSubstring(String str, int k) {
-    if (str == null || str.length() < k) return 0;
-    return kHelper(str, 0, str.length() - 1, k);
+  public static int longestSubstring(String s, int k) {
+    if(s == null || s.length() < 1 || k < 0) return 0;
+    int res;
+    char [] arr = s.toCharArray();
+    res = helper(0, arr.length  -1, k, arr);
+    return res;
   }
-
-  private static int kHelper(String str, int start, int end, int k) {
-    if (end - start + 1 < k) return 0;
+  
+  // Split the input array in 2 halves whenever we find a char whose frequency is < k
+  // Solve recursively for both the halves & return the max 
+  // If we dont find any char that is < k  frequent then the current portion that we are looking at
+  // satisfies the criteria completely, thus return its length (end - start + 1)
+  private static int helper(int start, int end, int k, char [] arr){
+    if(end - start + 1 < k) return 0;
     int[] map = new int[26];
-    for (int i = start; i <= end; i++) {
-      int index = str.charAt(i) - 'a';
-      map[index]++;
-    }
-    for (int i = start; i <= end; i++) {
-      // split the original string in to two parts from the char is repeating less times than K
-      // and calculate the max again using recursion
-      int index = str.charAt(i) - 'a';
-      if (map[index] < k) {
-        return Math.max(kHelper(str, start, i - 1, k), kHelper(str, i + 1, end, k));
+    for(int i = start; i <= end; i++)
+      map[arr[i] - 'a']++;
+    
+    
+    for(int i = start; i<= end; i++)
+      if(map[arr[i] - 'a'] < k){
+        int leftPart = helper(start, i - 1, k, arr);
+        int rightPart = helper(i + 1, end, k, arr);
+        return  Math.max(leftPart, rightPart);
       }
-    }
+    
     return end - start + 1;
   }
 
