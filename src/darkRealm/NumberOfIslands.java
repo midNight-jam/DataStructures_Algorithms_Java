@@ -25,6 +25,36 @@ public class NumberOfIslands {
    *   00011
    *   Answer: 3
    * */
+  
+  
+  // Override all the islands with water when performing the dfs, count the no of fired dfs
+  public static int numIslands(char[][] grid) {
+    if (grid == null || grid.length < 1 || grid[0].length < 1) return 0;
+    int res = 0;
+    for (int i = 0; i < grid.length; i++) 
+      for (int j = 0; j < grid[0].length; j++) 
+        if (grid[i][j] == '1') {
+          res++;
+          dfsHelper(grid, i, j);
+        }
+
+    return res;
+  }
+  
+  private static void dfsHelper(char[][]grid, int r, int c){
+    if (grid[r][c] == '0') return;
+    grid[r][c] = '0'; // override the land with water
+    int[] rows = new int[]{-1, 0, 1, 0};
+    int[] cols = new int[]{0, 1, 0, -1};
+    for (int i = 0; i < 4; i++) 
+      if (isValid(r + rows[i], c + cols[i], grid) && grid[r + rows[i]][c + cols[i]] == '1') {
+        dfsHelper(grid, r + rows[i], c + cols[i]);
+      }
+  }
+  
+  private static boolean isValid(int nr, int nc, char[][] grid) {
+    return !(nr < 0 || nr >= grid.length || nc < 0 || nc >= grid[0].length);
+  }
 
   public static int numberOfIslands(int[][] matrix) {
     if (matrix == null || matrix.length == 0) {
