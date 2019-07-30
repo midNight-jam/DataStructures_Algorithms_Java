@@ -29,7 +29,7 @@ public class SubarraysWithZeroSum {
     }
     return res;
   }
-  
+
   private static List<int[]> subarraysWithZeroSumNEW(int[] nums) {
     List<int[]> res = new ArrayList<>();
     Map<Integer, List<Integer>> map = new HashMap<>();
@@ -44,10 +44,10 @@ public class SubarraysWithZeroSum {
 
       // if the map already holds this sum
       // for [0, 10, 0], now for i = 2, when sum is 10, we will get a segment of start = (1+1)2, end = 2
-        for (int j : map.get(sum))
-          if(j + 1 < arr.nums.length)
-            res.add(new int[]{j + 1, i}); // every segment starting after(+1) the previous index with same sum is a result
-      
+      for (int j : map.get(sum))
+        if (j + 1 < nums.length)
+          res.add(new int[]{j + 1, i}); // every segment starting after(+1) the previous index with same sum is a result
+
       map.get(sum).add(i);  // add the index to the sum in map
     }
     return res;
