@@ -21,21 +21,24 @@ public class WordBreak {
   * is also true mean the whole string can be formed using the dictionary while doing some partitions at places.
   * */
   public static boolean wordBreak(String str, List<String> wordDict) {
-    if (str == null || str.length() == 0) return true;
-    int n = str.length();
-    boolean[] partition = new boolean[n + 1];
-    partition[0] = true;
-    String part = null;
-    for (int i = 1; i <= n; i++) {
-      for (int j = 0; j < i; j++) {
-        part = str.substring(j, i);
-        if (wordDict.contains(part) && partition[j]) {
-          partition[i] = true;
-          break;
+    if (s == null || wordDict == null) return false;
+    Set<String> dict = new HashSet<>(wordDict);
+    // This is a DP Problem
+    int N = s.length();
+    boolean[] dp = new boolean[N + 1];
+    dp[0] = true; // empty string can or no string is base case & already possible
+    String subString;
+    for (int end = 1; end <= N; end++) {
+      for (int start = 0; start < end; start++) {
+        subString = s.substring(start, end);
+        boolean subStringPossible = dict.contains(subString);
+        boolean isPortionBeforeSubstringPossible = dp[start]; // why we are checking for just start & not start - 1, remember this array is N+1 :P
+        if (subStringPossible && isPortionBeforeSubstringPossible) {
+          dp[end] = true;
         }
       }
     }
-    return partition[n];
+    return dp[N];
   }
 
   public static void main(String[] args) {
