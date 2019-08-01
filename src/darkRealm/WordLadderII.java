@@ -62,6 +62,7 @@ public class WordLadderII {
       int currDist = trav.dist;
 
       // type this after you have typed the word forming logic
+       // if we have reached the end, traverse the list & find all the words in path
       if (word.equals(end)) { // we ahve found
         ArrayList<String> list = new ArrayList<String>();
         list.add(trav.word);
@@ -70,10 +71,11 @@ public class WordLadderII {
           trav = trav.prev;
         }
         paths.add(list);
-        continue;
+        continue; // so that we dont try out the new words from here, thus continue
       }
 
-      if (preDist < currDist) { // means we have reached here with the min dist thus there is no point in processsing these words again
+      // means we have reached here with the min dist thus there is no point in processsing these words again
+      if (preDist < currDist) {
         unvisited.removeAll(visited);
       }
       preDist = currDist;
