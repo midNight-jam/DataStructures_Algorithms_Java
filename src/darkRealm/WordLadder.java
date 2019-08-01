@@ -18,44 +18,47 @@ public class WordLadder {
   *   wordList = ["hot","dot","dog","lot","log","cog"]
   *   As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
   *   return its length 5.
-  *
-  *   A) Would use Bidirectinal BFS while keeping the nodes of the most recent levels from both the ends will terminate
-  *   when we find any one word os found in most recent dist from other side.
-  *   Complexity N/2 * maxBreadth(the nodes on the dist) wordLength * 26
   * */
-  public static int wordLadder(String start, String end, List<String> dictionary) {
-    if (!dictionary.contains(end)) return 0;
-    Set<String> words = new HashSet<>(dictionary);
-    Set<String> startSet = new HashSet<>(), endSet = new HashSet<>(), next = null;
-    int pathLen = 1;
-    // add start & end words to their sets
-    startSet.add(start);
-    endSet.add(end);
-    words.remove(start);
-    words.remove(end);
-    while (!startSet.isEmpty()) {
-      next = new HashSet<>();
-      for (String word : startSet) {
-        char[] wordArr = word.toCharArray();
-        for (int i = 0; i < wordArr.length; i++) {
-          char old = wordArr[i];
-          for (char c = 'a'; c <= 'z'; c++) {
-            wordArr[i] = c;
-            String formed = new String(wordArr);
-            if (endSet.contains(formed))
-              return pathLen + 1;
-            if (words.contains(formed)) {
-              next.add(formed);
-              words.remove(formed);
+  
+  //Plain BFS traversal
+  public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
+    Set<String> set = new HashSet<>(wordList);
+    Set<String> visited = new HashSet<>();
+    LinkedList<String> queue = new LinkedList<>();
+    int count = 0;
+    queue.add(beginWord);
+    visited.add(beginWord);
+
+    while (queue.size() > 0) {
+      int size = queue.size();
+      while(size-- > 0) {
+        String headStr = queue.poll();
+        if (headStr.equals(endWord))
+          return count + 1;
+
+        char[] head = headStr.toCharArray();
+        // System.out.println("Head :"+headStr);
+        for (int i = 0; i < head.length; i++) {
+          char save = head[i];
+          for (char ch = 'a'; ch <= 'z'; ch++) {
+            head[i] = ch;
+            String word = new String(head);
+
+            if (!visited.contains(word) && set.contains(word)) {
+              // System.out.println("Word :"+word);
+              // System.out.println("Success");
+              visited.add(word);
+              queue.add(word);
             }
           }
-          wordArr[i] = old;
+          head[i] = save;
         }
       }
-      startSet = next.size() < endSet.size() ? next : endSet;
-      endSet = startSet.size() < endSet.size() ? endSet : next;
-      pathLen++;
+
+      System.out.println(queue);
+      count++;
     }
+
     return 0;
   }
 
@@ -85,7 +88,7 @@ public class WordLadder {
 //    String start = "a";
 //    String end = "c";
 
-    int res = wordLadder(start, end, dict);
+    int res = ladderLength(start, end, dict);
 //    List<List<String>> res = LC_Prob_Med2.wordLadderDFS(start, end, dict);
     System.out.println("res : " + res);
   }
