@@ -352,6 +352,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>VerticalOrderTraversalOfABinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/VerticalOrderTraversalOfABinaryTree.java)|
 | <b>JumpGameII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/JumpGameII.java)|
 | <b>ShortestPalindrome</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ShortestPalindrome.java)|
+| <b>GraphMColoringProblem</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/GraphMColoringProblem.java)|
 
 
 # Misc
