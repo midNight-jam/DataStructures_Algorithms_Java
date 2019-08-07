@@ -356,6 +356,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>PossibleBipartition</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PossibleBipartition.java)|
 | <b>UniquePaths</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/UniquePaths.java)|
 | <b>MinimumSpanningTreeKruskals</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumSpanningTreeKruskals.java)|
+| <b>TheEarliestMomentWhenEveryoneBecomeFriends</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TheEarliestMomentWhenEveryoneBecomeFriends.java)|
 
 
 # Misc
