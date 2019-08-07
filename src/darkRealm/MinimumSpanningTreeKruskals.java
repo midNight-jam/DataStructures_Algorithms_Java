@@ -16,6 +16,9 @@ public class MinimumSpanningTreeKruskals {
     }
   }
 
+  
+  // Idea is to sort the edges based on weight, & then pick each edge & add them to minimumSpaningTree only if adding this
+  // edge doesnt creates a cycle, This is where the QuickUnion subroutine comes into play
   public static List<int[]> minimumSpaningTreeKrusKals(int[][] adjList) {
     List<int[]> res = new ArrayList<>();
     int vertices = adjList.length;
