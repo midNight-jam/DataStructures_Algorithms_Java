@@ -21,23 +21,23 @@ public class PeakIndexInAMountainArray {
 //      0 <= A[i] <= 10^6
 //  A is a mountain, as defined above.
 
-  public static int peakIndexInMountainArray(int[] A) {
-    if(A == null || A.length < 3) return -1;
+  public static int peakIndexInMountainArrayOLD(int[] A) {
+    if (A == null || A.length < 3) return -1;
 
     int low = 0, high = A.length - 1;
     int mid = 0;
 
-    while(low <= high){
+    while (low <= high) {
       mid = low + (high - low) / 2;
 
-      if(A[mid - 1] < A[mid] && A[mid] > A[mid + 1])
+      if (A[mid - 1] < A[mid] && A[mid] > A[mid + 1])
         return mid;
 
-      if(mid < A.length - 1 && A[mid] > A[mid + 1] ){
+      if (mid < A.length - 1 && A[mid] > A[mid + 1]) {
         high = mid - 1;
       }
 
-      if( mid > 0 &&  A[mid - 1] < A[mid]){
+      if (mid > 0 && A[mid - 1] < A[mid]) {
         low = mid + 1;
       }
     }
@@ -45,10 +45,63 @@ public class PeakIndexInAMountainArray {
     return mid;
   }
 
-  public static void main(String[] args) {
-    int [] arr = new int[]{24,69,100,99,79,78,67,36,26,19};
-    int res = peakIndexInMountainArray(arr);
+  public static int peakIndexInMountainArray(int[] A) {
+    if (A == null || A.length < 2) return 0;
+    int left = 0, right = A.length - 1;
+    int mid;
+
+    while (left <= right) {
+      mid = left + (right - left) / 2;
+      int lmid = mid > 0 ? A[mid - 1] : Integer.MIN_VALUE;
+      int rmid = mid + 1 < A.length ? A[mid + 1] : Integer.MIN_VALUE;
+      if (lmid < A[mid] && A[mid] > rmid) return mid;
+      else if (lmid < A[mid]) left = mid + 1;
+      else right = mid - 1;
+    }
+
+    return -1;
+  }
+
+  public static void test(int[] arr, int expected, int actual) {
+    String p = expected == actual ? "Pass" : "Fail";
+    String str = "[%s] expected : %d, actual : %d";
+    System.out.println(String.format(str, p, expected, actual));
     System.out.println(Arrays.toString(arr));
-    System.out.println(res);
+  }
+
+  public static void main(String[] args) {
+    int res;
+    int[] arr;
+    arr = new int[]{24, 69, 100, 99, 79, 78, 67, 36, 26, 19};
+    res = peakIndexInMountainArray(arr);
+    test(arr, res, 2);
+
+    arr = new int[]{2, 4, 2};
+    res = peakIndexInMountainArray(arr);
+    test(arr, res, 1);
+
+    arr = new int[]{2, 4};
+    res = peakIndexInMountainArray(arr);
+    test(arr, res, 1);
+
+    arr = new int[]{2, 2, 2};
+    res = peakIndexInMountainArray(arr);
+    test(arr, res, -1);
+
+    arr = new int[]{2, 1};
+    res = peakIndexInMountainArray(arr);
+    test(arr, res, 0);
+
+    arr = new int[]{2};
+    res = peakIndexInMountainArray(arr);
+    test(arr, res, 0);
+
+    arr = new int[0];
+    res = peakIndexInMountainArray(arr);
+    test(arr, res, 0);
+
+    arr = new int[]{0, 2, 1, 0};
+    res = peakIndexInMountainArray(arr);
+    test(arr, res, 1);
   }
 }
