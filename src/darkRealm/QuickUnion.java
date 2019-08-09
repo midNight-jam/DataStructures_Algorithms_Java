@@ -15,27 +15,25 @@ public class QuickUnion {
 
   public void union(int p, int q) {
     if (!(p < size && q < size)) return;
-    // As we are making QuickUnion, we are keeping union cost O(1)
-    int rootOfQ = roots[q];
-    // make Q the new root of P
-    roots[p] = rootOfQ;
+    int froot = root(f);
+    int troot = root(t);
+    if (froot == troot) return;
+    comps[froot] = troot; // make one component root of another
+  }
+  
+  private int root(int r) {
+    while (r != roots[r]) {
+      r = roots[r];
+    }
+    return r;
   }
 
 
   public boolean areConnected(int p, int q) {
     if (!(p < size && q < size)) return false;
-    // As we made union cheaper O(1), now we will have to incur cost while finding O(n)
-    int rootOfP = roots[p];
-    int rootOfQ = roots[q];
-
-    // till we reach a node which is the root of itself
-    while (rootOfP != p) {
-      rootOfP = roots[rootOfP];
-      // update p also, else we will end infinite loop, if 5 is root of itself
-      p = rootOfP;
-    }
-
-    return rootOfP == rootOfQ;
+    int fr = root(f);
+    int tr = root(t);
+    return fr == tr; // are both belonging to same component
   }
 
   public void currentAdjacencyGraph() {
