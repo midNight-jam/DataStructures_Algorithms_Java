@@ -33,24 +33,26 @@ public class Heaters {
 //  houses can be warmed.
 
   public static int findRadius(int[] houses, int[] heaters) {
-    if (houses == null || houses.length < 1 || heaters == null || heaters.length < 1) return 0;
+   if(houses == null || heaters == null) return 0;
     Arrays.sort(houses);
     Arrays.sort(heaters);
 
-    int dist = 0;
-    int hpi = 0, hti = 0;
-    while (hpi < houses.length) {
-      while (hti < heaters.length - 1) {
-        // if using the next heater we can cover this home with a lower range, then move to the next heater
-        if (Math.abs(houses[hpi] - heaters[hti + 1]) <= Math.abs(houses[hpi] - heaters[hti]))
-          hti++;
-        else
+    int housePointer = 0;
+    int heaterPointer = 0;
+    int radii = 0;
+    while(housePointer < houses.length){
+      while(heaterPointer + 1 < heaters.length){
+        int distFromThisHeater = Math.abs(heaters[heaterPointer] - houses[housePointer]); 
+        int distFromNextHeater = Math.abs(heaters[heaterPointer + 1] - houses[housePointer]);
+        // if using this heater we can cover this home with a lower range, then break, else consider the next heater
+        if(distFromThisHeater < distFromNextHeater)
           break;
+        heaterPointer++;
       }
-      dist = Math.max(dist, Math.abs(heaters[hti] - houses[hpi]));
-      hpi++;
+      radii = Math.max(radii, Math.abs(heaters[heaterPointer] - houses[housePointer]));
+      housePointer++;
     }
-    return dist;
+    return radii;
   }
 
   public static void main(String[] args) {
