@@ -47,8 +47,7 @@ public class Heaters {
         // if using this heater we can cover this home with a lower range, then break, else consider the next heater
         if(distFromThisHeater < distFromNextHeater)
           break;
-        else
-          heaterPointer++;
+        heaterPointer++;
       }
       radii = Math.max(radii, Math.abs(heaters[heaterPointer] - houses[housePointer]));
       housePointer++;
