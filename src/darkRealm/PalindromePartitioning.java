@@ -51,7 +51,8 @@ public class PalindromePartitioning {
   }
 
   public static void main(String[] args) {
-    String s = "abbab";
+    //String s = "abbab";
+    String s = "cbbbcc";
     List<List<String>> res = partition(s);
     System.out.println(s);
     System.out.println(res);
