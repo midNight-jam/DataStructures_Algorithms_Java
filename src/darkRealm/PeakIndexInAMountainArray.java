@@ -21,30 +21,6 @@ public class PeakIndexInAMountainArray {
 //      0 <= A[i] <= 10^6
 //  A is a mountain, as defined above.
 
-  public static int peakIndexInMountainArrayOLD(int[] A) {
-    if (A == null || A.length < 3) return -1;
-
-    int low = 0, high = A.length - 1;
-    int mid = 0;
-
-    while (low <= high) {
-      mid = low + (high - low) / 2;
-
-      if (A[mid - 1] < A[mid] && A[mid] > A[mid + 1])
-        return mid;
-
-      if (mid < A.length - 1 && A[mid] > A[mid + 1]) {
-        high = mid - 1;
-      }
-
-      if (mid > 0 && A[mid - 1] < A[mid]) {
-        low = mid + 1;
-      }
-    }
-
-    return mid;
-  }
-
   public static int peakIndexInMountainArray(int[] A) {
     if (A == null || A.length < 2) return 0;
     int left = 0, right = A.length - 1;
