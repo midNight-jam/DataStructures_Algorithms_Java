@@ -13,12 +13,11 @@ public class QuickUnion {
   }
 
 
-  public void union(int p, int q) {
-    if (!(p < size && q < size)) return;
+  public void union(int f, int t) {
     int froot = root(f);
     int troot = root(t);
     if (froot == troot) return;
-    comps[froot] = troot; // make one component root of another
+    roots[froot] = troot; // make one component root of another
   }
   
   private int root(int r) {
@@ -29,8 +28,7 @@ public class QuickUnion {
   }
 
 
-  public boolean areConnected(int p, int q) {
-    if (!(p < size && q < size)) return false;
+  public boolean areConnected(int f, int t) {
     int fr = root(f);
     int tr = root(t);
     return fr == tr; // are both belonging to same component
