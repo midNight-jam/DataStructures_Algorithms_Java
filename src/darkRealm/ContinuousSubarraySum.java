@@ -25,6 +25,9 @@ public class ContinuousSubarraySum {
 
   public static boolean checkSubarraySum(int[] nums, int k) {
     if (nums == null || nums.length < 1) return false;
+    // the idea is to keep track of remainder of k, as the question is asking about any multiple of K,
+    // keeping track of remainder after dividing the sum by K works
+    // remind yourself how moding rounds the index when it tries to go beyond the array length, same concept
     Map<Integer, Integer> map = new HashMap<>();
     map.put(0, -1); // base without any nums we have 0 sum at -1 index
     int sum = 0;
