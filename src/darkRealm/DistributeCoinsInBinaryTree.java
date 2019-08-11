@@ -52,17 +52,16 @@ public class DistributeCoinsInBinaryTree {
   }
 
   private int helper(TreeNode root) {
-    if (root == null)
-      return 0;
+    if (root == null) return 0;
     // do post order the childs will return the value to the parent
     // -ve val means more coins are required
     // +ve val means extra coins are there & can be transfered
-    int leftChild = helper(root.left);
-    int rightChild = helper(root.right);
-    // -1 for self
-    int value = root.val - 1 + leftChild + rightChild;
-    moves += Math.abs(value); // whatever is left +ve or -ve will require equal no of moves, that why this works
-    return value;
+    int left = helper(root.left);
+    int right = helper(root.right);
+    moves += Math.abs(left);
+    moves += Math.abs(right);
+    int send = (root.val - 1) + (left + right);
+    return send;// whatever is left +ve or -ve will require equal no of moves, that why this works
   }
 
   public static void main(String[] args) {
