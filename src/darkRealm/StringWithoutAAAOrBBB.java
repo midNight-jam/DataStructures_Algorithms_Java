@@ -23,31 +23,36 @@ public class StringWithoutAAAOrBBB {
 //  It is guaranteed such an S exists for the given A and B.
 
   public static String strWithout3a3b(int A, int B) {
-    char aChar = 'a', bChar = 'b';
-    if (B > A) {
-      int temp = A;
+    char bigChar = 'a';
+    char smallChar = 'b';
+    // exhaust the biggercount char first
+    if(A < B){
+      int t = A;
       A = B;
-      B = temp;
-      temp = aChar;
-      aChar = bChar;
-      bChar = (char) temp;
+      B = t;
+      t = bigChar;
+      bigChar = smallChar;
+      smallChar = (char)t;
     }
-
     StringBuilder sbr = new StringBuilder();
-    while (A > 0) {
-      if (A > 0) {
-        sbr.append(aChar);
+    // The greedy idea is to append bigger count twice if its greater than the smaller count & then append the smallercount
+    while(A > 0 || B > 0){
+      // first reduce bigger count
+      if(A > 0){
+        sbr.append(bigChar);
         A--;
       }
-      if (A > B) {
-        sbr.append(aChar);
+      // if bigger count is greater than small count reduce again
+      if(A > B){
+        sbr.append(bigChar);
         A--;
       }
-      if (B > 0) {
-        sbr.append(bChar);
+      if(B > 0){
+        sbr.append(smallChar);
         B--;
       }
     }
+    
     return sbr.toString();
   }
 
