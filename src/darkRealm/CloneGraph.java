@@ -42,7 +42,7 @@ public class CloneGraph {
 
   static Map<Integer, Node> map;
 
-  public static Node cloneGraph(Node node) {
+  public static Node cloneGraphDFS(Node node) {
     map = new HashMap<>();
     helper(node);
     return map.get(node.val);
@@ -66,6 +66,53 @@ public class CloneGraph {
 
     newNode.neighbors = nbrs;
     return newNode;
+  }
+
+  //Runtime: 14 ms, faster than 6.80% of Java online submissions for Clone Graph.
+  //Memory Usage: 33.3 MB, less than 97.65% of Java online submissions for Clone Graph.
+  public static Node cloneGraphBFS(Node node) {
+    if (node == null) return node;
+    Map<Integer, Node> map = new HashMap<>();
+    Map<Integer, Node> pool = new HashMap<>();
+    Queue<Node> que = new LinkedList<>();
+    que.offer(node);
+    while (que.size() > 0) {
+      int k = que.size();
+      while (k-- > 0) {
+        Node trav = que.poll();
+        if (map.containsKey(trav.val)) continue;
+
+        // always create the node nodes & put them in pool, use the nodes from this pool
+        if (!pool.containsKey(trav.val)) {
+          Node nn = new Node(trav.val, new ArrayList<>());
+          pool.put(nn.val, nn);
+        }
+        map.put(trav.val, pool.get(trav.val));
+
+        for (Node n : trav.neighbors) {
+          Node cn = null;
+          // always create the node nodes & put them in pool, use the nodes from this pool
+          if (!pool.containsKey(n.val)) {
+            cn = new Node(n.val, new ArrayList<>());
+            pool.put(n.val, cn);
+          }
+          cn = pool.get(n.val);
+          map.get(trav.val).neighbors.add(cn);
+          que.offer(n);
+        }
+      }
+    }
+
+
+    // print adjList
+    for (int k : map.keySet()) {
+      System.out.print(" " + k + " ");
+      for (Node n : map.get(k).neighbors)
+        System.out.print(" - > " + n.val);
+      System.out.println("");
+    }
+
+    return map.get(node.val);
   }
 
   public static void main(String[] args) {
