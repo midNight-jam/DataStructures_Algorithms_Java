@@ -359,6 +359,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>TheEarliestMomentWhenEveryoneBecomeFriends</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TheEarliestMomentWhenEveryoneBecomeFriends.java)|
 | <b>MaximumSubarray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumSubarray.java)|
 | <b>PopulatingNextRightPointersInEachNode</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PopulatingNextRightPointersInEachNode.java)|
+| <b>NetworkDelayTime</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NetworkDelayTime.java)|
 
 
 # Misc
