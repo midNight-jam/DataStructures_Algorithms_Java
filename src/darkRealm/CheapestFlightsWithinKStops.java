@@ -79,7 +79,6 @@ public class CheapestFlightsWithinKStops {
         for (int next : nextStations.keySet()) {
           int nextCost = cost + nextStations.get(next);
           pq.offer(new int[]{nextCost, next, stop - 1});
-
         }
       }
     }
