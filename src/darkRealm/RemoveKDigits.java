@@ -37,31 +37,25 @@ public class RemoveKDigits {
     * Previously I had the solution of taking the min at each stage after removing a single digit & pass it on
     * recursively till k > 0, but that TLE's easily as the complexity was O(n2k)*/
 
-    int ri = -1;
-    int pi = 0;
-    while(k > 0){
-      pi = 0;
-      for(int i = 1; i < num.length(); i++){
-        if(num.charAt(i - 1) <= num.charAt(i)){
-          pi = i; // keep going
-        }
-        else
-          break; // prev index was a peak
-      }
-      num = num.substring(0, pi) + num.substring(pi + 1);
-      k--;
+    int peakIndex;
+    String smaller;
+    while(k-- > 0){
+      peakIndex = 1;
+      while(peakIndex < num.length() && num.charAt(peakIndex - 1) <= num.charAt(peakIndex))
+          peakIndex++;
+      peakIndex--; // becase the prev index was a peak when we break;
+      smaller = num.substring(0, peakIndex) + num.substring(peakIndex + 1);
+      num = smaller;
     }
-
-    String res = num;
-    for(int i = 0; i < res.length(); i++){
-      if(res.charAt(i) != '0'){
-        ri = i; // first nonZero index
-        break;
-      }
-    }
-
+    
+    // remove leading 0's
+    int zi = 0;
+    for(; zi < num.length(); zi++)
+      if(num.charAt(zi) != '0') break;
+    
+    num = num.substring(zi);
     // if no nonZero digits then whole string is madeup of 0's just return 0.
-    return ri > -1 ? res.substring(ri) : "0";
+    return num.length() > 0 ? num : "0";
   }
 
 
