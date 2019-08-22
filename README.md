@@ -362,6 +362,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>NetworkDelayTime</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NetworkDelayTime.java)|
 | <b>CheapestFlightsWithinKStops</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CheapestFlightsWithinKStops.java)|
 | <b>InsertIntoACyclicSortedList</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/InsertIntoACyclicSortedList.java)|
+| <b>DeleteNodesAndReturnForest</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DeleteNodesAndReturnForest.java)|
 
 
 # Misc
