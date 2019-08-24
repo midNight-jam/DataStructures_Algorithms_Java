@@ -60,17 +60,17 @@ public class AsteroidCollision {
       }
 
       cab = Math.abs(curr);
-      // if there is a positive on stack which is weaker than the -ve pop it
+      // pop all the weaker +ves, if there is a positive on stack which is weaker than the -ve pop it
       while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < cab)
         stack.pop();
 
-      // there are no elements in stack or has a -ve on top then push
-      if (stack.isEmpty() || stack.peek() < 0)
-        stack.push(curr);
-      
-      // if there is an equal +ve on the stack pop that one too
-      else if (stack.peek() == cab)
+      // if there is an equal +ve left on the stack pop that one too
+      if (!stack.isEmpty() && stack.peek() == cab)
         stack.pop();
+      
+      // there are no elements in stack or has a -ve on top then push
+      else if (stack.isEmpty() || stack.peek() < 0)
+        stack.push(curr);
       
     }
 
