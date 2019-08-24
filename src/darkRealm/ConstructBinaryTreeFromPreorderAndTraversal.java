@@ -12,6 +12,19 @@ public class ConstructBinaryTreeFromPreorderAndTraversal {
     }
   }
 
+  
+// 889. Construct Binary Tree from Preorder and Postorder Traversal
+// Return any binary tree that matches the given preorder and postorder traversals.
+// Values in the traversals pre and post are distinct positive integers.
+// Example 1:
+// Input: pre = [1,2,4,5,3,6,7], post = [4,5,2,6,7,3,1]
+// Output: [1,2,3,4,5,6,7]
+// NOte
+// 1 <= pre.length == post.length <= 30
+// pre[] and post[] are both permutations of 1, 2, ..., pre.length.
+// It is guaranteed an answer exists. If there exists multiple answers, you can return any of them.
+  
+  
   static int preIndex;
 
   /*
@@ -27,33 +40,32 @@ public class ConstructBinaryTreeFromPreorderAndTraversal {
     return res;
   }
 
-  private static TreeNode helper(int[] pre, int[] post, int low, int high) {
-    if (preIndex >= pre.length || high < low) return null;
-
-    int rootVal = pre[preIndex++];
-    TreeNode root = new TreeNode(rootVal);
-
-    int rootIndex = post.length - 1;
-
-    for (; rootIndex > -1; rootIndex--)
-      if (post[rootIndex] == rootVal)
+  private static TreeNode helper(int [] pre, int [] post, int start, int end){
+    if(start > end || preIndex >= pre.length) return null;
+    TreeNode root = new TreeNode(pre[preIndex++]);
+    int rootIndex = end;
+    for(; rootIndex >= start; rootIndex--)
+      if(post[rootIndex] == root.val)
         break;
-
-    int avail = 0;
-    for (; avail < rootIndex; avail++)
-      if (post[avail] != Integer.MAX_VALUE)
+    
+    rootIndex--; // subtree ends before root in postorder
+    
+    int treeStart = start;
+    for(; treeStart <= rootIndex; treeStart++)
+      if(post[treeStart] != Integer.MAX_VALUE)
         break;
-
-    root.left = helper(pre, post, avail, rootIndex - 1);
-
-    avail = 0;
-    for (; avail < rootIndex; avail++)
-      if (post[avail] != Integer.MAX_VALUE)
+    
+    root.left = helper(pre, post, treeStart, rootIndex);
+    
+    treeStart = start;
+    for(; treeStart <= rootIndex; treeStart++)
+      if(post[treeStart] != Integer.MAX_VALUE) // first available value from the postorder will be the start of subtree
         break;
-
-
-    root.right = helper(pre, post, avail, rootIndex - 1);
-    post[rootIndex] = Integer.MAX_VALUE; // erase the value from post order
+    
+    root.right = helper(pre, post, treeStart, rootIndex);
+    
+    // erase the root value from the post order
+    post[rootIndex+1] = Integer.MAX_VALUE; 
     return root;
   }
 
