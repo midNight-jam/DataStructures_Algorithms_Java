@@ -12,8 +12,8 @@ public class VerifyPreorderSequenceInBinarySearchTree {
 //  You may assume each number in the sequence is unique.
 //  Consider the following binary search tree:
 //
-//         5
-//       / \git
+//        5
+//       / \
 //      2   6
 //     / \
 //    1   3
