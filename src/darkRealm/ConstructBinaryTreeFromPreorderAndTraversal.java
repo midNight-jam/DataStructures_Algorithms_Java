@@ -45,27 +45,25 @@ public class ConstructBinaryTreeFromPreorderAndTraversal {
     TreeNode root = new TreeNode(pre[preIndex++]);
     int rootIndex = end;
     for(; rootIndex >= start; rootIndex--)
-      if(post[rootIndex] == root.val)
-        break;
+      if(post[rootIndex] == root.val) break;
     
-    rootIndex--; // subtree ends before root in postorder
+    int treeEnd = rootIndex - 1; // subtree ends before root in postorder
     
     int treeStart = start;
-    for(; treeStart <= rootIndex; treeStart++)
+    for(; treeStart <= treeEnd; treeStart++)
       if(post[treeStart] != Integer.MAX_VALUE)
         break;
     
-    root.left = helper(pre, post, treeStart, rootIndex);
+    root.left = helper(pre, post, treeStart, treeEnd);
     
     treeStart = start;
-    for(; treeStart <= rootIndex; treeStart++)
-      if(post[treeStart] != Integer.MAX_VALUE) // first available value from the postorder will be the start of subtree
+    for(; treeStart <= treeEnd; treeStart++)
+      if(post[treeStart] != Integer.MAX_VALUE)  // first available value from the postorder will be the start of subtree
         break;
     
-    root.right = helper(pre, post, treeStart, rootIndex);
+    root.right = helper(pre, post, treeStart, treeEnd);
     
-    // erase the root value from the post order
-    post[rootIndex+1] = Integer.MAX_VALUE; 
+    post[rootIndex] = Integer.MAX_VALUE; // make tree end point to root again
     return root;
   }
 
