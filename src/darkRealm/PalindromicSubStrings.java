@@ -58,15 +58,13 @@ public class PalindromicSubStrings {
   
  // another variation with easy to understand loop 
  public int countSubstrings2(String s) {
-    int res = 0;
-    if(s == null || s.length() < 1) return res;
+    if(s == null || s.length() < 1) return 0;
     int n = s.length();
     boolean [][] dp = new boolean[n][n];
-    // each char is a palindrome in itself
-    for(int i = 0; i < n; i++){
+    int res = N; // each char will be a palindrome in itself
+    
+    for(int i = 0; i < dp.length; i++)
       dp[i][i] = true;
-      res++;
-    }
     
     // we start from bottom right & work our way up
     for(int row = n -1; row >=0; row--){
