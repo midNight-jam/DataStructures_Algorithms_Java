@@ -364,6 +364,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>InsertIntoACyclicSortedList</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/InsertIntoACyclicSortedList.java)|
 | <b>DeleteNodesAndReturnForest</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DeleteNodesAndReturnForest.java)|
 | <b>GenerateParentheses</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/GenerateParentheses.java)|
+| <b>CatalanNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CatalanNumber.java)|
 
 
 # Misc
