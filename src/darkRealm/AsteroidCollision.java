@@ -46,6 +46,45 @@ public class AsteroidCollision {
 
 
   public static int[] asteroidCollision(int[] astr) {
+    if (astr == null || astr.length < 2) return astr;
+    Stack<Integer> stack = new Stack<>();
+    int curr, cab;
+    
+    // collisions occur only for a +ve followed by a -ve
+    for (int i = 0; i < astr.length; i++) {
+      curr = astr[i];
+      // if positive or 0 push & move
+      if (curr > -1) {
+        stack.push(curr);
+        continue;
+      }
+
+      cab = Math.abs(curr);
+      // pop all the weaker +ves, if there is a positive on stack which is weaker than the -ve pop it
+      while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < cab)
+        stack.pop();
+
+      // if there is an equal +ve left on the stack pop that one too
+      if (!stack.isEmpty() && stack.peek() == cab)
+        stack.pop();
+      
+      // there are no elements in stack or has a -ve on top then push
+      else if (stack.isEmpty() || stack.peek() < 0)
+        stack.push(curr);
+      
+    }
+
+    int[] res = new int[stack.size()];
+    int i = res.length - 1;
+    while (!stack.isEmpty()) {
+      res[i--] = stack.pop();
+    }
+
+    return res;
+  }
+  
+  
+  public static int[] asteroidCollisionOLD(int[] astr) {
     if(astr == null || astr.length < 1) return astr;
 
     // This solutions uses extra space in terms of stack + set, i think we can avoid this & do without any extra space

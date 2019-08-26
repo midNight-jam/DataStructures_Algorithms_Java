@@ -4,8 +4,8 @@ import java.util.*;
 
 public class MinimumSpanningTreeKruskals {
 
-  //In Kruskal’s algorithm, most time consuming operation O(ElogV) is sorting because the total complexity of the Disjoint-Set operations will be
-  // O(N), thus overall Time Complexity of the algorithm is O(ElogV). E = edges, V = vertex
+  //In Kruskal’s algorithm, most time consuming operation O(ElogV) is sorting because the total complexity of the Disjoint-Set
+  // operations will be O(N), thus overall Time Complexity of the algorithm is O(ElogV). E = edges, V = vertex
   private static class Edge {
     int cost;
     int from;

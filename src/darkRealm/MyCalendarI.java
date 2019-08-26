@@ -14,36 +14,32 @@ public class MyCalendarI {
   }
 
   TreeNode root;
-
+  boolean valid;
+  
   public MyCalendarI() {
-    root = null;
+    valid = true;
   }
 
-  public boolean book(int s, int e) {
-    if (s > e) return false;
-    if (root == null) {
-      root = new TreeNode(s, e);
-      return true;
-    }
-    return insert(root, s, e, null);
+ public boolean book(int start, int end) {
+    valid = true;
+    root = insert(root, start, end);
+    return valid;
   }
-
-  private boolean insert(TreeNode root, int s, int e, TreeNode par) {
-    if (root == null) {
-      if (e <= par.start)
-        par.left = new TreeNode(s, e);
-      else
-        par.right = new TreeNode(s, e);
-      return true;
-    }
-
-    if (e <= root.start)
-      return insert(root.left, s, e, root);
-    else if (s >= root.end)
-      return insert(root.right, s, e, root);
-
-
-    return false;
+  
+  private TreeNode insert(TreeNode root, int start, int end){
+    if(root == null)
+      return new TreeNode(start, end);
+    
+    if(end <= root.start)
+      root.left = insert(root.left, start, end);
+    
+    else if(root.end <= start)
+      root.right = insert(root.right, start, end);
+    
+    else
+      valid = false;
+    
+    return root;
   }
 
   public static void main(String[] args) {
