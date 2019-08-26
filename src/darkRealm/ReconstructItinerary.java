@@ -9,7 +9,6 @@ public class ReconstructItinerary {
 //  itinerary in order. All of the tickets belong to a man who departs from JFK. Thus, the itinerary must begin with JFK.
 //
 //  Note:
-//
 //  If there are multiple valid itineraries, you should return the itinerary that has the smallest lexical order when
 //  read as a single string. For example, the itinerary ["JFK", "LGA"] has a smaller lexical order than ["JFK", "LGB"].
 //  All airports are represented by three capital letters (IATA code).
@@ -26,7 +25,6 @@ public class ReconstructItinerary {
 //  But it is larger in lexical order.
 
 
-
   /*
    * In graph theory, an Eulerian trail (or Eulerian path) is a trail in a finite graph that visits every edge exactly
    * once (allowing for revisiting vertices). Similarly, an Eulerian circuit or Eulerian cycle is an Eulerian trail that
@@ -41,7 +39,6 @@ public class ReconstructItinerary {
     if (tkts == null || tkts.size() < 1) return res;
 
     // Sort the flights by the destination first then source
-
     Collections.sort(tkts, new Comparator() {
       public int compare(Object o1, Object o2) {
         List<String> f1 = (List<String>) o1;
@@ -65,7 +62,6 @@ public class ReconstructItinerary {
         adjList.put(from, new LinkedList());
       adjList.get(from).add(to);
     }
-
 
     helper("JFK", adjList, res);
     System.out.println(res);
