@@ -20,6 +20,11 @@ public class GenerateParentheses {
 
   static List<String> res;
 
+  
+//   The total number of valid parentheses is a Catalan number,
+//  Nth catalan number = 2n! / ((n+1)! * n!)
+// So time complexity should be O(C(2n,n)/(n+1)).
+
   public static List<String> generateParenthesis(int n) {
     res = new ArrayList<>();
     if (n < 1) return res;
