@@ -26,6 +26,16 @@ public class ReconstructItinerary {
 //  But it is larger in lexical order.
 
 
+
+  /*
+   * In graph theory, an Eulerian trail (or Eulerian path) is a trail in a finite graph that visits every edge exactly
+   * once (allowing for revisiting vertices). Similarly, an Eulerian circuit or Eulerian cycle is an Eulerian trail that
+   * starts and ends on the same vertex. They were first discussed by Leonhard Euler while solving the famous Seven
+   * Bridges of Königsberg problem in 1736. The problem can be stated mathematically like this:
+   * Given the graph in the image, is it possible to construct a path (or a cycle, i.e. a path starting and ending on
+   * the same vertex) that visits each edge exactly once?
+   * */
+
   public static List<String> findItinerary(List<List<String>> tkts) {
     List<String> res = new ArrayList<>();
     if (tkts == null || tkts.size() < 1) return res;
@@ -65,7 +75,7 @@ public class ReconstructItinerary {
   private static void helper(String from, Map<String, LinkedList<String>> adjList, List<String> res) {
     Queue<String> nbors = adjList.containsKey(from) ? adjList.get(from) : new LinkedList<>();
     while (nbors.size() > 0) {
-      String n = nbors.poll();
+      String n = nbors.poll(); // remove the edge, as in euler tour we have to traverse an edge just once
       helper(n, adjList, res);
     }
     res.add(0, from);
