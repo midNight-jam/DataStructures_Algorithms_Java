@@ -282,8 +282,6 @@ This section contains implementation of different Data Structures in Java.
 | <b>QuickUnion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/QuickUnion.java)|
 | <b>NRepeatedElementInSize2NArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/NRepeatedElementInSize2NArray.java)|
 | <b>RangeMinimumQuery</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RangeMinimumQuery.java)|
-| <b>EulerTour</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EulerTour.java)|
-| <b>EulerTourGraph</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EulerTourGraph.java)|
 | <b>ReversePairs</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReversePairs.java)|
 | <b>BinarySearch</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinarySearch.java)|
 | <b>FindSmallestLetterGreaterThanTarget</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FindSmallestLetterGreaterThanTarget.java)|
