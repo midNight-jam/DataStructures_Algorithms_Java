@@ -364,6 +364,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>GenerateParentheses</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/GenerateParentheses.java)|
 | <b>CatalanNumber</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CatalanNumber.java)|
 | <b>ReconstructItinerary(EulerTour)</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReconstructItinerary.java)|
+| <b>GameOfLife</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/GameOfLife.java)|
 
 
 # Misc
