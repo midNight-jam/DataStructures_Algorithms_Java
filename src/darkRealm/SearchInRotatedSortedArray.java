@@ -11,24 +11,29 @@ public class SearchInRotatedSortedArray {
 //  You may assume no duplicate exists in the array.
 
   public int search(int[] nums, int target) {
-    if (nums == null || nums.length == 0) return -1;
-    int low = 0, high = nums.length - 1, mid = 0;
-    while (low < high) {
+    if(arr == null || arr.length < 1) return -1;
+    int low = 0;
+    int high = arr.length - 1;
+    int mid;
+     // find the rotation point
+    while(low < high){
       mid = low + (high - low) / 2;
-      if (nums[mid] < nums[high]) high = mid;
-      else low = mid + 1;
+      if(arr[mid] < arr[high])
+        high = mid;
+      else 
+        low = mid + 1;
     }
-    // Use same binary search this time accounted for the rotation
-    int res = -1;
-    int rot = low;
-    low = 0;
-    high = nums.length - 1;
-    int realMid = 0;
-    while (low <= high) {
+    
+    int rotationAt = low;
+    int realMid;
+    System.out.println("rotationat : " + rotationAt);
+     // Use same binary search this time but accounting for the rotation
+    low = 0; high = arr.length - 1;
+    while(low <= high){
       mid = low + (high - low) / 2;
-      realMid = (mid + rot) % nums.length;
-      if (nums[realMid] == target) return realMid;
-      if (nums[realMid] < target) low = mid + 1;
+      realMid = (mid + rotationAt) % arr.length;
+      if(arr[realMid] == tar) return realMid;
+      if(arr[realMid] < tar) low = mid + 1;
       else high = mid - 1;
     }
     return -1;
