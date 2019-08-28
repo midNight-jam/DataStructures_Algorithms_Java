@@ -12,12 +12,6 @@ public class KnightProbabilityInChessboard {
 //  A chess knight has 8 possible moves it can make, as illustrated below. Each move is two squares in a cardinal
 //  direction, then one square in an orthogonal direction.
 //
-//
-//
-//
-//
-//
-//
 //  Each time the knight is to move, it chooses one of eight possible moves uniformly at random (even if the piece
 //  would go off the chessboard) and moves there.
 //
