@@ -366,7 +366,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>ReconstructItinerary(EulerTour)</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReconstructItinerary.java)|
 | <b>GameOfLife</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/GameOfLife.java)|
 | <b>KnightProbabilityInChessboard</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/KnightProbabilityInChessboard.java)|
-
+| <b>MinimumHeightTrees</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumHeightTrees.java)|
 
 # Misc
 
