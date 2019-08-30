@@ -54,10 +54,10 @@ public class BinaryTreeColoringGame {
    * If we draw the tree on the paper as per the constraints of the question we can easily see that to make opponnent
    * loose we hv to limit the nodes he can color, to restrict him to the fewest nodes the can color from node x there are
    * only 3 ways, left child, right child or the parent. The crux is we try to find the size which we will get to color
-   * from x (we color then he cant color & is restricted).
+   * from x (i.e if we color then he cant color & is restricted).
    * Thus, if at x, we try to get the size of left & right sub tress & as the total is given we can also find what it size
-   * of rest if the tree. Now we hv to pick just the largest one & opponent cannot use any node from it & we win.
-   * Else the opponent always wins!
+   * of rest if the tree which is the parent size. Now we hv to pick just the largest one & opponent cannot use any node from
+   * it & we win. Else the opponent always wins!
    * */
 
   public static boolean btreeGameWinningMove(TreeNode root, int n, int x) {
