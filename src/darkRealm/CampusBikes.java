@@ -96,9 +96,8 @@ public class CampusBikes {
 
     System.out.println("workers : " + Arrays.toString(res));
     System.out.println("bikes : " + Arrays.toString(bavail));
-
+    
     return res;
-
   }
 
   public static void main(String[] args) {
