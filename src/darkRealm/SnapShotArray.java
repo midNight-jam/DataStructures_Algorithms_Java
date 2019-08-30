@@ -42,8 +42,8 @@ public class SnapShotArray {
   /*
    *  The idea is with given the history, the 2d array behaves a 3d structre in which 3d dimension is snapshot(history).
    *  As each element will have its own history we create the list/array of TreeMaps.
-   *  Why treemaps later, bcoz they hv a ability floorKey, floorKey() method is used to return the greatest key less
-   *  than or equal to given key from the parameter. Which means if we hv a history of 10 len on a index & we want its
+   *  Why treemaps, bcoz they hv a ability floorKey, floorKey() method is used to return the greatest key less
+   *  than or equal to given key from the parameter. Which means if we hv a history of 10 iterations on a index & we want its
    *  val on 4th history, flooryKey when passed this snapId will return us 4, if we try to get 200th histiry floorKey
    *  will return us 10
    * */
