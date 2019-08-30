@@ -367,6 +367,10 @@ This section contains implementation of different Data Structures in Java.
 | <b>GameOfLife</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/GameOfLife.java)|
 | <b>KnightProbabilityInChessboard</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/KnightProbabilityInChessboard.java)|
 | <b>MinimumHeightTrees</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MinimumHeightTrees.java)|
+| <b>BinaryTreeColoringGame</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryTreeColoringGame.java)|
+| <b>SnapShotArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SnapShotArray.java)|
+
+
 
 # Misc
 
