@@ -25,6 +25,10 @@ public class GuessNumberHigherOrLowerII {
 //  You end up paying $5 + $7 + $9 = $21.
 //  Given a particular n ≥ 1, find out how much money you need to have to guarantee a win.
 
+  
+  /* My explaination :
+  https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/371686/tree-visualization-memoized-recursive-soln-faster-than-504-of-java
+  */
 
   static Map<String, Integer> map;
 
