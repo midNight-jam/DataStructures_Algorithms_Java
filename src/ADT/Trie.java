@@ -5,79 +5,96 @@ package ADT;
  */
 public class Trie {
 
-    public TrieNode _root;
-    private final int _childsSize = 26;
+//  208. Implement Trie (Prefix Tree)
+//  Implement a trie with insert, search, and startsWith methods.
+//
+//      Example:
+//
+//  Trie trie = new Trie();
+//
+//trie.insert("apple");
+//trie.search("apple");   // returns true
+//trie.search("app");     // returns false
+//trie.startsWith("app"); // returns true
+//trie.insert("app");
+//trie.search("app");     // returns true
+//  Note:
+//
+//  You may assume that all inputs are consist of lowercase letters a-z.
+//  All inputs are guaranteed to be non-empty strings.
 
-    public Trie() {
-        _root = new TrieNode();
+
+  class TrieNode {
+    char val;
+    TrieNode[] childs;
+    boolean completeWord;
+
+    TrieNode(char c) {
+      val = c;
+      childs = new TrieNode[26];
     }
+  }
 
-    public void insert(String str) {
-        str = str.toLowerCase();
-        TrieNode trav = _root;
-        int indexOfChar = -1;
-        char currentChar;
-        // find current char in nodes, if present proceed further if null then add char & move ahead
-        int i;
-        for (i = 0; i < str.length(); i++) {
-            currentChar = str.charAt(i);
-            indexOfChar = getIndexForChar(currentChar);
+  TrieNode root;
 
-            if (trav._childs[indexOfChar] == null) {    // if encountered null, grow tree from here.
-                trav._childs[indexOfChar] = new TrieNode();
-            }
-            trav = trav._childs[indexOfChar]; // move ahead in path
-        }
+  public Trie() {
+    root = new TrieNode((char) 0);
+  }
 
-        // why we are assigning value here, & not at creation of new node.
-        // because it could happen that created node was for intermediate traverse, & thats why  after creating whole
-        // path, now we are assigning the value.
-        if (i == str.length()) {
-            trav.setValue(str);
-        }
+  /**
+   * Inserts a word into the trie.
+   */
+  public void insert(String word) {
+    if (word == null || word.length() < 1) return;
+    TrieNode trav = root;
+    for (int i = 0; i < word.length(); i++) {
+      char c = word.charAt(i);
+      int pos = c - 'a';
+      if (trav.childs[pos] == null) {
+        trav.childs[pos] = new TrieNode(c);
+      }
+      trav = trav.childs[pos];
     }
+    trav.completeWord = true;
+  }
 
-    private int getIndexForChar(char c) {
-        return c - 'a';
+  /**
+   * Returns if the word is in the trie.
+   */
+  public boolean search(String word) {
+    if (word == null || word.length() < 1) return false;
+    TrieNode trav = root;
+    for (int i = 0; i < word.length(); i++) {
+      char c = word.charAt(i);
+      int pos = c - 'a';
+      if (trav.childs[pos] == null) return false;
+      trav = trav.childs[pos];
     }
+    return trav.completeWord;
+  }
 
-    public boolean search(String str) {
-        str = str.toLowerCase();
-        // traverse whole string, if u reached null & string is still pending,
-        // this means string is not present in trie. If u reached value & string is exhausted,
-        // then search is complete & match is found
-
-        TrieNode trav = _root;
-        int i = 0;
-        int indexOfChar = -1;
-        char currentChar;
-        // either we have traversed the string or we have encountered a null, means trie has ended on the branch
-        for (; i < str.length(); i++) {
-            currentChar = str.charAt(i);
-            indexOfChar = getIndexForChar(currentChar);
-            if (trav._childs[indexOfChar] == null) {
-                return false;
-            }
-            trav = trav._childs[indexOfChar];
-        }
-        if (i == str.length() && trav._value.equals(str)) {
-            return true;
-        }
-        return false;
+  /**
+   * Returns if there is any word in the trie that starts with the given prefix.
+   */
+  public boolean startsWith(String prefix) {
+    if (prefix == null || prefix.length() < 1) return false;
+    TrieNode trav = root;
+    for (int i = 0; i < prefix.length(); i++) {
+      char c = prefix.charAt(i);
+      int pos = c - 'a';
+      if (trav.childs[pos] == null) return false;
+      trav = trav.childs[pos];
     }
+    return trav != null;
+  }
 
-    public void doPrint() {
-        print(_root);
-    }
-
-    private void print(TrieNode trav) {
-        if (trav != null) {
-            if (trav._value != "") {
-                System.out.println("Value : " + trav._value);
-            }
-            for (int i = 0; i < _childsSize; i++) {
-                print(trav._childs[i]);
-            }
-        }
-    }
+  public static void main(String[] args) {
+    Trie trie = new Trie();
+    trie.insert("apple");
+    System.out.println(trie.search("apple"));
+    System.out.println(trie.search("app"));
+    System.out.println(trie.startsWith("app"));
+    trie.insert("app");
+    System.out.println(trie.search("app"));
+  }
 }
