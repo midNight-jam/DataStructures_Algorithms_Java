@@ -36,28 +36,28 @@ public class CarFleet {
 
   public static int carFleet(int target, int[] pos, int[] speed) {
     int N = pos.length, res = 0;
-    double[][] cars = new double[N][2];
+    double[][] arrivalTimeOfCars = new double[N][2];
     /*
-     * Sort the cars by their starting position in increasing order.
+     * Sort the cars by their starting position in decreasing order (closest to target).
      * Take the time taken for each car from their starting position to reach target using their speed
      * all slow cars (taking more time) can catch the fast cars (taking less time)
      * traverse the times to find such increases.
      * */
 
     for (int i = 0; i < N; ++i)
-      cars[i] = new double[]{pos[i], (double) (target - pos[i]) / speed[i]};
-    Arrays.sort(cars, new Comparator<double[]>() {
+      arrivalTimeOfCars[i] = new double[]{pos[i], (double) (target - pos[i]) / speed[i]};
+    Arrays.sort(arrivalTimeOfCars, new Comparator<double[]>() {
       @Override
       public int compare(double[] o1, double[] o2) {
-        return Double.compare(o1[0], o2[0]);
+        return -1 * Double.compare(o1[0], o2[0]);
       }
     });
 
-    // 12, 3, 7, 1, 1  ::: there will be three increases, thus 3 fleets
-    double cur = 0;
-    for (int i = N - 1; i >= 0; --i)
-      if (cars[i][1] > cur) {
-        cur = cars[i][1];
+    // 1, 1, 7, 3, 12 ::: there will be three increases, thus 3 fleets
+    double slowestCarsTime = 0;
+    for (int i = 0; i < N; i++)
+      if (arrivalTimeOfCars[i][1] > slowestCarsTime) {
+        slowestCarsTime = arrivalTimeOfCars[i][1];
         res++;
       }
 
