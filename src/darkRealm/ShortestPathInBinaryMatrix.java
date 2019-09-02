@@ -130,7 +130,7 @@ public class ShortestPathInBinaryMatrix {
     };
     int res = shortestPathBinaryMatrix(grid);
     System.out.println(res);
-    System.out.println(res == 7 ? "Pass" : "Fail");
+    System.out.println(res == -1 ? "Pass" : "Fail");
 
 
   }
