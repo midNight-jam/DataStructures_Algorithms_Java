@@ -128,14 +128,6 @@ public class Moderate_Main {
     System.out.println("Val {" + val + "} is pattern of type [" + pattern + "] res - " + res);
   }
 
-  public static void testOldKeyboard() {
-//    int n = 8733;
-//    int n = 228;
-    int n = 364;
-    String[] res = Moderate.OldCellPhoneKeyBoardT9(n);
-    System.out.println("N : " + n + "   Sugg : " + Arrays.toString(res));
-  }
-
   public static void testMaxPopulationYear() {
     int[] births = new int[]{1908, 1919, 1912, 1930, 1905, 1903};
     int[] deaths = new int[]{1909, 1922, 1920, 1945, 1910, 1912};

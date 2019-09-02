@@ -1,7 +1,9 @@
 package darkRealm;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class WordBreak {
 
@@ -20,7 +22,7 @@ public class WordBreak {
   * result that string of length 3 can be formed using dictionary, similarly if the result for the length of the string
   * is also true mean the whole string can be formed using the dictionary while doing some partitions at places.
   * */
-  public static boolean wordBreak(String str, List<String> wordDict) {
+  public static boolean wordBreak(String s, List<String> wordDict) {
     if (s == null || wordDict == null) return false;
     Set<String> dict = new HashSet<>(wordDict);
     // This is a DP Problem

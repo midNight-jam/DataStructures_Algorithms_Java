@@ -61,7 +61,7 @@ public class PalindromicSubStrings {
     if(s == null || s.length() < 1) return 0;
     int n = s.length();
     boolean [][] dp = new boolean[n][n];
-    int res = N; // each char will be a palindrome in itself
+    int res = n; // each char will be a palindrome in itself
     
     for(int i = 0; i < dp.length; i++)
       dp[i][i] = true;

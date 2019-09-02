@@ -10,7 +10,7 @@ public class SearchInRotatedSortedArray {
 //  You are given a target value to search. If found in the array return its index, otherwise return -1.
 //  You may assume no duplicate exists in the array.
 
-  public int search(int[] nums, int target) {
+  public int search(int[] arr, int tar) {
     if(arr == null || arr.length < 1) return -1;
     int low = 0;
     int high = arr.length - 1;

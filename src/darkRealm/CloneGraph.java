@@ -132,7 +132,7 @@ public class CloneGraph {
     four.neighbors.add(three);
     four.neighbors.add(one);
 
-    Node res = cloneGraph(one);
+    Node res = cloneGraphBFS(one);
     System.out.println(res.val);
   }
 }
