@@ -1,5 +1,7 @@
 package darkRealm;
 
+import java.util.*;
+
 public class ClosestLeafInABinaryTree {
 
 //  742. Closest Leaf in a Binary Tree
@@ -58,6 +60,65 @@ public class ClosestLeafInABinaryTree {
    * My solution uses a custom post order, though it works, its not intuitive & lengthy, plus hard to come up in short time
    * There is another way of solving this with treating tree as undirected graph & firing BFS, will do that too.
    * */
+
+  static TreeNode start;
+
+  public static int findClosestLeaf(TreeNode root, int k) {
+    if (root == null) return -1;
+
+    Map<Integer, List<TreeNode>> map = new HashMap<>();
+    Set<Integer> visited = new HashSet<>();
+
+    buildAdjMap(root, null, k, map);
+
+    Queue<TreeNode> que = new LinkedList<>();
+    que.offer(start);
+
+    while (que.size() > 0) {
+      int p = que.size();
+      while (p-- > 0) {
+        TreeNode trav = que.poll();
+        visited.add(trav.val);
+        if (trav.left == null && trav.right == null)
+          return trav.val; // this is the first leaf
+
+        List<TreeNode> nbors = map.get(trav.val);
+        for (TreeNode n : nbors) {
+          if (visited.contains(n.val)) continue;
+          que.offer(n);
+        }
+      }
+    }
+
+    return -1;
+  }
+
+
+  // Traverse the tree & build the adjacency map
+  private static void buildAdjMap(TreeNode root, TreeNode par, int k, Map<Integer, List<TreeNode>> map) {
+    if (root.val == k)
+      start = root;
+
+    map.put(root.val, new ArrayList<>());
+
+    if (par != null)
+      map.get(root.val).add(par);
+
+    if (root.left != null) {
+      map.get(root.val).add(root.left);
+      buildAdjMap(root.left, root, k, map);
+    }
+
+    if (root.right != null) {
+      map.get(root.val).add(root.right);
+      buildAdjMap(root.right, root, k, map);
+    }
+  }
+
+
+  /*
+   * WARNING! DONT SEE BELOW CODE.
+   */
   private static class Data {
     TreeNode leaf;
     int dist;
@@ -81,7 +142,7 @@ public class ClosestLeafInABinaryTree {
   static int minD;
   static TreeNode leaf;
 
-  public static int findClosestLeaf(TreeNode root, int k) {
+  public static int findClosestLeafCUSTOMPOSTORDERSHITCODE(TreeNode root, int k) {
     if (root == null) return -1;
     minD = Integer.MAX_VALUE;
     leaf = null;
