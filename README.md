@@ -378,6 +378,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>SortList</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SortList.java)|
 | <b>ShortestPathInBinaryMatrix</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ShortestPathInBinaryMatrix.java)|
 | <b>ClosestLeafInABinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ClosestLeafInABinaryTree.java)|
+| <b>CountCompleteTreeNodes</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CountCompleteTreeNodes.java)|
 
 
 # Misc
