@@ -12,7 +12,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>Linked List</b>  <br>  Methods Implemented: appendToTail(), add(), appendToHead(), removeFirst(), removeLast(), clone(), addAll(), reverseBetween(), getMid(), isPalindrome(), reverse(), toString(), mergeWith(), mergeTwoLists(), reverseInKGroups(), hasCycle(), removeKthFromEnd()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/LinkedList.java)|
 | <b>Tree</b>  <br>  Methods Implemented: preorderIterative(), inorderIterative(), levelOrder() ... many more| [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Tree.java)|
 | <b>Graph</b>  <br>  Methods Implemented: BFS(), DFS(), Djikstras(), TopologicalSort()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Graph.java)|
-| <b>Trie</b>  <br>  Methods Implemented: search(), print()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Trie.java)|
+| <b>Trie</b>  <br>  Methods Implemented: search(), insert(), startsWith()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/Trie.java)|
 | <b>MaxHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MaxHeap.java)|
 | <b>MinHeap</b>  <br>  Methods Implemented: insert(), fetchTop(), doubleSize()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MinHeap.java)|
 | <b>HashMap</b>  <br>  Methods Implemented: put(), add(), containsKey(), remove()               | [View](https://github.com/midNight-jam/hyperLC/blob/master/src/ADT/MyHashMap.java)|
@@ -375,6 +375,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>GuessNumberHigherOrLowerII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/GuessNumberHigherOrLowerII.java)|
 | <b>SentenceSimilarityII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SentenceSimilarityII.java)|
 | <b>CarFleet</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CarFleet.java)|
+| <b>SortList</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SortList.java)|
 
 
 # Misc
