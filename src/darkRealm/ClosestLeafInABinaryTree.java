@@ -116,9 +116,13 @@ public class ClosestLeafInABinaryTree {
   }
 
 
-  /*
-   * WARNING! DONT SEE BELOW CODE.
-   */
+   
+   ////////////////////////////////////////
+   /////// WARNING! DONT READ BELOW THIS!
+   ///////////////////////////////////////
+  
+  
+  
   private static class Data {
     TreeNode leaf;
     int dist;
