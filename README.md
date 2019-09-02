@@ -377,6 +377,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>CarFleet</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CarFleet.java)|
 | <b>SortList</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SortList.java)|
 | <b>ShortestPathInBinaryMatrix</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ShortestPathInBinaryMatrix.java)|
+| <b>ClosestLeafInABinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ClosestLeafInABinaryTree.java)|
+
 
 # Misc
 
