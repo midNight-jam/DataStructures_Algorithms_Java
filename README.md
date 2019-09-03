@@ -380,7 +380,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>ClosestLeafInABinaryTree</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ClosestLeafInABinaryTree.java)|
 | <b>CountCompleteTreeNodes</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CountCompleteTreeNodes.java)|
 | <b>FourSum,KSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FourSum.java)|
-
+| <b>DesignSnakeGame</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DesignSnakeGame.java)|
 
 
 # Misc
