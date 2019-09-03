@@ -60,22 +60,26 @@ public class FourSum {
           high--;
         }
       }
-    } else {
-      for (int i = index; i + k - 1 < nums.length; i++) {
-        //use current number to reduce ksum into k-1sum
-        List<List<Integer>> temp = kSum(nums, target - nums[i], k - 1, i + 1);
-
-        if (temp.size() < 1) continue; // no res for k - 1
-
-        //add this number to all previous results
-        for (List<Integer> t : temp)
-          t.add(0, nums[i]);
-        res.addAll(temp);
-
-        //skip duplicated numbers
-        while (i + 1 < nums.length && nums[i] == nums[i + 1]) i++;
-      }
+      return res;
     }
+
+    // any K > 2
+    for (int i = index; i + k - 1 < nums.length; i++) {
+      //use current number to reduce ksum into k-1sum
+      List<List<Integer>> temp = kSum(nums, target - nums[i], k - 1, i + 1);
+
+      if (temp.size() < 1) continue; // no res for k - 1
+
+      //add this number to all previous results
+      for (List<Integer> t : temp)
+        t.add(0, nums[i]);
+
+      res.addAll(temp);
+
+      //skip duplicated numbers
+      while (i + 1 < nums.length && nums[i] == nums[i + 1]) i++;
+    }
+
     return res;
   }
 
