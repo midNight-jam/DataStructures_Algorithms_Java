@@ -382,6 +382,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>FourSum,KSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FourSum.java)|
 | <b>DesignSnakeGame</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DesignSnakeGame.java)|
 | <b>RepeatedDNASequences</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RepeatedDNASequences.java)|
+| <b>MostStonesRemovedWithSameRowOrColumn</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MostStonesRemovedWithSameRowOrColumn.java)|
 
 
 
