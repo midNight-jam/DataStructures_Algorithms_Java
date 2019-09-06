@@ -384,6 +384,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>RepeatedDNASequences</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/RepeatedDNASequences.java)|
 | <b>MostStonesRemovedWithSameRowOrColumn</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MostStonesRemovedWithSameRowOrColumn.java)|
 | <b>SubarraySumEqualsK</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubarraySumEqualsK.java)|
+| <b>SingleElementInASortedArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SingleElementInASortedArray.java)|
 
 
 # Misc
