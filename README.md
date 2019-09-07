@@ -386,6 +386,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>SubarraySumEqualsK</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SubarraySumEqualsK.java)|
 | <b>SingleElementInASortedArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SingleElementInASortedArray.java)|
 | <b>PartitionEqualSubsetSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PartitionEqualSubsetSum.java)|
+| <b>PartitionToKEqualSumSubsets</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PartitionToKEqualSumSubsets.java)|
+
 
 
 # Misc
