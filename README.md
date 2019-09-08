@@ -389,6 +389,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>PartitionToKEqualSumSubsets</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PartitionToKEqualSumSubsets.java)|
 | <b>BraceExpansion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BraceExpansion.java)|
 | <b>StreamOfCharacters</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StreamOfCharacters.java)|
+| <b>ToeplitzMatrix</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ToeplitzMatrix.java)|
 
 
 # Misc
