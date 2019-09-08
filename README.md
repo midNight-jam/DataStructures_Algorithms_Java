@@ -390,6 +390,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>BraceExpansion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BraceExpansion.java)|
 | <b>StreamOfCharacters</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StreamOfCharacters.java)|
 | <b>ToeplitzMatrix</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ToeplitzMatrix.java)|
+| <b>BullsAndCows</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BullsAndCows.java)|
+| <b>EvaluateDivision</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EvaluateDivision.java)|
 
 
 # Misc
