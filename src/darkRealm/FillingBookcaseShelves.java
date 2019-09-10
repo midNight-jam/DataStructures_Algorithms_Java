@@ -67,7 +67,7 @@ public class FillingBookcaseShelves {
       sameShelf = helper(index + 1, widthAvail - books[index][0], newHeight);
     }
 
-    // try this book also on a new Shelf.................... this book takes width, this books height will be the height of shelf
+    // try this book also on a new Shelf... this book takes width, this books height will be the height of shelf
     newShelf = currHeight + helper(index + 1, W - books[index][0], books[index][1]);
 
     // take the min
