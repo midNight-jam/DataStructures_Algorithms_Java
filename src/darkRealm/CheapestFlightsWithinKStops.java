@@ -43,11 +43,9 @@ public class CheapestFlightsWithinKStops {
     // The idea is to use a minHeap with flights cost &  also keep the rtrack of no of stops left to take
     // we take the next flight iff we have capacity
 
-    PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator() {
-      public int compare(Object f1, Object f2) {
-        int[] af1 = (int[]) f1;
-        int[] af2 = (int[]) f2;
-        return af1[0] - af2[0];
+    PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator<int[]>() {
+      public int compare(int[] f1, int[] f2) {
+        return f1[0] - f2[0];
       }
     });
 
