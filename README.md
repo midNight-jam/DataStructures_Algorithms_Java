@@ -394,6 +394,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>EvaluateDivision</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/EvaluateDivision.java)|
 | <b>BinaryStringWithSubstringsRepresenting1ToN</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryStringWithSubstringsRepresenting1ToN.java)|
 | <b>FillingBookcaseShelves</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FillingBookcaseShelves.java)|
+| <b>SortAPartiallySortedArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SortAPartiallySortedArray.java)|
 
 
 
