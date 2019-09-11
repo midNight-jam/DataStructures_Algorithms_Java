@@ -387,7 +387,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>SingleElementInASortedArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SingleElementInASortedArray.java)|
 | <b>PartitionEqualSubsetSum</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PartitionEqualSubsetSum.java)|
 | <b>PartitionToKEqualSumSubsets</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/PartitionToKEqualSumSubsets.java)|
-| <b>BraceExpansion</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BraceExpansion.java)|
+| <b>BraceExpansion</b>  <br>             | [View](https://github.cCheapestFlightsWithinKStops om/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BraceExpansion.java)|
 | <b>StreamOfCharacters</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/StreamOfCharacters.java)|
 | <b>ToeplitzMatrix</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ToeplitzMatrix.java)|
 | <b>BullsAndCows</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BullsAndCows.java)|
@@ -395,6 +395,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>BinaryStringWithSubstringsRepresenting1ToN</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/BinaryStringWithSubstringsRepresenting1ToN.java)|
 | <b>FillingBookcaseShelves</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/FillingBookcaseShelves.java)|
 | <b>SortAPartiallySortedArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SortAPartiallySortedArray.java)|
+| <b>LargestValuesFromLabels</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LargestValuesFromLabels.java)|
 
 
 
