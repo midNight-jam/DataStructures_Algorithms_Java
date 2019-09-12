@@ -28,20 +28,6 @@ public class UniquePaths {
     return dp[m - 1][n - 1];
   }
 
-  //NOT WORKING WIP
-  public static int uniquePathsMath(int m, int n) {
-    int sum = 1;
-    m--;
-    n--;
-    int l = m + n;
-    int s = 0;
-    if (n < m) s = n;
-    else s = m; // will iterate till the smaller number
-    for (int i = 1; i <= s; i++)
-      sum = sum * (l - s + i) / i; // l-s remove the smaller number & use the left over number
-    return sum;
-  }
-
   public static void main(String[] args) {
 //    int m = 1, n = 2;
     int m = 4, n = 4;
