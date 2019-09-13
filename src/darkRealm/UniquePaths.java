@@ -31,7 +31,7 @@ public class UniquePaths {
   public static void main(String[] args) {
 //    int m = 1, n = 2;
     int m = 4, n = 4;
-    int res = uniquePathsMath(m, n);
+    int res = uniquePaths(m, n);
     System.out.println("M : " + m + " N : " + n + "\nR : " + res);
   }
 }

@@ -1,7 +1,6 @@
 package darkRealm;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class AllNodesDistanceKInBinaryTree {
 
@@ -40,6 +39,61 @@ public class AllNodesDistanceKInBinaryTree {
     }
   }
 
+  /*
+   * Treat the tree as graph, fire BFS from the target & capture the nodes at k dist
+   * */
+
+  public static List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
+    if (root == null || target == null || K < 0) return new ArrayList<>();
+    Map<TreeNode, List<TreeNode>> map = new HashMap<>();
+    build(root, null, map);
+    Queue<TreeNode> que = new LinkedList<>();
+    Queue<Integer> kQue = new LinkedList<>();
+    que.offer(target);
+    kQue.offer(K);
+    List<Integer> res = new ArrayList<>();
+    Set<Integer> visited = new HashSet<>();
+    visited.add(target.val);
+    while (que.size() > 0) {
+      int p = que.size();
+
+      while (p-- > 0) {
+        int k = kQue.poll();
+        if (k == 0) {
+          while (!que.isEmpty()) {
+            res.add(que.poll().val);
+          }
+          return res;
+        }
+        TreeNode trav = que.poll();
+
+        for (TreeNode n : map.get(trav)) {
+          if (visited.contains(n.val)) continue;
+          visited.add(n.val); // mark visited before pushing becoz this is a undirected graph, thats how we get around cycles here
+          que.offer(n);
+          kQue.offer(k - 1);
+        }
+      }
+    }
+
+    return new ArrayList<>();
+  }
+
+  private static void build(TreeNode root, TreeNode par, Map<TreeNode, List<TreeNode>> map) {
+    if (root == null) return;
+    if (!map.containsKey(root))
+      map.put(root, new ArrayList<>());
+
+    if (par != null) {
+      map.get(par).add(root);
+      map.get(root).add(par);
+    }
+
+    build(root.left, root, map);
+    build(root.right, root, map);
+  }
+
+
   // a signal for starting to record the node as a result
   class State {
     boolean record;
@@ -51,7 +105,7 @@ public class AllNodesDistanceKInBinaryTree {
     }
   }
 
-  public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
+  public List<Integer> distanceKREC(TreeNode root, TreeNode target, int K) {
     List<Integer> res = new ArrayList<>();
     if (root == null || K < 0 || target == null)
       return res;
@@ -104,6 +158,18 @@ public class AllNodesDistanceKInBinaryTree {
   }
 
   public static void main(String[] args) {
+    TreeNode root = new TreeNode(3);
+    root.left = new TreeNode(5);
+    root.left.left = new TreeNode(6);
+    root.left.right = new TreeNode(2);
+    root.left.right.left = new TreeNode(7);
+    root.left.right.left = new TreeNode(4);
+    root.right = new TreeNode(1);
+    root.right.left = new TreeNode(0);
+    root.right.right = new TreeNode(8);
 
+
+    List<Integer> res = distanceK(root, root.left, 2);
+    System.out.println(res);
   }
 }
