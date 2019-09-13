@@ -50,7 +50,7 @@ public class PossibleBipartition {
       int from = edge[0];
       int to = edge[1];
       adjacencyList.get(from).add(to);
-      adjacencyList.get(to).add(from);
+      adjacencyList.get(to).add(from);// dont worry about creating cycle, coloring logic takes care of this.
     }
 
     int[] assignedColors = new int[N + 1];

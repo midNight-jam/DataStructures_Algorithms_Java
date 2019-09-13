@@ -30,9 +30,9 @@ public class ShortestPalindrome {
     StringBuilder sbr = new StringBuilder(s);
     String rev = new String(sbr.reverse());
     if (s.equals(rev)) return s;
-    for (int i = 0; i < rev.length(); i++) {
-      String head = rev.substring(0, i + 1);
-      String tail = rev.substring(i + 1);
+    for (int i = 1; i < rev.length(); i++) {
+      String head = rev.substring(0, i);
+      String tail = rev.substring(i);
       if (s.startsWith(tail)) {
         return head + s;
       }
