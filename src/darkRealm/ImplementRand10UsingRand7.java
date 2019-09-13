@@ -38,7 +38,7 @@ public class ImplementRand10UsingRand7 {
 
   /*
    * Generalizing this problem to generate any randM() using given randN() where M > N
-   * #0 Go from X -> N  :: i.e Generate randX() from randN(), such that X >= M
+   * #0 Go from N -> X  :: i.e Generate randX() from randN(), such that X >= M
    *                       for eg : from 7 -> 10 generate randX = rand49
    * #1 Go from X -> M' :: i.e Generate randM'() from randX(), such that M' is the largest multiple of M that is smaller than X
    *                           & from rand49 generate rand40 which is multiple of 10 but smaller than 49
