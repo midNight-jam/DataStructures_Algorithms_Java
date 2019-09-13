@@ -1,6 +1,6 @@
 package darkRealm;
 
-public class ConstructBinaryTreeFromPreorderAndTraversal {
+public class ConstructBinaryTreeFromPreorderAndPostorderTraversal {
 
   public static class TreeNode {
     int val;
