@@ -70,8 +70,9 @@ public class CourseScheduleII {
   private static boolean dfs(int v, List<List<Integer>> adjList, boolean [] recStack, boolean [] processed){
 		if(recStack[v]) return false;
 		recStack[v] = true;
+
 		for(int n : adjList.get(v)){
-      if(processed[n]) continue;
+			if(processed[n]) continue;
 			boolean valid = dfs(n, adjList, recStack, processed);
 			if(!valid) return false;
 		}
@@ -80,7 +81,7 @@ public class CourseScheduleII {
 		processed[v] = true;
 		res.add(0, v);
 		return true;
-	}
+}
 
   public static void main(String[] args) {
 //    int N = 2;
