@@ -1,8 +1,6 @@
 package darkRealm;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class AlienDictionary {
 
@@ -61,70 +59,70 @@ public class AlienDictionary {
   // its still valid because f+w both appear before the rest of dependent nodes, just like in graph with isolate nodes / more than 1 node as a start node
 
   public String alienOrder(String[] words) {
-    isCycle = false;
-    boolean [][] adjList = new boolean[26][26];
-    int [] visited = new int[26];
-    List<Character> res = new ArrayList<>();
-    Arrays.fill(visited, -1); // initial graph has no vertices
+    if (words == null || words.length < 1) return "";
+    Map<Character, List<Character>> adjList = new HashMap<>();
+    boolean[] done = new boolean[26];
+    boolean[] recStack = new boolean[26];
 
-    for(String s : words)
-      for(char c : s.toCharArray())
-        visited[c - 'a'] = 0; // mark the presence of a vertice
+    for (String w : words)
+      for (char c : w.toCharArray())
+        if (!adjList.containsKey(c)) {
+          adjList.put(c, new ArrayList<>());
+        }
+
 
     String prev, curr;
-    char pc, cc;
-    // Create adjacency Matrix
-    for(int i = 1; i < words.length; i++){
-      prev = words[i-1];
+    int pi, ci;
+    int pc, cc;
+    for (int i = 1; i < words.length; i++) {
+      prev = words[i - 1];
       curr = words[i];
-      int len = Math.min(prev.length(), curr.length());
-
-      for(int pi = 0; pi < len; pi++){
-        pc = prev.charAt(pi);
-        cc = curr.charAt(pi);
-        if(pc != cc){
-          adjList[pc - 'a'][cc - 'a'] = true; // there is a edge from pc to cc
-          break; // break at first mismatch, because only this gives the info that currentChar comes after prevChar
-          // for more info on this check the solution of VerifyingAnAlienDictionary
+      pi = ci = 0;
+      while (pi < prev.length() || ci < curr.length()) {
+        pc = pi < prev.length() ? prev.charAt(pi) : -1;
+        cc = ci < curr.length() ? curr.charAt(ci) : -1;
+        if (pc != cc) {
+          char cpc = (char) pc;
+          char ccc = (char) cc;
+          if (adjList.containsKey(cpc))
+            adjList.get(cpc).add(ccc);
+          break;
         }
+
+        pi++;
+        ci++;
       }
     }
 
-    // fire dfs from all who are not visited
-    for(int i = 0; i < 26; i++){
-      if(visited[i] == 0)
-        dfs(adjList, visited, i, res);
-
-      if(isCycle) // if there is a cycle, we cannot form alienOrder
-        return "";
+    List<Character> res = new ArrayList<>();
+    boolean valid = true;
+    for (char k : adjList.keySet()) {
+      if (done[k - 'a']) continue;
+      valid &= dfs(k, res, adjList, done, recStack);
+      if (!valid) return "";
     }
-
-
-
+    //to
     StringBuilder sbr = new StringBuilder();
-    for(char c : res){
+    for (char c : res)
       sbr.append(c);
-    }
-
-    return sbr.toString();
+    String rr = sbr.toString();
+    System.out.println(rr);
+    return rr;
   }
 
-  private void dfs(boolean [][] adjList, int [] visited, int vi, List<Character> res){
-    if(isCycle) return;
-    visited[vi] = 1; // mark this node in processing state
-
-    for(int i = 0; i < 26; i++){
-      if(adjList[vi][i] == true){
-        if(visited[i] == 1){ // the neighbour vertex is already under processing state, its a cycle
-          isCycle = true;
-          return;
-        }
-        if(visited[i] == 0){ // the neighbor is not visited yet
-          dfs(adjList, visited, i, res);
-        }
-      }
+  static private boolean dfs(char v, List<Character> res, Map<Character, List<Character>> adjList, boolean[] done, boolean[] recStack) {
+    if (recStack[v - 'a']) return false;
+    recStack[v - 'a'] = true;
+    List<Character> nbors = adjList.get(v);
+    for (char n : nbors) {
+      if (done[n - 'a']) continue;
+      boolean valid = dfs(n, res, adjList, done, recStack);
+      if (!valid) return false;
     }
-    visited[vi] = 2; // mark this vertice as finished state
-    res.add(0, (char)(vi + 'a')); // prepare the result
+
+    recStack[v - 'a'] = false;
+    done[v - 'a'] = true;
+    res.add(0, v);
+    return true;
   }
 }
