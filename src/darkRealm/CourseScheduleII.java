@@ -36,57 +36,51 @@ public class CourseScheduleII {
 //  The input prerequisites is a graph represented by a list of edges, not adjacency matrices. Read more about how a
 //  graph is represented.
 //  You may assume that there are no duplicate edges in the input prerequisites.
-
+  List<Integer> res;
   public static int[] findOrder(int numCourses, int[][] prerequisites) {
-    if (prerequisites.length < 1) return new int[]{};
+    if(preq == null || N < 0) return new int[0];
+  
+    List<List<Integer>> adjList = new ArrayList<>();
+    res = new ArrayList<>();
+    for(int i = 0; i < N; i++)
+      adjList.add(new ArrayList<>());
 
-    int N = numCourses;
-    List<Integer>[] adjList = new List[N];
-    for (int i = 0; i < N; i++)
-      adjList[i] = new ArrayList<>();
+    for(int [] p : preq)
+      adjList.get(p[1]).add(p[0]);
+    
 
-
-    for (int[] e : prerequisites) {
-      int from = e[1];
-      int to = e[0];
-      adjList[from].add(to);
+    boolean [] recStack = new boolean[N];
+    boolean [] processed = new boolean[N];
+    boolean valid = true;
+    for(int i = 0; i < N; i++){
+      if(processed[i]) continue;
+      valid &=	dfs(i, adjList, recStack, processed);
+      if(!valid) return new int[0];
     }
+    
+    int [] seq = new int[N];
+    int i = 0;
+    
+    for(int s : res)
+      seq[i++] = s;
 
-    Stack<Integer> stack = new Stack<>();
-    boolean[] visited = new boolean[N];
-    boolean[] underProcessing = new boolean[N];
-
-    for (int i = 0; i < N; i++) {
-      if (visited[i]) continue;
-      if (!dfs(adjList, i, stack, visited, underProcessing))
-        return new int[]{};
-    }
-
-    int[] res = new int[stack.size()];
-    for (int i = 0; stack.size() > 0; i++)
-      res[i] = stack.pop();
-
-    return res;
+    return seq;
   }
 
-  private static boolean dfs(List<Integer>[] adjList, int v, Stack<Integer> stack, boolean[] visited, boolean[] underProcessing) {
-    if (underProcessing[v]) return false;
+  private static boolean dfs(int v, List<List<Integer>> adjList, boolean [] recStack, boolean [] processed){
+		if(recStack[v]) return false;
+		recStack[v] = true;
+		for(int n : adjList.get(v)){
+      if(processed[n]) continue;
+			boolean valid = dfs(n, adjList, recStack, processed);
+			if(!valid) return false;
+		}
 
-    underProcessing[v] = true;
-
-    List<Integer> neighbours = adjList[v];
-    for (int i = 0; i < neighbours.size(); i++) {
-      int neighbour = neighbours.get(i);
-      if (visited[neighbour]) continue;
-      if (!dfs(adjList, neighbour, stack, visited, underProcessing))
-        return false;
-    }
-
-    underProcessing[v] = false;
-    visited[v] = true;
-    stack.add(v); // we always add the node after processing all of its neighbours
-    return true;
-  }
+		recStack[v] = false;
+		processed[v] = true;
+		res.add(0, v);
+		return true;
+	}
 
   public static void main(String[] args) {
 //    int N = 2;
