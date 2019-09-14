@@ -397,6 +397,7 @@ This section contains implementation of different Data Structures in Java.
 | <b>SortAPartiallySortedArray</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SortAPartiallySortedArray.java)|
 | <b>LargestValuesFromLabels</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LargestValuesFromLabels.java)|
 | <b>HighFive</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/HighFive.java)|
+| <b>MergeSort</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MergeSort.java)|
 
 
 
