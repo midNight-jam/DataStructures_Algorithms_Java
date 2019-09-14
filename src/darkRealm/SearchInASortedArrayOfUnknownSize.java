@@ -34,43 +34,7 @@ public class SearchInASortedArrayOfUnknownSize {
     }
   }
 
-  public static int searchOLD(ArrayReader reader, int target) {
-    int left = 0;
-    int upperBoundRight = 1;
-    // find upperbound of the right end, using power 2
-    while (reader.get(upperBoundRight) != 2147483647)
-      upperBoundRight *= 2;
-
-    // now as we have the upperbound for right, find the exactRight
-
-    int lowerRight = 1;
-    int exactRight = 0;
-
-    while (lowerRight <= upperBoundRight) {
-      exactRight = lowerRight + (upperBoundRight - lowerRight) / 2;
-      if (reader.get(exactRight) > 2147483646)
-        upperBoundRight = exactRight - 1;
-      else if (reader.get(exactRight) < 2147483647)
-        lowerRight = exactRight + 1;
-      else
-        break;
-    }
-
-    int right = exactRight;
-    // now perform the usual binary Search as we have calculated the left + right
-    int mid;
-    while (left <= right) {
-      mid = left + (right - left) / 2;
-      if (reader.get(mid) > target)
-        right = mid - 1;
-      else if (reader.get(mid) < target)
-        left = mid + 1;
-      else return mid;
-    }
-
-    return -1;
-  }
-
+  
   public static int search(ArrayReader reader, int target) {
     int left = 0;
     int right = 1;
@@ -104,6 +68,45 @@ public class SearchInASortedArrayOfUnknownSize {
       int am = reader.get(mid);
       if (am < target) low = mid;
       else if (am > target) high = mid - 1;
+      else return mid;
+    }
+
+    return -1;
+  }
+
+  
+  
+  public static int searchOLD(ArrayReader reader, int target) {
+    int left = 0;
+    int upperBoundRight = 1;
+    // find upperbound of the right end, using power 2
+    while (reader.get(upperBoundRight) != 2147483647)
+      upperBoundRight *= 2;
+
+    // now as we have the upperbound for right, find the exactRight
+
+    int lowerRight = 1;
+    int exactRight = 0;
+
+    while (lowerRight <= upperBoundRight) {
+      exactRight = lowerRight + (upperBoundRight - lowerRight) / 2;
+      if (reader.get(exactRight) > 2147483646)
+        upperBoundRight = exactRight - 1;
+      else if (reader.get(exactRight) < 2147483647)
+        lowerRight = exactRight + 1;
+      else
+        break;
+    }
+
+    int right = exactRight;
+    // now perform the usual binary Search as we have calculated the left + right
+    int mid;
+    while (left <= right) {
+      mid = left + (right - left) / 2;
+      if (reader.get(mid) > target)
+        right = mid - 1;
+      else if (reader.get(mid) < target)
+        left = mid + 1;
       else return mid;
     }
 
