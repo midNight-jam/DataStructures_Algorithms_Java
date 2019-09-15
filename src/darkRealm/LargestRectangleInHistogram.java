@@ -12,6 +12,31 @@ public class LargestRectangleInHistogram {
 //  For example,
 //  Given heights = [2,1,5,6,2,3],
 //  return 10.
+  
+  
+   public int largestRectangleArea2(int[] heights) {
+    if (heights == null || heights.length < 1) return 0;
+    int res = 0;
+    int area = 0;
+    int rectHeight, rectLen, h;
+    Stack<Integer> indexStack = new Stack<>();
+
+    for (int i = 0; i <= heights.length; i++) {
+      h = i == heights.length ? 0 : heights[i];
+      if (indexStack.isEmpty() || h >= heights[indexStack.peek()]) {
+        indexStack.push(i);
+      } 
+      // if we have encountered a smaller height, the stack will have bigger heights, thus try to form  a rect with that
+      else {
+        rectHeight = heights[indexStack.pop()];
+        rectLen = indexStack.isEmpty() ? i : (i - 1) - indexStack.peek(); // because rect right edge starts prev to this index
+        area = rectHeight * rectLen;
+        res = Math.max(res, area);
+        i--; // keep the pointer at this index as we want to process all the rectangles that can be made
+      }
+    }
+    return res;
+  }
 
   public static int largestRectangleArea(int[] heights) {
     if (heights == null || heights.length == 0) return 0;
