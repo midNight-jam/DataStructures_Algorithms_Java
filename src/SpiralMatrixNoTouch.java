@@ -20,7 +20,7 @@ public class SpiralMatrixNoTouch {
     }
   }
 
-  // Spiral a matrix of dimension m * n      Time Complexity - O(m*n)
+  // Spiral a matrix of dimension m * N      Time Complexity - O(m*N)
   private static void spiralMatrix(int[][] matrix) {
     if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return;
     int row = matrix.length;

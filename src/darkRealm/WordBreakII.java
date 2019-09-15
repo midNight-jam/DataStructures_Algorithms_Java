@@ -16,15 +16,15 @@ public class WordBreakII {
   A solution is ["cats and dog", "cat sand dog"].
 */
 
-  public static List<String> wordBreak(String str, List<String> dict) {
-    if (str == null || str.length() == 0) return new ArrayList<>();
+  public static List<String> wordBreak(String s, List<String> wordDict) {
+    if (s == null || s.length() < 1 || wordDict == null) new ArrayList<>();
+    Set<String> set = new HashSet(wordDict);
     Map<String, List<String>> map = new HashMap<>();
-    return helper(str, dict, map);
+    return helper2(s, set, map);
   }
 
   // break the string from behind for valid strings/suffix
-  private static List<String> helper(String str, List<String> dict, Map<String, List<String>> map) {
-    // if we have encountered this str/prefix before return the list against it
+  private static List<String> helper2(String str, Set<String> dict, Map<String, List<String>> map) {
     if (map.containsKey(str)) return map.get(str);
     String suffix;
     List<String> subList = new ArrayList<>();
@@ -34,8 +34,7 @@ public class WordBreakII {
       suffix = str.substring(i, len);
       if (dict.contains(suffix)) {
         String prefix = str.substring(0, i);
-        // get all the valid prefixes that can be formed using the dictionary & append this suffix to them
-        List<String> remList = helper(prefix, dict, map);
+        List<String> remList = helper2(prefix, dict, map);
         for (String s : remList) {
           subList.add(s + " " + suffix);
         }
@@ -44,24 +43,7 @@ public class WordBreakII {
     map.put(str, subList);
     return subList;
   }
-
-
-  public static List<String> wordBreakTLE(String s, List<String> wordDict) {
-    Set<String> dict = new HashSet<>(wordDict);
-    res = new ArrayList<>();
-    helperTLE(s, 0, dict, new ArrayList<>());
-    StringBuilder sbr = new StringBuilder();
-    List<String> fres = new ArrayList<>();
-    for (List<String> r : res) {
-      sbr.setLength(0);
-      for (String ss : r)
-        sbr.append(ss);
-      String f = sbr.toString().substring(0, sbr.length() - 1);
-      fres.add(f);
-    }
-    return fres;
-  }
-
+  
   static List<List<String>> res;
 
   private static void helperTLE(String s, int index, Set<String> dict, List<String> list) {

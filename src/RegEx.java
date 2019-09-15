@@ -24,9 +24,9 @@ public class RegEx {
    * : 0 or more times
    + : 1 or more times
    ? : 0 or 1 times only
-  {n}:  exactly n times
- {n,}:  atleast n times
-{n,m} : atleastn but no more than m times
+  {N}:  exactly N times
+ {N,}:  atleast N times
+{N,m} : atleastn but no more than m times
 
   // Meta Characters
 

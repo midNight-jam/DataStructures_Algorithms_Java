@@ -100,7 +100,7 @@ public class SegmentTree {
 //    int[] arr = new int[]{1, 3, 5, 7};
     int[] arr = new int[]{1, 3, 5, 7, 9, 11};
     SegmentTree segTree = new SegmentTree(arr);
-    System.out.println(Arrays.toString(segTree.seg_tree));
+    System.out.println(Arrays.toString(segTree.segTree));
     System.out.println(Arrays.toString(arr));
     int res;
 
@@ -110,7 +110,7 @@ public class SegmentTree {
     System.out.println(Arrays.toString(arr));
     for (int re = arr.length - 1; re > -1; re--) {
       for (int le = 0; le <= re; le++) {
-        res = segTree.query(le, re);
+        res = segTree.sumRange(le, re);
         System.out.println(le + ":" + re + " = " + res);
       }
     }
