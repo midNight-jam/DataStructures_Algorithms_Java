@@ -21,6 +21,8 @@ public class LongestPalindromicSubstring {
     int N = s.length();
     boolean[][] dp = new boolean[N][N];
     String res = "";
+    
+     // as each single char is a palindrome in itself
     for (int i = 0; i < N; i++)
       dp[i][i] = true;
 
