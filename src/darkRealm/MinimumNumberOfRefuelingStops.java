@@ -1,6 +1,8 @@
 package darkRealm;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class MinimumNumberOfRefuelingStops {
 
@@ -43,6 +45,31 @@ public class MinimumNumberOfRefuelingStops {
 
 
   public static int minRefuelStops(int target, int startFuel, int[][] stations) {
+    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
+      public int compare(Integer o1, Integer o2) {
+        return -1 * Integer.compare(o1, o2);
+      }
+    });
+
+    int dist = startFuel;
+    int stops = 0;
+    int index = 0;
+
+    while (true) {
+      while (index < stations.length && stations[index][0] <= dist) {
+        maxHeap.offer(stations[index][1]);
+        index++;
+      }
+      if (dist >= target) return stops;
+      if (maxHeap.isEmpty()) return -1;
+      // Greedily choose the fuel stop that gives us the max fuel
+      dist += maxHeap.poll();
+      stops++;
+    }
+  }
+
+
+  public static int minRefuelStopsDP(int target, int startFuel, int[][] stations) {
     long[] dp = new long[stations.length + 1];
     Arrays.fill(dp, Integer.MIN_VALUE);
     dp[0] = startFuel;
@@ -84,7 +111,7 @@ public class MinimumNumberOfRefuelingStops {
 
     int target = 999;
     int startFuel = 1000;
-    int[][] stations = {{5,100},{997,100},{998,100}};
+    int[][] stations = {{5, 100}, {997, 100}, {998, 100}};
 
 
     int res = minRefuelStops(target, startFuel, stations);
