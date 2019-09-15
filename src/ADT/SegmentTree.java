@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class SegmentTree {
 
   int[] arr;
-  int[] seg_tree;
+  int[] segTree;
   int N;
 
   SegmentTree(int[] nums) {
