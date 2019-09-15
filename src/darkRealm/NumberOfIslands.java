@@ -57,15 +57,6 @@ public class NumberOfIslands {
   }
 
   public static void main(String[] args) {
-    int[][] matrix = new int[][]{{1, 1, 0, 0, 0},
-        {0, 1, 0, 0, 1},
-        {1, 0, 0, 1, 1},
-        {0, 0, 0, 0, 0},
-        {1, 0, 1, 0, 1}
-    };
-    int islands = numberOfIslands(matrix);
-    System.out.println(" Islands : " + islands);
-    for(int[] m : matrix)
-      System.out.println(Arrays.toString(m));
+
   }
 }

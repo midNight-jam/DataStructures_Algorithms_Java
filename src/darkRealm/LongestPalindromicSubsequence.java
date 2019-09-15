@@ -24,22 +24,32 @@ public class LongestPalindromicSubsequence {
   *   if char at head == char at tail pick vlaue from lower diagonal & add 2
   *   if chats are diff then take max of one col behind & one row below
   */
-  public static int longestPalidromicSubsequence(String str) {
-    int len = str.length();
-    int[][] DP = new int[len][len];
-    // red strings fromlast
-    for (int i = len - 1; i >= 0; i--) {
-      DP[i][i] = 1;
-      for (int j = i + 1; j < len; j++) {
-        if (str.charAt(i) == str.charAt(j)) {
-          DP[i][j] = DP[i + 1][j - 1] + 2;
-        } else {
-          DP[i][j] = Math.max(DP[i + 1][j], DP[i][j - 1]);
+  public static int longestPalidromicSubsequence(String s) {
+    if (s == null || s.length() < 1) return 0;
+    int N = s.length();
+
+    int[][] dp = new int[N][N];
+
+    for (int i = 0; i < N; i++)
+      dp[i][i] = 1;
+
+    for (int start = N - 1; start > -1; start--) {
+      for (int end = start + 1; end < N; end++) {
+        // if char at head == char at tail pick vlaue from lower diagonal & add 2
+        if (s.charAt(start) == s.charAt(end)) {
+          dp[start][end] = start + 1 < N && end - 1 > -1 ? dp[start + 1][end - 1] : 0;
+          dp[start][end] += 2;
         }
-        System.out.println(str.substring(i, j));
+        // if chars are diff then take max of one col behind & one row below
+        else {
+          int bottom = start + 1 < N ? dp[start + 1][end] : 0;
+          int left = end - 1 > -1 ? dp[start][end - 1] : 0;
+          dp[start][end] = Math.max(bottom, left);
+        }
       }
     }
-    return DP[0][len - 1];
+
+    return dp[0][N - 1];
   }
 
   public static void main(String[] args) {
