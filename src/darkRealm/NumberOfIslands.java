@@ -56,48 +56,6 @@ public class NumberOfIslands {
     return !(nr < 0 || nr >= grid.length || nc < 0 || nc >= grid[0].length);
   }
 
-  public static int numberOfIslands(int[][] matrix) {
-    if (matrix == null || matrix.length == 0) {
-      return 0;
-    }
-    boolean[][] visited = new boolean[matrix.length][matrix[0].length];
-    int islands = 0;
-    _ROW = matrix.length;
-    _COL = matrix[0].length;
-    for (int i = 0; i < matrix.length; i++) {
-      for (int j = 0; j < matrix[0].length; j++) {
-        if (matrix[i][j] == 1 && !visited[i][j]) {
-          DFS(matrix, i, j, visited);
-          ++islands;
-        }
-      }
-    }
-    return islands;
-  }
-
-  static int _ROW, _COL;
-
-  private static boolean isSafe(int[][] matrix, int row, int col, boolean[][] visited) {
-    boolean isSafe = (row > -1 && row < _ROW) && (col > -1 && col < _COL) && matrix[row][col] == 1 && !visited[row][col];
-    return isSafe;
-  }
-
-  private static void DFS(int[][] matrix, int row, int col, boolean[][] visited) {
-    // neighbours : top left, top, top right, right, bottom right, bottom, bottom left, left
-    int[] rowNeighbours = new int[]{-1, -1, -1, 0, 1, 1, 1, 0};
-    int[] colNeighbours = new int[]{-1, 0, 1, 1, 1, 0, -1, -1};
-    visited[row][col] = true;
-    int eRow, eCol;
-
-    for (int i = 0; i < rowNeighbours.length; i++) {
-      eRow = row + rowNeighbours[i];
-      eCol = col + colNeighbours[i];
-      if (isSafe(matrix, eRow, eCol, visited)) {
-        DFS(matrix, row + rowNeighbours[i], col + colNeighbours[i], visited);
-      }
-    }
-  }
-
   public static void main(String[] args) {
     int[][] matrix = new int[][]{{1, 1, 0, 0, 0},
         {0, 1, 0, 0, 1},
