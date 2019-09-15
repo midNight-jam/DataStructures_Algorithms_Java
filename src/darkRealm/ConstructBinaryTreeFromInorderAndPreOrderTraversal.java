@@ -18,27 +18,29 @@ public class ConstructBinaryTreeFromInorderAndPreOrderTraversal {
   }
 
 
-  public static TreeNode buildTree(int[] inorder, int[] preorder) {
-    return helper(inorder, 0, inorder.length - 1, preorder, 0);
+  static int preIndex;
+  public static TreeNode buildTree(int[] preord, int[] inord) {
+    if(preord == null || inord == null || preord.length < 1 || preord.length != inord.length) return null;
+    preIndex = 0;
+    return helper(preord, 0, preord.length - 1, inord);
   }
-
-  private static TreeNode helper(int[] inorder, int low, int high, int[] preOrder, int preIdx) {
-
-    // root will be the first element in the preorder traversal
-    // the left subtree will be all the elements that are to the left of the root in the inorder traversal
-    // the right subtree will be all the elements that are to the right of the root in the inorder traversal
-    if (preIdx >= preOrder.length || low > high) return null;// either we have completed or invalid
-    TreeNode root = new TreeNode(preOrder[preIdx]);
-    int inIdx = -1; // Inorder position of the root.
-    for (int i = 0; i < inorder.length; i++)  // finding the root position in the inorder traversal
-      if (inorder[i] == root.val) {
-        inIdx = i;
+  
+  private static TreeNode helper(int [] pre, int low, int high, int [] inord){
+    if( preIndex >= pre.length || high < low) return null;
+    
+    TreeNode root = new TreeNode(pre[preIndex++]);
+    int rootIndex = 0;
+    
+    // find the position of root in this subtree
+    for(; rootIndex < inord.length; rootIndex++)
+      if(inord[rootIndex] == root.val)
         break;
-      }
-    int rootOfLeftSubTree = preIdx + 1; //  leftSubTree will be the next element in preOrder traversal
-    root.left = helper(inorder, low, inIdx - 1, preOrder, rootOfLeftSubTree);
-    int rootOfRightSubTree = preIdx + inIdx - low + 1;  // rightSubTree will be after skipping all the element in the left subtree
-    root.right = helper(inorder, inIdx + 1, high, preOrder, rootOfRightSubTree);
+    
+    // reduce the tree size for the left Subtree
+    root.left = helper(pre, low, rootIndex - 1, inord);
+    // reduce the tree size for the right Subtree
+    root.right = helper(pre, rootIndex + 1, high, inord);
+    
     return root;
   }
 
