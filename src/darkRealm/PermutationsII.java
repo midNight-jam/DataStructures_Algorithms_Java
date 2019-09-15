@@ -27,8 +27,10 @@ public class PermutationsII {
     }
 
     private static void backtrack(List<List<Integer>> res, List<Integer> temp, int[] nums, boolean [] used) {
-        if (temp.size() == nums.length)
-            res.add(new ArrayList<>(temp));
+        if(temp.size() == nums.length){
+          res.add(new ArrayList<>(temp));
+          return;
+        }
         for (int i = 0; i < nums.length; i++) {
             if (used[i] || i > 0 && nums[i - 1] == nums[i] && used[i-1] == false) continue;
             // why have we used used[i-1] ==false ..??
