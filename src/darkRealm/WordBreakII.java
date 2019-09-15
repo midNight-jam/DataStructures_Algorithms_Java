@@ -43,7 +43,7 @@ public class WordBreakII {
     map.put(str, subList);
     return subList;
   }
-  
+
   static List<List<String>> res;
 
   private static void helperTLE(String s, int index, Set<String> dict, List<String> list) {
