@@ -29,20 +29,21 @@ public class CatalanNumber {
 
 
   //Time Complexity O(n^2)
-  private static long nthCatalanNumner(int n) {
-    long[] catalanNos = new long[n + 2]; // first two are 1 , 1
-    catalanNos[0] = catalanNos[1] = 1;
-    for (int i = 2; i <= n; i++) {
-      for (int j = 0; j < i; j++) {
-        catalanNos[i] += catalanNos[j] * catalanNos[i - j - 1];
+  private static int nthCatalanNumner(int n) {
+    int [] catalans = new int[n + 1];
+    catalans[0] = catalans[1] = 1; // first 2 are 1
+    for(int i = 2; i <= n; i++){
+      for(int j = 0; j < i; j++){
+        // product of all i,j pairs before this 'i'
+        catalans[i] += catalans[j] * catalans[(i - 1) - j];
       }
     }
-    System.out.println(Arrays.toString(catalanNos));
-    return catalanNos[n];
+
+    return catalans[n];
   }
 
   public static void main(String[] args) {
-    long cn;
+    int cn;
     for (int n = 0; n < 26; n++) {
       cn = nthCatalanNumner(n);
       System.out.print(cn + " ");

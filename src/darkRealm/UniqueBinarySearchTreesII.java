@@ -27,38 +27,39 @@ public class UniqueBinarySearchTreesII {
     }
   }
 
-  public static List<TreeNode> uniqueBinarySearchTrees(int n) {
-    if (n < 1) return new ArrayList<>();
-    return createTree(1, n);
+ public static List<TreeNode> generateTrees(int n) {
+    if(n < 1) return new ArrayList<>();
+    return helper(1, n);
   }
-
-  private static List<TreeNode> createTree(int start, int end) {
-    List<TreeNode> treeList = new ArrayList<>();
-    if (start > end) {
-      treeList.add(null);
-      return treeList;
+  
+  private static List<TreeNode> helper(int start, int end){
+    List<TreeNode> list = new ArrayList<>();
+    if(start > end){
+      list.add(null);
+      return list;
     }
-    if (start == end) {
-      List<TreeNode> list = new ArrayList<>();
+    
+    if(start == end){
       list.add(new TreeNode(start));
       return list;
     }
-    for (int i = start; i <= end; i++) {
-      List<TreeNode> left = createTree(start, i - 1);
-      List<TreeNode> right = createTree(i + 1, end);
-      // cartesian Product
-      for (TreeNode lnode : left) {
-        for (TreeNode rnode : right) {
-          TreeNode node = new TreeNode(i);
-          node.left = lnode;
-          node.right = rnode;
-          treeList.add(node);
-        }
+    
+    for(int i = start; i <= end; i++){
+      List<TreeNode> leftSubTree = helper(start, i - 1);
+      List<TreeNode> rightSubTree = helper(i + 1, end);
+      // now create all the combinations of this subtree using the cartesian product
+      for(TreeNode left : leftSubTree){
+        for(TreeNode right : rightSubTree){
+          TreeNode root = new TreeNode(i); // create a new root for each combination of tree
+          root.left = left;
+          root.right = right;
+          list.add(root);
+        } 
       }
     }
-    return treeList;
+    
+    return list;
   }
-
   public static void main(String[] args) {
 
   }
