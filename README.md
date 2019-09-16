@@ -399,6 +399,8 @@ This section contains implementation of different Data Structures in Java.
 | <b>HighFive</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/HighFive.java)|
 | <b>MergeSort</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MergeSort.java)|
 | <b>DifferentWaysToAddParentheses</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DifferentWaysToAddParentheses.java)|
+| <b>QuickSort</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/QuickSort.java)|
+
 
 
 

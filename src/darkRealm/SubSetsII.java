@@ -47,7 +47,7 @@ public class SubSetsII {
 //        int[] nums = new int[]{4, 1, 4};
 //        int[] nums = new int[]{4, 4, 4, 1, 4};
 //    List<List<Integer>> res = subsetWithdup(nums);
-    List<List<Integer>> res = subsetDup(nums);
+    List<List<Integer>> res = subsetsWithDup(nums);
     System.out.println(res);
     for (List<Integer> set : res)
       System.out.println(set);
