@@ -30,15 +30,16 @@ public class CatalanNumber {
 
   //Time Complexity O(n^2)
   private static int nthCatalanNumner(int n) {
-    int [] dp = new int[n + 1];
-    dp[0] = 1;// first two are 1 , 1
-    dp[1] = 1;
+    int [] catalans = new int[n + 1];
+    catalans[0] = catalans[1] = 1; // first 2 are 1
     for(int i = 2; i <= n; i++){
-      for(int j = 1; j <= i; j++)
-        dp[i] += dp[j-1] + dp[i - j];
+      for(int j = 0; j < i; j++){
+        // product of all i,j pairs before this 'i'
+        catalans[i] += catalans[j] * catalans[(i - 1) - j];
+      }
     }
-    
-    return dp[n];
+
+    return catalans[n];
   }
 
   public static void main(String[] args) {
