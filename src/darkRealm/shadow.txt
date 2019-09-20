@@ -137,3 +137,48 @@ dim = Math.max(dim, newDim);
 return dim * dim;
 
 }
+
+
+OnSite
+
+
+[1st round]
+
+given a sorted array return the frequency of a target number that we are searching.
+
+
+
+[2nd round]
+
+given a Node of the tree (not the root), find its first right neighbor.
+Followup, now the nodes have maxWidth with them, how can we use to our advantage
+
+
+
+[3rd round]
+
+Ghost Game
+
+The game will begin with empty string, each player on its turn can append a char, there are 2 rules
+1 : After the we append a char to the string (game state) should be a substring of a valid english word.
+2 : The player to append a char to the string such that the string is now a word losses.
+
+Followup, now each has to make such a move that gurantees it wont loose.
+
+[4th round]
+
+Given an office area layout in the format of a char grid with empployees, empty spaces & walls in it. We have to choose a place for making kitchen such that is near to every empployee.
+valid values in grid are 'E' : employee, 'X' : wall, ' ' : empty space
+
+
+[5th round]
+
+Behaviorual 
+
+Tell me a time when you were not happy with the direction in which the project was going.
+What is the most difficult thing technically that you have worked on.
+What is your ambition, what sort of plan you have it for it.
+A time when you had to disagree with the team
+A time when you went above & beyond to help your team.
+
+
