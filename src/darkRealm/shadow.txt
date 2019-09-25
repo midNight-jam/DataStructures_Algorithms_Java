@@ -1,5 +1,7 @@
-08/27/2019 : Phone interview
 
+
+08/27/2019 : Phone interview
+https://leetcode.com/discuss/interview-experience/389969/Googleor-L3-or-Seattle-or-091619-Reject
 
 Given a binary tree, and a predicate shouldBeErased(Node n) function, output the resulting forest.
 
