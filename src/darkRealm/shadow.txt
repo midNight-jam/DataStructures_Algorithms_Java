@@ -141,46 +141,96 @@ return dim * dim;
 }
 
 
-OnSite
-
-
-[1st round]
-
-given a sorted array return the frequency of a target number that we are searching.
 
 
 
-[2nd round]
 
-given a Node of the tree (not the root), find its first right neighbor.
-Followup, now the nodes have maxWidth with them, how can we use to our advantage
+/////////////////////////////////////
+///////////// ONSITE
+/////////////////////////////////////
+
+(lengthy post)
+This was my 2nd attempt at Google, I bombed my first attempt so wanted to appear this time  in good shape. 
+
+**Phone Interview** 
+1. Variation of Delete Node & Return Forest : https://leetcode.com/problems/delete-nodes-and-return-forest/
+	I didnt saw this question before, took me a while to get to solution but was able to get an approach & try on couple of examples. Intereviewer agreed on the approach & accepted the solution, by this time it was already 30 mins in to the call, I thought that was it, but he had one more... 
+	
+2. https://leetcode.com/problems/maximal-square/  interviewer was eager to change the problem if I was going to take couple more mins. Which was weird given we only had 10 mins left.
+
+3 days later I was told next phase will be onsite. 4 technical rounds + 1 behavioral.
+
+**Onsite**
+* **Round 1** : Very simple sounding problem, given a sorted array return the frequency of the target number.
+Again, first time I saw this problem.
+	https://www.geeksforgeeks.org/count-number-of-occurrences-or-frequency-in-a-sorted-array/
+	```
+	 Input: [1, 1, 2, 2, 2, 2, 3]   target = 2
+     Output: 4 
+	```
+	Binary Search was the first thing in my mind, (also gave some thought in using QuickSort Subroutine, but the array is sorted). The aim was to be able to do it in O(LogN). finding the target in LogN is straight forward I was trying to minimize the cost of the left & right edges. My Idea was to prune the search if the element is not found in one half, but keep recursively searching for the target by dividing the half in which we found the target & keep returning the sum of occurences. This in worst case is not O(LogN) when whole of the array is filled with target. Interviewer was friendly, laid back, had little input to give but Typed all of my code from white board in to the chromeBook. Which was very helpful in the end to review. I think among all the rounds I could have performed better here & got rejected due to this one.
+	
+* **Round 2** : Given a Node in the Tree (not the root & not the tree) find its first right neighbor.
+Never saw this problem. Input as below if query is 3, return 4. You cannot use extra space.
+	
+	```
+		  0
+	   /     \
+	 1	       2
+	/             \
+  3              4
+	```
+	
+	I mentioned Level order as brute force interviewer asked to not use Level Order. I could think of having a parent pointer in each node & as we will be given the query node, we travel upwards with a depth variable which we keep increasing on going to the parent, when we find such parent who has a right child we attempt to find the right neighbor in this subtree, for doing this we pass in the depth variable & decrement it, if we are able to reach the same level (0) then we have arrived at the result node, this approach worked fine, there was some fine tunining required when we ran couple of examples. A very interactive session & I finally coded it in the chrome book & interviewer was satisfied. 
+**Followup**	
+	As we had time, he added complexity to this problem, now every node has a maxDepth state with it, which is max of maxDepth of Left Child / rightChild + 1. How will you use this information now to our advantage. With maxDepth knowledge it became easier to prune the search & skip searching the subtree by just looking at the root of the subTree, coded it again, interviewer was very happy (at least i felt it). I think I did well in this round. but lets carry on to round 3 after lunch.
+	
+
+* **Lunch** : Free food, general questions about Google etc... 
 
 
+* **Round 3** : Ghost game, its a game played in N players, game begins with empty string. There are 2 rules
+	 * You can only add such char to the string so that it doesnt becomes a complete valid english word, but it should always be a substring of a valid english word.
+	 * If you cant add a char, then you loose. Game ends when a player looses
+	 ```
+	 Game state is : "" 
+		 you cannot add 'a' , as 'a' is a valid english word, but you can add 'c' because its a valid substrig of [cat, cable, car ....]
+	 Game state is : "ca" 
+		 you loose, because now if you add 'b' thinking its a valid substring of "cable", but this already becomes a valid english word "cab"
+	 ```
+	 
+	After my intial probing of questions, I suggested we can use Trie, in which we keep the dictionary of valid english words. As we cant have a subtree after having a valid smaller word, the trie should be sufficiently small. In trie node we also keep if this child is at the end of the termial word (valid word), then the Idea was fairly simple try appending any such char to the current state which is not a terminal word. 
+	```
+	Game state is : "ca"
+		In order to not loose, i would append "f", such that "caf" is still a valid subtring of "cafe"
+	```
+	Interviewer was satisfied with this approach ran several test cases, coded it!
 
-[3rd round]
-
-Ghost Game
-
-The game will begin with empty string, each player on its turn can append a char, there are 2 rules
-1 : After the we append a char to the string (game state) should be a substring of a valid english word.
-2 : The player to append a char to the string such that the string is now a word losses.
-
-Followup, now each has to make such a move that gurantees it wont loose.
-
-[4th round]
-
-Given an office area layout in the format of a char grid with empployees, empty spaces & walls in it. We have to choose a place for making kitchen such that is near to every empployee.
-valid values in grid are 'E' : employee, 'X' : wall, ' ' : empty space
-
-
-[5th round]
-
-Behaviorual 
-
-Tell me a time when you were not happy with the direction in which the project was going.
-What is the most difficult thing technically that you have worked on.
-What is your ambition, what sort of plan you have it for it.
-A time when you had to disagree with the team
-A time when you went above & beyond to help your team.
-
-
+	**Followup**	
+	
+	Now we have to append such char which gurantee that we should win if there is atleast one way in which we will not loose on our turn.  I tried to give approaches where either the game finishes in N-1 turns such that I dont get to play next turn, or we could color the trie & see if there a path in which the leaf node is not colored by my color then choose it. Interviewer wanted a probablistic approach, I tried couting of terminal nodes from the current state in all the paths & then returning the chance terminal / Nontermianl but it didnt added up. I believe this is a conditional probablity problem, with some Math wizardy. We ran out of time, I think it was average I did solved the primary problem but the extension was tough.
+	
+	 **Round 4** : Given an office space layout in form of grid, where grid value 'E' represents employee, 'X' represents a wall & ' ' represents an empty space. We have to place a kitchen in one such empty space such that it is optimal for every employee to reach. Each Employee can move in 4 directions, Input is always valid.
+	 ```
+	 _ , _ , _ , _ , _ , _ 
+	 E , X , _ , X , E , _
+	 _ , X , _ , _ , X , _ 
+	 _ , _ , _ , X , X,  E 
+	 
+	 ```
+	 
+	I think there is a similar question on leetcode, though I couldnt find it. The brute force was to fire BFS from every empty space & keep track of min when we have reached all Employees. The better approach was to fire BFS from every employee & keep the distances it has to travel in the grid & add them, after finishing BFS from all the employess the spots which have the least dist sum are the probable answers.
+	Explained, ran examples coded, interivewer was happy.
+	Several Followups, one was how would you scale it for parallel processing, my answers were, we can fire BFS in parallel but as each thread would try to update the distGrid, they run in to contention, so probably we need these many grids & then we can unify them later, another followup, thats costly in space, after some thinking I realised we dont need N copies of the distGrid, but all threads can share the same grid, but they would have contention on update a particular cell of the gird & one thread would have to wait. Several other followups on tests cases, general questions on google, Overall I felt good for this round, beacause of the breadth we covered.
+	
+	
+	**Round 5** : Behavioural  
+	
+			* Tell me a time when you were not happy with the direction in which the project was going.
+			* What is the most difficult thing technically that you have worked on.
+			* What is your ambition, what sort of plan you have it for it.
+			* A time when you had to disagree with the team
+			* A time when you went above & beyond to help your team.
+	
+	Though I didnt make it in my second attempt I performed the best I could & I am somewhat satisfied with that. Google has a high bar & I was optimistic that I performed enough to meet that, but looking back I can clearly see 1st round got me f**ked. Though its a little bit harsh but I accept it. Kudos to all those who make past these interviews.
+	
