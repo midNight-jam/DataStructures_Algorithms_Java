@@ -31,28 +31,28 @@ public class AverageOfLevelsInBinaryTree {
   }
 
   public static List<Double> averageOfLevels(TreeNode root) {
-    if (root == null)
-      return new ArrayList<>();
-    List<Double> averageOfLevels = new ArrayList<>();
-    Queue<TreeNode> queue = new LinkedList<>();
-    queue.add(root);
-    int levelCount;
-    double levelSum;
-    while (!queue.isEmpty()) {
-      int toProcess = levelCount = queue.size();
-      levelSum = 0.0;
-      while (toProcess != 0) {
-        TreeNode trav = queue.poll();
-        levelSum += trav.val;
-        if (null != trav.left)
-          queue.add(trav.left);
-        if (null != trav.right)
-          queue.add(trav.right);
-        toProcess--;
+    List<Double> res = new ArrayList<>();
+    if(root == null) return res;
+    Queue<TreeNode> que = new LinkedList();
+    int toProcess, N;
+    que.offer(root);
+    double sum;
+    while(!que.isEmpty()){
+      N = toProcess = que.size();
+      sum = 0.0;
+      while(toProcess-- > 0){
+        TreeNode trav = que.poll();
+        sum += trav.val;
+        if(trav.left != null)
+          que.offer(trav.left);
+        if(trav.right != null)
+          que.offer(trav.right);
       }
-      averageOfLevels.add(levelSum / levelCount);
+
+      res.add(sum / N);
     }
-    return averageOfLevels;
+
+    return res;
   }
 
   public static void main(String[] args) {
