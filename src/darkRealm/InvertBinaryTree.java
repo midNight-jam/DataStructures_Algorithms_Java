@@ -25,13 +25,13 @@ public class InvertBinaryTree {
     }
   }
 
-  public static TreeNode invertBinaryTree(TreeNode root) {
-    if (null == root) return root;
+  public static TreeNode invertTree(TreeNode root) {
+    if (root == null) return root;
+    invertTree(root.left);
+    invertTree(root.right);
     TreeNode temp = root.left;
     root.left = root.right;
     root.right = temp;
-    invertBinaryTree(root.left);
-    invertBinaryTree(root.right);
     return root;
   }
 
@@ -43,7 +43,6 @@ public class InvertBinaryTree {
     root.left.right = new TreeNode(3);
     root.right.left = new TreeNode(6);
     root.right.right = new TreeNode(9);
-    root = invertBinaryTree(root);
-
+    root = invertTree(root);
   }
 }
