@@ -16,12 +16,13 @@ public class NimGame {
     // The one who gets the multiple of 4 coins will always loose the game, else you can pick some coin & pass the multiple
     // of 4 coins to the opponent so that he always loose
     if (n < 1) return false;
-    else if (n <= 3) return true;
-    else if (((n >> 2) << 2) == n) return false;
+    if (((n >> 2) << 2) == n) return false;
     // This is a fast way to check if a no is a multiple of 4.
     // If you plot the binary of multiples of 4 we will see that the last 2 bits are always 0.
     // Thus, shifting the no right by 2 (droppping the last 2 bits) and then shifting the no to right again by 2 (multiply
     // by 4) if the no remains same then the no is a multiple of 4.
+    
+    // if we cant loose we always win
     return true;
   }
 
