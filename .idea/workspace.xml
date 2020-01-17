@@ -1,31 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/darkRealm/SnapShotArray.java" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="97e9c8a3-6756-4196-866e-ca66a0461c35" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/src/darkRealm/FourSum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/AndroidUnlockPatterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/AndroidUnlockPatterns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/CTCI/Moderate_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/CTCI/Moderate_Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/CloneGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/CloneGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/CoinChangeII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/CoinChangeII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/CourseSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/CourseSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/EulerTourGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/EulerTourGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/MinimumAreaRectangleII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/MinimumAreaRectangleII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/MinimumNumberOfRefuelingStops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/MinimumNumberOfRefuelingStops.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/PalindromicSubStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/PalindromicSubStrings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/SearchInASortedArrayOfUnknownSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/SearchInASortedArrayOfUnknownSize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/SearchInRotatedSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/SearchInRotatedSortedArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/SurroundedRegions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/SurroundedRegions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/TravellingSalesPersonDPQuadratic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/TravellingSalesPersonDPQuadratic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/UniqueSubstringsInWraparoundString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/UniqueSubstringsInWraparoundString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/darkRealm/WordBreak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/WordBreak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/darkRealm/SwappedNodesInBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/SwappedNodesInBST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/darkRealm/TwoSum4BST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/darkRealm/TwoSum4BST.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,43 +15,6 @@
     <SUITE FILE_PATH="coverage/DataStructures_Algorithms_Java$AndroidUnlockPatterns.ic" NAME="AndroidUnlockPatterns Coverage Results" MODIFIED="1567302632886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>darkRealm.*</FILTER>
     </SUITE>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/darkRealm/CountCompleteTreeNodes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="35" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="35" />
-              <folding>
-                <element signature="class#TreeNode#0;class#CountCompleteTreeNodes#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="380" column="170" selection-start-line="380" selection-start-column="170" selection-end-line="380" selection-end-column="170" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/darkRealm/FourSum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -92,63 +35,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/darkRealm/TheEarliestMomentWhenEveryoneBecomeFriends.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/MaximumSubarray.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/PeakIndexInAMountainArray.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/LoggerRateLimiter.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/PopulatingNextRightPointersInEachNode.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/SearchInASortedArrayOfUnknownSize.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/QuickUnion.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/SearchInsertPosition.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/MinimumNumberOfRefuelingStops.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CloneGraph.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CoinChangeII.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CourseSchedule.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/NetworkDelayTime.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CheapestFlightsWithinKStops.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/InsertIntoACyclicSortedList.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/mock1.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/PossibleBipartition.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/AlienDictionary.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/AsteroidCollision.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/Find132pattern.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/GenerateParentheses.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/PalindromicSubStrings.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CatalanNumber.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/EulerTourGraph.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/ReconstructItinerary.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/GameOfLife.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/shadow.txt" />
-        <option value="$PROJECT_DIR$/src/darkRealm/DeleteNodesAndReturnForest.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/SearchInRotatedSortedArray.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/KnightProbabilityInChessboard.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/MinimumHeightTrees.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/BinaryTreeColoringGame.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/SnapShotArray.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CampusBikes.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CampusBikesII.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/UniqueSubstringsInWraparoundString.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/DailyTemperatures.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/GuessGame.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/GuessNumberHigherOrLowerII.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/AndroidUnlockPatterns.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/SentenceSimilarityII.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CarFleet.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CTCI/Moderate_Main.java" />
-        <option value="$PROJECT_DIR$/src/ADT/Trie.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/SortList.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/ShortestPathInBinaryMatrix.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/ClosestLeafInABinaryTree.java" />
-        <option value="$PROJECT_DIR$/src/darkRealm/CountCompleteTreeNodes.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/darkRealm/FourSum.java" />
-      </list>
-    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -176,52 +62,9 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="DataStructures_Algorithms_Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStructures_Algorithms_Java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataStructures_Algorithms_Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStructures_Algorithms_Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataStructures_Algorithms_Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStructures_Algorithms_Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="darkRealm" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567461248581" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.CountCompleteTreeNodes">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -374,6 +217,7 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
@@ -415,6 +259,7 @@
       </method>
     </configuration>
     <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
       <properties />
@@ -445,6 +290,18 @@
       <projects_view />
     </option>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -458,41 +315,11 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14372164" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Nl-Palette" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="UI Designer" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329582" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978678" weight="0.27944326" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.42604503" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50319827" side_tool="true" weight="0.31263384" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4968017" visible="true" weight="0.25241157" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.22508039" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Properties" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="right" id="Maven" order="9" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" visible="true" weight="0.16577825" />
-    </layout>
+  <component name="WindowStateProjectService">
+    <state x="616" y="167" width="672" height="676" key="search.everywhere.popup" timestamp="1579244275305">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="167" width="672" height="676" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579244275305" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -500,667 +327,556 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/FindKthSmallestPairDistance.java</url>
           <line>25</line>
-          <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/ValidTriangleNumber.java</url>
           <line>23</line>
-          <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/ThreeSumSmaller.java</url>
           <line>16</line>
-          <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/TopologicalSort.java</url>
           <line>55</line>
-          <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/EncodeAndDecodeStrings.java</url>
           <line>43</line>
-          <properties />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/EncodeAndDecodeStrings.java</url>
           <line>29</line>
-          <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/ConstructBinaryTreeFromPreorderAndTraversal.java</url>
           <line>74</line>
-          <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/RangeAddition.java</url>
           <line>64</line>
-          <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LargestRectangleInHistogram.java</url>
           <line>51</line>
-          <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/ShortestUnsortedContinuousSubarray.java</url>
           <line>7</line>
-          <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/IntegerBreak.java</url>
           <line>23</line>
-          <properties />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/DistinctSubsequence.java</url>
           <line>12</line>
-          <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/NQueens.java</url>
           <line>104</line>
-          <properties />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/GCD.java</url>
           <line>6</line>
-          <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/GCD.java</url>
           <line>9</line>
-          <properties />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ADT/BinaryIndexedTree.java</url>
           <line>9</line>
-          <properties />
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ADT/BinaryIndexedTree.java</url>
           <line>18</line>
-          <properties />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ADT/BinaryIndexedTree.java</url>
           <line>28</line>
-          <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ADT/BinaryIndexedTree.java</url>
           <line>39</line>
-          <properties />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CountSmallerNumberAfterSelf.java</url>
           <line>44</line>
-          <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CountSmallerNumberAfterSelf.java</url>
           <line>32</line>
-          <properties />
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/KDiffPairsArray.java</url>
           <line>31</line>
-          <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/RussianDollEnvelopes.java</url>
           <line>90</line>
-          <properties />
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LonelyPixelII.java</url>
           <line>69</line>
-          <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/NumberToBase.java</url>
           <line>6</line>
-          <properties />
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/StrStr.java</url>
           <line>18</line>
-          <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LFUCache.java</url>
           <line>44</line>
-          <properties />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LFUCache.java</url>
           <line>108</line>
-          <properties />
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LFUCache.java</url>
           <line>113</line>
-          <properties />
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LFUCache.java</url>
           <line>128</line>
-          <properties />
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LFUCache.java</url>
           <line>90</line>
-          <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LFUCache.java</url>
           <line>67</line>
-          <properties />
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LFUCache.java</url>
           <line>177</line>
-          <properties />
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/ThreeSum.java</url>
           <line>57</line>
-          <properties />
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LetterCombinationsOfPhoneNumber.java</url>
           <line>22</line>
-          <properties />
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LetterCombinationsOfPhoneNumber.java</url>
           <line>36</line>
-          <properties />
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LetterCombinationsOfPhoneNumber.java</url>
           <line>47</line>
-          <properties />
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SortByFrequency.java</url>
           <line>76</line>
-          <properties />
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SortByFrequency.java</url>
           <line>77</line>
-          <properties />
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SortByFrequency.java</url>
           <line>43</line>
-          <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/LongestSubStringWithKDistinctChars.java</url>
           <line>52</line>
-          <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/NumberOfIslands.java</url>
           <line>100</line>
-          <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/WordBreak.java</url>
           <line>45</line>
-          <properties />
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/WordBreakII.java</url>
           <line>67</line>
-          <properties />
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/WordBreakII.java</url>
           <line>49</line>
-          <properties />
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/WordBreakII.java</url>
           <line>75</line>
-          <properties />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/WordLadder.java</url>
           <line>63</line>
-          <properties />
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SurroundedRegions.java</url>
           <line>118</line>
-          <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SurroundedRegions.java</url>
           <line>135</line>
-          <properties />
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SurroundedRegions.java</url>
           <line>181</line>
-          <properties />
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SurroundedRegions.java</url>
           <line>189</line>
-          <properties />
           <option name="timeStamp" value="133" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/MinimumAreaRectangle.java</url>
           <line>59</line>
-          <properties />
           <option name="timeStamp" value="134" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/MinimumAreaRectangle.java</url>
           <line>79</line>
-          <properties />
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/MinimumAreaRectangleII.java</url>
           <line>83</line>
-          <properties />
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/MinimumAreaRectangleII.java</url>
           <line>92</line>
-          <properties />
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/MinimumAreaRectangleII.java</url>
           <line>110</line>
-          <properties />
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/EulerTourGraph.java</url>
           <line>38</line>
-          <properties />
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/EulerTourGraph.java</url>
           <line>56</line>
-          <properties />
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/EulerTourGraph.java</url>
           <line>82</line>
-          <properties />
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/GraphMColoringProblem.java</url>
           <line>45</line>
-          <properties />
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/GraphMColoringProblem.java</url>
           <line>59</line>
-          <properties />
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/PossibleBipartition.java</url>
           <line>41</line>
-          <properties />
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/PossibleBipartition.java</url>
           <line>55</line>
-          <properties />
           <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/TravellingSalesPersonDPQuadratic.java</url>
           <line>36</line>
-          <properties />
           <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/TheEarliestMomentWhenEveryoneBecomeFriends.java</url>
           <line>51</line>
-          <properties />
           <option name="timeStamp" value="170" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/TheEarliestMomentWhenEveryoneBecomeFriends.java</url>
           <line>84</line>
-          <properties />
           <option name="timeStamp" value="171" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/TheEarliestMomentWhenEveryoneBecomeFriends.java</url>
           <line>90</line>
-          <properties />
           <option name="timeStamp" value="172" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/TheEarliestMomentWhenEveryoneBecomeFriends.java</url>
           <line>73</line>
-          <properties />
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/PeakIndexInAMountainArray.java</url>
           <line>24</line>
-          <properties />
           <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/PeakIndexInAMountainArray.java</url>
           <line>28</line>
-          <properties />
           <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SearchInASortedArrayOfUnknownSize.java</url>
           <line>74</line>
-          <properties />
           <option name="timeStamp" value="178" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SearchInASortedArrayOfUnknownSize.java</url>
           <line>48</line>
-          <properties />
           <option name="timeStamp" value="179" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SearchInASortedArrayOfUnknownSize.java</url>
           <line>60</line>
-          <properties />
           <option name="timeStamp" value="180" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SearchInASortedArrayOfUnknownSize.java</url>
           <line>61</line>
-          <properties />
           <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SearchInsertPosition.java</url>
           <line>60</line>
-          <properties />
           <option name="timeStamp" value="182" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/MinimumNumberOfRefuelingStops.java</url>
           <line>64</line>
-          <properties />
           <option name="timeStamp" value="183" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CloneGraph.java</url>
           <line>73</line>
-          <properties />
           <option name="timeStamp" value="185" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CoinChangeII.java</url>
           <line>52</line>
-          <properties />
           <option name="timeStamp" value="187" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CoinChangeII.java</url>
           <line>62</line>
-          <properties />
           <option name="timeStamp" value="188" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CourseSchedule.java</url>
           <line>85</line>
-          <properties />
           <option name="timeStamp" value="189" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CourseSchedule.java</url>
           <line>109</line>
-          <properties />
           <option name="timeStamp" value="190" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/NetworkDelayTime.java</url>
           <line>30</line>
-          <properties />
           <option name="timeStamp" value="191" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/NetworkDelayTime.java</url>
           <line>45</line>
-          <properties />
           <option name="timeStamp" value="192" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/DeleteNodesAndReturnForest.java</url>
           <line>46</line>
-          <properties />
           <option name="timeStamp" value="193" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/DeleteNodesAndReturnForest.java</url>
           <line>37</line>
-          <properties />
           <option name="timeStamp" value="194" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/DeleteNodesAndReturnForest.java</url>
           <line>54</line>
-          <properties />
           <option name="timeStamp" value="195" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/PossibleBipartition.java</url>
           <line>70</line>
-          <properties />
           <option name="timeStamp" value="200" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/AlienDictionary.java</url>
           <line>128</line>
-          <properties />
           <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/AsteroidCollision.java</url>
           <line>139</line>
-          <properties />
           <option name="timeStamp" value="204" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/Find132pattern.java</url>
           <line>45</line>
-          <properties />
           <option name="timeStamp" value="205" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/Find132pattern.java</url>
           <line>40</line>
-          <properties />
           <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/Find132pattern.java</url>
           <line>42</line>
-          <properties />
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/ReconstructItinerary.java</url>
           <line>46</line>
-          <properties />
           <option name="timeStamp" value="209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SnapShotArray.java</url>
           <line>98</line>
-          <properties />
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SnapShotArray.java</url>
           <line>96</line>
-          <properties />
           <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/UniqueSubstringsInWraparoundString.java</url>
           <line>8</line>
-          <properties />
           <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/GuessNumberHigherOrLowerII.java</url>
           <line>6</line>
-          <properties />
           <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/GuessNumberHigherOrLowerII.java</url>
           <line>38</line>
-          <properties />
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/AndroidUnlockPatterns.java</url>
           <line>17</line>
-          <properties />
           <option name="timeStamp" value="234" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/SentenceSimilarityII.java</url>
           <line>40</line>
-          <properties />
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CarFleet.java</url>
           <line>56</line>
-          <properties />
           <option name="timeStamp" value="256" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CarFleet.java</url>
           <line>63</line>
-          <properties />
           <option name="timeStamp" value="257" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ADT/Trie.java</url>
           <line>79</line>
-          <properties />
           <option name="timeStamp" value="258" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ADT/Trie.java</url>
           <line>64</line>
-          <properties />
           <option name="timeStamp" value="259" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ADT/Trie.java</url>
           <line>47</line>
-          <properties />
           <option name="timeStamp" value="260" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ADT/Trie.java</url>
           <line>57</line>
-          <properties />
           <option name="timeStamp" value="261" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/ShortestPathInBinaryMatrix.java</url>
           <line>52</line>
-          <properties />
           <option name="timeStamp" value="270" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/ClosestLeafInABinaryTree.java</url>
           <line>162</line>
-          <properties />
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CountCompleteTreeNodes.java</url>
           <line>69</line>
-          <properties />
           <option name="timeStamp" value="276" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CountCompleteTreeNodes.java</url>
           <line>60</line>
-          <properties />
           <option name="timeStamp" value="277" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/darkRealm/CountCompleteTreeNodes.java</url>
           <line>42</line>
-          <properties />
           <option name="timeStamp" value="278" />
         </line-breakpoint>
       </breakpoints>
@@ -1183,478 +899,6 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/PopulatingNextRightPointersInEachNodeII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="52" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/PopulatingNextRightPointersInEachNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="50" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/QuickUnion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="34" column="3" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/SearchInASortedArrayOfUnknownSize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-          <folding>
-            <element signature="e#70#119#0" />
-            <element signature="class#ArrayReader#0;class#SearchInASortedArrayOfUnknownSize#0" />
-            <element signature="method#ArrayReader#0;class#ArrayReader#0;class#SearchInASortedArrayOfUnknownSize#0" />
-            <element signature="method#get#0;class#ArrayReader#0;class#SearchInASortedArrayOfUnknownSize#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/SearchInsertPosition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="51" column="10" lean-forward="true" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-          <folding>
-            <element signature="e#83#202#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/MinimumNumberOfRefuelingStops.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="79" column="9" lean-forward="true" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-          <folding>
-            <element signature="e#92#134#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CloneGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="134" column="29" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CoinChangeII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
-          <folding>
-            <element signature="e#75#95#0" />
-            <marker date="1565590276007" expanded="true" signature="2419:2440" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CourseSchedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2420">
-          <caret line="122" column="36" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/NetworkDelayTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CheapestFlightsWithinKStops.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/InsertIntoACyclicSortedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/PossibleBipartition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <element signature="e#77#106#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/AlienDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="133" column="25" selection-start-line="133" selection-start-column="25" selection-end-line="133" selection-end-column="25" />
-          <folding>
-            <element signature="e#239#285#0" />
-            <element signature="method#alienOrder#0;class#AlienDictionary#0" />
-            <element signature="e#1037#1567#1" />
-            <element signature="e#1181#1561#1" />
-            <element signature="e#1263#1553#1" />
-            <element signature="e#1645#1805#1" />
-            <element signature="e#1875#1903#1" />
-            <element signature="method#dfs#0;class#AlienDictionary#0" />
-            <element signature="e#2139#2457#1" />
-            <element signature="e#2173#2451#1" />
-            <element signature="e#2202#2328#1" />
-            <element signature="e#2356#2443#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/Stack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/AsteroidCollision.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="108" column="21" lean-forward="true" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
-          <folding>
-            <element signature="e#152#179#0" />
-            <element signature="method#asteroidCollision#0;class#AsteroidCollision#0" />
-            <element signature="e#1660#1774#0" />
-            <element signature="e#2020#2817#1" />
-            <element signature="e#2073#2721#1" />
-            <element signature="e#2151#2612#1" />
-            <element signature="e#2336#2399#1" />
-            <element signature="e#2425#2481#1" />
-            <element signature="e#2496#2602#1" />
-            <element signature="e#2926#2995#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/Find132pattern.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="method#find132pattern#0;class#Find132pattern#0" />
-            <element signature="e#311#509#1" />
-            <element signature="e#412#475#1" />
-            <element signature="e#670#671#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/GenerateParentheses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/PalindromicSubStrings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="63" column="15" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CatalanNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/EulerTour.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/EulerTourGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" selection-start-line="6" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/ReconstructItinerary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/GameOfLife.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/DeleteNodesAndReturnForest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#84#124#0" />
-            <element signature="class#TreeNode#0;class#DeleteNodesAndReturnForest#0" />
-            <element signature="method#delNodes#0;class#DeleteNodesAndReturnForest#0" />
-            <element signature="method#findNewRoots#0;class#DeleteNodesAndReturnForest#0" />
-            <element signature="e#1481#1789#1" />
-            <element signature="method#main#0;class#DeleteNodesAndReturnForest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/shadow.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/SearchInRotatedSortedArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/KnightProbabilityInChessboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/MinimumHeightTrees.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/BinaryTreeColoringGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="35" />
-          <folding>
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#202#203#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/SnapShotArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-732">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CampusBikesII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CampusBikes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/SentenceSimilarityII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/AndroidUnlockPatterns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/GuessNumberHigherOrLowerII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/DailyTemperatures.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/UniqueSubstringsInWraparoundString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="30" selection-start-line="24" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ADT/TrieNode.java" />
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate_Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CTCI/Moderate/Moderate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="515" column="6" selection-start-line="515" selection-start-column="6" selection-end-line="515" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/DeleteNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/DiameterBinaryTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="16" selection-start-line="16" selection-end-line="24" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CarFleet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ADT/Trie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="class#TrieNode#0;class#Trie#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/SortList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/ShortestPathInBinaryMatrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/ClosestLeafInABinaryTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="135" column="1" selection-start-line="135" selection-start-column="1" selection-end-line="143" selection-end-column="3" />
-          <folding>
-            <element signature="e#1810#2564#0" />
-            <element signature="e#3257#3390#0" />
-            <element signature="e#3323#3386#0" />
-            <element signature="e#3917#5722#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/CountCompleteTreeNodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="35" />
-          <folding>
-            <element signature="class#TreeNode#0;class#CountCompleteTreeNodes#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="380" column="170" selection-start-line="380" selection-start-column="170" selection-end-line="380" selection-end-column="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/darkRealm/FourSum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

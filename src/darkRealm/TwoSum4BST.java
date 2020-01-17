@@ -4,26 +4,27 @@ import java.util.*;
 
 public class TwoSum4BST {
 
-//  Given a Binary Search Tree and a target number, return true if there exist two elements in the BST such that their sum is equal to the given target.
+//  Given a Binary Search Tree and a target number, return true if there exist two elements in the BST such
+//  that their sum is equal to the given target.
 //
 //      Example 1:
 //  Input:
-//      5
+//       5
 //      / \
-//      3   6
-//      / \   \
-//      2   4   7
+//     3   6
+//    / \   \
+//   2   4   7
 //
 //  Target = 9
 //
 //  Output: True
 //  Example 2:
 //  Input:
-//      5
+//       5
 //      / \
-//      3   6
-//      / \   \
-//      2   4   7
+//     3   6
+//    / \   \
+//   2   4   7
 //
 //  Target = 28
 //
@@ -39,9 +40,10 @@ public class TwoSum4BST {
     }
   }
 
+  // Space : O(n), time : O(n)
   public static boolean findTarget(TreeNode node, int x, Set<Integer> set) {
-    if(node == null) return false;
-    if(set.contains(x-node.val)) return true;
+    if (node == null) return false;
+    if (set.contains(x - node.val)) return true;
     set.add(node.val);
     return findTarget(node.left, x, set) || findTarget(node.right, x, set);
   }
