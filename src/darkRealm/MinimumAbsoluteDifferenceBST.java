@@ -1,17 +1,19 @@
 package darkRealm;
 
 public class MinimumAbsoluteDifferenceBST {
-  //  Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.
+
+//  530. Minimum Absolute Difference in BST
+//  Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.
 //
 //  Example:
 //
 //  Input:
 //
-//      1
+//     1
 //      \
-//      3
+//       3
 //      /
-//      2
+//     2
 //
 //  Output:
 //      1
