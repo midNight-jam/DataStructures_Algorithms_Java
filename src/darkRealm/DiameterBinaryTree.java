@@ -2,6 +2,7 @@ package darkRealm;
 
 public class DiameterBinaryTree {
 
+//  543. Diameter of Binary Tree
 //  Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is
 //  the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
 //
@@ -30,8 +31,8 @@ public class DiameterBinaryTree {
     if (null == node) return 0;
     int left = inorder(node.left);
     int right = inorder(node.right);
-    max = Math.max(max, left + right);
-    return Math.max(left, right) + 1;
+    max = Math.max(max, l + r); // record the sum of maxDepths from both subTree
+    return Math.max(l, r) + 1; // return the maxDepth
   }
   public static int diameter(TreeNode node) {
     inorder(node);

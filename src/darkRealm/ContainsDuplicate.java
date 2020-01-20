@@ -3,6 +3,8 @@ package darkRealm;
 import java.util.HashSet;
 import java.util.Set;
 
+
+//  217. Contains Duplicate
 public class ContainsDuplicate {
   public static boolean containsDuplicate(int [] nums){
     if(nums == null || 2 > nums.length) return false;
