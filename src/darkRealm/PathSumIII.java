@@ -1,16 +1,8 @@
 package darkRealm;
 
 public class PathSumIII {
-  public static class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
 
-    TreeNode(int x) {
-      val = x;
-    }
-  }
-
+//  437. Path Sum III
 //  You are given a binary tree in which each node contains an integer value.
 //
 //  Find the number of paths that sum to a given value.
@@ -37,6 +29,16 @@ public class PathSumIII {
 //      2.  5 -> 2 -> 1
 //      3. -3 -> 11
 
+  public static class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+      val = x;
+    }
+  }
+
   static int path = 0;
 
   public static void pathFind(TreeNode node, int sum) {
@@ -47,8 +49,8 @@ public class PathSumIII {
   }
 
   public static void calculatePathSum(TreeNode node, int sum, int runninSum) {
-    if(null == node) return;
-    if(runninSum + node.val == sum) path++;
+    if (null == node) return;
+    if (runninSum + node.val == sum) path++;
     calculatePathSum(node.left, sum, runninSum + node.val);
     calculatePathSum(node.right, sum, runninSum + node.val);
   }
@@ -65,7 +67,7 @@ public class PathSumIII {
     root.right = new TreeNode(-3);
     root.right.right = new TreeNode(11);
     root.left.left = new TreeNode(3);
-    root.left.right= new TreeNode(2);
+    root.left.right = new TreeNode(2);
     root.left.left.left = new TreeNode(3);
     root.left.left.right = new TreeNode(-2);
     root.left.right.right = new TreeNode(1);
