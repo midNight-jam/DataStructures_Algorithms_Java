@@ -55,16 +55,13 @@ public class IsomorphicString {
     for (int i = 0; i < s.length(); i++) {
       cs = s.charAt(i);
       ct = t.charAt(i);
-      // if both keys are new update & continue;
+      // either both keys should be new, so update & continue;
       if (map[cs] == -1 && map2[ct] == -1) {
         map[cs] = ct;
         map2[ct] = cs;
         continue;
       }
-      // if atleast one key is new means incorrect mapping
-      if (map[cs] == -1 || map2[ct] == -1) return false;
-
-      // if both keys are old then should map to each other
+      // else both keys should be old & should be mapped to each other
       if (!(map[cs] == ct && map2[ct] == cs)) return false;
     }
     return true;

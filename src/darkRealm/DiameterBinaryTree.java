@@ -29,11 +29,12 @@ public class DiameterBinaryTree {
 
   public static int inorder(TreeNode node) {
     if (null == node) return 0;
-    int left = inorder(node.left);
-    int right = inorder(node.right);
+    int l = inorder(node.left);
+    int r = inorder(node.right);
     max = Math.max(max, l + r); // record the sum of maxDepths from both subTree
     return Math.max(l, r) + 1; // return the maxDepth
   }
+
   public static int diameter(TreeNode node) {
     inorder(node);
     return max;

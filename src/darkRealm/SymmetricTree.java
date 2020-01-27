@@ -110,7 +110,7 @@ public class SymmetricTree {
     boolean res = isSymmetricTreeLevel(root);
     System.out.println("IsSymmetric : " + res);
 
-    res = isSymmetricroot);
+    res = isSymmetric(root);
     System.out.println("IsSymmetric : " + res);
   }
 }
