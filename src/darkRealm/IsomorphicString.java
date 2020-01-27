@@ -1,7 +1,12 @@
 package darkRealm;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class IsomorphicString {
 
+//  205. Isomorphic Strings
 //  Given two strings s and t, determine if they are isomorphic.
 //  Two strings are isomorphic if the characters in s can be replaced to get t.
 //  All occurrences of a character must be replaced with another character while preserving the order of characters.
@@ -13,21 +18,54 @@ public class IsomorphicString {
 //  Note:
 //  You may assume both s and t have the same length.
 
-  public static boolean isIsomorphic(String s, String t) {
-    int[] arr = new int[256];
-    int[] brr = new int[256];
-    for (int i = 0; i < 256; i++)
-      arr[i] = brr[i] = -1;
-    char ch, ch2;
+
+  public static boolean isIsomorphicBASIC(String s, String t) {
+    if (s == null || t == null || s.length() != t.length()) return false;
+
+    Map<Character, Character> map = new HashMap<>();
+    Map<Character, Character> map2 = new HashMap<>();
+    char cs, ct;
+
     for (int i = 0; i < s.length(); i++) {
-      ch = s.charAt(i);
-      ch2 = t.charAt(i);
-      if (arr[ch] == -1 && brr[ch2] == -1) {
-        arr[ch] = ch2;
-        brr[ch2] = ch;
+      cs = s.charAt(i);
+      ct = t.charAt(i);
+      // if both keys are new update & continue;
+      if (!map.containsKey(cs) && !map2.containsKey(ct)) {
+        map.put(cs, ct);
+        map2.put(ct, cs);
+        continue;
       }
-      else if (brr[ch2] == -1 || arr[ch] == -1 || arr[ch] != arr[brr[ch2]] ||
-          brr[ch2] != brr[arr[ch]]) return false;
+      // if atleast one key is new means incorrect mapping
+      if (!map.containsKey(cs) || !map2.containsKey(ct)) return false;
+
+      // if both keys are old then should map to each other
+      if (!(map.get(cs) == ct && map2.get(ct) == cs)) return false;
+    }
+    return true;
+  }
+
+  public static boolean isIsomorphic(String s, String t) {
+    if (s == null || t == null || s.length() != t.length()) return false;
+
+    int[] map = new int[256];
+    int[] map2 = new int[256];
+    Arrays.fill(map, -1);
+    Arrays.fill(map2, -1);
+    char cs, ct;
+    for (int i = 0; i < s.length(); i++) {
+      cs = s.charAt(i);
+      ct = t.charAt(i);
+      // if both keys are new update & continue;
+      if (map[cs] == -1 && map2[ct] == -1) {
+        map[cs] = ct;
+        map2[ct] = cs;
+        continue;
+      }
+      // if atleast one key is new means incorrect mapping
+      if (map[cs] == -1 || map2[ct] == -1) return false;
+
+      // if both keys are old then should map to each other
+      if (!(map[cs] == ct && map2[ct] == cs)) return false;
     }
     return true;
   }
