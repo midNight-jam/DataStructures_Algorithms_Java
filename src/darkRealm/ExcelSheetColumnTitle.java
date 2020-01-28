@@ -2,6 +2,7 @@ package darkRealm;
 
 public class ExcelSheetColumnTitle {
 
+  //  ExcelSheetColumnTitle
 //  Given a positive integer, return its corresponding column title as appear in an Excel sheet.
 //  For example:
 //      1 -> A
@@ -12,13 +13,17 @@ public class ExcelSheetColumnTitle {
 //    27 -> AA
 //    28 -> AB
   public static String convertToTitle(int n) {
-    StringBuffer sbr = new StringBuffer();
+    if (n < 1) return "";
+    int d;
+    char c;
+    StringBuilder res = new StringBuilder();
     while (n > 0) {
-      n--;
-      sbr.append((char) ('A' + (n % 26)));
-      n = n / 26;
+      d = ((n - 1) % 26);
+      c = (char) ('A' + d);
+      res.append(c);
+      n = (n - 1) / 26;
     }
-    return sbr.reverse().toString();
+    return res.reverse().toString();
   }
 
   public static void main(String[] args) {
