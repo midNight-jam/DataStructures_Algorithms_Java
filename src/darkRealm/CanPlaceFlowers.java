@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class CanPlaceFlowers {
 
+//  605. Can Place Flowers
 //  Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot
 //  be planted in adjacent plots - they would compete for water and both would die.
 //  Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a
@@ -20,17 +21,20 @@ public class CanPlaceFlowers {
 //  n is a non-negative integer which won't exceed the input array size.
 
   public static boolean canPlaceFlowers(int[] flowerbed, int n) {
-    int count = 0;
-    int left, right;
-    for (int i = 0; i < flowerbed.length; i++) {
-      left = i - 1 < 0 ? 0 : flowerbed[i - 1];
-      right = i + 1 < flowerbed.length ? flowerbed[i + 1] : 0;
-      if (left == 0 && right == 0 && flowerbed[i] == 0) {
-        count++;
-        flowerbed[i] = 1;
+    if (flowerbed == null || n > flowerbed.length) return false;
+    int l1, r1;
+    for (int i = 0; i < flowerbed.length && n > 0; i++) {
+      if (flowerbed[i] == 1) continue;
+      l1 = i - 1 > -1 ? flowerbed[i - 1] : 0;
+      r1 = i + 1 < flowerbed.length ? flowerbed[i + 1] : 0;
+
+      if (l1 == 0 && r1 == 0) {
+        flowserbed[i] = 1;
+        n--;
       }
     }
-    return count >= n;
+    System.out.println(Arrays.toString(flowerbed));
+    return n == 0;
   }
 
   public static void main(String[] args) {
