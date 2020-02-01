@@ -29,7 +29,7 @@ public class CanPlaceFlowers {
       r1 = i + 1 < flowerbed.length ? flowerbed[i + 1] : 0;
 
       if (l1 == 0 && r1 == 0) {
-        flowserbed[i] = 1;
+        flowerbed[i] = 1;
         n--;
       }
     }
