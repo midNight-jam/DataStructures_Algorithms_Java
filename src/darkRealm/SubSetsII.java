@@ -1,6 +1,8 @@
 package darkRealm;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SubSetsII {
 
@@ -19,21 +21,22 @@ public class SubSetsII {
 //            ]
 
 
- public static List<List<Integer>> subsetsWithDup(int[] nums) {
+  public static List<List<Integer>> subsetsWithDup(int[] nums) {
     List<List<Integer>> res = new ArrayList<>();
-    if(nums == null || nums.length < 1) return res;
+    if (nums == null || nums.length < 1) return res;
     List<Integer> temp = new ArrayList<>();
-    boolean [] used = new boolean[nums.length];
+    boolean[] used = new boolean[nums.length];
     Arrays.sort(nums);
     helper(nums, 0, temp, res, used);
     return res;
   }
-  
-  private  static  void helper(int [] nums, int start, List<Integer> temp, List<List<Integer>> res, boolean [] used){
+
+  private static void helper(int[] nums, int start, List<Integer> temp, List<List<Integer>> res, boolean[] used) {
     res.add(new ArrayList<>(temp));
-    if(start >= nums.length) return;
-    for(int i =start; i < nums.length; i++){
-      if(i > start && nums[i - 1] == nums[i] && !used[i-1]) continue; //if prev same element is not used skip this one too
+    if (start >= nums.length) return;
+    for (int i = start; i < nums.length; i++) {
+      //if prev element is same & prev element is not used, then skip else we will create duplicate combinations
+      if (i > start && nums[i - 1] == nums[i] && !used[i - 1]) continue;
       temp.add(nums[i]);
       used[i] = true;
       helper(nums, i + 1, temp, res, used);
