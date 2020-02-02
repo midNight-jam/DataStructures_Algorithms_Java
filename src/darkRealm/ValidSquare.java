@@ -17,26 +17,47 @@ public class ValidSquare {
 //  Input points have no order.
 
   public static boolean validSquare(int[] p1, int[] p2, int[] p3, int[] p4) {
-    double[] lens = new double[]{
+    // get dist of all combinations
+    long[] dists = new long[]{
         getDistance(p1, p2),
-        getDistance(p2, p3),
-        getDistance(p3, p4),
-        getDistance(p4, p1),
         getDistance(p1, p3),
+        getDistance(p1, p4),
+        getDistance(p2, p3),
         getDistance(p2, p4),
+        getDistance(p3, p4)
     };
-    Map<Double, Integer> map = new HashMap<>();
-    for (double l : lens)
-      map.put(l, map.getOrDefault(l, 0) + 1);
-    if(map.size() != 2) return false;
-    boolean four = false, diag = false;
-    for(double d: map.keySet())
-      if(map.get(d) == 2) diag = true;
-      else if(map.get(d) == 4) four = true;
-      else return false;
-    return (four && diag);
+
+    Map<Long, Integer> map = new HashMap<>();
+    for (long d : dists) {
+      if (!map.containsKey(d))
+        map.put(d, 0);
+      map.put(d, map.get(d) + 1);
+    }
+
+    if (map.size() != 2) return false;
+
+    boolean side, diag;
+    side = diag = false;
+
+    for (long l : map.keySet()) {
+      if (map.get(l) == 2) {
+        if (!diag) diag = true;
+        else return false;
+      } else if (map.get(l) == 4) {
+        if (!side) side = true;
+        else return false;
+      } else return false;
+    }
+
+    return true;
   }
-  private static double getDistance(int[] p, int[] q) {
+
+  private static long getDistance(int[] p1, int[] p2) {
+    long d = (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
+    return d * d;
+  }
+
+  private static double getDistanceOLD(int[] p, int[] q) {
     return Math.sqrt(Math.pow(p[0] - q[0], 2) + Math.pow(p[1] - q[1], 2));
   }
 
