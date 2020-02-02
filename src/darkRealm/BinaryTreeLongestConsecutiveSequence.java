@@ -3,7 +3,8 @@ package darkRealm;
 public class BinaryTreeLongestConsecutiveSequence {
 //  #298. Binary Tree Longest Consecutive Sequence
 //  Given a binary tree, find the length of the longest consecutive sequence path.
-//  The path refers to any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The longest consecutive path need to be from parent to child (cannot be the reverse).
+//  The path refers to any sequence of nodes from some starting node to any node in the tree along the parent-child
+//  connections. The longest consecutive path need to be from parent to child (cannot be the reverse).
 //  For example,
 //      1
 //        \
@@ -32,21 +33,27 @@ public class BinaryTreeLongestConsecutiveSequence {
     }
   }
 
-  static int maxLen = 0;
+  static int max;
 
   public static int longestConsecutive(TreeNode root) {
     if (root == null) return 0;
-    dfs(root, 0, root.val);
-    return maxLen;
+    max = Integer.MIN_VALUE;
+    helper(root, null, 1);
+    return max;
   }
 
-  public static void dfs(TreeNode node, int curr, int target) {
-    if (node == null) return;
-    if (node.val == target) curr++; // if target matches increase this subsequence count
-    else curr = 1; // else reset the subsequence count
-    dfs(node.left, curr, node.val + 1);
-    dfs(node.right, curr, node.val + 1);
-    maxLen = Math.max(curr, maxLen);
+  private static void helper(TreeNode root, TreeNode par, int len) {
+    if (root == null) return;
+
+    if (par != null && root.val - par.val == 1)
+      len++;
+    else
+      len = 1;
+
+    max = Math.max(len, max);
+
+    helper(root.left, root, len);
+    helper(root.right, root, len);
   }
 
   public static void main(String[] args) {
