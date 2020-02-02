@@ -2,6 +2,7 @@ package darkRealm;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Stack;
 
 public class LongestAbsolutePath {
 
@@ -51,9 +52,40 @@ public class LongestAbsolutePath {
       while (stack.size() > level + 1) stack.pop();
       fullPath = stack.peek() + interimPathLen;
       stack.push(fullPath);
-      if (s.contains(".")) maxLen = Math.max(maxLen, fullPath - 1); // because for filename we have to remove the extra '/'
+      if (s.contains("."))
+        maxLen = Math.max(maxLen, fullPath - 1); // because for filename we have to remove the extra '/'
     }
     return maxLen;
+  }
+
+  public static int lengthLongestPathBasic(String input) {
+    if (input == null || input.length() < 1) return 0;
+    String[] arr = input.split("\n");
+    int res = Integer.MIN_VALUE;
+    Stack<Integer> levelStack = new Stack<>();
+    Stack<String> strStack = new Stack<>();
+
+    for (int i = 0; i < arr.length; i++) {
+      String si = arr[i];
+      boolean isFile = si.indexOf(".") > -1;
+      int index = si.lastIndexOf("\t");
+      index++; // if -ve, i.e just root dir, we will take it as level 0
+      System.out.println(index);
+      int level = index;
+      while (levelStack.size() > 0 && levelStack.peek() >= level) {
+        levelStack.pop();
+        strStack.pop();
+      }
+
+      String ns = (strStack.size() > 0 ? strStack.peek() : "") + si.substring(index) + "/";
+      // System.out.println(ns);
+      if (isFile)
+        res = Math.max(res, ns.length());
+      strStack.push(ns);
+      levelStack.push(level);
+    }
+
+    return res == Integer.MIN_VALUE ? 0 : res - 1;
   }
 
   public static void main(String[] args) {
