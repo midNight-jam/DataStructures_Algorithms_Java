@@ -1,7 +1,6 @@
 package darkRealm;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.Stack;
 
 public class DecodeString {
 
@@ -18,43 +17,44 @@ public class DecodeString {
 //  s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 
   public static String decodeString(String s) {
-    if (s == null || s.length() == 0) return "";
-    Deque<Integer> countStack = new ArrayDeque<>();
-    Deque<String> strStack = new ArrayDeque<>();
+    if (s == null || s.length() == 0) return s;
+    Stack<Integer> countStack = new Stack<>();
+    Stack<String> strStack = new Stack<>();
     StringBuilder res = new StringBuilder();
-    int i = 0;
-    while (i < s.length()) {
-      if (Character.isDigit(s.charAt(i))) {  // integer
+    int index = 0;
+    while (index < s.length()) {
+      if (Character.isDigit(s.charAt(index))) {  // integer
         int n = 0;
-        while (Character.isDigit(s.charAt(i))) {
+        while (Character.isDigit(s.charAt(index))) {
           n = n * 10;
-          n = n + s.charAt(i) - '0';
-          i++;
+          n = n + s.charAt(index) - '0';
+          index++;
         }
         countStack.push(n);
-      }
-      else if (s.charAt(i) == '[') {
+      } else if (s.charAt(index) == '[') {
+        // put the current result in to the stack & reset as we are going to create a new string because of opening '['
         strStack.push(res.toString());
-        res = new StringBuilder();
-        i++;
-      }
-      else if (s.charAt(i) == ']') {
+        res = new StringBuilder(); // reset
+        index++;
+      } else if (s.charAt(index) == ']') {
         int count = countStack.pop();
-        StringBuilder part = new StringBuilder(strStack.pop());
-        while (count-- != 0) part.append(res.toString());
-        res = part;
-        i++;
-      }
-      else {
-        res.append(s.charAt(i) + "");
-        i++;
+        // append to the old result, thus we are starting by using the last result as a initial point
+        StringBuilder oldResult = new StringBuilder(strStack.pop());
+        // append the current result to the old result
+        while (count-- != 0) oldResult.append(res.toString());
+        res = oldResult;
+        index++;
+      } else {
+        res.append(s.charAt(index) + "");
+        index++;
       }
     }
     return res.toString();
   }
 
+
   public static void main(String[] args) {
-    String str = "1[a]bc2[de]";
+    String str = "10[az]bc2[de]";
     String res = decodeString(str);
     System.out.println("S : " + str);
     System.out.println("R : " + res);
