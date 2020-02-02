@@ -25,7 +25,29 @@ public class LicenseKeyFormatting {
 //  String S consists only of alphanumerical characters (a-z and/or A-Z and/or 0-9) and dashes(-).
 //  String S is non-empty.
 
-  public static String licenseKeyFormatting(String S, int K) {
+
+  public static String licenseKeyFormatting(String S, int k) {
+    if (S == null || S.length() < 1 || k < 1) return "";
+    StringBuilder sbr = new StringBuilder();
+    int g = k;
+    char c;
+    S = S.toUpperCase();
+    for (int i = S.length() - 1; i >= 0; i--) {
+      c = S.charAt(i);
+      if (c == '-') continue;
+      sbr.append(c);
+      g--;
+      if (g == 0) {
+        if (i > 0)
+          sbr.append('-');
+        g = k;
+      }
+    }
+    String res = sbr.reverse().toString();
+    return res.length() > 0 && res.charAt(0) == '-' ? res.substring(1) : res;
+  }
+
+  public static String licenseKeyFormattingOLD(String S, int K) {
     StringBuilder sbr = new StringBuilder();
     char c;
     int groupLen = 0;
