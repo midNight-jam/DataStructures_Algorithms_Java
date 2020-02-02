@@ -1,11 +1,14 @@
 package darkRealm;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class CombinationSum {
 
 //  #39. Combination Sum
-//  Given a set of candidate numbers (C) (without duplicates) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+//  Given a set of candidate numbers (C) (without duplicates) and a target number (T), find all unique combinations in
+//  C where the candidate numbers sums to T.
 //
 //  The same repeated number may be chosen from C unlimited number of times.
 //
@@ -22,28 +25,22 @@ public class CombinationSum {
 //      [2, 2, 3]
 //      ]
 
-  public  static List<List<Integer>> combinationSum(int[] candidates, int target) {
+  public static List<List<Integer>> combinationSum(int[] candidates, int target) {
     List<List<Integer>> res = new ArrayList<>();
-    if(candidates == null || candidates.length < 1 || target < 0)
-      return res;
-    List<Integer> temp = new ArrayList<>();
     Arrays.sort(candidates);
-    helper(res, temp, 0,0, target, candidates);
+    helper(candidates, target, 0, new ArrayList<>(), res);
     return res;
   }
-  
-  private  static void helper(List<List<Integer>> res, List<Integer> temp, int start, int sum, int target, int [] arr){
-    if(sum > target) return;
-    if(sum == target){
+
+  private static void helper(int[] nums, int tar, int start, List<Integer> temp, List<List<Integer>> res) {
+    if (tar < 0) return;
+    if (tar == 0) {
       res.add(new ArrayList<>(temp));
       return;
     }
-    
-    for(int i = start; i < arr.length; i++){
-      temp.add(arr[i]);
-      sum += arr[i];
-      helper(res, temp, i, sum, target, arr);
-      sum -= arr[i];
+    for (int i = start; i < nums.length && nums[i] <= tar; i++) {
+      temp.add(nums[i]);
+      helper(nums, tar - nums[i], i, temp, res);
       temp.remove(temp.size() - 1);
     }
   }
