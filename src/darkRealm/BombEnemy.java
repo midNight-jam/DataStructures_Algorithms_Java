@@ -14,6 +14,9 @@ public class BombEnemy {
 //  0 E 0 0
 //  return 3. (Placing a bomb at (1,1) kills 3 enemies)
 
+
+
+
    public static int maxKilledEnemies(char[][] grid) {
     int res = 0;
     if(grid == null || grid.length < 1 || grid[0].length < 1)
