@@ -37,24 +37,34 @@ public class SplitArrayWithEqualSum {
     //Intuition is to find 4 quarters in the array that have the same sum, we begin by dividing array in to 3 parts
     // we start with j for mid and then adjust i and j for left and right
     // lets try to create a split at j
+    // starting j = 3 because we need 3 segments to left of j
+    // (0, i - 1), (i), (i + 1, j - 1)
+    // each seg can be of min len 1 , thus 0,1,2 are gone & we start from 3
     for (int j = 3; j < nums.length - 2; j++) {
       Set<Integer> set = new HashSet<>();
       // First quarter and right quarter, sum of left quarter & right quarter should be equal
       // lets try to create a split at i
-      for (int i = 1; i < j - 1; i++) {
-        // sum of left === sum of right
-        // why sums[i-1], because this will incclude sum of all elements from to i - 1, leaving 1 which is first quarter
-        //why sums[j-1], because we need to exclude j, why - sums[i], becuase we have to exclude i as well
-        if (sums[i - 1] == sums[j - 1] - sums[i])
-          set.add(sums[i - 1]); // record this sum as sum are equal
+      // leave spaces for 2 segments left & right of i, as each seg can be of min len 1
+      // thus 0 & j-1 are spared
+      for (int i = 1; i <= j - 2; i++) {
+        // sum from 0 to i - 1
+        int li = sums[i - 1];
+        // sum from i + 1 to j -1
+        int ri = sums[j - 1] - sums[i];
+        if (li == ri)
+          set.add(li); // keep the sum to track if we find an equal
       }
-      // lets try to create a split at k
+      // leave spaces for 2 segments left & right of k, as each seg can be of min len 1
+      // thus j + 1 & last(len -1) are spared
       for (int k = j + 2; k < nums.length - 1; k++) {
-        // why last - sums[k], becuase this will give us sum of 4th quarter and excluding K from it so  - sums[k]
-        // why sums[k-1] - sums[j]. because this will give us the sum of 3rd quarter
-        if (sums[sums.length - 1] - sums[k] == sums[k - 1] - sums[j])
-          if (set.contains(sums[k - 1] - sums[j])) return true;
-        // if the quarters sum matches means we were able to spilt array
+        // sum from j + 1 to k - 1
+        int lk = sums[k - 1] - sums[j];
+        // sum from k + 1 to end
+        int rk = sums[sums.length - 1] - sums[k];
+        if (lk == rk) {
+          if (set.contains(lk))
+            return true;
+        }
       }
     }
     return false;
