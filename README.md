@@ -400,6 +400,7 @@ This section contains implementation of different Data Structures in Java.
 | 373 | <b>MergeSort</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MergeSort.java)|
 | 374 | <b>DifferentWaysToAddParentheses</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DifferentWaysToAddParentheses.java)|
 | 375 | <b>QuickSort</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/QuickSort.java)|
+| 376 | <b>UniquePathsII</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/UniquePathsII.java)|
 
 
 
