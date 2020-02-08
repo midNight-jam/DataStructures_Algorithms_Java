@@ -16,19 +16,18 @@ public class DailyTemperatures {
 //  in the range [30, 100].
 
   public static int[] dailyTemperatures(int[] T) {
-    if (T == null || T.length < 1) return new int[0];
-    if (T.length < 2) return new int[]{0};
+    if (T == null || T.length < 1) return T;
+    Stack<Integer> stack = new Stack<>();
     int[] res = new int[T.length];
 
-    Stack<int[]> stack = new Stack<>();
-    stack.push(new int[]{0, T[0]}); // tuple of index & temp
-    for (int i = 1; i < T.length; i++) {
-      while (!stack.isEmpty() && T[i] > stack.peek()[1]) {
-        int[] tt = stack.pop();
-        res[tt[0]] = i - tt[0];
+    for (int i = 0; i < T.length; i++) {
+      while (!stack.isEmpty() && T[i] > T[stack.peek()]) {
+        int prev = stack.pop();
+        res[prev] = i - prev;
       }
-      stack.push(new int[]{i, T[i]});
+      stack.push(i);
     }
+
     return res;
   }
 
