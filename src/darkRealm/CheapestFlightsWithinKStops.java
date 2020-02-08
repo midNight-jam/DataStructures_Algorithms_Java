@@ -1,3 +1,4 @@
+
 package darkRealm;
 
 import java.util.*;
@@ -85,29 +86,29 @@ public class CheapestFlightsWithinKStops {
   }
 
   public static void main(String[] args) {
-//    int n = 3;
-//    int[][] flights = new int[][]{
-//        {0, 1, 100},
-//        {1, 2, 100},
-//        {0, 2, 500},
-//    };
-//
-//    int s = 0;
-//    int d = 2;
-////    int k = 1;
+    int n = 3;
+    int[][] flights = new int[][]{
+        {0, 1, 100},
+        {1, 2, 100},
+        {0, 2, 500},
+    };
+
+    int s = 0;
+    int d = 2;
+    int k = 1;
 //    int k = 0;
 
 
-    int n = 4;
-    int[][] flights = new int[][]{
-        {0, 1, 1},
-        {0, 2, 5},
-        {1, 2, 1},
-        {2, 3, 1}
-    };
-    int s = 0;
-    int d = 3;
-    int k = 1;
+//    int n = 4;
+//    int[][] flights = new int[][]{
+//        {0, 1, 1},
+//        {0, 2, 5},
+//        {1, 2, 1},
+//        {2, 3, 1}
+//    };
+//    int s = 0;
+//    int d = 3;
+//    int k = 1;
 
     int res = findCheapestPrice(n, flights, s, d, k);
     System.out.println(res);

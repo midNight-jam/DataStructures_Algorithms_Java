@@ -1,5 +1,6 @@
 package darkRealm;
 
+
 import java.util.*;
 
 public class EvaluateDivision {
@@ -27,70 +28,70 @@ public class EvaluateDivision {
 //  is no contradiction.
 
 
-  Map<String, Map<String, Double>> map;
+  static double queryRes;
 
-  public double[] calcEquation(List<List<String>> eqs, double[] vals, List<List<String>> quers) {
-    if (eqs == null || eqs.size() < 1 || vals == null || vals.length < 1 || quers == null || quers.size() < 1)
-      return new double[0];
-
-    map = new HashMap<>();
+  public static double[] calcEquation(List<List<String>> eqs, double[] vals, List<List<String>> queries) {
+    if (eqs == null || vals == null || eqs.size() != vals.length) return new double[0];
+    Map<String, Map<String, Double>> adjMap = new HashMap<>();
 
     for (int i = 0; i < vals.length; i++) {
       String from = eqs.get(i).get(0);
       String to = eqs.get(i).get(1);
-      if (!map.containsKey(from))
-        map.put(from, new HashMap<>());
-      if (!map.containsKey(to))
-        map.put(to, new HashMap<>());
-      map.get(from).put(to, vals[i]);
-      map.get(to).put(from, 1.0 / vals[i]);
+
+      // add the edge
+      if (!adjMap.containsKey(from))
+        adjMap.put(from, new HashMap<>());
+      adjMap.get(from).put(to, vals[i]);
+
+      // add the reverse edge, thus (1.0 / val)
+      if (!adjMap.containsKey(to))
+        adjMap.put(to, new HashMap<>());
+      adjMap.get(to).put(from, (1 / vals[i]));
     }
 
-    double[] res = new double[quers.size()];
-
-    for (int i = 0; i < quers.size(); i++) {
-      String src = quers.get(i).get(0);
-      String dest = quers.get(i).get(1);
-      if (!map.containsKey(src) || !map.containsKey(dest)) {
-        res[i] = -1.0;
-        continue;
+    double[] res = new double[queries.size()];
+    int i = 0;
+    Set<String> recStack = new HashSet<>(); // as we have reverse edges, this will help avoid loop
+    for (List<String> q : queries) {
+      String src = q.get(0);
+      String dest = q.get(1);
+      queryRes = -1.0; // reset the queryResult
+      if (!adjMap.containsKey(src) || !adjMap.containsKey(dest))
+        res[i++] = queryRes;
+      else {
+        dfsHelper(adjMap, dest, src, 1.0, recStack);
+        res[i++] = queryRes;
       }
-      if (src.equals(dest)) {
-        res[i] = 1.0;
-        continue;
-      }
-      res[i] = getCost(src, dest);
     }
 
     return res;
   }
 
-  private double getCost(String src, String dest) {
-    Set<String> visited = new HashSet<>();
-    Queue<String> path = new LinkedList<>();
-    Queue<Double> vals = new LinkedList<>();
-    path.offer(src);
-    vals.offer(1.0);
-
-    while (path.size() > 0) {
-      int p = path.size();
-      while (p-- > 0) {
-        String h = path.poll();
-        double v = vals.poll();
-        visited.add(h);
-        if (h.equals(dest)) return v;
-        Map<String, Double> nbors = map.get(h);
-        for (String n : nbors.keySet()) {
-          if (visited.contains(n)) continue;
-          path.offer(n);
-          vals.offer(v * nbors.get(n));
-        }
-      }
+  private static void dfsHelper(Map<String, Map<String, Double>> adjMap, String dest, String from, double val, Set<String> recStack) {
+    if (dest.equals(from)) {
+      queryRes = val;
+      return;
     }
-    return -1.0;
+
+    recStack.add(from);
+    Map<String, Double> nbors = adjMap.get(from);
+
+    for (String n : nbors.keySet()) {
+      if (recStack.contains(n)) continue; // if this nbor is already under call stack
+      dfsHelper(adjMap, dest, n, (val * nbors.get(n)), recStack);
+    }
+    recStack.remove(from);
   }
 
   public static void main(String[] args) {
+    List<List<String>> eqs = new ArrayList<>();
+    eqs.add(Arrays.asList(new String[]{"a", "b"}));
+    eqs.add(Arrays.asList(new String[]{"b", "c"}));
+    double[] vals = new double[]{2.0, 3.0};
+    List<List<String>> queries = new ArrayList<>();
+    queries.add(Arrays.asList(new String[]{"a", "c"}));
 
+    double[] res = calcEquation(eqs, vals, queries);
+    System.out.println(Arrays.toString(res));
   }
 }
