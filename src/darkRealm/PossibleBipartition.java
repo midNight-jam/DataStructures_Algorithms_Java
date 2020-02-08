@@ -37,11 +37,13 @@ public class PossibleBipartition {
 //  There does not exist i != j for which dislikes[i] == dislikes[j].
 
 
-  // this is an MColoring graph problem with just 2 colors [+1, -1]
+  static int MColor;
+
+  // this is an MColoring graph problem with just 2 colors [0, 1]
   public static boolean possibleBipartition(int N, int[][] dislikes) {
     if (N < 0 || dislikes == null) return false;
     List<List<Integer>> adjacencyList = new ArrayList<>();
-
+    MColor = 2;
     for (int i = 0; i < N + 1; i++)
       adjacencyList.add(new ArrayList<>());
 
@@ -59,7 +61,7 @@ public class PossibleBipartition {
       // already colored this part, skip
       if (assignedColors[i] != 0) continue;
       // color this with 1, we will use two colors -1 & +1
-      boolean canBeColored = dfsColorGraph(assignedColors, adjacencyList, i, 1);
+      boolean canBeColored = dfsColorGraph(assignedColors, adjacencyList, i, 0);
       if (!canBeColored) return false;
     }
 
@@ -75,7 +77,7 @@ public class PossibleBipartition {
     assignedColors[vertex] = color;
     List<Integer> neighbors = adjList.get(vertex);
     for (int n : neighbors) {
-      boolean neighborCanBeColored = dfsColorGraph(assignedColors, adjList, n, -1 * color); // negate the color to paint neighbors
+      boolean neighborCanBeColored = dfsColorGraph(assignedColors, adjList, n,  (color + 1 ) % MColor); // negate the color to paint neighbors
       if (!neighborCanBeColored) return false;
     }
     // finally if all the neighbors can be colored return true

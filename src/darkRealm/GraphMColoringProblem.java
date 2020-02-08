@@ -21,46 +21,42 @@ import java.util.List;
 * */
 public class GraphMColoringProblem {
 
-  public static int[] mColorGraph(int N, int[][] mat, int M) {
-    List<List<Integer>> adjList = new ArrayList<>();
-    for (int i = 0; i < N + 1; i++)
-      adjList.add(new ArrayList<>());
+  static int MColor;
 
-    for (int[] r : mat) {
-      int from = r[0];
-      int to = r[1];
-      adjList.get(from).add(to);
-      adjList.get(to).add(from);
+  public static int [] mColorGraph(int N, int[][] dislikes, int m) {
+    if(N < 0) return new int[0];
+    MColor = m;
+    List<Integer> [] adjList = new List[N+1];
+    for(int i = 0; i <= N; i++)
+      adjList[i] = new ArrayList<>();
+
+    for(int i = 0; i < dislikes.length; i++){
+      adjList[dislikes[i][0]].add(dislikes[i][1]);
+      adjList[dislikes[i][1]].add(dislikes[i][0]);
     }
 
-
-    int vertices = adjList.size();
-    int[] assignedColors = new int[vertices];
-    Arrays.fill(assignedColors, -1);
-    dfsHelper(assignedColors, adjList, 1, M);
+    int [] assignedColors = new int[N+1];
+    for(int i = 1; i<= N; i++){
+      if(assignedColors[i] != 0) continue;
+      if(!dfsColorGraph(adjList, i, 0, assignedColors))
+        return new int[0];
+    }
     return assignedColors;
   }
 
-  private static boolean dfsHelper(int[] assignedColors, List<List<Integer>> adjList, int vertex, int M) {
-    // if we have colored all the vertices return
-    if (vertex == assignedColors.length) return true;
-    for (int c = 1; c <= M; c++) {
-      if (!isSafeToAssignColor(vertex, c, adjList, assignedColors)) continue;
-      assignedColors[vertex] = c;
-      boolean nextColor = dfsHelper(assignedColors, adjList, vertex + 1, M);
-      if (nextColor) return true; // dfs succeded & we were able to color all vertices so return true
-      assignedColors[vertex] = -1;// reset the color, & try the next color
-    }
-    // if after dfs we were not able to M color graph return false
-    return false;
-  }
+  private static boolean dfsColorGraph(List<Integer> [] adjList, int v, int color, int [] assignedColors){
+    if(assignedColors[v] != 0)
+      return assignedColors[v] == color;
 
-  private static boolean isSafeToAssignColor(int vertex, int color, List<List<Integer>> adjecacenyList, int[] assignedColors) {
-    // if any nieghbor is assigned a same color then this color assignment is not safe
-    List<Integer> neighbors = adjecacenyList.get(vertex);
-    for (int n : neighbors)
-      if (color == assignedColors[n])
+    assignedColors[v] = color;
+    List<Integer> nbors = adjList[v];
+
+    // We choose the next Color by incremneting & mod by the allowed colors
+    for(int n : nbors){
+      if(!dfsColorGraph(adjList, n, (color + 1) % MColor, assignedColors))
         return false;
+    }
+
     return true;
   }
 
@@ -74,15 +70,10 @@ public class GraphMColoringProblem {
           (0)---(1)
         */
 
+    int M = 2;
+    int N = 4;
+    int[][] arr = new int[][]{{1,2},{1,3},{2,4}};
 
-    // below graph from  : https://www.geeksforgeeks.org/m-coloring-problem-backtracking-5/
-    int N = 10;
-    int[][] arr = new int[][]{
-        {1, 2}, {1, 6}, {1, 5}, {2, 7}, {2, 3}, {5, 10}, {3, 8}, {3, 4},
-        {7, 9}, {7, 10}, {4, 9}, {4, 5}, {8, 6}, {8, 10}, {9, 6}
-    };
-
-    int M = 3;
     long start = System.currentTimeMillis();
     int[] res = mColorGraph(N, arr, M);
     long elapsedTimeMillis = System.currentTimeMillis() - start;
