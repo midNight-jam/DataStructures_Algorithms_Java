@@ -1,5 +1,8 @@
 package darkRealm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SortByFrequency {
 
 
@@ -41,38 +44,35 @@ public class SortByFrequency {
 
 
   public static String sortByFrequency(String str) {
-    if (str == null || str.length() < 1) return str;
-
     int[] map = new int[256];
     int max = 0;
 
-    for (int i = 0; i < str.length(); i++) {
-      map[(int) str.charAt(i)]++;
-      max = Math.max((int) map[str.charAt(i)], max);
+    for (char c : str.toCharArray()) {
+      map[c]++;
+      max = Math.max(max, map[c]);
     }
 
-    String[] buckets = new String[max + 1]; // creating the merge list
-    StringBuilder freqHelper = new StringBuilder();
+    List<Character>[] buckets = new List[max + 1];
+    for (int i = 0; i < map.length; i++) {
+      int freq = map[i];
+      if (buckets[freq] == null)
+        buckets[freq] = new ArrayList<>();
+      buckets[freq].add((char) i);
+    }
 
-    for (int i = 0; i < map.length; i++)
-      if (map[i] > 0) {
-        String s = buckets[map[i]];
-        freqHelper.setLength(0); // clear the buffer
-        s = (s == null) ? "" : s;
-        for (int j = 0; j < map[i]; j++)
-          freqHelper.append((char) i);
-
-        freqHelper.append(s);// merging te same frequency chars
-        buckets[map[i]] = freqHelper.toString();
+    StringBuilder sbr = new StringBuilder();
+    for (int f = max; f >= 0; f--) {
+      if (buckets[f] == null) continue;
+      int times;
+      for (Character c : buckets[f]) {
+        times = f;
+        while (times-- > 0) {
+          sbr.append(c);
+        }
       }
+    }
 
-    StringBuilder res = new StringBuilder();
-
-    for (int i = buckets.length - 1; i > 0; i--)
-      if (buckets[i] != null)
-        res.append(buckets[i]);
-
-    return res.toString();
+    return sbr.toString();
   }
 
   public static void main(String[] args) {
