@@ -16,7 +16,8 @@ public class SearchForRange {
     if (nums == null || nums.length == 0) return new int[]{-1, -1};
     int low = 0, high = nums.length, mid = 0; // notice high is not nums.length - 1, it is equal to size
     // First we seach for the left start of the target, this will appear to the left of the mid, when mid == target,
-    // So wour search reduces to finding low and high to the left of the mid, thats why we are doing high = mid, when mid == target,
+    // So wour search reduces to finding low and high to the left of the mid, thats why we are doing high = mid,
+    // when mid == target,
     // means we are skipping all the elements to the right of the target in order to find the start of the range, we do
     // this till low < high, on breaking of this loop we have to verify one more thing, whether the target was in the
     // array or not.
@@ -36,10 +37,11 @@ public class SearchForRange {
     // Now Search for the end of the range in the right part of the array from the mid, here as the right part begins
     // from mid, we are sure that arr[mid] == target, and as we are searching for the right end of the range, we can skip
     // all the elements that are equal to target and when it is not , we reduce the high to find the right end of range.
-    while (low < high) {
+    while(low < high){
       mid = low + (high - low) / 2;
-      if (nums[mid] > target) high = mid;
-      else low = mid + 1;
+      if(nums[mid] <= target)
+        low = mid + 1;
+      else high = mid;
     }
     int right = low - 1;
     return new int[]{left, right};
