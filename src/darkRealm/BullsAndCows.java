@@ -34,43 +34,53 @@ public class BullsAndCows {
 //  Note: You may assume that the secret number and your friend's guess only contain digits, and their lengths are
 //  always equal.
 
+  public static String getHint(String s, String g) {
+    if (s == null || g == null) return "";
+    char[] arr = s.toCharArray();
+    char[] brr = g.toCharArray();
 
-  public String getHint(String sec, String gus) {
-    if (sec == null || sec.length() < 1 || gus == null || gus.length() < 1 || sec.length() != gus.length())
-      return "0A0B";
+    int bull, cow;
+    bull = cow = 0;
 
-    char[] arr = sec.toCharArray();
-    char[] brr = gus.toCharArray();
-    int m = 0;
-    int p = 0;
+    int i = 0;
+    int j = 0;
+    char ca, cb;
+    while (i < arr.length || j < brr.length) {
+      ca = i < arr.length ? arr[i] : ' ';
+      cb = j < brr.length ? brr[j] : ' ';
+      if (ca == cb && ca != ' ') {
+        arr[i] = brr[j] = 'X';
+        bull++;
+      }
+      i++;
+      j++;
+    }
+
     Map<Character, Integer> map = new HashMap<>();
 
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[i] == brr[i]) {
-        m++;
-        arr[i] = brr[i] = 'X';
-      } else {
-        if (!map.containsKey(arr[i]))
-          map.put(arr[i], 0);
-        map.put(arr[i], map.get(arr[i]) + 1);
+    for (int ii = 0; ii < arr.length; ii++) {
+      if (arr[ii] == 'X') continue;
+      if (!map.containsKey(arr[ii]))
+        map.put(arr[ii], 0);
+      map.put(arr[ii], map.get(arr[ii]) + 1);
+    }
+
+    for (int jj = 0; jj < brr.length; jj++) {
+      if (brr[jj] == 'X' || !map.containsKey(brr[jj])) continue;
+      if (map.get(brr[jj]) > 0) {
+        cow++;
+        map.put(brr[jj], map.get(brr[jj]) - 1);
       }
     }
 
-
-    for (int i = 0; i < brr.length; i++) {
-      char c = brr[i];
-      if (c == 'X' || !map.containsKey(c)) continue;
-      p++;
-      map.put(c, map.get(c) - 1);
-      if (map.get(c) == 0)
-        map.remove(c);
-    }
-
-    return m + "A" + p + "B";
+    return bull + "A" + cow + "B";
   }
 
 
   public static void main(String[] args) {
-
+    String s = "1123";
+    String g = "0111";
+    String res = getHint(s, g);
+    System.out.println(res);
   }
 }
