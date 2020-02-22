@@ -21,25 +21,21 @@ public class JumpGameII {
 
   public static int jump(int[] nums) {
     if (nums == null || nums.length < 1) return 0;
-    int[] mins = new int[nums.length];
+    int [] minJump = new int[nums.length];
+
     // Idea is very similar to JumpGameI
-    Arrays.fill(mins, Integer.MAX_VALUE);
-    mins[0] = 0;
-    int max = nums[0];
-    int N = mins.length;
-    for (int i = 0; i < N && i <= max; i++) {
-      int dist = nums[i];
+    Arrays.fill(minJump, Integer.MAX_VALUE);
+    minJump[0] = 0;
+    for(int i = 0; i < nums.length; i++){
+      int next = nums[i];
       // calculate + update min jump for all the indexes that we can reach from here
-      for (int j = i + 1; j < N && dist > 0; j++, dist--) 
-        if (mins[i] + 1 < mins[j])
-          mins[j] = mins[i] + 1;
-      
-      if (i + nums[i] > max) 
-        max = i + nums[i];
-      
+      for(int j = 1; j <= next && j + i < nums.length; j++){
+        minJump[i+j] = Math.min(minJump[i+j], minJump[i] + 1);
+      }
     }
-    System.out.println(Arrays.toString(mins));
-    return mins[N - 1];
+
+    System.out.println(Arrays.toString(minJump));
+    return minJump[nums.length - 1];
   }
 
   public static void main(String[] args) {
