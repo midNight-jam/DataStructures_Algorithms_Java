@@ -10,9 +10,11 @@ public class AsteroidCollision {
 //  735. Asteroid Collision
 //  We are given an array asteroids of integers representing asteroids in a row.
 //
-//  For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed.
+//  For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning
+//  right, negative meaning left). Each asteroid moves at the same speed.
 //
-//  Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.
+//  Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode.
+//  If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.
 //
 //  Example 1:
 //  Input:
@@ -49,7 +51,7 @@ public class AsteroidCollision {
     if (astr == null || astr.length < 2) return astr;
     Stack<Integer> stack = new Stack<>();
     int curr, cab;
-    
+
     // collisions occur only for a +ve followed by a -ve
     for (int i = 0; i < astr.length; i++) {
       curr = astr[i];
@@ -67,11 +69,11 @@ public class AsteroidCollision {
       // if there is an equal +ve left on the stack pop that one too
       if (!stack.isEmpty() && stack.peek() == cab)
         stack.pop();
-      
-      // there are no elements in stack or has a -ve on top then push
+
+        // there are no elements in stack or has a -ve on top then push
       else if (stack.isEmpty() || stack.peek() < 0)
         stack.push(curr);
-      
+
     }
 
     int[] res = new int[stack.size()];
@@ -82,10 +84,53 @@ public class AsteroidCollision {
 
     return res;
   }
-  
-  
+
+
+  public static int[] asteroidCollisionVERBOSE(int[] arr) {
+    if (arr == null) return arr;
+    Stack<Integer> stack = new Stack<>();
+    int cur;
+    for (int i = 0; i < arr.length; i++) {
+      cur = arr[i];
+
+      // if positive or 0 push & move
+      if (cur >= 0) {
+        stack.push(cur);
+        continue;
+      }
+
+      // pop all the weaker +ves
+      while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < Math.abs(cur))
+        stack.pop();
+
+      if (!stack.isEmpty() && stack.peek() > 0) {
+        // if there are equal present pop it & dont push(continue) the curr
+        if (stack.peek() == Math.abs(cur)) {
+          stack.pop();
+          continue;
+        }
+        // if this is a weaker -ve, keep the strong +ve in the stack &  dont push(continue) the curr weaker -ve on stack
+        if (stack.peek() > Math.abs(cur)) {
+          continue;
+        }
+
+      }
+
+      stack.push(cur);
+    }
+
+    int[] res = new int[stack.size()];
+    int i = res.length - 1;
+    while (!stack.isEmpty()) {
+      res[i--] = stack.pop();
+    }
+
+    return res;
+  }
+
+
   public static int[] asteroidCollisionOLD(int[] astr) {
-    if(astr == null || astr.length < 1) return astr;
+    if (astr == null || astr.length < 1) return astr;
 
     // This solutions uses extra space in terms of stack + set, i think we can avoid this & do without any extra space
     // by just using a list. But I am keeping that for future improvements :P
@@ -94,27 +139,25 @@ public class AsteroidCollision {
     Stack<Integer[]> right = new Stack<>();
 
     Set<Integer> set = new HashSet();
-    for(int i = 0; i < astr.length; i++){
+    for (int i = 0; i < astr.length; i++) {
 
       // Left going asteroid
-      if(astr[i] < 0){
+      if (astr[i] < 0) {
         int a = Math.abs(astr[i]);
-        while(right.size() > 0 && a != 0){
-          Integer [] r = right.peek();
+        while (right.size() > 0 && a != 0) {
+          Integer[] r = right.peek();
           int ra = r[0];
           int ri = r[1];
 
-          if(ra == 0) break; // seems like 0 asteroid is indestructible
+          if (ra == 0) break; // seems like 0 asteroid is indestructible
 
-          if(a > ra){
+          if (a > ra) {
             right.pop();
             set.add(ri);
-          }
-          else if(a < ra){
+          } else if (a < ra) {
             a = 0;
             set.add(i);
-          }
-          else{
+          } else {
             a = 0;
             right.pop();
             set.add(ri);
@@ -123,28 +166,38 @@ public class AsteroidCollision {
         }
 
         // left still surviving
-        if(a != 0)
-          left.push(new Integer[] {astr[i], i});
+        if (a != 0)
+          left.push(new Integer[]{astr[i], i});
       }
 
       // right going asteroid
       else
-        right.push(new Integer[] {astr[i], i});
+        right.push(new Integer[]{astr[i], i});
     }
 
-    int [] res = new int[astr.length - set.size()];
+    int[] res = new int[astr.length - set.size()];
     int j = 0;
-    for(int i = 0; i < astr.length; i++){
-      if(set.contains(i)) continue;
+    for (int i = 0; i < astr.length; i++) {
+      if (set.contains(i)) continue;
       res[j++] = astr[i];
     }
     return res;
   }
 
   public static void main(String[] args) {
-    int [] asteroids = new int[] {0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 1000, 2, 3, 7,-99, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 1000, 2, 3, 7,-99, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 1000, 2, 3, 7,-99, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, -1000, 2, 3, 7,-99, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 1000, 2, 3, 7,-99, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 1000, 2, 3, 7,-99, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 1000, 2, 3, 7,-99, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 1000, 2, 3, 7,-99, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 1000, 2, 3, 7,-99, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    int[] asteroids = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 2, 3, 7, -99, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1000, 2, 3, 7, -99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1000, 2, 3, 7, -99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1000, 2, 3, 7, -99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 2, 3, 7, -99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 2, 3, 7, -99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 2, 3, 7, -99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 2, 3, 7, -99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 2, 3, 7, -99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-    int [] res = asteroidCollision(asteroids);
+    int[] res = asteroidCollision(asteroids);
     System.out.println(Arrays.toString(res));
   }
 }
