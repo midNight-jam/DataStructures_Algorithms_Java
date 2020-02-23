@@ -3,14 +3,14 @@ package darkRealm;
 import java.util.Arrays;
 
 public class SplitBST {
-  
-//   776. Split BST
-// Given a Binary Search Tree (BST) with root node root, and a target value V, split the tree into two subtrees where one
-// subtree has nodes that are all smaller or equal to the target value, while the other subtree has all nodes that are greater 
-// than the target value.  It's not necessarily the case that the tree contains a node with value V.
 
-// Additionally, most of the structure of the original tree should remain.  Formally, for any child C with parent P in the original
-// tree, if they are both in the same subtree after the split, then node C should still have the parent P.
+//   776. Split BST
+// Given a Binary Search Tree (BST) with root node root, and a target value V, split the tree into two subtrees
+// where one subtree has nodes that are all smaller or equal to the target value, while the other subtree has all nodes
+// that are greater than the target value.  It's not necessarily the case that the tree contains a node with value V.
+
+// Additionally, most of the structure of the original tree should remain.  Formally, for any child C with parent P in
+// the original tree, if they are both in the same subtree after the split, then node C should still have the parent P.
 
 // You should output the root TreeNode of both subtrees after splitting, in any order.
 
@@ -57,25 +57,30 @@ public class SplitBST {
   }
 
 
-  public static TreeNode[] splitBST(TreeNode root, int V) {
+  public static TreeNode[] splitBST(TreeNode root, int tar) {
     TreeNode[] res = new TreeNode[2];
-    if (root == null) return res;
-    // the idea is the node which is smallerorEqual to the target where we make the split, this node should notonly include all the nodes in its left subtree
-    // becoz its already smaller, but it shoould also inlcude any smaller nodes from the right subtree that are smaller than the target,
-    // thus the problem can be broken down in to subproblem
-    // if the node is <= target the small part of res will include this node + smaleer node from the right subtree
-    // else if  the node is > target the smaller part of res will include this smaleer node from the left subtree
-    if (root.val <= V) {
-      TreeNode[] sub = splitBST(root.right, V);
-      root.right = sub[0];
-      res[0] = root;
-      res[1] = sub[1];
-    } else {
-      TreeNode[] sub = splitBST(root.left, V);
-      root.left = sub[1];
-      res[0] = sub[0];
-      res[1] = root;
+    if (root == null)
+      return res;
+
+    // we always return value in this format [small, big] small is at 0, big is at 1.
+
+    // if the tar is in left subTree, get the result from left subTree
+    if (root.val > tar) {
+      TreeNode[] subTree = splitBST(root.left, tar);
+      // remember the format [small, big]
+      res[0] = subTree[0]; // small from left is small for res also
+      res[1] = root; // big is root itself, we are standing at it
+      root.left = subTree[1]; // make the big of leftSubtree the new left of this node;
     }
+    // else the tar is in right subTree, get the result from right subTree
+    else {
+      TreeNode[] subTree = splitBST(root.right, tar);
+      // remember the format [small, big]
+      res[0] = root; // small is root itself, we are standing at it
+      res[1] = subTree[1]; // big from right is big for res also
+      root.right = subTree[0]; // make the small of rightSubtree the new right of this node;
+    }
+
     return res;
   }
 
