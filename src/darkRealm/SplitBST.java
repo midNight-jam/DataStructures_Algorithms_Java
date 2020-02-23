@@ -62,6 +62,12 @@ public class SplitBST {
     if (root == null)
       return res;
 
+    // First of all, we can see that the given root is always there in the answer (either in the bigger subtree or in
+    // the smaller subtree). After that, if root->val > V, there is a chance that there is some subtree within the
+    // subtree root->left which maybe greater than V and that subtree needs to be attached to root->left. Now, we see
+    // that this problem of finding "subtree in root->left which is greater than V" is the same as the current problem
+    // of splitting root.
+
     // we always return value in this format [small, big] small is at 0, big is at 1.
 
     // if the tar is in left subTree, get the result from left subTree
