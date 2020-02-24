@@ -31,6 +31,76 @@ public class WordLadderII {
   You may assume beginWord and endWord are non-empty and are not the same.
   */
 
+
+// helper class for holding word, dist, & prev
+  private static  class Node{
+    String s;
+    Node prev;
+  }
+
+
+  public static List<List<String>> findLadders(String begin, String end, List<String> list) {
+    List<List<String>> res = new ArrayList<>();
+    if(begin == null || end == null || list == null) return res;
+    Map<Integer, List<List<String>>> map = new HashMap<>();
+    map.put(Integer.MAX_VALUE, new ArrayList<>());
+    Queue<Node> que = new LinkedList<>();
+    Queue<Integer> distQue = new LinkedList<>();
+    Node f = new Node();
+    f.s = begin;
+    f.prev = null;
+    que.offer(f);
+    distQue.offer(1);
+    Set<String> used = new HashSet<>();
+    Set<String> dict = new HashSet<>(list);
+    List<String> path = new ArrayList<>();
+    int min = Integer.MAX_VALUE;
+
+
+    while(!que.isEmpty()){
+      Node trav = que.poll();
+      int dist = distQue.poll();
+      used.add(trav.s);
+
+      // we reached end / destination word
+      if(trav.s.equals(end)){
+        if(!map.containsKey(dist))
+          map.put(dist, new ArrayList<>());
+        path = new ArrayList<>();
+        Node prev = trav;
+        while(trav!= null){
+          path.add(0, trav.s);
+          trav = trav.prev;
+        }
+        map.get(dist).add(path);
+        min = Math.min(min, dist);
+        continue;
+      }
+      char [] arr = trav.s.toCharArray();
+
+      // try all possible valid words from this word
+      for(int i = 0; i < arr.length; i++){
+        char old = arr[i];
+        for(char c = 'a'; c <='z'; c++){
+          arr[i] = c;
+          String next = new String(arr);
+          if(used.contains(next)) continue;
+          if(dict.contains(next)){
+            Node n = new Node();
+            n.s = next;
+            n.prev = trav;
+            que.offer(n);
+            distQue.offer(dist + 1);
+          }
+        }
+        arr[i] = old; // restore
+      }
+    }
+
+    return map.get(min);
+  }
+
+
   static class WNode { // a helper node for Djikstrars
     String word;
     int dist;
@@ -43,7 +113,8 @@ public class WordLadderII {
     }
   }
 
-  public static List<List<String>> findLadders(String start, String end, List<String> wordList) {
+
+  public static List<List<String>> findLaddersOLD(String start, String end, List<String> wordList) {
     Set<String> dict = new HashSet<>(wordList);
     List<List<String>> paths = new ArrayList<>();
     if (!dict.contains(end)) return paths; // if end not in dict then return
