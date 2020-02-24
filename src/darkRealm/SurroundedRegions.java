@@ -19,190 +19,69 @@ public class SurroundedRegions {
    * X X X X
    * X O X X
    * */
-//  public static void surroundedRegions(char[][] board) {
-//    if (board.length > 0) {
-//      Status[][] statuses = new Status[board.length][board[0].length];
-//      for (int i = 0; i < statuses.length; i++) {
-//        for (int j = 0; j < statuses[0].length; j++) {
-//          statuses[i][j] = Status.NotProcessed;
-//        }
-//      }
-//      java.util.LinkedList<Pair> queue = new java.util.LinkedList();
-//      java.util.LinkedList<Pair> processed = new java.util.LinkedList();
-//      // we will begin from 1,1 cell because the ones which are on the boundary even of they are O, but they cannot be
-//      // completely surrounded by X thats why.
-//
-//      boolean discard = false;
-//      for (int row = 1; row < board.length; row++) {
-//        for (int col = 1; col < board[0].length; col++) {
-//          if (board[row][col] == 'O' && statuses[row][col] == Status.NotProcessed) {
-//            queue.push(new Pair(row, col));
-//            statuses[row][col] = Status.UnderProcessing;
-//            discard = false;
-//          }
-//          while (!queue.isEmpty()) {
-//            Pair poped = queue.poll();
-//            int popR = poped.a;
-//            int popC = poped.b;
-//            //Top
-//            if (popR - 1 > -1 && board[popR - 1][popC] == 'O' && statuses[popR - 1][popC] == Status.NotProcessed) {
-//              queue.push(new Pair(popR - 1, popC));
-//              statuses[popR - 1][popC] = Status.UnderProcessing;
-//            }
-//            //Left
-//            if (popC - 1 > -1 && board[popR][popC - 1] == 'O' && statuses[popR][popC - 1] == Status.NotProcessed) {
-//              queue.push(new Pair(popR, popC - 1));
-//              statuses[popR][popC - 1] = Status.UnderProcessing;
-//            }
-//            //Bottom
-//            if (popR + 1 < board.length && board[popR + 1][popC] == 'O' && statuses[popR + 1][popC] == Status.NotProcessed) {
-//              queue.push(new Pair(popR + 1, popC));
-//              statuses[popR + 1][popC] = Status.UnderProcessing;
-//            }
-//            //Right
-//            if (popC + 1 < board[0].length && board[popR][popC + 1] == 'O' && statuses[popR][popC + 1] == Status.NotProcessed) {
-//              queue.push(new Pair(popR, popC + 1));
-//              statuses[popR][popC + 1] = Status.UnderProcessing;
-//            }
-//
-//            processed.push(poped);
-//            if ((poped.a == 0 || poped.a == board.length - 1) ||
-//                (poped.b == 0 || poped.b == board[0].length - 1)) {
-//              discard = true;
-//            }
-//          }
-//          // mark all processed by X as they are not ending on boundary & can be captured as a region
-//          while (!processed.isEmpty() && !discard) {
-//            Pair poped = processed.poll();
-//            board[poped.a][poped.b] = 'X';
-//            statuses[poped.a][poped.b] = Status.Processed;
-//          }
-//          while (!processed.isEmpty() && discard) {
-//            Pair prevOnes = processed.poll();
-//            statuses[prevOnes.a][prevOnes.b] = Status.DontProcessAgain;
-//          }
-//        }
-//      }
-//
-//      for (int i = 0; i < board.length; i++) {
-//        System.out.println(Arrays.toString(board[i]));
-//      }
-//    }
-//  }
-
-  enum Statuszz {
-    NotProcessed,
-    UnderProcessing,
-    Processed,
-    DontProcessAgain
-  }
-
-  static class Pair {
-    int a;
-    int b;
-
-    Pair(int x, int y) {
-      a = x;
-      b = y;
-    }
-  }
 
 
-  enum Status {
-    NotProcessed,
-    UnderProcess,
-    Finished,
-    DontProcess
-  }
 
   public static void solve(char[][] board) {
-    if (board == null || board.length < 1 || board[0].length < 1) return;
-    int row = board.length;
-    int col = board[0].length;
-    Status[][] status = new Status[row][col];
+    if(board == null || board.length < 1 || board[0].length < 1) return;
 
-    for (Status[] r : status)
-      Arrays.fill(r, Status.NotProcessed);
+    // The idea is to find all the 'O' that are attached to border, becuase these are the ones that cannot be
+    // surrounded, thus we first find such 'O' mark them as 'Y', then we mark all the 'O' to 'X' as these are the
+    // ones that are completely surrounded by the 'X'. In last step we restore the 'Y' to 'O', meaning the 'O' that
+    // coulndt be surrounded
 
-    Queue<int[]> que = new LinkedList<>();
-    Queue<int[]> processed = new LinkedList<>();
-    boolean discard = false;
-
-    for (int i = 1; i < row; i++) {
-
-      for (int j = 1; j < col; j++) {
-
-        if (board[i][j] == 'O' && status[i][j] == Status.NotProcessed) {
-          discard = false;
-          que.offer(new int[]{i, j});
-          status[i][j] = Status.UnderProcess;
-        }
-
-        while (que.size() > 0) {
-          int size = que.size();
-
-          while (size-- > 0) {
-            int[] cords = que.poll();
-            int r = cords[0];
-            int c = cords[1];
-
-            // top
-            if (r - 1 >= 0 && board[r - 1][c] == 'O' && status[r - 1][c] == Status.NotProcessed) {
-              que.offer(new int[]{r - 1, c});
-              status[r - 1][c] = Status.UnderProcess;
-            }
-
-            // right
-            if (c + 1 < col && board[r][c + 1] == 'O' && status[r][c + 1] == Status.NotProcessed) {
-              que.offer(new int[]{r, c + 1});
-              status[r][c + 1] = Status.UnderProcess;
-            }
-
-            // bottom
-            if (r + 1 < row && board[r + 1][c] == 'O' && status[r + 1][c] == Status.NotProcessed) {
-              que.offer(new int[]{r + 1, c});
-              status[r + 1][c] = Status.UnderProcess;
-            }
-
-            // left
-            if (c - 1 >= 0 && board[r][c - 1] == 'O' && status[r][c - 1] == Status.NotProcessed) {
-              que.offer(new int[]{r, c - 1});
-              status[r][c - 1] = Status.UnderProcess;
-            }
-
-            processed.offer(cords);
-
-            if (r == 0 || r == row - 1 || c == 0 || c == col - 1)
-              discard = true;
-
-          }
-        }
-
-        if (!discard) {
-          while (processed.size() > 0) {
-            int[] cords = processed.poll();
-            int r = cords[0];
-            int c = cords[1];
-            status[r][c] = Status.Finished;
-            board[r][c] = 'X';
-          }
-        } else {
-          while (processed.size() > 0) {
-            int[] cords = processed.poll();
-            int r = cords[0];
-            int c = cords[1];
-            status[r][c] = Status.DontProcess;
-          }
-        }
+    // first row
+    for(int j = 0; j < board[0].length; j++)
+      if(board[0][j] == 'O'){
+        dfs(board, 0, j);
       }
-    }
+
+    // first col
+    for(int i = 0; i < board.length; i++)
+      if(board[i][0] == 'O'){
+        dfs(board, i, 0);
+      }
+
+    // last col
+    for(int i = 0; i < board.length; i++)
+      if(board[i][board[0].length - 1] == 'O'){
+        dfs(board, i, board[0].length - 1);
+      }
 
 
-    for (char[] b : board)
-      Arrays.toString(b);
+    // last col
+    for(int j = 0; j < board[0].length; j++)
+      if(board[board.length - 1][j] == 'O'){
+        dfs(board, board.length - 1, j);
+      }
 
+
+    // Mark all the remaining 'O' as 'X', these are the 'O' that are not ata the border & thus will be surrounded fully
+    for(int i = 0; i < board.length; i++)
+      for(int j = 0; j < board[0].length; j++)
+        if(board[i][j] == 'O')
+          board[i][j] = 'X';
+
+
+    // Restore all the 'Y' to 'O', as we want surround the 'O' attached to the border
+    for(int i = 0; i < board.length; i++)
+      for(int j = 0; j < board[0].length; j++)
+        if(board[i][j] == 'Y')
+          board[i][j] = 'O';
   }
 
+  private static void dfs(char[][] board, int r, int c){
+    board[r][c]='Y'; // Change the 'O' to 'Y'
+    int[] hor = new int[]{-1, 0, 1, 0};
+    int[] ver = new int[]{0, 1, 0, -1};
+    for(int i = 0; i < 4; i++){
+      int rr = r + hor[i];
+      int cc = c + ver[i];
+      if(rr < 0 || rr >= board.length || cc < 0 || cc >= board[0].length || board[rr][cc] != 'O')
+        continue;
+      dfs(board, rr, cc); // move to the next adjacent 'O'
+    }
+  }
 
   public static void main(String[] args) {
     char[][] board = new char[][]{
@@ -214,12 +93,9 @@ public class SurroundedRegions {
         {'X', 'O', 'O', 'O', 'X', 'O', 'X'},
         {'X', 'X', 'X', 'O', 'X', 'X', 'X'},
     };
-//    char[][] board = new char[0][0];
 
-//    surroundedRegions(board);
     solve(board);
     for (char[] b : board)
       System.out.println(Arrays.toString(b));
-
   }
 }
