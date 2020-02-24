@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class FindSmallestLetterGreaterThanTarget {
 
 //  744. Find Smallest Letter Greater Than Target
-//  Given a list of sorted characters letters containing only lowercase letters, and given a target letter target, find the smallest element in the list that is larger than the given target.
+//  Given a list of sorted characters letters containing only lowercase letters, and given a target letter target,
+//  find the smallest element in the list that is larger than the given target.
 //  Letters also wrap around. For example, if the target is target = 'z' and letters = ['a', 'b'], the answer is 'a'.
 //
 //  Examples:
@@ -43,26 +44,32 @@ public class FindSmallestLetterGreaterThanTarget {
 //  letters consists of lowercase letters, and contains at least 2 unique letters.
 //  target is a lowercase letter.
 
-  public static char nextGreatestLetter(char[] chars, char target) {
-    char res = (char) 0;
-    if (chars == null || chars.length < 1) return res;
-    int left = 0;
-    int right = chars.length - 1;
-    int mid;
-    while (left < right) {
-      mid = left + (right - left) / 2;
-      if (chars[mid] > target)
-        right = mid;
-      else
-        left = mid + 1;
-    }
+  public static char nextGreatestLetter(char[] letters, char tar) {
+    if(letters == null) return (char)0;
+    // base check if tar is already out of letters, return low.
+    if(tar >= letters[letters.length - 1] || tar < letters[0]) return letters[0];
 
-    return target >= chars[chars.length - 1] ? chars[0] : chars[right];
+    int low = 0;
+    int high = letters.length - 1;
+    int mid;
+    while(low <= high){
+      mid = low + (high - low) / 2;
+      if(letters[mid] <= tar) // skip all the lower & equal elements
+        low = mid + 1;
+      else if(letters[mid] > tar)
+        high = mid - 1;
+    }
+    System.out.println(low +" : " + high);
+    return letters[low]; // low is the insertion position, thus return the char at low
   }
 
   public static void main(String[] args) {
-    char[] chars = new char[]{'c', 'f', 'j'};
-    char target = 'd';
+//    char[] chars = new char[]{'c', 'f', 'j'};
+//    char target = 'd';
+
+    char[] chars = new char[]{'e','e','e','e','e','e','n','n','n','n'};
+    char target = 'e';
+
     char res = nextGreatestLetter(chars, target);
     System.out.println(Arrays.toString(chars));
     System.out.println("target : " + target + "  res : " + res);
