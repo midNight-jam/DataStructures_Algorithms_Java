@@ -411,6 +411,8 @@ This section contains implementation of different Data Structures in Java.
 | 384 | <b>MergeKSortedLists</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MergeKSortedLists.java)|
 | 385 | <b>CopyListWithRandomPointer</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/CopyListWithRandomPointer.java)|
 | 386 | <b>SpiralMatrix</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/SpiralMatrix.java)|
+| 387 | <b>ReverseNodesInKGroup</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReverseNodesInKGroup.java)|
+| 388 | <b>TaskScheduler</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TaskScheduler.java)|
 
 
 
