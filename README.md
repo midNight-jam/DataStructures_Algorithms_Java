@@ -414,6 +414,7 @@ This section contains implementation of different Data Structures in Java.
 | 387 | <b>ReverseNodesInKGroup</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ReverseNodesInKGroup.java)|
 | 388 | <b>TaskScheduler</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/TaskScheduler.java)|
 | 389 | <b>DivideTwoIntegers</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/DivideTwoIntegers.java)|
+| 389 | <b>ConstructBinarySearchTreeFromPreorderTraversal</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ConstructBinarySearchTreeFromPreorderTraversal.java)|
 
 
 
