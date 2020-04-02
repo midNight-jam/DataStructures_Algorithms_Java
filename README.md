@@ -417,6 +417,7 @@ This section contains implementation of different Data Structures in Java.
 | 390 | <b>ConstructBinarySearchTreeFromPreorderTraversal</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/ConstructBinarySearchTreeFromPreorderTraversal.java)|
 | 391 | <b>LowestCommonAncestorOfDeepestLeaves</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/LowestCommonAncestorOfDeepestLeaves.java)|
 | 392 | <b>IntervalListIntersections</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/IntervalListIntersections.java)|
+| 393 | <b>MaximumDifferenceBetweenNodeAndAncestor</b>  <br>             | [View](https://github.com/midNight-jam/DataStructures_Algorithms_Java/blob/master/src/darkRealm/MaximumDifferenceBetweenNodeAndAncestor.java)|
 
 
 
